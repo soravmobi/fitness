@@ -1,0 +1,514 @@
+@charset "utf-8";
+/* CSS Document */
+
+.panel_block.reports .table{margin-bottom:0px;}
+
+
+@media (min-width:1200px){
+	.profile_field_title {width: 200px;}
+	.profile_field_des{ width:80%}
+	.rtrainee_img{ width:120px;}
+	.review_txt{ width:82%}
+	.trainer_img{ height:250px}
+}
+
+
+@media (min-width:992px) and (max-width:1199px){
+	.mp_days { width: 86%;}
+	.profile_field_title {width: 180px;}
+	.profile_field_des { width: 78%;}
+	.rtrainee_img{ width:110px;}
+	.review_txt{ width:79%}	
+	.trainer_img{ height:230px}
+	
+	/*css start for 23-nov yusuf*/
+	.ser_txt{ /*width:72%; */  padding-left: 20px; width: 48%;}
+	.tr_des h1{font-size:24px;}
+	.tr_des{height:243px;}
+	.ms_left{padding-top:30px;}
+	.testimonial_carousel , .app_nav , .how_it_works, .our_services, .latest_video, .price_sec{padding:30px 0px;}
+	.testi_img{margin-top:50px;}
+	
+	/* css start for 27 nov */
+	.photo_video_list li > div{max-width:100%;}
+	.footer_nav{text-align: center;}
+	
+	/** vedio sec css start **/
+	.trai_rank a{
+		height:36px;
+		width:36px;
+		line-height:33px;
+		}
+	#load_videochat .modal-lg{
+		max-width:100%;
+		padding:0px 15px;
+		}
+	.video_chat_wrapper .chating_wind_wrapper{
+		min-width:inherit;/*230PX*/
+		}
+		
+	
+	
+	}
+	
+	
+	
+@media (min-width:768px) and (max-width:991px){
+	.mainmenu_nav li a{ padding:0 5px; line-height:50px; font-size:15px;}
+	.mp_types{ width:90px;}
+	.mp_days {width: 85%;}
+	.profile_field_title {width: 180px;}
+	.profile_field_des { width:70%;}
+	.rtrainee_img{ width:100px;}
+	.review_txt{ width:75%}	
+	.trainer_img{ height:210px}
+	
+	/*css start for 23 nov yusuf*/
+	.banner_sec .carousel-caption{padding:15rem 0px 10rem;}
+	.hiw_left{padding-top:0px;}
+	.ser_img{height:90px;width:90px;}
+	.ser_txt{width:58%; /*73%*/ padding-top:0px;}
+	.tr_des{padding:10px 10px 0px; height:188px;}
+	.tr_des h1{font-size:22px; padding-bottom:5px;}
+	.tr_des h4{font-size:16px; padding-bottom:5px;}
+	.trainer_block, .tr_img, .tr_des{max-height:188px;}
+	.ms_left{padding-top:0px;}
+	.sec_heading h1{font-size:30px; padding-bottom:10px;}
+	.sec_body p{padding:10px 0px;}
+	.app_nav{padding:20px 0px;}
+	.tread_more a{line-height:46px;}
+	.tread_more a span{top:16px;}
+	.mobileapp_sec{padding-top:20px;}
+	.pb_heading h2{font-size:22px;}
+	.session_price span{font-size:34px;}
+	.session_order{padding:10px 0px;}
+	.testi_txt p{font-size:18px;}
+	.cb_heading h1{font-size:28px;}
+	.cb_heading{padding:15px 0px;}
+	.contact_block{padding-bottom:15px;}
+	#map_display{height:400px;}
+	.contact_sec{padding-top:100px;}
+	.login_modal .modal-dialog{padding:2rem 0;}
+	.modal-header{padding:10px;}
+	.login_modal .modal-title, .signup_modal .modal-title{font-size:22px;}
+	
+	/* css start for 24 nov */
+	.meal_plan_nav li{padding-right:5px;}
+	.meal_plan_nav li a{font-size:15px;}
+	.current_plan .panel_block:nth-child(2n){margin-left:4%;}
+	.panel_block_heading{padding:10px 5px;}
+	.panel_block_heading h4{ font-size:16px;}
+	.panel_block.reports tr th, .panel_block.reports tr td {text-align: center; vertical-align: middle;}
+	.panel_block.reports .table-responsive{margin-bottom:0px;}
+	
+	/* css for profilepage */
+	.trainee_tabs_sect h3{font-size:20px;}
+	.trainee_tabs_sect .nav_tabs li a{padding:8px 5px; font-size:14px;}
+	.trainee_tabs_sect h3{padding-bottom:5px; margin-bottom:10px;}
+	
+	.photo_video_list li > div{max-width:100%;}
+	.photo_video_list li , .photo_gallery_list li{width:31.7%;}
+
+	/*14 dec*/
+	.footer_nav{padding-top: 2px;}
+	.footer_left{padding-top:3px;}
+	.main_nav .navbar-brand{max-width: 200px;}
+	.ms_center{padding-top: 5rem;}
+	.ms_heading h2{font-size: 48px;}
+	.ms_body{font-size: 26px;}
+	.ms_body h3{font-size: 30px;}
+	.mainmenu_nav li a{
+		font-size:12px;
+		}
+		
+	/** css start for 23 dec  --mearge 29-dec-- **/
+	.main_nav .navbar-brand{
+		padding:20px 10px;
+		}
+	a.btn_trainer {
+		font-size: 13px !important;
+		padding: 0 3px !important;
+	}	
+	
+	.trainers_videos li  div{max-height:150px;}
+	
+		
+		
+	/** vedio sec css start **/	
+	.trai_rank a{
+		line-height:37px;
+		}
+	#load_videochat .modal-lg{
+		max-width:100%;
+		padding:0px 15px;
+		}
+	.video_chat_wrapper .chating_wind_wrapper{
+		min-width:inherit;
+		}
+	.chating_wind_wrapper .panel-footer{padding:10px 5px;}
+	.video_chat_wrapper .msg_container_base{
+		min-height:280px;
+		max-height:280px;
+		}
+	
+	.full_video .video_chat_videos{min-height:378px;}
+	.full_video{min-height:350px;}
+	.footer_nav{text-align:left;}				
+		
+	}
+	
+@media (min-width:768px){
+	.mainmenu_nav li{ display:inline-block; vertical-align:middle;}
+	.mainmenu_nav li a{ line-height:60px;}
+	.profile_field_title {float: left;text-align: right;}
+	.profile_field_des {
+	  float: right;
+	  padding-right: 10px;
+	  border-bottom:1px solid #dddddd;
+	  padding-bottom:15px;
+	}
+	.trainer_profile_wrap li:last-child .profile_field_des{ border-bottom:none;}
+	.rtrainee_img {float: left; text-align:center;}
+	.review_txt {float: right;}
+	.trainer_search{width:70%;} 
+
+	
+	
+	}
+	
+	
+	
+@media (max-width:767px){
+	.trainer_profile_wrap{ padding:10px;}
+	.review_txt h4{ padding:5px 0;}
+	.trainer_search{width:95%;} 
+	.trainer_img{ height:240px}
+	.trainer_sec{ max-width:250px; margin:0 auto 10px;}
+	
+	/* css start for 23-nov yusuf */
+	.navbar-toggle .icon-bar{background:#fff;}
+	.main_nav .navbar-brand{padding:13px; max-width: 240px;}
+	.banner_sec .carousel-caption{padding:10rem 0 5rem;}
+	.carousel-caption h1{font-size:34px;}
+	.carousel-caption h2{font-size:20px;}
+	.carousel-caption p, .carousel-caption button{font-size:16px;}
+	.hiw_left{padding-top:0px;}
+	.how_it_works, .our_services, .latest_video, .price_sec{padding:30px 0px;}
+	.sec_heading h1{padding-bottom:10px; font-size:28px; line-height:32px;}
+	.services_body ul{text-align:center;}
+	.services_body ul li{width:280px !important; float:none !important; display:inline-block; max-width:330px; vertical-align:top;}
+	.ser_img{width:100px; height:100px;}
+	.ser_txt{width:63%; padding-top:26px; text-align:left;}
+	.ser_txt h3{font-size:20px;}
+	.services_body ul li:last-child{margin-top:15px;}
+	.lv_left{padding-bottom:10px;}
+	.latest_news{padding:2rem 0;}
+	.lnb_top{margin-top:10px;}
+	.ln_body , .ms_left{padding-top:0px;}
+	.ms_left{text-align:center;}
+	.mobileapp_sec{padding-top:30px;}
+	.ms_heading.sec_heading h1::before{left:0; right:0; margin:0 auto;}
+	.app_nav{padding:0px;}
+	.app_nav ul li{margin-bottom:20px;}
+	.testimonial_carousel{padding:30px 0px;}
+	.testi_img{float:none; width:150px; height:150px; margin:0 auto;}
+	.testi_txt{width:100%; float:none;}
+	.testi_txt p{font-size:18px;}
+	.ps_body{text-align:center;}
+	.ps_body .col-sm-3 {
+		display: inline-block;
+		float: none;
+		margin-bottom: 15px;
+		width: 250px;
+	}
+	.pb_heading h2{font-size:22px;}
+	.session_price span{font-size:34px;}
+	.session_order{padding:10px 0px;}
+	.contact_block{padding:0px 15px 20px;}
+	.cb_heading h1{font-size:28px;}
+	.contact_sec{padding-top:15rem;}
+	#map_display{height:270px;}
+	.ps_body{padding-top:20px;}
+	.trainer_block, .tr_img, .tr_des{float:none; width:100%; max-height:inherit;}
+	 .tr_des{height:auto;}
+	 .tread_more{position:inherit;}
+	.trainer_block {
+  		margin: 0 auto 30px;
+  		max-width: 280px;
+		padding-bottom:15px;
+	}		
+	.trainers{padding:30px 0px 0px;}
+	.tr_des h1{font-size:28px;}
+	.tread_more a{line-height:40px;}
+	.tread_more a span{top:11px;}
+	.footer_left , .footer_nav{text-align:center; padding-top:5px;}
+	.footer_nav{text-align:center;}
+	#top_nav{background:#666;}
+	
+	/*css start for 26-nov*/
+	.meal_plan_nav{text-align:center;}
+	.meal_plan_nav li{display:inline-block; width:143px; padding:0px 5px; margin-bottom:10px; position:relative;}
+	.meal_plan_nav li:last-child{padding-right:5px;}
+	.trainee_top_wrap{padding-top:12rem; padding-bottom:6rem;}
+	.trainee_img{margin-bottom:15px;}
+	.trainee_detail, .profile_btn_main{text-align:center;}
+	.profile_btn_main a {
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    padding: 10px 15px;
+    vertical-align: top;
+}
+.meal_plan_nav li a {
+    border-width: 1px;
+    font-size: 14px;
+    padding: 8px 0;
+}
+.notificat_text {
+    border-width: 1px;
+    height: 20px;
+    right: 0;
+    top: -6px;
+    width: 20px;
+}
+.meal_plan_heading {
+    padding: 10px;
+    text-align: center;
+}
+.meal_plan_heading h2 {
+    font-size: 22px;
+}
+.mp_types{
+	width:80px;
+	}
+	.current_plan{padding-top:20px;}
+	.current_plan .panel_block:nth-child(2n){margin-left: 4%;}
+	.panel_block.reports .table-responsive{margin-bottom:0px;}
+	.current_plan .panel_block_body1{padding:38px 15px;}
+	.amChartsLegend.amcharts-legend-div{display:none;}
+	
+	/* css start for profilepage */
+	.trainee_tabs_sect{margin-bottom:20px;}
+	.trainee_tab_content{padding:20px 10px;}
+	.tai_sub_tab li a{font-size:13px; padding:8px 3px;}
+	.review_heading h3{font-size:18px;}
+	.innerp_right_bar{margin-top:30px;}
+	.trainers_videos li > div{max-width:100%;}
+	#append_div {text-align: center;}
+	#append_div li.col-sm-4.col-md-3 {display: inline-block; float: none; width: 280px; }
+	.plan_header_sect h3{font-size:24px;}
+	
+	
+	#book_app , #view_app { overflow-x: scroll; padding-bottom: 20px; }
+	.mp_days{width:71%; overflow:auto;}
+	#book_calendar , #view_calendar { min-width:800px }
+	#view_calendar .fc-toolbar{margin-bottom:5px;}
+	.message-wrap{margin-top:30px;}
+	.fc-left h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+.mp_types{padding-top:33px;}
+.mp_types li{height:58px; font-size:11px;}
+.fc-time-grid-container {
+    height: 467px !important;
+}
+.meal_plan_sec .tab-content {
+    padding: 20px 0 0;
+}
+.meal_plan_body .mp_types li:nth-child(1){line-height:43px;}
+	
+	.photo_video_list li > div{max-width:100%;}
+	.photo_video_list li , .photo_gallery_list li{width:200px; float:none; display:inline-block; min-height:181px;}
+	.photo_video_list , .photo_gallery_list{text-align:center;}
+
+	/*14 dec*/
+	.lnews_block{margin-bottom: 30px;}
+	.bowser_point{float: none; margin: 10px auto 0px; }
+	.footer_nav ul{margin-right: 0px;}
+
+	.ms_center{padding-top: 1rem;}
+	.ms_heading h2{font-size: 40px;}
+	.ms_body{font-size: 22px;}
+	.ms_body h3{font-size: 38px;}
+	#top_nav{padding: 10px 15px;}
+
+/*css start for trainee(user) 23 dec ----css mearge 29-dec start----*/
+	
+	
+	.panel_block_heading h4 {font-size: 16px;}
+	.reports .panel_block_body1 > h1{font-size:26px;}
+	.beta_logo {
+		font-size: 10px;
+		left: -39px;
+		padding-right: 13px;
+		text-align: right;
+		top: 18px;
+		width: 81px;
+	}
+	.trainee_detail , .profile_btn_main{text-align:center;}
+	.profile_btn_main a{margin-bottom:5px;}
+	.ourtrainer_wrap > h4 {
+		font-size: 16px;
+		text-align: center;
+	}
+	.mph_left > h2 {
+	  font-size: 26px;
+	}
+	.inner_tabs.nav > li > a{
+		font-size:13px;
+		padding:10px 5px;
+		}
+	.tai_sub_tab li{display:inline-block; vertical-align:top; width:auto;}
+	.trainee_tab_content{min-height:inherit;}
+	.review_body{height:auto;}
+	
+	.login_modal , .suoption_modal{padding:10px !important;}
+	.login_modal .modal-dialog , .suoption_modal .modal-dialog{padding:20px 0px;}
+	.modal-dialog{margin:0px;}
+	.btn-social.btn-lg>:first-child {
+		line-height: 45px;
+		width: 30px;
+		font-size: 21px;
+	}
+	.btn-social.btn-lg{padding-left:38px;}
+	
+	.sumodal_nav{text-align:center;}
+	.sumodal_nav li{
+		display:inline-block;
+		width:45%;
+		}
+	.sumodal_nav li a{padding:5px 10px;}	
+	.suoption_modal .modal-dialog.modal-sm{padding:15rem 0px 0px;}
+	
+	.multi_chat_window_wraper {
+		vertical-align:middle;
+	}
+
+	.chat_windo_block {
+		left: 0;
+		margin: 0 auto !important;
+		width: 100%;
+		height:100%;
+		position: fixed;
+		top: 0;
+		z-index: 999999;
+		vertical-align:middle;
+		text-align:center;
+	}
+	.chating_wind_wrapper{
+		width:270px;
+		display:inline-block;
+		vertical-align:middle;
+		text-align:left;
+		max-width:100%;
+		margin:7% auto;
+		}
+	.top-bar .icon_minim{display:none;}
+	
+/*css start for trainee(user) 23 dec ----css mearge 29-dec End----*/		
+	
+.multi_chat_window_wraper .chat_windo_block:nth-child(1){
+		margin-right:0;
+	}
+	.chat_windo_block {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    max-width: inherit;
+    overflow-y: auto;
+    padding: 40px 5% 5%;
+    position: fixed;
+    right: inherit;
+    top: 0;
+    width: 100%;
+    z-index: 100000;
+}
+.panel_block_body1 h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+.trainee_social_link li a {
+    border-radius: 2px;
+    display: block;
+    font-size: 18px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    width: 30px;
+}
+.multi_chat_window_wraper .msg_container_base{
+	min-height:230px;
+	overflow:auto;
+	max-height:250px;
+}
+.noti_count {
+    background: red none repeat scroll 0 0;
+    border-radius: 50%;
+    font-size: 10px;
+    height: 15px;
+    line-height: 10px;
+    min-width: 15px;
+    padding: 2px;
+    position: absolute;
+    right: -1px;
+    text-align: center;
+    top: 2px;
+}
+.photos_tabs ul{height:auto;}
+.photos_tabs li a{
+	padding:8px 5px;
+	font-size:13px;
+	}
+
+/** vedio sec css start **/	
+	.trai_rank a{
+		line-height:37px;
+		}
+	#load_videochat .modal-lg{
+		max-width:100%;
+		}
+	.video_chat_wrapper .chating_wind_wrapper{
+		min-width:180px;
+		}
+	.video_chat_wrapper .msg_container_base{
+		min-height:125px;
+		max-height:125px;
+		}
+	
+	.full_video .video_chat_videos{min-height:160px; max-height:160px;}
+	.full_video{min-height:150px; max-width:278px;}
+	
+	.video_chat_videos .OT_subscriber{height:215px !important;}
+	.m_video_chat_body .col-sm-8, .m_video_chat_body .col-sm-4{
+		width:100% !important;
+		padding:0px;
+		}
+	.video_sect_footer{height:40px;}
+	.calling_time_durtaion{top:7px;}
+	.full_screen_vid1 button{display:none;}
+	.calling_ending .btn{
+		height:35px;
+		width:35px;
+		line-height:30px;
+		}
+	.calling_ending{padding:3px 0px;}	
+	.chating_wind_wrapper .panel-footer .form-control , 
+	.chating_wind_wrapper .input-group-btn,
+	.file_attched_field{height:32px;}
+	.chating_wind_wrapper .panel-footer{height:52px;}
+	.top-bar{padding:7px;}
+	.messages , .msg_sent , .msg_receive{padding:5px !important;}
+	.chat_avatar{height:35px; width:35px;}
+	.file_attched_field{line-height:32px;}
+	#video-modal .modal-content{max-width:300px; margin:20px auto;}
+	#video-modal .modal-dialog{margin:0px;}
+	#video-modal .panel{margin-bottom:0px;}
+	.footersec_inner{padding-bottom:40px;}
+	
+
+
+			
+	
+
+}	
