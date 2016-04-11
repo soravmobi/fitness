@@ -1332,6 +1332,14 @@ class TrainersController extends AppController
       $this->set('profile_details', $profile_details);
     }
 
+  public function reports()
+    {
+      $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
+      $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
+      $this->set('total_wallet_ammount', $total_wallet_ammount);
+      $this->set('profile_details', $profile_details);
+    }
+
   public function withdrawRequest()
   {
     if($this->request->is('post')){

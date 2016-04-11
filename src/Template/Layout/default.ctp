@@ -67,6 +67,8 @@
 	<?php echo  $this->Html->script('percircle.js') ?>
 	<?php echo  $this->Html->css('sweetalert2.css') ?>
 	<?php echo  $this->Html->script('sweetalert2.js') ?>
+	<?php echo  $this->Html->css('jasny-bootstrap.min.css') ?>
+	<?php echo  $this->Html->script('jasny-bootstrap.min.js') ?>
 	<script src="<?php echo $this->request->webroot; ?>js/amcharts.js" type="text/javascript"></script>
     <script src="https://www.amcharts.com/lib/3/serial.js" type="text/javascript"></script>
     <script src="https://www.amcharts.com/lib/3/pie.js" type="text/javascript"></script>
@@ -512,7 +514,14 @@
 	<?php echo $this->fetch('script') ?>
 </head>
 <body>  
-	<?php echo $this->element('front_header'); ?>
+	<?php
+		if(!empty($user))
+		{
+	 		echo $this->element('front_sidebar');
+	 	}else{
+	 		echo $this->element('front_header');
+	 	}
+	?>
 	<input type="hidden" id="hidden_array">
 	<input type="hidden" id="hidden_count" value="0">
 	<div id="container">

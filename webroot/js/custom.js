@@ -121,6 +121,10 @@ function showAlert(type,title,message){
 	swal(title,message,type);
 }
 
+$('.ht_right ul li').hover(function() {
+	$(this).children('.dropdown-menu').stop(true, false, true).slideToggle(300);
+});
+
 
 
 

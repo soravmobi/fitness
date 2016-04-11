@@ -193,13 +193,6 @@
         }
       );
     </script>
-    <script>
-    $(".dropdown-menu li a").click(function(e){
-      $(this).parents(".dropdown").find('button').html($(this).text() + ' <span class="wcaret"></span>');
-      //$(this).parents(".dropdown").find('button').val($(this).data('value'));
-      e.preventDefault();
-    });
-  </script>
 
 
 

@@ -1421,6 +1421,14 @@ class TraineesController extends AppController
       $this->set('profile_details', $profile_details);
     }
 
+    public function reports()
+    {
+      $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
+      $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
+      $this->set('total_wallet_ammount', $total_wallet_ammount);
+      $this->set('profile_details', $profile_details);
+    }
+
     public function delete()
     {
         if($this->request->is('ajax'))

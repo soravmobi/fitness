@@ -89,9 +89,12 @@ class CustomComponent extends Component
         $loc["longitude"] = "";
         $geo = file_get_contents('http://maps.googleapis.com/maps/api/geocode/json?address='.urlencode($address).'&sensor=false');
         $geo = json_decode($geo, true);
-        if ($geo['status'] = 'OK') {
-          $loc["latitude"] = $geo['results'][0]['geometry']['location']['lat'];
+        if ($geo['status'] == 'OK') {
+          $loc["latitude"]  = $geo['results'][0]['geometry']['location']['lat'];
           $loc["longitude"] = $geo['results'][0]['geometry']['location']['lng'];
+        }else{
+            $loc["latitude"]  = "";
+            $loc["longitude"] = "";
         }
         return $loc;
     }

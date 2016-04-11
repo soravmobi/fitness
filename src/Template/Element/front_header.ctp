@@ -57,7 +57,6 @@
                                <li><a title="View Profile" href="<?php echo $this->request->webroot; ?>trainees/profile">My Profile</a></li>
                                <li><a title="Meal Plans" href="<?php echo $this->request->webroot; ?>trainees/mealplans">Meal Plans</a></li>
                                <li><a title="Grocery List" href="<?php echo $this->request->webroot; ?>trainees/grocerylist">Grocery List</a></li>
-                               <!-- <li><a title="Appointments" href="<?php echo $this->request->webroot; ?>trainees/appointments">Appointments</a></li> -->
                                <li><a title="Messages" href="<?php echo $this->request->webroot; ?>trainees/messages">Messages</a></li>
                                <li><a title="My Trainers" href="<?php echo $this->request->webroot; ?>trainees/mytrainers">My Trainers</a></li>
                                <li><a title="Photo Album" href="<?php echo $this->request->webroot; ?>trainees/photoalbum">Photo Album</a></li>

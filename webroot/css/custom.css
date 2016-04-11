@@ -397,7 +397,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e55b59', end
 
 /*css for inner page start*/
 .trainee_top{ /*background-image:url(../images/trainee_top_bg.jpg)*/; background-size:cover; background-attachment:fixed; background-position:50% 50%;}
-.trainee_top_wrap{ padding:20rem 0 3rem;text-align:center; position:relative;}
+.trainee_top_wrap{ padding:10rem 0 3rem;text-align:center; position:relative;}
 .top_nav li a img{ width:25px; height:25px; margin-right:5px; border-radius:4px;}
 .trainee_img, .trainee_detail{ display:inline-block; vertical-align:middle;}
 .trainee_streams li, .trainee_social_link li{ margin: 3px; display:inline-block; vertical-align:middle; margin-right:5px;}
@@ -5909,7 +5909,7 @@ label.remain_bal {
   font-size: 18px;
 }
 .cloud {
-  background-color: #809f16;
+  background-color: #809f16 !important;
   border-radius: 50%;
   color: #fff;
   display: inline-block;
@@ -6096,7 +6096,7 @@ label.remain_bal {
   font-size: 14px;
 }
 .total_earn .cloud {
-  background-color: #c326df;
+  background-color: #c326df !important;
 }
 .total_earn .cloud_box {
   background-color: #ecb2f6;
@@ -6148,4 +6148,9 @@ label.remain_bal {
 .withraw_amount .form-group:first-child {
     width:inherit;
 }
+.ht_right li:first-child {
+    width: 50%;
+}
+.ht_right .dropdown-menu li{width: 100%;}
+.profile-img{height: 100%;}
 

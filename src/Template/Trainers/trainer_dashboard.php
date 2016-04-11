@@ -1,4 +1,4 @@
-       <main class="animsition">
+
     <!--Main container sec start-->
     <div class="main_container">
     <!--Trainee top sec start-->
