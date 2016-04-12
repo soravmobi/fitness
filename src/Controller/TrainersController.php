@@ -18,13 +18,13 @@ class TrainersController extends AppController
         $this->loadComponent('Auth');
         $this->Auth->allow(['addTrainer','downloadDocument']);
         $this->data = $this->Custom->getSessionData();
+        $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
+        $this->set('notifications', $this->total_notifications);
     }
 
     public function index()
 	{
 		$profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
-        $notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'], 'noti_status' => 0])->count();
-        $total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id']])->count();
         $account = $this->Trainer_account->find()->where(['trainer_id' => $this->data['id']])->toArray();
         $all_calls = $this->conn->execute(' SELECT *,`t`.`user_id` AS trainee_id FROM `trainer_sessions` AS `ts` INNER JOIN `trainees` AS `t` ON ts.user_id = t.user_id ORDER BY ts.id DESC')->fetchAll('assoc');
         $videocalls = $this->Chating->find()->where(['chat_reciever_id' => $this->data['id'], 'chat_type' => 1])->count();
@@ -33,10 +33,8 @@ class TrainersController extends AppController
         $this->set('all_calls', $all_calls);
         $this->set('messages', $messages);
         $this->set('account', $account);
-        $this->set('total_notifications', $total_notifications);
         $this->set('videocalls', $videocalls);
         $this->set('voicecalls', $voicecalls);
-        $this->set('notifications', $notifications);
 		$this->set('profile_details', $profile_details);
 	}
 
@@ -45,20 +43,20 @@ class TrainersController extends AppController
 		$data = $this->Custom->getSessionData();
 		$gallery_img = $this->Profile_images_videos->find()->where(['piv_user_id' => $data['id'], 'piv_attachement_type' => 'image'])->order(['piv_id' => 'DESC'])->toArray();
 		$profile_details = $this->Trainers->find()->where(['user_id' => $data['id']])->toArray();
-    $rate_plans = $this->Trainer_ratemaster->find()->where(['trainer_id' => $data['id']])->toArray();
-    $custom_packages = $this->Trainer_packagemaster->find()->where(['trainer_id' => $data['id']])->toArray();
+        $rate_plans = $this->Trainer_ratemaster->find()->where(['trainer_id' => $data['id']])->toArray();
+        $custom_packages = $this->Trainer_packagemaster->find()->where(['trainer_id' => $data['id']])->toArray();
 		$quotes = $this->Latest_things->find()->where(['lt_type' => 'Quotes', 'lt_user_id' => $data['id']])->order(['id' => 'DESC'])->toArray();
 		$gallery_videos = $this->Profile_images_videos->find()->where(['piv_user_id' => $data['id'], 'piv_attachement_type' => 'video'])->order(['piv_id' => 'DESC'])->toArray();
-    $certificates = $this->Documents->find()->where(['trainer_id' => $this->data['id'],'document_type' => 'Certification'])->order(['id' => 'DESC'])->toArray();
-    $resume = $this->Documents->find()->where(['trainer_id' => $this->data['id'],'document_type' => 'Resume'])->order(['id' => 'DESC'])->toArray();
-    $feedback = $this->conn->execute('SELECT * FROM `ratings` As r inner join trainees as t ON t.user_id = r.rating_trainee_id WHERE r.rating_trainer_id = '. $this->data['id'] .' ORDER BY r.id DESC')->fetchAll('assoc');
-    $this->set('feedback',$feedback);
-    $this->set('resume',$resume);
-    $this->set('certificates',$certificates);
-    $this->set('quotes',$quotes);
+        $certificates = $this->Documents->find()->where(['trainer_id' => $this->data['id'],'document_type' => 'Certification'])->order(['id' => 'DESC'])->toArray();
+        $resume = $this->Documents->find()->where(['trainer_id' => $this->data['id'],'document_type' => 'Resume'])->order(['id' => 'DESC'])->toArray();
+        $feedback = $this->conn->execute('SELECT * FROM `ratings` As r inner join trainees as t ON t.user_id = r.rating_trainee_id WHERE r.rating_trainer_id = '. $this->data['id'] .' ORDER BY r.id DESC')->fetchAll('assoc');
+        $this->set('feedback',$feedback);
+        $this->set('resume',$resume);
+        $this->set('certificates',$certificates);
+        $this->set('quotes',$quotes);
 		$this->set('rate_plans', $rate_plans);
-    $this->set('custom_packages', $custom_packages);
-    $this->set('profile_details', $profile_details);
+        $this->set('custom_packages', $custom_packages);
+        $this->set('profile_details', $profile_details);
 		$this->set('gallery_img', $gallery_img);
 		$this->set('gallery_videos', $gallery_videos);
 		$this->render('/Trainers/trainer_profile');
@@ -575,7 +573,6 @@ class TrainersController extends AppController
      public function rateplan()
     {
        $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
-       $notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'], 'noti_status' => 0])->count();
        $all_trainees = $this->conn->execute('SELECT *,t.id as trainee_id,c.name as country_name,s.name as state_name,ct.name as city_name  FROM trainees as t inner join countries as c on c.id = t.trainee_country inner join states as s on s.id = t.trainee_state inner join cities as ct on ct.id = t.trainee_city where `t`.`trainer_status` = 1 ORDER BY t.id DESC ')->fetchAll('assoc');
        $trainer=$this->data['id'];
        $trainerratedetail = $this->conn->execute("SELECT *  FROM `trainer_ratemaster` where `trainer_id`=$trainer")->fetchAll('assoc');
@@ -612,7 +609,6 @@ class TrainersController extends AppController
        $this->set('chat_data', $chat_data); 
        $this->set('trainerratedetail', $trainerratedetail); 
        $this->set('all_trainees', $all_trainees);
-       $this->set('notifications', $notifications);
        $this->set('profile_details', $profile_details); 
     }
 
@@ -855,7 +851,6 @@ class TrainersController extends AppController
     public function messages()
     {
        $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
-       $notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'], 'noti_status' => 0])->count();
        $all_trainees = $this->conn->execute('SELECT *,t.id as trainee_id,c.name as country_name,s.name as state_name,ct.name as city_name  FROM trainees as t inner join countries as c on c.id = t.trainee_country inner join states as s on s.id = t.trainee_state inner join cities as ct on ct.id = t.trainee_city where `t`.`trainee_status` = 1 ORDER BY t.id DESC ')->fetchAll('assoc');
        if(!empty($all_trainees))
        {
@@ -885,7 +880,6 @@ class TrainersController extends AppController
         }
        $this->set('chat_data', $chat_data); 
        $this->set('all_trainees', $all_trainees);
-       $this->set('notifications', $notifications);
        $this->set('profile_details', $profile_details); 
     }
 
@@ -952,8 +946,6 @@ class TrainersController extends AppController
        $id = $this->data['id'];
        $trainee_data = $this->conn->execute('SELECT *,t.id as trainee_id,c.name as country_name,s.name as state_name,ct.name as city_name  FROM  trainees as t  inner join countries as c on c.id = t.trainee_country inner join states as s on s.id = t.trainee_state inner join cities as ct on ct.id = t.trainee_city where `t`.`trainee_status` = 1 ORDER BY t.id DESC ')->fetchAll('assoc');
        $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
-       $notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'], 'noti_status' => 0])->count();
-       $this->set('notifications', $notifications);
        $this->set('trainee_data', $trainee_data);  
        $this->set('user_id', $id);  
        $this->set('profile_details', $profile_details); 
@@ -963,9 +955,14 @@ class TrainersController extends AppController
     {
        $id = $this->data['id'];
        $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
-       $notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'], 'noti_status' => 0])->count();
-       $this->set('notifications', $notifications);
-       $this->set('noti_data', array());  
+       $noti_data   = $this->conn->execute('SELECT *,`n`.`id` AS `noti_id` FROM `notifications` AS `n` INNER JOIN `trainees` AS `t` ON `t`.`user_id` = `n`.`noti_sender_id` WHERE `n`.`noti_receiver_id` = '.$this->data['id'].' ORDER BY `n`.`id` DESC ')->fetchAll('assoc');
+       $noti_final_arr = array();
+        foreach ($noti_data as $user)
+         {
+          $noti_final_arr[] = $user['noti_id'];
+         }
+        array_multisort($noti_final_arr, SORT_DESC, $noti_data);
+       $this->set('noti_data', $noti_data);
        $this->set('profile_details', $profile_details); 
     }
 
@@ -1023,8 +1020,6 @@ class TrainersController extends AppController
        $gallery_img = $this->Profile_images_videos->find()->where(['piv_user_id' => $this->data['id'], 'piv_attachement_type' => 'image'])->order(['piv_id' => 'DESC'])->toArray();
        $gallery_videos = $this->Profile_images_videos->find()->where(['piv_user_id' => $this->data['id'], 'piv_attachement_type' => 'video'])->order(['piv_id' => 'DESC'])->toArray();
        $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
-       $notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'], 'noti_status' => 0])->count();
-       $this->set('notifications', $notifications);
        $this->set('profile_details', $profile_details); 
        $this->set('gallery_img', $gallery_img);
        $this->set('gallery_videos', $gallery_videos);
@@ -1335,7 +1330,11 @@ class TrainersController extends AppController
   public function reports()
     {
       $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
+      $withdraw_details = $this->Trainer_withdraw->find()->where(['trainer_id' => $this->data['id']])->toArray();
       $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
+      $custom_packages = $this->conn->execute('SELECT * FROM `custom_packages_history` AS `cp` INNER JOIN `trainees` AS `t` ON `cp`.`trainee_id` = `t`.`user_id` WHERE `cp`.`trainer_id` ='.$this->data['id'].' ORDER BY `cp`.`id` DESC')->fetchAll('assoc');
+      $this->set('withdraw_details', $withdraw_details);
+      $this->set('custom_packages', $custom_packages);
       $this->set('total_wallet_ammount', $total_wallet_ammount);
       $this->set('profile_details', $profile_details);
     }
@@ -1344,15 +1343,36 @@ class TrainersController extends AppController
   {
     if($this->request->is('post')){
         $dataArr = $this->request->data;
-        $withdrawArr = array(
+        $service_fee_details = $this->Fees->find()->where(['type' => 'Withdrawal'])->toArray();
+        if(!empty($service_fee_details)){
+            $txn_fee =  $service_fee_details[0]['txn_fee'];
+        }else{
+            $txn_fee = 0;
+        }
+        $withdraw_fees = round(($dataArr['withdraw_amount'] * $txn_fee)/100,2);
+        $final_withdraw_amount = round(($dataArr['withdraw_amount'] - $withdraw_fees),2);
+        $trainerWithdrawArr = array(
             'trainer_id'      => $this->data['id'],
-            'withdraw_amount' => $dataArr['withdraw_amount'],
-            'payment_type'    => $dataArr['payment_type'],
+            'ammount'         => $dataArr['withdraw_amount'],
+            'withdraw_payment_type' => $dataArr['payment_type'],
+            'withdraw_fees'         => $withdraw_fees,
+            'final_withdraw_amount' => $final_withdraw_amount,
+            'withdraw_status' => 0,
             'added_date'      => Time::now()
             );
-        $withdraw = $this->Withdraw_request->newEntity();
-        $withdraw = $this->Withdraw_request->patchEntity($withdraw, $withdrawArr);
-        $result = $this->Withdraw_request->save($withdraw);
+        $trainerWithdraw = $this->Trainer_withdraw->newEntity();
+        $trainerWithdraw = $this->Trainer_withdraw->patchEntity($trainerWithdraw, $trainerWithdrawArr);
+        $result = $this->Trainer_withdraw->save($trainerWithdraw);
+        $lid = $result->id;
+
+        $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
+        $total_wallet_ammount_arr = array(
+              'total_ammount' => $total_wallet_ammount[0]['total_ammount'] - $dataArr['withdraw_amount'],
+              );
+        $this->total_wallet_ammount->query()->update()->set($total_wallet_ammount_arr)->where(['user_id' => $this->data['id']])->execute();
+
+        $this->request->session()->write('sucess_alert','Your withdraw request successfully created !!');
+        return $this->redirect('/trainers/wallet');
     }else{
        return $this->redirect('/trainers');
     }

@@ -156,49 +156,17 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>sk01</td>
-                  <td>Andre Eloumou</td>
-                  <td>Charlie CrossFit</td>
-                  <td>$165.00</td>
-                  <td>31/03/2016</td>
-                </tr>
-                <tr>
-                  <td>sk01</td>
-                  <td>Andre Eloumou</td>
-                  <td>Charlie CrossFit</td>
-                  <td>$165.00</td>
-                  <td>31/03/2016</td>
-                </tr>
-                <tr>
-                  <td>sk01</td>
-                  <td>Andre Eloumou</td>
-                  <td>Charlie CrossFit</td>
-                  <td>$165.00</td>
-                  <td>31/03/2016</td>
-                </tr>
-                <tr>
-                  <td>sk01</td>
-                  <td>Andre Eloumou</td>
-                  <td>Charlie CrossFit</td>
-                  <td>$165.00</td>
-                  <td>31/03/2016</td>
-                </tr>
-                <tr>
-                  <td>sk01</td>
-                  <td>Andre Eloumou</td>
-                  <td>Charlie CrossFit</td>
-                  <td>$165.00</td>
-                  <td>31/03/2016</td>
-                </tr>
-                <tr>
-                  <td>sk01</td>
-                  <td>Andre Eloumou</td>
-                  <td>Charlie CrossFit</td>
-                  <td>$165.00</td>
-                  <td>31/03/2016</td>
-                </tr>
-              </tbody>
+                <?php $i = 1;
+                  foreach($custom_packages as $t){ ?>
+                  <tr>
+                    <td>SK<?php echo ($i >= 10) ? $i : "0".$i ?></td>                                   
+                    <td><?php echo $t['trainee_name']." ".$t['trainee_lname']; ?></td>
+                    <td><?php echo $t['package_name']; ?></td>
+                    <td>$<?php echo $t['price']; ?></td>
+                    <td><?php echo date('d F Y, h:i A', strtotime($t['created_date'])); ?></td>
+                  </tr>
+                <?php $i++; } ?>
+            </tbody>
             </table>
           </div>
         </div>
@@ -367,8 +335,8 @@
               </div>
               <div class="col-md-6 col-sm-6 text-right">
                 <ul class="list_table_icon">
-                  <li><a href="#"><i class="fa fa-file-pdf-o"></i> </a></li>
-                  <li><a href="#"> <i class="fa fa-file-excel-o"></i> </a></li>
+                  <li><a href="javascript:void(0);"><i class="fa fa-file-pdf-o"></i> </a></li>
+                  <li><a href="javascript:void(0);"> <i class="fa fa-file-excel-o"></i> </a></li>
                 </ul>
               </div>
             </div>
@@ -378,49 +346,57 @@
               <thead>
                 <tr>
                   <th>TRANS</th>
-                  <th>withdrawal date</th>
                   <th>Amount</th>
-                  <th>balance</th>
+                  <th>Withdraw Fee</th>
+                  <th>Type</th>
+                  <th>withdrawal date</th>
+                  <th>status</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>sk01</td>
-                  <td>31/03/2016</td>
-                  <td>$165.00</td>
-                  <td>$165.00</td>
-                </tr>
-                <tr>
-                  <td>sk01</td>
-                  <td>31/03/2016</td>
-                  <td>$165.00</td>
-                  <td>$165.00</td>
-                </tr>
-                <tr>
-                  <td>sk01</td>
-                  <td>31/03/2016</td>
-                  <td>$165.00</td>
-                  <td>$165.00</td>
-                </tr>
-                <tr>
-                  <td>sk01</td>
-                  <td>31/03/2016</td>
-                  <td>$165.00</td>
-                  <td>$165.00</td>
-                </tr>
-                <tr>
-                  <td>sk01</td>
-                  <td>31/03/2016</td>
-                  <td>$165.00</td>
-                  <td>$165.00</td>
-                </tr>
-                <tr>
-                  <td>sk01</td>
-                  <td>31/03/2016</td>
-                  <td>$165.00</td>
-                  <td>$165.00</td>
-                </tr>
-              </tbody>
+                <?php $i = 1;
+                  foreach($withdraw_details as $t){ ?>
+                  <tr>
+                    <td>SK<?php echo ($i >= 10) ? $i : "0".$i ?></td>                                   
+                    <td>$<?php echo $t['ammount']; ?></td>
+                    <td>$<?php echo $t['withdraw_fees']; ?></td>
+                    <td>
+                      <?php
+                        switch ($t['withdraw_payment_type']) {
+                          case '0':
+                            echo "Paypal";
+                            break;
+                          case '1':
+                            echo "Amazon";
+                            break;
+                          default:
+                            echo "Direct Payment";
+                            break;
+                        }
+                      ?>
+                    </td>
+                    <td><?php echo date('d F Y, h:i A', strtotime($t['added_date'])); ?></td>
+                    <td>
+                      <?php
+                        switch ($t['withdraw_status']) {
+                          case '0':
+                            echo "Pending";
+                            break;
+                          case '1':
+                            echo "Completed";
+                            break;
+                          case '2':
+                            echo "Failed";
+                            break;
+                          default:
+                            echo "NA";
+                            break;
+                        }
+                      ?>
+                    </td>
+                  </tr>
+                <?php $i++; } ?>
+            </tbody>
             </table>
           </div>
         </div>

@@ -91,7 +91,7 @@
                      <div class="cr_table_head">
                         <div class="row">
                            <div class="col-md-6 col-sm-6">
-                             <h2>transactions list - Andre eloumou</h2>
+                             <h2>transactions list - <?php echo $profile_details[0]['trainee_name']." ".$profile_details[0]['trainee_lname']; ?></h2>
                            </div>
                            <div class="col-md-6 col-sm-6 text-right">
                               <ul class="list_table_icon">
@@ -106,62 +106,25 @@
                             <thead >
                                 <tr>
                                     <th>TRANS</th>
-                                    <th>user</th>
-                                    <th>transaction date</th>
-                                    <th>deposit amount</th>
-                                    <th>balance</th>
-                                    <th>Transaction mode</th>
+                                    <th>transaction name</th>
+                                    <th>transaction id</th>
+                                    <th>transaction type</th>
+                                    <th>amount</th>
+                                    <th>Transaction date</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>sk01</td>
-                                    <td>Andre Eloumou</td>
-                                    <td>31/03/2016</td>
-                                    <td>$165.00</td>
-                                    <td>$165.00</td>
-                                    <td><a href="#"><img src="<?php echo $this->request->webroot; ?>images/amezon1.png"></a></td>
-                                </tr>
-                                <tr>
-                                    <td>sk01</td>
-                                    <td>Andre Eloumou</td>
-                                    <td>31/03/2016</td>
-                                    <td>$165.00</td>
-                                    <td>$165.00</td>
-                                    <td><a href="#"><img src="<?php echo $this->request->webroot; ?>images/paypal.png"></a></td>
-                                </tr>
-                                <tr>
-                                    <td>sk01</td>
-                                    <td>Andre Eloumou</td>
-                                    <td>31/03/2016</td>
-                                    <td>$165.00</td>
-                                    <td>$165.00</td>
-                                    <td><a href="#"><img src="<?php echo $this->request->webroot; ?>images/amezon1.png"></a></td>
-                                </tr>
-                                <tr>
-                                    <td>sk01</td>
-                                    <td>Andre Eloumou</td>
-                                    <td>31/03/2016</td>
-                                    <td>$165.00</td>
-                                    <td>$165.00</td>
-                                    <td><a href="#"><img src="<?php echo $this->request->webroot; ?>images/paypal.png"></a></td>
-                                </tr>
-                                 <tr>
-                                    <td>sk01</td>
-                                    <td>Andre Eloumou</td>
-                                    <td>31/03/2016</td>
-                                    <td>$165.00</td>
-                                    <td>$165.00</td>
-                                    <td><a href="#"><img src="<?php echo $this->request->webroot; ?>images/amezon1.png"></a></td>
-                                </tr>
-                                 <tr>
-                                    <td>sk01</td>
-                                    <td>Andre Eloumou</td>
-                                    <td>31/03/2016</td>
-                                    <td>$165.00</td>
-                                    <td>$165.00</td>
-                                    <td><a href="#"><img src="<?php echo $this->request->webroot; ?>images/paypal.png"></a></td>
-                                </tr>
+                                <?php $i = 1;
+                                  foreach($txns_details as $t){ ?>
+                                  <tr>
+                                    <td>SK<?php echo ($i >= 10) ? $i : "0".$i ?></td>                                   
+                                    <td><?php echo $t['txn_name']; ?></td>
+                                    <td><?php echo $t['txn_id']; ?></td>
+                                    <td><?php echo $t['txn_type']; ?></td>
+                                    <td>$<?php echo $t['ammount']; ?></td>
+                                    <td><?php echo date('d F Y, h:i A', strtotime($t['added_date'])); ?></td>
+                                  </tr>
+                                <?php $i++; } ?>
                             </tbody>
                         </table>
                      </div>

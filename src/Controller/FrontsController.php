@@ -15,6 +15,8 @@ class FrontsController extends AppController
         $this->loadComponent('Auth');
         $this->Auth->allow(['trainerProfile','ourTrainers','searchTrainer','contactus','plans','docontact','terms','learnmore','career','opportunity','becometrainer']);
         $this->data = $this->Custom->getSessionData();
+        $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
+        $this->set('notifications', $this->total_notifications);
     }
 
 	public function trainerProfile($t_id)

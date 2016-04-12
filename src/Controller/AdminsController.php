@@ -841,6 +841,12 @@ class AdminsController extends AppController
         $this->set('fees',$fees);
     }
 
+    public function withdraws()
+    {
+        $withdraws = $this->conn->execute(' SELECT *,`tw`.`id` AS `withdraw_id` FROM `trainer_withdraw` AS `tw` INNER JOIN `trainers` AS `t` ON `tw`.`trainer_id` = `t`.`user_id` ORDER BY `tw`.`id` DESC ')->fetchAll('assoc');
+        $this->set('withdraws',$withdraws);
+    }
+
     public function manageFees()
     {
         $data = $this->request->data();
@@ -850,6 +856,69 @@ class AdminsController extends AppController
         $this->Flash->success('Fee Successfully Updated', ['key' => 'edit']);
         return $this->redirect('/admins/fees');
     }
+
+    public function paypalWithdraw()
+    {
+       $response = $_REQUEST;
+       $wid = base64_decode($response['custom']);
+       $txnid = $response['txn_id'];
+       $withdraw_details = $this->Trainer_withdraw->find()->where(['id' => $wid])->toArray();
+       if($response['payment_status'] == "Completed"){
+        $data = array('withdraw_status' => 1,'withdraw_txn_id' => $txnid);
+        $this->trainer_withdraw->query()->update()->set($data)->where(['id' => $wid])->execute();
+        $notificationArr = array(
+                'noti_type'          => 'Transfer Ammount Success',
+                'parent_id'          => $wid,
+                'noti_sender_type'   => 'admin',
+                'noti_sender_id'     => $this->data['id'],
+                'noti_receiver_type' => 'trainer',
+                'noti_receiver_id'   => $withdraw_details[0]['trainer_id'],
+                'noti_message'       => 'Congratulation your $'.$withdraw_details[0]['ammount']. ' amount successfully transfered in your account',
+                'noti_added_date'    => Time::now()
+            );
+        $notifications = $this->Notifications->newEntity();
+        $notifications = $this->Notifications->patchEntity($notifications, $notificationArr);
+        $result = $this->Notifications->save($notifications);
+        $this->Flash->success('Payment Successfully Transfered !!', ['key' => 'edit']);
+       }
+       else if($response['payment_status'] == "Failed"){
+        $data = array('withdraw_status' => 2,'withdraw_txn_id' => $txnid);
+        $this->trainer_withdraw->query()->update()->set($data)->where(['id' => $wid])->execute();
+        $notificationArr = array(
+                'noti_type'          => 'Transfer Ammount Failed',
+                'parent_id'          => $wid,
+                'noti_sender_type'   => 'admin',
+                'noti_sender_id'     => $this->data['id'],
+                'noti_receiver_type' => 'trainer',
+                'noti_receiver_id'   => $withdraw_details[0]['trainer_id'],
+                'noti_message'       => 'Sorry your $'.$withdraw_details[0]['ammount']. ' amount withdraw request has been failed please try again !!',
+                'noti_added_date'    => Time::now()
+            );
+        $notifications = $this->Notifications->newEntity();
+        $notifications = $this->Notifications->patchEntity($notifications, $notificationArr);
+        $result = $this->Notifications->save($notifications);
+        $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $withdraw_details[0]['trainer_id']])->toArray();
+        $total_wallet_ammount_arr = array(
+              'total_ammount' => $total_wallet_ammount[0]['total_ammount'] + $withdraw_details[0]['ammount'],
+              );
+        $this->total_wallet_ammount->query()->update()->set($total_wallet_ammount_arr)->where(['user_id' => $withdraw_details[0]['trainer_id']])->execute();
+        $this->Flash->error('Payment Failed !!', ['key' => 'edit']);
+       }
+       return $this->redirect('/admins/withdraws');
+    }
+
+    public function paypalWithdrawCancel()
+    {
+       $this->Flash->error('Payment Cancelled !!', ['key' => 'edit']);
+       return $this->redirect('/admins/withdraws');
+    }
+
+    public function paypalWithdrawNotify()
+    {
+       echo "<pre>";
+       print_r($_REQUEST);die;
+    }
+
 
    
 }

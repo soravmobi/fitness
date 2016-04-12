@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 11, 2016 at 08:37 AM
+-- Generation Time: Apr 12, 2016 at 05:15 PM
 -- Server version: 5.6.25
 -- PHP Version: 5.6.11
 
@@ -156,19 +156,16 @@ CREATE TABLE IF NOT EXISTS `appointments` (
   `trainee_status` smallint(5) NOT NULL COMMENT '0 = pending, 1 = approve, 2 = decline',
   `ap_date` date NOT NULL,
   `created_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `appointments`
 --
 
 INSERT INTO `appointments` (`id`, `trainee_id`, `trainer_id`, `session_data`, `session_price`, `service_fee`, `total_price`, `trainer_message`, `coupon_id`, `final_price`, `wallet_amount`, `payment_gateway_amount`, `special_offer_price`, `special_offer_modify_date`, `trainer_status`, `trainee_status`, `ap_date`, `created_date`) VALUES
-(28, 51, 62, 'a:3:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-05";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:2;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-05";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:3;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-05";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 2900.01, 87, 2987.01, 'I Agree To The Moderate Cancellation Policy. Terms Of Services, And The Trainer Refund Policy. I Also Agree To Pay The Total Amount Shown, Which Includes Service Fees.', 9, 2688.31, 2688.31, 0, 0, '0000-00-00 00:00:00', 1, 1, '2016-04-05', '2016-04-08 05:36:52'),
-(30, 51, 62, 'a:3:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-05";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:2;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-05";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:3;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-05";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 2900.01, 87, 2987.01, '', 0, 2987.01, 2311.69, 675.32, 0, '0000-00-00 00:00:00', 1, 1, '2016-04-05', '2016-04-07 06:36:52'),
-(32, 51, 62, 'a:10:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-05";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:2;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-05";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:3;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-05";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:4;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-05";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:5;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-05";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:6;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-05";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:7;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-05";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:8;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-05";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:9;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-05";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:10;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-05";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 9700, 291, 9991, 'Help Rahul Goyal Plan for your Sessions\r\nShare details about yourself, your preferences, and what you love about Rahul Goyal profile', 11, 8991.9, 0, 8991.9, 0, '0000-00-00 00:00:00', 1, 1, '2016-04-05', '2016-04-08 07:36:52'),
-(33, 51, 62, 'a:3:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-06";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:2;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-06";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:3;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-06";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 2900.01, 87, 2987.01, '', 0, 2987.01, 0, 0, 0, '0000-00-00 00:00:00', 2, 2, '2016-04-06', '2016-04-08 03:22:15'),
-(34, 51, 62, 'a:3:{i:1;a:7:{s:5:"notes";s:7:"notes 1";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:21:"22.7684301,75.8957024";s:16:"location_address";s:42:"Vijay Nagar, Indore, Madhya Pradesh, India";s:14:"modified_dates";s:10:"2016-04-15";s:14:"modified_times";s:17:"02:00 AM-03:00 AM";}i:2;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"1";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-20";s:14:"modified_times";s:17:"03:00 AM-04:00 AM";}i:3;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:28:"22.5524372,75.75652730000002";s:16:"location_address";s:27:"Mhow, Madhya Pradesh, India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"03:00 AM-04:00 AM";}}', 2900.01, 87, 2987.01, 'Hello', 0, 2987.01, 2987.01, 0, 0, '0000-00-00 00:00:00', 0, 0, '2016-04-08', '2016-04-08 11:23:37'),
-(35, 51, 62, 'a:3:{i:1;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-15";s:14:"modified_times";s:17:"07:00 AM-08:00 AM";s:9:"locations";s:28:"22.6918606,75.86683029999995";s:5:"notes";s:11:"<pre class=";s:6:"status";s:1:"0";s:16:"location_address";s:84:"Bhavarkuan, Mechanic Nagar, Vishnu Puri Colony, Indore, Madhya Pradesh 452014, India";}i:2;a:7:{s:10:"preference";s:1:"1";s:14:"modified_dates";s:10:"2016-04-20";s:14:"modified_times";s:17:"10:00 PM-11:00 PM";s:9:"locations";s:0:"";s:5:"notes";s:11:"<pre class=";s:6:"status";s:1:"0";s:16:"location_address";s:0:"";}i:3;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-28";s:14:"modified_times";s:17:"09:00 AM-10:00 AM";s:9:"locations";s:21:"22.6363845,75.8106927";s:5:"notes";s:11:"<pre class=";s:6:"status";s:1:"0";s:16:"location_address";s:41:"Rau, Indore, Madhya Pradesh 453331, India";}}', 2900.01, 87, 2987.01, 'Share details about yourself, your preferences, and what you love about Rahul Goyal profile', 0, 2987.01, 2987.01, 0, 500, '2016-04-10 10:27:40', 0, 0, '2016-04-10', '2016-04-10 04:22:33');
+(36, 51, 62, 'a:3:{i:1;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}i:2;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}i:3;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}}', 2900.01, 87, 2987.01, 'Share details about yourself, your preferences, and what you love about Rahul Goyal profile', 6, 2688.31, 2688.31, 0, 2000, '2016-04-11 11:01:13', 1, 1, '2016-04-11', '2016-04-11 10:53:15'),
+(37, 51, 62, 'a:1:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 950, 28.5, 978.5, 'ffdffdfd', 0, 978.5, 978.5, 0, 0, '0000-00-00 00:00:00', 2, 2, '2016-04-11', '2016-04-11 10:54:56'),
+(38, 51, 62, 'a:3:{i:1;a:7:{s:10:"preference";s:0:"";s:14:"modified_dates";s:0:"";s:14:"modified_times";s:17:"01:00 PM-02:00 PM";s:9:"locations";s:21:"16.5061743,80.6480153";s:5:"notes";s:7:"ewewewe";s:6:"status";s:1:"0";s:16:"location_address";s:40:"Vijayawada, Andhra Pradesh 520001, India";}i:2;a:7:{s:10:"preference";s:1:"1";s:14:"modified_dates";s:10:"2016-05-20";s:14:"modified_times";s:17:"12:00 PM-01:00 PM";s:9:"locations";s:0:"";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:0:"";}i:3;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:11:"ewewewewewe";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}}', 2900.01, 87, 2987.01, 'dwwdeweeweewewewww', 0, 2987.01, 2987.01, 0, 2500, '2016-04-11 11:52:49', 1, 1, '2016-04-11', '2016-04-11 11:50:25');
 
 -- --------------------------------------------------------
 
@@ -367,8 +364,8 @@ CREATE TABLE IF NOT EXISTS `chat_session` (
 --
 
 INSERT INTO `chat_session` (`id`, `user_id`, `session_id`, `token_id`, `status`, `added_date`, `modify_date`) VALUES
-(5, 62, '1_MX40NTU1MDE5Mn5-MTQ2MDI5NTE3OTkyMn5IanllWG43dVF5MjdKQmd1NVVsVWE2Tnd-fg', 'T1==cGFydG5lcl9pZD00NTU1MDE5MiZzaWc9YWQ1NDIwZDRmODRiOWU2MTdiNzY2MTc4Njc2YWQwNGUxOWFhZDI1MTpzZXNzaW9uX2lkPTFfTVg0ME5UVTFNREU1TW41LU1UUTJNREk1TlRFM09Ua3lNbjVJYW5sbFdHNDNkVkY1TWpkS1FtZDFOVlZzVldFMlRuZC1mZyZjcmVhdGVfdGltZT0xNDYwMjk1MTgwJnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NjAyOTUxODAuNDMwODE2MDMyMDgyNDg=', 0, '2016-04-10 13:33:00', '2016-04-10 13:33:00'),
-(6, 51, '1_MX40NTU1MDE5Mn5-MTQ2MDI4NDExMjczMn5Ec2hiUzZHbzNVWEQxd2ljN2ZWclR5WC9-fg', 'T1==cGFydG5lcl9pZD00NTU1MDE5MiZzaWc9MDIxNjhhYTljOWUyMTQ1Mjg5NDk2NzVkMmIyMGZkNTg3MzU1Nzk1MDpzZXNzaW9uX2lkPTFfTVg0ME5UVTFNREU1TW41LU1UUTJNREk0TkRFeE1qY3pNbjVFYzJoaVV6Wkhiek5WV0VReGQybGpOMlpXY2xSNVdDOS1mZyZjcmVhdGVfdGltZT0xNDYwMjg0MTEzJnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NjAyODQxMTMuMDgyOTEwODgwNzk3NjI=', 0, '2016-04-10 10:28:33', '2016-04-10 10:28:33'),
+(5, 62, '2_MX40NTU1MDE5Mn5-MTQ2MDQ3MjA5MTIwOH5iZFRKOGp0Kzh3VjRYVjBpODVDMlBYdUV-fg', 'T1==cGFydG5lcl9pZD00NTU1MDE5MiZzaWc9ZGU4ZjRlOWM5YWVhMGUxOTA3NWE5YjQyYjliOWNhMmIzYzgwYjk2YjpzZXNzaW9uX2lkPTJfTVg0ME5UVTFNREU1TW41LU1UUTJNRFEzTWpBNU1USXdPSDVpWkZSS09HcDBLemgzVmpSWVZqQnBPRFZETWxCWWRVVi1mZyZjcmVhdGVfdGltZT0xNDYwNDcyMDkxJnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NjA0NzIwOTEuMzgyNjQyMDE1Mjk4', 0, '2016-04-12 14:41:31', '2016-04-12 14:41:31'),
+(6, 51, '1_MX40NTU1MDE5Mn5-MTQ2MDQ3MzMzMDI2Mn5Kdm03bnRNUUFrL09yelU0bVUrbEpmN3h-fg', 'T1==cGFydG5lcl9pZD00NTU1MDE5MiZzaWc9MDc3NDE3MjdhNjY2NGEyMzgzMDA5MGJmYTJhZDUxYjQ5ZDlkZTlkYTpzZXNzaW9uX2lkPTFfTVg0ME5UVTFNREU1TW41LU1UUTJNRFEzTXpNek1ESTJNbjVLZG0wM2JuUk5VVUZyTDA5eWVsVTBiVlVyYkVwbU4zaC1mZyZjcmVhdGVfdGltZT0xNDYwNDczMzMwJnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NjA0NzMzMzAuNDUyMTc1NDI4NTgyNA==', 0, '2016-04-12 15:02:10', '2016-04-12 15:02:10'),
 (7, 53, '1_MX40NTQ0MTkwMn5-MTQ1MDc4Mjg4NDQxNn42TFNibFlEUW5IMklmUzF6QUhQeTZHdzd-fg', 'T1==cGFydG5lcl9pZD00NTQ0MTkwMiZzaWc9ODY3ZjkyNzc3OTg4NTkxY2MwZTljN2Y5MjVmMWU0OTVlNGU2YmQwMDpzZXNzaW9uX2lkPTFfTVg0ME5UUTBNVGt3TW41LU1UUTFNRGM0TWpnNE5EUXhObjQyVEZOaWJGbEVVVzVJTWtsbVV6RjZRVWhRZVRaSGR6ZC1mZyZjcmVhdGVfdGltZT0xNDUwNzgyODg0JnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NTA3ODI4ODQuODM4MjExMDcwOTQyNzU=', 0, '2015-12-22 11:14:44', '2015-12-22 11:14:44'),
 (8, 63, '2_MX40NTQwOTgwMn5-MTQ0ODM1NjA1NDQyNH5ORXo4YjBvUUpobjM0c21namFtTmVsdll-fg', 'T1==cGFydG5lcl9pZD00NTQwOTgwMiZzaWc9ZTMzZDMwNDg0NDQ4OTliNGNmMWY0MzVjNGI0NGYzMzJmYmIxMjgwNzpzZXNzaW9uX2lkPTJfTVg0ME5UUXdPVGd3TW41LU1UUTBPRE0xTmpBMU5EUXlOSDVPUlhvNFlqQnZVVXBvYmpNMGMyMW5hbUZ0VG1Wc2RsbC1mZyZjcmVhdGVfdGltZT0xNDQ4MzU2MDU0JnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NDgzNTYwNTQuNjc3MzU0ODcxNTkw', 0, '2015-11-24 09:07:34', '2015-11-24 09:07:34'),
 (9, 64, '1_MX40NTQwOTgwMn5-MTQ0ODM1NjI3NjY0MH5nRTZYTGtWOFVpbUMyR1VMTDRlbUFlK2h-fg', 'T1==cGFydG5lcl9pZD00NTQwOTgwMiZzaWc9ODI3ZWM3NTkzNjU4MWVhNzdjMDk2MGM5ZDAzNTIyNjI0MWI0YmJjNTpzZXNzaW9uX2lkPTFfTVg0ME5UUXdPVGd3TW41LU1UUTBPRE0xTmpJM05qWTBNSDVuUlRaWVRHdFdPRlZwYlVNeVIxVk1URFJsYlVGbEsyaC1mZyZjcmVhdGVfdGltZT0xNDQ4MzU2Mjc2JnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NDgzNTYyNzYuODg1MzEwNzM5NTUy', 0, '2015-11-24 09:11:16', '2015-11-24 09:11:16'),
@@ -48302,19 +48299,15 @@ CREATE TABLE IF NOT EXISTS `custom_packages_history` (
   `payment_gateway_amount` double NOT NULL,
   `created_date` datetime NOT NULL,
   `modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `custom_packages_history`
 --
 
 INSERT INTO `custom_packages_history` (`id`, `trainee_id`, `trainer_id`, `package_name`, `package_description`, `price`, `service_fee`, `total_price`, `coupon_id`, `final_price`, `trainer_message`, `wallet_amount`, `payment_gateway_amount`, `created_date`, `modify_date`) VALUES
-(1, 51, 62, 'Premium Package', 'Meal Plans, Nutrition Guide, T-shirt, Work-out Program', 400, 12, 412, 12, 370.8, 'Share details about yourself, your preferences, and what you love about Rahul Goyal profile', 370.8, 0, '0000-00-00 00:00:00', '2016-04-06 08:45:37'),
-(2, 51, 62, 'Silver Package', 'Meal Plans, Nutrition Guide, T-shirt', 200, 6, 206, 13, 185.4, 'Share details about yourself, your preferences, and what you love about Rahul Goyal profile', 185.4, 0, '0000-00-00 00:00:00', '2016-04-06 08:46:11'),
-(3, 51, 62, 'Premium Package', 'Meal Plans, Nutrition Guide, T-shirt, Work-out Program', 400, 12, 412, 14, 370.8, 'Share details about yourself, your preferences, and what you love about Rahul Goyal profile', 370.8, 0, '0000-00-00 00:00:00', '2016-04-08 07:02:44'),
-(4, 51, 62, 'Silver Package', 'Meal Plans, Nutrition Guide, T-shirt', 200, 6, 206, 15, 185.4, 'dsdsdsdsds', 185.4, 0, '0000-00-00 00:00:00', '2016-04-08 07:05:53'),
-(5, 51, 62, 'Premium Package', 'Meal Plans, Nutrition Guide, T-shirt, Work-out Program', 400, 12, 412, 0, 412, '', 0, 412, '0000-00-00 00:00:00', '2016-04-08 13:16:16'),
-(6, 51, 62, 'Silver Package', 'Meal Plans, Nutrition Guide, T-shirt', 200, 6, 206, 0, 206, '', 206, 0, '0000-00-00 00:00:00', '2016-04-10 10:50:40');
+(14, 51, 62, 'Premium Package', 'Meal Plans, Nutrition Guide, T-shirt, Work-out Program', 400, 12, 412, 5, 370.8, 'Share details about yourself, your preferences, and what you love about Rahul Goyal profile', 370.8, 0, '0000-00-00 00:00:00', '2016-04-12 14:10:04'),
+(15, 51, 62, 'Premium Package', 'Meal Plans, Nutrition Guide, T-shirt, Work-out Program', 400, 12, 412, 7, 370.8, 'rerererere', 370.8, 0, '0000-00-00 00:00:00', '2016-04-11 11:45:54');
 
 -- --------------------------------------------------------
 
@@ -48332,7 +48325,7 @@ CREATE TABLE IF NOT EXISTS `documents` (
   `status` int(11) NOT NULL,
   `added_date` datetime NOT NULL,
   `modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `documents`
@@ -48347,7 +48340,15 @@ INSERT INTO `documents` (`id`, `document_name`, `document_file`, `document_type`
 (17, '', '56780e4711bae.png', 'resume', 78, 0, 0, '2015-12-21 14:35:51', '2015-12-21 14:35:51'),
 (18, 'u887', '56780e4725978.png', 'certifications', 78, 0, 0, '2015-12-21 14:35:51', '2015-12-21 14:35:51'),
 (19, '', '56780e8293cd4.png', 'resume', 79, 0, 0, '2015-12-21 14:36:50', '2015-12-21 14:36:50'),
-(20, '6', '56780e82a03a2.png', 'certifications', 79, 0, 0, '2015-12-21 14:36:50', '2015-12-21 14:36:50');
+(20, '6', '56780e82a03a2.png', 'certifications', 79, 0, 0, '2015-12-21 14:36:50', '2015-12-21 14:36:50'),
+(21, '', '', 'resume', 80, 0, 0, '2016-04-11 13:55:22', '2016-04-11 13:55:22'),
+(22, 'dssdsdsdsddsdd', '', 'certifications', 80, 0, 0, '2016-04-11 13:55:22', '2016-04-11 13:55:22'),
+(23, '', '', 'resume', 82, 0, 0, '2016-04-11 13:58:48', '2016-04-11 13:58:48'),
+(24, 'w22211', '', 'certifications', 82, 0, 0, '2016-04-11 13:58:48', '2016-04-11 13:58:48'),
+(25, '', '', 'resume', 83, 0, 0, '2016-04-11 14:00:46', '2016-04-11 14:00:46'),
+(26, 'fddfdfffddfd', '', 'certifications', 83, 0, 0, '2016-04-11 14:00:46', '2016-04-11 14:00:46'),
+(27, '', '', 'resume', 84, 0, 0, '2016-04-11 14:18:17', '2016-04-11 14:18:17'),
+(28, '21221', '', 'certifications', 84, 0, 0, '2016-04-11 14:18:17', '2016-04-11 14:18:17');
 
 -- --------------------------------------------------------
 
@@ -48531,7 +48532,7 @@ INSERT INTO `meal_plans` (`id`, `trainer_id`, `trainee_id`, `meal_plan`, `sunday
 
 CREATE TABLE IF NOT EXISTS `notifications` (
   `id` int(11) NOT NULL,
-  `noti_type` varchar(20) NOT NULL,
+  `noti_type` varchar(200) NOT NULL,
   `parent_id` int(11) NOT NULL,
   `noti_sender_type` varchar(20) NOT NULL,
   `noti_sender_id` int(11) NOT NULL,
@@ -48542,27 +48543,26 @@ CREATE TABLE IF NOT EXISTS `notifications` (
   `noti_status` int(11) NOT NULL COMMENT '0 = unread, 1 = read',
   `noti_added_date` datetime NOT NULL,
   `noti_modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `notifications`
 --
 
 INSERT INTO `notifications` (`id`, `noti_type`, `parent_id`, `noti_sender_type`, `noti_sender_id`, `noti_receiver_type`, `noti_receiver_id`, `noti_message`, `parent_id_status`, `noti_status`, `noti_added_date`, `noti_modify_date`) VALUES
-(74, 'Rate Plans', 28, 'trainee', 51, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-05 15:37:04', '2016-04-05 15:37:04'),
-(76, 'Rate Plans', 30, 'trainee', 51, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-05 15:42:46', '2016-04-05 15:42:46'),
-(77, 'Rate Plans', 32, 'trainee', 51, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-05 15:44:28', '2016-04-05 15:44:28'),
-(78, 'Custom Packages', 1, 'trainee', 51, 'trainer', 62, 'You have new request of purchased custom packages', 0, 0, '2016-04-06 08:43:01', '2016-04-06 08:43:01'),
-(79, 'Custom Packages', 2, 'trainee', 51, 'trainer', 62, 'You have new request of purchased custom packages', 0, 0, '2016-04-06 08:46:12', '2016-04-06 08:46:12'),
-(80, 'Custom Packages', 3, 'trainee', 51, 'trainer', 62, 'You have new request of purchased custom packages', 0, 0, '2016-04-08 07:02:44', '2016-04-08 07:02:45'),
-(81, 'Custom Packages', 4, 'trainee', 51, 'trainer', 62, 'You have new request of purchased custom packages', 0, 0, '2016-04-08 07:05:54', '2016-04-08 07:05:54'),
-(84, 'Decline Appointment', 33, 'trainer', 62, 'trainee', 51, 'your appoinment has been declined', 2, 0, '2016-04-08 08:40:49', '2016-04-10 10:49:10'),
-(85, 'Rate Plans', 34, 'trainee', 51, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-08 11:23:53', '2016-04-08 11:23:53'),
-(86, 'Rate Plans', 35, 'trainee', 51, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-08 11:43:48', '2016-04-08 11:43:49'),
-(87, 'Custom Packages', 5, 'trainee', 51, 'trainer', 62, 'You have new request of purchased custom packages', 0, 0, '2016-04-08 13:16:16', '2016-04-08 13:16:16'),
-(88, 'Make Special Offer', 35, 'trainer', 62, 'trainee', 51, 'Your personal trainer have make a new request for ', 3, 0, '2016-04-10 10:24:45', '2016-04-10 10:49:13'),
-(89, 'Make Special Offer', 35, 'trainer', 62, 'trainee', 51, 'Your personal trainer have make a new request for ', 3, 0, '2016-04-10 10:27:40', '2016-04-10 10:49:14'),
-(90, 'Custom Packages', 6, 'trainee', 51, 'trainer', 62, 'You have new request of purchased custom packages', 1, 0, '2016-04-10 10:50:40', '2016-04-10 10:50:40');
+(8, 'Custom Packages', 14, 'trainee', 51, 'trainer', 62, 'You have new request of purchased custom packages', 1, 0, '2016-04-11 10:50:42', '2016-04-11 10:50:42'),
+(9, 'Rate Plans', 36, 'trainee', 51, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-11 10:53:30', '2016-04-11 10:53:30'),
+(10, 'Rate Plans', 37, 'trainee', 51, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-11 10:55:08', '2016-04-11 10:55:08'),
+(11, 'Approve Appointment', 37, 'trainer', 62, 'trainee', 51, 'has approved your appoinment', 1, 0, '2016-04-11 10:56:31', '2016-04-11 10:56:31'),
+(12, 'Decline Appointment', 37, 'trainer', 62, 'trainee', 51, 'has declined your appoinment', 2, 0, '2016-04-11 10:59:16', '2016-04-11 10:59:16'),
+(13, 'Make Special Offer', 36, 'trainer', 62, 'trainee', 51, 'have make a request for special offer', 3, 0, '2016-04-11 11:01:13', '2016-04-11 11:01:13'),
+(14, 'Approve Special Offe', 36, 'trainee', 51, 'trainer', 62, 'has approved special offer request', 1, 0, '2016-04-11 11:03:18', '2016-04-11 11:03:18'),
+(15, 'Custom Packages', 15, 'trainee', 51, 'trainer', 62, 'You have new request of purchased custom packages', 1, 0, '2016-04-11 11:45:54', '2016-04-11 11:45:54'),
+(16, 'Rate Plans', 38, 'trainee', 51, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-11 11:51:02', '2016-04-11 11:51:02'),
+(17, 'Make Special Offer', 38, 'trainer', 62, 'trainee', 51, 'have make a request for special offer', 3, 0, '2016-04-11 11:52:49', '2016-04-11 11:52:49'),
+(18, 'Approve Special Offe', 38, 'trainee', 51, 'trainer', 62, 'has approved special offer request', 1, 0, '2016-04-11 11:53:34', '2016-04-11 11:53:34'),
+(19, 'Transfer Ammount Success', 3, 'admin', 48, 'trainer', 62, 'Congratulation your $1000amount successfully transfered in your account', 0, 0, '2016-04-12 13:43:37', '2016-04-12 13:43:37'),
+(20, 'Transfer Ammount Success', 4, 'admin', 48, 'trainer', 62, 'Congratulation your $500 amount successfully transfered in your account', 0, 0, '2016-04-12 13:48:49', '2016-04-12 13:48:49');
 
 -- --------------------------------------------------------
 
@@ -48580,24 +48580,18 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `order_status` smallint(6) NOT NULL COMMENT '0 = completed, 1 = pending, 2 = failed',
   `created_date` datetime NOT NULL,
   `modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `orders`
 --
 
 INSERT INTO `orders` (`order_id`, `trainee_id`, `app_id`, `order_amount`, `order_no`, `order_type`, `order_status`, `created_date`, `modify_date`) VALUES
-(8, 51, 28, 2688.31, 'SASK#0', 0, 0, '2016-04-05 15:37:04', '2016-04-05 15:37:04'),
-(10, 51, 30, 2987.01, 'SASK#1', 0, 0, '2016-04-05 15:42:46', '2016-04-05 15:42:46'),
-(11, 51, 32, 8991.9, 'SASK#2', 0, 0, '2016-04-05 15:44:28', '2016-04-05 15:44:28'),
-(12, 51, 1, 370.8, 'SASK#3', 1, 0, '2016-04-06 08:43:01', '2016-04-06 08:43:01'),
-(13, 51, 2, 185.4, 'SASK#4', 1, 0, '2016-04-06 08:46:12', '2016-04-06 08:46:12'),
-(14, 51, 3, 370.8, 'SASK#5', 1, 0, '2016-04-08 07:02:44', '2016-04-08 07:02:44'),
-(15, 51, 4, 185.4, 'SASK#6', 1, 0, '2016-04-08 07:05:54', '2016-04-08 07:05:54'),
-(16, 51, 34, 2987.01, 'SASK#7', 0, 0, '2016-04-08 11:23:52', '2016-04-08 11:23:52'),
-(17, 51, 35, 2987.01, 'SASK#8', 0, 0, '2016-04-08 11:43:48', '2016-04-08 11:43:48'),
-(18, 51, 5, 412, 'SASK#9', 1, 0, '2016-04-08 13:16:16', '2016-04-08 13:16:16'),
-(19, 51, 6, 206, 'SASK#10', 1, 0, '2016-04-10 10:50:40', '2016-04-10 10:50:40');
+(8, 51, 14, 370.8, 'SASK#0', 1, 0, '2016-04-11 10:50:42', '2016-04-11 10:50:42'),
+(9, 51, 36, 2688.31, 'SASK#1', 0, 0, '2016-04-11 10:53:29', '2016-04-11 10:53:29'),
+(10, 51, 37, 978.5, 'SASK#2', 0, 0, '2016-04-11 10:55:08', '2016-04-11 10:55:08'),
+(11, 51, 15, 370.8, 'SASK#3', 1, 0, '2016-04-11 11:45:54', '2016-04-11 11:45:54'),
+(12, 51, 38, 2987.01, 'SASK#4', 0, 0, '2016-04-11 11:51:02', '2016-04-11 11:51:02');
 
 -- --------------------------------------------------------
 
@@ -52932,15 +52926,15 @@ CREATE TABLE IF NOT EXISTS `total_wallet_ammount` (
   `status` int(11) NOT NULL,
   `added_date` datetime NOT NULL,
   `modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `total_wallet_ammount`
 --
 
 INSERT INTO `total_wallet_ammount` (`id`, `user_id`, `user_type`, `total_ammount`, `status`, `added_date`, `modify_date`) VALUES
-(1, 51, 'trainee', 1250.79, 0, '2015-11-18 13:55:40', '2016-04-10 13:21:10'),
-(2, 62, 'trainer', 960, 0, '2016-04-08 07:02:45', '2016-04-10 13:21:14');
+(1, 51, 'trainee', 4758.4, 0, '2015-11-18 13:55:40', '2016-04-11 11:53:34'),
+(4, 62, 'trainer', 2693.28, 0, '2016-04-11 10:50:42', '2016-04-12 13:47:43');
 
 -- --------------------------------------------------------
 
@@ -53058,26 +53052,21 @@ CREATE TABLE IF NOT EXISTS `trainee_txns` (
   `status` varchar(20) NOT NULL,
   `added_date` datetime NOT NULL,
   `modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `trainee_txns`
 --
 
 INSERT INTO `trainee_txns` (`id`, `trainee_id`, `txn_name`, `payment_type`, `txn_type`, `txn_id`, `ammount`, `status`, `added_date`, `modify_date`) VALUES
-(20, 51, 'Purchase Session', 'Wallet', 'Debit', '51-5703dba09ef01', 2688.31, 'Approved', '2016-04-05 15:37:04', '2016-04-05 15:37:04'),
-(22, 51, 'Purchase Session', 'Paypal + Wallet', 'Debit', 'PAY-16R433401V824611DK4B5ZUQ', 2987.01, 'approved', '2016-04-05 15:42:46', '2016-04-05 15:42:46'),
-(23, 51, 'Purchase Session', 'Paypal', 'Debit', 'PAY-2C841946VB929125LK4B52QI', 8991.9, 'approved', '2016-04-05 15:44:28', '2016-04-05 15:44:28'),
-(24, 51, 'Purchase Custom Packages', 'Wallet', 'Debit', '51-5704cc14c7438', 370.8, 'Approved', '2016-04-06 08:43:01', '2016-04-06 08:43:01'),
-(25, 51, 'Purchase Custom Packages', 'Wallet', 'Debit', '51-5704ccd382678', 185.4, 'Approved', '2016-04-06 08:46:11', '2016-04-06 08:46:11'),
-(26, 51, 'Purchase Custom Packages', 'Wallet', 'Debit', '51-57075794babd5', 370.8, 'Approved', '2016-04-08 07:02:44', '2016-04-08 07:02:44'),
-(27, 51, 'Purchase Custom Packages', 'Wallet', 'Debit', '51-570758517b491', 185.4, 'Approved', '2016-04-08 07:05:53', '2016-04-08 07:05:53'),
-(29, 51, 'Decline Appoinment', 'Wallet', 'Credit', '51-57076e91b5f29', 2987.01, 'Approved', '2016-04-08 08:40:49', '2016-04-08 08:40:49'),
-(30, 51, 'Purchase Session', 'Wallet', 'Debit', '51-570794c8d16f5', 2987.01, 'Approved', '2016-04-08 11:23:52', '2016-04-08 11:23:52'),
-(31, 51, 'Purchase Session', 'Wallet', 'Debit', '51-57079974c4df3', 2987.01, 'Approved', '2016-04-08 11:43:48', '2016-04-08 11:43:48'),
-(32, 51, 'Purchase Custom Packages', 'Paypal', 'Debit', 'PAY-0VU94495YD576283MK4D254I', 412, 'approved', '2016-04-08 13:16:16', '2016-04-08 13:16:16'),
-(33, 51, 'Purchase Custom Packages', 'Wallet', 'Debit', '51-570a30007b00c', 206, 'Approved', '2016-04-10 10:50:40', '2016-04-10 10:50:40'),
-(34, 51, 'Decline Appoinment', 'Wallet', 'Credit', '51-570a4afa3ca64', 2987.01, 'Approved', '2016-04-10 12:45:46', '2016-04-10 12:45:46');
+(8, 51, 'Purchase Custom Packages', 'Wallet', 'Debit', '51-570b818287091', 370.8, 'Approved', '2016-04-11 10:50:42', '2016-04-11 10:50:42'),
+(9, 51, 'Purchase Session', 'Wallet', 'Debit', '51-570b8229bf3b9', 2688.31, 'Approved', '2016-04-11 10:53:29', '2016-04-11 10:53:29'),
+(10, 51, 'Purchase Session', 'Wallet', 'Debit', '51-570b828c403b8', 978.5, 'Approved', '2016-04-11 10:55:08', '2016-04-11 10:55:08'),
+(11, 51, 'Decline Appoinment', 'Wallet', 'Credit', '51-570b83849b134', 978.5, 'Approved', '2016-04-11 10:59:16', '2016-04-11 10:59:16'),
+(12, 51, 'Special Offer Discount', 'Wallet', 'Credit', '51-570b84764634f', 688.31, 'Approved', '2016-04-11 11:03:18', '2016-04-11 11:03:18'),
+(13, 51, 'Purchase Custom Packages', 'Wallet', 'Debit', '51-570b8e72655f3', 370.8, 'Approved', '2016-04-11 11:45:54', '2016-04-11 11:45:54'),
+(14, 51, 'Purchase Session', 'Wallet', 'Debit', '51-570b8fa612fbd', 2987.01, 'Approved', '2016-04-11 11:51:02', '2016-04-11 11:51:02'),
+(15, 51, 'Special Offer Discount', 'Wallet', 'Credit', '51-570b903e663d8', 487.01, 'Approved', '2016-04-11 11:53:34', '2016-04-11 11:53:34');
 
 -- --------------------------------------------------------
 
@@ -53127,21 +53116,15 @@ CREATE TABLE IF NOT EXISTS `trainers` (
   `lng` varchar(250) NOT NULL,
   `trainer_added_date` datetime NOT NULL,
   `trainer_modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `trainers`
 --
 
 INSERT INTO `trainers` (`id`, `user_id`, `trainer_name`, `trainer_lname`, `trainer_email`, `trainer_gender`, `trainer_age`, `trainer_phone`, `trainer_displayName`, `trainer_country`, `trainer_state`, `trainer_city`, `trainer_zip`, `trainer_password`, `trainer_image`, `trainer_skills`, `trainer_rating`, `biography`, `certification`, `awards`, `accomplishments`, `location`, `credentials`, `interests_hobby`, `hobby`, `paypal_url`, `paypal_email`, `amazon_url`, `amazon_email`, `money_order_address`, `trainer_status`, `trainer_linkedin`, `trainer_belibitv`, `trainer_facebook`, `trainer_twitter`, `trainer_google`, `trainer_instagram`, `lat`, `lng`, `trainer_added_date`, `trainer_modify_date`) VALUES
-(2, 62, 'rahul', 'goyal', 'rahul@gmail.com', 'male', 29, '', 'rahulgoyal', 90, 1531, 20749, '452001', '123456', '566e6ec9c0833.jpg', 'Test1,Test2,Test3,Test4,Test5', 3.8, '   Biography', 'Certification   ', '   Awards', '   Accomplishments', ' Location', ' Credentials', ' Interests', ' Hobby', 'https://www.sandbox.paypal.com/cgi-bin/webscr', 'soravgarg123-facilitator@gmail.com', 'https://www.sandbox.amazon.com/cgi-bin/webscr', 'rahul-facilitator@amazon.com', 'You Tag Media & Business Solutions, Inc\r\n1950 Broad Street, Unit 209 Regina, SK S461X6 Canada', 1, 'https://in.linkedin.com/', 'http://virtual.belibitv.com/', 'https://www.facebook.com', 'https://twitter.com/', 'https://www.google.co.in/', 'https://instagram.com/', '', '', '0000-00-00 00:00:00', '2016-03-14 10:33:04'),
-(3, 65, 'jai', 'p', 'jai@gmail.com', 'male', 18, '', 'jai123', 101, 21, 2229, '452001', '123456', 'default.png', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', 1, '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', '2016-03-14 10:33:08'),
-(4, 67, 't', 't', 'test4@gmail.com', 'female', 22, '', 't', 214, 3483, 39678, '0', '000000', 'default.png', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', 1, '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', '2016-03-14 10:33:10'),
-(5, 74, 'fsd', 'fdffdsf', 'ssdhiu@dnidfh.fduifg', 'male', 16, '', 'ssd', 1, 42, 5909, '18449', '1', 'default.png', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', 1, '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', '2016-03-14 10:33:12'),
-(6, 76, 'fgf', 'gfgggfg', 'vfgf@htuigh.gfhygr', 'male', 16, '', '515', 165, 2720, 31260, '54tgfgf', '12', 'default.png', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', 1, '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', '2016-03-14 10:33:06'),
-(7, 77, 'dsd', 'sdsdsds', 'ddsds@ewewe.gfgfgfgf', 'male', 21, '4344343443', 'dsd', 6, 181, 6466, '4343', '3', 'default.png', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', 1, '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', '2016-03-14 10:33:14'),
-(8, 78, 'dsd', 'ssddsds', 'sddsds@erere.kjkjkjk', 'male', 20, '7', 'dsdd', 11, 238, 6542, 'kjk', '7', 'default.png', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', 1, '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', '2016-03-14 10:33:15'),
-(9, 79, 'fdfd', 'dfdfffd', 'fdfdfd@erere.jjhjh', 'male', 21, '6', 'fffd', 15, 307, 7228, '767', '6', 'default.png', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', 1, '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', '2016-03-14 10:33:19');
+(2, 62, 'rahul', 'goyal', 'rahul@gmail.com', 'male', 29, '', 'rahulgoyal', 90, 1531, 20749, '452001', '123456', '566e6ec9c0833.jpg', 'Test1,Test2,Test3,Test4,Test5', 3.8, '   Biography', 'Certification   ', '   Awards', '   Accomplishments', ' Location', ' Credentials', ' Interests', ' Hobby', 'https://www.sandbox.paypal.com/cgi-bin/webscr', 'sourav-buyer@mobiwebtech.com', 'https://www.sandbox.amazon.com/cgi-bin/webscr', 'rahul-facilitator@amazon.com', 'You Tag Media & Business Solutions, Inc\r\n1950 Broad Street, Unit 209 Regina, SK S461X6 Canada', 1, 'https://in.linkedin.com/', 'http://virtual.belibitv.com/', 'https://www.facebook.com', 'https://twitter.com/', 'https://www.google.co.in/', 'https://instagram.com/', '', '', '0000-00-00 00:00:00', '2016-04-12 12:30:03'),
+(10, 80, 'vikas', 'garg', 'vikas123@gmail.com', 'male', 26, '9632/87411', 'vikas123', 101, 21, 2229, '452001', '123456', 'default.png', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', '2016-04-11 13:55:22');
 
 -- --------------------------------------------------------
 
@@ -53273,78 +53256,6 @@ CREATE TABLE IF NOT EXISTS `trainer_sessions` (
   `modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `trainer_sessions`
---
-
-INSERT INTO `trainer_sessions` (`id`, `trainer_id`, `user_id`, `time`, `session`, `price`, `final_ammount`, `service_fee`, `used_session`, `total_ammount`, `status`, `added_date`, `date`, `modify_date`) VALUES
-(3, 62, 51, '00:00:44', '18', 945, 945, 24, 1, 28.5, 0, '2015-11-03 12:11:05', '2015-11-03', '2015-11-05 13:47:53'),
-(5, 62, 51, '00:00:07', '18', 945, 945, 24, 1, 28.5, 0, '2015-11-03 12:17:53', '2015-11-03', '2015-11-05 13:47:47'),
-(6, 62, 51, '00:00:20', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-11-05 13:50:20', '2015-11-05', '2015-11-05 13:50:20'),
-(7, 62, 51, '00:00:57', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-11-17 15:34:49', '2015-11-17', '2015-11-17 15:34:49'),
-(8, 62, 51, '00:00:25', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-01 08:52:10', '2015-12-01', '2015-12-01 08:52:10'),
-(9, 62, 51, '00:03:10', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-01 09:50:57', '2015-12-01', '2015-12-01 09:50:57'),
-(10, 62, 51, '00:00:05', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-01 09:51:21', '2015-12-01', '2015-12-01 09:51:21'),
-(11, 62, 51, '00:00:13', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-01 09:52:00', '2015-12-01', '2015-12-01 09:52:00'),
-(12, 62, 51, '00:00:28', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-01 09:57:50', '2015-12-01', '2015-12-01 09:57:50'),
-(13, 62, 51, '00:00:48', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-01 09:59:04', '2015-12-01', '2015-12-01 09:59:04'),
-(14, 62, 51, '00:00:32', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-01 10:00:21', '2015-12-01', '2015-12-01 10:00:21'),
-(15, 62, 51, '00:00:50', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-01 10:01:55', '2015-12-01', '2015-12-01 10:01:55'),
-(16, 62, 51, '00:01:40', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-01 10:04:20', '2015-12-01', '2015-12-01 10:04:20'),
-(17, 62, 51, '00:02:56', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-01 10:08:18', '2015-12-01', '2015-12-01 10:08:18'),
-(18, 62, 51, '00:03:29', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-14 13:14:25', '2015-12-14', '2015-12-14 13:14:26'),
-(19, 62, 51, '00:00:56', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-14 13:17:04', '2015-12-14', '2015-12-14 13:17:05'),
-(20, 62, 51, '00:01:13', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-14 13:30:23', '2015-12-14', '2015-12-14 13:30:23'),
-(21, 62, 51, '00:01:36', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-14 13:32:33', '2015-12-14', '2015-12-14 13:32:33'),
-(22, 62, 51, '00:05:31', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-14 13:39:21', '2015-12-14', '2015-12-14 13:39:21'),
-(23, 62, 51, '00:02:13', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-14 13:42:30', '2015-12-14', '2015-12-14 13:42:30'),
-(24, 62, 51, '00:01:23', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-14 13:45:58', '2015-12-14', '2015-12-14 13:45:58'),
-(25, 62, 51, '00:05:57', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-14 14:37:49', '2015-12-14', '2015-12-14 14:37:49'),
-(26, 62, 51, '00:04:10', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-14 14:43:21', '2015-12-14', '2015-12-14 14:43:21'),
-(27, 62, 51, '00:00:50', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-14 14:44:44', '2015-12-14', '2015-12-14 14:44:44'),
-(28, 62, 51, '00:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:00', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-14 14:45:16', '2015-12-14', '2015-12-14 14:45:16'),
-(29, 62, 51, '00:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:0000:00:00', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-14 14:45:17', '2015-12-14', '2015-12-14 14:45:17'),
-(30, 62, 51, '00:00:19', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-14 14:48:55', '2015-12-14', '2015-12-14 14:48:55'),
-(31, 62, 51, '00:00:29', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-14 14:51:08', '2015-12-14', '2015-12-14 14:51:08'),
-(32, 62, 51, '00:00:33', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-14 14:52:07', '2015-12-14', '2015-12-14 14:52:07'),
-(33, 62, 51, '00:01:21', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-14 14:54:03', '2015-12-14', '2015-12-14 14:54:03'),
-(34, 62, 51, '00:01:20', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-14 14:55:57', '2015-12-14', '2015-12-14 14:55:57'),
-(35, 62, 51, '00:00:20', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-14 14:56:50', '2015-12-14', '2015-12-14 14:56:50'),
-(36, 62, 51, '00:00:44', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-15 12:38:24', '2015-12-15', '2015-12-15 12:38:25'),
-(37, 62, 51, '00:00:54', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-15 13:18:01', '2015-12-15', '2015-12-15 13:18:01'),
-(38, 62, 51, '00:03:44', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-15 13:23:14', '2015-12-15', '2015-12-15 13:23:14'),
-(39, 62, 51, '', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-15 13:25:07', '2015-12-15', '2015-12-15 13:25:07'),
-(40, 62, 51, '00:01:34', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-15 13:29:48', '2015-12-15', '2015-12-15 13:29:48'),
-(41, 62, 51, '00:02:44', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-15 13:51:19', '2015-12-15', '2015-12-15 13:51:19'),
-(42, 62, 51, '00:02:35', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-15 13:55:06', '2015-12-15', '2015-12-15 13:55:06'),
-(43, 62, 51, '00:03:31', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-15 13:59:47', '2015-12-15', '2015-12-15 13:59:47'),
-(44, 62, 51, '00:01:37', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-15 14:02:14', '2015-12-15', '2015-12-15 14:02:14'),
-(45, 62, 51, '00:00:12', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-15 14:03:56', '2015-12-15', '2015-12-15 14:03:56'),
-(46, 62, 51, '00:00:50', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-16 13:58:36', '2015-12-16', '2015-12-16 13:58:36'),
-(47, 62, 51, '00:33:16', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-16 14:47:36', '2015-12-16', '2015-12-16 14:47:36'),
-(48, 62, 51, '00:06:32', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-16 14:55:54', '2015-12-16', '2015-12-16 14:55:54'),
-(49, 62, 51, '00:03:05', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 12:28:12', '2015-12-17', '2015-12-17 12:28:12'),
-(50, 62, 51, '00:01:17', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 12:36:23', '2015-12-17', '2015-12-17 12:36:23'),
-(51, 62, 51, '00:02:40', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 12:47:21', '2015-12-17', '2015-12-17 12:47:21'),
-(52, 62, 51, '00:01:48', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 12:50:22', '2015-12-17', '2015-12-17 12:50:22'),
-(53, 62, 51, '00:03:14', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 12:55:17', '2015-12-17', '2015-12-17 12:55:17'),
-(54, 62, 51, '00:00:59', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 12:57:51', '2015-12-17', '2015-12-17 12:57:51'),
-(55, 62, 51, '00:04:34', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 13:04:49', '2015-12-17', '2015-12-17 13:04:49'),
-(56, 62, 51, '00:00:27', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 13:05:55', '2015-12-17', '2015-12-17 13:05:55'),
-(57, 62, 51, '00:05:00', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 13:13:20', '2015-12-17', '2015-12-17 13:13:20'),
-(58, 62, 51, '00:02:41', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 13:17:31', '2015-12-17', '2015-12-17 13:17:31'),
-(59, 62, 51, '00:00:07', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 13:18:19', '2015-12-17', '2015-12-17 13:18:19'),
-(60, 62, 51, '00:01:06', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 13:20:23', '2015-12-17', '2015-12-17 13:20:23'),
-(61, 62, 51, '00:03:21', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 13:25:24', '2015-12-17', '2015-12-17 13:25:24'),
-(62, 62, 51, '00:07:45', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 13:34:45', '2015-12-17', '2015-12-17 13:34:45'),
-(63, 62, 51, '00:01:15', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 13:36:34', '2015-12-17', '2015-12-17 13:36:34'),
-(64, 62, 51, '00:06:51', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 13:44:46', '2015-12-17', '2015-12-17 13:44:46'),
-(65, 62, 51, '00:02:14', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 13:47:49', '2015-12-17', '2015-12-17 13:47:49'),
-(66, 62, 51, '00:00:24', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 13:48:55', '2015-12-17', '2015-12-17 13:48:55'),
-(67, 62, 51, '00:00:56', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 13:50:20', '2015-12-17', '2015-12-17 13:50:20'),
-(68, 62, 51, '00:00:25', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-17 13:51:07', '2015-12-17', '2015-12-17 13:51:07'),
-(69, 62, 51, '00:00:33', '3', 178, 178, 24, 1, 35.333333333333, 0, '2015-12-18 07:54:24', '2015-12-18', '2015-12-18 07:54:24');
-
 -- --------------------------------------------------------
 
 --
@@ -53365,17 +53276,18 @@ CREATE TABLE IF NOT EXISTS `trainer_txns` (
   `status` smallint(5) NOT NULL,
   `added_date` datetime NOT NULL,
   `modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `trainer_txns`
 --
 
 INSERT INTO `trainer_txns` (`id`, `trainer_id`, `txn_name`, `txn_id`, `txn_type`, `parent_id`, `total_amount`, `administration_fee`, `service_fee`, `special_offer_price`, `status`, `added_date`, `modify_date`) VALUES
-(1, 62, 'Custom Package Earning', '', 1, 3, 400, 12, 68, 0, 0, '2016-04-08 07:02:45', '2016-04-08 07:04:15'),
-(2, 62, 'Custom Package Earning', '', 1, 4, 200, 6, 34, 0, 0, '2016-04-08 07:05:54', '2016-04-08 07:05:54'),
-(4, 62, 'Custom Package Earning', '', 1, 5, 400, 12, 68, 0, 0, '2016-04-08 13:16:16', '2016-04-08 13:16:16'),
-(5, 62, 'Custom Package Earning', '', 1, 6, 200, 6, 34, 0, 0, '2016-04-10 10:50:40', '2016-04-10 10:50:40');
+(1, 62, 'Custom Package Earning', '62570b7e8ff1ca5', 1, 7, 400, 12, 68, 0, 0, '2016-04-11 10:38:07', '2016-04-11 10:38:08'),
+(2, 62, 'Custom Package Earning', '62570b8182e0973', 1, 14, 400, 12, 68, 0, 0, '2016-04-11 10:50:42', '2016-04-11 10:50:42'),
+(4, 62, 'Rate Plan Earning', '62570b84765da4c', 0, 36, 2000, 60, 340, 2000, 0, '2016-04-11 11:03:18', '2016-04-11 11:03:18'),
+(5, 62, 'Custom Package Earning', '62570b8e72d7976', 1, 15, 400, 12, 68, 0, 0, '2016-04-11 11:45:54', '2016-04-11 11:45:54'),
+(6, 62, 'Rate Plan Earning', '62570b903e945c0', 0, 38, 2500, 75, 425, 2500, 0, '2016-04-11 11:53:34', '2016-04-11 11:53:34');
 
 -- --------------------------------------------------------
 
@@ -53387,11 +53299,22 @@ CREATE TABLE IF NOT EXISTS `trainer_withdraw` (
   `id` int(11) NOT NULL,
   `trainer_id` int(11) NOT NULL,
   `ammount` double NOT NULL,
-  `payment_type` varchar(20) NOT NULL,
-  `status` smallint(5) NOT NULL,
+  `withdraw_fees` double NOT NULL,
+  `final_withdraw_amount` double NOT NULL,
+  `withdraw_payment_type` smallint(5) NOT NULL COMMENT '0 = paypal, 1 = amazon, 2 = other',
+  `withdraw_txn_id` varchar(150) NOT NULL,
+  `withdraw_status` smallint(5) NOT NULL COMMENT '0 = pending, 1 = completed, 2 = failed',
   `added_date` datetime NOT NULL,
   `modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `trainer_withdraw`
+--
+
+INSERT INTO `trainer_withdraw` (`id`, `trainer_id`, `ammount`, `withdraw_fees`, `final_withdraw_amount`, `withdraw_payment_type`, `withdraw_txn_id`, `withdraw_status`, `added_date`, `modify_date`) VALUES
+(3, 62, 1000, 15, 985, 0, '', 1, '2016-04-12 12:51:51', '2016-04-12 13:43:37'),
+(4, 62, 500, 7.5, 492.5, 0, '3P92989157978744V', 1, '2016-04-12 13:47:43', '2016-04-12 13:48:49');
 
 -- --------------------------------------------------------
 
@@ -53411,7 +53334,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `online` smallint(5) NOT NULL COMMENT 'offline=0,online=1',
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -53419,21 +53342,15 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `display_name`, `user_type`, `user_status`, `social_type`, `social_id`, `online`, `created`, `modified`) VALUES
 (48, 'admin', '$2y$10$81.B6wsQKiig9dFBPoat8OrWMEhwGX48Y5V8t/ygZG9mgNnGqW6Me', '', 'admin', 0, '', '', 0, '0000-00-00 00:00:00', '2015-09-22 06:42:16'),
-(51, 'sorav@gmail.com', '$2y$10$1HY/yPFoXqLxGmcA/2eHW.RMrb3Pzc/E.1qvd6BjZNS6Sl31w2gjW', 'soravgarg', 'trainee', 1, '', '', 0, '2015-09-12 10:40:30', '2016-04-10 13:32:44'),
+(51, 'sorav@gmail.com', '$2y$10$1HY/yPFoXqLxGmcA/2eHW.RMrb3Pzc/E.1qvd6BjZNS6Sl31w2gjW', 'soravgarg', 'trainee', 1, '', '', 0, '2015-09-12 10:40:30', '2016-04-12 15:02:29'),
 (53, 'vikas@gmail.com', '$2y$10$rsmFefvl8ne4UMVqb1Qp7uPi/UPgcFtALjz396msN20/QRRt8IrCe', 'vikas897', 'trainee', 1, '', '', 0, '2015-09-14 06:52:48', '2015-12-22 13:51:26'),
-(62, 'rahul@gmail.com', '$2y$10$0FZj1LiBS2yHQ9GqgHyEeuTyUCCLGFre.mvclHPQJvr2YfjSdLlBy', 'rahulgoyal', 'trainer', 1, '', '', 1, '2015-09-25 07:52:23', '2016-04-10 13:32:57'),
+(62, 'rahul@gmail.com', '$2y$10$0FZj1LiBS2yHQ9GqgHyEeuTyUCCLGFre.mvclHPQJvr2YfjSdLlBy', 'rahulgoyal', 'trainer', 1, '', '', 0, '2015-09-25 07:52:23', '2016-04-12 15:02:00'),
 (64, 'gaurav@gmail.om', '$2y$10$0itHdTu2Ys1l2RiHFulU/.fULdaPh3kGKhYCCZeIkbixYXjacs0Q6', 'gaurav123', 'trainee', 1, '', '', 1, '2015-11-24 09:10:40', '2015-11-24 09:11:15'),
-(65, 'jai@gmail.com', '$2y$10$5sQsM9o4YO5bHlihbC/Aiutd1He7P38oFjLMPOKsVDCN2LBXQzfey', 'jai123', 'trainer', 0, '', '', 0, '2015-11-24 11:10:55', '2015-11-24 11:10:55'),
 (66, 'test3@gmal.com', '$2y$10$SoJcAuPInrprkNKlteeareZ2HfpA.ubdKCBqQEceEeRB0YaMWihga', 't', 'trainee', 1, '', '', 0, '2015-11-24 11:55:03', '2015-11-24 11:55:03'),
-(67, 'test4@gmail.com', '$2y$10$dd3a7.h/EQiCUUjKo0rP3eqmD2xU5ICbJ0mHXd8ZJq0vs9rX0S3L6', 't', 'trainer', 0, '', '', 0, '2015-11-24 11:55:42', '2015-11-24 11:55:42'),
 (72, 'soravapi@gmail.com', '$2y$10$gkuofdg81i.WDiyUbkqiCeJ7TX6eHsNPQR2dOTtxZuVKMNzMh45Xy', 'sorav123', 'trainee', 1, '', '', 0, '2015-11-25 12:44:04', '2015-11-25 12:44:04'),
 (73, 'rahul1@gmail.com', '$2y$10$rpF4ZNMU1RaG67vgrJaIR.NR45.nEO4vU3D7/Q6Uy2YSzPCH.N0qW', 'rahul123', 'trainee', 1, '', '', 0, '2015-12-15 10:15:07', '2016-01-19 06:47:32'),
-(74, 'ssdhiu@dnidfh.fduifg', '$2y$10$eGczmLQ2Uwr4slLBWMPr8OfI3idGjDlUFaz3aph4vkC4HpYYV0wWa', 'ssd', 'trainer', 0, '', '', 0, '2015-12-15 10:15:47', '2015-12-15 10:15:47'),
 (75, '5165@4141.fd', '$2y$10$f9dGdFPv1g8nklzrSlt18eB1L674O4d0G5pwFPTwpxxNp4keXwiou', '1651', 'trainee', 1, '', '', 1, '2015-12-15 11:05:59', '2016-03-14 12:14:35'),
-(76, 'vfgf@htuigh.gfhygr', '$2y$10$rKGzuemiqcknXDBgy2MxWuxDLl.y6ZrmFsEeLAAHreRjed38AfpmK', '515', 'trainer', 0, '', '', 0, '2015-12-15 11:06:47', '2015-12-15 11:06:47'),
-(77, 'ddsds@ewewe.gfgfgfgf', '$2y$10$kK8jw.sIEs3KInVE8.OR2.GmzycEZbf8wjkQ9dVt5F1r1qlvNtwuK', 'dsd', 'trainer', 0, '', '', 0, '2015-12-21 14:33:55', '2015-12-21 14:33:55'),
-(78, 'sddsds@erere.kjkjkjk', '$2y$10$WFBpABIQkw2NIf9IQIU9C.fct6NFhU7bTy9zdOLn6TOYjGz7WYXA2', 'dsdd', 'trainer', 0, '', '', 0, '2015-12-21 14:35:50', '2015-12-21 14:35:50'),
-(79, 'fdfdfd@erere.jjhjh', '$2y$10$3kDDYYhFX1N7IViFi6WfXeqVNdGxeNIgLRomhbSB3NtjBrdiPvf56', 'fffd', 'trainer', 0, '', '', 0, '2015-12-21 14:36:49', '2015-12-21 14:36:50');
+(80, 'vikas123@gmail.com', '$2y$10$dfy1CACo72On4ZWDABacROhxR7raLzD2r4Dzu61zKckEHV861pEz2', 'vikas123', 'trainer', 0, '', '', 0, '2016-04-11 13:55:21', '2016-04-11 13:55:22');
 
 -- --------------------------------------------------------
 
@@ -53481,19 +53398,16 @@ CREATE TABLE IF NOT EXISTS `vouchers_history` (
   `vh_status` int(11) NOT NULL,
   `vh_added_date` datetime NOT NULL,
   `vh_modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `vouchers_history`
 --
 
 INSERT INTO `vouchers_history` (`id`, `vh_promo_code`, `user_type`, `coupon_id`, `vh_user_id`, `name`, `type`, `discount`, `validity_date`, `vh_status`, `vh_added_date`, `vh_modify_date`) VALUES
-(9, 'VTRAIN2016', 'trainee', 1, 51, 'VT-March', 'Percent', 10, '2016-08-31', 0, '2016-04-05 15:37:04', '2016-04-08 07:08:34'),
-(11, 'VTRAIN2016', 'trainee', 1, 51, 'VT-March', 'Percent', 10, '2016-08-31', 0, '2016-04-05 15:44:28', '2016-04-05 15:44:28'),
-(12, 'VTRAIN2016', 'trainee', 1, 51, 'VT-March', 'Percent', 10, '2016-08-31', 0, '2016-04-06 08:43:00', '2016-04-06 08:43:00'),
-(13, 'VTRAIN2016', 'trainee', 1, 51, 'VT-March', 'Percent', 10, '2016-08-31', 0, '2016-04-06 08:46:11', '2016-04-06 08:46:11'),
-(14, 'VTRAIN2016', 'trainee', 1, 51, 'VT-March', 'Percent', 10, '2016-08-31', 0, '2016-04-08 07:02:44', '2016-04-08 07:02:44'),
-(15, 'VTRAIN2016', 'trainee', 1, 51, 'VT-March', 'Percent', 10, '2016-08-31', 0, '2016-04-08 07:05:53', '2016-04-08 07:05:53');
+(5, 'VTRAIN2016', 'trainee', 1, 51, 'VT-March', 'Percent', 10, '2016-08-31', 0, '2016-04-11 10:50:42', '2016-04-11 10:50:42'),
+(6, 'VTRAIN2016', 'trainee', 1, 51, 'VT-March', 'Percent', 10, '2016-08-31', 0, '2016-04-11 10:53:29', '2016-04-11 10:53:29'),
+(7, 'VTRAIN2016', 'trainee', 1, 51, 'VT-March', 'Percent', 10, '2016-08-31', 0, '2016-04-11 11:45:54', '2016-04-11 11:45:54');
 
 --
 -- Indexes for dumped tables
@@ -53797,7 +53711,7 @@ ALTER TABLE `after_before_images`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=36;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT for table `block_ips`
 --
@@ -53837,12 +53751,12 @@ ALTER TABLE `currency`
 -- AUTO_INCREMENT for table `custom_packages_history`
 --
 ALTER TABLE `custom_packages_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `documents`
 --
 ALTER TABLE `documents`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `favourites`
 --
@@ -53877,12 +53791,12 @@ ALTER TABLE `meal_plans`
 -- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=91;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` bigint(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+  MODIFY `order_id` bigint(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `plans_categories`
 --
@@ -53922,7 +53836,7 @@ ALTER TABLE `states`
 -- AUTO_INCREMENT for table `total_wallet_ammount`
 --
 ALTER TABLE `total_wallet_ammount`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `trainees`
 --
@@ -53942,12 +53856,12 @@ ALTER TABLE `trainee_sessions`
 -- AUTO_INCREMENT for table `trainee_txns`
 --
 ALTER TABLE `trainee_txns`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `trainers`
 --
 ALTER TABLE `trainers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `trainer_account`
 --
@@ -53977,17 +53891,17 @@ ALTER TABLE `trainer_sessions`
 -- AUTO_INCREMENT for table `trainer_txns`
 --
 ALTER TABLE `trainer_txns`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `trainer_withdraw`
 --
 ALTER TABLE `trainer_withdraw`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=80;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=85;
 --
 -- AUTO_INCREMENT for table `vouchers`
 --
@@ -53997,7 +53911,7 @@ ALTER TABLE `vouchers`
 -- AUTO_INCREMENT for table `vouchers_history`
 --
 ALTER TABLE `vouchers_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

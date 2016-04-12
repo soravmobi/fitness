@@ -57,8 +57,7 @@ class AppController extends Controller
         $this->loadmodel('Orders');
         $this->loadmodel('Trainer_txns');
         $this->loadmodel('Custom_packages_history');
-        $this->loadmodel('Withdraw_request');
-
+        
         $this->loadComponent('Flash');
         $this->loadComponent('Custom');
         $this->loadComponent('RequestHandler');
@@ -97,7 +96,6 @@ class AppController extends Controller
         $this->fees = TableRegistry::get('Fees');
         $this->orders = TableRegistry::get('Orders');  
         $this->trainer_txns = TableRegistry::get('Trainer_txns');
-        $this->withdraw_request = TableRegistry::get('Withdraw_request');
         $this->custom_packages_history = TableRegistry::get('Custom_packages_history');
         $this->conn = ConnectionManager::get('default');  
     }
