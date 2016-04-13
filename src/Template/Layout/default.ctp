@@ -41,35 +41,24 @@
 	<?php echo  $this->Html->script('parallax.js'); ?>
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
 	<script src="<?php echo $this->request->webroot; ?>player/jwplayer.js"></script>
-	<link rel='stylesheet' href='<?php echo $this->request->webroot; ?>fullcalendar/fullcalendar.css' />
-	<script src='<?php echo $this->request->webroot; ?>fullcalendar/lib/moment.min.js'></script>
-	<script src='<?php echo $this->request->webroot; ?>fullcalendar/fullcalendar.js'></script>
 	<?php echo  $this->Html->script('static_opentok.js'); ?>
 	<?php echo  $this->Html->css('bootstrap-datepicker.css'); ?>
 	<?php echo  $this->Html->script('bootstrap-datepicker.js') ?>
-	<?php echo  $this->Html->css('timepicki.css') ?>
-	<?php echo  $this->Html->script('timepicki.js') ?>
 	<?php echo  $this->Html->css('star-rating.css') ?>
 	<?php echo  $this->Html->script('star-rating.js') ?>
-	<?php echo  $this->Html->css('canvasCrop.css') ?>
-	<?php echo  $this->Html->script('jquery.canvasCrop.js') ?>
 	<?php echo  $this->Html->script('lightbox.js') ?>
-	<?php echo  $this->Html->script('jquery.foggy.min.js') ?>
 	<?php echo  $this->Html->script('MediaStreamRecorder.js') ?>
 	<?php echo  $this->Html->script('record.js') ?>
 	<?php echo  $this->Html->script('jquery.circle-diagram.js') ?>
 	<?php echo  $this->Html->script('mindmup-editabletable.js') ?>
 	<?php echo  $this->Html->css('responsive-calendar.css') ?>
 	<?php echo  $this->Html->script('responsive-calendar.min.js') ?>
-	<?php echo  $this->Html->css('bootstrap-switch.min.css') ?>
-	<?php echo  $this->Html->script('bootstrap-switch.min.js') ?>
 	<?php echo  $this->Html->css('percircle.css') ?>
 	<?php echo  $this->Html->script('percircle.js') ?>
 	<?php echo  $this->Html->css('sweetalert2.css') ?>
 	<?php echo  $this->Html->script('sweetalert2.js') ?>
 	<?php echo  $this->Html->css('jasny-bootstrap.min.css') ?>
 	<?php echo  $this->Html->script('jasny-bootstrap.min.js') ?>
-	
     <script type='text/javascript' src="https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js"></script>
 	<!-- jayendra start -->
 	<?php 

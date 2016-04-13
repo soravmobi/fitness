@@ -12,6 +12,18 @@ use Cake\ORM\Entity;
 
 class ApisController extends AppController
 {
+
+	public function cron()
+	{
+		$to = "soravgarg123@gmail.com";
+		$subject = "My subject";
+		$txt = "Hello world!";
+		$headers = "From: soravgarg123@gmail.com" . "\r\n" .
+		"CC: soravgarg123@gmail.com";
+		mail($to,$subject,$txt,$headers);
+		echo "string";die;
+	}
+
 	public function login()
 	{
 		$hashPswdObj = new DefaultPasswordHasher;

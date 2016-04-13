@@ -56,6 +56,7 @@ class AppController extends Controller
         $this->loadmodel('Fees');
         $this->loadmodel('Orders');
         $this->loadmodel('Trainer_txns');
+        $this->loadmodel('Tokbox');
         $this->loadmodel('Custom_packages_history');
         
         $this->loadComponent('Flash');
@@ -96,6 +97,7 @@ class AppController extends Controller
         $this->fees = TableRegistry::get('Fees');
         $this->orders = TableRegistry::get('Orders');  
         $this->trainer_txns = TableRegistry::get('Trainer_txns');
+        $this->tokbox = TableRegistry::get('Tokbox');
         $this->custom_packages_history = TableRegistry::get('Custom_packages_history');
         $this->conn = ConnectionManager::get('default');  
     }

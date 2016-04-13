@@ -47,6 +47,8 @@ class TraineesController extends AppController
     $messages = $this->conn->execute(' SELECT Count(*) AS `total_msg` FROM `chating` WHERE chat_type = 0 AND (chat_sender_id = '.$this->data['id'].' OR chat_reciever_id ='.$this->data['id'].') ')->fetchAll('assoc');
     $session = $this->Trainee_plan->find()->where(['user_id' => $this->data['id']])->toArray();
     $purchased_plans = $this->conn->execute('SELECT *,`ase`.`id` AS admin_session_id FROM `admin_sessions` AS `ase` INNER JOIN `trainees` AS `t` ON t.user_id = ase.trainee_id WHERE ase.trainee_id = '.$this->data['id'].' ORDER BY ase.id DESC ')->fetchAll('assoc');
+    $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
+    $this->set('total_wallet_ammount', $total_wallet_ammount);
     $this->set('purchased_plans', $purchased_plans);
     $this->set('session', $session);
     $this->set('videocalls', $videocalls);
@@ -1158,21 +1160,6 @@ class TraineesController extends AppController
         }
     }
 
-    public function cropImage()
-    {
-      if($this->request->is('ajax'))
-        {
-          $data = $this->request->data['resp'];
-          $file = 'uploads/trainee_profile/' . uniqid() . '.jpeg';
-          $image = imagecreatefromjpeg($data);
-          $img = imagejpeg($image, $file, 70);
-          imagedestroy($image);
-          $this->set('message', 'success');
-          $this->set('_serialize',array('message','id'));
-          $this->response->statusCode(200);
-        }
-    }
-
     public function purchasePlan($sid)
     {
       $session_id = (int) base64_decode($sid);
@@ -1383,6 +1370,7 @@ class TraineesController extends AppController
     public function moneyOrder()
     {
       $trainee_wallet_arr = array(
+        'txn_name'  => 'Money Order',
         'trainee_id' => $this->data['id'],
         'payment_type' => 'Money Order',
         'txn_id' => $this->request->data['order_no'],

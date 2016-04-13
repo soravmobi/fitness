@@ -2875,9 +2875,6 @@ a.btn_trainer {
   padding: 6px 10px 3px;
 }
 
-.foggy-pass-absolute {
-    width: 100% !important;
-}
 /** video call 16-dec-2015 by wasim khan**/
 .modal-lg-max {
     width: 95%;
@@ -3239,7 +3236,7 @@ a.btn_trainer {
   position: absolute;
   right: 0;
   top: 0;
-  width: 106px;
+  width: 118px;
   
 }
 
@@ -5723,9 +5720,11 @@ label.remain_bal {
 .ht_left .navbar-toggle, .ht_right .navbar-toggle {
   display: inline-block;
 }
-.inner_header .header_top {
-  background-color: #242424;
+.inner_header {
+  background-color:rgba(0, 0, 0, 1);
   padding: 11px 0;
+  -moz-transition:all 500ms ease 0s;
+  -webkit-transition:all 500ms ease 0s;
 }
 .ht_left .navbar-toggle, .ht_right .navbar-toggle {
   border-color: #fff;
@@ -5853,7 +5852,7 @@ label.remain_bal {
   margin-bottom: 50px;
 }
 #leftNavMenu {
-  width: 360px;
+  width: 300px;
 }
 .customer_report_main {
   margin: 50px;
@@ -6154,6 +6153,7 @@ label.remain_bal {
 .ht_right .dropdown-menu li{width: 100%;}
 .profile-img{height: 100%;}
 
+
 /*css for customer dashboard page start */
 .head_dashboard {
   color: #242424;
@@ -6173,17 +6173,17 @@ label.remain_bal {
   border-radius: 6px;
   box-shadow: 0 0 2px #ccc;
   display: inline-block;
-  margin: 20px 40px 20px 0;
-  padding: 25px;
+  margin: 20px 20px 20px 0;
+  padding: 10px;
   text-align: left;
-  width: 30.5%;
+  width: 31.8%;
 }
 .notification_wrap li:nth-child(3n){margin-right:0px;}
 .cloud_text {
   color: #242424;
   display: inline-block;
-  font-size: 18px;
-  padding: 10px 10px 10px 50px;
+  font-size: 16px;
+  padding: 10px 10px 10px 15px;
   text-transform: uppercase;
   vertical-align: middle;
 }
@@ -6241,7 +6241,7 @@ label.remain_bal {
 .session_content .tab-content {
   display: inline-block;
   vertical-align: top;
-  width: 90%;
+  width: 88%;
 }
 .session_content .nav_tabs > li {
   margin: 0;
@@ -6661,9 +6661,9 @@ label.remain_bal {
   border-bottom: 1px solid #ddd;
   color: #242424;
   font-size: 13px;
-  padding-bottom: 35px;
+  padding-bottom: 40px;
   padding-left: 20px;
-  padding-top: 10px;
+  padding-top: 20px;
   position: relative;
 }
 .agenda p:last-child{ border:inherit;}
@@ -6690,6 +6690,9 @@ label.remain_bal {
   display: inline-block;
   position: relative;
 }
+.visitor_map_progress .progress_bar {
+  margin-bottom: 27px;
+}
 .appointement_dashboard .responsive-calendar .day.today a {
   background-color: #d93931 !important;
   color: #ffffff;
@@ -6710,8 +6713,9 @@ label.remain_bal {
 /*css for map start*/
 
 #chartdiv {
+  display: inline-block;
   height: 330px;
-  width: 100%;
+  width: 69%;
 }
 
 .map-marker {
@@ -6799,7 +6803,54 @@ label.remain_bal {
    }
   } 
   
-/*css for map end*/             
+/*css for map end*/   
+
+    
+.visitor_map_progress {
+  color: #fff;
+  display: inline-block;
+  padding: 30px 40px;
+  vertical-align: top;
+  width: 30%;
+}
+.progress_bar span {
+  float: right;
+}
+.progress_bar > label {
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+}
+.visitor_map_progress > h4 {
+  font-size: 18px;
+  text-transform: capitalize;
+  padding-bottom: 15px;
+}   
+.visitor_map_progress .progress {
+  background-color: #00aac0;
+  border-radius: 4px;
+  height: 10px;
+} 
+.visitor_map_progress .progress-bar{ background-color: #fff;}
+.visitor_map .heading_payment_main {
+  background-color: inherit;
+  border: 1px solid #313131;
+  font-size: 15px;
+}
+.visitor_map_content {
+  background-color: #313131;
+  border-radius: 0 0 5px 6px;
+}
+.visitor_map h2 {
+  color: #313131;
+  font-size: 15px;
+  padding: 5px 0;
+}
+.agenda .session_content {
+  min-height: 335px;
+}
+.inner_header.affix{ background-color:rgba(0, 0, 0, 0.6) !important; padding:0px 0px 3px 0px;}
+.message_wrap_content label{max-width:inherit;}
 /*css for trainer dashboard page end */
 .customer_dashboard .rate_box:after{display: none;}
 .trainer_dashboard .rate_box:after{display: none;}

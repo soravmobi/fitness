@@ -30,8 +30,17 @@
                   <div class="cloud_box">
                     <div class="cloud"><i class="flaticon1-money"></i></div>
                   </div>
+                  <?php
+                        if(empty($total_wallet_ammount)){
+                            $wallet_balance =  "0";
+                        }
+                        else
+                        {
+                            $wallet_balance =  $total_wallet_ammount[0]['total_ammount'];
+                        }
+                    ?>
                   <div class="cloud_text"> my wallet
-                    <div class="rate_box">$65</div>
+                    <div class="rate_box">$<?php echo round($wallet_balance,2); ?></div>
                   </div>
                 </li>
                 <li>
@@ -206,8 +215,9 @@
             </div>
           </div>
         </div>
+        <div class="trainer_wrap_main">
         <div class="row">
-          <div class="col-md-3 col-sm-4">
+          <div class="col-lg-3 col-md-4 col-sm-4">
             <div class="trainer_wrap_box">
               <div class="heading_payment_main"> </div>
               <div class="trainer_top_main">
@@ -343,6 +353,7 @@
               </div>
             </div>
           </div>
+        </div>
         </div>
         <div class="message_wrap">
           <div class="message_wrap_head">

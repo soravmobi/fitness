@@ -34,6 +34,9 @@
                         <a  href="<?php echo $this->request->webroot; ?>admins/blogs"><i class="fa fa-plus"></i> Blogs </a>
                     </li>
                     <li>
+                        <a  href="<?php echo $this->request->webroot; ?>admins/tokbox"><i class="fa fa-key"></i> Manage Tokbok Details</a>
+                    </li>
+                    <li>
                         <a  href="<?php echo $this->request->webroot; ?>admins/fees"><i class="fa fa-money"></i> Manage Fees </a>
                     </li>
                     <li>

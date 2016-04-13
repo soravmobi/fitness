@@ -18746,3 +18746,213 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
+2016-04-13 06:51:48 Notice: Notice (8): Undefined offset: 3 in [/opt/lampp/htdocs/fitness/src/Template/Trainers/appointments.ctp, line 69]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Trainers/appointments.ctp, line 69
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-13 06:51:48 Notice: Notice (8): Undefined offset: 3 in [/opt/lampp/htdocs/fitness/src/Template/Trainers/appointments.ctp, line 72]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Trainers/appointments.ctp, line 72
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-13 06:51:48 Notice: Notice (8): Undefined offset: 3 in [/opt/lampp/htdocs/fitness/src/Template/Trainers/appointments.ctp, line 72]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Trainers/appointments.ctp, line 72
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-13 06:51:48 Notice: Notice (8): Undefined offset: 3 in [/opt/lampp/htdocs/fitness/src/Template/Trainers/appointments.ctp, line 72]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Trainers/appointments.ctp, line 72
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-13 06:51:48 Notice: Notice (8): Undefined offset: 3 in [/opt/lampp/htdocs/fitness/src/Template/Trainers/appointments.ctp, line 85]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Trainers/appointments.ctp, line 85
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-13 06:51:48 Notice: Notice (8): Undefined offset: 4 in [/opt/lampp/htdocs/fitness/src/Template/Trainers/appointments.ctp, line 69]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Trainers/appointments.ctp, line 69
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-13 06:51:48 Notice: Notice (8): Undefined offset: 4 in [/opt/lampp/htdocs/fitness/src/Template/Trainers/appointments.ctp, line 72]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Trainers/appointments.ctp, line 72
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-13 06:51:48 Notice: Notice (8): Undefined offset: 4 in [/opt/lampp/htdocs/fitness/src/Template/Trainers/appointments.ctp, line 72]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Trainers/appointments.ctp, line 72
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-13 06:51:48 Notice: Notice (8): Undefined offset: 4 in [/opt/lampp/htdocs/fitness/src/Template/Trainers/appointments.ctp, line 72]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Trainers/appointments.ctp, line 72
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-13 06:51:48 Notice: Notice (8): Undefined offset: 4 in [/opt/lampp/htdocs/fitness/src/Template/Trainers/appointments.ctp, line 85]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Trainers/appointments.ctp, line 85
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-13 06:51:48 Notice: Notice (8): Undefined offset: 5 in [/opt/lampp/htdocs/fitness/src/Template/Trainers/appointments.ctp, line 69]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Trainers/appointments.ctp, line 69
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-13 06:51:48 Notice: Notice (8): Undefined offset: 5 in [/opt/lampp/htdocs/fitness/src/Template/Trainers/appointments.ctp, line 72]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Trainers/appointments.ctp, line 72
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-13 06:51:48 Notice: Notice (8): Undefined offset: 5 in [/opt/lampp/htdocs/fitness/src/Template/Trainers/appointments.ctp, line 72]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Trainers/appointments.ctp, line 72
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-13 06:51:48 Notice: Notice (8): Undefined offset: 5 in [/opt/lampp/htdocs/fitness/src/Template/Trainers/appointments.ctp, line 72]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Trainers/appointments.ctp, line 72
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-13 06:51:48 Notice: Notice (8): Undefined offset: 5 in [/opt/lampp/htdocs/fitness/src/Template/Trainers/appointments.ctp, line 85]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Trainers/appointments.ctp, line 85
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+

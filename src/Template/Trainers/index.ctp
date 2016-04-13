@@ -32,8 +32,17 @@
                   <div class="cloud_box">
                     <div class="cloud"><i class="flaticon1-money"></i><span> wallet</span></div>
                   </div>
+                  <?php
+                        if(empty($total_wallet_ammount)){
+                            $wallet_balance =  "0";
+                        }
+                        else
+                        {
+                            $wallet_balance =  $total_wallet_ammount[0]['total_ammount'];
+                        }
+                    ?>
                   <div class="cloud_text"> <span>my wallet</span>
-                    <div class="rate_box">$65</div>
+                    <div class="rate_box">$<?php echo round($wallet_balance,2); ?></div>
                     <span class="withraw">Withdraw</span> </div>
                 </li>
                 <li>

@@ -12,11 +12,8 @@
                     <nav class="footer_nav">
                         <ul>
                             <li><a href="<?php echo $this->request->webroot; ?>" title="Home">Home</a></li>
-                            <!-- <li><a href="<?php echo $this->request->webroot; ?>plans" title="Pircing Plan">Pricing plan</a></li> -->
                             <li><a href="<?php echo $this->request->webroot; ?>terms" title="Terms &amp; Conditions">Terms &amp; conditions </a></li>
                             <li><a href="<?php echo $this->request->webroot; ?>learnmore" title="Learn More ">Learn More </a></li>
-                            <!-- <li><a href="<?php echo $this->request->webroot; ?>career" title="Career">Career</a></li> -->
-                            <!-- <li><a href="<?php echo $this->request->webroot; ?>opportunity" title="Opportunity">Opportunity</a></li> -->
                             <li><a href="<?php echo $this->request->webroot; ?>contactus" title="Contact Us">Contact us</a></li>
                         </ul>
                     </nav>
@@ -244,10 +241,6 @@
                     <div class="form-group">
                         <select required name="trainee_age" class="form-control ">
                            <option value="">Age</option>
-                            <?php 
-                                for($i=16;$i<=60;$i++) { ?>
-                                <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
-                            <?php } ?>
                         </select>
                     </div>
                </div>
@@ -264,10 +257,6 @@
                     <div class="form-group">
                         <select required id="trainee_country" name="trainee_country" class="form-control ">
                             <option value="">Country</option>
-                            <?php 
-                            foreach($countries as $c) { ?>
-                                <option value="<?php echo $c['id']; ?>"><?php echo $c['name']; ?></option>
-                            <?php } ?>
                         </select>
                     </div>
                     <div class="form-group">
@@ -363,11 +352,7 @@
                     </div>
                     <div class="form-group">
                         <select required name="trainer_age" class="form-control ">
-                            <option value="">Age</option>
-                            <?php 
-                                for($i=16;$i<=60;$i++) { ?>
-                                <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
-                            <?php } ?>
+                          <option value="">Age</option>
                         </select>
                     </div>
                </div>
@@ -384,10 +369,6 @@
                     <div class="form-group">
                         <select required id="trainer_country" name="trainer_country" class="form-control ">
                             <option value="">Country</option>
-                            <?php 
-                            foreach($countries as $c) { ?>
-                                <option value="<?php echo $c['id']; ?>"><?php echo $c['name']; ?></option>
-                            <?php } ?>
                         </select>
                     </div>
                     <div class="form-group">
@@ -452,12 +433,50 @@
 </div> 
 <!--Signup Modal for for trainer end-->     
 
-
-
-
 <!-- Trainer Registration Script Start -->
 <script type="text/javascript">
 $(document).ready(function(){
+  setTimeout(function(){
+
+  /************* Age Values Script Start *******************/
+
+    var ageHTML = '';
+    ageHTML    += '<option value="">Age</option>';
+    for (var i = 16; i <= 60; i++) {
+      ageHTML += '<option value='+i+'>'+i+'</option>';
+    };
+    $('select[name=trainee_age],select[name=trainer_age]').html(ageHTML);
+
+  /************* Age Values Script End ************************/
+
+  /************* Country List Script Start *******************/
+
+  var countryHTML = "";
+  countryHTML    += "<option value=''>Country</option>";
+  $.ajax({
+        type: "POST",
+        url: "<?php echo $this->request->webroot; ?>fronts/getCountryList",
+        data: '',
+        dataType : "json",
+        success: function(data)
+        {
+          var countries = data.message;
+          for (var j = 0; j <= countries.length -1; j++) {
+            countryHTML += '<option value='+countries[j]["id"]+'>' + countries[j]["name"] + '</option>';
+          };
+          $('select[name=trainee_country],select[name=trainer_country]').html(countryHTML);
+        },
+        error:function(error)
+        {
+          console.log(error);
+        }
+    });
+
+
+  /************* Country List Script End *******************/
+
+  },2000);
+
    $("#trainer").click(function() {
     $('#error_msg').hide();
     $('#trainer_form input[type=text], #trainer_form select, #trainer_form input[type=email], #trainer_form input[type=password]').each(function() {
@@ -912,7 +931,9 @@ $(document).ready(function(){
       title: 'Virtual TrainR'
   });
 }
- google.maps.event.addDomListener(window, 'load', initialize);
+setTimeout(function(){
+  initialize();
+},2000);
 </script>
 
 <!-- Contact Us Map End -->

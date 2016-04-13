@@ -30,6 +30,8 @@ class TrainersController extends AppController
         $videocalls = $this->Chating->find()->where(['chat_reciever_id' => $this->data['id'], 'chat_type' => 1])->count();
         $voicecalls = $this->Chating->find()->where(['chat_reciever_id' => $this->data['id'], 'chat_type' => 2])->count();
         $messages = $this->conn->execute(' SELECT Count(*) AS `total_msg` FROM `chating` WHERE chat_type = 0 AND (chat_sender_id = '.$this->data['id'].' OR chat_reciever_id ='.$this->data['id'].') ')->fetchAll('assoc');
+        $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
+        $this->set('total_wallet_ammount', $total_wallet_ammount);
         $this->set('all_calls', $all_calls);
         $this->set('messages', $messages);
         $this->set('account', $account);
@@ -1286,7 +1288,7 @@ class TrainersController extends AppController
         $dataArr = $this->request->data;
         $appid   = base64_decode($appid);
         $appoinment_details = $this->Appointments->find()->where(['id' => $appid])->toArray();
-        if($appoinment_details[0]['special_offer_price'] > 0){
+        if(!empty($appoinment_details[0]['special_offer_modify_date'])){
             $this->request->session()->write('error_alert','You already created request for special offer !!');
             return $this->redirect('/trainers');
         }

@@ -919,6 +919,37 @@ class AdminsController extends AppController
        print_r($_REQUEST);die;
     }
 
+    public function tokbox()
+    {
+        $tokbox = $this->Tokbox->find()->where(['id' => 1])->toArray();
+        $this->set('tokbox',$tokbox);
+    }
+
+    public function getToxBokDetails()
+    {
+        if($this->request->is('ajax'))
+        {
+            $id = (int) base64_decode($this->request->data['id']);
+            $result_data = $this->Tokbox->find()->where(['id' => $id])->order(['id' => 'DESC'])->toArray();
+            $this->set('message', $result_data);
+            $this->set('_serialize',array('message'));
+            $this->response->statusCode(200);
+        }
+    }
+
+    public function manageTokboxDetails()
+    {
+        if($this->request->is('post'))
+        {
+            $data = $this->request->data;
+            $arr  = array('api_key' => $data['api_key'],'api_secret' => $data['api_secret']);
+            $tid  = $data['id'];
+            $this->tokbox->query()->update()->set($arr)->where(['id' => $tid])->execute();
+            $this->Flash->success('Toxbox Api Details Updated Successfully', ['key' => 'edit']);
+            return $this->redirect('/admins/tokbox');
+        }
+    }
+
 
    
 }

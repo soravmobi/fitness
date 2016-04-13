@@ -87,7 +87,7 @@
 </div>
 <?php //echo $chat_session[0]['session_id']; ?>
 <script>
-var apiKey = "45550192";
+var apiKey = "<?php echo $tokbox[0]['api_key']; ?>";
 var sessionID = "<?php echo $chat_session[0]['session_id']; ?>";
 var token = "<?php echo $chat_session[0]['token_id']; ?>";
 var publisher;
@@ -218,11 +218,6 @@ $(document).ready(function(){
     var u_type = "<?php echo $u_type; ?>";
     var myVar;
     var i = 10;
-    $('#content').addClass('foggy-demo');
-    $('#footer').addClass('foggy-demo');
-    $('.chat_list_wrapper').addClass('foggy-demo');
-    $('#header').addClass('foggy-demo');
-    $('.foggy-demo').foggy();
 
     var handler_s = function()
     {
