@@ -15,4 +15,5 @@ return array(
     'Carbon' => array($vendorDir . '/nesbot/carbon/src'),
     'Aura\\Intl' => array($vendorDir . '/aura/intl/src'),
     'Aura\\Composer\\' => array($vendorDir . '/aura/installer-default/src'),
+    'mPDF' => array($vendorDir . '/mpdf/mpdf'),
 );
