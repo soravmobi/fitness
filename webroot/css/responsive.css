@@ -52,11 +52,23 @@
 .notification_wrap .list_icon li:nth-child(3n) {
   margin-right: 0px;
 }
+
+.trainer_dashboard .notification_wrap li {
+     width: 46%;
+}
+.trainer_dashboard .notification_wrap .list_icon li { width:30px;
+}
+.trainer_dashboard .notification_wrap li:nth-child(3n) {
+  margin-right: 20px;
+}
+.trainer_dashboard .notification_wrap .list_icon li:nth-child(3n) {
+  margin-right: 0px;
+}
 .slide_text li:nth-child(3n) a {
-  width: 300px;
+  width: 290px;
 }
 .ht_middle {
-  width: 40%;
+  width: 39%;
 }
 .ht_right {
   width: 54%;
@@ -64,7 +76,63 @@
 .session_content .tab-content {
   width: 84%;
 }
-	}
+.appointement_sec .scroll_content {
+  height: 350px;
+}
+.appointement_dashboard .responsive-calendar .day a {
+  margin: 7px;
+}
+.responsive-calendar .day {
+  width: 15.286%;
+}
+.cr_table_content tbody tr td {	
+  padding: 11px;
+
+}
+.visitor_map_progress {
+  padding: 30px 5px;
+
+}
+.agenda p {
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-top: 10px;
+
+}
+.appointement_sec .icon_main {
+  padding-left: 10px;
+
+}
+.transaction_date_wrap .form-group {
+  width: 32%;
+}
+.transaction_date_wrap .form-group:first-child {
+  width: 32%;
+}
+.divider {
+  right: -25px;
+}
+.cr_table_head h2 {
+  font-size: 20px;
+  padding-top: 18px;
+}
+.describe_wrap{padding:2px;}
+.location_wrap li{padding:10px 4px 10px 2px;}
+.trainer_bottom span {
+  padding-right: 2px;
+
+
+}
+.location_wrap li{border-right:inherit;
+}
+.customer_report_main {
+  padding: 50px 0px;
+}
+.describe_wrap p {
+  width: 222px;
+  font-size:12px;
+}
+}
 	
 	
 	
@@ -92,15 +160,15 @@
 .ht_right li:first-child {
   width: 175px;
 }
-.notification_wrap .list_icon li { width:30px;
+.trainer_dashboard .notification_wrap .list_icon li { width:30px;
 }
-.notification_wrap li:nth-child(3n) {
+.trainer_dashboard .notification_wrap li:nth-child(3n) {
   margin-right: 10px;
 }
-.notification_wrap .list_icon li:nth-child(3n) {
+.trainer_dashboard .notification_wrap .list_icon li:nth-child(3n) {
   margin-right: 0px;
 }
-.notification_wrap li {
+.trainer_dashboard .notification_wrap li {
   margin-right: 10px;
   width: 48%;
 }
@@ -119,6 +187,114 @@
 .describe_wrap {
   padding: 4px;
 }
+.cr_table_content tbody tr td {	
+  padding: 5px;
+
+}
+.visitor_map_progress {
+  padding: 30px 5px;
+
+}
+.agenda p {
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-top: 10px;
+
+}
+.appointement_sec .icon_main {
+  padding-left: 10px;
+
+}
+.notification_wrap .list_icon li { width:30px;
+}
+.notification_wrap li:nth-child(3n) {
+  margin-right: 10px;
+}
+.notification_wrap .list_icon li:nth-child(3n) {
+  margin-right: 0px;
+}
+.notification_wrap li {
+  margin-right: 10px;
+  width: 48%;
+}
+.appointement_sec .scroll_content {
+  height: 350px;
+}
+.appointement_head {
+  font-size: 18px;
+}
+.appointement_dashboard .responsive-calendar .day a {
+  margin: 10px;
+}
+.responsive-calendar .day {
+  width: 15.286%;
+}
+.calendor_content .session_content {
+  padding: 2px 0;
+}
+.text_block {
+  width: 175px;
+}
+.big_icon {
+  font-size: 17px;
+  height: 30px;
+  line-height: 32px;
+  width: 30px;
+}
+.mCSB_inside > .mCSB_container {
+  margin-right: 13px;
+}
+.appointer_name {
+  font-size: 13px;
+}
+.appointement_sec .session_content {
+  padding: 20px 3px 20px 5px;
+}
+.appointement_sec .icon_main {
+  padding-left: 1px;
+}
+.visitor_map_progress {
+  width: 34%;
+}
+#chartdiv {
+  width: 65%;
+}
+.agenda .session_content {
+  padding: 20px 5px;
+}
+.agenda p {
+  font-size: 12px;
+}
+.transaction_date_wrap .form-group {
+  width: 30%;
+}
+.transaction_date_wrap .form-group:first-child {
+  width: 38%;
+}
+.divider {
+  right: -23px;
+}
+.cr_table_head h2 {
+  font-size: 17px;
+  padding-top: 20px;
+}
+.session_setails_sec .session_content {
+  padding: 20px 2px;
+}
+.heading_payment_main h2 {
+  font-size: 18px;
+}
+.trainer_report_main .transaction_date_wrap.year_wrap .form-group:nth-child(2n+1) {
+  width: 11%;
+}
+.trainer_report_main .transaction_date_wrap label {
+  padding: 0 6px 0 32px;
+}
+.trainer_report_main .transaction_date_wrap .form-group {
+  width: 21%;
+}
+
+
 
 }
 	
@@ -178,6 +354,17 @@
 .notification_wrap li:nth-child(3n) {
   margin-right: 10px;
 }
+.trainer_dashboard .notification_wrap li {
+  margin: 10px 10px 10px 0;
+  min-height: 200px;
+  padding: 5px;
+  text-align: center;
+  vertical-align: top;
+  width: 47%;
+}
+.trainer_dashboard .notification_wrap li:nth-child(3n) {
+  margin-right: 10px;
+}
 .cloud_text {
   display: block;
   font-size: 14px;
@@ -189,6 +376,13 @@
   text-align: center;
 }
 .notification_wrap .list_icon li {
+  min-height: inherit;
+  width:30px;
+  margin:inherit;
+  line-height:20px;
+
+}
+.trainer_dashboard .notification_wrap .list_icon li {
   min-height: inherit;
   width:30px;
   margin:inherit;
@@ -275,8 +469,182 @@
 .describe_wrap {
   text-align: left;
 }
+.visitor_map_progress {
+  width: 100%;
+}
+#chartdiv {
+  width: 100%;
+}
+.appointement_head {	
+  margin-top: 30px;
+
+}
+.agenda {
+  margin-top: 30px;
+}
+.cr_table_content tbody tr td {
+  padding: 10px;
+
+}
+.appointement_sec .icon_main {
+  padding-left: 20px;
+}
+.agenda p {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.mobile_view {
+  display: none;
+  position: absolute;
+  right: 22px;
+  top: -40px;
+}
+.mobile_search {
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  right: -5px;
+  top: -33px;
+  display:block;
+}
+.ht_right .input-group-addon{display:none;}
+.ht_right .form-control {
+  border-radius: 3px !important;
+
+}
+.ht_right > ul {
+  line-height: 5px;
+}
+.ht_right li:first-child { margin:0px;
+}
+.ht_right a {
+  color: #c4c4c4;
+  font-size: 16px;
+}
+#leftNavMenu {
+  width: 250px;
+}
+.inner_header {
+  padding: 2px 0;
+}
+.appointement_dashboard .responsive-calendar .day a {
+  margin: 5px;
+  line-height:24px;
+}
+.responsive-calendar .day a {
+  height: 35px;
+  line-height: 12px;
+  width: 35px;
+}
+.transaction_date_wrap .form-group:first-child {
+  width: 80%;
+}
+.transaction_date_wrap .form-group {
+  width: 80%;
+}
+.divider {
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 39px;
+}
+.transaction_date_wrap .form-group:nth-child(2n){ margin-bottom:40px;}
+.transaction_date_wrap label {
+  padding: 0 0 0 45px;
+  text-align: left;
+
+}
+.transaction_date_wrap {
+  text-align: center;
+}
+
+.cr_table_content {
+  overflow: auto;
+}
+.cr_table_head h2 {
+  font-size: 16px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+.cr_table_content .table {
+  margin-bottom: 20px;
+  max-width: inherit;
+  width: 700px;
+}
+.statement_button button {
+  margin-right: 10px;
+  padding: 5px 22px;
+  font-size:14px;
+
+}
+.wallet_balance {
+  margin-top: 30px;
+}
+.list_table_icon {
+  text-align: center;
+}
+.trainer_earning .session_content {
+  text-align: center;
+}
+.trainer_report_main .transaction_date_wrap .form-group:first-child {
+  float: left;
+}
+
+
+.trainer_report_main .transaction_date_wrap .form-group:second-child {
+	margin-bottom:30px;
+
+}
+.transaction_date_wrap .divider {
+  text-align: center;
+
+}
+.trainer_report_main .transaction_date_wrap .form-group {
+  width: 74%;
+}
+.customer_report_table_sec .cr_table_content .table {
+  margin: 20px auto;
+  max-width: inherit;
+  width: 300px;
+}
+.message_wrap_head .pagination > li:first-child {
+  display: block;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-top: 7px;
+}
+#chartdiv {
+  display: inline-block;
+  height: 200px;
+
+}
+.visitor_map_progress .progress_bar {
+  margin-bottom: 10px;
+}
+.customer_report_main {
+  padding: 15px 0;
+}
+	
+
 }	
 
+@media (min-width:480px) and (max-width:767px){
+
+.trainer_report_main .transaction_date_wrap {
+  text-align: right;
+}
+.trainer_report_main .transaction_date_wrap.year_wrap .form-group:nth-child(2n+1) {
+  width: 25%;
+}
+ .year_wrap .form-group:nth-child(2n) {
+  margin-bottom: 20px;
+}
+
+
+
+	
+}
 @media (max-width:480px){
 	.slide_text li:nth-child(3n) a {
   width: 157px;
@@ -284,6 +652,12 @@
 .notification_wrap  li {
   width: 100%;
 }
+
+.trainer_dashboard .notification_wrap  li {
+  width: 100%;
+  min-height:145px;
+}
+
 .message_wrap_content_box li:last-child {
   margin: 10px 0;
   width: 100%;
@@ -292,5 +666,27 @@
   display: block;
   width: 100%;
 }
+.trainer_report_main .transaction_date_wrap {
+  text-align: center;
+}
+.trainer_report_main .transaction_date_wrap.year_wrap .form-group:nth-child(2n+1) {
+  float: left;
+}
+ .year_wrap .form-group:nth-child(2n) {
+  margin-bottom: 10px;
+}
+.trainer_report_main .transaction_date_wrap .form-group:first-child {
+  width: 50%;
+}
+.trainer_report_main .transaction_date_wrap .form-group {
+  width: 100%;
+}
+.transaction_date_wrap .input-group {
+  width: 100%;
+}
+.year_wrap .form-group {
+  margin-bottom: 4px;
+}
+
 	
 }

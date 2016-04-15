@@ -133,6 +133,33 @@ class CustomHelper extends Helper
         return $city;
     }
 
+    public function getLatLngUsingIP()
+    {
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $query = @unserialize(file_get_contents('http://ip-api.com/php/'));
+        if($query && $query['status'] == 'success') {
+          return $query;
+        } else {
+          return array();
+        }
+    }
+
+    public function getWheatherDetails()
+    {
+        $latlngdetails = $this->getLatLngUsingIP();
+        if(!empty($latlngdetails)){
+            $latitude  = $latlngdetails['lat'];
+            $longitude = $latlngdetails['lon'];
+        }else{
+            $latitude  = "";
+            $longitude = "";
+        }
+        $url  = "http://api.openweathermap.org/data/2.5/weather?lat=".$latitude."&lon=".$longitude;
+        $json = file_get_contents($url);
+        $data = json_decode($json,true);
+        return $data;
+    }
+
 
 }
 

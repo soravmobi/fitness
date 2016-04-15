@@ -323,6 +323,10 @@ function createCustomMarker(image) {
 
 /*visitor map start*/
 
+$(".mobile_search").click(function(){
+   $(".mobile_view").fadeToggle(700);
+ 
+});
 
 
 

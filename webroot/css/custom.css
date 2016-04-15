@@ -6850,7 +6850,14 @@ label.remain_bal {
   min-height: 335px;
 }
 .inner_header.affix{ background-color:rgba(0, 0, 0, 0.6) !important; padding:0px 0px 3px 0px;}
-.message_wrap_content label{max-width:inherit;}
 /*css for trainer dashboard page end */
 .customer_dashboard .rate_box:after{display: none;}
 .trainer_dashboard .rate_box:after{display: none;}
+.inner_header.affix{ background-color:rgba(0, 0, 0, 0.6) !important; padding:0px 0px 3px 0px;}
+.message_wrap_content label{max-width:inherit;}
+.list_table_icon {
+  text-align: right;
+}
+.mobile_search {
+  display:none;
+}

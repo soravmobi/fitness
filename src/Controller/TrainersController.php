@@ -31,6 +31,27 @@ class TrainersController extends AppController
         $voicecalls = $this->Chating->find()->where(['chat_reciever_id' => $this->data['id'], 'chat_type' => 2])->count();
         $messages = $this->conn->execute(' SELECT Count(*) AS `total_msg` FROM `chating` WHERE chat_type = 0 AND (chat_sender_id = '.$this->data['id'].' OR chat_reciever_id ='.$this->data['id'].') ')->fetchAll('assoc');
         $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
+        $pending_appointments  = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 0 AND `a`.`trainee_status` = 0 AND `a`.`created_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY `a`.`id` DESC')->fetchAll('assoc');
+           $upcoming_appointments = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 1 AND `a`.`trainee_status` = 1 AND `a`.`created_date` >= CURDATE() ORDER BY `a`.`id` DESC')->fetchAll('assoc');
+           if(!empty($upcoming_appointments)){
+              foreach($upcoming_appointments as $ua){
+                $sessionArr = unserialize($ua['session_data']);
+                for ($i=1; $i <= count($sessionArr); $i++) { 
+                    $upcomingArr['trainee_name'][] = $ua['trainee_name']." ".$ua['trainee_lname'];
+                    $upcomingArr['user_id'][]      = $ua['user_id'];
+                    $upcomingArr['trainee_image'][]= $ua['trainee_image'];
+                    $upcomingArr['location_name'][]= $sessionArr[$i]['location_address'];
+                    $upcomingArr['appo_date'][]    = $sessionArr[$i]['modified_dates'];
+                    $upcomingArr['appo_time'][]    = $sessionArr[$i]['modified_times'];
+                }
+              }        
+           }
+           else{
+                $upcomingArr = array();
+           }    
+        $this->set("from_id",$this->data['id']);
+        $this->set('upcomingArr', $upcomingArr);
+        $this->set('pending_appointments', $pending_appointments);
         $this->set('total_wallet_ammount', $total_wallet_ammount);
         $this->set('all_calls', $all_calls);
         $this->set('messages', $messages);

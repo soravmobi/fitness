@@ -42,18 +42,21 @@ class TraineesController extends AppController
   public function index()
   {
     $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
-    $videocalls = $this->Chating->find()->where(['chat_sender_id' => $this->data['id'], 'chat_type' => 1])->count();
-    $voicecalls = $this->Chating->find()->where(['chat_sender_id' => $this->data['id'], 'chat_type' => 2])->count();
-    $messages = $this->conn->execute(' SELECT Count(*) AS `total_msg` FROM `chating` WHERE chat_type = 0 AND (chat_sender_id = '.$this->data['id'].' OR chat_reciever_id ='.$this->data['id'].') ')->fetchAll('assoc');
-    $session = $this->Trainee_plan->find()->where(['user_id' => $this->data['id']])->toArray();
-    $purchased_plans = $this->conn->execute('SELECT *,`ase`.`id` AS admin_session_id FROM `admin_sessions` AS `ase` INNER JOIN `trainees` AS `t` ON t.user_id = ase.trainee_id WHERE ase.trainee_id = '.$this->data['id'].' ORDER BY ase.id DESC ')->fetchAll('assoc');
+    $trainer_meal_plans = $this->conn->execute(' SELECT `mp`.`trainer_id`,`t`.`trainer_name`,`t`.`trainer_lname` FROM `meal_plans` AS `mp` INNER JOIN `trainers` AS `t` ON `mp`.`trainer_id` = `t`.`user_id` WHERE `trainee_id` = '.$this->data['id'].' group by `trainer_id` ORDER BY `mp`.`id` DESC ')->fetchAll('assoc');
     $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
+    if(!empty($trainer_meal_plans)){
+      foreach($trainer_meal_plans as $m){
+        $meal_plans_details[] = $this->conn->execute(' SELECT * FROM `meal_plans` WHERE `trainer_id` = '.$m['trainer_id'].' AND `trainee_id` = '.$this->data['id'].' ORDER BY `row_id` DESC ')->fetchAll('assoc');
+      }
+      
+    }else{
+      $meal_plans_details   = array();
+    }
+    $chat_data = $this->conn->execute('SELECT * FROM `chating` WHERE (`chating`.`chat_sender_id` = '.$this->data['id'].' AND `chating`.`chat_type` = 0 ) OR (`chating`.`chat_reciever_id` ='.$this->data['id'].' AND `chating`.`chat_type` = 0 ) ORDER BY `chating`.`chat_id` DESC')->fetchAll('assoc');
+    $this->set('chat_data', $chat_data);
+    $this->set('meal_plans_details', $meal_plans_details);
+    $this->set('trainer_meal_plans', $trainer_meal_plans);
     $this->set('total_wallet_ammount', $total_wallet_ammount);
-    $this->set('purchased_plans', $purchased_plans);
-    $this->set('session', $session);
-    $this->set('videocalls', $videocalls);
-    $this->set('voicecalls', $voicecalls);
-    $this->set('messages', $messages);
     $this->set('profile_details', $profile_details);
   }
 

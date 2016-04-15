@@ -6,24 +6,30 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12 col-sm-12">
-            <div class="head_dashboard">
+            <!-- <div class="head_dashboard">
               <h3><i class="fa fa-exclamation-circle"></i> Any notifications that require the customer response or immediate attention displays here.</h3>
-              <p>If therenothing to display than it dissapears</p>
-            </div>
+              <p>If there nothing to display than it dissapears</p>
+            </div> -->
+            <?php 
+              $weather_details = $this->Custom->getWheatherDetails();
+              $weather = $weather_details['main']['temp'];
+              $windy   = $weather_details['wind']['speed'];
+            ?>
             <div class="notification_wrap">
               <ul>
-                <li>
+                <!-- <li>
                   <div class="cloud_box">
                     <div class="cloud"><i class="flaticon1-schedule" aria-hidden="true"></i></div>
                   </div>
                   <div class="cloud_text"> Current and <span>upcoming</span> <span>appointment</span> </div>
-                </li>
+                </li> -->
                 <li>
                   <div class="cloud_box">
                     <div class="cloud"><i class="fa fa-cloud" aria-hidden="true"></i></div>
                   </div>
-                  <div class="cloud_text"> Weather
-                    <div class="kilo_box">20<span>Km/hr</span></div>
+                  <div class="cloud_text">
+                    <div class="degree_main"><?php echo round($weather- 273.15,1); ?><span class="degree">0</span></div>
+                    <span>Weather</span>
                   </div>
                 </li>
                 <li>
@@ -47,11 +53,10 @@
                   <div class="cloud_box">
                     <div class="cloud"><i class="flaticon1-scale"></i></div>
                   </div>
-                  <div class="cloud_text"> Current weight : 200lb <span>goal : 180lb</span>
-                    <p>last update march 30, 2015</p>
+                  <div class="cloud_text"> Current weight : <?php echo $profile_details[0]['trainee_current_weight']; ?> LBS <span>goal : <?php echo $profile_details[0]['trainee_goal']; ?> LBS</span>
                   </div>
                 </li>
-                <li>
+                <!-- <li>
                   <div class="cloud_box">
                     <div class="cloud"><i class="fa fa-users" aria-hidden="true"></i></div>
                   </div>
@@ -76,12 +81,12 @@
                       <li class="icon_bg4"><a href="#"><i class="flaticon1-medical-1"></i></a></li>
                     </ul>
                   </div>
-                </li>
+                </li> -->
               </ul>
             </div>
           </div>
         </div>
-        <div class="Workout_wrap">
+        <!-- <div class="Workout_wrap">
           <div class="row">
             <div class="col-md-12 col-sm-12">
               <div class="session_setails_sec">
@@ -96,7 +101,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="meal_paln">
           <div class="row">
             <div class="col-md-12 col-sm-12">
@@ -106,12 +111,13 @@
                 </div>
                 <div class="session_content">
                   <ul class="nav_tabs">
-                    <li class="active"><a data-toggle="tab" role="tab" aria-controls="profile" href="#profile">Andre</a></li>
-                    <li><a data-toggle="tab" role="tab" aria-controls="about" href="#about">Andre</a></li>
-                    <li><a data-toggle="tab" role="tab" aria-controls="photos" href="#photos">Andre</a></li>
+                  <?php $i = 1; foreach($trainer_meal_plans as $m) { ?>
+                    <li <?php if($i == 1){echo "class='active'";}?>><a data-toggle="tab" role="tab" aria-controls="profile" title="<?php echo $m['trainer_name']." ".$m['trainer_lname']; ?>" href="#profile_<?php echo $i; ?>"><?php echo substr($m['trainer_name']." ".$m['trainer_lname'],0,11); ?></a></li>
+                  <?php $i++; } ?>
                   </ul>
                   <div class="tab-content">
-                    <div id="profile" class="tab-pane active" role="tabpanel">
+                  <?php $j = 1; foreach($meal_plans_details as $md) { ?>
+                    <div id="profile_<?php echo $j; ?>" class="tab-pane <?php if($j == 1){echo "active";}?>" role="tabpanel">
                       <div class="row">
                         <div class="col-sm-12">
                           <div class="table_meal">
@@ -129,64 +135,29 @@
                                 </tr>
                               </thead>
                               <tbody>
+                              <?php 
+                                $inner_arr = array();
+                                $inner_arr = $md; 
+                                foreach($inner_arr as $ia) { 
+                              ?>
                                 <tr>
-                                  <td>Breakfast</td>
-                                  <td>2</td>
-                                  <td>3</td>
-                                  <td>4</td>
-                                  <td>5</td>
-                                  <td>6</td>
-                                  <td>6</td>
-                                  <td>6</td>
+                                  <td><?php echo $ia['meal_plan']; ?></td>
+                                  <td><?php echo $ia['sunday']; ?></td>
+                                  <td><?php echo $ia['monday']; ?></td>
+                                  <td><?php echo $ia['tuesday']; ?></td>
+                                  <td><?php echo $ia['wednesday']; ?></td>
+                                  <td><?php echo $ia['thursday']; ?></td>
+                                  <td><?php echo $ia['friday']; ?></td>
+                                  <td><?php echo $ia['saturday']; ?></td>
                                 </tr>
-                                <tr>
-                                  <td>Snack 1</td>
-                                  <td>2</td>
-                                  <td>3</td>
-                                  <td>4</td>
-                                  <td>5</td>
-                                  <td>6</td>
-                                  <td>6</td>
-                                  <td>6</td>
-                                </tr>
-                                <tr>
-                                  <td>Lunch</td>
-                                  <td>2</td>
-                                  <td>3</td>
-                                  <td>4</td>
-                                  <td>5</td>
-                                  <td>6</td>
-                                  <td>6</td>
-                                  <td>6</td>
-                                </tr>
-                                <tr>
-                                  <td>Snack 2</td>
-                                  <td>2</td>
-                                  <td>3</td>
-                                  <td>4</td>
-                                  <td>5</td>
-                                  <td>6</td>
-                                  <td>6</td>
-                                  <td>6</td>
-                                </tr>
-                                <tr>
-                                  <td>Dinner</td>
-                                  <td>2</td>
-                                  <td>3</td>
-                                  <td>4</td>
-                                  <td>5</td>
-                                  <td>6</td>
-                                  <td>6</td>
-                                  <td>6</td>
-                                </tr>
+                              <?php } ?>
                               </tbody>
                             </table>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div id="about" class="tab-pane" role="tabpanel"> </div>
-                    <div id="photos" class="tab-pane" role="tabpanel"> </div>
+                  <?php $j++; } ?>
                   </div>
                 </div>
               </div>
@@ -383,14 +354,11 @@
                 </ul>
               </li>
               <li class="pull-right">
-                <div class="input-group">
-                  <input type="text" placeholder="Find Trainees" aria-label="Amount (to the nearest dollar)" class="form-control">
-                  <span class="input-group-addon"><i class="fa fa-search"></i></span> </div>
-              </li>
             </ul>
             <div class="message_wrap_content">
               <table class="table table-striped">
                 <tbody>
+                <?php $i = 1; foreach($chat_data as $c) { ?>
                   <tr>
                     <td><div class="squaredThree">
                         <input type="checkbox" value="None" id="squaredThree" name="check" checked />
@@ -400,84 +368,13 @@
                     <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
                     <td>9:43</td>
                   </tr>
-                  <tr>
-                    <td><div class="squaredThree">
-                        <input type="checkbox" value="None" id="squaredThree1" name="check" checked />
-                        <label for="squaredThree1"></label>
-                      </div></td>
-                    <td>Steve Jobs</td>
-                    <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
-                    <td>9:43</td>
-                  </tr>
-                  <tr>
-                    <td><div class="squaredThree">
-                        <input type="checkbox" value="None" id="squaredThree2" name="check" checked />
-                        <label for="squaredThree2"></label>
-                      </div></td>
-                    <td>Steve Jobs</td>
-                    <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
-                    <td>9:43</td>
-                  </tr>
-                  <tr>
-                    <td><div class="squaredThree">
-                        <input type="checkbox" value="None" id="squaredThree3" name="check" checked />
-                        <label for="squaredThree3"></label>
-                      </div></td>
-                    <td>Steve Jobs</td>
-                    <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
-                    <td>9:43</td>
-                  </tr>
-                  <tr>
-                    <td><div class="squaredThree">
-                        <input type="checkbox" value="None" id="squaredThree4" name="check" checked />
-                        <label for="squaredThree4"></label>
-                      </div></td>
-                    <td>Steve Jobs</td>
-                    <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
-                    <td>9:43</td>
-                  </tr>
-                  <tr>
-                    <td><div class="squaredThree">
-                        <input type="checkbox" value="None" id="squaredThree5" name="check" checked />
-                        <label for="squaredThree5"></label>
-                      </div></td>
-                    <td>Steve Jobs</td>
-                    <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
-                    <td>9:43</td>
-                  </tr>
-                  <tr>
-                    <td><div class="squaredThree">
-                        <input type="checkbox" value="None" id="squaredThree6" name="check" checked />
-                        <label for="squaredThree6"></label>
-                      </div></td>
-                    <td>Steve Jobs</td>
-                    <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
-                    <td>9:43</td>
-                  </tr>
-                  <tr>
-                    <td><div class="squaredThree">
-                        <input type="checkbox" value="None" id="squaredThree7" name="check" checked />
-                        <label for="squaredThree7"></label>
-                      </div></td>
-                    <td>Steve Jobs</td>
-                    <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
-                    <td>9:43</td>
-                  </tr>
-                  <tr>
-                    <td><div class="squaredThree">
-                        <input type="checkbox" value="None" id="squaredThree8" name="check" checked />
-                        <label for="squaredThree8"></label>
-                      </div></td>
-                    <td>Steve Jobs</td>
-                    <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
-                    <td>9:43</td>
-                  </tr>
+                <?php $i++; if($i == 11) break; } ?>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-        <div class="resources_sec">
+        <!-- <div class="resources_sec">
           <div class="head_resources"> Tools / Resources </div>
           <div class="resources_tab">
             <ul role="tablist" class="nav nav-tabs clearfix">
@@ -505,7 +402,7 @@
               <div id="Grocery" class="tab-pane" role="tabpanel"> </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

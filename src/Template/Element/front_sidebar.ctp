@@ -58,16 +58,17 @@
           <ul>
             <li><a href="javascript:void(0);"> <i class="fa fa-refresh"></i> </a></li>
             <li><a href="javascript:void(0);"> <i class="fa fa-times"></i> </a></li>
-            <li><a href="javascript:void(0);"><marquee> Your next scheduled appointment with andre begins in 18:34 HRS ** @ 19340 walters rd, saskatoon, sk. *** </marquee></a></li>
+            <!-- <li><a href="javascript:void(0);"><marquee> Your next scheduled appointment with andre begins in 18:34 HRS ** @ 19340 walters rd, saskatoon, sk. *** </marquee></a></li> -->
           </ul>
         </div>
       </div>
       <div class="ht_right">
         <ul>
           <li>
-            <div class="input-group">
-              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Find Trainees">
-              <span class="input-group-addon"><i class="fa fa-search"></i></span> </div>
+             <div class="mobile_search"><i class="fa fa-search"></i></div>
+              <div class="input-group mobile_view">
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Find Trainees">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span> </div>
           </li>
           <li> <span class="icon_tip"><?php if(isset($notifications)) { echo $notifications; } else { echo "0"; } ?></span> 
           <?php if($user_data['user_type'] == "trainer") { ?>

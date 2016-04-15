@@ -128,3 +128,1477 @@ Stack Trace:
 #1 {main}
 
 
+2016-04-14 14:56:30 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 14:57:10 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 14:58:29 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 14:58:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 14:58:54 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 14:58:55 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 14:59:24 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:00:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:00:37 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:00:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:01:08 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:01:40 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:01:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:01:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:01:48 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainer_profile/
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:01:49 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainer_profile/
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:01:50 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:03:32 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:03:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainer_profile/
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:03:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:03:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:03:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:03:50 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:04:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:05:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:06:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/%3Cpre%20class=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:06:39 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/%3Cpre%20class=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:07:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/%3Cpre%20class=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:07:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_gallery/56581342608e6.gif
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:07:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_gallery/5658131874392.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:07:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_gallery/565813fb73a69.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:07:10 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_gallery/56581342608e6.gif
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:07:10 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/%3Cpre%20class=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:07:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_gallery/565813fb73a69.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:07:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_gallery/5658131874392.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:09:56 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/%3Cpre%20class=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:09:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/%3Cpre%20class=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:10:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/%3Cpre%20class=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:10:44 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_gallery/5658131874392.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:10:44 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_gallery/565813fb73a69.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:10:45 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_gallery/56581342608e6.gif
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:10:45 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_gallery/5658131874392.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:10:46 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_gallery/565813fb73a69.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:11:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:11:45 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/%3Cpre%20class=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:11:46 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:11:47 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/%3Cpre%20class=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:11:52 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:11:52 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:11:52 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:11:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:11:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:12:00 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:12:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:13:37 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:14:15 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:15:06 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-14 15:15:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 08:16:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 08:16:42 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 08:16:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 08:19:40 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 08:19:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 08:20:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 08:20:33 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 08:22:56 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 08:22:59 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 08:23:14 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 08:23:15 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 08:23:23 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 08:23:25 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 08:23:32 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 08:23:33 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 10:00:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 10:01:24 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 10:01:25 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 10:05:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 10:05:58 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 10:07:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 10:07:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 10:08:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 10:08:19 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 10:09:30 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 10:09:32 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 10:10:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 10:10:19 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 11:13:23 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 11:14:08 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 11:14:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 11:14:44 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 11:14:45 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 11:15:02 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 11:15:04 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 11:15:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 11:15:19 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 11:15:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 11:15:29 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/5630e0b3d2ece.jpg
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 11:15:40 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 11:16:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 11:41:50 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Main could not be found.
+Exception Attributes: array (
+  'class' => 'Main',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/main
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 12:46:18 Warning: Warning (2): file_get_contents(http://api.openweathermap.org/data/2.5/weather?lat=22.71669960022&amp;lon=75.833297729492): failed to open stream: HTTP request failed! HTTP/1.1 401 Unauthorized
+ in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 158]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+file_get_contents - [internal], line ??
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 158
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-15 12:46:24 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 12:46:25 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 12:47:34 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/opt/lampp/htdocs/fitness/src/Template/Trainees/index.ctp, line 115]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2016-04-15 12:47:34 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /fitness/trainees
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/opt/lampp/htdo...', 115)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2016-04-15 12:51:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 13:01:40 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 13:01:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 13:02:35 Warning: Warning (2): file_get_contents(http://api.openweathermap.org/data/2.5/weather?lat=22.71669960022&amp;lon=75.833297729492): failed to open stream: HTTP request failed! HTTP/1.1 401 Unauthorized
+ in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 158]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+file_get_contents - [internal], line ??
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 158
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-15 13:02:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 13:02:37 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-15 13:07:12 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY `row_id` DESC' at line 1
+Request URL: /fitness/trainees
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(288): Cake\Database\Log\LoggingStatement->execute()
+#4 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(245): Cake\Database\Connection->query(' SELECT * FROM ...')
+#5 /opt/lampp/htdocs/fitness/src/Controller/TraineesController.php(49): Cake\Database\Connection->execute(' SELECT * FROM ...')
+#6 [internal function]: App\Controller\TraineesController->index()
+#7 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#9 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#10 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2016-04-15 13:23:56 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 56]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2016-04-15 13:23:56 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /fitness/trainees
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/opt/lampp/htdo...', 56)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
