@@ -186,7 +186,7 @@
             </div>
           </div>
         </div>
-        <div class="dashboard_mid_sec">
+        <!-- <div class="dashboard_mid_sec">
           <div class="row">
             <div class="col-md-4 col-sm-4">
               <div class="request_sec customer_report_table_sec">
@@ -252,7 +252,7 @@
               <div class="diary_map"> <img src="<?php echo $this->request->webroot; ?>images/diary.png" class="img-responsive"> </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="visiter_map_sec">
           <div class="row">
             <div class="col-md-8 col-sm-8">
@@ -292,106 +292,36 @@
               <li><span class="flaticon1-tool"></span> Inbox</li>
               <li class="dropdown"><a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">action <i class="fa fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">profile</a></li>
-                  <li><a href="#">setting</a></li>
+                  <li><a href="javascript:void(0);"><i class="fa fa-trash-o"></i> Delete</a></li>
+                  <li><a href="javascript:void(0);"><i class="fa fa-eye"></i> Mark Read</a></li>
                 </ul>
               </li>
-              <li class="dropdown"><a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">select <i class="fa fa-chevron-down"></i> </a>
+             <!--  <li class="dropdown"><a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">select <i class="fa fa-chevron-down"></i> </a>
                 <ul class="dropdown-menu">
                   <li><a href="#">profile</a></li>
                   <li><a href="#">setting</a></li>
                 </ul>
-              </li>
+              </li> -->
               <li class="pull-right">
-                <div class="input-group">
+                <!-- <div class="input-group">
                   <input type="text" placeholder="Search Message" aria-label="Amount (to the nearest dollar)" class="form-control">
-                  <span class="input-group-addon"><i class="fa fa-search"></i></span> </div>
+                  <span class="input-group-addon"><i class="fa fa-search"></i></span> </div> -->
               </li>
             </ul>
             <div class="message_wrap_content">
               <table class="table table-striped">
                 <tbody>
+                <?php $i = 1; foreach($messages as $m){ ?>
                   <tr>
                     <td><div class="squaredThree">
                         <input type="checkbox" value="None" id="squaredThree" name="check" checked />
                         <label for="squaredThree"></label>
                       </div></td>
-                    <td>Steve Jobs</td>
-                    <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
-                    <td>9:43</td>
+                    <td><?php echo $m['trainee_name']." ".$m['trainee_lname']; ?></td>
+                    <td><?php echo $m['chat_messsage']; ?></td>
+                    <td><?php echo $m['chat_added_date']; ?></td>
                   </tr>
-                  <tr>
-                    <td><div class="squaredThree">
-                        <input type="checkbox" value="None" id="squaredThree1" name="check" checked />
-                        <label for="squaredThree1"></label>
-                      </div></td>
-                    <td>Steve Jobs</td>
-                    <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
-                    <td>9:43</td>
-                  </tr>
-                  <tr>
-                    <td><div class="squaredThree">
-                        <input type="checkbox" value="None" id="squaredThree2" name="check" checked />
-                        <label for="squaredThree2"></label>
-                      </div></td>
-                    <td>Steve Jobs</td>
-                    <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
-                    <td>9:43</td>
-                  </tr>
-                  <tr>
-                    <td><div class="squaredThree">
-                        <input type="checkbox" value="None" id="squaredThree3" name="check" checked />
-                        <label for="squaredThree3"></label>
-                      </div></td>
-                    <td>Steve Jobs</td>
-                    <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
-                    <td>9:43</td>
-                  </tr>
-                  <tr>
-                    <td><div class="squaredThree">
-                        <input type="checkbox" value="None" id="squaredThree4" name="check" checked />
-                        <label for="squaredThree4"></label>
-                      </div></td>
-                    <td>Steve Jobs</td>
-                    <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
-                    <td>9:43</td>
-                  </tr>
-                  <tr>
-                    <td><div class="squaredThree">
-                        <input type="checkbox" value="None" id="squaredThree5" name="check" checked />
-                        <label for="squaredThree5"></label>
-                      </div></td>
-                    <td>Steve Jobs</td>
-                    <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
-                    <td>9:43</td>
-                  </tr>
-                  <tr>
-                    <td><div class="squaredThree">
-                        <input type="checkbox" value="None" id="squaredThree6" name="check" checked />
-                        <label for="squaredThree6"></label>
-                      </div></td>
-                    <td>Steve Jobs</td>
-                    <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
-                    <td>9:43</td>
-                  </tr>
-                  <tr>
-                    <td><div class="squaredThree">
-                        <input type="checkbox" value="None" id="squaredThree7" name="check" checked />
-                        <label for="squaredThree7"></label>
-                      </div></td>
-                    <td>Steve Jobs</td>
-                    <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
-                    <td>9:43</td>
-                  </tr>
-                  <tr>
-                    <td><div class="squaredThree">
-                        <input type="checkbox" value="None" id="squaredThree8" name="check" checked />
-                        <label for="squaredThree8"></label>
-                      </div></td>
-                    <td>Steve Jobs</td>
-                    <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
-                    <td>9:43</td>
-                  </tr>
+                <?php $i++; } ?>
                 </tbody>
               </table>
             </div>

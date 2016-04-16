@@ -72,13 +72,83 @@
           </li>
           <li> <span class="icon_tip"><?php if(isset($notifications)) { echo $notifications; } else { echo "0"; } ?></span> 
           <?php if($user_data['user_type'] == "trainer") { ?>
-            <a title="Notifications" href="<?php echo $this->request->webroot; ?>trainers/notifications"><i class="fa fa-bell"></i> </a>
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Notifications" href="<?php echo $this->request->webroot; ?>trainers/notifications"><i class="fa fa-bell"></i> </a>
+            <ul class="dropdown-menu notification">
+            <?php foreach($noti_data as $nd) { ?>
+              <li>
+                <div class="notifi_inner">
+                  <div class="noti_img">
+                    <img class="profile-img" src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $nd['trainee_image'];  ?>">
+                  </div>
+                  <div class="niti_text">
+                    <p><?php echo ucwords($nd['trainee_name']." ".$nd['trainee_lname']." ".$nd['noti_message']); ?></p>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </li>
+            <?php } ?>
+            </ul>
           <?php } ?>
             <?php if($user_data['user_type'] == "trainee") { ?>
-            <a title="Notifications" href="<?php echo $this->request->webroot; ?>trainees/notifications"><i class="fa fa-bell"></i> </a>
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Notifications" href="<?php echo $this->request->webroot; ?>trainees/notifications"><i class="fa fa-bell"></i></a>
+            <ul class="dropdown-menu notification">
+            <?php foreach($noti_data as $nd) { ?>
+              <li>
+                <div class="notifi_inner">
+                  <div class="noti_img">
+                    <img class="profile-img" src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $nd['trainer_image'];  ?>">
+                  </div>
+                  <div class="niti_text">
+                    <p><?php echo ucwords($nd['trainer_name']." ".$nd['trainer_lname']." ".$nd['noti_message']); ?></p>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </li>
+            <?php } ?>
+            </ul>
           <?php } ?>
          </li>
-          <li> <span class="icon_tip yellow">2</span> <a href="javascript:void(0);"><i class="fa fa-envelope"></i></a> </li>
+        <li> <span class="icon_tip yellow">0</span> 
+        <?php if($user_data['user_type'] == "trainer") { ?>
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Notifications" href="javascript:void(0);"><i class="fa fa-envelope"></i></a> 
+              <ul class="dropdown-menu notification">
+              <?php foreach($messages as $m) { ?>
+                <li>
+                  <div class="notifi_inner">
+                    <div class="noti_img">
+                      <img class="profile-img" src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $m['trainee_image']; ?>">
+                    </div>
+                    <div class="niti_text">
+                      <h4><?php echo ucwords($m['trainee_name']." ".$m['trainee_lname']); ?></h4>
+                      <p><?php echo $m['chat_messsage']; ?></p>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </li>
+              <?php } ?>
+              </ul>
+          <?php } ?>
+          <?php if($user_data['user_type'] == "trainee") { ?>
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Notifications" href="javascript:void(0);"><i class="fa fa-envelope"></i></a> 
+              <ul class="dropdown-menu notification">
+              <?php foreach($messages as $m) { ?>
+                <li>
+                  <div class="notifi_inner">
+                    <div class="noti_img">
+                      <img class="profile-img" src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $m['trainer_image']; ?>">
+                    </div>
+                    <div class="niti_text">
+                      <h4><?php echo ucwords($m['trainer_name']." ".$m['trainer_lname']); ?></h4>
+                      <p><?php echo $m['chat_messsage']; ?></p>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </li>
+              <?php } ?>
+              </ul>
+          <?php } ?>
+          </li>
+
           <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <div class="circle_img">
             <?php if($user_data['user_type'] == "trainer") { ?>

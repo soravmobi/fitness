@@ -36,7 +36,17 @@ class TraineesController extends AppController
       $this->lwaClientId ="amzn1.application-oa2-client.1e55f9b590ae4f3085a6796aa9c87fd6"; // Login With Amazon Client ID
       $this->returnURL   = "https://virtualtrainr.com/trainees/resultAmazon";
       $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
+      $noti_data = $this->getNotifications();
+      $messages = $this->getChatMessages();
+      $this->set('messages', $messages);
+      $this->set('noti_data', $noti_data);
       $this->set('notifications', $this->total_notifications);
+  }
+
+  public function getChatMessages()
+  {
+    $messages = $this->conn->execute("SELECT * FROM `chating` AS `c` INNER JOIN `trainers` AS `t` ON `c`.`chat_sender_id` = `t`.`user_id` WHERE `c`.`chat_reciever_id` = ".$this->data['id']." ORDER BY `c`.`chat_id` DESC LIMIT 10")->fetchAll('assoc');
+    return $messages;
   }
 
   public function index()
@@ -52,8 +62,8 @@ class TraineesController extends AppController
     }else{
       $meal_plans_details   = array();
     }
-    $chat_data = $this->conn->execute('SELECT * FROM `chating` WHERE (`chating`.`chat_sender_id` = '.$this->data['id'].' AND `chating`.`chat_type` = 0 ) OR (`chating`.`chat_reciever_id` ='.$this->data['id'].' AND `chating`.`chat_type` = 0 ) ORDER BY `chating`.`chat_id` DESC')->fetchAll('assoc');
-    $this->set('chat_data', $chat_data);
+    $messages = $this->getChatMessages();
+    $this->set('messages', $messages);
     $this->set('meal_plans_details', $meal_plans_details);
     $this->set('trainer_meal_plans', $trainer_meal_plans);
     $this->set('total_wallet_ammount', $total_wallet_ammount);
@@ -63,16 +73,34 @@ class TraineesController extends AppController
   public function mealplans()
   {
     $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
-    $meal_plans_arr = $this->Meal_plans->find()->where(['trainee_id' => $this->data['id']])->order(['row_id' => 'ASC'])->toArray();
-    $this->set('meal_plans_arr', $meal_plans_arr);
+    $trainer_meal_plans = $this->conn->execute(' SELECT `mp`.`trainer_id`,`t`.`trainer_name`,`t`.`trainer_lname` FROM `meal_plans` AS `mp` INNER JOIN `trainers` AS `t` ON `mp`.`trainer_id` = `t`.`user_id` WHERE `trainee_id` = '.$this->data['id'].' group by `trainer_id` ORDER BY `mp`.`id` DESC ')->fetchAll('assoc');
+    if(!empty($trainer_meal_plans)){
+      foreach($trainer_meal_plans as $m){
+        $meal_plans_details[] = $this->conn->execute(' SELECT * FROM `meal_plans` WHERE `trainer_id` = '.$m['trainer_id'].' AND `trainee_id` = '.$this->data['id'].' ORDER BY `row_id` DESC ')->fetchAll('assoc');
+      }
+      
+    }else{
+      $meal_plans_details   = array();
+    }
+    $this->set('meal_plans_details', $meal_plans_details);
+    $this->set('trainer_meal_plans', $trainer_meal_plans);
     $this->set('profile_details', $profile_details);
   }
 
   public function grocerylist()
   {
     $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
-    $grocery_arr = $this->Shopping->find()->where(['trainee_id' => $this->data['id']])->order(['row_id' => 'ASC'])->toArray();
-    $this->set('grocery_arr', $grocery_arr);
+    $trainer_grocery = $this->conn->execute(' SELECT `mp`.`trainer_id`,`t`.`trainer_name`,`t`.`trainer_lname` FROM `shopping` AS `mp` INNER JOIN `trainers` AS `t` ON `mp`.`trainer_id` = `t`.`user_id` WHERE `trainee_id` = '.$this->data['id'].' group by `trainer_id` ORDER BY `mp`.`id` DESC ')->fetchAll('assoc');
+    if(!empty($trainer_grocery)){
+      foreach($trainer_grocery as $m){
+        $grocery_details[] = $this->conn->execute(' SELECT * FROM `shopping` WHERE `trainer_id` = '.$m['trainer_id'].' AND `trainee_id` = '.$this->data['id'].' ORDER BY `row_id` DESC ')->fetchAll('assoc');
+      }
+      
+    }else{
+      $grocery_details   = array();
+    }
+    $this->set('grocery_details', $grocery_details);
+    $this->set('trainer_grocery', $trainer_grocery);
     $this->set('profile_details', $profile_details);
   }
 
@@ -306,19 +334,25 @@ class TraineesController extends AppController
        $this->set('profile_details', $profile_details); 
     }
 
-    public function notifications()
+    public function getNotifications()
     {
-       $id = $this->data['id'];
-       $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
-       $rate_plans_noti = $this->conn->execute('SELECT *,`n`.`id` AS `noti_id` FROM `notifications` AS `n` INNER JOIN `appointments` AS `a` ON `n`.`parent_id` = `a`.`id` INNER JOIN `trainers` AS `t` ON `t`.`user_id` = `n`.`noti_sender_id` WHERE `n`.`noti_receiver_id` = '.$this->data['id'].' ORDER BY `n`.`id` DESC ')->fetchAll('assoc');
-       $packages_noti   = $this->conn->execute('SELECT *,`n`.`id` AS `noti_id` FROM `notifications` AS `n` INNER JOIN `custom_packages_history` AS `c` ON `n`.`parent_id` = `c`.`id` INNER JOIN `trainers` AS `t` ON `t`.`user_id` = `n`.`noti_sender_id` WHERE `n`.`noti_receiver_id` = '.$this->data['id'].' ORDER BY `n`.`id` DESC ')->fetchAll('assoc');
-       $noti_data = array_merge($rate_plans_noti,$packages_noti);
-       $noti_final_arr = array();
+      $id = $this->data['id'];
+      $rate_plans_noti = $this->conn->execute('SELECT *,`n`.`id` AS `noti_id` FROM `notifications` AS `n` INNER JOIN `appointments` AS `a` ON `n`.`parent_id` = `a`.`id` INNER JOIN `trainers` AS `t` ON `t`.`user_id` = `n`.`noti_sender_id` WHERE `n`.`noti_receiver_id` = '.$this->data['id'].' ORDER BY `n`.`id` DESC ')->fetchAll('assoc');
+      $packages_noti   = $this->conn->execute('SELECT *,`n`.`id` AS `noti_id` FROM `notifications` AS `n` INNER JOIN `custom_packages_history` AS `c` ON `n`.`parent_id` = `c`.`id` INNER JOIN `trainers` AS `t` ON `t`.`user_id` = `n`.`noti_sender_id` WHERE `n`.`noti_receiver_id` = '.$this->data['id'].' ORDER BY `n`.`id` DESC ')->fetchAll('assoc');
+      $noti_data = array_merge($rate_plans_noti,$packages_noti);
+      $noti_final_arr = array();
         foreach ($noti_data as $user)
          {
           $noti_final_arr[] = $user['noti_id'];
          }
-        array_multisort($noti_final_arr, SORT_DESC, $noti_data);
+      array_multisort($noti_final_arr, SORT_DESC, $noti_data);
+      return $noti_data;
+    }
+
+    public function notifications()
+    {
+       $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
+       $noti_data = $this->getNotifications();
        $this->set('noti_data', $noti_data);
        $this->set('profile_details', $profile_details); 
     }

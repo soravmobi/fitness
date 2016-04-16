@@ -343,32 +343,32 @@
               <li><span class="flaticon1-tool"></span> Inbox</li>
               <li class="dropdown"><a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">action <i class="fa fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">profile</a></li>
-                  <li><a href="#">setting</a></li>
+                  <li><a href="javascript:void(0);"><i class="fa fa-trash-o"></i> Delete</a></li>
+                  <li><a href="javascript:void(0);"><i class="fa fa-eye"></i> Mark Read</a></li>
                 </ul>
               </li>
-              <li class="dropdown"><a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">select <i class="fa fa-chevron-down"></i> </a>
+              <!-- <li class="dropdown"><a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">select <i class="fa fa-chevron-down"></i> </a>
                 <ul class="dropdown-menu">
                   <li><a href="#">profile</a></li>
                   <li><a href="#">setting</a></li>
                 </ul>
-              </li>
+              </li> -->
               <li class="pull-right">
             </ul>
             <div class="message_wrap_content">
               <table class="table table-striped">
                 <tbody>
-                <?php $i = 1; foreach($chat_data as $c) { ?>
+                <?php $i = 1; foreach($messages as $m){ ?>
                   <tr>
                     <td><div class="squaredThree">
                         <input type="checkbox" value="None" id="squaredThree" name="check" checked />
                         <label for="squaredThree"></label>
                       </div></td>
-                    <td>Steve Jobs</td>
-                    <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
-                    <td>9:43</td>
+                    <td><?php echo $m['trainer_name']." ".$m['trainer_lname']; ?></td>
+                    <td><?php echo $m['chat_messsage']; ?></td>
+                    <td><?php echo $m['chat_added_date']; ?></td>
                   </tr>
-                <?php $i++; if($i == 11) break; } ?>
+                <?php $i++; } ?>
                 </tbody>
               </table>
             </div>

@@ -6861,3 +6861,38 @@ label.remain_bal {
 .mobile_search {
   display:none;
 }
+
+/** css start for 16-aprl **/
+.notification{max-height: 350px; overflow: auto; min-width: 250px; left: auto; right: 0px;}
+.notification li{
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 7px;
+}
+.notification li:last-child{
+  border-bottom: none;
+}
+.noti_img {
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    float: left;
+    height: 40px;
+    overflow: hidden;
+    width: 40px;
+}
+.niti_text {
+    float: left;
+    width: 80%;
+    padding-left: 7px;
+}
+.niti_text h4 {
+    font-size: 13px;
+    font-weight: bold;
+}
+.niti_text p {
+    font-size: 12px;
+}
+.file_img{
+  height: 105px;
+  width: 150px;
+}

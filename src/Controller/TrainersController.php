@@ -19,46 +19,48 @@ class TrainersController extends AppController
         $this->Auth->allow(['addTrainer','downloadDocument']);
         $this->data = $this->Custom->getSessionData();
         $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
+        $noti_data = $this->getNotifications();
+        $messages = $this->getChatMessages();
+        $this->set('messages', $messages);
+        $this->set('noti_data', $noti_data);
         $this->set('notifications', $this->total_notifications);
     }
 
-    public function index()
+  public function getChatMessages()
+  {
+    $messages = $this->conn->execute("SELECT * FROM `chating` AS `c` INNER JOIN `trainees` AS `t` ON `c`.`chat_sender_id` = `t`.`user_id` WHERE `c`.`chat_reciever_id` = ".$this->data['id']." ORDER BY `c`.`chat_id` DESC LIMIT 10")->fetchAll('assoc');
+    return $messages;
+  }
+
+  public function index()
 	{
 		$profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
-        $account = $this->Trainer_account->find()->where(['trainer_id' => $this->data['id']])->toArray();
-        $all_calls = $this->conn->execute(' SELECT *,`t`.`user_id` AS trainee_id FROM `trainer_sessions` AS `ts` INNER JOIN `trainees` AS `t` ON ts.user_id = t.user_id ORDER BY ts.id DESC')->fetchAll('assoc');
-        $videocalls = $this->Chating->find()->where(['chat_reciever_id' => $this->data['id'], 'chat_type' => 1])->count();
-        $voicecalls = $this->Chating->find()->where(['chat_reciever_id' => $this->data['id'], 'chat_type' => 2])->count();
-        $messages = $this->conn->execute(' SELECT Count(*) AS `total_msg` FROM `chating` WHERE chat_type = 0 AND (chat_sender_id = '.$this->data['id'].' OR chat_reciever_id ='.$this->data['id'].') ')->fetchAll('assoc');
-        $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
-        $pending_appointments  = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 0 AND `a`.`trainee_status` = 0 AND `a`.`created_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY `a`.`id` DESC')->fetchAll('assoc');
-           $upcoming_appointments = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 1 AND `a`.`trainee_status` = 1 AND `a`.`created_date` >= CURDATE() ORDER BY `a`.`id` DESC')->fetchAll('assoc');
-           if(!empty($upcoming_appointments)){
-              foreach($upcoming_appointments as $ua){
-                $sessionArr = unserialize($ua['session_data']);
-                for ($i=1; $i <= count($sessionArr); $i++) { 
-                    $upcomingArr['trainee_name'][] = $ua['trainee_name']." ".$ua['trainee_lname'];
-                    $upcomingArr['user_id'][]      = $ua['user_id'];
-                    $upcomingArr['trainee_image'][]= $ua['trainee_image'];
-                    $upcomingArr['location_name'][]= $sessionArr[$i]['location_address'];
-                    $upcomingArr['appo_date'][]    = $sessionArr[$i]['modified_dates'];
-                    $upcomingArr['appo_time'][]    = $sessionArr[$i]['modified_times'];
-                }
-              }        
-           }
-           else{
-                $upcomingArr = array();
-           }    
-        $this->set("from_id",$this->data['id']);
-        $this->set('upcomingArr', $upcomingArr);
-        $this->set('pending_appointments', $pending_appointments);
-        $this->set('total_wallet_ammount', $total_wallet_ammount);
-        $this->set('all_calls', $all_calls);
-        $this->set('messages', $messages);
-        $this->set('account', $account);
-        $this->set('videocalls', $videocalls);
-        $this->set('voicecalls', $voicecalls);
-		$this->set('profile_details', $profile_details);
+    $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
+    $messages = $this->getChatMessages();
+    $pending_appointments  = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 0 AND `a`.`trainee_status` = 0 AND `a`.`created_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY `a`.`id` DESC')->fetchAll('assoc');
+    $upcoming_appointments = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 1 AND `a`.`trainee_status` = 1 AND `a`.`created_date` >= CURDATE() ORDER BY `a`.`id` DESC')->fetchAll('assoc');
+     if(!empty($upcoming_appointments)){
+        foreach($upcoming_appointments as $ua){
+          $sessionArr = unserialize($ua['session_data']);
+          for ($i=1; $i <= count($sessionArr); $i++) { 
+              $upcomingArr['trainee_name'][] = $ua['trainee_name']." ".$ua['trainee_lname'];
+              $upcomingArr['user_id'][]      = $ua['user_id'];
+              $upcomingArr['trainee_image'][]= $ua['trainee_image'];
+              $upcomingArr['location_name'][]= $sessionArr[$i]['location_address'];
+              $upcomingArr['appo_date'][]    = $sessionArr[$i]['modified_dates'];
+              $upcomingArr['appo_time'][]    = $sessionArr[$i]['modified_times'];
+          }
+        }        
+     }
+     else{
+          $upcomingArr = array();
+     }    
+    $this->set("from_id",$this->data['id']);
+    $this->set('messages', $messages);
+    $this->set('upcomingArr', $upcomingArr);
+    $this->set('pending_appointments', $pending_appointments);
+    $this->set('total_wallet_ammount', $total_wallet_ammount);
+    $this->set('profile_details', $profile_details);
 	}
 
 	public function profile()
@@ -974,19 +976,25 @@ class TrainersController extends AppController
        $this->set('profile_details', $profile_details); 
     }
 
-    public function notifications()
+    public function getNotifications()
     {
-       $id = $this->data['id'];
-       $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
-       $noti_data   = $this->conn->execute('SELECT *,`n`.`id` AS `noti_id` FROM `notifications` AS `n` INNER JOIN `trainees` AS `t` ON `t`.`user_id` = `n`.`noti_sender_id` WHERE `n`.`noti_receiver_id` = '.$this->data['id'].' ORDER BY `n`.`id` DESC ')->fetchAll('assoc');
-       $noti_final_arr = array();
+      $id = $this->data['id'];
+      $noti_data   = $this->conn->execute('SELECT *,`n`.`id` AS `noti_id` FROM `notifications` AS `n` INNER JOIN `trainees` AS `t` ON `t`.`user_id` = `n`.`noti_sender_id` WHERE `n`.`noti_receiver_id` = '.$this->data['id'].' ORDER BY `n`.`id` DESC ')->fetchAll('assoc');
+      $noti_final_arr = array();
         foreach ($noti_data as $user)
          {
           $noti_final_arr[] = $user['noti_id'];
          }
-        array_multisort($noti_final_arr, SORT_DESC, $noti_data);
-       $this->set('noti_data', $noti_data);
-       $this->set('profile_details', $profile_details); 
+      array_multisort($noti_final_arr, SORT_DESC, $noti_data);
+      return $noti_data;
+    }
+
+    public function notifications()
+    {
+      $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
+      $noti_data = $this->getNotifications();
+      $this->set('noti_data', $noti_data);
+      $this->set('profile_details', $profile_details); 
     }
 
     public function acceptAppoinment($appo_id,$noti_id,$trainee_id)
