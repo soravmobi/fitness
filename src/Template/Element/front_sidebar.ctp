@@ -56,7 +56,7 @@
       <div class="ht_middle">
         <div class="slide_text">
           <ul>
-            <li><a href="javascript:void(0);"> <i class="fa fa-refresh"></i> </a></li>
+            <li><a href=""> <i class="fa fa-refresh"></i> </a></li>
             <li><a href="javascript:void(0);"> <i class="fa fa-times"></i> </a></li>
             <!-- <li><a href="javascript:void(0);"><marquee> Your next scheduled appointment with andre begins in 18:34 HRS ** @ 19340 walters rd, saskatoon, sk. *** </marquee></a></li> -->
           </ul>

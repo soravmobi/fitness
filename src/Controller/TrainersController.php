@@ -7,6 +7,7 @@ use Cake\I18n\Time;
 use Cake\Auth\DefaultPasswordHasher;
 use Cake\ORM\Entity;
 use Cake\Network\Email\Email;
+use mPDF;
 
 class TrainersController extends AppController
 {
@@ -1363,7 +1364,7 @@ class TrainersController extends AppController
       $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
       $withdraw_details = $this->Trainer_withdraw->find()->where(['trainer_id' => $this->data['id']])->toArray();
       $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
-      $custom_packages = $this->conn->execute('SELECT * FROM `custom_packages_history` AS `cp` INNER JOIN `trainees` AS `t` ON `cp`.`trainee_id` = `t`.`user_id` WHERE `cp`.`trainer_id` ='.$this->data['id'].' ORDER BY `cp`.`id` DESC')->fetchAll('assoc');
+      $custom_packages = $this->conn->execute('SELECT *,`cp`.`id` AS `cp_id` FROM `custom_packages_history` AS `cp` INNER JOIN `trainees` AS `t` ON `cp`.`trainee_id` = `t`.`user_id` WHERE `cp`.`trainer_id` ='.$this->data['id'].' ORDER BY `cp`.`id` DESC')->fetchAll('assoc');
       $this->set('withdraw_details', $withdraw_details);
       $this->set('custom_packages', $custom_packages);
       $this->set('total_wallet_ammount', $total_wallet_ammount);
@@ -1407,6 +1408,71 @@ class TrainersController extends AppController
     }else{
        return $this->redirect('/trainers');
     }
+  }
+
+  public function packagepdf()
+  {
+    $pid = $this->request->query['id'];
+    $custom_packages = $this->conn->execute('SELECT *,`cp`.`id` AS `cp_id` FROM `custom_packages_history` AS `cp` INNER JOIN `trainees` AS `t` ON `cp`.`trainee_id` = `t`.`user_id` WHERE `cp`.`id` ='.$pid)->fetchAll('assoc');
+    $filename = 'Custom Package '.date('Y-m-d').'.pdf';
+    $html  = "";
+    $html .= "<div style='width:100%; float:left;'><div style='float:left; width:50%;'><img style='width:300px;' src='".$this->request->webroot."img/belibit_tv_logo_old1.png'></div><div style='float:right; width:200px;'><h1 style='color:#666;'>INVOICE</h1></div></div> ";
+    $html .= "<div style='width:100%; float:left;'> <div style='float:left; width:50%;'><p style='font-size:14px; color:#666; margin:0px;'>You Tag Media & Business Solutions, Inc 1950 Broad Street, Unit 209 Regina, SK S4P 1X6 Canada</p><p style='font-size:14px; color:#666;  margin:0px;'>help@virtualtrainr.com</p><p style='font-size:14px; color:#666; margin:0px;'>+403-800-4843</p><br><br><h3 style='font-size:22px; color:#666; margin:0px 0px 5px 0px;'>Invoice to: </h3><p style='font-size:14px; padding:5px 0px; color:#666; margin:0px;'>Name : ".ucwords($custom_packages[0]['trainee_name']." ".$custom_packages[0]['trainee_lname'])."</div></div>";
+    $html .= "<div style='width:100%; float:left;'><br><br><h3 style='font-size:22px; color:#666; margin:0px 0px 5px 0px;'>Details: </h3>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Purchase Date : ".date('d F Y, h:i A', strtotime($custom_packages[0]['created_date']))."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Package Name : ".$custom_packages[0]['package_name']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Package Description   : ".$custom_packages[0]['package_description']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Package Price : $".$custom_packages[0]['price']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Service Fee : $".$custom_packages[0]['service_fee']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Discount : $".round($custom_packages[0]['total_price'] - $custom_packages[0]['final_price'],2)."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Final Price : $".$custom_packages[0]['final_price']."</p>
+              </div>";
+    $this->Custom->downloadpdf($html,$filename);
+  }
+
+  public function withdrawpdf()
+  {
+    $tid = $this->request->query['id'];
+    $txn_details = $this->conn->execute("SELECT * FROM `trainer_withdraw` AS `tx` INNER JOIN `trainers` AS `t` ON `tx`.`trainer_id` = `t`.`user_id` WHERE `tx`.`id` = ".$tid)->fetchAll('assoc');
+    $filename = 'Withdraw '.$txn_details[0]['withdraw_txn_id'].' '.date('Y-m-d').'.pdf';
+    switch ($txn_details[0]['withdraw_payment_type']) {
+          case '0':
+            $type = "Paypal";
+            break;
+          case '1':
+            $type = "Amazon";
+            break;
+          default:
+            $type = "Direct Payment";
+            break;
+        }
+    switch ($txn_details[0]['withdraw_status']) {
+          case '0':
+            $status = "Pending";
+            break;
+          case '1':
+            $status = "Completed";
+            break;
+          case '2':
+            $status = "Failed";
+            break;
+          default:
+            $status = "NA";
+            break;
+      }
+    $html  = "";
+    $html .= "<div style='width:100%; float:left;'><div style='float:left; width:50%;'><img style='width:300px;' src='".$this->request->webroot."img/belibit_tv_logo_old1.png'></div><div style='float:right; width:200px;'><h1 style='color:#666;'>INVOICE</h1></div></div> ";
+    $html .= "<div style='width:100%; float:left;'> <div style='float:left; width:50%;'><p style='font-size:14px; color:#666; margin:0px;'>You Tag Media & Business Solutions, Inc 1950 Broad Street, Unit 209 Regina, SK S4P 1X6 Canada</p><p style='font-size:14px; color:#666;  margin:0px;'>help@virtualtrainr.com</p><p style='font-size:14px; color:#666; margin:0px;'>+403-800-4843</p><br><br><h3 style='font-size:22px; color:#666; margin:0px 0px 5px 0px;'>Invoice to: </h3><p style='font-size:14px; padding:5px 0px; color:#666; margin:0px;'>Name : ".ucwords($txn_details[0]['trainer_name']." ".$txn_details[0]['trainer_lname'])."</div></div>";
+    $html .= "<div style='width:100%; float:left;'><br><br><h3 style='font-size:22px; color:#666; margin:0px 0px 5px 0px;'>Details: </h3>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Withdraw Date : ".date('d F Y, h:i A', strtotime($txn_details[0]['added_date']))."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Withdraw Amount : $".$txn_details[0]['ammount']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Administration Fee : $".$txn_details[0]['withdraw_fees']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Final Amount : $".$txn_details[0]['final_withdraw_amount']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Withdraw Id : ".$txn_details[0]['withdraw_txn_id']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Payment Gateway : ".$type."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Status : ".$status."</p>
+              </div>";
+    $this->Custom->downloadpdf($html,$filename);
   }
 
 

@@ -6,7 +6,6 @@ use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\Network\Email\Email;
 use Cake\I18n\Time;
-use mPDF;
 use Cake\Datasource\ConnectionManager;
 use Cake\Auth\DefaultPasswordHasher;
 use Cake\ORM\Entity;
@@ -14,21 +13,6 @@ use Cake\View\View;
 
 class ApisController extends AppController
 {
-	public function pdfview()
-	{
-		$view = new View($this, false);
-		$view->set(compact('foo', 'bar')); // set variables
-		$view->viewPath = 'Apis/pdfview'; // render an element
-		$html = $view->render('message'); // get the rendered markup
-		echo $html;die;
-	}
-
-	public function pdf(){
-		$mpdf = new mPDF();
-		$mpdf->WriteHTML('CakePHP 3.0.2');
-        $mpdf->Output('MyPDF.pdf', 'D');
-        exit;
-	}
 
 	public function login()
 	{

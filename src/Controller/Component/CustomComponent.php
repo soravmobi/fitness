@@ -3,6 +3,7 @@
 namespace App\Controller\Component;
 
 use Cake\Controller\Component;
+use mPDF;
 
 class CustomComponent extends Component
 {
@@ -105,6 +106,16 @@ class CustomComponent extends Component
         $query = @unserialize(file_get_contents('http://ip-api.com/php/'));
         return $query;
     }
+
+    public function downloadpdf($html,$filename)
+    {
+        $mpdf = new mPDF();
+        $mpdf->WriteHTML($html);
+        $mpdf->Output($filename, 'D');
+        exit;
+    }
+
+
 }
 
 ?>

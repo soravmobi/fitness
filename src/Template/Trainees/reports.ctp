@@ -1,6 +1,6 @@
 <?php include "trainee_dashboard.php"; ?>
 
-<section class="trainee_top">
+<section class="">
 
     <!--Main container sec start-->
     <div class="main_container">
@@ -117,7 +117,7 @@
                                 <?php $i = 1;
                                   foreach($txns_details as $t){ ?>
                                   <tr>
-                                    <td>SK<?php echo ($i >= 10) ? $i : "0".$i ?></td>                                   
+                                    <td><a href="<?php echo $this->request->webroot; ?>trainees/reportpdf?id=<?php echo $t['id']; ?>" class="txns"> SK<?php echo ($i >= 10) ? $i : "0".$i ?></a></td>                                   
                                     <td><?php echo $t['txn_name']; ?></td>
                                     <td><?php echo $t['txn_id']; ?></td>
                                     <td><?php echo $t['txn_type']; ?></td>

@@ -1510,3 +1510,1353 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
+2016-04-16 12:20:26 Notice: Notice (8): Undefined variable: html in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2665]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2665
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 12:20:42 Notice: Notice (8): Undefined variable: html in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2665]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2665
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 12:20:55 Notice: Notice (8): Undefined variable: html in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2665]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2665
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 12:52:00 Notice: Notice (8): Undefined variable: profile_details in [/opt/lampp/htdocs/fitness/src/Template/Element/front_sidebar.ctp, line 19]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Element/front_sidebar.ctp, line 19
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::_renderElement() - CORE/src/View/View.php, line 1155
+Cake\View\View::element() - CORE/src/View/View.php, line 376
+include - APP/Template/Layout/default.ctp, line 507
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 510
+Cake\View\View::render() - CORE/src/View/View.php, line 473
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 12:52:00 Notice: Notice (8): Undefined variable: noti_data in [/opt/lampp/htdocs/fitness/src/Template/Element/front_sidebar.ctp, line 95]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Element/front_sidebar.ctp, line 95
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::_renderElement() - CORE/src/View/View.php, line 1155
+Cake\View\View::element() - CORE/src/View/View.php, line 376
+include - APP/Template/Layout/default.ctp, line 507
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 510
+Cake\View\View::render() - CORE/src/View/View.php, line 473
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 12:52:00 Notice: Notice (8): Undefined variable: messages in [/opt/lampp/htdocs/fitness/src/Template/Element/front_sidebar.ctp, line 134]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Element/front_sidebar.ctp, line 134
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::_renderElement() - CORE/src/View/View.php, line 1155
+Cake\View\View::element() - CORE/src/View/View.php, line 376
+include - APP/Template/Layout/default.ctp, line 507
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 510
+Cake\View\View::render() - CORE/src/View/View.php, line 473
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 12:52:00 Notice: Notice (8): Undefined variable: profile_details in [/opt/lampp/htdocs/fitness/src/Template/Element/front_sidebar.ctp, line 158]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Element/front_sidebar.ctp, line 158
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::_renderElement() - CORE/src/View/View.php, line 1155
+Cake\View\View::element() - CORE/src/View/View.php, line 376
+include - APP/Template/Layout/default.ctp, line 507
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::renderLayout() - CORE/src/View/View.php, line 510
+Cake\View\View::render() - CORE/src/View/View.php, line 473
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:35 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:35 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:35 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:35 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:35 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:35 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:35 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:35 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:35 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:37 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:37 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:37 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:37 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:37 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:37 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:37 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:37 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:37 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:40 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:40 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:40 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:40 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:40 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:40 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:40 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:40 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:40 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:44 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:44 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:44 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:44 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:44 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:44 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:44 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:44 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:44 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:45 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:45 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:45 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:45 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:45 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:46 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:46 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:46 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:43:46 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2682
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:44:32 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2681
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:44:32 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2681
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:44:32 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2681
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:44:32 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2681
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:44:32 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2681
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:44:32 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2681
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:44:32 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2681
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:44:32 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2681
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:44:32 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2681
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:44:51 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2681
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:44:51 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2681
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:44:51 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2681
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:44:51 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2681
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:44:51 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2681
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:44:51 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2681
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:44:51 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2681
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:44:51 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2681
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:44:51 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2681
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:45:13 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2680
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:45:13 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2680
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:45:13 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2680
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:45:13 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2680
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:45:13 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2680
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:45:13 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2680
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:45:13 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2680
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:45:13 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2680
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:45:13 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2680
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:46:16 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2670
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:46:16 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2670
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:46:16 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2670
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:46:16 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2670
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:46:16 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2670
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:46:16 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2670
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:46:16 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2670
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:46:16 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2670
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 13:46:16 Notice: Notice (8): Undefined variable: list_item_marker in [/opt/lampp/htdocs/fitness/vendor/mpdf/mpdf/mpdf.php, line 19446]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+mPDF::_setListMarker() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 19446
+mPDF::OpenTag() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 17259
+mPDF::WriteHTML() - ROOT/vendor/mpdf/mpdf/mpdf.php, line 14487
+App\Controller\Component\CustomComponent::downloadpdf() - APP/Controller/Component/CustomComponent.php, line 113
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2670
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 14:03:21 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2665]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2665
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-16 14:03:44 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2665]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::reportpdf() - APP/Controller/TraineesController.php, line 2665
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+

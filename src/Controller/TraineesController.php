@@ -19,6 +19,7 @@ use PayPal\Api\Payer;
 use PayPal\Api\Payment;
 use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
+use mPDF;
 
 class TraineesController extends AppController
 {
@@ -1437,7 +1438,7 @@ class TraineesController extends AppController
     public function reports()
     {
       $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
-      $txns_details = $this->Trainee_txns->find()->where(['trainee_id' => $this->data['id']])->toArray();
+      $txns_details = $this->Trainee_txns->find()->where(['trainee_id' => $this->data['id']])->order(['id' => 'DESC'])->toArray();
       $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
       $this->set('total_wallet_ammount', $total_wallet_ammount);
       $this->set('profile_details', $profile_details);
@@ -2655,6 +2656,25 @@ class TraineesController extends AppController
           $wallet_current_balance = round($wallet_details[0]['total_ammount'] + $refund_amount,2);
           $this->total_wallet_ammount->query()->update()->set(['total_ammount'=> $wallet_current_balance])->where(['user_id' => $appoinment_details[0]['trainee_id']])->execute();
       } 
+  }
+
+  public function reportpdf()
+  {
+    $tid = $this->request->query['id'];
+    $txn_details = $this->conn->execute("SELECT * FROM `trainee_txns` AS `tx` INNER JOIN `trainees` AS `t` ON `tx`.`trainee_id` = `t`.`user_id` WHERE `tx`.`id` = ".$tid)->fetchAll('assoc');
+    $filename = 'Transaction '.$txn_details[0]['txn_id'].' '.date('Y-m-d').'.pdf';
+    $html  = "";
+    $html .= "<div style='width:100%; float:left;'><div style='float:left; width:50%;'><img style='width:300px;' src='".$this->request->webroot."img/belibit_tv_logo_old1.png'></div><div style='float:right; width:200px;'><h1 style='color:#666;'>INVOICE</h1></div></div> ";
+    $html .= "<div style='width:100%; float:left;'> <div style='float:left; width:50%;'><p style='font-size:14px; color:#666; margin:0px;'>You Tag Media & Business Solutions, Inc 1950 Broad Street, Unit 209 Regina, SK S4P 1X6 Canada</p><p style='font-size:14px; color:#666;  margin:0px;'>help@virtualtrainr.com</p><p style='font-size:14px; color:#666; margin:0px;'>+403-800-4843</p><br><br><h3 style='font-size:22px; color:#666; margin:0px 0px 5px 0px;'>Invoice to: </h3><p style='font-size:14px; padding:5px 0px; color:#666; margin:0px;'>Name : ".ucwords($txn_details[0]['trainee_name']." ".$txn_details[0]['trainee_lname'])."</div></div>";
+    $html .= "<div style='width:100%; float:left;'><br><br><h3 style='font-size:22px; color:#666; margin:0px 0px 5px 0px;'>Details: </h3>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Transaction Date : ".date('d F Y, h:i A', strtotime($txn_details[0]['added_date']))."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Transaction Name : ".$txn_details[0]['txn_name']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Transaction Id   : ".$txn_details[0]['txn_id']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Transaction Type : ".$txn_details[0]['txn_type']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Amount : $".$txn_details[0]['ammount']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Status : ".$txn_details[0]['status']."</p>
+              </div>";
+    $this->Custom->downloadpdf($html,$filename);
   }
 
 

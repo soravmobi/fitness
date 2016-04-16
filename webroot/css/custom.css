@@ -3954,12 +3954,12 @@ a.btn_trainer {
   border: 1px solid #ddd;
   border-radius: 50%;
   display: inline-block;
-  height: 80px;
+  height: 60px;
   margin-bottom: 10px;
   margin-right: 20px;
   overflow: hidden;
   vertical-align: middle;
-  width: 80px;
+  width: 60px;
 }
 .img_user img {
   height: 100%;
@@ -3968,7 +3968,7 @@ a.btn_trainer {
 .session_user {
   color: #2d2d2d;
   font-size: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   text-align: left;
 }
 .price_box_content li {
@@ -3986,6 +3986,7 @@ a.btn_trainer {
 .price_box h5 {
   color: #fff;
   font-size: 20px;
+  text-transform: capitalize;
 }
 .price_box {
   margin-top: 30px;
@@ -4013,8 +4014,8 @@ a.btn_trainer {
 .text_block {
   color: #666666;
   display: inline-block;
-  font-size: 16px;
-  line-height: 30px;
+  font-size: 15px;
+  line-height: 22px;
   padding-left: 10px;
   width: 195px;
 }
@@ -4285,14 +4286,14 @@ span.notes-label {
 .text_wrap .text_block {
     color: #666666;
     display: inline-block;
-    font-size: 16px;
-    line-height: 30px;
+    font-size: 15px;
+    line-height: 22px;
     padding-left: 10px;
     width: 195px;
-    white-space: nowrap;
+    /*white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    height: 20px;
+    height: 20px;*/
 }
 .modify_date_time1 {
     width: 35px;
@@ -4310,12 +4311,12 @@ span.notes-label {
 .main_block {
   display: inline-block;
   padding: 0 0 10px;
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 .icon_main {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
 }
 .session_setails_sec li {
   margin-bottom: 20px;
@@ -4339,15 +4340,17 @@ margin:0 auto;
   background-color: #e6342a;
   border-radius: 6px 6px 0 0;
   color: #fff;
-  font-size: 25px;
-  padding:10px 20px;
+  font-size: 20px;
+  padding:12px 20px 8px;
+  font-family: oswald_regularregular;
 }
-.heading_payment_main h2{font-size:25px;}
+.heading_payment_main h2{font-size:20px;}
 .session_content {
   background-color: #fff;
   border-radius: 0 0 10px 10px;
   box-shadow: 0 0 2px #ccc;
   padding: 20px 15px;
+  margin-bottom: 5px;
    font-family: 'HelveticaLTStdLight';
 }
 .session_content .text_block > span {
@@ -4433,11 +4436,12 @@ margin:0 auto;
 }
 .tbw_text {
   background-color: #f2534d;
-  color: #fff;
-  float: left;
-  font-size: 22px;
-  padding: 10px;
-  text-transform:uppercase;
+    color: #fff;
+    float: left;
+    font-family: oswald_regularregular;
+    font-size: 20px;
+    padding: 14px 10px 7px;
+    text-transform: uppercase;
 }
 .step_box {
   color: #fff;
@@ -4445,9 +4449,12 @@ margin:0 auto;
   font-size: 16px;
   line-height: 50px;
   text-transform: capitalize;
+  display: none;
 }
 .scroll_content {
-  height: 360px;
+  height: 390px;
+   /*max-height: 250px;
+    overflow: auto;*/
 }
 .mCSB_scrollTools {
   background-color:inherit !important;
@@ -4496,7 +4503,7 @@ margin:0 auto;
 .check_box [type="checkbox"]:checked + label:after {
   content: '✔';
   position: absolute;
-  top: 7px; left:2.5px;
+  top: 4px; left:2.5px;
   font-size: 16px;
   line-height: 0.8;
   color: #fff;
@@ -4653,9 +4660,9 @@ margin:0 auto;
 .img_trainer {
   border: 1px solid #ddd;
   border-radius: 50%;
-  height: 200px;
+  height:150px;
   overflow: hidden;
-  width: 200px;
+  width: 150px;
   margin:0 auto;
 }
 .trainer_wrap_box .heading_payment_main {
@@ -5078,7 +5085,7 @@ margin:0 auto;
   border-radius: 0 0 10px 10px;
   box-shadow: 0 0 2px #ccc;
   font-family: "HelveticaLTStdLight";
-  padding: 20px 3px 20px 11px;
+  padding: 20px 15px 20px 15px;
 }
 .appointement_sec .main_block .text_block {
   padding-left: 5px;
@@ -5199,10 +5206,10 @@ margin:0 auto;
   padding: 5px;
 }
 .calendor_content {
-  margin-top: 25px;
+  margin-top: 20px; /*12px;*/
 }
-.appointement_sec .scroll_content {
-  height: 390px;
+.appointement_dashboard .appointement_sec .scroll_content {
+  height: 377px;
 }
 .responsive-calendar .day a {
   width: 35px;
@@ -5226,12 +5233,12 @@ margin:0 auto;
   border-radius: 6px;
   color: #e6342a;
   display: inline-block;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   line-height: 13px;
   margin: 0;
-  padding: 1px 12px;
-  padding-top: 6px;
+  padding: 3px 10px;
+
 }
 .clock_main .smalltext {
   text-align: center;
@@ -5421,21 +5428,21 @@ margin-right:5px;
 }
 /*css for model start */
 .custom_model .modal-header {
-  border-bottom:none;
-  min-height: 16.43px;
-  text-align: center;
-  padding:0px;
+   min-height: 16.43px;
+    padding: 0 0 0px; /*0 0 20px*/
+    text-align: center;
+    border-bottom: 1px solid #ccc;
 }
-.custom_model .modal-header h4{font-size:35px; color:#2d2d2d; text-transform:capitalize; font-weight:normal; position:relative; font-family: 'HelveticaLTStdRoman';}
+.custom_model .modal-header h4{font-size:26px; color:#2d2d2d; text-transform:capitalize; font-weight:normal; position:relative; font-family: 'HelveticaLTStdRoman';}
 .custom_model .modal-header h4::after {
-  border-bottom: 1px solid #ddd;
+  /*border-bottom: 1px solid #ddd;
   bottom: -10px;
   content: "";
   left: 0;
   margin: 0 auto;
   position: absolute;
   right: 0;
-  width: 380px;
+  width: 380px;*/
 }
 .custom_model .heading_payment_main {
   margin-bottom:15px;
@@ -5462,33 +5469,45 @@ margin-right:5px;
   top: 10px;
 }
 .custom_model .session_user {
-  margin: 20px auto;
-  width: 480px;
+  border-bottom: 1px solid #ccc;
+    padding: 10px 20px 10px 5.5rem;
+    width: 100%;
 }
 .custom_model .img_text_main {
   width: 70%;
 }
 .custom_model .img_text_main {
   color: #666666;
-  font-size: 28px;
+  font-size: 20px;
 
 }
 .custom_model .img_text_main > span {
-  font-size: 22px;
+  font-size: 18px;
 }
 .head_custom {
-  color: #2d2d2d;
-  font-size: 26px;
-  text-align: center;
+    color: #2d2d2d;
+    font-size: 26px;
+    /*padding-bottom: 15px;*/
+    padding-left: 5.5rem;
+    position: relative;
 }
+/*.head_custom:after{
+  border-bottom: 1px solid #ddd;
+  bottom: 0px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  width: 380px;
+}*/
 .custom_model .session_content {
   border-radius: 0;
   box-shadow: none;
-  padding: 20px 15px;
+  padding: 20px 0px;
 }
 .custom_model .session_content  li {
-  border-top: 1px solid #ddd;
-  padding-left: 40px;
+  /*border-top: 1px solid #ddd;*/
+  padding-left: 55px;
   padding-top: 15px;
 }
 .custom_model .modal-body {
@@ -5502,7 +5521,7 @@ margin-right:5px;
 .custom_model_bottom > p {
   color: #3c3c3c;
   font-size: 20px;
-  padding-bottom: 40px;
+  padding-bottom:15px;
   text-align: left;
   padding-right:10px;
   padding-left:10px;
@@ -5555,11 +5574,12 @@ margin-right:5px;
 }
 #Make_Special_Offer .session_content  li {
   border-top: 1px solid #ddd;
-  padding-left: 10px;
+  /*padding-left: 10px;*/
   padding-top: 15px;
 }
 #Modify_Event .head_custom {
-  padding: 20px 0;
+  padding: 10px 0;
+    text-align: center;
 
 }
 .save_changes {
@@ -5572,7 +5592,7 @@ margin-right:5px;
   color: #fff;
   display: inline-block;
   font-size: 16px;
-  padding: 9px 15px;
+  padding: 5px 20px;
   text-transform: capitalize;
 }
 #Modify_Event .session_content  li {
@@ -5595,9 +5615,9 @@ margin-right:5px;
   max-width: 370px;
 }
 #Modify_Event .custom_model_bottom > button {
-  font-size: 20px;
-  margin-right: 15px;
-  padding: 10px 55px;
+   font-size: 18px;
+    margin-right: 15px;
+    padding: 5px 30px;
 }
 #Modify_Event .custom_model_bottom > p{text-align:center;}
 #Modify_Event .modal-footer {text-align:left;}
@@ -5616,7 +5636,7 @@ margin-right:5px;
   padding: 5px;
 }
 .responsive-calendar .controls {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   text-align: center;
 }
 .calendor_caption_main {
@@ -5663,7 +5683,7 @@ label.remain_bal {
   color: #fff;
   display: inline-block;
   font-size: 16px;
-  padding: 8px 75px 3px;
+  padding: 5px 75px 5px;
   margin-top: 7px;
   text-transform: capitalize;
 }
@@ -5721,8 +5741,13 @@ label.remain_bal {
   display: inline-block;
 }
 .inner_header {
-  background-color:rgba(0, 0, 0, 1);
-  padding: 11px 0;
+   background-color: rgba(0, 0, 0, 0.5);
+    left: 0;
+    padding: 0px 0 5px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 999;
   -moz-transition:all 500ms ease 0s;
   -webkit-transition:all 500ms ease 0s;
 }
@@ -5730,7 +5755,7 @@ label.remain_bal {
   border-color: #fff;
   color: #fff;
   float: none;
-  margin: 7px 0 0;
+  margin: 0px 0 0; /*7px 0 0*/
   padding: 5px 10px;
   text-transform: uppercase;
 }
@@ -5751,7 +5776,7 @@ label.remain_bal {
   text-transform: uppercase;
 }
 .slide_text {
-  padding-top: 12px;
+  /*padding-top: 12px;*/
 }
 .ht_right li {
   display: inline-block;
@@ -5761,8 +5786,9 @@ label.remain_bal {
 }
 .ht_right a {
   color: #c4c4c4;
-  font-size: 20px;
+  font-size:20px;
 }
+.ht_right li:last-child a{font-size: 14px;}
 .circle_img {
   border: 1px solid #000;
   display: inline-block;
@@ -5774,17 +5800,18 @@ label.remain_bal {
   margin-right:5px;
 }
 .icon_tip {
-    background-color: #e8372a;
-    border-radius: 50%;
-    color: #fff;
-    display: inline-block;
-    font-size: 12px;
-    height: 16px;
-    line-height: 18px;
-    position: absolute;
-    right: 7px;
-    text-align: center;
-    width: 16px;
+  background-color: #e8372a;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  font-size: 11px;
+  height: 16px;
+  line-height: 16px;
+  position: absolute;
+  right: 7px;
+  text-align: center;
+  text-indent: -1px;
+  width: 16px;
 }
 .ht_right .form-control {
   background-color: #575757;
@@ -5835,7 +5862,12 @@ label.remain_bal {
 }
 .navmenu-default .navmenu-nav > li > a i {
   color: #9c9c9c;
-  padding-right: 20px;
+    padding-right: 10px;
+    padding-top: 3px;
+    vertical-align: top;
+    -webkit-transition: all 0.4s ease-in-out 0.1s; 
+    -moz-transition: all 0.4s ease-in-out 0.1s; 
+    transition: all 0.4s ease-in-out 0.1s;
 }
 .navmenu-default .navmenu-nav > li > a, .navbar-default .navbar-offcanvas .navmenu-nav > li > a {
   color: #fff;
@@ -5848,8 +5880,8 @@ label.remain_bal {
   position: relative;
 }
 #leftNavMenu .img_trainer {
-  border: 4px solid #fff;
-  margin-bottom: 50px;
+  border: 2px solid #fff;
+  margin-bottom: 25px;
 }
 #leftNavMenu {
   width: 300px;
@@ -6206,7 +6238,7 @@ label.remain_bal {
   font-size: 16px;
 }
 .cloud_text .rate_box {
-  line-height: 49px;
+  line-height: 36px;
 }
 .cloud_text > p {
   color: #242424;
@@ -6566,7 +6598,7 @@ label.remain_bal {
   text-transform: capitalize;
 }
 .trainer_dashboard .rate_box {
-  font-size: 40px;
+  font-size: 34px;
 }
 .trainer_dashboard .cloud_text {
   float: right;
@@ -6849,11 +6881,11 @@ label.remain_bal {
 .agenda .session_content {
   min-height: 335px;
 }
-.inner_header.affix{ background-color:rgba(0, 0, 0, 0.6) !important; padding:0px 0px 3px 0px;}
+.inner_header.affix{ background-color:rgba(0, 0, 0, 0.6) !important; padding:0px 0px 3px 0px; position: fixed;}
 /*css for trainer dashboard page end */
 .customer_dashboard .rate_box:after{display: none;}
 .trainer_dashboard .rate_box:after{display: none;}
-.inner_header.affix{ background-color:rgba(0, 0, 0, 0.6) !important; padding:0px 0px 3px 0px;}
+.inner_header.affix{ background-color:rgba(0, 0, 0, 0.6) !important; padding:0px 0px 5px 0px;}
 .message_wrap_content label{max-width:inherit;}
 .list_table_icon {
   text-align: right;
@@ -6862,7 +6894,30 @@ label.remain_bal {
   display:none;
 }
 
-/** css start for 16-aprl **/
+/** css start for 16-aprl changes **/
+.slide_text li:first-child{display: none;}
+.ht_right .dropdown-menu {
+    padding: 5px !important;
+}
+.dropdown-menu > li > a{padding: 3px 8px;}
+.tbw_text i {
+    line-height: 21px;
+    vertical-align: top;
+}
+.panel_block_heading{
+   background-color: #e8372a !important;
+}
+.panel_block_heading h4{font-family: 'oswald_regularregular';}
+.media.msg img{border-radius: 50%;}
+.media.msg .media-body small{font-size: 14px;}
+.conversation.side_users img{border-radius: 50%;}
+.panel_block_heading{}
+.modal-dialog{margin: 50px auto;}
+#Modify_Event .modal-dialog {
+    width: 615px;
+}
+
+/*css start soravsir*/
 .notification{max-height: 350px; overflow: auto; min-width: 250px; left: auto; right: 0px;}
 .notification li{
   border-bottom: 1px solid #ccc;
@@ -6895,4 +6950,21 @@ label.remain_bal {
 .file_img{
   height: 105px;
   width: 150px;
+}
+.txns{
+  color: #616161;
+}
+/*css start soravsir*/
+
+#leftNavMenu .navmenu-brand{
+  margin: 10px auto;
+  max-width: 250px;
+}
+#leftNavMenu li a{padding: 10px 15px;}
+#leftNavMenu li a:hover , #leftNavMenu li a:focus{
+  background: #e6342a none repeat scroll 0 0;
+  color: #fff;
+}
+#leftNavMenu li a:hover i , #leftNavMenu li a:focus i{
+  color: #fff;
 }

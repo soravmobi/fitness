@@ -159,7 +159,7 @@
                 <?php $i = 1;
                   foreach($custom_packages as $t){ ?>
                   <tr>
-                    <td>SK<?php echo ($i >= 10) ? $i : "0".$i ?></td>                                   
+                    <td><a class="txns" href="<?php echo $this->request->webroot; ?>trainers/packagepdf?id=<?php echo $t['cp_id']; ?>">SK<?php echo ($i >= 10) ? $i : "0".$i ?></a></td>                                   
                     <td><?php echo $t['trainee_name']." ".$t['trainee_lname']; ?></td>
                     <td><?php echo $t['package_name']; ?></td>
                     <td>$<?php echo $t['price']; ?></td>
@@ -357,7 +357,7 @@
                 <?php $i = 1;
                   foreach($withdraw_details as $t){ ?>
                   <tr>
-                    <td>SK<?php echo ($i >= 10) ? $i : "0".$i ?></td>                                   
+                    <td><a class="txns" href="<?php echo $this->request->webroot; ?>trainers/withdrawpdf?id=<?php echo $t['id']; ?>">SK<?php echo ($i >= 10) ? $i : "0".$i ?></a></td>                                   
                     <td>$<?php echo $t['ammount']; ?></td>
                     <td>$<?php echo $t['withdraw_fees']; ?></td>
                     <td>
