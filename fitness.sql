@@ -3,7 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
+<<<<<<< HEAD
 -- Generation Time: Apr 13, 2016 at 01:27 PM
+=======
+-- Generation Time: Apr 16, 2016 at 08:14 PM
+>>>>>>> fa1031c9161ef53fb549cd51e77f1bc0d53ce16c
 -- Server version: 5.6.25
 -- PHP Version: 5.6.11
 
@@ -156,16 +160,27 @@ CREATE TABLE IF NOT EXISTS `appointments` (
   `trainee_status` smallint(5) NOT NULL COMMENT '0 = pending, 1 = approve, 2 = decline',
   `ap_date` date NOT NULL,
   `created_date` datetime NOT NULL
+<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
+>>>>>>> fa1031c9161ef53fb549cd51e77f1bc0d53ce16c
 
 --
 -- Dumping data for table `appointments`
 --
 
 INSERT INTO `appointments` (`id`, `trainee_id`, `trainer_id`, `session_data`, `session_price`, `service_fee`, `total_price`, `trainer_message`, `coupon_id`, `final_price`, `wallet_amount`, `payment_gateway_amount`, `special_offer_price`, `special_offer_modify_date`, `trainer_status`, `trainee_status`, `ap_date`, `created_date`) VALUES
+<<<<<<< HEAD
 (36, 51, 62, 'a:3:{i:1;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}i:2;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}i:3;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}}', 2900.01, 87, 2987.01, 'Share details about yourself, your preferences, and what you love about Rahul Goyal profile', 6, 2688.31, 2688.31, 0, 2000, '2016-04-11 11:01:13', 1, 1, '2016-04-11', '2016-04-11 10:53:15'),
 (37, 51, 62, 'a:1:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 950, 28.5, 978.5, 'ffdffdfd', 0, 978.5, 978.5, 0, 0, '', 2, 2, '2016-04-11', '2016-04-11 10:54:56'),
 (38, 51, 62, 'a:3:{i:1;a:7:{s:10:"preference";s:0:"";s:14:"modified_dates";s:0:"";s:14:"modified_times";s:17:"01:00 PM-02:00 PM";s:9:"locations";s:21:"16.5061743,80.6480153";s:5:"notes";s:7:"ewewewe";s:6:"status";s:1:"0";s:16:"location_address";s:40:"Vijayawada, Andhra Pradesh 520001, India";}i:2;a:7:{s:10:"preference";s:1:"1";s:14:"modified_dates";s:10:"2016-05-20";s:14:"modified_times";s:17:"12:00 PM-01:00 PM";s:9:"locations";s:0:"";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:0:"";}i:3;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:11:"ewewewewewe";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}}', 2900.01, 87, 2987.01, 'dwwdeweeweewewewww', 0, 2987.01, 2987.01, 0, 2500, '2016-04-11 11:52:49', 0, 0, '2016-04-13', '2016-04-13 02:50:25');
+=======
+(36, 51, 62, 'a:3:{i:1;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}i:2;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}i:3;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}}', 2900.01, 87, 2987.01, 'Share details about yourself, your preferences, and what you love about Rahul Goyal profile', 6, 2688.31, 2688.31, 0, 0, '', 0, 0, '2016-04-11', '2016-04-11 10:53:15'),
+(37, 51, 62, 'a:1:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 950, 28.5, 978.5, 'ffdffdfd', 0, 978.5, 978.5, 0, 0, '', 0, 0, '2016-04-13', '2016-04-13 20:50:25'),
+(38, 51, 62, 'a:3:{i:1;a:7:{s:10:"preference";s:0:"";s:14:"modified_dates";s:0:"";s:14:"modified_times";s:17:"01:00 PM-02:00 PM";s:9:"locations";s:21:"16.5061743,80.6480153";s:5:"notes";s:7:"ewewewe";s:6:"status";s:1:"0";s:16:"location_address";s:40:"Vijayawada, Andhra Pradesh 520001, India";}i:2;a:7:{s:10:"preference";s:1:"1";s:14:"modified_dates";s:10:"2016-05-20";s:14:"modified_times";s:17:"12:00 PM-01:00 PM";s:9:"locations";s:0:"";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:0:"";}i:3;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:11:"ewewewewewe";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}}', 2900.01, 87, 2987.01, 'dwwdeweeweewewewww', 0, 2987.01, 2987.01, 0, 0, '', 0, 0, '2016-04-13', '2016-04-13 13:30:25'),
+(39, 51, 62, 'a:3:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-14";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:2;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-14";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:3;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-14";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 2900.01, 87, 2987.01, '', 0, 0, 0, 0, 0, '', 0, 0, '2016-04-14', '2016-04-16 15:14:14');
+>>>>>>> fa1031c9161ef53fb549cd51e77f1bc0d53ce16c
 
 -- --------------------------------------------------------
 
@@ -364,8 +379,13 @@ CREATE TABLE IF NOT EXISTS `chat_session` (
 --
 
 INSERT INTO `chat_session` (`id`, `user_id`, `session_id`, `token_id`, `status`, `added_date`, `modify_date`) VALUES
+<<<<<<< HEAD
 (5, 62, '1_MX40NTU2MDIxMn5-MTQ2MDU0NTEyNjk1MX4za0FIUnlqOUNtOUN0aVpraHFoKzNHNWR-fg', 'T1==cGFydG5lcl9pZD00NTU2MDIxMiZzaWc9M2MwMmUyMDU0MGU4NjM2ZDcwNmViN2UyMWIxMmU0MzViMDVkYzcwODpzZXNzaW9uX2lkPTFfTVg0ME5UVTJNREl4TW41LU1UUTJNRFUwTlRFeU5qazFNWDR6YTBGSVVubHFPVU50T1VOMGFWcHJhSEZvS3pOSE5XUi1mZyZjcmVhdGVfdGltZT0xNDYwNTQ1MTI3JnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NjA1NDUxMjcuMjQ1OTQwMTI1NTY0Mw==', 0, '2016-04-13 10:58:47', '2016-04-13 10:58:47'),
 (6, 51, '2_MX40NTU1MDE5Mn5-MTQ2MDUyOTQzMzU1N343a3o4MWJIUlpMd2p0VmtKcVRRSTJydXV-fg', 'T1==cGFydG5lcl9pZD00NTU1MDE5MiZzaWc9ODg4MDQzZTY0OTkxNjBiYzcyZTdhOGMwZTcwYzdiYmZkMmJjNTRiNDpzZXNzaW9uX2lkPTJfTVg0ME5UVTFNREU1TW41LU1UUTJNRFV5T1RRek16VTFOMzQzYTNvNE1XSklVbHBNZDJwMFZtdEtjVlJSU1RKeWRYVi1mZyZjcmVhdGVfdGltZT0xNDYwNTI5NDMzJnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NjA1Mjk0MzMuNzQyNjEwODU4ODA1Njc=', 0, '2016-04-13 06:37:13', '2016-04-13 06:37:13'),
+=======
+(5, 62, '2_MX40NTU2MDIxMn5-MTQ2MDgxNjYxMDQ3OX5FY2o2V20wQjIxVXZWVDVjWmh5Y1hRQU5-fg', 'T1==cGFydG5lcl9pZD00NTU2MDIxMiZzaWc9Y2I3OWZlYWZhMDIyMDRkNzA4ODgxNzFlYjJkNmZiOTMzYjgwMDA5ODpzZXNzaW9uX2lkPTJfTVg0ME5UVTJNREl4TW41LU1UUTJNRGd4TmpZeE1EUTNPWDVGWTJvMlYyMHdRakl4VlhaV1ZEVmpXbWg1WTFoUlFVNS1mZyZjcmVhdGVfdGltZT0xNDYwODE2NjExJnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NjA4MTY2MTEuMDU4Nzg5Nzc0MDQ2OQ==', 0, '2016-04-16 14:23:31', '2016-04-16 14:23:31'),
+(6, 51, '1_MX40NTU2MDIxMn5-MTQ2MDgwODIzMDQ4MX5NanJHMUlSZUpoL2k0UEk3K1hrNjdPYVN-fg', 'T1==cGFydG5lcl9pZD00NTU2MDIxMiZzaWc9NTJlOTAzZDg5NDIyMzE3ZjAyYmNjNmI1Y2Q3MjE5ZTVlMzUzMDFiMzpzZXNzaW9uX2lkPTFfTVg0ME5UVTJNREl4TW41LU1UUTJNRGd3T0RJek1EUTRNWDVOYW5KSE1VbFNaVXBvTDJrMFVFazNLMWhyTmpkUFlWTi1mZyZjcmVhdGVfdGltZT0xNDYwODA4MjMxJnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NjA4MDgyMzEuMTExMTE4MjE1ODAyMTM=', 0, '2016-04-16 12:03:51', '2016-04-16 12:03:51'),
+>>>>>>> fa1031c9161ef53fb549cd51e77f1bc0d53ce16c
 (7, 53, '1_MX40NTQ0MTkwMn5-MTQ1MDc4Mjg4NDQxNn42TFNibFlEUW5IMklmUzF6QUhQeTZHdzd-fg', 'T1==cGFydG5lcl9pZD00NTQ0MTkwMiZzaWc9ODY3ZjkyNzc3OTg4NTkxY2MwZTljN2Y5MjVmMWU0OTVlNGU2YmQwMDpzZXNzaW9uX2lkPTFfTVg0ME5UUTBNVGt3TW41LU1UUTFNRGM0TWpnNE5EUXhObjQyVEZOaWJGbEVVVzVJTWtsbVV6RjZRVWhRZVRaSGR6ZC1mZyZjcmVhdGVfdGltZT0xNDUwNzgyODg0JnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NTA3ODI4ODQuODM4MjExMDcwOTQyNzU=', 0, '2015-12-22 11:14:44', '2015-12-22 11:14:44'),
 (8, 63, '2_MX40NTQwOTgwMn5-MTQ0ODM1NjA1NDQyNH5ORXo4YjBvUUpobjM0c21namFtTmVsdll-fg', 'T1==cGFydG5lcl9pZD00NTQwOTgwMiZzaWc9ZTMzZDMwNDg0NDQ4OTliNGNmMWY0MzVjNGI0NGYzMzJmYmIxMjgwNzpzZXNzaW9uX2lkPTJfTVg0ME5UUXdPVGd3TW41LU1UUTBPRE0xTmpBMU5EUXlOSDVPUlhvNFlqQnZVVXBvYmpNMGMyMW5hbUZ0VG1Wc2RsbC1mZyZjcmVhdGVfdGltZT0xNDQ4MzU2MDU0JnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NDgzNTYwNTQuNjc3MzU0ODcxNTkw', 0, '2015-11-24 09:07:34', '2015-11-24 09:07:34'),
 (9, 64, '1_MX40NTQwOTgwMn5-MTQ0ODM1NjI3NjY0MH5nRTZYTGtWOFVpbUMyR1VMTDRlbUFlK2h-fg', 'T1==cGFydG5lcl9pZD00NTQwOTgwMiZzaWc9ODI3ZWM3NTkzNjU4MWVhNzdjMDk2MGM5ZDAzNTIyNjI0MWI0YmJjNTpzZXNzaW9uX2lkPTFfTVg0ME5UUXdPVGd3TW41LU1UUTBPRE0xTmpJM05qWTBNSDVuUlRaWVRHdFdPRlZwYlVNeVIxVk1URFJsYlVGbEsyaC1mZyZjcmVhdGVfdGltZT0xNDQ4MzU2Mjc2JnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NDgzNTYyNzYuODg1MzEwNzM5NTUy', 0, '2015-11-24 09:11:16', '2015-11-24 09:11:16'),
@@ -48437,6 +48457,32 @@ INSERT INTO `files` (`id`, `from_id`, `to_id`, `url`, `src`, `status`, `created_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gym`
+--
+
+CREATE TABLE IF NOT EXISTS `gym` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `latitude` varchar(255) NOT NULL,
+  `longitude` varchar(255) NOT NULL,
+  `trainer_id` int(11) NOT NULL,
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `gym`
+--
+
+INSERT INTO `gym` (`id`, `name`, `address`, `latitude`, `longitude`, `trainer_id`, `created_date`) VALUES
+(1, 'helo1', 'indore', '22.7195687', '75.85772580000003', 62, '2016-04-13 08:34:35'),
+(2, 'testing 123', 'india', '20.593684', '78.96288000000004', 62, '2016-04-11 14:48:12'),
+(3, 'testing', 'pakistan', '30.375321', '69.34511599999996', 62, '2016-04-13 10:20:08'),
+(4, 'us ', 'united state', '32.1656221', '-82.90007509999998', 62, '2016-04-13 10:21:49');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `hire_trainers`
 --
 
@@ -48507,22 +48553,27 @@ CREATE TABLE IF NOT EXISTS `meal_plans` (
   `row_id` text NOT NULL,
   `status` smallint(5) NOT NULL,
   `added_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `meal_plans`
 --
 
 INSERT INTO `meal_plans` (`id`, `trainer_id`, `trainee_id`, `meal_plan`, `sunday`, `monday`, `tuesday`, `wednesday`, `thursday`, `friday`, `saturday`, `row_id`, `status`, `added_date`) VALUES
-(2, 62, 51, 'Breakfast', 'Omlet', '', '', 'trt', 'rtrt', 'hghgh', '', '511', 0, '2016-01-18 13:14:55'),
-(3, 62, 51, 'Dinner', '', '', 'rtt', 'rtr', 'trt', '', '', '512', 0, '2016-01-18 13:15:32'),
-(4, 62, 51, 'Snack 1', 'gfgf', 'gf', 'Poha', 'trt', '', 'ttrtr', 'ttrtr', '513', 0, '2016-01-18 13:26:47'),
-(5, 62, 51, 'Snack 2', '', 'ggfg', '', 'Bhel', '', '', 'hghgh', '514', 0, '2016-01-18 13:27:06'),
-(6, 62, 51, 'fggg', 'ffg', 's', 'hello', 'rt', 'trtr', 'rtr', '', '516', 0, '2016-01-18 13:56:57'),
-(7, 62, 51, 'fdfd', 'gfgfg', '', 'jhhghg', 'rtrtr', '', 'hghgghh', '', '517', 0, '2016-01-20 12:36:23'),
-(8, 62, 51, 'fdfdfdf', '', 'hg', '', 'hghg', '', '', '', '519', 0, '2016-01-20 12:36:24'),
-(9, 62, 51, 'fdfdfd', '', 'fgfftgt', '', 'hghg', 'tr', 'trtr', '', '518', 0, '2016-01-20 12:36:25'),
-(10, 62, 53, '', '', '', '', '444', '', '', '', '532', 0, '2016-03-14 10:43:04');
+(2, 62, 51, 'Breakfast', 'Omlet', '', '', 'Omlet', 'Omlet', 'Omlet', '', '511', 0, '2016-01-18 13:14:55'),
+(3, 62, 51, 'Dinner', '', '', 'Omlet', 'Omlet', 'Omlet', '', '', '512', 0, '2016-01-18 13:15:32'),
+(4, 62, 51, 'Snack 1', 'Omlet', 'Omlet', 'Omlet', 'Omlet', '', 'Omlet', 'Omlet', '513', 0, '2016-01-18 13:26:47'),
+(5, 62, 51, 'Snack 2', '', 'Omlet', '', 'Omlet', '', '', 'Omlet', '514', 0, '2016-01-18 13:27:06'),
+(6, 80, 51, 'fggg', 'Omlet', 'Omlet', 'Omlet', 'Omlet', 'Omlet', 'Omlet', '', '516', 0, '2016-01-18 13:56:57'),
+(7, 80, 51, 'fdfd', 'Omlet', '', 'Omlet', 'Omlet', '', 'Omlet', '', '517', 0, '2016-01-20 12:36:23'),
+(8, 80, 51, 'fdfdfdf', '', 'Omlet', '', 'Omlet', '', '', '', '519', 0, '2016-01-20 12:36:24'),
+(9, 80, 51, 'fdfdfd', '', 'Omlet', '', 'Omlet', 'Omlet', 'Omlet', '', '518', 0, '2016-01-20 12:36:25'),
+(10, 62, 53, '', '', '', '', '444', '', '', '', '532', 0, '2016-03-14 10:43:04'),
+(11, 62, 75, 'Sale', '100', '321', '', '', '', '', '', '751', 0, '2016-04-13 11:43:33'),
+(12, 62, 75, 'Revenue', '', '', '', '', '', '', '', '752', 0, '2016-04-13 11:43:45'),
+(13, 62, 73, '', '54', '54', '56', '56', '56', '76', '67', '731', 0, '2016-04-13 12:15:37'),
+(14, 62, 73, '', 'dsds', '', '', '', 'dsdsd', '', '', '739', 0, '2016-04-13 12:17:48'),
+(15, 62, 73, '', '', '', '545', '', 'dssds', '', 'sdds', '734', 0, '2016-04-13 12:25:13');
 
 -- --------------------------------------------------------
 
@@ -48550,6 +48601,7 @@ CREATE TABLE IF NOT EXISTS `notifications` (
 --
 
 INSERT INTO `notifications` (`id`, `noti_type`, `parent_id`, `noti_sender_type`, `noti_sender_id`, `noti_receiver_type`, `noti_receiver_id`, `noti_message`, `parent_id_status`, `noti_status`, `noti_added_date`, `noti_modify_date`) VALUES
+<<<<<<< HEAD
 (8, 'Custom Packages', 14, 'trainee', 51, 'trainer', 62, 'You have new request of purchased custom packages', 1, 0, '2016-04-11 10:50:42', '2016-04-11 10:50:42'),
 (9, 'Rate Plans', 36, 'trainee', 51, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-11 10:53:30', '2016-04-11 10:53:30'),
 (10, 'Rate Plans', 37, 'trainee', 51, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-11 10:55:08', '2016-04-11 10:55:08'),
@@ -48563,6 +48615,21 @@ INSERT INTO `notifications` (`id`, `noti_type`, `parent_id`, `noti_sender_type`,
 (18, 'Approve Special Offe', 38, 'trainee', 51, 'trainer', 62, 'has approved special offer request', 1, 0, '2016-04-11 11:53:34', '2016-04-11 11:53:34'),
 (19, 'Transfer Ammount Success', 3, 'admin', 48, 'trainer', 62, 'Congratulation your $1000amount successfully transfered in your account', 0, 0, '2016-04-12 13:43:37', '2016-04-12 13:43:37'),
 (20, 'Transfer Ammount Success', 4, 'admin', 48, 'trainer', 62, 'Congratulation your $500 amount successfully transfered in your account', 0, 0, '2016-04-12 13:48:49', '2016-04-12 13:48:49');
+=======
+(8, 'Custom Packages', 14, 'trainee', 51, 'trainer', 62, 'You have new request of purchased custom packages', 1, 0, '2016-04-11 10:50:42', '2016-04-11 05:20:42'),
+(9, 'Rate Plans', 36, 'trainee', 51, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-11 10:53:30', '2016-04-11 05:23:30'),
+(10, 'Rate Plans', 37, 'trainee', 51, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-11 10:55:08', '2016-04-11 05:25:08'),
+(11, 'Approve Appointment', 37, 'trainer', 62, 'trainee', 51, 'has approved your appoinment', 1, 0, '2016-04-11 10:56:31', '2016-04-11 05:26:31'),
+(12, 'Decline Appointment', 37, 'trainer', 62, 'trainee', 51, 'has declined your appoinment', 2, 0, '2016-04-11 10:59:16', '2016-04-11 05:29:16'),
+(13, 'Make Special Offer', 36, 'trainer', 62, 'trainee', 51, 'have make a request for special offer', 3, 0, '2016-04-11 11:01:13', '2016-04-11 05:31:13'),
+(14, 'Approve Special Offe', 36, 'trainee', 51, 'trainer', 62, 'has approved special offer request', 1, 0, '2016-04-11 11:03:18', '2016-04-11 05:33:18'),
+(15, 'Custom Packages', 15, 'trainee', 51, 'trainer', 62, 'You have new request of purchased custom packages', 1, 0, '2016-04-11 11:45:54', '2016-04-11 06:15:54'),
+(16, 'Rate Plans', 38, 'trainee', 51, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-11 11:51:02', '2016-04-11 06:21:02'),
+(17, 'Make Special Offer', 38, 'trainer', 62, 'trainee', 51, 'have make a request for special offer', 3, 0, '2016-04-11 11:52:49', '2016-04-11 06:22:49'),
+(18, 'Approve Special Offe', 38, 'trainee', 51, 'trainer', 62, 'has approved special offer request', 1, 0, '2016-04-11 11:53:34', '2016-04-11 06:23:34'),
+(19, 'Transfer Ammount Success', 3, 'admin', 48, 'trainer', 62, 'Congratulation your $1000amount successfully transfered in your account', 0, 0, '2016-04-12 13:43:37', '2016-04-12 08:13:37'),
+(20, 'Transfer Ammount Success', 4, 'admin', 48, 'trainer', 62, 'Congratulation your $500 amount successfully transfered in your account', 0, 0, '2016-04-12 13:48:49', '2016-04-12 08:18:49');
+>>>>>>> fa1031c9161ef53fb549cd51e77f1bc0d53ce16c
 
 -- --------------------------------------------------------
 
@@ -48770,9 +48837,9 @@ CREATE TABLE IF NOT EXISTS `shopping` (
 INSERT INTO `shopping` (`id`, `trainer_id`, `trainee_id`, `item`, `quantity`, `store`, `row_id`, `status`, `added_date`, `modify_date`) VALUES
 (1, 62, 51, 'Item 1', '10', 'Virrtual TrainR', 511, 0, '2016-01-18 14:24:08', '2016-01-18 14:24:41'),
 (2, 62, 51, 'Item 2', '', '', 512, 0, '2016-01-18 14:25:02', '2016-01-18 14:25:02'),
-(3, 62, 51, 'Item 3', '', '', 513, 0, '2016-01-18 14:25:11', '2016-01-18 14:25:11'),
-(4, 62, 51, 'Item 4', '', '', 514, 0, '2016-01-18 14:25:16', '2016-01-18 14:25:16'),
-(5, 62, 51, 'Item 5', '50', 'Mobiwebtech', 515, 0, '2016-01-18 14:30:09', '2016-01-18 14:30:17');
+(3, 80, 51, 'Item 3', '', '', 513, 0, '2016-01-18 14:25:11', '2016-04-16 11:18:52'),
+(4, 80, 51, 'Item 4', '', '', 514, 0, '2016-01-18 14:25:16', '2016-04-16 11:18:59'),
+(5, 80, 51, 'Item 5', '50', 'Mobiwebtech', 515, 0, '2016-01-18 14:30:09', '2016-04-16 11:18:56');
 
 -- --------------------------------------------------------
 
@@ -52955,7 +53022,11 @@ CREATE TABLE IF NOT EXISTS `total_wallet_ammount` (
 --
 
 INSERT INTO `total_wallet_ammount` (`id`, `user_id`, `user_type`, `total_ammount`, `status`, `added_date`, `modify_date`) VALUES
+<<<<<<< HEAD
 (1, 51, 'trainee', 4758.4, 0, '2015-11-18 13:55:40', '2016-04-11 11:53:34'),
+=======
+(1, 51, 'trainee', 5758.4, 0, '2015-11-18 13:55:40', '2016-04-14 11:44:27'),
+>>>>>>> fa1031c9161ef53fb549cd51e77f1bc0d53ce16c
 (4, 62, 'trainer', 2693.28, 0, '2016-04-11 10:50:42', '2016-04-12 13:47:43');
 
 -- --------------------------------------------------------
@@ -53074,7 +53145,11 @@ CREATE TABLE IF NOT EXISTS `trainee_txns` (
   `status` varchar(20) NOT NULL,
   `added_date` datetime NOT NULL,
   `modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+>>>>>>> fa1031c9161ef53fb549cd51e77f1bc0d53ce16c
 
 --
 -- Dumping data for table `trainee_txns`
@@ -53088,7 +53163,12 @@ INSERT INTO `trainee_txns` (`id`, `trainee_id`, `txn_name`, `payment_type`, `txn
 (12, 51, 'Special Offer Discount', 'Wallet', 'Credit', '51-570b84764634f', 688.31, 'Approved', '2016-04-11 11:03:18', '2016-04-11 11:03:18'),
 (13, 51, 'Purchase Custom Packages', 'Wallet', 'Debit', '51-570b8e72655f3', 370.8, 'Approved', '2016-04-11 11:45:54', '2016-04-11 11:45:54'),
 (14, 51, 'Purchase Session', 'Wallet', 'Debit', '51-570b8fa612fbd', 2987.01, 'Approved', '2016-04-11 11:51:02', '2016-04-11 11:51:02'),
+<<<<<<< HEAD
 (15, 51, 'Special Offer Discount', 'Wallet', 'Credit', '51-570b903e663d8', 487.01, 'Approved', '2016-04-11 11:53:34', '2016-04-11 11:53:34');
+=======
+(15, 51, 'Special Offer Discount', 'Wallet', 'Credit', '51-570b903e663d8', 487.01, 'Approved', '2016-04-11 11:53:34', '2016-04-11 11:53:34'),
+(16, 51, 'Money Order', 'Money Order', 'Credit', '123456789', 1000, 'Completed', '2016-04-13 12:05:31', '2016-04-13 12:08:36');
+>>>>>>> fa1031c9161ef53fb549cd51e77f1bc0d53ce16c
 
 -- --------------------------------------------------------
 
@@ -53364,9 +53444,15 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `display_name`, `user_type`, `user_status`, `social_type`, `social_id`, `online`, `created`, `modified`) VALUES
 (48, 'admin', '$2y$10$81.B6wsQKiig9dFBPoat8OrWMEhwGX48Y5V8t/ygZG9mgNnGqW6Me', '', 'admin', 0, '', '', 0, '0000-00-00 00:00:00', '2015-09-22 06:42:16'),
+<<<<<<< HEAD
 (51, 'sorav@gmail.com', '$2y$10$1HY/yPFoXqLxGmcA/2eHW.RMrb3Pzc/E.1qvd6BjZNS6Sl31w2gjW', 'soravgarg', 'trainee', 1, '', '', 0, '2015-09-12 10:40:30', '2016-04-13 09:58:31'),
 (53, 'vikas@gmail.com', '$2y$10$rsmFefvl8ne4UMVqb1Qp7uPi/UPgcFtALjz396msN20/QRRt8IrCe', 'vikas897', 'trainee', 1, '', '', 0, '2015-09-14 06:52:48', '2015-12-22 13:51:26'),
 (62, 'rahul@gmail.com', '$2y$10$0FZj1LiBS2yHQ9GqgHyEeuTyUCCLGFre.mvclHPQJvr2YfjSdLlBy', 'rahulgoyal', 'trainer', 1, '', '', 0, '2015-09-25 07:52:23', '2016-04-13 11:00:05'),
+=======
+(51, 'sorav@gmail.com', '$2y$10$1HY/yPFoXqLxGmcA/2eHW.RMrb3Pzc/E.1qvd6BjZNS6Sl31w2gjW', 'soravgarg', 'trainee', 1, '', '', 0, '2015-09-12 10:40:30', '2016-04-16 14:23:18'),
+(53, 'vikas@gmail.com', '$2y$10$rsmFefvl8ne4UMVqb1Qp7uPi/UPgcFtALjz396msN20/QRRt8IrCe', 'vikas897', 'trainee', 1, '', '', 0, '2015-09-14 06:52:48', '2015-12-22 13:51:26'),
+(62, 'rahul@gmail.com', '$2y$10$0FZj1LiBS2yHQ9GqgHyEeuTyUCCLGFre.mvclHPQJvr2YfjSdLlBy', 'rahulgoyal', 'trainer', 1, '', '', 1, '2015-09-25 07:52:23', '2016-04-16 14:23:27'),
+>>>>>>> fa1031c9161ef53fb549cd51e77f1bc0d53ce16c
 (64, 'gaurav@gmail.om', '$2y$10$0itHdTu2Ys1l2RiHFulU/.fULdaPh3kGKhYCCZeIkbixYXjacs0Q6', 'gaurav123', 'trainee', 1, '', '', 1, '2015-11-24 09:10:40', '2015-11-24 09:11:15'),
 (66, 'test3@gmal.com', '$2y$10$SoJcAuPInrprkNKlteeareZ2HfpA.ubdKCBqQEceEeRB0YaMWihga', 't', 'trainee', 1, '', '', 0, '2015-11-24 11:55:03', '2015-11-24 11:55:03'),
 (72, 'soravapi@gmail.com', '$2y$10$gkuofdg81i.WDiyUbkqiCeJ7TX6eHsNPQR2dOTtxZuVKMNzMh45Xy', 'sorav123', 'trainee', 1, '', '', 0, '2015-11-25 12:44:04', '2015-11-25 12:44:04'),
@@ -53535,6 +53621,12 @@ ALTER TABLE `fees`
 -- Indexes for table `files`
 --
 ALTER TABLE `files`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gym`
+--
+ALTER TABLE `gym`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -53739,7 +53831,11 @@ ALTER TABLE `after_before_images`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
+<<<<<<< HEAD
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=39;
+=======
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=40;
+>>>>>>> fa1031c9161ef53fb549cd51e77f1bc0d53ce16c
 --
 -- AUTO_INCREMENT for table `block_ips`
 --
@@ -53801,6 +53897,11 @@ ALTER TABLE `fees`
 ALTER TABLE `files`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
+-- AUTO_INCREMENT for table `gym`
+--
+ALTER TABLE `gym`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `hire_trainers`
 --
 ALTER TABLE `hire_trainers`
@@ -53814,7 +53915,7 @@ ALTER TABLE `latest_things`
 -- AUTO_INCREMENT for table `meal_plans`
 --
 ALTER TABLE `meal_plans`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `notifications`
 --
@@ -53889,7 +53990,11 @@ ALTER TABLE `trainee_sessions`
 -- AUTO_INCREMENT for table `trainee_txns`
 --
 ALTER TABLE `trainee_txns`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+>>>>>>> fa1031c9161ef53fb549cd51e77f1bc0d53ce16c
 --
 -- AUTO_INCREMENT for table `trainers`
 --

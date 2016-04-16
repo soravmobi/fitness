@@ -115,7 +115,7 @@
     </div>
     <!--Main container sec end-->
 <script>
-var apiKey = "45550192";
+var apiKey = "<?php echo $tokbox[0]['api_key']; ?>";
 var sessionID = "<?php echo $chat_session[0]['session_id']; ?>";
 var token = "<?php echo $chat_session[0]['token_id']; ?>";
 var publisher;

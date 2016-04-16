@@ -109,8 +109,10 @@
                                           $action = "https://www.sandbox.paypal.com/cgi-bin/webscr";
                                           $bussiness_id = "sourav-facilitator@mobiwebtech.com";
                                       }else{
-                                          $action = "https://www.paypal.com/cgi-bin/webscr";
-                                          $bussiness_id = "billing@theyoutag.com";
+                                          /*$action = "https://www.paypal.com/cgi-bin/webscr";
+                                          $bussiness_id = "billing@theyoutag.com";*/
+                                          $action = "https://www.sandbox.paypal.com/cgi-bin/webscr";
+                                          $bussiness_id = "sourav-facilitator@mobiwebtech.com";
                                       }
                                     ?>
                                     <form action="<?php echo $action; ?>" method="post">

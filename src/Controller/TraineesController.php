@@ -19,6 +19,7 @@ use PayPal\Api\Payer;
 use PayPal\Api\Payment;
 use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
+use mPDF;
 
 class TraineesController extends AppController
 {
@@ -36,40 +37,71 @@ class TraineesController extends AppController
       $this->lwaClientId ="amzn1.application-oa2-client.1e55f9b590ae4f3085a6796aa9c87fd6"; // Login With Amazon Client ID
       $this->returnURL   = "https://virtualtrainr.com/trainees/resultAmazon";
       $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
+      $noti_data = $this->getNotifications();
+      $messages = $this->getChatMessages();
+      $this->set('messages', $messages);
+      $this->set('noti_data', $noti_data);
+      $this->set('notifications', $this->total_notifications);
+  }
+
+  public function getChatMessages()
+  {
+    $messages = $this->conn->execute("SELECT * FROM `chating` AS `c` INNER JOIN `trainers` AS `t` ON `c`.`chat_sender_id` = `t`.`user_id` WHERE `c`.`chat_reciever_id` = ".$this->data['id']." ORDER BY `c`.`chat_id` DESC LIMIT 10")->fetchAll('assoc');
+    return $messages;
   }
 
   public function index()
   {
     $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
-    $videocalls = $this->Chating->find()->where(['chat_sender_id' => $this->data['id'], 'chat_type' => 1])->count();
-    $voicecalls = $this->Chating->find()->where(['chat_sender_id' => $this->data['id'], 'chat_type' => 2])->count();
-    $messages = $this->conn->execute(' SELECT Count(*) AS `total_msg` FROM `chating` WHERE chat_type = 0 AND (chat_sender_id = '.$this->data['id'].' OR chat_reciever_id ='.$this->data['id'].') ')->fetchAll('assoc');
-    $session = $this->Trainee_plan->find()->where(['user_id' => $this->data['id']])->toArray();
-    $purchased_plans = $this->conn->execute('SELECT *,`ase`.`id` AS admin_session_id FROM `admin_sessions` AS `ase` INNER JOIN `trainees` AS `t` ON t.user_id = ase.trainee_id WHERE ase.trainee_id = '.$this->data['id'].' ORDER BY ase.id DESC ')->fetchAll('assoc');
-    $this->set('purchased_plans', $purchased_plans);
-    $this->set('session', $session);
-    $this->set('videocalls', $videocalls);
-    $this->set('voicecalls', $voicecalls);
+    $trainer_meal_plans = $this->conn->execute(' SELECT `mp`.`trainer_id`,`t`.`trainer_name`,`t`.`trainer_lname` FROM `meal_plans` AS `mp` INNER JOIN `trainers` AS `t` ON `mp`.`trainer_id` = `t`.`user_id` WHERE `trainee_id` = '.$this->data['id'].' group by `trainer_id` ORDER BY `mp`.`id` DESC ')->fetchAll('assoc');
+    $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
+    if(!empty($trainer_meal_plans)){
+      foreach($trainer_meal_plans as $m){
+        $meal_plans_details[] = $this->conn->execute(' SELECT * FROM `meal_plans` WHERE `trainer_id` = '.$m['trainer_id'].' AND `trainee_id` = '.$this->data['id'].' ORDER BY `row_id` DESC ')->fetchAll('assoc');
+      }
+      
+    }else{
+      $meal_plans_details   = array();
+    }
+    $messages = $this->getChatMessages();
     $this->set('messages', $messages);
+    $this->set('meal_plans_details', $meal_plans_details);
+    $this->set('trainer_meal_plans', $trainer_meal_plans);
+    $this->set('total_wallet_ammount', $total_wallet_ammount);
     $this->set('profile_details', $profile_details);
-    $this->set('notifications', $this->total_notifications);
   }
 
   public function mealplans()
   {
     $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
-    $meal_plans_arr = $this->Meal_plans->find()->where(['trainee_id' => $this->data['id']])->order(['row_id' => 'ASC'])->toArray();
-    $this->set('meal_plans_arr', $meal_plans_arr);
-    $this->set('notifications', $this->total_notifications);
+    $trainer_meal_plans = $this->conn->execute(' SELECT `mp`.`trainer_id`,`t`.`trainer_name`,`t`.`trainer_lname` FROM `meal_plans` AS `mp` INNER JOIN `trainers` AS `t` ON `mp`.`trainer_id` = `t`.`user_id` WHERE `trainee_id` = '.$this->data['id'].' group by `trainer_id` ORDER BY `mp`.`id` DESC ')->fetchAll('assoc');
+    if(!empty($trainer_meal_plans)){
+      foreach($trainer_meal_plans as $m){
+        $meal_plans_details[] = $this->conn->execute(' SELECT * FROM `meal_plans` WHERE `trainer_id` = '.$m['trainer_id'].' AND `trainee_id` = '.$this->data['id'].' ORDER BY `row_id` DESC ')->fetchAll('assoc');
+      }
+      
+    }else{
+      $meal_plans_details   = array();
+    }
+    $this->set('meal_plans_details', $meal_plans_details);
+    $this->set('trainer_meal_plans', $trainer_meal_plans);
     $this->set('profile_details', $profile_details);
   }
 
   public function grocerylist()
   {
     $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
-    $grocery_arr = $this->Shopping->find()->where(['trainee_id' => $this->data['id']])->order(['row_id' => 'ASC'])->toArray();
-    $this->set('grocery_arr', $grocery_arr);
-    $this->set('notifications', $this->total_notifications);
+    $trainer_grocery = $this->conn->execute(' SELECT `mp`.`trainer_id`,`t`.`trainer_name`,`t`.`trainer_lname` FROM `shopping` AS `mp` INNER JOIN `trainers` AS `t` ON `mp`.`trainer_id` = `t`.`user_id` WHERE `trainee_id` = '.$this->data['id'].' group by `trainer_id` ORDER BY `mp`.`id` DESC ')->fetchAll('assoc');
+    if(!empty($trainer_grocery)){
+      foreach($trainer_grocery as $m){
+        $grocery_details[] = $this->conn->execute(' SELECT * FROM `shopping` WHERE `trainer_id` = '.$m['trainer_id'].' AND `trainee_id` = '.$this->data['id'].' ORDER BY `row_id` DESC ')->fetchAll('assoc');
+      }
+      
+    }else{
+      $grocery_details   = array();
+    }
+    $this->set('grocery_details', $grocery_details);
+    $this->set('trainer_grocery', $trainer_grocery);
     $this->set('profile_details', $profile_details);
   }
 
@@ -135,8 +167,6 @@ class TraineesController extends AppController
             $view_appo_arr = array();
        }
 
-       $notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'], 'noti_status' => 0])->count();
-       $this->set('notifications', $notifications);
        $this->set('trainer_data', $trainer_data); 
        $this->set('book_appo_arr', $book_appo_arr); 
        $this->set('view_appo_arr', $view_appo_arr);
@@ -231,7 +261,6 @@ class TraineesController extends AppController
         }
        $this->set('chat_data', $chat_data); 
        $this->set('all_trainers', $all_trainers);
-       $this->set('notifications', $this->total_notifications);
        $this->set('profile_details', $profile_details); 
          
     }
@@ -301,27 +330,31 @@ class TraineesController extends AppController
        $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
        $session = $this->Trainee_plan->find()->where(['user_id' => $this->data['id']])->toArray();
        $this->set('session', $session);
-       $this->set('notifications', $this->total_notifications);
        $this->set('trainer_data', $trainer_data);  
        $this->set('user_id', $id);  
        $this->set('profile_details', $profile_details); 
     }
 
-    public function notifications()
+    public function getNotifications()
     {
-       $id = $this->data['id'];
-       $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
-       $rate_plans_noti = $this->conn->execute('SELECT *,`n`.`id` AS `noti_id` FROM `notifications` AS `n` INNER JOIN `appointments` AS `a` ON `n`.`parent_id` = `a`.`id` INNER JOIN `trainers` AS `t` ON `t`.`user_id` = `n`.`noti_sender_id` WHERE `n`.`noti_receiver_id` = '.$this->data['id'].' ORDER BY `n`.`id` DESC ')->fetchAll('assoc');
-       $packages_noti   = $this->conn->execute('SELECT *,`n`.`id` AS `noti_id` FROM `notifications` AS `n` INNER JOIN `custom_packages_history` AS `c` ON `n`.`parent_id` = `c`.`id` INNER JOIN `trainers` AS `t` ON `t`.`user_id` = `n`.`noti_sender_id` WHERE `n`.`noti_receiver_id` = '.$this->data['id'].' ORDER BY `n`.`id` DESC ')->fetchAll('assoc');
-       $noti_data = array_merge($rate_plans_noti,$packages_noti);
-       $noti_final_arr = array();
+      $id = $this->data['id'];
+      $rate_plans_noti = $this->conn->execute('SELECT *,`n`.`id` AS `noti_id` FROM `notifications` AS `n` INNER JOIN `appointments` AS `a` ON `n`.`parent_id` = `a`.`id` INNER JOIN `trainers` AS `t` ON `t`.`user_id` = `n`.`noti_sender_id` WHERE `n`.`noti_receiver_id` = '.$this->data['id'].' ORDER BY `n`.`id` DESC ')->fetchAll('assoc');
+      $packages_noti   = $this->conn->execute('SELECT *,`n`.`id` AS `noti_id` FROM `notifications` AS `n` INNER JOIN `custom_packages_history` AS `c` ON `n`.`parent_id` = `c`.`id` INNER JOIN `trainers` AS `t` ON `t`.`user_id` = `n`.`noti_sender_id` WHERE `n`.`noti_receiver_id` = '.$this->data['id'].' ORDER BY `n`.`id` DESC ')->fetchAll('assoc');
+      $noti_data = array_merge($rate_plans_noti,$packages_noti);
+      $noti_final_arr = array();
         foreach ($noti_data as $user)
          {
           $noti_final_arr[] = $user['noti_id'];
          }
-        array_multisort($noti_final_arr, SORT_DESC, $noti_data);
+      array_multisort($noti_final_arr, SORT_DESC, $noti_data);
+      return $noti_data;
+    }
+
+    public function notifications()
+    {
+       $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
+       $noti_data = $this->getNotifications();
        $this->set('noti_data', $noti_data);
-       $this->set('notifications', $this->total_notifications);
        $this->set('profile_details', $profile_details); 
     }
 
@@ -345,7 +378,6 @@ class TraineesController extends AppController
         $user1 = $this->Notifications->newEntity();
         $user1 = $this->Notifications->patchEntity($user1, $noti_data);
         $result1 = $this->Notifications->save($user1);
-
         $this->Flash->success('Appoinment Accepted Successfully', ['key' => 'edit']);
         return $this->redirect('/trainees/notifications');
     }
@@ -367,7 +399,6 @@ class TraineesController extends AppController
         $user1 = $this->Notifications->newEntity();
         $user1 = $this->Notifications->patchEntity($user1, $noti_data);
         $result1 = $this->Notifications->save($user1);
-
         $this->appointments->query()->update()->set(['app_status' => 2])->where(['app_id' => base64_decode($app_id)])->execute();
         $this->notifications->query()->update()->set(['noti_status' => 2])->where(['id' => base64_decode($noti_id)])->execute();
         $this->Flash->error('Appoinment Rejected Successfully', ['key' => 'edit']);
@@ -381,7 +412,6 @@ class TraineesController extends AppController
         $gallery_videos = $this->Profile_images_videos->find()->where(['piv_user_id' => $this->data['id'], 'piv_attachement_type' => 'video'])->order(['piv_id' => 'DESC'])->toArray();
         $progress_img = $this->After_before_images->find()->where(['abi_trainee_id' => $this->data['id']])->order(['abi_id' => 'DESC'])->toArray();
         $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
-        $this->set('notifications', $this->total_notifications);
         $this->set('profile_details', $profile_details);
         $this->set('gallery_img', $gallery_img);
         $this->set('gallery_videos', $gallery_videos);
@@ -432,7 +462,6 @@ class TraineesController extends AppController
             $user1 = $this->Notifications->newEntity();
             $user1 = $this->Notifications->patchEntity($user1, $noti_data);
             $result1 = $this->Notifications->save($user1);
-
             $this->Flash->success('Appointment created successfully please wait for trainr approval', ['key' => 'edit']);
             return $this->redirect('/trainees/appointments');
         }
@@ -469,7 +498,6 @@ class TraineesController extends AppController
             $user1 = $this->Notifications->newEntity();
             $user1 = $this->Notifications->patchEntity($user1, $noti_data);
             $result1 = $this->Notifications->save($user1);
-
             $this->Flash->success('Appoinment Created Successfully Please Wait For Trainer Approval', ['key' => 'edit']);
             return $this->redirect('/trainees/bookAppoinments/'.$id);
         }
@@ -1048,7 +1076,7 @@ class TraineesController extends AppController
         $trainer_details = $this->conn->execute('SELECT *,c.name as country_name,ct.name as city_name,s.name as state_name,t.id as trainer_id,f.id as favourite_id FROM `trainers` as t inner join `countries` as c on t.trainer_country = c.id inner join `states` as s on t.trainer_state = s.id inner join `cities` as ct on t.trainer_city = ct.id inner join `favourites` as f on f.fav_trainer_id = t.user_id where f.fav_trainee_id = '. $this->data['id'])->fetchAll('assoc');;
         $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
         $this->set('profile_details', $profile_details);
-        $this->set('notifications', $this->total_notifications);
+        
         $this->set('trainer_details', $trainer_details);
      }
 
@@ -1066,7 +1094,7 @@ class TraineesController extends AppController
         $profile_details = $this->Trainers->find()->where(['user_id' => $trainer_id])->toArray();
         $trainers = $this->Trainers->find('all')->order(['id' => 'DESC'])->toArray();
         $this->set('trainers', $trainers); 
-        $this->set('notifications', $this->total_notifications);
+        
         $this->set('profile_details', $profile_details); 
      }
 
@@ -1124,7 +1152,7 @@ class TraineesController extends AppController
         $this->set('gallery_img', $gallery_img);
         $this->set('gallery_videos', $gallery_videos);
         $this->set('trainer_detail', $result);
-        $this->set('notifications', $this->total_notifications);
+        
       }
 
     public function bookAppoinments($id)
@@ -1167,21 +1195,6 @@ class TraineesController extends AppController
            $this->set('message', 'success');
            $this->set('_serialize',array('message','id'));
            $this->response->statusCode(200);
-        }
-    }
-
-    public function cropImage()
-    {
-      if($this->request->is('ajax'))
-        {
-          $data = $this->request->data['resp'];
-          $file = 'uploads/trainee_profile/' . uniqid() . '.jpeg';
-          $image = imagecreatefromjpeg($data);
-          $img = imagejpeg($image, $file, 70);
-          imagedestroy($image);
-          $this->set('message', 'success');
-          $this->set('_serialize',array('message','id'));
-          $this->response->statusCode(200);
         }
     }
 
@@ -1395,6 +1408,7 @@ class TraineesController extends AppController
     public function moneyOrder()
     {
       $trainee_wallet_arr = array(
+        'txn_name'  => 'Money Order',
         'trainee_id' => $this->data['id'],
         'payment_type' => 'Money Order',
         'txn_id' => $this->request->data['order_no'],
@@ -1419,6 +1433,16 @@ class TraineesController extends AppController
       $this->set('wallet_txn', $wallet_txn);
       $this->set('total_wallet_ammount', $total_wallet_ammount);
       $this->set('profile_details', $profile_details);
+    }
+
+    public function reports()
+    {
+      $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
+      $txns_details = $this->Trainee_txns->find()->where(['trainee_id' => $this->data['id']])->order(['id' => 'DESC'])->toArray();
+      $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
+      $this->set('total_wallet_ammount', $total_wallet_ammount);
+      $this->set('profile_details', $profile_details);
+      $this->set('txns_details', $txns_details);
     }
 
     public function delete()
@@ -1799,7 +1823,7 @@ class TraineesController extends AppController
     $this->set('rateid', $this->request->query['rid']);
     $this->set('trainer_id', $this->request->query['tid']);
     $this->set('trainer_details', $trainer_details);
-    $this->set('notifications', $this->total_notifications);
+    
     $this->set('session', $session);
   }
 
@@ -2049,8 +2073,7 @@ class TraineesController extends AppController
 	}
                                     
       $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
-    // print_r($profile_details); die;
-      $notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'], 'noti_status' => 0])->count();
+
       if($this->request->is('ajax'))
       {
         $this->set('trainers', $result);
@@ -2059,7 +2082,6 @@ class TraineesController extends AppController
       }else
       {
         $this->set('trainers',$result);
-        $this->set('notifications', $notifications);
         $this->set('profile_details', $profile_details);
       }
       
@@ -2266,7 +2288,7 @@ class TraineesController extends AppController
     $this->set('service_fee_details', $service_fee_details);
     $this->set('trainer_details', $trainer_details);
     $this->set('custom_plan_details', $custom_plan_details);
-    $this->set('notifications', $this->total_notifications);
+    
   }
 
   public function customPackageOrder(){
@@ -2667,6 +2689,25 @@ class TraineesController extends AppController
           $wallet_current_balance = round($wallet_details[0]['total_ammount'] + $refund_amount,2);
           $this->total_wallet_ammount->query()->update()->set(['total_ammount'=> $wallet_current_balance])->where(['user_id' => $appoinment_details[0]['trainee_id']])->execute();
       } 
+  }
+
+  public function reportpdf()
+  {
+    $tid = $this->request->query['id'];
+    $txn_details = $this->conn->execute("SELECT * FROM `trainee_txns` AS `tx` INNER JOIN `trainees` AS `t` ON `tx`.`trainee_id` = `t`.`user_id` WHERE `tx`.`id` = ".$tid)->fetchAll('assoc');
+    $filename = 'Transaction '.$txn_details[0]['txn_id'].' '.date('Y-m-d').'.pdf';
+    $html  = "";
+    $html .= "<div style='width:100%; float:left;'><div style='float:left; width:50%;'><img style='width:300px;' src='".$this->request->webroot."img/belibit_tv_logo_old1.png'></div><div style='float:right; width:200px;'><h1 style='color:#666;'>INVOICE</h1></div></div> ";
+    $html .= "<div style='width:100%; float:left;'> <div style='float:left; width:50%;'><p style='font-size:14px; color:#666; margin:0px;'>You Tag Media & Business Solutions, Inc 1950 Broad Street, Unit 209 Regina, SK S4P 1X6 Canada</p><p style='font-size:14px; color:#666;  margin:0px;'>help@virtualtrainr.com</p><p style='font-size:14px; color:#666; margin:0px;'>+403-800-4843</p><br><br><h3 style='font-size:22px; color:#666; margin:0px 0px 5px 0px;'>Invoice to: </h3><p style='font-size:14px; padding:5px 0px; color:#666; margin:0px;'>Name : ".ucwords($txn_details[0]['trainee_name']." ".$txn_details[0]['trainee_lname'])."</div></div>";
+    $html .= "<div style='width:100%; float:left;'><br><br><h3 style='font-size:22px; color:#666; margin:0px 0px 5px 0px;'>Details: </h3>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Transaction Date : ".date('d F Y, h:i A', strtotime($txn_details[0]['added_date']))."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Transaction Name : ".$txn_details[0]['txn_name']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Transaction Id   : ".$txn_details[0]['txn_id']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Transaction Type : ".$txn_details[0]['txn_type']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Amount : $".$txn_details[0]['ammount']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Status : ".$txn_details[0]['status']."</p>
+              </div>";
+    $this->Custom->downloadpdf($html,$filename);
   }
 
 

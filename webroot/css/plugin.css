@@ -112,3 +112,138 @@
 /*css for calendar start*/
 .responsive-calendar .controls{text-align:center}.responsive-calendar .controls a{cursor:pointer}.responsive-calendar .controls h4{display:inline}.responsive-calendar .day-headers,.responsive-calendar .days{font-size:0}.responsive-calendar .day{display:inline-block;position:relative;font-size:14px;width:14.285714285714%;text-align:center}.responsive-calendar .day a{color:#000;display:block;cursor:pointer;padding:20% 0}.responsive-calendar .day a:hover{background-color:#eee;text-decoration:none}.responsive-calendar .day.header{border-bottom:1px gray solid}.responsive-calendar .day.active a{background-color:#1d86c8;color:#fff}.responsive-calendar .day.active a:hover{background-color:#36a0e2}.responsive-calendar .day.active .not-current{background-color:#8fcaef;color:#fff}.responsive-calendar .day.active .not-current:hover{background-color:#bcdff5}.responsive-calendar .day.not-current a{color:#ddd}.responsive-calendar .day .badge{position:absolute;top:2px;right:2px;z-index:1}
 /*css for calendar end*/
+
+
+/*flaticon*/
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 12/04/2016 12:38
+  	*/
+
+@font-face {
+  font-family: "Flaticon1";
+  src: url("../fonts/Flaticon1.eot");
+  src: url("../fonts/Flaticon1.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/Flaticon1.woff") format("woff"),
+       url("../fonts/Flaticon1.ttf") format("truetype"),
+       url("../fonts/Flaticon1.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon1";
+    src: url("../fonts/Flaticon1.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon1-"]:before, [class*=" flaticon1-"]:before,
+[class^="flaticon1-"]:after, [class*=" flaticon1-"]:after {   
+ font-family: Flaticon1;
+font-style: normal;
+
+}
+
+.flaticon1-business:before { content: "\f100"; }
+.flaticon1-cogwheel:before { content: "\f101"; }
+.flaticon1-communication:before { content: "\f102"; }
+.flaticon1-dropper:before { content: "\f103"; }
+.flaticon1-food:before { content: "\f104"; }
+.flaticon1-homework:before { content: "\f105"; }
+.flaticon1-medical:before { content: "\f106"; }
+.flaticon1-medical-1:before { content: "\f107"; }
+.flaticon1-money:before { content: "\f108"; }
+.flaticon1-money-1:before { content: "\f109"; }
+.flaticon1-scale:before { content: "\f10a"; }
+.flaticon1-schedule:before { content: "\f10b"; }
+.flaticon1-social:before { content: "\f10c"; }
+.flaticon1-suitcase:before { content: "\f10d"; }
+.flaticon1-tool:before { content: "\f10e"; }
+.flaticon1-tool-1:before { content: "\f10f"; }
+
+/*ammap css start*/
+.ammapAlert
+{
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    font-family:verdana,helvetica,arial,sans-serif;
+    font-size:12px;
+    color:#CC0000;
+}
+
+.ammapDescriptionWindow
+{
+   font-size:11px;
+   font-family:verdana,helvetica,arial,sans-serif;
+   background-color:#FFFFFF;
+   border-style:solid;
+   border-color:#DADADA;
+   border-width:1px;
+   color:#000000;
+   padding:8px;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+.ammapDescriptionTitle
+{
+   font-size:12px;
+   font-weight:bold;
+   font-family:verdana,helvetica,arial,sans-serif;
+   padding-bottom:5px;
+}
+
+.ammapDescriptionWindowCloseButton
+{
+
+}
+
+.ammapObjectList ul
+{
+    padding-left:20px;
+    list-style:square outside;
+    color:#999999;
+    font-family:verdana,helvetica,arial,sans-serif;
+    font-size: 12px;
+}
+
+.ammapObjectList ul ul
+{
+    padding-left:14px;
+}
+
+.ammapObjectList a
+{
+    color:#000000;
+}
+
+.ammapObjectList a
+{
+    color:#000000;
+    text-decoration:none;
+    display:block;
+    padding:2px;
+}
+
+.ammapObjectList a:hover
+{
+    color:#CC0000;
+    text-decoration:none;
+    background:#FFFFFF;
+    cursor:pointer;
+    display:block;
+}
+
+.ammapDescriptionText
+{
+	overflow: auto;
+}
+
+
+.amChartsPlotArea
+{
+
+}/*ammap css end*/

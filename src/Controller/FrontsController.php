@@ -13,8 +13,10 @@ class FrontsController extends AppController
     	$this->blockIP();
         parent::beforeFilter($event);
         $this->loadComponent('Auth');
-        $this->Auth->allow(['trainerProfile','ourTrainers','searchTrainer','contactus','plans','docontact','terms','learnmore','career','opportunity','becometrainer']);
+        $this->Auth->allow(['trainerProfile','ourTrainers','searchTrainer','contactus','plans','docontact','terms','learnmore','career','opportunity','becometrainer','getCountryList']);
         $this->data = $this->Custom->getSessionData();
+        $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
+        $this->set('notifications', $this->total_notifications);
     }
 
 	public function trainerProfile($t_id)
@@ -45,32 +47,38 @@ class FrontsController extends AppController
 
 	public function contactus()
 	{
-		$countries = $this->Countries->find('all')->toArray();
-		$this->set('countries', $countries);
+		
 	}
 
 	public function terms()
 	{
-		$countries = $this->Countries->find('all')->toArray();
-		$this->set('countries', $countries);
+		
 	}
 
 	public function career()
 	{
-		$countries = $this->Countries->find('all')->toArray();
-		$this->set('countries', $countries);
+		
 	}
 
 	public function opportunity()
 	{
-		$countries = $this->Countries->find('all')->toArray();
-		$this->set('countries', $countries);
+		
 	}
 
 	public function learnmore()
 	{
-		$countries = $this->Countries->find('all')->toArray();
-		$this->set('countries', $countries);
+		
+	}
+
+	public function getCountryList()
+	{
+		if($this->request->is('ajax'))
+		{
+			$countries = $this->Countries->find('all')->toArray();
+			$this->set('message', $countries);
+		    $this->set('_serialize',array('message'));
+		    $this->response->statusCode(200);
+		}
 	}
 
 	public function traineeProfile($t_id)
@@ -89,9 +97,7 @@ class FrontsController extends AppController
 
 	public function ourTrainers()
 	{
-		$result = $this->conn->execute(' select *,s.name as state_name,c.name as country_name,ct.name as city_name from trainers as t left join cities as ct on ct.id = t.trainer_city left join countries as c on c.id = t.trainer_country left join states as s on s.id = t.trainer_state left join trainer_ratemaster as trm on t.user_id = trm.trainer_id order by t.id DESC ')->fetchAll('assoc');
-		$countries = $this->Countries->find('all')->toArray();
-		$this->set('countries', $countries);
+		$result = $this->Trainers->find('all')->order(['id' => 'DESC'])->toArray();
 		$this->set('trainers',$result);
 		$this->render('/Fronts/our_trainers');
 	}
@@ -230,8 +236,6 @@ class FrontsController extends AppController
 	{
         $all_sessions = $this->conn->execute('select *,pc.id as cat_id,ps.id as sess_id from `plans_categories` As pc INNER JOIN `plans_sessions` AS ps ON pc.id = ps.category_id')->fetchAll('assoc');
         $categories = $this->Plans_categories->find()->order(['id' => 'ASC'])->toArray();
-        $countries = $this->Countries->find('all')->toArray();
-        $this->set('countries', $countries);
         $this->set('categories',$categories);
         $this->set('all_sessions',$all_sessions);
 	}
@@ -277,8 +281,7 @@ class FrontsController extends AppController
 
 	public function becometrainer()
 	{
-		$countries = $this->Countries->find('all')->toArray();
-		$this->set('countries', $countries);
+		
 	}
 
 	public function zendeskApi($data)

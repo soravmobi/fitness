@@ -34,10 +34,6 @@
                  <div class="trainers_head">
                      <h3>our trainers</h3>
                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
-                     <div class="trainer_btn">
-                        <a href="#" class="filter_btn">filter by location</a>
-                        <a href="#" class="filter_btn">top rated </a>
-                     </div>
                  </div>
               </div>  
             </div>
@@ -46,7 +42,7 @@
                 <div class="col-md-4 col-sm-4">
                  <div class="trainers_box_main">
                   <div class="trainer_box_top">
-                   <div class="rate_box"> Houlry Rate -  $ <?php if($t['rate_hour']) { echo $t['rate_hour']; } else { echo "0"; } ?></div>
+                   <div class="rate_box"> Houlry Rate -  $<?php echo $this->Custom->getHourlyRate($t['user_id']); ?></div>
                     <div class="trainer_box_img">
                      <a href="<?php echo $this->request->webroot; ?>trainerProfile/<?php echo base64_encode($t['user_id']); ?>"> <img src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $t['trainer_image']; ?>" class="img-responsive"></a>
                     </div>
@@ -59,7 +55,7 @@
                       <div class="location">
                         <ul class="list_trainer">
                           <li>location:</li>
-                          <li><a href="javascript:void(0);"><?php echo $t['city_name']; ?></a></li>
+                          <li><a href="javascript:void(0);"><?php echo $this->Custom->getCityName($t['trainer_city']); ?></a></li>
                         </ul>
                       </div>
                       <div class="score_box">

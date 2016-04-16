@@ -197,11 +197,13 @@
             </div>
             <div class="modal-footer">
                 <div class="custom_model_bottom">
-                    <!-- <p>Total price <span class="pull-right">$<?php echo $session_details[0]['final_price']; ?></span>
-                    </p> -->
-                    <button type="button" class="btn respond-section" main="1" appid="<?php echo base64_encode($session_details[0]['app_id']); ?>">Approve</button>
-                    <button type="button" class="btn decline respond-section" main="2" appid="<?php echo base64_encode($session_details[0]['app_id']); ?>">Decline</button>
-                    <a href="javascript:void(0);" data-dismiss="modal" data-toggle="modal" data-target="#Make_Special_Offer" class="special_offer">Make Special Offer</a>
+                    <?php if(!empty($session_details[0]['special_offer_modify_date'])){ ?>
+                      <a href="javascript:void(0);" class="special_offer">Special Offer Created</a>
+                    <?php } else{ ?>
+                      <button type="button" class="btn respond-section" main="1" appid="<?php echo base64_encode($session_details[0]['app_id']); ?>">Approve</button>
+                      <button type="button" class="btn decline respond-section" main="2" appid="<?php echo base64_encode($session_details[0]['app_id']); ?>">Decline</button>
+                      <a href="javascript:void(0);" data-dismiss="modal" data-toggle="modal" data-target="#Make_Special_Offer" class="special_offer">Make Special Offer</a>
+                    <?php } ?>
                 </div>
             </div>
         </div>
