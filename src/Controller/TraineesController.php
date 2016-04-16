@@ -1943,14 +1943,15 @@ class TraineesController extends AppController
 
   public function searchTrainers()
   {
-      $data = $_GET;
+	  $data = $_GET;
+	  
       $where = array();
       $strg = "";
       $ord = array();
       $order = "";
       $lim = 3;
       $off = "";
-      
+      $where[] ='(trm.rate_hour >0 )  ';
       /* Search Parameter Start */
       if(isset($data["name"]) && !empty($data["name"]))
       {
@@ -2003,7 +2004,18 @@ class TraineesController extends AppController
           $off = "LIMIT ".$offset." , ".$lim;
       }
       /* For Pagination End */
-      $result = $this->conn->execute(" select *,
+     // $lat='22.000';
+    //  $lng='75.000';
+      
+       
+        
+     if(isset($data['lng']) && isset($data['lat']))
+     {
+		 $lat=$data['lat'];
+       $lng=$data['lng'];
+		 
+      
+      $result = $this->conn->execute(" select *, SQRT( POW(69.1 * (lat - $lat), 2) + POW(69.1 * ($lng- lng) * COS(lat / 57.3), 2)) AS distance,
                                        s.name as state_name,
                                        c.name as country_name,
                                        ct.name as city_name
@@ -2012,11 +2024,32 @@ class TraineesController extends AppController
                                        left join countries as c on c.id = t.trainer_country
                                        left join states as s on s.id = t.trainer_state
                                        left join trainer_ratemaster as trm on t.user_id = trm.trainer_id
-                                       $strg
+                                       $strg HAVING distance <100000
                                        $order
                                        $off
+                                        
                                     ")->fetchAll('assoc');
+	}else{
+
+  $result = $this->conn->execute(" select *, 
+                                       s.name as state_name,
+                                       c.name as country_name,
+                                       ct.name as city_name
+                                       from trainers as t
+                                       left join cities as ct on ct.id = t.trainer_city
+                                       left join countries as c on c.id = t.trainer_country
+                                       left join states as s on s.id = t.trainer_state
+                                       left join trainer_ratemaster as trm on t.user_id = trm.trainer_id
+                                       $strg 
+                                       $order
+                                       $off
+                                        
+                                    ")->fetchAll('assoc');
+
+	}
+                                    
       $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
+    // print_r($profile_details); die;
       $notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'], 'noti_status' => 0])->count();
       if($this->request->is('ajax'))
       {

@@ -520,29 +520,24 @@
                                     <input type="hidden" class="form-control" value="0" name="long" id="long">
 
                                   </div>
-                                   <button type="submit" name="addgym" class="gym_favorite">Add Gym</button>
+                                   <button type="submit" name="addgym" class="gym_favorite">add favorite</button>
 
                                 </form>
                                 
                                 </div>
-                                <!--<div class="add_gym pull-right"><button>add gym</button></div>-->
+                                <div class="add_gym pull-right"><button>add gym</button></div>
                                 
                                 <div class="access_map">
+									<!--<div id="gmap_canvas2"></div>-->
 									
-<style>
-	
-.map{
-    width: 600px;
-    height: 400px;
-    margin-bottom: 20px;
-}
-
-.map p{
-	margin: 10px;
-	color: #333;
-}
-</style>
-<div id="gmap-dropdown1" class="map">map</div>
+<style type="text/css">
+    #gmap-dropdown1 {
+      width: 400px;
+      height: 400px;
+    }
+  </style> 
+  <?php //print_r($gyms); ?>
+<div id="gmap-dropdown1">map</div>
 <script>
   
 $('.addgym').on('click',function(){
@@ -550,34 +545,36 @@ $('.addgym').on('click',function(){
   $('#addgym').css('opacity','1');
   $('#gmap-dropdown1').css('width','100%');
   $('#gmap-dropdown1').css('height','400px');
-   var markers =  [
-				   <?php foreach($gyms as $gym){?>
-							{
-								latitude: "<?php echo $gym->latitude; ?>",
-								longitude: "<?php echo $gym->longitude; ?>",
-								html: "<?php echo $gym->address; ?>"
-							},
-					<?php }?>
-				];
-		
-  $('#gmap-dropdown1').gMap({
-        address:  "<?php echo $gym->address; ?>",
-        zoom: 5,
-		markers:markers,
-		
-		 controls: {
-            panControl: true,
-            zoomControl: true,
-            mapTypeControl: true,
-            scaleControl: true,
-            streetViewControl: true,
-            overviewMapControl: true
-        },
-        controls: false,
-	scrollwheel: true,
+  var map = new GMaps({
+      el: '#gmap-dropdown1',
+      lat: -12.043333,
+      lng: -77.028333
     });
+  <?php 
+foreach($gyms as $gym){
+?>
+var latitude = "<?php echo $gym->latitude; ?>";
+var longitude = "<?php echo $gym->longitude; ?>";
+var address = "<?php echo $gym->address; ?>"; 
+console.log('address '+address);
+console.log('longitude '+longitude);
+console.log('latitude '+latitude);
+map.addMarker({
+  lat: latitude,
+  lng:longitude,
+  title:address,
+  click: function(e) {
+    alert(address);
+  }
+}); 
+map.setCenter(latitude,longitude);
+map.zoom(8);
+<?php 
+	
+}
+?>   
+})
 
-});
 </script>
                                  <!-- <img src="../images/fitness1.jpg"> -->
                                   <!--  <div id="gmap_canvas"></div>-->

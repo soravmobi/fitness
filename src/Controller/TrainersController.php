@@ -237,9 +237,25 @@ class TrainersController extends AppController
 
 	public function completeProfile()
 	{
+		
+		 if(isset($_REQUEST['addgym'])){
+					//print_r($_REQUEST);die;
+					$data=array(
+					'name'=>$_REQUEST['name'],
+					'address'=>$_REQUEST['address'],
+					'latitude'=>$_REQUEST['lat'],
+					'longitude'=>$_REQUEST['long'],
+					'trainer_id'=>$this->data['id']
+					);
+					 $this->conn->insert('gym',$data);
+									  
+		}
 		$data = $this->Custom->getSessionData();
 		$countries = $this->Countries->find('all')->toArray();
 		$profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
+		
+		$gyms = $this->gym->find()->where(['trainer_id' => $this->data['id']])->toArray();
+		
 		$quotes = $this->Latest_things->find()->where(['lt_type' => 'Quotes', 'lt_user_id' => $data['id']])->order(['id' => 'DESC'])->toArray();
 		$country_id = $profile_details[0]['trainer_country'];
         $state_id = $profile_details[0]['trainer_state'];
@@ -269,6 +285,7 @@ class TrainersController extends AppController
 		$this->set('countries', $countries);
         $this->set('states', $states);
         $this->set('cities', $cities);
+        $this->set('gyms', $gyms);
 	}
 
     public function traineeReport($id)
