@@ -100,6 +100,8 @@ class AppController extends Controller
         $this->withdraw_request = TableRegistry::get('Withdraw_request');
         $this->custom_packages_history = TableRegistry::get('Custom_packages_history');
         $this->conn = ConnectionManager::get('default');  
+        //aded on 11 april
+         $this->gym = TableRegistry::get('Gym');
     }
 
     public function blockIP()

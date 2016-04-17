@@ -1,11 +1,15 @@
 <?php include "trainee_dashboard.php"; ?>
-<!--Main container sec start--> 
+<?php 
+//$homepage = @unserialize(file_get_contents('http://ip-api.com/php/'));
+
+?>
 	<section class="search_location_wrap">
        <div class="container">
           <div class="row">
              <div class="col-md-12 col-sm-12">
                  <div class="search_wrap">
-                   <form>
+                   <form id="searchForm">
+                 
                     <div class="row">
                        <div class="col-md-4 col-sm-4">
                          <div class="form-group">
@@ -120,11 +124,69 @@
  -->
 <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
 <script type="text/javascript">
+	
+    
 	$(document).ready(function(){
+		
+	var startPos;
+	var lat;
+	var lng;
+  var geoSuccess = function(position) {
+    startPos = position;
+	lat = startPos.coords.latitude;
+	lng = startPos.coords.longitude;
+	
+if (document.location.search.indexOf('lat=') >= 0) {
+  // alert(window.location.href); 
+} else {
+    // what happens?
+     //alert(window.location.href);
+     if (document.location.search.indexOf('?') >= 0){
+     window.location.assign(window.location.href+'&lat='+lat+'&lng='+lng);
+     }else{
+	 window.location.assign(window.location.href+'?lat='+lat+'&lng='+lng);
+	 }
+}
+   };
+  var geoError = function(error) {
+  console.log('Error occurred. Error code: ' + error.code);
+    // error.code can be:
+    //   0: unknown error
+    //   1: permission denied
+    //   2: position unavailable (error response from location provider)
+    //   3: timed out
+  };
+  navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+	
+	
+	
+	
+	
+		
 		var surl = "<?php echo $this->request->webroot; ?>trainees/searchTrainers";
 		
 		/* Load map  */
-		gmap();
+		var trainers =  [ <?php foreach($trainers as $trainer){ ?>
+							[ 
+								"<?php echo $trainer['trainer_name']; ?>",
+								 "<?php echo $trainer['lat']; ?>",
+								"<?php echo $trainer['lng']; ?>",
+								"<?php echo $trainer['rate_hour']; ?>",
+								"<?php echo $trainer['user_id']; ?>",
+								"<?php echo $trainer['trainer_image']; ?>",
+								"<?php echo $trainer['trainer_lname']; ?>",
+								"<?php echo $trainer['city_name']; ?>",
+								"<?php echo $trainer['trainer_rating']; ?>",
+								"<?php echo $trainer['trainer_skills']; ?>",
+								"<?php echo $trainer['interests_hobby']; ?>",
+								"<?php echo $trainer['certification']; ?>"
+								
+							],
+					       <?php } ?>
+				          ];
+		
+		//console.log(trainers);
+		gmap(trainers);
 		
 		/* For percent circle */
         $("[id$='circle']").percircle();
@@ -167,7 +229,10 @@
 			var name = $("#byname").val().trim();
 			var int = $("#byinterest").val().trim();
 			var loc = $("#bylocation").val().trim();
-
+if(lat){
+//url.push("lat="+lat);
+//url.push("lng="+lng);
+	}
 			if(name != "")
 			{
 				url.push("name="+name);
@@ -394,7 +459,7 @@
 			// update the page to show we have the lat and long and explain what we do next
 		  	//document.getElementById('geo').innerHTML = 'Latitude: ' + position.coords.latitude + ' Longitude: ' + position.coords.longitude;
 			// now we send this data to the php script behind the scenes with the GEOajax function
-			alert(position.coords.latitude+ "," + position.coords.longitude);
+			//alert(position.coords.latitude+ "," + position.coords.longitude);
 		}
 
 		function GEOdeclined(error) {
@@ -413,38 +478,41 @@
     });
 	
 	/* Map function */
-	function gmap(){
-		var locations = [["test","64.2008413","-149.4936733","jay"]];
+	function gmap(trainers){
+		
+		console.log(trainers[0][0]);
+		var locations = trainers;
 	    var map = new google.maps.Map(document.getElementById('map'), {
-	      zoom: 13,
-	      center: new google.maps.LatLng(64.8457831,-147.8296627),
+	      zoom: 5,
+	      center: new google.maps.LatLng(trainers[0][1],trainers[0][2]),
 	      mapTypeId: google.maps.MapTypeId.ROADMAP
 	    });
-
-	    var infowindow = new google.maps.InfoWindow();
+	   // var infowindow = new google.maps.InfoWindow();
 
 	    var marker, i;
 	    var markers = [];
+		console.log(locations);	
+
 	    for (i = 0; i < locations.length; i++) {  
+			var contentString = '<div class="trainer_wrap_box"><div class="heading_payment_main"></div><div class="trainer_top_main"><div class="trainer_top clearfix"><h2>$ '+locations[i][3]+'</h2></div>                     <div class="img_trainer"><a href="/fitness/trainerProfile/NjI="><img src="/fitness/uploads/trainer_profile/566e6ec9c0833.jpg" class="img-responsive"></a>                     </div></div><div class="trainer_bottom"><div class="name_wrap"><a href="/fitness/trainerProfile/NjI=">'+locations[i][0]+' '+locations[i][6]+'</a></div><div class="location_wrap"><ul><li><span>Location :</span> '+locations[i][7]+'</li><li><span>skore :</span><div id="greencircle" data-percent="'+(10 * locations[i][8])+'" class="small green percircle animate"><span>'+locations[i][8]+'%</span><div class="slice"><div class="bar" style="transform: rotate(136.8deg);"></div><div class="fill"></div></div></div></li></ul></div><div class="describe_wrap"><ul><p><span>Skills:</span>'+locations[i][9]+'</p><p><span>Interests :</span>  '+locations[i][10]+'<span class="show_div">  Interests</span></p><p><span>Certifications :</span> '+locations[i][11]+'<span class="show_div"> Certification   </span></p></ul></div></div></div>';
+
+		  var infowindow = new google.maps.InfoWindow({
+			content: contentString
+		  }); 
 	      marker = new google.maps.Marker({
 	        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+	        content:contentString,
 	        map: map
 	      });
-	      
 	      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-	        return function() {
-	          infowindow.setContent(locations[i][0]);
+		    return function() {
+	          infowindow.setContent(marker.content);
 	          infowindow.open(map, marker);
 	        }
 	      })(marker, i));
 	      markers.push(marker);
-	    }
+		}
 	    var mc = new MarkerClusterer(map, markers);
+	
 	}
-</script>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-		
-	});
 </script>
