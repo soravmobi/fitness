@@ -19,11 +19,12 @@ class UsersController extends AppController
         $this->loadComponent('Auth');
         $this->Auth->allow(['index','email_temp','blank','checkEmail','getStates','getCities','forgotPassword','contact']);
         $this->data = $this->Custom->getSessionData();
+        $this->tokbox = $this->Tokbox->find()->where(['id' => 1])->toArray();
+        $this->set('tokbox',$this->tokbox);
     }
 
     public function index()
     	{
-    		$countries = $this->Countries->find('all')->toArray();
     		$session = $this->request->session();
             $user_data = $session->read('Auth.User');
             if(!empty($user_data))
@@ -43,7 +44,6 @@ class UsersController extends AppController
 	            }
         	$all_sessions = $this->Plans_sessions->find()->where(['category_id' => 1])->order(['id' => 'ASC'])->toArray();
         	$this->set('all_sessions',$all_sessions);
-	        $this->set('countries', $countries);
     	}
 
 

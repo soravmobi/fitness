@@ -141,46 +141,6 @@
     <!--Main container sec end-->
   </main>
 
-<!-- Appoinments Calendar Start -->
-
-<script type="text/javascript">
-  $(document).ready(function() {
-  var cal = '<?php echo json_encode($book_appo_arr); ?>';
-  var array1 = $.parseJSON(cal);
-  $('#calendar').fullCalendar({
-    defaultView: 'agendaWeek',
-    slotMinutes: 15,
-    events: array1,
-    dayClick: function(date) {
-      var today = date.format();
-      var todayArr = today.split("T");
-      var cur_date = new Date();
-      var sel_date = new Date(date.format());
-      if(cur_date < sel_date || todayArr[0] == '<?php echo date("Y-m-d"); ?>')
-      {
-        $('#app_date').val(todayArr[0]);
-        $('#book_appo_Modal').modal('show');
-      }
-    },
-  });
-});
-</script>
-
-<!-- Appoinments Calendar End -->
-
-<!-- Timepicker Start -->
-
-<script type="text/javascript">
-$(document).on("focusin", "#app_start_time,#app_end_time", function(event) {
-  $(this).prop('readonly', true);
-});
-
-$('#app_start_time,#app_end_time').clockpicker({
-    autoclose:true
-  }); 
-</script>
-
-<!-- Timepicker End -->
 <!-- Rating Start -->
 
 <script>

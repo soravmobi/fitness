@@ -2,7 +2,7 @@
     
     <!--Main container sec start-->
     <?php $action = $this->request->params["action"]; ?>
-    <div class="main_container <?php echo ($action == "searchTrainers")? "search_location" : ""; ?>">
+    <div class="<?php echo ($action == "searchTrainers")? "search_location" : ""; ?>">
     <!--Trainee top sec start-->
         <section class="trainee_top parallax-window" data-parallax="scroll" data-image-src="<?php echo $this->request->webroot; ?>images/trainee_top_bg.jpg">
             <div class="trainee_top_inner tr_grad">

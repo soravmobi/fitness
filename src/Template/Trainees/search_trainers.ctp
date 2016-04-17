@@ -1,8 +1,4 @@
 <?php include "trainee_dashboard.php"; ?>
-<?php 
-//$homepage = @unserialize(file_get_contents('http://ip-api.com/php/'));
-
-?>
 	<section class="search_location_wrap">
        <div class="container">
           <div class="row">
@@ -205,12 +201,6 @@ if (document.location.search.indexOf('lat=') >= 0) {
 			$(this).children('.dropdown-menu').stop(true, false, true).slideToggle(300);
 		});
 
-		$(".dropdown-menu li a").click(function(e){
-		  $(this).parents(".dropdown").find('button').html($(this).text() + ' <span class="wcaret"></span>');
-		  //$(this).parents(".dropdown").find('button').val($(this).data('value'));
-		  e.preventDefault();
-		});
-
 		$("body").on("click",".order_by_price", function(){
 			var price = $(this).attr("main").trim();
 			$("#price_order").val(price);
@@ -230,8 +220,8 @@ if (document.location.search.indexOf('lat=') >= 0) {
 			var int = $("#byinterest").val().trim();
 			var loc = $("#bylocation").val().trim();
 if(lat){
-//url.push("lat="+lat);
-//url.push("lng="+lng);
+url.push("lat="+lat);
+url.push("lng="+lng);
 	}
 			if(name != "")
 			{
@@ -459,7 +449,6 @@ if(lat){
 			// update the page to show we have the lat and long and explain what we do next
 		  	//document.getElementById('geo').innerHTML = 'Latitude: ' + position.coords.latitude + ' Longitude: ' + position.coords.longitude;
 			// now we send this data to the php script behind the scenes with the GEOajax function
-			//alert(position.coords.latitude+ "," + position.coords.longitude);
 		}
 
 		function GEOdeclined(error) {

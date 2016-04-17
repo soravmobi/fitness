@@ -3,9 +3,11 @@
 namespace App\View\Helper;
 
 use Cake\View\Helper;
+use Cake\Datasource\ConnectionManager;
 
 class CustomHelper extends Helper
 {
+    
     public function p($data)
     {
         echo "<pre>";
@@ -105,6 +107,57 @@ class CustomHelper extends Helper
         $discountBySession = $discount / $session;
         $finalSessionPrice = round($rates_plan[0]['rate_hour'] - $discountBySession,2);
         return $finalSessionPrice;
+    }
+
+    public function getHourlyRate($tid)
+    {
+        $this->conn = ConnectionManager::get('default'); 
+        $results = $this->conn->execute('SELECT * FROM `trainer_ratemaster` WHERE `trainer_id` = '.$tid)->fetchAll('assoc');
+        if(!empty($results)){
+            $hourlyrate = $results[0]['rate_hour'];
+        }else{
+            $hourlyrate = 0;
+        }
+        return $hourlyrate;
+    }
+
+    public function getCityName($cid)
+    {
+        $this->conn = ConnectionManager::get('default'); 
+        $results = $this->conn->execute('SELECT * FROM `cities` WHERE `id` = '.$cid)->fetchAll('assoc');
+        if(!empty($results)){
+            $city = $results[0]['name'];
+        }else{
+            $city = "";
+        }
+        return $city;
+    }
+
+    public function getLatLngUsingIP()
+    {
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $query = @unserialize(file_get_contents('http://ip-api.com/php/'));
+        if($query && $query['status'] == 'success') {
+          return $query;
+        } else {
+          return array();
+        }
+    }
+
+    public function getWheatherDetails()
+    {
+        $latlngdetails = $this->getLatLngUsingIP();
+        if(!empty($latlngdetails)){
+            $latitude  = $latlngdetails['lat'];
+            $longitude = $latlngdetails['lon'];
+        }else{
+            $latitude  = "";
+            $longitude = "";
+        }
+        $url  = "http://api.openweathermap.org/data/2.5/weather?lat=".$latitude."&lon=".$longitude;
+        $json = file_get_contents($url);
+        $data = json_decode($json,true);
+        return $data;
     }
 
 

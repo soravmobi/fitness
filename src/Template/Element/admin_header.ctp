@@ -25,10 +25,10 @@
             <div class="notifi_main">
                 
                 <div class="dropdown">
-                  <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+                  <!-- <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
                     <i class="glyphicon glyphicon-bell"></i>
                     <div class="noti_count">242</div>
-                  </a>
+                  </a> -->
                   
                   <ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">
                     

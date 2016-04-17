@@ -9,9 +9,11 @@ use Cake\I18n\Time;
 use Cake\Datasource\ConnectionManager;
 use Cake\Auth\DefaultPasswordHasher;
 use Cake\ORM\Entity;
+use Cake\View\View;
 
 class ApisController extends AppController
 {
+
 	public function login()
 	{
 		$hashPswdObj = new DefaultPasswordHasher;
