@@ -132,6 +132,7 @@
 	lat = startPos.coords.latitude;
 	lng = startPos.coords.longitude;
 	
+	
 if (document.location.search.indexOf('lat=') >= 0) {
   // alert(window.location.href); 
 } else {

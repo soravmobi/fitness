@@ -56,19 +56,15 @@
 	<?php echo  $this->Html->css('percircle.css') ?>
 	<?php echo  $this->Html->script('percircle.min.js') ?>
 	<?php echo  $this->Html->css('sweetalert2.css') ?>
-<<<<<<< HEAD
-	<?php echo  $this->Html->script('sweetalert2.js') ?>
 	<?php //echo  $this->Html->script('gmaps.js') ?>
 	<?php echo  $this->Html->script('jquery.gmap.js') ?>
 	
 	<script src="<?php echo $this->request->webroot; ?>js/amcharts.js" type="text/javascript"></script>
     <script src="https://www.amcharts.com/lib/3/serial.js" type="text/javascript"></script>
     <script src="https://www.amcharts.com/lib/3/pie.js" type="text/javascript"></script>
-=======
 	<?php echo  $this->Html->script('sweetalert2.min.js') ?>
 	<?php echo  $this->Html->css('jasny-bootstrap.min.css') ?>
 	<?php echo  $this->Html->script('jasny-bootstrap.min.js') ?>
->>>>>>> fa1031c9161ef53fb549cd51e77f1bc0d53ce16c
     <script type='text/javascript' src="https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js"></script>
 	<!-- jayendra start -->
 	<?php 

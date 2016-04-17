@@ -2035,7 +2035,7 @@ class TraineesController extends AppController
         
      if(isset($data['lng']) && isset($data['lat']))
      {
-		 $lat=$data['lat'];
+		$lat=$data['lat'];
        $lng=$data['lng'];
 		 
       
@@ -2063,7 +2063,7 @@ class TraineesController extends AppController
                                        left join countries as c on c.id = t.trainer_country
                                        left join states as s on s.id = t.trainer_state
                                        left join trainer_ratemaster as trm on t.user_id = trm.trainer_id
-                                       $strg HAVING distance <100000
+                                       $strg 
                                        $order
                                        $off
                                         
