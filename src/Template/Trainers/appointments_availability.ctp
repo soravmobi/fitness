@@ -147,11 +147,6 @@
         });
       });
     </script>
-    <script>
-      $(function(argument) {
-        $('.switch_button [type="checkbox"]').bootstrapSwitch();
-      })
-    </script>
     <script type="text/javascript">
     $(document).ready(function(){
 

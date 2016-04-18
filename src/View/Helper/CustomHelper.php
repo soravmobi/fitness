@@ -155,8 +155,9 @@ class CustomHelper extends Helper
             $longitude = "";
         }
         $url  = "http://api.openweathermap.org/data/2.5/weather?lat=".$latitude."&lon=".$longitude;
-        $json = file_get_contents($url);
-        $data = json_decode($json,true);
+        $data = @unserialize(file_get_contents($url));
+        /*$json = file_get_contents($url);
+        $data = json_decode($json,true);*/
         return $data;
     }
 
