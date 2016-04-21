@@ -22,12 +22,12 @@
               </div>
               <div class="form-group">
                 <div class='input-group date' id='datetimepicker2'>
-                  <input type='text' class="form-control" />
+                  <input type='text' class="form-control datepicker" id="start_date" />
                   <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> <span class="divider">to</span> </div>
               </div>
               <div class="form-group">
                 <div class='input-group date' id='datetimepicker2'>
-                  <input type='text' class="form-control" />
+                  <input type='text' id="end_date" class="form-control datepicker" />
                   <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div>
               </div>
             </div>

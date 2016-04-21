@@ -131,6 +131,11 @@ $('.ht_right ul li').hover(function() {
  * http://kevinurrutia.tumblr.com/post/16411271583/creating-a-css3-pulsating-circle
  */
 
+$('.datepicker').datepicker({
+    autoclose:true,
+    format: 'yyyy-mm-dd',
+});
+
 window.map = AmCharts.makeChart("chartdiv", {
     type: "map",
     "theme": "none",

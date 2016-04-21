@@ -58,7 +58,7 @@
                   <div class="calendor_caption_box">
                     <div class="heading_payment_main">
                           </div>
-                    <div class="calendor_caption session_content">
+                    <div class="calendor_caption session_content scroll_content">
                     
                     <?php 
                     if(!empty($time_slots)){

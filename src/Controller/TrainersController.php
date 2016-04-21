@@ -13,23 +13,24 @@ class TrainersController extends AppController
 {
 	public function beforeFilter(Event $event)
     {
-    	$this->blockIP();
+    	  $this->blockIP();
         $this->checkSession();
         parent::beforeFilter($event);
         $this->loadComponent('Auth'); 
         $this->Auth->allow(['addTrainer','downloadDocument']);
         $this->data = $this->Custom->getSessionData();
+        if(!empty($this->data)){
         $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
-        $noti_data=array();
-        $messages=array();
-        $notifications=array();
-        if(!isset($_REQUEST['trainee_cnfm_password'])){
         $noti_data = $this->getNotifications();
         $messages = $this->getChatMessages();
         $this->set('messages', $messages);
         $this->set('notifications', $this->total_notifications);
         $this->set('noti_data', $noti_data);
-    }
+        }else{
+          $this->set('messages', array());
+          $this->set('notifications', array());
+          $this->set('noti_data', array());
+        }
     }
 
   public function getChatMessages()

@@ -36,12 +36,18 @@ class TraineesController extends AppController
       $this->secretKey   ="cQA/Qnn+9dzhfH+tCsNLyF81rZPD7ZQFYPD4WcyK"; // MWS Secret Key
       $this->lwaClientId ="amzn1.application-oa2-client.1e55f9b590ae4f3085a6796aa9c87fd6"; // Login With Amazon Client ID
       $this->returnURL   = "https://virtualtrainr.com/trainees/resultAmazon";
-      $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
-      $noti_data = $this->getNotifications();
-      $messages = $this->getChatMessages();
-      $this->set('messages', $messages);
-      $this->set('noti_data', $noti_data);
-      $this->set('notifications', $this->total_notifications);
+      if(!empty($this->data)){
+        $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
+        $noti_data = $this->getNotifications();
+        $messages = $this->getChatMessages();
+        $this->set('messages', $messages);
+        $this->set('notifications', $this->total_notifications);
+        $this->set('noti_data', $noti_data);
+      }else{
+        $this->set('messages', array());
+        $this->set('notifications', array());
+        $this->set('noti_data', array());
+      }
   }
 
   public function getChatMessages()
