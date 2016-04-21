@@ -446,6 +446,7 @@ class TrainersController extends AppController
             }
             if($type == "informaiton"){
                 $key = 'edit1';
+                $this->users->query()->update()->set(array('display_name' => $data['trainer_displayName']))->where(['id' => $this->data['id']])->execute();
             }
             if($type == "social_links"){
                 $key = 'edit2';
@@ -458,7 +459,7 @@ class TrainersController extends AppController
             }
             $this->trainers->query()->update()->set($data)->where(['user_id' => $sess_data['id']])->execute();
             $this->Flash->success('Profile Has Been Updated Successfully', ['key' => $key]); 
-     		return $this->redirect('/trainers/completeProfile/'.$type);
+     		   return $this->redirect('/trainers/completeProfile/'.$type);
         }
 	}
 

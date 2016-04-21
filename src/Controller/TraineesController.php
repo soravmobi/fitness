@@ -757,14 +757,17 @@ class TraineesController extends AppController
             $key = "edit1";
           }
 
-          $address = $data["trn_city"].' '.$data["trn_state"].' '.$data["trn_cont"];
-          $loc = $this->Custom->getlatlng($address);
-      
-          $data['lat'] = $loc["latitude"];
-          $data['lng'] = $loc["longitude"];
-          unset($data["trn_city"]);
-          unset($data["trn_state"]);
-          unset($data["trn_cont"]);
+          if($type == "informaiton"){
+            $address = $data["trn_city"].' '.$data["trn_state"].' '.$data["trn_cont"];
+            $loc = $this->Custom->getlatlng($address);
+            $data['lat'] = $loc["latitude"];
+            $data['lng'] = $loc["longitude"];
+            unset($data["trn_city"]);
+            unset($data["trn_state"]);
+            unset($data["trn_cont"]);
+            $this->users->query()->update()->set(array('display_name' => $data['trainee_displayName']))->where(['id' => $sess_data['id']])->execute();
+          }
+          
           $this->trainees->query()->update()->set($data)->where(['user_id' => $sess_data['id']])->execute();
           $this->Flash->success('Profile Has Been Updated Successfully', ['key' => $key]);
           return $this->redirect('/trainees/completeProfile/'.$type);

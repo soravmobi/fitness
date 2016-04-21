@@ -154,7 +154,7 @@ function unique_multidim_array($array, $key) {
 
 <!-- <script src="http://maps.google.com/maps/api/js" type="text/javascript"></script>
  -->
-<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
+<script type="text/javascript" src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
 <script type="text/javascript">
 	
     
@@ -511,7 +511,6 @@ url.push("lng="+lng);
 	/* Map function */
 	function gmap(trainers){
 		
-		console.log(trainers[0][0]);
 		var locations = trainers;
 	    var map = new google.maps.Map(document.getElementById('map'), {
 	      zoom: 5,

@@ -423,7 +423,7 @@
 
   <!-- Choose Location Modal End -->
 
-  <script src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
   <script>
   function map_init(var_lati,var_long,var_markerTitle,var_contentString){
     

@@ -14,7 +14,7 @@
           <div class="session_content">
             <div class="transaction_date_wrap">
               <div class="form-group">
-                <input type="radio" id="f-option" name="selector">
+                <input type="radio" id="f-option" name="selector" class="seacrh_type" main="date">
                 <label for="f-option"> From</label>
                 <div class="check">
                   <div class="inside"></div>
@@ -33,7 +33,7 @@
             </div>
             <div class="transaction_date_wrap year_wrap">
               <div class="form-group">
-                <input type="radio" id="f-option1" name="selector">
+                <input type="radio" id="f-option1" name="selector" class="seacrh_type" main="week">
                 <label for="f-option1">Weekly</label>
                 <div class="check">
                   <div class="inside"></div>
@@ -41,17 +41,17 @@
               </div>
               <div class="form-group">
                 <div class="input-group date">
-                  <select class="form-control">
-                    <option>1 Week</option>
-                    <option>2 Week</option>
-                    <option>3 Week</option>
-                    <option>4 Week</option>
+                  <select class="form-control" id="week">
+                    <option value="1">1 Week</option>
+                    <option value="2">2 Week</option>
+                    <option value="3">3 Week</option>
+                    <option value="4">4 Week</option>
                   </select>
                   <div class="icon_arrow"><i class="fa fa-caret-down"></i></div>
                 </div>
               </div>
               <div class="form-group">
-                <input type="radio" id="f-option3" name="selector">
+                <input type="radio" id="f-option3" name="selector" class="seacrh_type" main="month">
                 <label for="f-option3">Monthly</label>
                 <div class="check">
                   <div class="inside"></div>
@@ -59,14 +59,25 @@
               </div>
               <div class="form-group">
                 <div class="input-group date">
-                  <select class="form-control">
-                    <option>Month</option>
+                  <select class="form-control" id="month">
+                    <option value="01">January</option>
+                    <option value="02">Feburary</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
                   </select>
                   <div class="icon_arrow"><i class="fa fa-caret-down"></i></div>
                 </div>
               </div>
               <div class="form-group">
-                <input type="radio" id="f-option4" name="selector">
+                <input type="radio" id="f-option4" name="selector" class="seacrh_type" main="annual">
                 <label for="f-option4">Annual</label>
                 <div class="check">
                   <div class="inside"></div>
@@ -74,8 +85,10 @@
               </div>
               <div class="form-group">
                 <div class="input-group date">
-                  <select class="form-control">
-                    <option>Annual</option>
+                  <select class="form-control" id="annual">
+                    <?php for ($i= 2010; $i < 2101; $i++) { ?>
+                         <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                    <?php } ?>
                   </select>
                   <div class="icon_arrow"><i class="fa fa-caret-down"></i></div>
                 </div>

@@ -39,7 +39,7 @@
 	<?php echo  $this->Html->script('modernizr.custom.28101.js'); ?>
 	<?php echo  $this->Html->script('jquery.min.js'); ?>
 	<?php echo  $this->Html->script('parallax.min.js'); ?>
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
 	<script src="<?php echo $this->request->webroot; ?>player/jwplayer.js"></script>
 	<?php echo  $this->Html->script('static_opentok.js'); ?>
 	<?php echo  $this->Html->css('bootstrap-datepicker.css'); ?>
