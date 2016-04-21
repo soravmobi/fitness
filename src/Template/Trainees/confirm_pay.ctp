@@ -140,7 +140,7 @@
                                   </div>
                               </div>
                     <div class="agree_message_wrap">
-                       <textarea class="form-control" name="trainer_message" placeholder="Please leave any special request/notes for your trainer here"></textarea>
+                       <textarea class="form-control" name="trainer_message" placeholder="message your trainer"></textarea>
                        <input type="hidden" name="app_id" value="<?php echo $appid; ?>">
                        <input type="hidden" name="total_amount" id="total_amount" value="<?php echo $finalSessionPrice + $finalServiceFee; ?>">
                        <div class="heading_payment_main">

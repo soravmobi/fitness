@@ -149,19 +149,16 @@
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="credit">
                                   <form name="form1" method="post" action="https://safe.sandbox-gtpaysecure.net/securepayments/a1/cc_collection.php">
-                                      <input type="hidden" name="CRESecureID"value="gt409418618166SB" />
-                                      <input type="hidden" name="return_url" value="https://virtualtrainr.com/trainees/creditReturn" />
-                                      <input type="hidden" name="content_template_url" value="https://virtualtrainr.com/trainees/walletPayment/NTA=" />
+
+
+                                      <input type="hidden" name="CRESecureID"value="gt597835597256SB" />
+                                      <input type="hidden" name="return_url" value="https://virtualtrainr.com/return.php" />
+                                      <input type="hidden" name="content_template_url" value="https://virtualtrainr.com/content_template_url.php" />
                                       <input type="hidden" name="sess_id" value="<?php echo time(); ?>" />
                                       <input type="hidden" name="sess_name" value="session" />
                                       <input type="hidden" name="allowed_types" value="Visa|MasterCard|American Express" />
-                                      <input type="hidden" name="total_weight" value="7" />
-                                      <input type="hidden" name="order_id" value="336" />
-                                      <input type="hidden" name="lang" value="en_US" />
-                                      <input type="hidden" name="customer_address" value="1000 1st Av" />
-                                      <input type="hidden" name="customer_email" value="sourav@mobiwebtech.com" />
-                                      <input type="hidden" name="customer_phone" value="1234567890"/>
-                                      <input type="hidden" name="customer_postal_code" value="10101" />
+                                      <input type="hidden" name="trainee_id" value="<?php echo $profile_details[0]['user_id']; ?>" />
+                                      
                                       <div class="form-group">
                                         <input type="text" id="total_amt" name="total_amt" value="<?php echo base64_decode($ammount); ?>" readonly class="form-control" placeholder="Ammount">
                                       </div>
@@ -172,7 +169,7 @@
                                         <button class="btn submit_btn" name="submit" type="submit">Pay</button>
                                       </div>
                                   </form>
-                                  [[FORM INSERT]]
+                                 
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="money">
                                 <form method="post" action="<?php echo $this->request->webroot; ?>trainees/moneyOrder">

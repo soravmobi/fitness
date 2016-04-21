@@ -134,7 +134,7 @@
                               <input type="hidden" name="package" value="<?php echo base64_encode($custom_plan_details[0]['package_id']); ?>">
                               <input type="hidden" name="coupon" id="coupon" value="<?php echo base64_encode('0'); ?>">
                           <div class="agree_message_wrap">
-                             <textarea class="form-control" name="trainer_message" placeholder="Please leave any special request/notes for your trainer here"></textarea>
+                             <textarea class="form-control" name="trainer_message" placeholder="message your trainer"></textarea>
                              <div class="heading_payment_main">
                                 </div>
                                 <div class="check_box  session_content">

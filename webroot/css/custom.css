@@ -141,15 +141,14 @@ body{font-family: 'HelveticaLTStdLight';}
 .top_nav li a{ display:block; padding:5px; font-family: 'HelveticaLTStdLight';}
 .mainmenu_nav li {
   display: inline-block;
-  padding-top: 10px;
 }
-.mainmenu_nav li a{ display:block; padding:5px 10px; font-family: 'HelveticaLTStdLight'; font-size:16px;}
+.mainmenu_nav li a{ display:block; padding:5px 10px; font-family: 'HelveticaLTStdLight'; font-size:16px; line-height:70px;}
 .top_nav li a span {display: inline-block; padding-right: 10px;}
 .header_sec.affix{ top:-40px;}
 .main_nav .navbar-brand {
   height: auto;
   max-width: 300px;
-  padding: 16px 15px 20px;
+  padding: 25px 15px 20px;
 }
 /*****************************************************************************
 ***************************css for header sec end  ***************************
@@ -2577,14 +2576,14 @@ body.error_page , body.mail_page{
     position: relative;
 }
 .beta_logo {
-    background: #fd4239 none repeat scroll 0 0;
-    color: #ffffff;
-    left: -71px;
-    position: absolute;
-    text-align: center;
-    top: 26px;
-    transform: rotate(-48deg);
-    width: 120px;
+  background: #fd4239 none repeat scroll 0 0;
+  color: #ffffff;
+  left: -72px;
+  position: absolute;
+  text-align: center;
+  top: 26px;
+  transform: rotate(-48deg);
+  width: 134px;
 }
 .our_trainer_top {
   background-attachment: fixed;
@@ -4074,7 +4073,7 @@ a.btn_trainer {
   color: #999;
 }
 .right_session_content {
-  height: 670px;
+  height: 600px;
   overflow: auto;
   margin-top: 45px;
 }
@@ -4099,6 +4098,11 @@ a.btn_trainer {
   margin-top: 30px;
   text-align: center;
 }
+.wallet_info .add_money {
+  display: inline-block;
+  margin-top: 0;
+}
+
 
 .right_session_conten .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
    background-color: #969696;
@@ -5060,18 +5064,18 @@ margin:0 auto;
 }
 
 .hide_map_btn {
-    background: rgba(0, 0, 0, 0) linear-gradient(#f34727, #e6342b) repeat scroll 0 0;
-    border: medium none;
-    border-radius: 6px;
-    color: #fff;
-    display: inline-block;
-    font-size: 16px !important;
-    margin-top: 20px;
-    padding: 7px 7px !important;
-    position: absolute;
-    right: -62px;
-    text-transform: capitalize;
-    top: -17px;
+  background: rgba(0, 0, 0, 0) linear-gradient(#f34727, #e6342b) repeat scroll 0 0;
+  border: medium none;
+  border-radius: 6px;
+  color: #fff;
+  display: inline-block;
+  font-size: 16px !important;
+  margin-top: 20px;
+  padding: 9px 10px !important;
+  position: absolute;
+  right: -62px;
+  text-transform: capitalize;
+  top: -20px;
 }
 
 /*css for appointement page start*/
@@ -5726,7 +5730,7 @@ label.remain_bal {
     margin-top: 93px;
 }
 .calendor_caption_box .session_content{padding: 20px 15px 20px 40px;}
-.calendor_caption_box .calendor_caption .checkbox{width: 32.8%;}
+.calendor_caption_box .calendor_caption .checkbox{width: 31.8%;}
 #trainer_form .responsive-calendar .day a {
     
     margin: 17px;
@@ -5964,7 +5968,7 @@ label.remain_bal {
   width: 85px;
 }
 .rate_box {
-  font-size: 49px;
+  font-size: 40px;
 }
 .list_table_icon > li {
   background-color: #eb3c29;
@@ -6243,7 +6247,7 @@ label.remain_bal {
   font-size: 16px;
 }
 .cloud_text .rate_box {
-  line-height: 36px;
+  line-height: 60px;
 }
 .cloud_text > p {
   color: #242424;
@@ -6667,7 +6671,9 @@ label.remain_bal {
   text-transform:capitalize;
 
 }
-.appointement_dashboard .responsive-calendar .day a{margin:14px;}
+.appointement_dashboard .responsive-calendar .day a {
+  margin: 11px;
+}
 .dashboard_mid_sec .cr_table_content {
   margin-top: 0;
 }
@@ -6984,7 +6990,7 @@ label.remain_bal {
   width: 145px;
 }
 #booking_session_form .right_session_bar {
-  height: 610px;
+  height: 656px;
  overflow: hidden;
 }
 .ht_right li:nth-child(2) .dropdown-menu{width: 200px;}
@@ -7011,4 +7017,13 @@ label.remain_bal {
 }
 #trainer_form .responsive-calendar .day a {
   margin: 9px;
+}
+.payment_method strong {
+  color: #666;
+  float: right;
+  padding-right: 10px;
+}
+.unselect_all span {
+  color: #e6342a !important;
+  padding: 15px !important;
 }

@@ -679,7 +679,10 @@ $(document).ready(function(){
             dataType : "json",
             success: function(data)
             {
-                if(data.message != '')
+                if(data.message == '1'){
+                  $('#line2').html("Email Already Exists !");
+                  $('#line2').css('color', 'red');
+                    }else if(data.message != '')
                     {
                         $('img#loading-img').hide();
                         $('#trainee_form')[0].reset();

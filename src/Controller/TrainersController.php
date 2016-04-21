@@ -98,6 +98,8 @@ class TrainersController extends AppController
 	{
 		if($this->request->is('ajax'))
      	{
+         $feedback = $this->conn->execute('SELECT * FROM `users` WHERE `username` = "'.$_POST['trainer_email'].'" ORDER BY id DESC')->fetchAll('assoc');   
+    if(empty($feedback)){
             $trainer_email = $_POST['trainer_email'];
             $admin_email = "business@virtualtrainr.com";
      		$data = array(
@@ -194,6 +196,12 @@ class TrainersController extends AppController
     		$this->set('message', $lid);
     		$this->set('_serialize',array('message'));
     		$this->response->statusCode(200);
+        }else{
+          $msg ='1';
+          $this->set('message', $msg);
+          $this->set('_serialize',array('message'));
+          $this->response->statusCode(200);
+      }
 		}
 	}
 

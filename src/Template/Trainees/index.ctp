@@ -164,7 +164,7 @@
             </div>
           </div>
         </div>
-        <!-- <div class="graph_sec">
+        <div class="graph_sec">
           <div class="row ">
             <div class="col-sm-6 col-md-6 text-right">
               <div class="img_link"> <img src="images/structure.png" alt="img" class="img-responsive image_link" usemap="#structure_link">
@@ -185,8 +185,8 @@
               </ul>
             </div>
           </div>
-        </div> -->
-        <!-- <div class="trainer_wrap_main">
+        </div>
+        <div class="trainer_wrap_main">
         <div class="row">
           <div class="col-lg-3 col-md-4 col-sm-4">
             <div class="trainer_wrap_box">
@@ -325,7 +325,7 @@
             </div>
           </div>
         </div>
-        </div> -->
+        </div>
         <div class="message_wrap">
           <div class="message_wrap_head">
             <h3>inbox </h3>

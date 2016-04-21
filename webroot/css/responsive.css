@@ -505,7 +505,7 @@
 .session_content {
   padding: 20px 5px;
 }
-	.mainmenu_nav li a{ padding:0 10px; line-height:50px;}
+	.mainmenu_nav li a{ padding:0 10px;}
 	.mp_types{ width:90px;}
 	.mp_days {width: 85%;}
 	.profile_field_title {width: 180px;}
@@ -727,6 +727,14 @@
   margin-bottom: 9px;
   text-align: center;
 }
+.right_session_content {
+  height: 495px;
+}
+.hide_map_btn {
+  right: 3px;
+  top: 43px;
+  z-index: 1111;
+}
 
 
 
@@ -734,7 +742,6 @@
 	
 @media (min-width:768px){
 	.mainmenu_nav li{ display:inline-block; vertical-align:middle;}
-	.mainmenu_nav li a{ line-height:60px;}
 	.profile_field_title {float: left;text-align: right;}
 	.profile_field_des {
 	  float: right;
@@ -760,6 +767,9 @@
 	.ht_left {
      width: 39px;
      padding-top: 10px;
+}
+.hide_map_btn {
+  right: 15px;
 }
 .calendor_switches_head a {
   padding: 6px;
@@ -1002,6 +1012,7 @@
   float: none;
   margin: 0 auto;
   width: 100%;
+  height:auto;
 }
 .img_text_main {
   width: 65%;
@@ -1502,7 +1513,7 @@
   padding: 5px;
 }
 #trainer_form .responsive-calendar .day a {
-  line-height: 26px;
+  line-height: 22px;
   margin: 0px;
 }
 
@@ -1513,6 +1524,7 @@
 .trainer_report_main .transaction_date_wrap {
   text-align: right;
 }
+
 .trainer_report_main .transaction_date_wrap.year_wrap .form-group:nth-child(2n+1) {
   width: 25%;
 }
@@ -1539,8 +1551,23 @@
 	.slide_text li:nth-child(3n) a {
   width: 157px;
 }
+.calendor_switches_head .cs_head_left:first-child {
+  width: 26%;
+}
+.chekbox_txt {
+  padding-left: 5px;
+}
+.unselect_all span {
+  padding: 0 !important;
+}
+.cs_head_left {
+  width: 33%;
+}
 .notification_wrap  li {
   width: 100%;
+}
+.calendor_caption_box .calendor_caption .checkbox {
+  width: 48%;
 }
 .appointement_sec .main_block {
   width: 100%;

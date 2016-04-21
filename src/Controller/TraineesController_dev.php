@@ -36,18 +36,18 @@ class TraineesController extends AppController
       $this->secretKey   ="cQA/Qnn+9dzhfH+tCsNLyF81rZPD7ZQFYPD4WcyK"; // MWS Secret Key
       $this->lwaClientId ="amzn1.application-oa2-client.1e55f9b590ae4f3085a6796aa9c87fd6"; // Login With Amazon Client ID
       $this->returnURL   = "https://virtualtrainr.com/trainees/resultAmazon";
-      $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
-      $noti_data=array();
-      $messages=array();
-      $notifications=array();
-      if(!isset($_REQUEST['trainee_cnfm_password'])){
-      $noti_data = $this->getNotifications();
-      $messages = $this->getChatMessages();
-      $this->set('messages', $messages);
-      $this->set('notifications', $this->total_notifications);
-      $this->set('noti_data', $noti_data);
-    } 
-     
+      if(!empty($this->data)){
+        $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
+        $noti_data = $this->getNotifications();
+        $messages = $this->getChatMessages();
+        $this->set('messages', $messages);
+        $this->set('notifications', $this->total_notifications);
+        $this->set('noti_data', $noti_data);
+      }else{
+        $this->set('messages', array());
+        $this->set('notifications', array());
+        $this->set('noti_data', array());
+      }
   }
 
   public function getChatMessages()
@@ -603,8 +603,6 @@ class TraineesController extends AppController
   {
     if($this->request->is('ajax'))
           {
-      $feedback = $this->conn->execute('SELECT * FROM `users` WHERE `username` = "'.$_POST['trainee_email'].'" ORDER BY id DESC')->fetchAll('assoc');   
-    if(empty($feedback)){         
       $trainee_email = $_POST['trainee_email'];
       $admin_email = "donotreply@virtualtrainr.com";
         $data = array(
@@ -659,12 +657,6 @@ class TraineesController extends AppController
     $this->set('message', $lid);
     $this->set('_serialize',array('message'));
     $this->response->statusCode(200);
-    }else{
-          $msg ='1';
-          $this->set('message', $msg);
-          $this->set('_serialize',array('message'));
-          $this->response->statusCode(200);
-      }
     }
   }
 
@@ -765,17 +757,14 @@ class TraineesController extends AppController
             $key = "edit1";
           }
 
-          if($type == "informaiton"){
-            $address = $data["trn_city"].' '.$data["trn_state"].' '.$data["trn_cont"];
-            $loc = $this->Custom->getlatlng($address);
-            $data['lat'] = $loc["latitude"];
-            $data['lng'] = $loc["longitude"];
-            unset($data["trn_city"]);
-            unset($data["trn_state"]);
-            unset($data["trn_cont"]);
-            $this->users->query()->update()->set(array('display_name' => $data['trainee_displayName']))->where(['id' => $sess_data['id']])->execute();
-          }
-          
+          $address = $data["trn_city"].' '.$data["trn_state"].' '.$data["trn_cont"];
+          $loc = $this->Custom->getlatlng($address);
+      
+          $data['lat'] = $loc["latitude"];
+          $data['lng'] = $loc["longitude"];
+          unset($data["trn_city"]);
+          unset($data["trn_state"]);
+          unset($data["trn_cont"]);
           $this->trainees->query()->update()->set($data)->where(['user_id' => $sess_data['id']])->execute();
           $this->Flash->success('Profile Has Been Updated Successfully', ['key' => $key]);
           return $this->redirect('/trainees/completeProfile/'.$type);
@@ -1808,7 +1797,9 @@ class TraineesController extends AppController
 
   public function creditReturn()
   {
-   
+    echo "<pre>";
+    print_r($_GET);
+    die;
   }
 
   public function bookingSession()
@@ -2054,7 +2045,7 @@ class TraineesController extends AppController
        $lng=$data['lng'];
 		 
       
-      $result = $this->conn->execute("select *, SQRT( POW(69.1 * (lat - $lat), 2) + POW(69.1 * ($lng- lng) * COS(lat / 57.3), 2)) AS distance,s.name as state_name,
+      $result = $this->conn->execute(" select *, SQRT( POW(69.1 * (lat - $lat), 2) + POW(69.1 * ($lng- lng) * COS(lat / 57.3), 2)) AS distance,s.name as state_name,
                                        c.name as country_name,
                                        ct.name as city_name
                                        from trainers as t
@@ -2062,14 +2053,11 @@ class TraineesController extends AppController
                                        left join countries as c on c.id = t.trainer_country
                                        left join states as s on s.id = t.trainer_state
                                        left join trainer_ratemaster as trm on t.user_id = trm.trainer_id
-                                       $strg 
-                                       group by t.user_id
-                                       HAVING distance <100000
+                                       $strg HAVING distance <100000
                                        $order
                                        $off
                                         
                                     ")->fetchAll('assoc');
-                                    
 	}else{
 
   $result = $this->conn->execute(" select *, 
@@ -2082,17 +2070,14 @@ class TraineesController extends AppController
                                        left join states as s on s.id = t.trainer_state
                                        left join trainer_ratemaster as trm on t.user_id = trm.trainer_id
                                        $strg 
-                                       group by t.user_id
                                        $order
                                        $off
                                         
                                     ")->fetchAll('assoc');
-                                
   }
                                     
       $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
       $notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'], 'noti_status' => 0])->count();
-     
       if($this->request->is('ajax'))
       {
         $this->set('trainers', $result);
@@ -2727,10 +2712,6 @@ class TraineesController extends AppController
               <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Status : ".$txn_details[0]['status']."</p>
               </div>";
     $this->Custom->downloadpdf($html,$filename);
-  }
-
-  public function content_template(){
-
   }
 
 

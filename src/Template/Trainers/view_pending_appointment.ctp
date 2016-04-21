@@ -202,7 +202,7 @@
                     <?php } else{ ?>
                       <button type="button" class="btn respond-section" main="1" appid="<?php echo base64_encode($session_details[0]['app_id']); ?>">Approve</button>
                       <button type="button" class="btn decline respond-section" main="2" appid="<?php echo base64_encode($session_details[0]['app_id']); ?>">Decline</button>
-                      <a href="javascript:void(0);" data-dismiss="modal" data-toggle="modal" data-target="#Make_Special_Offer" class="special_offer">Submit Offer</a>
+                      <a href="javascript:void(0);" data-dismiss="modal" data-toggle="modal" data-target="#Make_Special_Offer" class="special_offer">Make Special Offer</a>
                     <?php } ?>
                 </div>
             </div>
@@ -286,8 +286,8 @@
                       <button type="button" id="applied_new_price" title="Applied New Price" class="btn_applied"> <i class="fa fa-check-circle"></i></button>
                       <button type="button" id="remove_new_price" title="Remove Applied New Price" class="btn_applied">Remove <i class="fa fa-times-circle"></i></button>
                     </br></span>
-                    <button type="button" class="btn decline set_price">Modify Price</button>
-                    <button type="submit" class="special_offer">Submit Offer</button>
+                    <button type="button" class="btn decline set_price">Set a Price</button>
+                    <button type="submit" class="special_offer">Make Special Offer</button>
                 </div>
             </div>
           </form>
