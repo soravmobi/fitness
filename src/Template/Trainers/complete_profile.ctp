@@ -857,8 +857,8 @@ $('.addgym').on('click',function(){
 <script type="text/javascript">
 function initialize() {
     var input = document.getElementById('address111');
-    var options = {componentRestrictions: {country: 'us'}};
-                 
+    //var options = {componentRestrictions: {country: 'us'}};
+    var options = {};
     new google.maps.places.Autocomplete(input, options);
 }
 google.maps.event.addDomListener(window, 'load', initialize);

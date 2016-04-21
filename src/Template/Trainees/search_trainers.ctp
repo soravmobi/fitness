@@ -39,7 +39,7 @@ function unique_multidim_array($array, $key) {
         $locationArray = unique_multidim_array($trainers,'location');                 ?>
                         
                         
-                         <select class="form-control" >
+                         <select class="form-control"  id="byinterest" >
                          <option value="">Please Select</option>
                          	<?php foreach($interests_hobbyArray as $t) {
 							 echo "<option value='".$t['interests_hobby']."'>".$t['interests_hobby']."</option>"; 
@@ -49,7 +49,7 @@ function unique_multidim_array($array, $key) {
                          <div class="form-group">
                              <!-- <div class="select_icon"><i class="fa fa-caret-down"></i></div> -->
                          	<!--<input type="text" class="form-control" id="bylocation" placeholder="by location ?" value="<?php //echo (!empty($_GET["loc"]))? $_GET["loc"] : ""; ?>">	-->
-                         	<select class="form-control" >
+                         	<select class="form-control" id="bylocation">
                          	<option value="">Please Select</option>
                          	<?php foreach($locationArray as $t) { 
 								echo "<option value='".$t['location']."'>".$t['location']."</option>";
@@ -119,6 +119,7 @@ function unique_multidim_array($array, $key) {
                          <li>
                      		<span>skore :</span>
                             <div id="greencircle" data-percent="<?php echo (10 * $t['trainer_rating']); ?>" class="small green"></div>
+                            
                         </li>
                       </ul>
                    </div>
@@ -255,24 +256,24 @@ if (document.location.search.indexOf('lat=') >= 0) {
 
 
 		/* Search Trainer by search button */
-		$("body").on("click","#search_trainer", function(){
+		$("body").on("click","#search_trainer", function(){ 
 			var url = [];
 			var strg = "";
-			var name = $("#byname").val().trim();
-			var int = $("#byinterest").val().trim();
-			var loc = $("#bylocation").val().trim();
-if(lat){
+			var name = $("#byname").val();
+			var intr = $("#byinterest").val();
+			var loc = $("#bylocation").val();
+/*if(lat){
 url.push("lat="+lat);
 url.push("lng="+lng);
-	}
+	}*/
 			if(name != "")
 			{
 				url.push("name="+name);
 			}
 
-			if(int != "")
+			if(intr != "")
 			{
-				url.push("int="+int);
+				url.push("int="+intr);
 			}
 
 			if(loc != "")
@@ -457,7 +458,8 @@ url.push("lng="+lng);
 						        list += '                <li><span>Location :</span>'+t['city_name']+'</li>';
 						        list += '                 <li>';
 						        list += '             		<span>skore :</span>';
-						        list += '                    <div id="greencirclenew" data-percent="'+(10 * t['trainer_rating'])+'" class="small green"></div>';
+						        list += '                    <div id="greencirclenew" data-percent="'+t['trainer_rating']+'" class="small green"></div>';
+						         //   list += '                    <div id="greencirclenew" data-percent="'+(10 * t['trainer_rating'])+'" class="small green"></div>';
 						        list += '                </li>';
 						        list += '              </ul>';
 						        list += '           </div>';
@@ -522,9 +524,10 @@ url.push("lng="+lng);
 	    var marker, i;
 	    var markers = [];
 		console.log(locations);	
-
+ 
+ 
 	    for (i = 0; i < locations.length; i++) {  
-			var contentString = '<div class="trainer_wrap_box"><div class="heading_payment_main"></div><div class="trainer_top_main"><div class="trainer_top clearfix"><h2>$ '+locations[i][3]+'</h2></div>                     <div class="img_trainer"><a href="/fitness/trainerProfile/NjI="><img src="/fitness/uploads/trainer_profile/566e6ec9c0833.jpg" class="img-responsive"></a>                     </div></div><div class="trainer_bottom"><div class="name_wrap"><a href="/fitness/trainerProfile/NjI=">'+locations[i][0]+' '+locations[i][6]+'</a></div><div class="location_wrap"><ul><li><span>Location :</span> '+locations[i][7]+'</li><li><span>skore :</span><div id="greencircle" data-percent="'+(10 * locations[i][8])+'" class="small green percircle animate"><span>'+locations[i][8]+'%</span><div class="slice"><div class="bar" style="transform: rotate(136.8deg);"></div><div class="fill"></div></div></div></li></ul></div><div class="describe_wrap"><ul><p><span>Skills:</span>'+locations[i][9]+'</p><p><span>Interests :</span>  '+locations[i][10]+'<span class="show_div">  Interests</span></p><p><span>Certifications :</span> '+locations[i][11]+'<span class="show_div"> Certification   </span></p></ul></div></div></div>';
+			var contentString = '<div class="trainer_wrap_box"><div class="heading_payment_main"></div><div class="trainer_top_main"><div class="trainer_top clearfix"><h2>$ '+locations[i][3]+'</h2></div>                     <div class="img_trainer"><a href="<?php echo $this->request->webroot; ?>trainerProfile/'+btoa(locations[i][4])+'"><img src=<?php echo $this->request->webroot; ?>uploads/trainer_profile/'+locations[i][5]+' " class="img-responsive"></a></div></div><div class="trainer_bottom"><div class="name_wrap"><a href="<?php echo $this->request->webroot; ?>/fitness/trainerProfile/'+btoa(locations[i][4])+'">'+locations[i][0]+' '+locations[i][6]+'</a></div><div class="location_wrap"><ul><li><span>Location :</span> '+locations[i][7]+'</li><li><span>skore :</span><div id="greencircle" data-percent="'+(10 * locations[i][8])+'" class="small green percircle animate"><span>'+locations[i][8]+'%</span><div class="slice"><div class="bar" style="transform: rotate(136.8deg);"></div><div class="fill"></div></div></div></li></ul></div><div class="describe_wrap"><ul><p><span>Skills:</span>'+locations[i][9]+'</p><p><span>Interests :</span>  '+locations[i][10]+'<span class="show_div">  Interests</span></p><p><span>Certifications :</span> '+locations[i][11]+'<span class="show_div"> Certification   </span></p></ul></div></div></div>';
 
 		  var infowindow = new google.maps.InfoWindow({
 			content: contentString
