@@ -1,6 +1,5 @@
 <?php include "trainer_common_header.php"; ?>
 
-		
      <section class="trainee_dash_body parallax-window">
      	<div class="container trainee_profile_wrap">
         	
@@ -10,6 +9,10 @@
                     	  <h3>Complete Profile</h3>
                     	  <!-- Nav tabs -->
                           <ul class="nav_tabs">
+                            
+                            
+                            
+                            
                             <li class="active informaiton"><a href="#informaiton" aria-controls="informaiton" role="tab" data-toggle="tab">Personal Informaiton </a></li>
                             <li class="social_links"><a href="#social_links" aria-controls="social_links" role="tab" data-toggle="tab">Social Links </a></li>
                             <li class="bank_details"><a href="#bank_details" aria-controls="bank_details" role="tab" data-toggle="tab">Bank Details </a></li>
@@ -36,6 +39,8 @@
                     	<!-- Tab panes -->
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active informaiton" id="informaiton">
+
+
                             	<h3 class="trai_title_sect">Personal Informaiton</h3>
                                 <?=  $this->Flash->render('edit1') ?>
                                 <form method="post" action="<?php echo $this->request->webroot; ?>trainers/updatePersonalInfo/informaiton">
@@ -499,26 +504,84 @@
                                     </table>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane access_gym" id="addgym">
+                            <div role="tabpanel" class="tab-pane access_gym active" id="addgym"  style="opacity: 0;">
+
                                 <h4>favorite gym</h4>
                                 <div class="access_gym_form">
-                                <form>
+                                <form name="gym" method="post">
                                   <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="name">
+                                    <input type="text" class="form-control" placeholder="name" name="name">
                                   </div>
-                                  <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="address">
+                                 
+                                  <div class="form-group" >
+	
+                                    <input type="text" class="form-control" placeholder="address" name="address" id="address111">
+                                    <input type="hidden" class="form-control" value="0" name="lat" id="lat">
+                                    <input type="hidden" class="form-control" value="0" name="long" id="long">
 
                                   </div>
-                                   <button class="gym_favorite">add favorite</button>
+                                   <button type="submit" name="addgym" class="gym_favorite">Add Gym</button>
 
                                 </form>
                                 
                                 </div>
-                                <div class="add_gym pull-right"><button>add gym</button></div>
+                                <!--<div class="add_gym pull-right"><button>add gym</button></div>-->
+                                
                                 <div class="access_map">
-                                    <!-- <img src="../images/fitness1.jpg"> -->
-                                    <div id="gmap_canvas"></div>
+									
+<style>
+	
+.map{
+    width: 600px;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+.map p{
+	margin: 10px;
+	color: #333;
+}
+</style>
+<div id="gmap-dropdown1" class="map">map</div>
+<script>
+  
+$('.addgym').on('click',function(){ 
+  
+  $('#addgym').css('opacity','1');
+  $('#gmap-dropdown1').css('width','100%');
+  $('#gmap-dropdown1').css('height','400px');
+   var markers =  [
+				   <?php foreach($gyms as $gym){?>
+							{
+								latitude: "<?php echo $gym->latitude; ?>",
+								longitude: "<?php echo $gym->longitude; ?>",
+								html: "<?php echo $gym->address; ?>"
+							},
+					<?php }?>
+				];
+		
+  $('#gmap-dropdown1').gMap({
+        address:  "<?php if(isset($gym->address)){ echo $gym->address; }; ?>",
+        zoom: 5,
+		markers:markers,
+		
+		 controls: {
+            panControl: true,
+            zoomControl: true,
+            mapTypeControl: true,
+            scaleControl: true,
+            streetViewControl: true,
+            overviewMapControl: true
+        },
+        controls: false,
+	scrollwheel: true,
+    });
+
+});
+</script>
+                                 <!-- <img src="../images/fitness1.jpg"> -->
+                                  <!--  <div id="gmap_canvas"></div>-->
+                                    
                                 </div>
                             </div>
 
@@ -645,7 +708,7 @@
             </div>
         </div>
      </section>   
-        
+  
     </div>
     <!--Main container sec end-->
   </main>
@@ -653,7 +716,7 @@
   <!-- Change Password Start -->
   
   <script type="text/javascript">
-  $(document).ready(function(){
+  $(document).ready(function(){ 
     $('#change_pswd').click(function(){
         var current_pswd = $('#current_pswd').val();
         var new_pswd = $('#new_pswd').val();
@@ -771,9 +834,46 @@
     <!-- Profile Image Uploading End --> 
 
 <!-- Delete Quotes Start -->
+	<script type="text/javascript">
+	function getLatLong(address=''){
+	var geocoder = new google.maps.Geocoder();
+	//var address = "new york";
+	var latitude='0'; var longitude='0';
+	geocoder.geocode( { 'address': address}, function(results, status) {
+
+	if (status == google.maps.GeocoderStatus.OK) {
+	 latitude = results[0].geometry.location.lat();
+	 longitude = results[0].geometry.location.lng();
+	  console.log('sssss'+longitude);
+	  $('#lat').val(latitude);
+	  $('#long').val(longitude);
+	} 
+	});
+	
+	} 
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+<script type="text/javascript">
+function initialize() {
+    var input = document.getElementById('address111');
+    var options = {componentRestrictions: {country: 'us'}};
+                 
+    new google.maps.places.Autocomplete(input, options);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 
 <script type="text/javascript">
-    $(document).ready(function(){
+    $(document).ready(function(){     
+		
+		
+		
+		$('#address111').on('change',function(){
+	//alert();
+	getLatLong($(this).val());	
+	console.log('call '+$(this).val());
+	});
          $(".table").on('click','.delete',function(){
           if (confirm("Are You Sure?")) {
             var id = btoa($(this).attr('main'));
@@ -967,7 +1067,8 @@ $(document).ready(function(){
 <!-- Resume Validation End -->
 
 <script type="text/javascript">
-    $(document).ready(function(){
+    $(document).ready(function(){ 
+		
         var pageURL = $(location).attr("href");
         var splitURL = pageURL.split("/"); 
         var result = splitURL[splitURL.length - 1];  
@@ -1209,8 +1310,13 @@ $(document).ready(function(){
 </script>
 
 <script type="text/javascript">
-    $(document).ready(function(){
-        var geocoder;
+	
+    $(document).ready(function(){ 
+		
+
+
+
+        /*var geocoder;
         var map;
         var markers = Array();
         var infos = Array();
@@ -1323,6 +1429,7 @@ $(document).ready(function(){
 
         // initialization
         google.maps.event.addDomListener(window, 'load', initialize);
+        */
 
     });
 </script> 

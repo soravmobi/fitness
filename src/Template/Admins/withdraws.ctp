@@ -53,9 +53,9 @@
                           <input type="hidden" name="amount" id="paypal_withdraw_amt" value="" />
                           <input type="hidden" name="currency_code" value="USD" />
                           <input type="hidden" name="custom" id="withdraw_id" value="" /> 
-                          <input type="hidden" name="return" value="http://dev.virtualtrainr.com/admins/paypalWithdraw" />
-                          <input type="hidden" name="cancel_return" value="http://dev.virtualtrainr.com/admins/paypalWithdrawCancel" />
-                          <input type="hidden" name="notify_url" value="http://dev.virtualtrainr.com/admins/paypalWithdrawNotify" />
+                          <input type="hidden" name="return" value="https://virtualtrainr.com/admins/paypalWithdraw" />
+                          <input type="hidden" name="cancel_return" value="https://virtualtrainr.com/admins/paypalWithdrawCancel" />
+                          <input type="hidden" name="notify_url" value="https://virtualtrainr.com/admins/paypalWithdrawNotify" />
                            </div></br>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

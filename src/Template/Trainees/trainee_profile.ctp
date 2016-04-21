@@ -82,7 +82,7 @@
      	<div class="container trainee_profile_wrap">
         	
         	<div class="row">
-            	<div class="col-sm-2">
+            	<div class="col-sm-3">
                 	
                     <div class="trainee_tabs_sect">
                     	  <h3>Trainee Profile</h3>
@@ -98,7 +98,7 @@
                     </div>
                     
                 </div>
-                <div class="col-sm-10">
+                <div class="col-sm-9">
                 	<div class="trainee_tab_content">
                     	  <!-- Tab panes -->
                           <div class="tab-content">
@@ -189,7 +189,7 @@
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="videos">
                                     	<div class="photo_video_list">
-                                        	<ul>
+                                        	<ul class="clearfix">
                                             <?php  
                                                 foreach($gallery_videos as $gv)
                                                     { ?>

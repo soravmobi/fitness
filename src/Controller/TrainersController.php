@@ -16,15 +16,20 @@ class TrainersController extends AppController
     	$this->blockIP();
         $this->checkSession();
         parent::beforeFilter($event);
-        $this->loadComponent('Auth');
+        $this->loadComponent('Auth'); 
         $this->Auth->allow(['addTrainer','downloadDocument']);
         $this->data = $this->Custom->getSessionData();
         $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
+        $noti_data=array();
+        $messages=array();
+        $notifications=array();
+        if(!isset($_REQUEST['trainee_cnfm_password'])){
         $noti_data = $this->getNotifications();
         $messages = $this->getChatMessages();
         $this->set('messages', $messages);
-        $this->set('noti_data', $noti_data);
         $this->set('notifications', $this->total_notifications);
+        $this->set('noti_data', $noti_data);
+    }
     }
 
   public function getChatMessages()
@@ -261,9 +266,25 @@ class TrainersController extends AppController
 
 	public function completeProfile()
 	{
+		
+		 if(isset($_REQUEST['addgym'])){
+					//print_r($_REQUEST);die;
+					$data=array(
+					'name'=>$_REQUEST['name'],
+					'address'=>$_REQUEST['address'],
+					'latitude'=>$_REQUEST['lat'],
+					'longitude'=>$_REQUEST['long'],
+					'trainer_id'=>$this->data['id']
+					);
+					 $this->conn->insert('gym',$data);
+									  
+		}
 		$data = $this->Custom->getSessionData();
 		$countries = $this->Countries->find('all')->toArray();
 		$profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
+		
+		$gyms = $this->gym->find()->where(['trainer_id' => $this->data['id']])->toArray();
+		
 		$quotes = $this->Latest_things->find()->where(['lt_type' => 'Quotes', 'lt_user_id' => $data['id']])->order(['id' => 'DESC'])->toArray();
 		$country_id = $profile_details[0]['trainer_country'];
         $state_id = $profile_details[0]['trainer_state'];
@@ -293,6 +314,7 @@ class TrainersController extends AppController
 		$this->set('countries', $countries);
         $this->set('states', $states);
         $this->set('cities', $cities);
+        $this->set('gyms', $gyms);
 	}
 
     public function traineeReport($id)

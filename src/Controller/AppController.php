@@ -100,6 +100,8 @@ class AppController extends Controller
         $this->tokbox = TableRegistry::get('Tokbox');
         $this->custom_packages_history = TableRegistry::get('Custom_packages_history');
         $this->conn = ConnectionManager::get('default');  
+        //aded on 11 april
+         $this->gym = TableRegistry::get('Gym');
     }
 
     public function blockIP()

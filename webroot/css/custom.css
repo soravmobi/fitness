@@ -139,7 +139,10 @@ body{font-family: 'HelveticaLTStdLight';}
 .top_nav{  text-align:right;}
 .top_nav li{ display:inline-block; margin:0 5px; vertical-align:middle;}
 .top_nav li a{ display:block; padding:5px; font-family: 'HelveticaLTStdLight';}
-.mainmenu_nav li{ display:block;}
+.mainmenu_nav li {
+  display: inline-block;
+  padding-top: 10px;
+}
 .mainmenu_nav li a{ display:block; padding:5px 10px; font-family: 'HelveticaLTStdLight'; font-size:16px;}
 .top_nav li a span {display: inline-block; padding-right: 10px;}
 .header_sec.affix{ top:-40px;}
@@ -402,7 +405,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e55b59', end
 .trainee_img, .trainee_detail{ display:inline-block; vertical-align:middle;}
 .trainee_streams li, .trainee_social_link li{ margin: 3px; display:inline-block; vertical-align:middle; margin-right:5px;}
 .trainee_streams li a{ display:block; padding:5px 10px; border-radius:4px;font-family: 'HelveticaLTStdLight';}
-.trainee_social_link li a{ display:block; border-radius:2px; width:30px; height:30px; line-height:38px; 
+.trainee_social_link li a{ display:block; border-radius:2px; width:30px; height:30px; line-height:30px; 
  text-align:center; font-size:24px;}
 .trainee_img { border: 4px solid; border-radius: 50%; overflow: hidden; position:relative;}
 .trainee_img img{ border-radius:50%; max-height:200px;}
@@ -640,7 +643,7 @@ color:#fff; border-color:#ec473f;}
 .trainer_profile_wrap {border: 1px solid #dddddd; border-radius: 10px;padding: 15px 0; margin-bottom:20px;}
 .profile_field_title {font-size: 16px;font-weight: bold; text-transform:capitalize;}
 .profile_field_des { line-height: 24px;font-size: 15px;}
-.trainer_profile_wrap li {padding:10px 0;}
+.trainer_profile_wrap li {padding:10px 10px;}
 .trainer_profile_wrap li::before, .trainer_profile_wrap li::after {clear: both;content: "";display: table;} 
 .rtrainee_img img {border-radius: 10%;max-height: 80px;max-width: 80px;}
 .review_body li{ padding:10px 0;}
@@ -2675,11 +2678,11 @@ body.error_page , body.mail_page{
   color: #fff;
   display: inline-block;
   font-size: 25px;
-  line-height: 5px !important;
+  line-height: 14px !important;
   margin-top: 40px;
   padding-left: 22px !important;
   padding-right: 22px !important;
-  padding-top: 20px !important;
+ 
 }
 .ser_txt p {
     display: none;
@@ -3340,10 +3343,12 @@ a.btn_trainer {
       background: transparent;
       opacity: 0;
       transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
 }
 .chk_box.label:hover::after{ opacity:0.3;}
 .chk_box {
   position: relative;
+  width: 20px;
 }
 .chk_box input[type="checkbox"]{height:100%; width:100%; position:relative; z-index:11; opacity:0;}
 .chk_box input[type=checkbox] {
@@ -3920,7 +3925,7 @@ a.btn_trainer {
     /* padding: 5px; */
     vertical-align: top;
     width: 150px;
-    margin-top: 50px;
+    margin-top: 59px;
 }
 .session_wrap .responsive-calendar {
   display: inline-block;
@@ -4168,11 +4173,11 @@ a.btn_trainer {
   background-color: #fff;
   box-shadow: 0 0 3px #ccc;
   display: none;
-  padding: 15px;
+  left: 46px;
+  padding: 4px;
   position: absolute;
-  left:46px;
   text-align: center;
-  top:-110px;
+  top: -46px;
   width: 300px;
 }
 .pop_over .btn_okay {
@@ -4243,7 +4248,7 @@ a.btn_trainer {
 #map-container { height: 450px }
 .share_in_block {
     position: absolute;
-    right: 26px;
+    right: 35px;
     top: -6px;
     width: 203px;
     display: none;
@@ -4575,7 +4580,7 @@ margin:0 auto;
     padding: 5px;
 }
 #booking_session_form .right_session_bar {
-    margin-top: 105px;
+    margin-top: 75px;
 }
 #booking_session_form .right_session_content{margin-top: 0px;}
 #booking_session_form {
@@ -4588,6 +4593,7 @@ margin:0 auto;
 #booking_session_form .scroll_content {
     height: 289px;
     overflow-y:scroll; 
+    padding: 20px 5px;
 }
 #code-btn{
   cursor: pointer;
@@ -5054,18 +5060,18 @@ margin:0 auto;
 }
 
 .hide_map_btn {
-  background: rgba(0, 0, 0, 0) linear-gradient(#f34727, #e6342b) repeat scroll 0 0;
-  border: medium none;
-  border-radius: 6px;
-  color: #fff;
-  display: inline-block;
-  font-size: 16px;
-  margin-top: 20px;
-  padding: 7px 25px;
-  position: absolute;
-  right: 20px;
-  text-transform: capitalize;
-  top: 10px;
+    background: rgba(0, 0, 0, 0) linear-gradient(#f34727, #e6342b) repeat scroll 0 0;
+    border: medium none;
+    border-radius: 6px;
+    color: #fff;
+    display: inline-block;
+    font-size: 16px !important;
+    margin-top: 20px;
+    padding: 7px 7px !important;
+    position: absolute;
+    right: -62px;
+    text-transform: capitalize;
+    top: -17px;
 }
 
 /*css for appointement page start*/
@@ -5747,7 +5753,7 @@ label.remain_bal {
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 999;
+    z-index: 9999;
   -moz-transition:all 500ms ease 0s;
   -webkit-transition:all 500ms ease 0s;
 }
@@ -5812,6 +5818,7 @@ label.remain_bal {
   text-align: center;
   text-indent: -1px;
   width: 16px;
+  pointer-events: none;
 }
 .ht_right .form-control {
   background-color: #575757;
@@ -5886,9 +5893,7 @@ label.remain_bal {
 #leftNavMenu {
   width: 300px;
 }
-.customer_report_main {
-  margin: 50px;
-}
+
 .transaction_date_wrap .form-group {
   display: inline-block;
   position: relative;
@@ -6182,7 +6187,7 @@ label.remain_bal {
 .ht_right li:first-child {
     width: 50%;
 }
-.ht_right .dropdown-menu li{width: 100%;}
+.ht_right .dropdown-menu li{width: 100% !important;}
 .profile-img{height: 100%;}
 
 
@@ -6615,7 +6620,7 @@ label.remain_bal {
 .trainer_dashboard .kilo_box {
   font-size: 40px;
   line-height: 15px;
-  padding-top: 17px;
+  padding-top: 40px;
 }
 .trainer_dashboard .kilo_box > span {
   color: #232730;
@@ -6713,13 +6718,15 @@ label.remain_bal {
 }
 .degree {
   color: #000 !important;
-  font-size: 28px !important;
+  font-size: 19px !important;
   position: absolute;
-  right: -20px;
-  top: -14px;
+  right: -11px;
+  top: 8px;
 }
 .degree_main {
   display: inline-block;
+  font-size: 40px;
+  padding-top: 26px;
   position: relative;
 }
 .visitor_map_progress .progress_bar {
@@ -6912,7 +6919,7 @@ label.remain_bal {
 .media.msg .media-body small{font-size: 14px;}
 .conversation.side_users img{border-radius: 50%;}
 .panel_block_heading{}
-.modal-dialog{margin: 50px auto;}
+.modal-dialog{margin: 80px auto;}
 #Modify_Event .modal-dialog {
     width: 615px;
 }
@@ -6967,4 +6974,41 @@ label.remain_bal {
 }
 #leftNavMenu li a:hover i , #leftNavMenu li a:focus i{
   color: #fff;
+}
+.ht_right  li .dropdown-menu:first-child {width: inherit;}
+.customer_report_main {
+  margin: 50px 0;
+}
+.ht_right li .dropdown-menu {
+  min-width: inherit;
+  width: 145px;
+}
+#booking_session_form .right_session_bar {
+  height: 610px;
+ overflow: hidden;
+}
+.ht_right li:nth-child(2) .dropdown-menu{width: 200px;}
+.ht_right li:nth-child(2) .dropdown-menu li .notifi_inner{width: 300px;}
+
+.ht_right li:nth-child(3) .dropdown-menu{width: 200px;}
+.ht_right li:nth-child(3) .dropdown-menu li .notifi_inner{width: 300px;}
+.niti_text p {
+  font-size: 12px;
+  line-height: 20px;
+}
+#Make_Special_Offer {
+  overflow: auto;
+}
+.photo_video_list div {
+  max-width: 100%;
+}
+.trainer_review .rtrainee_img{display: inline-block; vertical-align: top;}
+.trainer_review .review_txt {
+  display: inline-block;
+}
+.trainer_banner .trainee_img img {
+  max-height: 200px;
+}
+#trainer_form .responsive-calendar .day a {
+  margin: 9px;
 }

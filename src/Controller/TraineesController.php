@@ -37,11 +37,17 @@ class TraineesController extends AppController
       $this->lwaClientId ="amzn1.application-oa2-client.1e55f9b590ae4f3085a6796aa9c87fd6"; // Login With Amazon Client ID
       $this->returnURL   = "https://virtualtrainr.com/trainees/resultAmazon";
       $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
+      $noti_data=array();
+      $messages=array();
+      $notifications=array();
+      if(!isset($_REQUEST['trainee_cnfm_password'])){
       $noti_data = $this->getNotifications();
       $messages = $this->getChatMessages();
       $this->set('messages', $messages);
-      $this->set('noti_data', $noti_data);
       $this->set('notifications', $this->total_notifications);
+      $this->set('noti_data', $noti_data);
+    } 
+     
   }
 
   public function getChatMessages()
@@ -1967,14 +1973,15 @@ class TraineesController extends AppController
 
   public function searchTrainers()
   {
-      $data = $_GET;
+	  $data = $_GET;
+	  
       $where = array();
       $strg = "";
       $ord = array();
       $order = "";
       $lim = 3;
       $off = "";
-      
+      $where[] ='(trm.rate_hour >0 )  ';
       /* Search Parameter Start */
       if(isset($data["name"]) && !empty($data["name"]))
       {
@@ -2027,7 +2034,36 @@ class TraineesController extends AppController
           $off = "LIMIT ".$offset." , ".$lim;
       }
       /* For Pagination End */
-      $result = $this->conn->execute(" select *,
+     // $lat='22.000';
+    //  $lng='75.000';
+      
+       
+        
+     if(isset($data['lng']) && isset($data['lat']))
+     {
+		$lat=$data['lat'];
+       $lng=$data['lng'];
+		 
+      
+      $result = $this->conn->execute("select *, SQRT( POW(69.1 * (lat - $lat), 2) + POW(69.1 * ($lng- lng) * COS(lat / 57.3), 2)) AS distance,s.name as state_name,
+                                       c.name as country_name,
+                                       ct.name as city_name
+                                       from trainers as t
+                                       left join cities as ct on ct.id = t.trainer_city
+                                       left join countries as c on c.id = t.trainer_country
+                                       left join states as s on s.id = t.trainer_state
+                                       left join trainer_ratemaster as trm on t.user_id = trm.trainer_id
+                                       $strg 
+                                       group by t.user_id
+                                       HAVING distance <100000
+                                       $order
+                                       $off
+                                        
+                                    ")->fetchAll('assoc');
+                                    
+	}else{
+
+  $result = $this->conn->execute(" select *, 
                                        s.name as state_name,
                                        c.name as country_name,
                                        ct.name as city_name
@@ -2036,11 +2072,18 @@ class TraineesController extends AppController
                                        left join countries as c on c.id = t.trainer_country
                                        left join states as s on s.id = t.trainer_state
                                        left join trainer_ratemaster as trm on t.user_id = trm.trainer_id
-                                       $strg
+                                       $strg 
+                                       group by t.user_id
                                        $order
                                        $off
+                                        
                                     ")->fetchAll('assoc');
+                                
+  }
+                                    
       $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
+      $notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'], 'noti_status' => 0])->count();
+     
       if($this->request->is('ajax'))
       {
         $this->set('trainers', $result);
@@ -2101,8 +2144,8 @@ class TraineesController extends AppController
         }
         else if($dataArr['pay_type'] == "paypal"){
           $this->request->session()->write('session_amount',$dataArr);
-          $returnurl = "http://dev.virtualtrainr.com/trainees/successSession/insertSessionPaymentDetails";
-          $cancelurl = "http://dev.virtualtrainr.com/trainees/cancelSession";
+          $returnurl = "https://virtualtrainr.com/trainees/successSession/insertSessionPaymentDetails";
+          $cancelurl = "https://virtualtrainr.com/trainees/cancelSession";
           $this->doPaypalPayment($dataArr['total_amount_gateway'],$returnurl,$cancelurl);
         }
         else if($dataArr['pay_type'] == "amazon"){
@@ -2295,8 +2338,8 @@ class TraineesController extends AppController
         }
         else if($dataArr['pay_type'] == "paypal"){
           $this->request->session()->write('custom_packages_details',$dataArr);
-          $returnurl = "http://dev.virtualtrainr.com/trainees/successSession/insertPackagePaymentDetails";
-          $cancelurl = "http://dev.virtualtrainr.com/trainees/cancelPackage";
+          $returnurl = "https://virtualtrainr.com/trainees/successSession/insertPackagePaymentDetails";
+          $cancelurl = "https://virtualtrainr.com/trainees/cancelPackage";
           $this->doPaypalPayment($dataArr['total_amount_gateway'],$returnurl,$cancelurl);
         }
         else if($dataArr['pay_type'] == "amazon"){
