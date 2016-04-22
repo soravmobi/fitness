@@ -18,6 +18,9 @@
   margin: 0;
   padding: 0;
 }
+.appointement_dashboard .appointement_sec .scroll_content {
+  height: 377px;
+}
 }
 @media (min-width:1200px){
 	.profile_field_title {width: 200px;}
@@ -50,6 +53,12 @@
   top: -38px;
   width: 209px;
  
+}
+.calendor_caption_box .scroll_content {
+    height: 380px;
+}
+.calendor_caption_box {
+    margin-top: 107px;
 }
 .pop_over > p {
   color: #666;
@@ -735,6 +744,12 @@
   top: 43px;
   z-index: 1111;
 }
+.calendor_caption_box {
+    margin-top: 107px;
+}
+.calendor_caption_box .scroll_content {
+    height: 364px;
+}
 
 
 
@@ -767,6 +782,30 @@
 	.ht_left {
      width: 39px;
      padding-top: 10px;
+}
+.ht_right li:nth-child(2) .dropdown-menu {
+  left: -56px !important;
+}
+.ht_right li:nth-child(2) .dropdown-menu {
+  width: 315px;
+}
+.ht_right li .dropdown-menu::after {
+  left: 19%;
+}
+.ht_right li:nth-child(3) .dropdown-menu {
+  left: -24px  !important;
+}
+.ht_right li:nth-child(3) .dropdown-menu {
+    left: -90px !important;
+}
+.ht_right li:nth-child(3) .dropdown-menu {
+    width: 312px;
+}
+.ht_right li:nth-child(3) .dropdown-menu::after {
+  left: 32%;
+}
+.notification {
+  top: 25px;
 }
 .hide_map_btn {
   right: 15px;
@@ -1552,7 +1591,7 @@
   width: 157px;
 }
 .calendor_switches_head .cs_head_left:first-child {
-  width: 26%;
+  width: 28%;
 }
 .chekbox_txt {
   padding-left: 5px;

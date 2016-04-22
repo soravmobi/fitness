@@ -23,7 +23,7 @@
                                   </div>
                                    <div class="form-group">
                                         <div class='input-group date' id='datetimepicker2'>
-                                        <input type='text' class="form-control" />
+                                        <input type='text' class="form-control datepicker" />
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
@@ -32,7 +32,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class='input-group date' id='datetimepicker2'>
-                                        <input type='text' class="form-control" />
+                                        <input type='text' class="form-control datepicker" />
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
@@ -42,13 +42,18 @@
                               <div class="transaction_date_wrap">
                                <div class="form-group">
                                <input type="radio" id="f-option1" name="selector">
-                                  <label for="f-option1">Transaction Date From</label>
+                                  <label for="f-option1">Transaction By Month</label>
                                   <div class="check"><div class="inside"></div></div>
                                 
                                   </div>
                                    <div class="form-group">
                                       <div class="input-group date">
-                                        <select class="form-control"> <option>Last 1 Month</option></select>
+                                        <select class="form-control">
+                                         <option value="1">Last 1 Month</option>
+                                         <option value="3">Last 3 Month</option>
+                                         <option value="6">Last 6 Month</option>
+                                         <option value="9">Last 9 Month</option>
+                                        </select>
                                         <div class="icon_arrow"><i class="fa fa-caret-down"></i></div>
                                        </div>
                                     </div>
@@ -95,8 +100,8 @@
                            </div>
                            <div class="col-md-6 col-sm-6 text-right">
                               <ul class="list_table_icon">
-                                <li><a href="#"><i class="fa fa-file-pdf-o"></i> </a></li>
-                                <li><a href="#"> <i class="fa fa-file-excel-o"></i> </a></li>
+                                <li><a href="javascript:void(0);"><i class="fa fa-file-pdf-o"></i> </a></li>
+                                <li><a href="javascript:void(0);"> <i class="fa fa-file-excel-o"></i> </a></li>
                               </ul>
                            </div>
                         </div>
@@ -114,6 +119,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php if(!empty($txns_details)) { ?>
                                 <?php $i = 1;
                                   foreach($txns_details as $t){ ?>
                                   <tr>
@@ -125,6 +131,9 @@
                                     <td><?php echo date('d F Y, h:i A', strtotime($t['added_date'])); ?></td>
                                   </tr>
                                 <?php $i++; } ?>
+                            <?php } else{ ?>
+                              <tr><td colspan="6">Not found any transactions</td></tr>
+                            <?php } ?>
                             </tbody>
                         </table>
                      </div>

@@ -122,11 +122,11 @@
                                             <div class="trai_widg_body">
                                             	<div class="comp_small_widget">
                                                 	<h5>Current Weight</h5>
-                                                    <span><?php echo $trainee_detail[0]['trainee_current_weight']; ?></span><small>Lbs.</small>
+                                                    <span><?php echo (!empty($trainee_detail[0]['trainee_current_weight'])) ? $trainee_detail[0]['trainee_current_weight'] : "0" ?></span><small>Lbs.</small>
                                                 </div>
                                                 <div class="comp_small_widget">
                                                 	<h5>Overall Goal</h5>
-                                                    <span><?php echo $trainee_detail[0]['trainee_goal']; ?></span><small>Lbs.</small>
+                                                    <span><?php echo (!empty($trainee_detail[0]['trainee_goal'])) ? $trainee_detail[0]['trainee_goal'] : "0" ?></span><small>Lbs.</small>
                                                 </div>
                                             </div>
                                         </div>

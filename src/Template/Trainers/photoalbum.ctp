@@ -9,6 +9,9 @@
                       <div class="tab-content">
                         
                         <!-- <div role="tabpanel" class="tab-pane" id="photo_album"> -->
+                         <div class="panel_block_heading">
+                            <h4>Photo Album</h4>
+                        </div>
                         	<div class="dash_photo_gallery">
                             	
                                   <!-- Nav tabs -->

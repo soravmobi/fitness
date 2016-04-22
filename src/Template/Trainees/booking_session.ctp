@@ -137,7 +137,7 @@
                     <?php for ($i=1; $i <= $session; $i++) { ?>
                        <div class="session_block ">
                           <div class="session_block_head heading_payment_main">
-                           Session <?php echo $i; ?> | <span class="notes-label" main="<?php echo $i; ?>" title="Click here to save notes"> Notes </span>
+                           Session <?php echo $i; ?>  <!-- <span class="notes-label" main="<?php echo $i; ?>" title="Click here to save notes"> Notes </span> -->
                             <div class="pop_over_main" id="notes_window_<?php echo $i; ?>" style="display:none;">
                                   <div class="pop_over">
                                     <textarea class="form-control" placeholder="message" name="booking[<?php echo $i; ?>][notes]"></textarea>

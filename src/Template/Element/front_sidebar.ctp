@@ -12,8 +12,7 @@
   <ul class="nav navmenu-nav">
     <li>
       <div class="img_trainer">
-       <?php 
-       if($user_data['user_type'] == "trainer") { ?>
+       <?php if($user_data['user_type'] == "trainer") { ?>
             <img class="img-responsive profile-img" src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $profile_details[0]['trainer_image']; ?>">
         <?php } ?>
         <?php if($user_data['user_type'] == "trainee") { ?>
@@ -25,7 +24,7 @@
         <li><a href="<?php echo $this->request->webroot; ?>trainers/profile"><i class="fa fa-user"></i>My Profile <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainers/messages"><i class="fa fa-envelope"></i>Inbox <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainers/appointments"><i class="fa fa-pencil-square-o"></i>Appointments <i class="fa fa-chevron-left pull-right"></i></a></li>
-        <li><a href="<?php echo $this->request->webroot; ?>trainers/mytrainees"><i class="fa fa-users"></i>My Trainees <i class="fa fa-chevron-left pull-right"></i></a></li>
+        <li><a href="<?php echo $this->request->webroot; ?>trainers/mytrainees"><i class="fa fa-users"></i>My Clients <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainers/inbox"><i class="fa fa-hdd-o"></i>V-Drive <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainers/photoalbum"><i class="fa fa-picture-o"></i>Photo Album <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainers/wallet"><i class="fa fa-google-wallet"></i>My Wallet <i class="fa fa-chevron-left pull-right"></i></a></li>
@@ -52,7 +51,7 @@
   <div class="header_top">
     <div class="container-fluid">
       <div class="ht_left">
-        <button type="button" class="btn navbar-toggle" data-toggle="offcanvas" data-target="#leftNavMenu" data-canvas="body"> <span> <i class="fa fa-align-center"></i></span> </button>
+        <button type="button" class="btn navbar-toggle" id="leftSideBarMenu" data-autohide= "true" data-toggle="offcanvas" data-target="#leftNavMenu" data-canvas="body"> <span> <i class="fa fa-align-center"></i></span> </button>
       </div>
       <div class="ht_middle">
         <div class="slide_text">
@@ -68,14 +67,18 @@
           <li>
              <div class="mobile_search"><i class="fa fa-search"></i></div>
               <div class="input-group mobile_view">
-                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Find Trainees">
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Find <?php echo ($user_data['user_type'] == "trainer") ? "Trainees" : "Trainers" ?>">
                 <span class="input-group-addon"><i class="fa fa-search"></i></span> </div>
           </li>
           <li> <span class="icon_tip"><?php if(isset($notifications)) { echo $notifications; } else { echo "0"; } ?></span> 
           <?php if($user_data['user_type'] == "trainer") { ?>
             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Notifications" href="<?php echo $this->request->webroot; ?>trainers/notifications"><i class="fa fa-bell"></i> </a>
-            <ul class="dropdown-menu notification">
-            <?php foreach($noti_data as $nd) { ?>
+           <div class="dropdown-menu notification">
+                <div class="list_drop">
+            <ul>
+            <?php 
+            if(!empty($noti_data)){
+            foreach($noti_data as $nd) { ?>
               <li>
                 <div class="notifi_inner">
                   <div class="noti_img">
@@ -87,13 +90,25 @@
                   <div class="clearfix"></div>
                 </div>
               </li>
+            <?php } } else { ?>
+              </br><li><center><h4>There is no new notifications</h4></center></li>
             <?php } ?>
+           
             </ul>
+            <div class="see_all">
+                  <ul><li><a href="<?php echo $this->request->webroot; ?>trainers/notifications">See all</a></li><ul>
+            </div>
+            </div>
+            </div>
           <?php } ?>
             <?php if($user_data['user_type'] == "trainee") { ?>
             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Notifications" href="<?php echo $this->request->webroot; ?>trainees/notifications"><i class="fa fa-bell"></i></a>
-            <ul class="dropdown-menu notification">
-            <?php foreach($noti_data as $nd) { ?>
+             <div class="dropdown-menu notification">
+              <div class="list_drop">
+            <ul>
+            <?php 
+            if(!empty($noti_data)){
+            foreach($noti_data as $nd) { ?>
               <li>
                 <div class="notifi_inner">
                   <div class="noti_img">
@@ -105,15 +120,27 @@
                   <div class="clearfix"></div>
                 </div>
               </li>
+            <?php } } else { ?>
+              </br><li><center><h4>There is no new notifications</h4></center></li>
             <?php } ?>
+            
             </ul>
+            </div>
+            <div class="see_all">
+                  <ul><li><a href="<?php echo $this->request->webroot; ?>trainees/notifications">See all</a></li><ul>
+                       </div>
+            <div>
           <?php } ?>
          </li>
         <li> <span class="icon_tip yellow">0</span> 
         <?php if($user_data['user_type'] == "trainer") { ?>
             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Notifications" href="javascript:void(0);"><i class="fa fa-envelope"></i></a> 
-              <ul class="dropdown-menu notification">
-              <?php foreach($messages as $m) { ?>
+              <div class="dropdown-menu notification">
+              <div class="list_drop">
+              <ul>
+              <?php 
+              if(!empty($messages)){
+              foreach($messages as $m) { ?>
                 <li>
                   <div class="notifi_inner">
                     <div class="noti_img">
@@ -126,13 +153,25 @@
                     <div class="clearfix"></div>
                   </div>
                 </li>
+              <?php } } else { ?>
+                </br><li><center><h4>There is no new messages</h4></center></li>
               <?php } ?>
+              
               </ul>
+              </div>
+              <div class="see_all">
+                  <ul><li><a href="<?php echo $this->request->webroot; ?>trainers/messages">See all</a></li><ul>
+                       </div>
+              </div>
           <?php } ?>
           <?php if($user_data['user_type'] == "trainee") { ?>
             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Notifications" href="javascript:void(0);"><i class="fa fa-envelope"></i></a> 
-              <ul class="dropdown-menu notification">
-              <?php foreach($messages as $m) { ?>
+             <div class="dropdown-menu notification">
+              <div class="list_drop"> 
+              <ul>
+              <?php 
+              if(!empty($messages)){
+              foreach($messages as $m) { ?>
                 <li>
                   <div class="notifi_inner">
                     <div class="noti_img">
@@ -145,8 +184,17 @@
                     <div class="clearfix"></div>
                   </div>
                 </li>
+              <?php } } else { ?>
+                </br><li><center><h4>There is no new messages</h4></center></li>
               <?php } ?>
+              
               </ul>
+             
+              </div>
+              <div class="see_all">
+                  <ul><li><a href="<?php echo $this->request->webroot; ?>trainees/messages">See all</a></li><ul>
+                       </div>
+              </div>
           <?php } ?>
           </li>
 
@@ -179,3 +227,29 @@
 
 
 <!--Header sec end--> 
+
+<!--<script>
+  $(document).ready(function(){
+    $("body").click(function(event) {
+     if (event.target.id != "leftmenubutton") {
+      $("#leftSideBarMenu").offcanvas('hide');
+      console.log("menu closed");
+     }
+    });
+  });
+</script>-->
+
+<script>
+    $(document).click(function(e){
+    // Check if click was triggered on or within #menu_content
+    if( $(e.target).closest("#leftSideBarMenu").length > 0 ) {
+     return false;
+    }
+    // Otherwise
+    // trigger your click function
+    $("body").removeAttr("style").removeClass(".canvas-slid");
+    $("#leftNavMenu").removeClass("in canvas-slid").removeAttr("style");
+    console.log("done");
+   });
+    
+ </script>

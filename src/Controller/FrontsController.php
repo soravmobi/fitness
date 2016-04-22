@@ -20,10 +20,62 @@ class FrontsController extends AppController
         $user_type = $this->data['user_type'];
         if($user_type == 'trainee'){
         	$user_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
+        	$this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
+	        $noti_data = $this->getTraineeNotifications();
+	        $messages = $this->getTraineeChatMessages();
+	        $this->set('messages', $messages);
+	        $this->set('notifications', $this->total_notifications);
+	        $this->set('noti_data', $noti_data);
         }else{
         	$user_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
+        	$this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
+	        $noti_data = $this->getTrainerNotifications();
+	        $messages = $this->getTrainerChatMessages();
+	        $this->set('messages', $messages);
+	        $this->set('notifications', $this->total_notifications);
+	        $this->set('noti_data', $noti_data);
         }
         $this->set('profile_details', $user_details);
+    }
+
+    public function getTraineeChatMessages()
+	{
+	   $messages = $this->conn->execute("SELECT * FROM `chating` AS `c` INNER JOIN `trainers` AS `t` ON `c`.`chat_sender_id` = `t`.`user_id` WHERE `c`.`chat_reciever_id` = ".$this->data['id']." ORDER BY `c`.`chat_id` DESC LIMIT 10")->fetchAll('assoc');
+	   return $messages;
+	}
+
+    public function getTrainerChatMessages()
+  	{
+       $messages = $this->conn->execute("SELECT * FROM `chating` AS `c` INNER JOIN `trainees` AS `t` ON `c`.`chat_sender_id` = `t`.`user_id` WHERE `c`.`chat_reciever_id` = ".$this->data['id']." ORDER BY `c`.`chat_id` DESC LIMIT 10")->fetchAll('assoc');
+       return $messages;
+  	}
+
+  	public function getTraineeNotifications()
+    {
+      $id = $this->data['id'];
+      $rate_plans_noti = $this->conn->execute('SELECT *,`n`.`id` AS `noti_id` FROM `notifications` AS `n` INNER JOIN `appointments` AS `a` ON `n`.`parent_id` = `a`.`id` INNER JOIN `trainers` AS `t` ON `t`.`user_id` = `n`.`noti_sender_id` WHERE `n`.`noti_receiver_id` = '.$this->data['id'].' ORDER BY `n`.`id` DESC ')->fetchAll('assoc');
+      $packages_noti   = $this->conn->execute('SELECT *,`n`.`id` AS `noti_id` FROM `notifications` AS `n` INNER JOIN `custom_packages_history` AS `c` ON `n`.`parent_id` = `c`.`id` INNER JOIN `trainers` AS `t` ON `t`.`user_id` = `n`.`noti_sender_id` WHERE `n`.`noti_receiver_id` = '.$this->data['id'].' ORDER BY `n`.`id` DESC ')->fetchAll('assoc');
+      $noti_data = array_merge($rate_plans_noti,$packages_noti);
+      $noti_final_arr = array();
+        foreach ($noti_data as $user)
+         {
+          $noti_final_arr[] = $user['noti_id'];
+         }
+      array_multisort($noti_final_arr, SORT_DESC, $noti_data);
+      return $noti_data;
+    }
+
+    public function getTrainerNotifications()
+    {
+      $id = $this->data['id'];
+      $noti_data   = $this->conn->execute('SELECT *,`n`.`id` AS `noti_id` FROM `notifications` AS `n` INNER JOIN `trainees` AS `t` ON `t`.`user_id` = `n`.`noti_sender_id` WHERE `n`.`noti_receiver_id` = '.$this->data['id'].' ORDER BY `n`.`id` DESC ')->fetchAll('assoc');
+      $noti_final_arr = array();
+        foreach ($noti_data as $user)
+         {
+          $noti_final_arr[] = $user['noti_id'];
+         }
+      array_multisort($noti_final_arr, SORT_DESC, $noti_data);
+      return $noti_data;
     }
 
 	public function trainerProfile($t_id)

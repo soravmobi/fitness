@@ -96,7 +96,14 @@
               <div class="session_setails_sec appointement_sec">
                 <div class="heading_payment_main"> </div>
                 <ul class="session_content scroll_content mCustomScrollbar _mCS_1">
-                            <?php for ($i=0; $i < count($upcomingArr); $i++) { ?>
+                <?php       
+                            if(!empty($upcomingArr)){
+                              $upcomingArrCount = count($upcomingArr['trainee_name']);
+                            }else{
+                              $upcomingArrCount = 0; ?>
+                              </br><center><h4>Not found upcoming appointments</h4></center>
+                          <?php } 
+                            for ($i=0; $i < $upcomingArrCount; $i++) { ?>
                                 <li>
                                 <div class="main_block">
                                  <div class="circle_box_main">
@@ -128,7 +135,7 @@
               </div>
             </div>
             <div class="col-md-4 col-sm-4">
-              <div class="appointement_head"> pending Appointments </div>
+              <div class="appointement_head"> Pending Appointments </div>
               <div class="session_setails_sec appointement_sec pending_appointement">
                 <div class="heading_payment_main"> </div>
                 <ul class="session_content scroll_content mCustomScrollbar _mCS_1">
@@ -278,13 +285,13 @@
         <div class="message_wrap">
           <div class="message_wrap_head">
             <h3>inbox </h3>
-            <ul class="pagination">
+            <!-- <ul class="pagination">
               <li>Showing 1 - 10 of 96 Messages</li>
               <li> <a href="#" aria-label="Previous"> <span aria-hidden="true"><i class="fa fa-chevron-left"></i></span> </a> </li>
               <li><a href="#">1</a></li>
               <li><a href="#">2</a></li>
               <li> <a href="#" aria-label="Next"> <span aria-hidden="true"><i class="fa fa-chevron-right"></i></span> </a> </li>
-            </ul>
+            </ul> -->
             <div class="clearfix"></div>
           </div>
           <div class="message_wrap_content_box">
@@ -296,12 +303,6 @@
                   <li><a href="javascript:void(0);"><i class="fa fa-eye"></i> Mark Read</a></li>
                 </ul>
               </li>
-             <!--  <li class="dropdown"><a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">select <i class="fa fa-chevron-down"></i> </a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">profile</a></li>
-                  <li><a href="#">setting</a></li>
-                </ul>
-              </li> -->
               <li class="pull-right">
                 <!-- <div class="input-group">
                   <input type="text" placeholder="Search Message" aria-label="Amount (to the nearest dollar)" class="form-control">
@@ -309,6 +310,7 @@
               </li>
             </ul>
             <div class="message_wrap_content">
+            <?php if(!empty($messages)) { ?>
               <table class="table table-striped">
                 <tbody>
                 <?php $i = 1; foreach($messages as $m){ ?>
@@ -324,6 +326,9 @@
                 <?php $i++; } ?>
                 </tbody>
               </table>
+              <?php } else { ?>
+              <center><h4>You have recieved no messages</h4></center>
+            <?php } ?>
             </div>
           </div>
         </div>

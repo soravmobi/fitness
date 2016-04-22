@@ -169,6 +169,7 @@
                 </tr>
               </thead>
               <tbody>
+              <?php if(!empty($custom_packages)) { ?>
                 <?php $i = 1;
                   foreach($custom_packages as $t){ ?>
                   <tr>
@@ -179,13 +180,16 @@
                     <td><?php echo date('d F Y, h:i A', strtotime($t['created_date'])); ?></td>
                   </tr>
                 <?php $i++; } ?>
+              <?php } else{ ?>
+                <tr><td colspan="5">Not found any custom sold packages</td></tr>
+              <?php } ?>
             </tbody>
             </table>
           </div>
         </div>
       </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-sm-12">
         <div class="session_setails_sec wallet_balance trainer_earning">
           <div class="heading_payment_main">
@@ -337,7 +341,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="row">
       <div class="col-sm-12 col-md-12">
         <div class="customer_report_table_sec">
@@ -367,6 +371,7 @@
                 </tr>
               </thead>
               <tbody>
+              <?php if(!empty($withdraw_details)) { ?>
                 <?php $i = 1;
                   foreach($withdraw_details as $t){ ?>
                   <tr>
@@ -409,6 +414,9 @@
                     </td>
                   </tr>
                 <?php $i++; } ?>
+              <?php } else{ ?>
+                <tr><td colspan="7">Not found any withdrawals</td></tr>
+              <?php } ?>
             </tbody>
             </table>
           </div>

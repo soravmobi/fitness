@@ -36,17 +36,18 @@ class TraineesController extends AppController
       $this->secretKey   ="cQA/Qnn+9dzhfH+tCsNLyF81rZPD7ZQFYPD4WcyK"; // MWS Secret Key
       $this->lwaClientId ="amzn1.application-oa2-client.1e55f9b590ae4f3085a6796aa9c87fd6"; // Login With Amazon Client ID
       $this->returnURL   = "https://virtualtrainr.com/trainees/resultAmazon";
-      $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
-      $noti_data=array();
-      $messages=array();
-      $notifications=array();
-      if(!isset($_REQUEST['trainee_cnfm_password'])){
-      $noti_data = $this->getNotifications();
-      $messages = $this->getChatMessages();
-      $this->set('messages', $messages);
-      $this->set('notifications', $this->total_notifications);
-      $this->set('noti_data', $noti_data);
-    } 
+      if(!empty($this->data)){
+        $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
+        $noti_data = $this->getNotifications();
+        $messages = $this->getChatMessages();
+        $this->set('messages', $messages);
+        $this->set('notifications', $this->total_notifications);
+        $this->set('noti_data', $noti_data);
+      }else{
+        $this->set('messages', array());
+        $this->set('notifications', array());
+        $this->set('noti_data', array());
+      }
      
   }
 
@@ -296,7 +297,7 @@ class TraineesController extends AppController
             $chat_msgs = "";
             if(empty($chat_data))
             {
-                $chat_msgs = '<div class="well"><center>Message Not Found </center></div>';
+                $chat_msgs = '<div><center>You have recieved no messages </center></div>';
             }
             else
             {
@@ -1993,8 +1994,8 @@ class TraineesController extends AppController
 
   public function searchTrainers()
   {
-	  $data = $_GET;
-	  
+    $data = $_GET;
+    
       $where = array();
       $strg = "";
       $ord = array();
@@ -2011,6 +2012,11 @@ class TraineesController extends AppController
       if(isset($data["int"]) && !empty($data["int"]))
       {
         $where[] = "t.interests_hobby LIKE '%".$data["int"]."%'";
+      }
+      if(isset($data["loc"]) && !empty($data["loc"]))
+      {
+       
+        $where[] = "t.trainer_city = '".$data["loc"]."'";
       }
 
       if(isset($data["mf"]) && !empty($data["mf"]))
@@ -2061,9 +2067,9 @@ class TraineesController extends AppController
         
      if(isset($data['lng']) && isset($data['lat']))
      {
-		$lat=$data['lat'];
+    $lat=$data['lat'];
        $lng=$data['lng'];
-		 
+     
       
       $result = $this->conn->execute("select *, SQRT( POW(69.1 * (lat - $lat), 2) + POW(69.1 * ($lng- lng) * COS(lat / 57.3), 2)) AS distance,s.name as state_name,
                                        c.name as country_name,
@@ -2081,7 +2087,7 @@ class TraineesController extends AppController
                                         
                                     ")->fetchAll('assoc');
                                     
-	}else{
+  }else{
 
   $result = $this->conn->execute(" select *, 
                                        s.name as state_name,

@@ -36,12 +36,13 @@ function unique_multidim_array($array, $key) {
 } 
                         
         $interests_hobbyArray = unique_multidim_array($trainers,'interests_hobby');                 
-        $locationArray = unique_multidim_array($trainers,'location');                 ?>
+        $locationArray = unique_multidim_array($trainers,'trainer_city');                 ?>
                         
                         
                          <select class="form-control"  id="byinterest" >
-                         <option value="">Please Select</option>
+                         <option value="">Select Hobby</option>
                          	<?php foreach($interests_hobbyArray as $t) {
+							 if(!empty($t['interests_hobby']) && $t['interests_hobby'] !="" && $t['interests_hobby'] !=null) 
 							 echo "<option value='".$t['interests_hobby']."'>".$t['interests_hobby']."</option>"; 
 							}?>	
 						</select>
@@ -50,9 +51,10 @@ function unique_multidim_array($array, $key) {
                              <!-- <div class="select_icon"><i class="fa fa-caret-down"></i></div> -->
                          	<!--<input type="text" class="form-control" id="bylocation" placeholder="by location ?" value="<?php //echo (!empty($_GET["loc"]))? $_GET["loc"] : ""; ?>">	-->
                          	<select class="form-control" id="bylocation">
-                         	<option value="">Please Select</option>
+                         	<option value="">Select City</option>
                          	<?php foreach($locationArray as $t) { 
-								echo "<option value='".$t['location']."'>".$t['location']."</option>";
+								if(!empty($t)) 
+								echo "<option value='".$t['trainer_city']."'>".$this->Custom->getCityName($t['trainer_city'])."</option>";
 							}?>	
 						</select>	
                          </div>

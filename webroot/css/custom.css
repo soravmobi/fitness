@@ -1558,13 +1558,13 @@ textarea {
   margin-right:200px;
 }
 .multi_chat_window_wraper .chat_windo_block:nth-child(2) {
-  margin-right:470px;
+    margin-right: 465px;
 }
 .multi_chat_window_wraper .chat_windo_block:nth-child(3) {
-  margin-right:860px;
+    margin-right: 728px;
 }
 .multi_chat_window_wraper .chat_windo_block:nth-child(4) {
-  margin-right:1190px;
+    margin-right: 990px;
 }
 
 /* jayendra start */
@@ -1747,7 +1747,7 @@ textarea {
     border-radius:5px;
     position: relative;
     min-height: 463px;
-
+    height: 450px;
 }
 .full_video .video_chat_videos {
    border: 3px solid #999999;
@@ -1756,14 +1756,15 @@ textarea {
     min-height: 455px;
 }
 .psvideo {
-  background: rgba(255, 255, 255, 0.1) none repeat scroll 0 0;
-  top: 5px;
-  color: #ffffff;
-  padding: 5px;
-  position: absolute;
-  left: 15px;
-  text-align: center;
-  width: 150px;
+    /* background: rgba(255, 255, 255, 0.1) none repeat scroll 0 0; */
+    top: 5px;
+    color: #ffffff;
+    padding: 5px;
+    position: absolute;
+    left: 15px;
+    text-align: center;
+    width: 200px;
+    height: 100px !important;
 }
 .psvideo .OT_video-poster{
     background-size: 100%;
@@ -1777,6 +1778,7 @@ textarea {
     min-width: 48px;
     position: relative;
     width: 100% !important;
+    height: 180px !important;
 }
 .psvideo .btn-danger {
     border-radius: 50%;
@@ -2194,7 +2196,7 @@ div.ourtrainer_wrap center > img {
 /* 02-11-2015 */
 
 .video_chat {
-  border-radius: 0;
+  border-radius: 15px;
 }
 .m_video_chat_head {
   background: #d93931 none repeat scroll 0 0;
@@ -3590,7 +3592,7 @@ a.btn_trainer {
 .session_list li {
     display: inline-block;
     border-right: 1px solid #fff;
-    padding: 0px 13px;
+    padding: 0px 12px;
 }
 .session_list li:last-child {
     border-right: 0px;
@@ -4086,7 +4088,7 @@ a.btn_trainer {
     vertical-align: middle;
 }
 .request_btn > button {
-  background-color: #f2534d;
+  background-color: #e6342a;
   border: medium none;
   border-radius: 3px;
   color: #fff;
@@ -4565,7 +4567,7 @@ margin:0 auto;
 }
 .calendor_switches_head a {
     border: 1px solid #e6342a;
-    padding: 8px 20px 2px;
+    padding: 8px 20px 6px;
     display: inline-block;
     border-radius: 6px;
     /* line-height: 16px; */
@@ -5219,7 +5221,7 @@ margin:0 auto;
   margin-top: 20px; /*12px;*/
 }
 .appointement_dashboard .appointement_sec .scroll_content {
-  height: 377px;
+  height: 350px;
 }
 .responsive-calendar .day a {
   width: 35px;
@@ -6453,7 +6455,7 @@ label.remain_bal {
   border: 1px solid #d6d6d6;
   border-radius: 6px;
   color: #313131;
-  display: block;
+  display: inline-block;
   padding: 4px 8px;
   text-transform: capitalize;
 }
@@ -6466,6 +6468,7 @@ label.remain_bal {
   font-size: 15px;
   padding: 12px;
   text-align: center;
+  vertical-align: middle;
 }
 
 /* .squaredThree */
@@ -6681,7 +6684,7 @@ label.remain_bal {
   padding: 0;
 }
 .visiter_map_sec {
-  margin: 30px 0;
+  margin: 0px;
 }
 .trainer_dashboard .notification_wrap li:first-child .cloud_box {
   background-color: #acd7f5;
@@ -6931,7 +6934,7 @@ label.remain_bal {
 }
 
 /*css start soravsir*/
-.notification{max-height: 350px; overflow: auto; min-width: 250px; left: auto; right: 0px;}
+.notification{ top:33px; min-width: 250px; left: auto; right: 0px;}
 .notification li{
   border-bottom: 1px solid #ccc;
   padding-bottom: 5px;
@@ -6993,14 +6996,38 @@ label.remain_bal {
   height: 656px;
  overflow: hidden;
 }
-.ht_right li:nth-child(2) .dropdown-menu{width: 200px;}
+.ht_right li:nth-child(2) .dropdown-menu{width: 350px; cursor: popointer;}
+.ht_right li .dropdown-menu{  background: #f4f4f4;}
+.ht_right li .dropdown-menu::after {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: rgba(244, 244, 244, 0) rgba(244, 244, 244, 0) #f4f4f4;
+  border-image: none;
+  border-style: solid;
+  border-width: 8px;
+  bottom: 100%;
+  content: " ";
+  height: 0;
+  left: 94%;
+  margin-left: -8px;
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+}
+.ht_right .dropdown-menu li:hover {
+  background-color: #fff;
+}
 .ht_right li:nth-child(2) .dropdown-menu li .notifi_inner{width: 300px;}
 
-.ht_right li:nth-child(3) .dropdown-menu{width: 200px;}
+.ht_right li:nth-child(3) .dropdown-menu{width: 350px;}
 .ht_right li:nth-child(3) .dropdown-menu li .notifi_inner{width: 300px;}
 .niti_text p {
   font-size: 12px;
   line-height: 20px;
+  width: 180px;
+  word-wrap: break-word;
 }
 #Make_Special_Offer {
   overflow: auto;
@@ -7027,3 +7054,57 @@ label.remain_bal {
   color: #e6342a !important;
   padding: 15px !important;
 }
+.access_map .map {
+  height: 400px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.dropdown-menu.notification > ul {
+  max-height: 350px;
+  overflow: auto;
+}
+.ht_right li:last-child .dropdown-menu::after{left:50%;}
+.ht_right li:nth-child(3) .dropdown-menu::after{left: 94%;}
+.list_drop {
+  height: 200px;
+  overflow: auto;
+}
+.niti_text p a {
+  color: #666;
+  font-size: 11px;
+}
+.niti_text p:hover a{ background-color: inherit;}
+.msg_container img {
+    max-width: 100%;
+}
+.niti_text img {
+    height: 70px;
+    width: 82px;
+    display: inline-block;
+    margin-top: 2px;
+}
+li.see_all {
+    text-align: center;
+    
+    
+}
+.see_all li a{color: #e8372a; font-weight: 700;}
+.see_all li {
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+.see_all li a:hover {
+    background-color: inherit !important;
+    color: #666 !important;
+}
+.see_all li:hover{background-color: inherit !important;}
+
+/** 22-04-2016 video calling start **/
+
+.OT_fit-mode-cover {
+    height: 444px !important;
+}
+
+/** 22-04-2016 video calling end **/

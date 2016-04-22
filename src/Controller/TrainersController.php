@@ -965,7 +965,7 @@ class TrainersController extends AppController
             $chat_msgs = "";
             if(empty($chat_data))
             {
-                $chat_msgs = '<div class="well"><center>Message Not Found </center></div>';
+                $chat_msgs = '<div><center>You have recieved no messages </center></div>';
             }
             else
             {

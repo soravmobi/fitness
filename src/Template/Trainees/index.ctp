@@ -28,7 +28,7 @@
                     <div class="cloud"><i class="fa fa-cloud" aria-hidden="true"></i></div>
                   </div>
                   <div class="cloud_text">
-                    <div class="degree_main"><?php echo round($weather- 273.15,1); ?><span class="degree">0</span></div>
+                    <div class="degree_main"><?php echo round($weather + 23.15,1); ?><span class="degree">0</span></div>
                     <span>Weather</span>
                   </div>
                 </li>
@@ -53,7 +53,7 @@
                   <div class="cloud_box">
                     <div class="cloud"><i class="flaticon1-scale"></i></div>
                   </div>
-                  <div class="cloud_text"> Current weight : <?php echo $profile_details[0]['trainee_current_weight']; ?> LBS <span>goal : <?php echo $profile_details[0]['trainee_goal']; ?> LBS</span>
+                  <div class="cloud_text"> Current weight : <?php echo (!empty($profile_details[0]['trainee_current_weight'])) ? $profile_details[0]['trainee_current_weight'] : "0" ?> LBS <span>goal : <?php echo (!empty($profile_details[0]['trainee_goal'])) ? $profile_details[0]['trainee_goal'] : "0" ?> LBS</span>
                   </div>
                 </li>
                 <!-- <li>
@@ -110,6 +110,7 @@
                   <h2>meal plans</h2>
                 </div>
                 <div class="session_content">
+                <?php if(!empty($trainer_meal_plans)) {?>
                   <ul class="nav_tabs">
                   <?php $i = 1; foreach($trainer_meal_plans as $m) { ?>
                     <li <?php if($i == 1){echo "class='active'";}?>><a data-toggle="tab" role="tab" aria-controls="profile" title="<?php echo $m['trainer_name']." ".$m['trainer_lname']; ?>" href="#profile_<?php echo $i; ?>"><?php echo substr($m['trainer_name']." ".$m['trainer_lname'],0,11); ?></a></li>
@@ -159,6 +160,9 @@
                     </div>
                   <?php $j++; } ?>
                   </div>
+                <?php } else { ?>
+                  <center><h4>No meal plan created by any trainer</h4></center>
+                <?php } ?>
                 </div>
               </div>
             </div>
@@ -329,13 +333,13 @@
         <div class="message_wrap">
           <div class="message_wrap_head">
             <h3>inbox </h3>
-            <ul class="pagination">
+            <!-- <ul class="pagination">
               <li>Showing 1 - 10 of 96 Messages</li>
               <li> <a href="#" aria-label="Previous"> <span aria-hidden="true"><i class="fa fa-chevron-left"></i></span> </a> </li>
               <li><a href="#">1</a></li>
               <li><a href="#">2</a></li>
               <li> <a href="#" aria-label="Next"> <span aria-hidden="true"><i class="fa fa-chevron-right"></i></span> </a> </li>
-            </ul>
+            </ul> -->
             <div class="clearfix"></div>
           </div>
           <div class="message_wrap_content_box">
@@ -347,15 +351,10 @@
                   <li><a href="javascript:void(0);"><i class="fa fa-eye"></i> Mark Read</a></li>
                 </ul>
               </li>
-              <!-- <li class="dropdown"><a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">select <i class="fa fa-chevron-down"></i> </a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">profile</a></li>
-                  <li><a href="#">setting</a></li>
-                </ul>
-              </li> -->
               <li class="pull-right">
             </ul>
             <div class="message_wrap_content">
+            <?php if(!empty($messages)) { ?>
               <table class="table table-striped">
                 <tbody>
                 <?php $i = 1; foreach($messages as $m){ ?>
@@ -371,6 +370,9 @@
                 <?php $i++; } ?>
                 </tbody>
               </table>
+            <?php } else { ?>
+              <center><h4>You have recieved no messages</h4></center>
+            <?php } ?>
             </div>
           </div>
         </div>

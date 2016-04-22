@@ -82,6 +82,9 @@
             <div class="row">
                       <!-- Tab panes -->
                   <div class="tab-content">
+                  <div class="panel_block_heading">
+                            <h4>V-Drive</h4>
+                        </div>
                     <div class="dash_photo_gallery">
                               <!-- Tab panes -->
                               <div class="tab-content photos_tab_content">
@@ -121,7 +124,7 @@
                                         <?php } } ?>
                                         </ul>
                                         <?php } else { ?>
-                                            <div class="well"><center><h1>Data not found !</h1></center></div>
+                                            <div><center><h4>Data not found !</h4></center></div>
                                         <?php } ?>
                                         <div class="clearfix"></div>
                                     </div>

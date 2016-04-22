@@ -322,7 +322,7 @@ class UsersController extends AppController
 			$clid = $result->chat_id;
 			$u_type = "sender";
 			$session = $this->Trainee_plan->find()->where(['user_id' => $this->data['id']])->toArray();
-			$session_val = $session[0]['updated_sessions'];
+			$session_val = 5;
 		}
 		
 		$this->set("session_val", $session_val);

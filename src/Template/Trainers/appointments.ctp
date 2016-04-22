@@ -6,7 +6,7 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12">
                   <div class="tbw_text">
-                  <i class="fa fa-cc-mastercard"></i> Appointments 
+                  <i class="fa fa-book"></i> Appointments 
   
                   </div>
                   <div class="step_box">
@@ -60,7 +60,14 @@
                           </div>
                            
                            <ul class="session_content scroll_content mCustomScrollbar _mCS_1">
-                            <?php for ($i=0; $i < count($upcomingArr); $i++) { ?>
+                            <?php       
+                            if(!empty($upcomingArr)){
+                              $upcomingArrCount = count($upcomingArr['trainee_name']);
+                            }else{
+                              $upcomingArrCount = 0; ?>
+                              </br><center><h4>Not found upcoming appointments</h4></center>
+                          <?php } 
+                            for ($i=0; $i < $upcomingArrCount; $i++) { ?>
                                 <li>
                                 <div class="main_block">
                                  <div class="circle_box_main">

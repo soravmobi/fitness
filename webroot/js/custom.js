@@ -104,6 +104,11 @@ $(document).on('focus', '.panel-footer input.chat_input', function (e) {
     }
 });
 
+$('.datepicker').datepicker({
+    autoclose : true,
+    format    : "yyyy-mm-dd"
+});
+
 function showPopover(position, content) {
     $(".pop-overbox")
         .popover({
@@ -121,9 +126,9 @@ function showAlert(type,title,message){
 	swal(title,message,type);
 }
 
-$('.ht_right ul li').hover(function() {
+/*$('.ht_right ul li').hover(function() {
 	$(this).children('.dropdown-menu').stop(true, false, true).slideToggle(300);
-});
+});*/
 
 	/*visitor map start*/
 	/**

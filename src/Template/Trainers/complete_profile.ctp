@@ -147,16 +147,12 @@
                                 <ul class="tai_sub_tab" role="tablist">
                                         <li role="presentation" class="active"><a href="#paypal" aria-controls="photos" role="tab" data-toggle="tab">Paypal</a></li>
                                         <li role="presentation"><a href="#amazon" aria-controls="gallery" role="tab" data-toggle="tab">Amazon</a></li>
-                                        <li role="presentation"><a href="#money_order" aria-controls="gallery" role="tab" data-toggle="tab">Money Order</a></li>
+                                        <!-- <li role="presentation"><a href="#money_order" aria-controls="gallery" role="tab" data-toggle="tab">Money Order</a></li> -->
                                 </ul>
                                 </br></br>
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane active" id="paypal">
                                         <form method="post" action="<?php echo $this->request->webroot; ?>trainers/updateBankDetails/bank_details">
-                                           <!--  <div class="form-group">
-                                                <label>Paypal Url</label>
-                                                <input type="url" name="paypal_url" required value="<?php if(isset($profile_details[0]['paypal_url'])) echo $profile_details[0]['paypal_url']; ?>" placeholder="Paypal Url" class="form-control">
-                                            </div> -->
                                             <div class="form-group">
                                                 <label>Paypal Bussiness Id</label>
                                                 <input type="email" name="paypal_email" required value="<?php if(isset($profile_details[0]['paypal_email'])) echo $profile_details[0]['paypal_email']; ?>" placeholder="Paypal Bussiness Id" class="form-control">
@@ -165,19 +161,15 @@
                                         </form>
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="amazon">
-                                        <form method="post" action="<?php echo $this->request->webroot; ?>trainers/updateBankDetails">
-                                            <!-- <div class="form-group">
-                                                <label>Amazon Url</label>
-                                                <input type="url" name="amazon_url" required value="<?php if(isset($profile_details[0]['amazon_url'])) echo $profile_details[0]['amazon_url']; ?>" placeholder="Amazon Url" class="form-control">
-                                            </div> -->
-                                            <!-- <div class="form-group">
+                                        <form method="post" action="<?php echo $this->request->webroot; ?>trainers/updateBankDetails/bank_details">
+                                            <div class="form-group">
                                                 <label>Amazon Bussiness Id</label>
                                                 <input type="email" name="amazon_email" required value="<?php if(isset($profile_details[0]['amazon_email'])) echo $profile_details[0]['amazon_email']; ?>" placeholder="Amazon Bussiness Id" class="form-control">
-                                            </div> -->
-                                            <!-- <input type="submit" class="btn submit_btn" value="Update" /> -->
+                                            </div> 
+                                            <input type="submit" class="btn submit_btn" value="Update" /> 
                                         </form>
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="money_order">
+                                    <!-- <div role="tabpanel" class="tab-pane" id="money_order">
                                     <form method="post" action="<?php echo $this->request->webroot; ?>trainers/updateBankDetails">
                                             <div class="form-group">
                                                 <label>Address</label>
@@ -185,7 +177,7 @@
                                             </div>
                                             <input type="submit" class="btn submit_btn" value="Update" />
                                         </form>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 
@@ -1105,6 +1097,7 @@ $(document).ready(function(){
                 dataType:"json",
                 success: function(data){
                     $('.plan_session').html(data.message);
+                    showAlert('success','Success','Hourly rate successfully added');
                 }
             });
     });
@@ -1205,6 +1198,7 @@ $(document).ready(function(){
             data:{rateid:rateid,adjust1:adjust1,adjust2:adjust2,adjust3:adjust3,adjust4:adjust4},
             dataType:"json",
             success: function(data){
+                showAlert('success','Success','Rate plans discount successfully added');
             }
         });
     });
@@ -1281,6 +1275,7 @@ $(document).ready(function(){
                 {
                    $('#custom_packages').hide();
                 }
+                showAlert('success','Success','Custom package successfully created');
             }
         });
     });

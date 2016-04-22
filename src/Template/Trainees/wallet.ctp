@@ -153,7 +153,7 @@
                                         <tr>
                                             <td><?php echo $i; ?></td>
                                             <td><?php echo $wt['payment_type']; ?></td>
-                                            <td><?php echo $wt['txn_id']; ?></td>
+                                            <td><a href="<?php echo $this->request->webroot; ?>trainees/reportpdf?id=<?php echo $wt['id']; ?>" class="txns"><?php echo $wt['txn_id']; ?></a></td>
                                             <td>$<?php echo $wt['ammount']; ?></td>
                                             <td><?php echo $wt['txn_type']; ?></td>
                                             <td><?php echo $wt['status']; ?></td>

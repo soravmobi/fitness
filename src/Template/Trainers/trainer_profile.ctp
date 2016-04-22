@@ -94,9 +94,9 @@
                     <?php if(!empty($rate_plans)) { ?>
                         <ul class="session_list">
                             <li><h3>1 Session</h3><h2>$<?php echo $rate_plans[0]['rate_hour'] - $rate_plans[0]['adgust1']; ?><span></span></h2><a href="javascript:void(0)">Order Now</a></li>
-                            <li><h3>3 Session</h3><h2>$<?php echo ( 3 * $rate_plans[0]['rate_hour'] ) - $rate_plans[0]['adgust2']; ?><span></span></h2><a href="javascript:void(0)">Order Now</a></li>
-                            <li><h3>10 Session</h3><h2>$<?php echo ( 10 * $rate_plans[0]['rate_hour'] ) - $rate_plans[0]['adgust3']; ?><span></span></h2><a href="javascript:void(0)">Order Now</a></li>
-                            <li><h3>20 Session</h3><h2>$<?php echo ( 20 * $rate_plans[0]['rate_hour'] ) - $rate_plans[0]['adgust4']; ?><span></span></h2><a href="javascript:void(0)">Order Now</a></li>
+                            <li><h3>3 Sessions</h3><h2>$<?php echo ( 3 * $rate_plans[0]['rate_hour'] ) - $rate_plans[0]['adgust2']; ?><span></span></h2><a href="javascript:void(0)">Order Now</a></li>
+                            <li><h3>10 Sessions</h3><h2>$<?php echo ( 10 * $rate_plans[0]['rate_hour'] ) - $rate_plans[0]['adgust3']; ?><span></span></h2><a href="javascript:void(0)">Order Now</a></li>
+                            <li><h3>20 Sessions</h3><h2>$<?php echo ( 20 * $rate_plans[0]['rate_hour'] ) - $rate_plans[0]['adgust4']; ?><span></span></h2><a href="javascript:void(0)">Order Now</a></li>
                         </ul>
                     <?php } ?>
                     <div class="clearfix"></div>

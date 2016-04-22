@@ -1,14 +1,14 @@
 		<?php include "trainee_dashboard.php"; ?>
 
     <section class="payment_details">
-      <form method="post" action="<?php echo $this->request->webroot; ?>trainees/choosePaymentMethod">
+      <form onsubmit="return termsCheck();" method="post" action="<?php echo $this->request->webroot; ?>trainees/choosePaymentMethod">
         <input type="hidden" name="voucher" value="<?php echo base64_encode('0'); ?>" id="voucher">
          <div class="top_bar_wrap">
             <div class="container">
               <div class="row">
                 <div class="col-md-12 col-sm-12">
                   <div class="tbw_text">
-                  <i class="fa fa-cc-mastercard"></i> confirm details & payment 
+                  <i class="fa fa-usd"></i> confirm details & payment 
   
                   </div>
                   <div class="step_box">
@@ -86,8 +86,8 @@
                               </li>
                               <li style="display:none;" id="promo_code_discount_label">Promo Code Discount <span id="promo_code_discount_price"></span></li>
                                 <li>
-                                  have a <b>DISCOUNT CODE</b> <i class="fa fa-question icon_block question_icon"></i>
-                                  <span title="Click here to apply voucher" id="code-btn">Have a promo code</span>
+                                  have a promo code <i class="fa fa-question icon_block question_icon"></i>
+                                  <span title="Click here to apply voucher" id="code-btn">click here</span>
                                   <span id="voucher-section" style="display:none;"><input type="text" class="form-control pop-overbox" id="voucher-code" placeholder="Voucher Code">
                                   <div class="modify_date_time1 save_cancel_section voucher_cancel">
                                     <div class="icon_block" id="cancel_voucher_btn"  title="Cancel"><i class="fa fa-times"></i> </div>
@@ -100,7 +100,7 @@
                                   </span>
                                 </li>
                                 <li>
-                                 <b> total</b><span class="red_color" id="total_final_price">$<?php echo $finalSessionPrice + $finalServiceFee; ?></span></li>
+                                 total<span class="red_color" id="total_final_price">$<?php echo $finalSessionPrice + $finalServiceFee; ?></span></li>
                               </ul>
                           </div>
                        </div>
@@ -248,6 +248,15 @@
       $('#applied_voucher,#promo_code_discount_label').hide();
     });       
   });
+  function termsCheck()
+  {
+    if (!$('input.terms_cb').is(':checked')){
+      showAlert('error','Error','Please accept terms & conditions');
+      return false;
+    }else{
+      return true;
+    }
+  }
 </script>
 
 <!-- Voucher Remove Script End -->

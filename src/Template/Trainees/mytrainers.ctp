@@ -60,7 +60,6 @@
                                         else { ?>
                                             <a class="btn btn-default user_call" href="javascript:void(0);" t_type="trainee" to_id="<?php echo $t['user_id']; ?>" from_id="<?php echo $user_id; ?>" title="Video Call" c_type="video"><i class="fa fa-video-camera"></i></a>
                                         <?php } };?>
-                                        <!-- <a class="btn btn-default user_call" href="javascript:void(0);" t_type="trainee" to_id="<?php echo $t['user_id']; ?>" from_id="<?php echo $user_id; ?>" title="Video Call" c_type="video"><i class="fa fa-video-camera"></i></a> -->
                                         <a class="btn btn-default user_call" href="javascript:void(0);" t_type="trainee" to_id="<?php echo $t['user_id']; ?>" from_id="<?php echo $user_id; ?>" title="Voice Call" c_type="call"><i class="fa fa-phone"></i></a>  
                                         <a class="btn btn-default user_call" href="javascript:void(0);" t_type="trainee" to_id="<?php echo $t['user_id']; ?>" from_id="<?php echo $user_id; ?>" title="Text Chat" c_type="chat"><i class="fa fa-weixin"></i></a>
                                         </div>
