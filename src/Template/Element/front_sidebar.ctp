@@ -12,7 +12,8 @@
   <ul class="nav navmenu-nav">
     <li>
       <div class="img_trainer">
-       <?php if($user_data['user_type'] == "trainer") { ?>
+       <?php 
+       if($user_data['user_type'] == "trainer") { ?>
             <img class="img-responsive profile-img" src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $profile_details[0]['trainer_image']; ?>">
         <?php } ?>
         <?php if($user_data['user_type'] == "trainee") { ?>

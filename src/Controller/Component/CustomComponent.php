@@ -3,6 +3,7 @@
 namespace App\Controller\Component;
 
 use Cake\Controller\Component;
+use Cake\Datasource\ConnectionManager;
 use mPDF;
 
 class CustomComponent extends Component
@@ -93,9 +94,16 @@ class CustomComponent extends Component
         if ($geo['status'] == 'OK') {
           $loc["latitude"]  = $geo['results'][0]['geometry']['location']['lat'];
           $loc["longitude"] = $geo['results'][0]['geometry']['location']['lng'];
-        }else{
-            $loc["latitude"]  = "";
-            $loc["longitude"] = "";
+        }
+        else if($geo['status'] == 'ZERO_RESULTS'){
+            $ip = $_SERVER['REMOTE_ADDR']; 
+            $query = @unserialize(file_get_contents('http://ip-api.com/php/'));
+            $loc["latitude"]  = $query['lat'];
+            $loc["longitude"] = $query['lon'];
+        }
+        else{
+            $loc["latitude"]  = "52.1332";
+            $loc["longitude"] = "106.6700";
         }
         return $loc;
     }
@@ -114,6 +122,45 @@ class CustomComponent extends Component
         $mpdf->Output($filename, 'D');
         exit;
     }
+
+    public function getCityName($cid)
+    {
+        $this->conn = ConnectionManager::get('default'); 
+        $results = $this->conn->execute('SELECT * FROM `cities` WHERE `id` = '.$cid)->fetchAll('assoc');
+        if(!empty($results)){
+            $city = $results[0]['name'];
+        }else{
+            $city = "";
+        }
+        return $city;
+    }
+
+
+    public function getStateName($cid)
+    {
+        $this->conn = ConnectionManager::get('default'); 
+        $results = $this->conn->execute('SELECT * FROM `states` WHERE `id` = '.$cid)->fetchAll('assoc');
+        if(!empty($results)){
+            $state = $results[0]['name'];
+        }else{
+            $state = "";
+        }
+        return $state;
+    }
+
+
+    public function getCountryName($cid)
+    {
+        $this->conn = ConnectionManager::get('default'); 
+        $results = $this->conn->execute('SELECT * FROM `countries` WHERE `id` = '.$cid)->fetchAll('assoc');
+        if(!empty($results)){
+            $country = $results[0]['name'];
+        }else{
+            $city = "";
+        }
+        return $country;
+    }
+
 
 
 }

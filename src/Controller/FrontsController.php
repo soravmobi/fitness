@@ -17,6 +17,13 @@ class FrontsController extends AppController
         $this->data = $this->Custom->getSessionData();
         $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
         $this->set('notifications', $this->total_notifications);
+        $user_type = $this->data['user_type'];
+        if($user_type == 'trainee'){
+        	$user_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
+        }else{
+        	$user_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
+        }
+        $this->set('profile_details', $user_details);
     }
 
 	public function trainerProfile($t_id)

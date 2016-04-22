@@ -147,9 +147,9 @@
                           </div>
                           <div class="check_box  session_content">
                            <div class="checkbox">
-                            <input type="checkbox" id="test1" checked/>
+                            <input type="checkbox" id="test1" class="terms_cb"/>
                             <label for="test1">I agree to the Moderate Cancellation Policy. Terms of Services, and the Trainer  Refund Policy.  I also agree to pay the total amount shown, which Includes 
-                              Service Fees.</label>    
+                              Service Fees. <a href="<?php echo $this->request->webroot; ?>terms" target="_blank">Terms & Conditions</a></label>    
                            </div>
                           </div>
                     </div>

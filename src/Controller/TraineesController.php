@@ -620,10 +620,11 @@ class TraineesController extends AppController
     $user_id = $result1->id;
 
     $trainee_data = $this->request->data;
+
     $trainee_data['trainee_image'] = 'default.png';
     $trainee_data['trainee_status'] = 1;
 
-    $address = $trainee_data["trn_city"].' '.$trainee_data["trn_state"].' '.$trainee_data["trn_cont"];
+    $address = $this->Custom->getCityName($trainee_data['trainee_city']).' '.$this->Custom->getStateName($trainee_data['trainee_state']).' '.$this->Custom->getCountryName($trainee_data['trainee_country']);
     $loc = $this->Custom->getlatlng($address);
     
     $trainee_data['lat'] = $loc["latitude"];
@@ -851,6 +852,11 @@ class TraineesController extends AppController
               'trainee_status' => 1,
               'trainee_added_date' => Time::now()
             );
+            $address = '';
+            $loc = $this->Custom->getlatlng($address);
+            
+            $trainee_arr['lat'] = $loc["latitude"];
+            $trainee_arr['lng'] = $loc["longitude"];
             
             $user1 = $this->Trainees->newEntity();
           $user1 = $this->Trainees->patchEntity($user1, $trainee_arr);
@@ -917,6 +923,11 @@ class TraineesController extends AppController
               'trainee_status' => 1,
               'trainee_added_date' => Time::now()
             );
+            $address = '';
+            $loc = $this->Custom->getlatlng($address);
+            
+            $trainee_arr['lat'] = $loc["latitude"];
+            $trainee_arr['lng'] = $loc["longitude"];
             
             $user1 = $this->Trainees->newEntity();
           $user1 = $this->Trainees->patchEntity($user1, $trainee_arr);

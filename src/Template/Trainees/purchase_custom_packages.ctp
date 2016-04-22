@@ -1,7 +1,7 @@
 <?php include "trainee_dashboard.php"; ?>
 
 		<section class="payment_details custom_packages">
-    <form method="post" action="<?php echo $this->request->webroot; ?>trainees/customPackageOrder">
+    <form method="post" onsubmit="return termsCheck();" action="<?php echo $this->request->webroot; ?>trainees/customPackageOrder">
          <div class="top_bar_wrap">
             <div class="container">
               <div class="row">
@@ -139,8 +139,8 @@
                                 </div>
                                 <div class="check_box  session_content">
                                  <div class="checkbox">
-                                  <input type="checkbox" id="test1" checked/>
-                                  <label for="test1">I agree with all terms and conditions.</label>    
+                                  <input type="checkbox" id="test1" class="terms_cb" />
+                                  <label for="test1">I agree with all terms and conditions. <a href="<?php echo $this->request->webroot; ?>terms" target="_blank">Terms & Conditions</a></label>    
                                  </div>
                                 </div>
                           </div>
@@ -240,6 +240,15 @@
       $('#applied_voucher,#promo_code_discount_label').hide();
     });       
   });
+  function termsCheck()
+  {
+    if(!$('.terms_cb').checked){
+    
+      return false;
+    }else{
+      return true;
+    }
+  }
 </script>
 
 <!-- Voucher Remove Script End -->

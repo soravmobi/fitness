@@ -118,18 +118,17 @@ class TrainersController extends AppController
             $trainer_data['trainer_image'] = 'default.png';
             $trainer_data['trainer_status'] = 0;
             $trainer_data['trainer_added_date'] = date("Y-m-d H:i:s");
-
-            $address = $trainer_data["trn_city"].' '.$trainer_data["trn_state"].' '.$trainer_data["trn_cont"];
+            $address = $this->Custom->getCityName($trainer_data['trainer_city']).' '.$this->Custom->getStateName($trainer_data['trainer_state']).' '.$this->Custom->getCountryName($trainer_data['trainer_country']);
             $loc = $this->Custom->getlatlng($address);
     		
             $trainer_data['lat'] = $loc["latitude"];
             $trainer_data['lng'] = $loc["longitude"];
             
             $user = $this->Trainers->newEntity();
-    		$user = $this->Trainers->patchEntity($user, $trainer_data);
-    		$user['user_id'] = $user_id;
-    		$result = $this->Trainers->save($user);
-    		$lid = $result->id; // get last insert id
+        		$user = $this->Trainers->patchEntity($user, $trainer_data);
+        		$user['user_id'] = $user_id;
+        		$result = $this->Trainers->save($user);
+        		$lid = $result->id; // get last insert id
 
             $resumeArr = array(
                 'document_name' => '',
