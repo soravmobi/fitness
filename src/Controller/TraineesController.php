@@ -69,12 +69,33 @@ class TraineesController extends AppController
     }else{
       $meal_plans_details   = array();
     }
+    $pending_appointments  = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainers` AS `t` ON `a`.`trainer_id` = `t`.`user_id` WHERE `a`.`trainee_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 0 AND `a`.`trainee_status` = 0 AND `a`.`created_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY `a`.`id` DESC')->fetchAll('assoc');
+    $upcoming_appointments = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainers` AS `t` ON `a`.`trainer_id` = `t`.`user_id` WHERE `a`.`trainee_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 1 AND `a`.`trainee_status` = 1 AND `a`.`created_date` >= CURDATE() ORDER BY `a`.`id` DESC')->fetchAll('assoc');
+     if(!empty($upcoming_appointments)){
+        foreach($upcoming_appointments as $ua){
+          $sessionArr = unserialize($ua['session_data']);
+          for ($i=1; $i <= count($sessionArr); $i++) { 
+              $upcomingArr['trainer_name'][] = $ua['trainer_name']." ".$ua['trainer_lname'];
+              $upcomingArr['user_id'][]      = $ua['user_id'];
+              $upcomingArr['trainer_image'][]= $ua['trainer_image'];
+              $upcomingArr['location_name'][]= $sessionArr[$i]['location_address'];
+              $upcomingArr['appo_date'][]    = $sessionArr[$i]['modified_dates'];
+              $upcomingArr['appo_time'][]    = $sessionArr[$i]['modified_times'];
+          }
+        }        
+     }
+     else{
+          $upcomingArr = array();
+     } 
     $messages = $this->getChatMessages();
+    $this->set('upcomingArr', $upcomingArr);
+    $this->set('pending_appointments', $pending_appointments);
     $this->set('messages', $messages);
     $this->set('meal_plans_details', $meal_plans_details);
     $this->set('trainer_meal_plans', $trainer_meal_plans);
     $this->set('total_wallet_ammount', $total_wallet_ammount);
     $this->set('profile_details', $profile_details);
+    $this->set("from_id",$this->data['id']);
   }
 
   public function mealplans()

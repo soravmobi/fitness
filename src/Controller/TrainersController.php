@@ -311,6 +311,9 @@ class TrainersController extends AppController
         $package_list = $this->conn->execute("SELECT *  FROM `trainer_packagemaster` where `trainer_id`=$trainer")->fetchAll('assoc');
 
         $latlng = $this->Custom->getlatlngbyip();
+
+        $time_slots = $this->Trainer_availability->find()->where(['trainer_id' => $this->data['id'],'date' => date('Y-m-d')])->toArray();
+        $this->set('time_slots', $time_slots);
         
         $this->set('latlng', $latlng);
         $this->set('package_list', $package_list);
@@ -318,8 +321,8 @@ class TrainersController extends AppController
         $this->set('resume',$resume);
         $this->set('certificates',$certificates);
         $this->set('quotes',$quotes);
-		$this->set('profile_details', $profile_details);
-		$this->set('countries', $countries);
+		    $this->set('profile_details', $profile_details);
+		    $this->set('countries', $countries);
         $this->set('states', $states);
         $this->set('cities', $cities);
         $this->set('gyms', $gyms);
@@ -1008,9 +1011,22 @@ class TrainersController extends AppController
     public function mytrainees()
     {
        $id = $this->data['id'];
-       $trainee_data = $this->conn->execute('SELECT *,t.id as trainee_id,c.name as country_name,s.name as state_name,ct.name as city_name  FROM  trainees as t  inner join countries as c on c.id = t.trainee_country inner join states as s on s.id = t.trainee_state inner join cities as ct on ct.id = t.trainee_city where `t`.`trainee_status` = 1 ORDER BY t.id DESC ')->fetchAll('assoc');
+       $appointment_data = $this->conn->execute('SELECT `trainee_id` FROM `appointments` WHERE `trainer_status` = 1 AND `trainee_status` = 1 AND `trainer_id` = '.$this->data['id'].' GROUP BY `trainee_id` ')->fetchAll('assoc');
+       $custom_package_data = $this->conn->execute('SELECT `trainee_id` FROM `custom_packages_history` WHERE `trainer_id` = '.$this->data['id'].' GROUP BY `trainee_id` ')->fetchAll('assoc');
+       $common_arr = array_merge($appointment_data,$custom_package_data);
+       if(!empty($common_arr)){
+        foreach($common_arr as $c)
+         {
+          $trainee_id[] = $c['trainee_id'];
+         }
+         $id_arr = array_unique($trainee_id);
+         $ids    = implode(",", $id_arr);
+         $trainee_data = $this->conn->execute('SELECT *,t.id as trainee_id,c.name as country_name,s.name as state_name,ct.name as city_name  FROM  trainees as t  inner join countries as c on c.id = t.trainee_country inner join states as s on s.id = t.trainee_state inner join cities as ct on ct.id = t.trainee_city where `t`.`user_id` IN('.$ids.') ORDER BY t.id DESC ')->fetchAll('assoc');
+         $this->set('trainee_data', $trainee_data);  
+       }else{
+         $this->set('trainee_data', array());  
+       }
        $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
-       $this->set('trainee_data', $trainee_data);  
        $this->set('user_id', $id);  
        $this->set('profile_details', $profile_details); 
     }

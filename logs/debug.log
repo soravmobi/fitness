@@ -2181,3 +2181,27 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
+2016-04-25 12:35:13 Notice: Notice (8): Array to string conversion in [/opt/lampp/htdocs/fitness/src/Controller/TrainersController.php, line 1018]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+array_unique - [internal], line ??
+App\Controller\TrainersController::mytrainees() - APP/Controller/TrainersController.php, line 1018
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-04-25 12:35:13 Notice: Notice (8): Array to string conversion in [/opt/lampp/htdocs/fitness/src/Controller/TrainersController.php, line 1018]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+array_unique - [internal], line ??
+App\Controller\TrainersController::mytrainees() - APP/Controller/TrainersController.php, line 1018
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+

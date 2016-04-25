@@ -101,9 +101,9 @@
                   <div class="col-md-4 col-sm-4">
                     <div class="appointement_head">
                       Pending Appointments 
-                    <div class="icon_block big_icon gray_color">
+                    <!-- <div class="icon_block big_icon gray_color">
                         <a href="<?php echo $this->request->webroot; ?>trainers/appointmentsAvailability" id="trainer-appointments"><i class="fa fa-sliders"></i></a>
-                    </div>
+                    </div> -->
                     </div>
                         <div class="session_setails_sec appointement_sec pending_appointement">
                           <div class="heading_payment_main">

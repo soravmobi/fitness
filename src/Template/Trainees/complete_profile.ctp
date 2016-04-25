@@ -88,8 +88,8 @@
                                         <input required name="trainee_zip" type="text" value="<?php echo $profile_details[0]['trainee_zip']; ?>" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label>Trainee Skills (Please enter skills by comma seprated)</label>
-                                        <input required name="trainee_skills" type="text" value="<?php echo $profile_details[0]['trainee_skills']; ?>" class="form-control">
+                                        <label>Trainee Skills (Please hit enter for add skills)</label>
+                                        <input required name="trainee_skills" id="trainee_skills" type="text" value="<?php echo $profile_details[0]['trainee_skills']; ?>" class="form-control">
                                     </div>
                                    
                                 </div>
@@ -347,6 +347,11 @@
 <!-- State Populate Start -->
 <script type="text/javascript">
 $(document).ready(function(){
+
+$('#trainee_skills').tagit({
+    allowSpaces: true
+});
+
 $('#trainee_country').change(function(){
     var state = $(this).val();
     var cont = $("option:selected",this).text().trim();

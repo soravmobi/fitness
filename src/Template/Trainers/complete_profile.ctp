@@ -24,7 +24,8 @@
                             <li class="resume"><a href="#resume" aria-controls="resume" role="tab" data-toggle="tab">Resume</a></li>
                             <li class="rateplan"><a href="#rateplan" aria-controls="rateplan" role="tab" data-toggle="tab">Rate plan</a></li>
                             <li class="package"><a href="#package" aria-controls="package" role="tab" data-toggle="tab">Packages</a></li>
-                            <li class="addgym"><a href="#addgym" aria-controls="addgym" role="tab" data-toggle="tab">Gyms of Access</a></li>                            
+                            <li class="addgym"><a href="#addgym" aria-controls="addgym" role="tab" data-toggle="tab">Gyms of Access</a></li>
+                            <li class="set_availability"><a href="#set_availability" aria-controls="set_availability" role="tab" data-toggle="tab">Set Availability</a></li>                            
                           </ul>
                     </div>
                 </div>
@@ -45,14 +46,6 @@
                                 <?=  $this->Flash->render('edit1') ?>
                                 <form method="post" action="<?php echo $this->request->webroot; ?>trainers/updatePersonalInfo/informaiton">
                                 <div class="form_wrapper">
-                                	<!-- <div class="form-group">
-                                        <div class="photo_upload_sect">
-                                                	<input type="file" value="Photo Upload">
-                                                    <span class="fa fa-cloud-upload"></span>
-                                                    <h5>Upload your Photo</h5>
-                                                </div>
-                                    </div> -->
-                                    
                                     <div class="form-group">
                                         <label>Full Name</label>
                                         <input required name="trainer_name" type="text" value="<?php echo $profile_details[0]['trainer_name']; ?>" class="form-control">
@@ -100,8 +93,8 @@
                                         <input required name="trainer_zip" type="text" value="<?php echo $profile_details[0]['trainer_zip']; ?>" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label>Trainer Skills (Please enter skills by comma seprated)</label>
-                                        <input required name="trainer_skills" type="text" value="<?php echo $profile_details[0]['trainer_skills']; ?>" class="form-control">
+                                        <label>Trainer Skills (Please hit enter for add skills)</label>
+                                        <input required id="trainer_skills" name="trainer_skills" type="text" value="<?php echo $profile_details[0]['trainer_skills']; ?>" class="form-control">
                                     </div>
                                 </div>
                                 <input type="submit" class="btn submit_btn"  value="Update" />
@@ -169,21 +162,11 @@
                                             <input type="submit" class="btn submit_btn" value="Update" /> 
                                         </form>
                                     </div>
-                                    <!-- <div role="tabpanel" class="tab-pane" id="money_order">
-                                    <form method="post" action="<?php echo $this->request->webroot; ?>trainers/updateBankDetails">
-                                            <div class="form-group">
-                                                <label>Address</label>
-                                                <textarea class="form-control" name="money_order_address" required rows="5" ><?php if(isset($profile_details[0]['money_order_address'])) echo $profile_details[0]['money_order_address']; ?></textarea>
-                                            </div>
-                                            <input type="submit" class="btn submit_btn" value="Update" />
-                                        </form>
-                                    </div> -->
                                 </div>
                             </div>
 
                             <div role="tabpanel" class="tab-pane password" id="password">
                             	<h3 class="trai_title_sect">Change Password </h3>
-
                                 <?php echo $this->Custom->successMsg(); ?>
                                 <?php echo $this->Custom->errorMsg(); ?>
                                 <?php echo $this->Custom->loadingImg(); ?>
@@ -496,9 +479,8 @@
                                     </table>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane access_gym active" id="addgym"  style="opacity: 0;">
-
-                                <h4>favorite gym</h4>
+                            <div role="tabpanel" class="tab-pane access_gym" id="addgym"  style="opacity: 0;">
+                            <h3 class="trai_title_sect">Favorite Gym</h3>
                                 <div class="access_gym_form">
                                 <form name="gym" method="post">
                                   <div class="form-group">
@@ -554,7 +536,7 @@ $('.addgym').on('click',function(){
 		
   $('#gmap-dropdown1').gMap({
         address:  "<?php if(isset($gym->address)){ echo $gym->address; }; ?>",
-        zoom: 5,
+        zoom: 14,
 		markers:markers,
 		
 		 controls: {
@@ -575,6 +557,131 @@ $('.addgym').on('click',function(){
                                   <!--  <div id="gmap_canvas"></div>-->
                                     
                                 </div>
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane" id="set_availability">
+                                <h3 class="trai_title_sect">Set Availability</h3>
+                                <section class="calendor_wrap">
+            <div class="head_row">
+            </div>
+            
+               <div class="row">
+                <form method="post" id="trainer_form">
+                  <div class="col-md-6 col-sm-12">
+                    <div class="top_text">Please select the date and time which you are unable for booking request.</div>
+                    <!-- Responsive calendar - START -->
+                        <div class="responsive-calendar">
+                        <div class="controls clearfix">
+                        <h4><span data-head-year></span> <span data-head-month></span></h4>
+                            <a class="pull-left" data-go="prev"><div class="btn prev_btn "><i class="fa fa-angle-double-left"></i>
+</div></a>
+                            
+                            <a class="pull-right" data-go="next"><div class="btn next_btn"><i class="fa fa-angle-double-right"></i>
+                            
+</div></a>
+                        </div>
+                        <div class="calendor_content">
+                        <div class="heading_payment_main">
+                          </div>
+                          <div class="session_content">
+                        <div class="day-headers">
+                          <div class="day header">Mon</div>
+                          <div class="day header">Tue</div>
+                          <div class="day header">Wed</div>
+                          <div class="day header">Thu</div>
+                          <div class="day header">Fri</div>
+                          <div class="day header">Sat</div>
+                          <div class="day header">Sun</div>
+                        </div>
+                        <div class="days" data-group="days">
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+      <!-- Responsive calendar - END -->
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                  <div class="calendor_caption_box">
+                    <div class="heading_payment_main">
+                          </div>
+                    <div class="calendor_caption session_content scroll_content">
+                    
+                    <?php 
+                    if(!empty($time_slots)){
+                      $times = unserialize($time_slots[0]['times']);
+                    }else{
+                      $times = array('0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0');
+                    }
+                    for ($i=0; $i < count($times); $i++) { ?>
+                     <div class="checkbox">
+                       <div class="roundedOne">
+                          <input <?php if($times[$i] == 1) echo "checked"; ?> type="checkbox" class="time" value="0" main="<?php echo $i; ?>" id="roundedOne_<?php echo $i; ?>" />
+                          <label for="roundedOne_<?php echo $i; ?>"></label>
+                          <input type="hidden" name="times[]" class="hidden_time" id="time_<?php echo $i; ?>" value="<?php echo $times[$i]; ?>"/>
+                        </div>
+                        <div class="chekbox_txt"> <span><?php echo $this->Custom->getTimeSlots($i); ?></span><?php echo $this->Custom->getTimeSlots($i+1); ?></div>
+                    </div>
+                    <?php } ?>
+                    </div>
+                  </div>
+               </div>
+               <input type="hidden" id="selected_date" name="selected_date" value="<?php echo date('Y-m-d'); ?>">
+                 <div class="col-md-12 col-sm-12">
+                   <div class="calendor_switches_wrap">
+                   <div class="heading_payment_main">
+                          </div>
+                          <div class="session_content">
+                      <div class="calendor_switches_head clearfix">
+                          <div class="cs_head_left pull-left">
+                            <a href="javascript:void(0);" id="cancel-btn" >cancel</a>
+                          </div>
+                          <div class="cs_head_right pull-right">
+                          <a href="javascript:void(0);" id="save-btn"> save changes</a>
+                          </div>
+                      </div>
+                      <div class="calendor_switches_content">
+                        <p>Various Dates </p>
+                        <div class="switch_button">
+                         <ul class="clearfix">
+                           <li class="active"><a href="javascript:void(0);" main="0" class="selection-btn">available</a></li>
+                           <li><a href="javascript:void(0);" main="1" class="selection-btn">blocked</a></li>
+                         </ul>
+                    </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="calendor_switches_wrap">
+                     <div class="heading_payment_main">
+                          </div>
+                          <div class="session_content">
+                           <div class="calendor_switches_head clearfix">
+                          <div class="cs_head_left pull-left">
+                           <a href="javascript:void(0);" id="cancel-btn"> cancel</a>
+                          </div>
+                          <div class="cs_head_left">
+                            <a href="javascript:void(0);" class="select_all"><span>select all</span></a>
+                            <a href="javascript:void(0);" style="display:none;" class="unselect_all"><span>unselect all</span></a>
+                          </div>
+                          <div class="cs_head_right pull-right">
+                           <a href="javascript:void(0);" id="save-btn">save changes</a>
+                          </div>
+                      </div>
+                      <div class="calendor_switches_content">
+                        <p>Various times </p>
+                        <div class="switch_button">
+                       <ul class="clearfix">
+                           <li ><a href="javascript:void(0);" main="0" class="selection-btn1">available</a></li>
+                           <li class="active"><a href="javascript:void(0);" main="1" class="selection-btn1">blocked</a></li>
+                         </ul>
+                         </div>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+               </div>
+              </form>
+            </div>
+        </section>
                             </div>
 
                            
@@ -1428,4 +1535,122 @@ $(document).ready(function(){
 
     });
 </script> 
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".responsive-calendar").responsiveCalendar({
+          time: "<?php date('Y-m'); ?>",
+        });
+      });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+    $('#trainer_skills').tagit({
+      allowSpaces: true
+    });
+
+    $('body').on('click','.select_all',function(){
+      $('.select_all').hide();
+        $('.unselect_all').show();
+        $('.time').each(function() { 
+            this.checked = true;  
+        });
+        $('.hidden_time').each(function(){
+            $(this).val('1');
+       });
+    });
+
+      $('body').on('click','.unselect_all',function(){
+        $('.select_all').show();
+        $('.unselect_all').hide();
+        $('.time').each(function() { 
+            this.checked = false;  
+        });
+        $('.hidden_time').each(function(){
+            $(this).val('0');
+        });
+      });
+
+      $('body').on('change','.time',function(){
+        var i = $(this).attr('main');
+        if(this.checked){
+          $(this).val('1');
+          $('#time_'+i).val('1');
+        }else{
+          $(this).val('0');
+          $('#time_'+i).val('0');
+        }
+      });
+
+      $('body').on('click','div.day > a',function(){
+          var year  = $(this).attr('data-year');
+          var month = ($(this).attr('data-month') > 10) ? $(this).attr('data-month') : "0" + $(this).attr('data-month');
+          var day = ($(this).attr('data-day') > 10) ? $(this).attr('data-day') : "0" + $(this).attr('data-day');
+          var date =  year + "-" + month + "-" + day;
+          $('#selected_date').val(date);
+          $('.day').removeClass('today');
+          $(this).parent().addClass('today');
+          $.ajax({
+            url:"<?php echo $this->request->webroot; ?>trainers/getTimeSlotsDateWise",
+            type:"post",
+            data:{date:date},
+            dataType:"json",
+            success: function(response){
+                $('.calendor_caption').html(response.message);
+            },
+            error:function(error){
+                console.log(error);  
+            }
+        });
+      });
+
+      $('body').on('click','.selection-btn',function(){
+          $('.selection-btn').parent().removeClass('active');
+          $(this).parent().addClass('active');
+          var type = $(this).attr('main');
+          if(type == 1){
+            $('.time').each(function() { 
+              this.checked = true;  
+            });
+            $('.hidden_time').each(function(){
+                  $(this).val('1');
+            });
+          }else{
+            $('.time').each(function() { 
+              this.checked = false;  
+            });
+            $('.hidden_time').each(function(){
+                  $(this).val('0');
+            });
+          }
+      });
+
+      $('body').on('click','.selection-btn1',function(){
+          $('.selection-btn1').parent().removeClass('active');
+          $(this).parent().addClass('active');
+      });
+
+      $('body').on('click','#save-btn',function(){
+        var form_data = new FormData($('#trainer_form')[0]);
+        $.ajax({
+            url:"<?php echo $this->request->webroot; ?>trainers/traineravailability",
+            type:"post",
+            data:form_data,
+            dataType:"json",
+            contentType:false,
+            processData:false,
+            success: function(response){
+                console.log(response);
+                showAlert('success','Success','Your availability successfully added');
+            },
+            error:function(error){
+                console.log(error);  
+            }
+        });
+      });
+
+    });
+    </script>
+
 

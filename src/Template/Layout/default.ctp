@@ -62,6 +62,7 @@
 	<?php echo  $this->Html->css('jasny-bootstrap.min.css') ?>
 	<?php echo  $this->Html->script('jasny-bootstrap.min.js') ?>
     <script type='text/javascript' src="https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
 	<!-- jayendra start -->
 	<?php 
 		$session = $this->request->session();

@@ -407,7 +407,7 @@
                     </div>
                     </div>
                </div>
-               <div class="suf_row clearfix">
+               <!-- <div class="suf_row clearfix">
                     <div class="form-group">
                         <input required name="trainer_certificate_name"  type="text" id="trainer_certificate_name" class="form-control" placeholder="Certificate Name">
                     </div>
@@ -417,7 +417,7 @@
                         <div class="file_input1">Certificate</div>
                     </div>
                  </div>
-               </div>
+               </div> -->
                <div class="suf_row clearfix">
                     <div class="suf_col2">
                         <input type="hidden" id="trn_cont" name="trn_cont">
@@ -740,7 +740,7 @@ $(document).ready(function(){
                         $('#error_msg_login').hide();
                         $('#invalid_msg').hide();
                         $('#inactive_msg').hide();
-                        $("div#success_msg").html("<center><i class='fa fa-check'> Login Successfully Please Wait..  </i></center>").show();
+                        $("div#success_msg").html("<center><i class='fa fa-check'> Login successful, please wait!  </i></center>").show();
                         window.location.href="<?php echo $this->request->webroot; ?>trainees";
                     }
                 if(data.message == 'trainer' && data.message1 == 'success')
@@ -748,7 +748,7 @@ $(document).ready(function(){
                         $('#error_msg_login').hide();
                         $('#invalid_msg').hide();
                         $('#inactive_msg').hide();
-                        $("div#success_msg").html("<center><i class='fa fa-check'> Login Successfully Please Wait..  </i></center>").show();
+                        $("div#success_msg").html("<center><i class='fa fa-check'> Login successful, please wait!  </i></center>").show();
                         window.location.href="<?php echo $this->request->webroot; ?>trainers";
                     }
             },
@@ -800,7 +800,7 @@ $(document).ready(function(){
                         $('#error_msg_login').hide();
                         $('#invalid_msg').hide();
                         $('#inactive_msg').hide();
-                        $("div#success_msg").html("<center><i class='fa fa-check'> Login Successfully Please Wait..  </i></center>").show();
+                        $("div#success_msg").html("<center><i class='fa fa-check'> Login successful, please wait!  </i></center>").show();
                         window.location.href="<?php echo $this->request->webroot; ?>trainees";
                     }
                 if(data.message == 'trainer' && data.message1 == 'success')
@@ -808,7 +808,7 @@ $(document).ready(function(){
                         $('#error_msg_login').hide();
                         $('#invalid_msg').hide();
                         $('#inactive_msg').hide();
-                        $("div#success_msg").html("<center><i class='fa fa-check'> Login Successfully Please Wait..  </i></center>").show();
+                        $("div#success_msg").html("<center><i class='fa fa-check'> Login successful, please wait!  </i></center>").show();
                         window.location.href="<?php echo $this->request->webroot; ?>trainers";
                     }
             },
@@ -1196,7 +1196,7 @@ function getUserInfo(type) {
                         $("div#success_msg").hide();
                         break;
                     case "Login Successfully" :
-                        $("div#success_msg").html("<center><i class='fa fa-check'> Login Successfully Please Wait..  </i></center>").show();
+                        $("div#success_msg").html("<center><i class='fa fa-check'> Login successful, please wait!  </i></center>").show();
                         $("div#error_msg").hide();
                         window.location.href = "<?php echo $this->request->webroot; ?>trainees";
                         break;
@@ -1292,7 +1292,7 @@ var helper = (function() {
                         $("div#success_msg").hide();
                         break;
                     case "Login Successfully" :
-                        $("div#success_msg").html("<center><i class='fa fa-check'> Login Successfully Please Wait..  </i></center>").show();
+                        $("div#success_msg").html("<center><i class='fa fa-check'> Login successful, please wait!  </i></center>").show();
                         $("div#error_msg").hide();
                         window.location.href = "<?php echo $this->request->webroot; ?>trainees";
                         break;

@@ -524,7 +524,7 @@ url.push("lng="+lng);
 		
 		var locations = trainers;
 	    var map = new google.maps.Map(document.getElementById('map'), {
-	      zoom: 5,
+	      zoom: 10,
 	      center: new google.maps.LatLng(trainers[0][1],trainers[0][2]),
 	      mapTypeId: google.maps.MapTypeId.ROADMAP,
 		  zoomControl: true,
@@ -551,7 +551,7 @@ url.push("lng="+lng);
 	        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
 	        content:contentString,
 	        map: map,
- icon: 'https://virtualtrainr.com/img/favicon.ico'
+ 			icon: '<?php echo $this->request->webroot; ?>img/favicon.ico'
 	      });
 	      google.maps.event.addListener(marker, 'click', (function(marker, i) {
 		    return function() {

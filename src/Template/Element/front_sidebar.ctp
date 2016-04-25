@@ -37,8 +37,8 @@
         <li><a href="<?php echo $this->request->webroot; ?>trainees/appointments"><i class="fa fa-pencil-square-o"></i>Appointments <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainees/mealplans"><i class="fa fa-pencil-square-o"></i>Meal Plans <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainees/grocerylist"><i class="fa fa-pencil-square-o"></i>Grocery List <i class="fa fa-chevron-left pull-right"></i></a></li>
-        <li><a href="<?php echo $this->request->webroot; ?>ourTrainers"><i class="fa fa-users"></i>Certified Trainers <i class="fa fa-chevron-left pull-right"></i></a></li>
-        <li><a href="<?php echo $this->request->webroot; ?>trainees/searchTrainers"><i class="fa fa-users"></i>Find Trainers <i class="fa fa-chevron-left pull-right"></i></a></li>
+        <!-- <li><a href="<?php echo $this->request->webroot; ?>ourTrainers"><i class="fa fa-users"></i>Certified Trainers <i class="fa fa-chevron-left pull-right"></i></a></li> -->
+        <li><a href="<?php echo $this->request->webroot; ?>trainees/searchTrainers"><i class="fa fa-users"></i>Certified Trainers <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainees/inbox"><i class="fa fa-hdd-o"></i>V-Drive <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainees/photoalbum"><i class="fa fa-picture-o"></i>Photo Album <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainees/wallet"><i class="fa fa-google-wallet"></i>My Wallet <i class="fa fa-chevron-left pull-right"></i></a></li>
