@@ -12,8 +12,13 @@
             </div> -->
             <?php 
               $weather_details = $this->Custom->getWheatherDetails();
-              $weather = $weather_details['main']['temp'];
-              $windy   = $weather_details['wind']['speed'];
+              if(!empty($weather_details)){
+                $weather = round($weather_details['main']['temp'] - 273.15,1);
+                $windy   = round($weather_details['wind']['speed'],1);
+              }else{
+                $weather = "NA";
+                $windy   = "NA";
+              }
             ?>
             <div class="notification_wrap">
               <ul>
@@ -28,7 +33,7 @@
                     <div class="cloud"><i class="fa fa-cloud" aria-hidden="true"></i></div>
                   </div>
                   <div class="cloud_text">
-                    <div class="degree_main"><?php echo round($weather + 23.15,1); ?><span class="degree">0</span></div>
+                    <div class="degree_main"><?php echo $weather; ?><span class="degree">0<span class="cvalue">c</span></span></div>
                     <span>Weather</span>
                   </div>
                 </li>
@@ -347,8 +352,8 @@
               <li><span class="flaticon1-tool"></span> Inbox</li>
               <li class="dropdown"><a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">action <i class="fa fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
-                  <li><a href="javascript:void(0);"><i class="fa fa-trash-o"></i> Delete</a></li>
-                  <li><a href="javascript:void(0);"><i class="fa fa-eye"></i> Mark Read</a></li>
+                  <li><a href="javascript:void(0);" id="delete-msgs"><i class="fa fa-trash-o"></i> Delete</a></li>
+                  <!-- <li><a href="javascript:void(0);"><i class="fa fa-eye"></i> Mark Read</a></li> -->
                 </ul>
               </li>
               <li class="pull-right">
@@ -360,8 +365,8 @@
                 <?php $i = 1; foreach($messages as $m){ ?>
                   <tr>
                     <td><div class="squaredThree">
-                        <input type="checkbox" value="None" id="squaredThree" name="check" checked />
-                        <label for="squaredThree"></label>
+                        <input type="checkbox" class="msg_cb" value="<?php echo $m['chat_id']; ?>" id="squaredThree_<?php echo $i; ?>" name="check" checked />
+                        <label for="squaredThree_<?php echo $i; ?>"></label>
                       </div></td>
                     <td><?php echo $m['trainer_name']." ".$m['trainer_lname']; ?></td>
                     <td><?php echo $m['chat_messsage']; ?></td>
@@ -410,3 +415,38 @@
   </div>
 
 </section>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+  $('body').on('click','#delete-msgs',function(){
+    var msg = [];
+     $.each($("input.msg_cb:checked"), function(){            
+            msg.push($(this).val());
+      });
+    var chatids = msg.join(",");
+    if(chatids == ""){
+      showAlert('error','Error','Please select messages !!');
+      return false;
+    }
+    $.ajax({
+          url:"<?php echo $this->request->webroot; ?>trainees/deleteMessages",
+          type:"post",
+          data:{chatids:chatids},
+          dataType:"json",
+          success: function(response){
+            if(response.message == "success"){
+              showAlert('success','Success','Messages deleted successfully');
+              setTimeout(function(){
+                window.location.reload();
+              }, 1000);
+            }
+          },
+          error:function(error){
+              console.log(error);  
+          }
+      });
+  });
+});
+
+</script>

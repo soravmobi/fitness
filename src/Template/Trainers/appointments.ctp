@@ -110,6 +110,9 @@
                           </div>
                            
                            <ul class="session_content scroll_content mCustomScrollbar _mCS_1">
+                           <?php if(empty($pending_appointments)){ ?>
+                            </br><center><h4>Not found pending appointments</h4></center>
+                           <?php }else{ ?>
                             <?php foreach($pending_appointments as $pa) { ?>
                               <li>
                                 <div class="main_block">
@@ -158,7 +161,7 @@
                                     <div class="bullet_box"><a title="View Pending Appointment" href="<?php echo $this->request->webroot; ?>trainers/viewPendingAppointment?aid=<?php echo base64_encode($pa['app_id']); ?>"><i class="fa fa-circle"></i> <i class="fa fa-circle"></i> <i class="fa fa-circle"></i></a></div>
                                 </div>
                             </li>
-                            <?php } ?>
+                            <?php } } ?>
                             </ul>
                         </div>
                   </div>

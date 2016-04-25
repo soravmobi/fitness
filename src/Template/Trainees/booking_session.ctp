@@ -156,10 +156,22 @@
                                 </div>
                                 <div class="text_block" id="date_time_block_<?php echo $i; ?>"><?php echo date('F', strtotime(date('Y-m-d'))); ?> <?php echo date('d', strtotime(date('Y-m-d'))); ?>th <?php echo date('Y', strtotime(date('Y-m-d'))); ?> </br> <b> <?php echo date('h:i:A', strtotime(date('Y-m-d'))); ?></b> - <span><?php echo date('h:i:A', $timestamp); ?></span></div>
                               </li>
+                              <?php 
+                                $own_location_details = $this->Custom->getlatlngbyip();
+                                if(!empty($own_location_details)){
+                                  $lat = $own_location_details['lat'];
+                                  $lon = $own_location_details['lon'];
+                                  $address = $own_location_details['city']." ".$own_location_details['regionName']." ".$own_location_details['country'];
+                                }else{
+                                  $lat = $profile_details[0]['lat'];
+                                  $lon = $profile_details[0]['lng'];
+                                  $address = $profile_details[0]['city_name']."-".$profile_details[0]['state_name'].",".$profile_details[0]['country_name'];
+                                }
+                              ?>
                               <li id="map_icon_<?php echo $i; ?>">
                                 <div class="icon_block select_location" main="<?php echo $i; ?>" title="Select Location"><i class="fa fa-map-marker"></i> </div>
                                 <div class="text_wrap">
-                                <div class="text_block" id="location_text_<?php echo $i; ?>" title="<?php echo (isset($profile_details[0]['city_name'])) ? $profile_details[0]['city_name']."-".$profile_details[0]['state_name'].",".$profile_details[0]['country_name'] : "" ?>"><?php echo (isset($profile_details[0]['city_name'])) ? $profile_details[0]['city_name']."-".$profile_details[0]['state_name'].",".$profile_details[0]['country_name'] : "" ?></div>
+                                <div class="text_block" id="location_text_<?php echo $i; ?>" title="<?php echo $address; ?>"><?php echo $address; ?></div>
                               </div>
                               </li>
                             </ul>
@@ -173,8 +185,8 @@
                               </ul>
                               <input type="hidden" name="booking[<?php echo $i; ?>][preference]" id="prefernce_val_<?php echo $i; ?>" value="0">
                               <input type="hidden" name="booking[<?php echo $i; ?>][status]" id="status_val_<?php echo $i; ?>" value="0">
-                              <input type="hidden" name="booking[<?php echo $i; ?>][locations]" id="location_val_<?php echo $i; ?>" value="50.447978,-104.6066559">
-                              <input type="hidden" name="booking[<?php echo $i; ?>][location_address]" id="location_address_<?php echo $i; ?>" value="<?php echo (isset($profile_details[0]['city_name'])) ? $profile_details[0]['city_name']."-".$profile_details[0]['state_name'].",".$profile_details[0]['country_name'] : "" ?>">
+                              <input type="hidden" name="booking[<?php echo $i; ?>][locations]" id="location_val_<?php echo $i; ?>" value="<?php echo $lat; ?>,<?php echo $lon; ?>">
+                              <input type="hidden" name="booking[<?php echo $i; ?>][location_address]" id="location_address_<?php echo $i; ?>" value="<?php echo $address; ?>">
                               <input type="hidden" name="booking[<?php echo $i; ?>][modified_dates]" id="date_val_<?php echo $i; ?>" value="<?php echo date('Y-m-d'); ?>">
                               <input type="hidden" name="booking[<?php echo $i; ?>][modified_times]" id="time_val_<?php echo $i; ?>" value="<?php echo date('h:i:A', strtotime(date('Y-m-d'))); ?>-<?php echo date('h:i:A', $timestamp); ?>">
                             </div>

@@ -27,21 +27,20 @@ class AdminsController extends AppController
     	$session = $this->request->session();
         $user_data = $session->read('Auth.User');
         if(!empty($user_data))
+        {
+            if($user_data['user_type'] == "admin")
             {
-                if($user_data['user_type'] == "admin")
-                    {
-                      return $this->redirect('/admins/home');
-                    }
-                if($user_data['user_type'] == "trainer")
-                    {
-                      return $this->redirect('/trainers');
-                    }
-                if($user_data['user_type'] == "trainee")
-                    {
-                      return $this->redirect('/trainees');
-                    }
-               
+              return $this->redirect('/admins/home');
             }
+            if($user_data['user_type'] == "trainer")
+            {
+              return $this->redirect('/trainers');
+            }
+            if($user_data['user_type'] == "trainee")
+            {
+              return $this->redirect('/trainees');
+            }
+        }
     }
 
     public function adminLogin()

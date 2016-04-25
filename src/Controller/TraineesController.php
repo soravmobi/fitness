@@ -35,7 +35,6 @@ class TraineesController extends AppController
       $this->accessKey   ="AKIAIZVO6DF3GTQD4BFA"; // MWS Access Key
       $this->secretKey   ="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"; // MWS Secret Key
       $this->lwaClientId ="amzn1.application-oa2-client.1e55f9b590ae4f3085a6796aa9c87fd6"; // Login With Amazon Client ID
-      $this->returnURL   = "https://virtualtrainr.com/trainees/resultAmazon";
       if(!empty($this->data)){
         $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
         $noti_data = $this->getNotifications();
@@ -114,89 +113,29 @@ class TraineesController extends AppController
 
     public function appointments()
     {
-       $trainer_data = $this->conn->execute('SELECT *,h.id as hire_id,t.id as trainer_id  FROM `hire_trainers` as h inner join trainers as t on t.user_id = h.ht_trainer_id where `ht_status` = 2 AND `ht_trainee_id`= '.$this->data['id'])->fetchAll('assoc');
        $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
-       $book_appo = $this->Appointments->find()->where(['app_sender_id' => $this->data['id']])->toArray();
-       $view_appo = $this->Appointments->find()->where(['app_sender_id' => $this->data['id'], 'app_status' => 1, 'app_reciever_type' => 'trainer'])->toArray();
-       $status = "";
-       if(!empty($book_appo))
-       {
-            foreach($book_appo as $ba)
-            {
-                switch ($ba['app_status']) {
-                    case "0":
-                        $status = 'pending';
-                        break;
-                    case "1":
-                        $status = 'approved';
-                        break;
-                    case "2":
-                        $status = 'rejected';
-                        break;
-                    default:
-                        echo "Your favorite color is neither red, blue, nor green!";
-                }
-                $dateArr = explode(" ",$ba['app_date']);
-                $date = $dateArr[0];
-                $newDate = date("Y-m-d", strtotime($date));
-                $book_appo_arr[] = array(
-                        'title' => preg_replace( "/\r|\n/", " ", $ba['app_message']).". status - ".$status,
-                        'id' => $ba['app_id'],
-                        'start' => $newDate ." ".date("H:i", strtotime($ba['app_start_time'])),
-                        'end' => $newDate ." ".date("H:i", strtotime($ba['app_end_time'])),
-                        'backgroundColor' => $ba['app_color']
-                      );
+       $pending_appointments  = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainers` AS `t` ON `a`.`trainer_id` = `t`.`user_id` WHERE `a`.`trainee_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 0 AND `a`.`trainee_status` = 0 AND `a`.`created_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY `a`.`id` DESC')->fetchAll('assoc');
+       $upcoming_appointments = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainers` AS `t` ON `a`.`trainer_id` = `t`.`user_id` WHERE `a`.`trainee_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 1 AND `a`.`trainee_status` = 1 AND `a`.`created_date` >= CURDATE() ORDER BY `a`.`id` DESC')->fetchAll('assoc');
+       if(!empty($upcoming_appointments)){
+          foreach($upcoming_appointments as $ua){
+            $sessionArr = unserialize($ua['session_data']);
+            for ($i=1; $i <= count($sessionArr); $i++) { 
+                $upcomingArr['trainer_name'][] = $ua['trainer_name']." ".$ua['trainer_lname'];
+                $upcomingArr['user_id'][]      = $ua['user_id'];
+                $upcomingArr['trainer_image'][]= $ua['trainer_image'];
+                $upcomingArr['location_name'][]= $sessionArr[$i]['location_address'];
+                $upcomingArr['appo_date'][]    = $sessionArr[$i]['modified_dates'];
+                $upcomingArr['appo_time'][]    = $sessionArr[$i]['modified_times'];
             }
+          }        
        }
-       else
-       {
-            $book_appo_arr = array();
-       }
-
-       if(!empty($view_appo))
-       {
-            foreach($view_appo as $va)
-            {
-                $dateArr = explode(" ",$va['app_date']);
-                $date = $dateArr[0];
-                $newDate = date("Y-m-d", strtotime($date));
-                $view_appo_arr[] = array(
-                        'title' => preg_replace( "/\r|\n/", " ", $va['app_message']),
-                        'id' => $va['app_id'],
-                        'start' => $newDate ." ".date("H:i", strtotime($va['app_start_time'])),
-                        'end' => $newDate ." ".date("H:i", strtotime($va['app_end_time'])),
-                        'backgroundColor' => $va['app_color']
-                      );
-            }
-       }
-       else
-       {
-            $view_appo_arr = array();
-       }
-
-       $this->set('trainer_data', $trainer_data); 
-       $this->set('book_appo_arr', $book_appo_arr); 
-       $this->set('view_appo_arr', $view_appo_arr);
+       else{
+            $upcomingArr = array();
+       }    
+       $this->set('upcomingArr', $upcomingArr);
+       $this->set('pending_appointments', $pending_appointments);
        $this->set('profile_details', $profile_details);
-    }
-
-    public function dropEvent()
-    {
-        if($this->request->is('ajax'))
-        {
-            $id = (int) base64_decode($this->request->data['event_id']);
-            $start_date = explode("T",$this->request->data['start_droped_date']);
-            $end_date = explode("T",$this->request->data['end_droped_date']);
-            $data = array(
-                'app_date' => $start_date[0],
-                'app_start_time' => $start_date[1],
-                'app_end_time' => $end_date[1],
-                );
-            $this->appointments->query()->update()->set($data)->where(['app_id' => $id])->execute();
-            $this->set('message', 'success');
-            $this->set('_serialize',array('message'));
-            $this->response->statusCode(200);
-        }
+       $this->set("from_id",$this->data['id']);
     }
 
     public function getBookSlotsData()
@@ -205,31 +144,6 @@ class TraineesController extends AppController
         {
             $id = (int) base64_decode($this->request->data['app_id']);
             $result_data = $this->conn->execute('SELECT * FROM `appointments` where `app_id` ='.$id)->fetchAll('assoc');
-            $this->set('message', $result_data);
-            $this->set('_serialize',array('message'));
-            $this->response->statusCode(200);
-        }
-    }
-
-    public function deleteAppoinment()
-    {
-        if($this->request->is('ajax'))
-        {
-            $id = (int) base64_decode($this->request->data['id']);
-            $this->appointments->query()->delete()->where(['app_id' => $id])->execute();
-            $this->conn->execute('DELETE FROM notifications WHERE parent_id = '.$id. ' AND noti_type IN("Appoinment","Appoinment Accept","Appoinment Delete","Appoinment Request")');
-            $this->set('message', 'success');
-            $this->set('_serialize',array('message'));
-            $this->response->statusCode(200);
-        }
-    }
-
-    public function getViewAppoData()
-    {
-        if($this->request->is('ajax'))
-        {
-            $id = (int) base64_decode($this->request->data['app_id']);
-            $result_data = $this->conn->execute('SELECT * FROM `appointments` as a inner join trainees as t on t.user_id = a.app_reciever_id where a.`app_id` ='.$id)->fetchAll('assoc');
             $this->set('message', $result_data);
             $this->set('_serialize',array('message'));
             $this->response->statusCode(200);
@@ -696,24 +610,28 @@ class TraineesController extends AppController
 
   public function addProgressImage()
   {
-    if($this->request->is('ajax'))
+    if($this->request->is('post'))
       {
         $fileName = $this->Custom->fileUploading('progress_img','trainee_progress'); 
         $session = $this->request->session();
-          $user_data = $session->read('Auth.User');
+        $user_data = $session->read('Auth.User');
         $data = array(
           'abi_image_name' => $fileName,
           'abi_trainee_id' => $user_data['id'],
-          'abi_status' => 0,
+          'weight'         => $this->request->data['weight'],
+          'abi_status'     => 0,
           'abi_added_date' => Time::now(),
           );
         $user = $this->After_before_images->newEntity();
-      $user = $this->After_before_images->patchEntity($user, $data);
+        $user = $this->After_before_images->patchEntity($user, $data);
         $result = $this->After_before_images->save($user);
-      $lid = $result->abi_id; 
-        $this->set('message', $lid);
-      $this->set('_serialize',array('message'));
-      $this->response->statusCode(200);
+        $lid = $result->abi_id; 
+        if(!empty($lid)){
+          $this->request->session()->write('sucess_alert','Progress photo successfully added !!');
+        }else{
+          $this->request->session()->write('error_alert','Failed please try again !!');
+        }
+        return $this->redirect('/trainees/photoalbum/progress_photo');
       }
   }
 
@@ -1649,7 +1567,7 @@ class TraineesController extends AppController
       return $this->redirect('/trainees/purchasePlan/'.$data['plan_id']);
     }
 
-  public function makePayment()
+  public function makePayment($returnURL)
   { 
       $token = $this->request->session()->read('token');
       $csrf  = $_REQUEST["csrf"];
@@ -1682,7 +1600,7 @@ class TraineesController extends AppController
         $parameters["accessKey"]               = $this->accessKey;
         $parameters["amount"]                  = $amount;
         $parameters["sellerId"]                = $this->merchantId;
-        $parameters["returnURL"]               = $this->returnURL;
+        $parameters["returnURL"]               = $returnURL;
         $parameters["lwaClientId"]             = $this->lwaClientId;
         $parameters["sellerNote"]              = $sellerNote;
         $parameters["sellerOrderId"]           = $sellerOrderId;
@@ -1698,15 +1616,28 @@ class TraineesController extends AppController
       }
       else{
         throw new Exception("Unknown Entity");
-    }
-    }
+  }
+  }
 
-    public function _signParameters(array $parameters, $key)
+  public function walletAmazonPayment()
   {
-      $stringToSign = null;
-      $algorithm    = "HmacSHA256";
-      $stringToSign = $this->_calculateStringToSignV2($parameters);
-      return $this->_sign($stringToSign, $key, $algorithm);
+    $returnURL  = "https://virtualtrainr.com/trainees/resultAmazon";
+    $this->makePayment($returnURL);
+  }
+
+  public function customAmazonPayment()
+  {
+    $dataArr = $this->request->data;
+    $returnURL  = "https://virtualtrainr.com/trainees/resultCustomAmazon";
+    $this->makePayment($returnURL);
+  }
+
+  public function _signParameters(array $parameters, $key)
+  {
+    $stringToSign = null;
+    $algorithm    = "HmacSHA256";
+    $stringToSign = $this->_calculateStringToSignV2($parameters);
+    return $this->_sign($stringToSign, $key, $algorithm);
   }
 
   public function _calculateStringToSignV2(array $parameters)
@@ -1749,11 +1680,15 @@ class TraineesController extends AppController
 
   public function resultAmazon()
   {
+  }
 
+  public function resultCustomAmazon()
+  {
   }
 
   public function success()
   {
+      $returnURL  = "https://virtualtrainr.com/trainees/resultAmazon";
       $response = $_GET;
       $resultCode = $response['resultCode'];
       $signatureReturned = $_GET['signature'];
@@ -1762,7 +1697,7 @@ class TraineesController extends AppController
       $parameters['sellerOrderId'] = rawurlencode($parameters['sellerOrderId']);
       uksort($parameters, 'strcmp');
 
-      $parseUrl = parse_url($this->returnURL);
+      $parseUrl = parse_url($returnURL);
       $stringToSign = "GET\n" . $parseUrl['host'] . "\n" . $parseUrl['path'] . "\n";
 
       foreach ($parameters as $key => $value) {
@@ -1812,10 +1747,42 @@ class TraineesController extends AppController
           }
       }
       $this->Flash->success('Payment Successfully Done Status  - '.$resultCode, ['key' => 'success']);
-      return $this->redirect('/trainees/wallet');
       } else {
-         
+         $this->Flash->error('Payment failed please try again', ['key' => 'edit']);
       }
+    return $this->redirect('/trainees/wallet');
+  }
+
+  public function successCustomAmazon()
+  {
+      $returnURL  = "https://virtualtrainr.com/trainees/resultCustomAmazon";
+      $response = $_GET;
+      echo "<pre>";
+      print_r($response);die;
+      $resultCode = $response['resultCode'];
+      $signatureReturned = $_GET['signature'];
+      $parameters = $_GET;
+      unset($parameters['signature']);
+      $parameters['sellerOrderId'] = rawurlencode($parameters['sellerOrderId']);
+      uksort($parameters, 'strcmp');
+
+      $parseUrl = parse_url($returnURL);
+      $stringToSign = "GET\n" . $parseUrl['host'] . "\n" . $parseUrl['path'] . "\n";
+
+      foreach ($parameters as $key => $value) {
+          $queryParameters[] = $key . '=' . str_replace('%7E', '~', rawurlencode($value));
+      }
+      $stringToSign .= implode('&', $queryParameters);
+
+      $signatureCalculated = base64_encode(hash_hmac("sha256", $stringToSign, $this->secretKey, true));
+      $signatureCalculated = str_replace('%7E', '~', rawurlencode($signatureCalculated));
+      if ($signatureReturned == $signatureCalculated && $resultCode == "Success") {
+        $this->insertPackagePaymentDetails($resultCode,$response['orderReferenceId']);
+        $this->request->session()->write('sucess_alert','Payment successfully completed !!');
+      } else {
+        $this->request->session()->write('error_alert','Payment failed please try again !!');
+      }
+    return $this->redirect('/trainees');
   }
 
   public function creditReturn()
@@ -2748,6 +2715,18 @@ class TraineesController extends AppController
 
   public function content_template(){
 
+  }
+
+  public function deleteMessages()
+  {
+    if($this->request->is('ajax'))
+      {
+         $chatids = $this->request->data['chatids'];
+         $this->conn->execute('DELETE FROM chating WHERE chat_id IN ('.$chatids.')');
+         $this->set('message', 'success');
+         $this->set('_serialize',array('message'));
+         $this->response->statusCode(200);
+      }
   }
 
 

@@ -149,8 +149,6 @@
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="credit">
                                   <form name="form1" method="post" action="https://safe.sandbox-gtpaysecure.net/securepayments/a1/cc_collection.php">
-
-
                                       <input type="hidden" name="CRESecureID"value="gt597835597256SB" />
                                       <input type="hidden" name="return_url" value="https://virtualtrainr.com/return.php" />
                                       <input type="hidden" name="content_template_url" value="https://virtualtrainr.com/content_template_url.php" />
@@ -209,7 +207,7 @@
     OffAmazonPayments.Button("AmazonPayButton", "AE2I6Q8BHJTXA", {
             type: "hostedPayment",
             hostedParametersProvider: function(done) {
-                $.getJSON("<?php echo $this->request->webroot; ?>trainees/makePayment", {
+                $.getJSON("<?php echo $this->request->webroot; ?>trainees/walletAmazonPayment", {
                     amount: parseInt($("#amazon_amount").val()),
                     currencyCode: 'USD',
                     sellerNote: "VirtualTrainr.com",

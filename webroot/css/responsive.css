@@ -47,6 +47,21 @@
 	.notification_wrap li {
      width: 46%;
 }
+.hide_map_btn {
+  font-size: 18px !important;
+  padding: 5px 15px !important;
+}
+
+.hide_map_btn {
+  font-size: 18px !important;
+  padding: 5px 15px !important;
+  right: 32px;
+  top: 42px;
+  z-index: 111;
+}
+.interest_field .form-group {
+  margin-right: 18px;
+}
 .pop_over {
   left: 46px;
   padding: 4px;
@@ -258,6 +273,9 @@
 }
 .calendor_caption_box .calendor_caption .checkbox {
   width: 48.8%;
+}
+.photo_input_box {
+  width: 31%;
 }
 
 #trainer_form .responsive-calendar .day a {
@@ -750,6 +768,12 @@
 .calendor_caption_box .scroll_content {
     height: 364px;
 }
+.interest_field .form-group {
+  margin-right: 15px;
+}
+.hide_map_btn {
+  padding: 8px 14px !important;
+}
 
 
 
@@ -782,6 +806,13 @@
 	.ht_left {
      width: 39px;
      padding-top: 10px;
+}
+.interest_field .form-group {
+  margin-right: 8px;
+
+}
+.photo_input_box {
+  width: 46%;
 }
 .ht_right li:nth-child(2) .dropdown-menu {
   left: -56px !important;
@@ -1729,5 +1760,20 @@ margin-top: 0px;
 .session_slider .item {
   width: 90%;
 }
+.photo_gallery_list .weight_lbs {
+  font-size: 10px;
+  padding-top: 4px;
+
+}
+.photo_gallery_list .date_photo {
+  font-size: 10px;
+}
+.photo_upload_sect h5 {
+  font-size: 11px;
+}
+.photo_upload_sect span {
+  width: 110px;
+}
+
 
 }

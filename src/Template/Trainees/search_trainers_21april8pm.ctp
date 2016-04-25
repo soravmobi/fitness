@@ -36,13 +36,12 @@ function unique_multidim_array($array, $key) {
 } 
                         
         $interests_hobbyArray = unique_multidim_array($trainers,'interests_hobby');                 
-        $locationArray = unique_multidim_array($trainers,'trainer_city');                 ?>
+        $locationArray = unique_multidim_array($trainers,'location');                 ?>
                         
                         
-                         <select class="form-control"  id="byinterest" >
-                         <option value="">Select Interests</option>
+                         <select class="form-control" >
+                         <option value="">Please Select</option>
                          	<?php foreach($interests_hobbyArray as $t) {
-							 if(!empty($t['interests_hobby']) && $t['interests_hobby'] !="" && $t['interests_hobby'] !=null) 
 							 echo "<option value='".$t['interests_hobby']."'>".$t['interests_hobby']."</option>"; 
 							}?>	
 						</select>
@@ -50,11 +49,10 @@ function unique_multidim_array($array, $key) {
                          <div class="form-group">
                              <!-- <div class="select_icon"><i class="fa fa-caret-down"></i></div> -->
                          	<!--<input type="text" class="form-control" id="bylocation" placeholder="by location ?" value="<?php //echo (!empty($_GET["loc"]))? $_GET["loc"] : ""; ?>">	-->
-                         	<select class="form-control" id="bylocation">
-                         	<option value="">Select City</option>
+                         	<select class="form-control" >
+                         	<option value="">Please Select</option>
                          	<?php foreach($locationArray as $t) { 
-								if(!empty($t)) 
-								echo "<option value='".$t['trainer_city']."'>".$this->Custom->getCityName($t['trainer_city'])."</option>";
+								echo "<option value='".$t['location']."'>".$t['location']."</option>";
 							}?>	
 						</select>	
                          </div>
@@ -63,7 +61,7 @@ function unique_multidim_array($array, $key) {
                        <div class="col-md-2 col-sm-2">
                          <div class="form-group">
                              <button type="button" id="search_trainer">search</button>
-                             <button type="button" class="hide_map_btn">Hide map</button>
+                             <button type="button" class="hide_map_btn">hide map</button>
                              
                          </div>
                        </div>
@@ -121,7 +119,6 @@ function unique_multidim_array($array, $key) {
                          <li>
                      		<span>skore :</span>
                             <div id="greencircle" data-percent="<?php echo (10 * $t['trainer_rating']); ?>" class="small green"></div>
-                            
                         </li>
                       </ul>
                    </div>
@@ -163,17 +160,10 @@ function unique_multidim_array($array, $key) {
     
 	$(document).ready(function(){
 		$('.hide_map_btn').click(function(){
-		
-if($(this).html()=='Show Map'){
-
-$('#map').show(); $(this).html('Hide Map');
-
-}else{ 
-
-$('#map').hide();
-$(this).html('Show Map');
-
-}				
+		//alert('Remove Map');
+		$('#map').remove();
+		$(this).remove();
+			
 		});
 	var startPos;
 	var lat;
@@ -265,24 +255,24 @@ if (document.location.search.indexOf('lat=') >= 0) {
 
 
 		/* Search Trainer by search button */
-		$("body").on("click","#search_trainer", function(){ 
+		$("body").on("click","#search_trainer", function(){
 			var url = [];
 			var strg = "";
-			var name = $("#byname").val();
-			var intr = $("#byinterest").val();
-			var loc = $("#bylocation").val();
-/*if(lat){
+			var name = $("#byname").val().trim();
+			var int = $("#byinterest").val().trim();
+			var loc = $("#bylocation").val().trim();
+if(lat){
 url.push("lat="+lat);
 url.push("lng="+lng);
-	}*/
+	}
 			if(name != "")
 			{
 				url.push("name="+name);
 			}
 
-			if(intr != "")
+			if(int != "")
 			{
-				url.push("int="+intr);
+				url.push("int="+int);
 			}
 
 			if(loc != "")
@@ -467,8 +457,7 @@ url.push("lng="+lng);
 						        list += '                <li><span>Location :</span>'+t['city_name']+'</li>';
 						        list += '                 <li>';
 						        list += '             		<span>skore :</span>';
-						        list += '                    <div id="greencirclenew" data-percent="'+t['trainer_rating']+'" class="small green"></div>';
-						         //   list += '                    <div id="greencirclenew" data-percent="'+(10 * t['trainer_rating'])+'" class="small green"></div>';
+						        list += '                    <div id="greencirclenew" data-percent="'+(10 * t['trainer_rating'])+'" class="small green"></div>';
 						        list += '                </li>';
 						        list += '              </ul>';
 						        list += '           </div>';
@@ -526,23 +515,16 @@ url.push("lng="+lng);
 	    var map = new google.maps.Map(document.getElementById('map'), {
 	      zoom: 5,
 	      center: new google.maps.LatLng(trainers[0][1],trainers[0][2]),
-	      mapTypeId: google.maps.MapTypeId.ROADMAP,
-		  zoomControl: true,
-		  mapTypeControl: false,
-		  scaleControl: true,
-		  streetViewControl: true,
-		  rotateControl: false,
-		  fullscreenControl: false
+	      mapTypeId: google.maps.MapTypeId.ROADMAP
 	    });
 	   // var infowindow = new google.maps.InfoWindow();
 
 	    var marker, i;
 	    var markers = [];
 		console.log(locations);	
- 
- 
+
 	    for (i = 0; i < locations.length; i++) {  
-			var contentString = '<div class="trainer_wrap_box"><div class="heading_payment_main"></div><div class="trainer_top_main"><div class="trainer_top clearfix"><h2>$ '+locations[i][3]+'</h2></div>                     <div class="img_trainer"><a href="<?php echo $this->request->webroot; ?>trainerProfile/'+btoa(locations[i][4])+'"><img src=<?php echo $this->request->webroot; ?>uploads/trainer_profile/'+locations[i][5]+' " class="img-responsive"></a></div></div><div class="trainer_bottom"><div class="name_wrap"><a href="<?php echo $this->request->webroot; ?>/fitness/trainerProfile/'+btoa(locations[i][4])+'">'+locations[i][0]+' '+locations[i][6]+'</a></div><div class="location_wrap"><ul><li><span>Location :</span> '+locations[i][7]+'</li><li><span>skore :</span><div id="greencircle" data-percent="'+(10 * locations[i][8])+'" class="small green percircle animate"><span>'+locations[i][8]+'%</span><div class="slice"><div class="bar" style="transform: rotate(136.8deg);"></div><div class="fill"></div></div></div></li></ul></div><div class="describe_wrap"><ul><p><span>Skills:</span>'+locations[i][9]+'</p><p><span>Interests :</span>  '+locations[i][10]+'<span class="show_div">  Interests</span></p><p><span>Certifications :</span> '+locations[i][11]+'<span class="show_div"> Certification   </span></p></ul></div></div></div>';
+			var contentString = '<div class="trainer_wrap_box"><div class="heading_payment_main"></div><div class="trainer_top_main"><div class="trainer_top clearfix"><h2>$ '+locations[i][3]+'</h2></div>                     <div class="img_trainer"><a href="/fitness/trainerProfile/NjI="><img src="/fitness/uploads/trainer_profile/566e6ec9c0833.jpg" class="img-responsive"></a>                     </div></div><div class="trainer_bottom"><div class="name_wrap"><a href="/fitness/trainerProfile/NjI=">'+locations[i][0]+' '+locations[i][6]+'</a></div><div class="location_wrap"><ul><li><span>Location :</span> '+locations[i][7]+'</li><li><span>skore :</span><div id="greencircle" data-percent="'+(10 * locations[i][8])+'" class="small green percircle animate"><span>'+locations[i][8]+'%</span><div class="slice"><div class="bar" style="transform: rotate(136.8deg);"></div><div class="fill"></div></div></div></li></ul></div><div class="describe_wrap"><ul><p><span>Skills:</span>'+locations[i][9]+'</p><p><span>Interests :</span>  '+locations[i][10]+'<span class="show_div">  Interests</span></p><p><span>Certifications :</span> '+locations[i][11]+'<span class="show_div"> Certification   </span></p></ul></div></div></div>';
 
 		  var infowindow = new google.maps.InfoWindow({
 			content: contentString
@@ -550,8 +532,7 @@ url.push("lng="+lng);
 	      marker = new google.maps.Marker({
 	        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
 	        content:contentString,
-	        map: map,
- icon: 'https://virtualtrainr.com/img/favicon.ico'
+	        map: map
 	      });
 	      google.maps.event.addListener(marker, 'click', (function(marker, i) {
 		    return function() {
@@ -565,9 +546,3 @@ url.push("lng="+lng);
 	
 	}
 </script>
-<style>
-#map .trainer_wrap_box {
-   
-    margin-top: 0;
-   }
-</style>

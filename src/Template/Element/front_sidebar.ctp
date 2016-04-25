@@ -34,6 +34,7 @@
     <?php if($user_data['user_type'] == "trainee") { ?>
         <li><a href="<?php echo $this->request->webroot; ?>trainees/profile"><i class="fa fa-user"></i>My Profile <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainees/messages"><i class="fa fa-envelope"></i>Inbox <i class="fa fa-chevron-left pull-right"></i></a></li>
+        <li><a href="<?php echo $this->request->webroot; ?>trainees/appointments"><i class="fa fa-pencil-square-o"></i>Appointments <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainees/mealplans"><i class="fa fa-pencil-square-o"></i>Meal Plans <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainees/grocerylist"><i class="fa fa-pencil-square-o"></i>Grocery List <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>ourTrainers"><i class="fa fa-users"></i>Certified Trainers <i class="fa fa-chevron-left pull-right"></i></a></li>
@@ -95,9 +96,10 @@
             <?php } ?>
            
             </ul>
-            <div class="see_all">
-                  <ul><li><a href="<?php echo $this->request->webroot; ?>trainers/notifications">See all</a></li><ul>
+           
             </div>
+             <div class="see_all">
+                  <ul><li><a href="<?php echo $this->request->webroot; ?>trainers/notifications">See all</a></li><ul>
             </div>
             </div>
           <?php } ?>

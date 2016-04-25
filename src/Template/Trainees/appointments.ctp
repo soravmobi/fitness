@@ -1,478 +1,218 @@
 <?php include "trainee_dashboard.php"; ?>
 
-     <section class="trainee_dash_body">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="meal_plan_sec">
-        <!-- Book Appoinment Modal Start -->
-        <div class="modal fade" id="book_appo_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Book Appointments</h4>
-              </div>
-              <div class="modal-body">
-                <form method="post" action="<?php echo $this->request->webroot; ?>trainees/trainerBookAppoinments" >
-                  <div class="col-md-12">                        
-                      <div class="col-md-4"> Date</div>
-                      <div class="col-md-8">
-                        <input type="text" readonly id="app_date" name="app_date" class="form-control" />
-                      </div>
-                  </div></br></br>
-                  <div class="col-md-12">                        
-                      <div class="col-md-4"> Select Trainr</div>
-                      <div class="col-md-8">
-                        <select class="form-control" name="app_reciever_id" required>
-                          <option value="">Select Trainr</option>
-                          <?php foreach($trainer_data as $t) { ?>
-                          <option value="<?php echo $t['user_id']; ?>"><?php echo $t['trainer_name']." ".$t['trainer_lname']; ?></option>
-                          <?php } ?>
-                        </select>
-                      </div>
-                  </div></br></br>
-                  <div class="col-md-12">                        
-                      <div class="col-md-4">Start Time</div>
-                      <div class="col-md-8">
-                        <input type="text"   data-format="hh:mm A" id="app_start_time" required="required" name="app_start_time" class="form-control" />
-                      </div> 
-                  </div></br></br>
-                  <div class="col-md-12">                        
-                      <div class="col-md-4">End Time</div>
-                      <div class="col-md-8">
-                        <input type="text"  data-format="hh:mm A" id="app_end_time" required="required" name="app_end_time" class="form-control" />
-                      </div>
-                  </div></br></br>
-                  <div class="col-md-12">                        
-                      <div class="col-md-4">Color</div>
-                      <div class="col-md-8">
-                        <input type="color"  id="app_color"  name="app_color" class="form-control" />
-                      </div>
-                  </div></br></br>
-                  <div class="col-md-12">                        
-                    <div class="col-md-4"> Message</div>
-                    <div class="col-md-8">
-                      <textarea required name="app_message" id="app_message" class="form-control" rows="2"></textarea>
-                    </div>
-                </div></br></br></br></br>
-                <div class="col-md-12">                        
-                    <!-- <div class="col-md-4"> Address</div> -->
-                    <div class="col-md-8">
-                      <!-- <input id="pac-input" required class="controls form-control" type="text" placeholder="Enter a location"> -->
-                      <div id="appo_map"></div>
-                    </div>
-                </div></br></br>
-               </div></br>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
-              </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <!--  Book Appoinment Modal End -->
-
-        <!-- Book Appoinment View Modal Start -->
-        <div class="modal fade" id="book_appo_view" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Appoinment</h4>
-              </div>
-              <div class="modal-body">
-                  <div class="col-md-12">                        
-                      <div class="col-md-4"> Date</div>
-                      <div class="col-md-8">
-                        <input type="text" readonly id="app_date_view"  class="form-control" />
-                      </div>
-                  </div></br></br>
-                  <div class="col-md-12">                        
-                      <div class="col-md-4">Start Time</div>
-                      <div class="col-md-8">
-                        <input type="text" readonly id="app_start_time_view"  class="form-control" />
-                      </div>
-                  </div></br></br>
-                  <div class="col-md-12">                        
-                      <div class="col-md-4">End Time</div>
-                      <div class="col-md-8">
-                        <input type="text" readonly id="app_end_time_view"  class="form-control" />
-                      </div>
-                  </div></br></br>
-                  <div class="col-md-12">                        
-                    <div class="col-md-4"> Message</div>
-                    <div class="col-md-8">
-                      <textarea readonly id="app_message_view" class="form-control" rows="2"></textarea>
-                    </div>
-                </div></br></br>
-               </div></br>
-              <div class="modal-footer">
-              <!-- <button type="button" id="edit-btn" data-dismiss="modal" class="btn btn-primary">Edit</button> -->
-              <button type="button" id="delete-btn" class="btn btn-danger">Delete</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--  Book Appoinment View Modal End -->
-
-        <!-- View Appoinment View Modal Start -->
-        <div class="modal fade" id="view_appo_view" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Appoinment</h4>
-              </div>
-              <div class="modal-body">
-                  <div class="col-md-12">                        
-                      <div class="col-md-4">Appoinment Date</div>
-                      <div class="col-md-8">
-                        <input type="text" readonly id="tainee_app_date_view"  class="form-control" />
-                      </div>
-                  </div></br></br>
-                  <div class="col-md-12">                        
-                      <div class="col-md-4">Start Time</div>
-                      <div class="col-md-8">
-                        <input type="text" readonly id="tainee_app_start_time_view"  class="form-control" />
-                      </div>
-                  </div></br></br>
-                  <div class="col-md-12">                        
-                      <div class="col-md-4">End Time</div>
-                      <div class="col-md-8">
-                        <input type="text" readonly id="tainee_app_end_time_view"  class="form-control" />
-                      </div>
-                  </div></br></br>
-                  <div class="col-md-12">                        
-                    <div class="col-md-4">
-                        Trainee 
-                    </div>
-                    <div class="col-md-8">
-                      <input type="text" readonly id="tainee_app_reciever_id_view"  class="form-control" />
-                    </div>
-                </div></br></br>
-                  <div class="col-md-12">                        
-                    <div class="col-md-4">Appoinment Message</div>
-                    <div class="col-md-8">
-                      <textarea readonly id="tainee_app_message_view" class="form-control" rows="2"></textarea>
-                    </div>
-                </div></br></br>
-               </div></br>
-              <div class="modal-footer">
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--  View Appoinment View Modal End -->
-
-        <div class="tab-content">
-        <?php echo $this->Flash->render('edit') ?>
-        <?php echo $this->Custom->successMsg(); ?>
-        <?php echo $this->Custom->errorMsg(); ?>
-        <?php echo $this->Custom->loadingImg(); ?>
-              <!-- Nav tabs -->
-              <ul class="nav nav-tabs inner_tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#book_app" aria-controls="home" role="tab" data-toggle="tab">Book Appointments</a></li>
-              </ul>
-
-              <div class="tab-content inner_tab_cont">
-                <div class="full_calander">
-                  <div class="row"> 
-                    <div class="col-sm-6">
-                        <!-- Responsive calendar - START -->
-                              <div class="responsive-calendar">
-                                <div class="controls clearfix">
-                                    <a class="pull-left" data-go="prev"><div class="btn"><i class=" glyphicon glyphicon-menu-left"></i></div></a>
-                                    <h4><span data-head-day></span><span data-head-month></span> <span data-head-year></span> </h4>
-                                    <a class="pull-right" data-go="next"><div class="btn"><i class=" glyphicon glyphicon-menu-right"></i></div></a>
-                                </div>
-                                <div class="day-headers">
-                                 <div class="day header">Sun</div>
-                                  <div class="day header">Mon</div>
-                                  <div class="day header">Tue</div>
-                                  <div class="day header">Wed</div>
-                                  <div class="day header">Thu</div>
-                                  <div class="day header">Fri</div>
-                                  <div class="day header">Sat</div>
-                                </div>
-                                <div class="days" data-group="days">
-                                  <!-- the place where days will be generated -->
-                                </div>
-                              </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="appointment_list">
-                            <div class="al_heading">
-                                <h4>7 August 2015</h4>
-                              </div>
-                              <div class="al_body">
-                                <ul>
-                                    <li>
-                                        <div class="alb_img">
-                                        <img src="<?php echo $this->request->webroot; ?>images/trainee_img.jpg" alt="img" class="img-circle">
-                                          </div>
-                                          <div class="alb_txt">
-                                            <p><span>Appointments with</span> <strong>John Reart</strong></p>
-                                              <span>02 / jan / 2015</span>
-                                          </div>
-                                      </li>
-                                      <li>
-                                        <div class="alb_img">
-                                        <img src="<?php echo $this->request->webroot; ?><?php echo $this->request->webroot; ?>images/trainee_img.jpg" alt="img" class="img-circle">
-                                          </div>
-                                          <div class="alb_txt">
-                                            <p><span>Appointments with</span> <strong>John Reart</strong></p>
-                                              <span>02 / jan / 2015</span>
-                                          </div>
-                                      </li>
-                                      <li>
-                                        <div class="alb_img">
-                                        <img src="<?php echo $this->request->webroot; ?>images/trainee_img.jpg" alt="img" class="img-circle">
-                                          </div>
-                                          <div class="alb_txt">
-                                            <p><span>Appointments with</span> <strong>John Reart</strong></p>
-                                              <span>02 / jan / 2015</span>
-                                          </div>
-                                      </li>
-                                      <li>
-                                        <div class="alb_img">
-                                        <img src="<?php echo $this->request->webroot; ?>images/trainee_img.jpg" alt="img" class="img-circle">
-                                          </div>
-                                          <div class="alb_txt">
-                                            <p><span>Appointments with</span> <strong>John Reart</strong></p>
-                                              <span>02 / jan / 2015</span>
-                                          </div>
-                                      </li>
-                                      <li>
-                                        <div class="alb_img">
-                                        <img src="<?php echo $this->request->webroot; ?>images/trainee_img.jpg" alt="img" class="img-circle">
-                                          </div>
-                                          <div class="alb_txt">
-                                            <p><span>Appointments with</span> <strong>John Reart</strong></p>
-                                              <span>02 / jan / 2015</span>
-                                          </div>
-                                      </li>
-                                      <li>
-                                        <div class="alb_img">
-                                        <img src="<?php echo $this->request->webroot; ?>images/trainee_img.jpg" alt="img" class="img-circle">
-                                          </div>
-                                          <div class="alb_txt">
-                                            <p><span>Appointments with</span> <strong>John Reart</strong></p>
-                                              <span>02 / jan / 2015</span>
-                                          </div>
-                                      </li>
-                                      <li>
-                                        <div class="alb_img">
-                                        <img src="<?php echo $this->request->webroot; ?>images/trainee_img.jpg" alt="img" class="img-circle">
-                                          </div>
-                                          <div class="alb_txt">
-                                            <p><span>Appointments with</span> <strong>John Reart</strong></p>
-                                              <span>02 / jan / 2015</span>
-                                          </div>
-                                      </li>
-                                      <li>
-                                        <div class="alb_img">
-                                        <img src="<?php echo $this->request->webroot; ?>images/trainee_img.jpg" alt="img" class="img-circle">
-                                          </div>
-                                          <div class="alb_txt">
-                                            <p><span>Appointments with</span> <strong>John Reart</strong></p>
-                                              <span>02 / jan / 2015</span>
-                                          </div>
-                                      </li>
-                                      <li>
-                                        <div class="alb_img">
-                                        <img src="<?php echo $this->request->webroot; ?>images/trainee_img.jpg" alt="img" class="img-circle">
-                                          </div>
-                                          <div class="alb_txt">
-                                            <p><span>Appointments with</span> <strong>John Reart</strong></p>
-                                              <span>02 / jan / 2015</span>
-                                          </div>
-                                      </li>
-                                      <li>
-                                        <div class="alb_img">
-                                        <img src="<?php echo $this->request->webroot; ?>images/trainee_img.jpg" alt="img" class="img-circle">
-                                          </div>
-                                          <div class="alb_txt">
-                                            <p><span>Appointments with</span> <strong>John Reart</strong></p>
-                                              <span>02 / jan / 2015</span>
-                                          </div>
-                                      </li>
-                                      <li>
-                                        <div class="alb_img">
-                                        <img src="<?php echo $this->request->webroot; ?>images/trainee_img.jpg" alt="img" class="img-circle">
-                                          </div>
-                                          <div class="alb_txt">
-                                            <p><span>Appointments with</span> <strong>John Reart</strong></p>
-                                              <span>02 / jan / 2015</span>
-                                          </div>
-                                      </li>
-                                      <li>
-                                        <div class="alb_img">
-                                        <img src="<?php echo $this->request->webroot; ?>images/trainee_img.jpg" alt="img" class="img-circle">
-                                          </div>
-                                          <div class="alb_txt">
-                                            <p><span>Appointments with</span> <strong>John Reart</strong></p>
-                                              <span>02 / jan / 2015</span>
-                                          </div>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
+    <section class="payment_details appointements_page">
+         <div class="top_bar_wrap">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 col-sm-12">
+                  <div class="tbw_text">
+                  <i class="fa fa-book"></i> Appointments 
+  
                   </div>
-                </div>
+                  <div class="step_box">
+                    Step 3 of 3
+                  </div>
               </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-     </section>   
-        
-    </div>
-    <!--Main container sec end-->
+             </div>
+           </div>
+         </div>
+         <div class="container">
+              
+               <div class="row">
+               <div class="col-md-4 col-sm-4">
+                  <!-- Responsive calendar - START -->
 
-<!-- Book Appoinments View Start -->
+                        <div class="responsive-calendar">
+                        <div class="controls clearfix">
+                        <h4 class="text-center"><span data-head-year></span> <span data-head-month></span></h4>
+                            <a class="pull-left" data-go="prev"><div class="btn prev_btn "><i class="fa fa-angle-double-left"></i>
+                            </div></a>
+                            <a class="pull-right" data-go="next"><div class="btn next_btn"><i class="fa fa-angle-double-right"></i>
+                            </div></a>
+                        </div>
+                        <div class="calendor_content">
+                        <div class="heading_payment_main">
+                          </div>
+                          <div class="session_content">
+                        <div class="day-headers">
+                          <div class="day header">Mon</div>
+                          <div class="day header">Tue</div>
+                          <div class="day header">Wed</div>
+                          <div class="day header">Thu</div>
+                          <div class="day header">Fri</div>
+                          <div class="day header">Sat</div>
+                          <div class="day header">Sun</div>
+                        </div>
+                        <div class="days" data-group="days">
+                         </div> 
+                        </div>
+                      </div>
+                     </div>
+      <!-- Responsive calendar - END -->
+               </div>
+                  <div class="col-md-4 col-sm-4">
+                    <div class="appointement_head">
+                      Upcoming Appointments
+                    </div>
+                        <div class="session_setails_sec appointement_sec">
+                          <div class="heading_payment_main">
+                          
+                          </div>
+                           
+                           <ul class="session_content scroll_content mCustomScrollbar _mCS_1">
+                            <?php       
+                            if(!empty($upcomingArr)){
+                              $upcomingArrCount = count($upcomingArr['trainer_name']);
+                            }else{
+                              $upcomingArrCount = 0; ?>
+                              </br><center><h4>Not found upcoming appointments</h4></center>
+                          <?php } 
+                            for ($i=0; $i < $upcomingArrCount; $i++) { ?>
+                                <li>
+                                <div class="main_block">
+                                 <div class="circle_box_main">
+                                  <div class="small_circle"></div>
+                                <div class="icon_block big_icon gray_color">
+                                <img src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $upcomingArr['trainer_image'][$i]; ?>" class="img-responsive">
+                                 </div>
+                                 </div>
+                                  <div class="text_block"><div class="appointer_name"><?php echo $upcomingArr['trainer_name'][$i]; ?></br> <span><?php echo date('d F, Y', strtotime($upcomingArr['appo_date'][$i])); ?>  </span></div> <span><?php echo $upcomingArr['appo_time'][$i]; ?></span></div>
+                                  <div class="timer">
+                                    <div id="defaultCountdown"></div>
+                                  </div>
+                               </div>
+                                <?php if(!empty($upcomingArr['location_name'][$i])){ ?>
+                                 <div class="icon_main">
+                                    <div class="icon_block"><i class="fa fa-map-marker"></i> </div>
+                                    <div class="text_block"><?php echo $upcomingArr['location_name'][$i]; ?></div>                    
+                                  </div>
+                                <?php } ?>
+                                <div class="chat_box">
+                                    <div class="icon_block big_icon">
+                                      <a href="javascript:void(0);" id="trainer-appointments" c_type="chat" t_type="trainer" from_id="<?php echo $from_id; ?>" to_id="<?php echo $upcomingArr['user_id'][$i]; ?>" class="user_call" title="Text Chat"><i class="fa fa-weixin"></i></a>
+                                    </div>
+                                    <div class="bullet_box"><i class="fa fa-circle"></i>  <i class="fa fa-circle"></i> <i class="fa fa-circle"></i> </div>
+                                </div>
+                              </li>
+                            <?php } ?>
+                            </ul>
+                        </div>
+                  </div>
+                  <div class="col-md-4 col-sm-4">
+                    <div class="appointement_head">
+                      Pending Appointments 
+                    </div>
+                        <div class="session_setails_sec appointement_sec pending_appointement">
+                          <div class="heading_payment_main">
+                          </div>
+                           
+                           <ul class="session_content scroll_content mCustomScrollbar _mCS_1">
+                           <?php if(empty($pending_appointments)){ ?>
+                            </br><center><h4>Not found pending appointments</h4></center>
+                           <?php }else{ ?>
+                            <?php foreach($pending_appointments as $pa) { ?>
+                              <li>
+                                <div class="main_block">
+                                <div class="circle_box_main">
+                                   <div class="small_circle"></div>
+                                      <div class="icon_block big_icon gray_color">
+                                        <img src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $pa['trainer_image']; ?>" class="img-responsive">
+                                     </div>   
+                                    </div>
+                                    <?php $session_data = unserialize($pa['session_data']); ?>
+                                    <div class="text_block">
+                                        <div class="appointer_name"><?php echo ucwords($pa['trainer_name']." ".$pa['trainer_lname']); ?> </div> <span><?php echo count($session_data); ?> <?php echo (count($session_data) > 1) ? "Sessions" : "Session"; ?> - $<?php echo round($pa['final_price'],2); ?></span>
+                                    </div>
+                                </div>
+                                <div class="icon_main">
+                                    <div class="clock_main">
+                                        <?php 
+                                          date_default_timezone_set("Asia/Calcutta");
+                                          $purchase_date     = $pa['created_date']; 
+                                          $current_date      = date('Y-m-d H:i:s');
+                                          $start_date        = new DateTime($current_date);
+                                          $since_start       = $start_date->diff(new DateTime($purchase_date));
+                                          $remaining_hour    = 24 - $since_start->h;
+                                          $remaining_minutes = $since_start->i;
+                                          $remaining_seconds = $since_start->s;
+                                        ?>
+                                        <div id="clockdiv_<?php echo $pa['app_id']; ?>"  onload="counter(<?php echo $pa['app_id']; ?>,<?php echo $remaining_hour ; ?>,<?php echo $remaining_minutes; ?>,<?php echo $remaining_seconds; ?>)">
+                                            <ul>
+                                                <li>
+                                                    <span class="hours"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="minutes"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="seconds"></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat_box">
+                                    <div class="icon_block big_icon">
+                                        <a href="javascript:void(0);" id="trainer-appointments" c_type="chat" t_type="trainer" from_id="<?php echo $from_id; ?>" to_id="<?php echo $pa['trainer_id']; ?>" class="user_call" title="Text Chat"><i class="fa fa-weixin"></i></a>
+                                    </div>
+                                    <div class="bullet_box"><a href="javascript:void(0);"><i class="fa fa-circle"></i> <i class="fa fa-circle"></i> <i class="fa fa-circle"></i></a></div>
+                                </div>
+                            </li>
+                            <?php } } ?>
+                            </ul>
+                        </div>
+                  </div>
+               </div>
+            </div>
+        </section>
 
 <script type="text/javascript">
-  $(document).ready(function(){
-    $('a.book_slots').click(function(){
-    var app_id = $(this).attr('main');
-    $('#book_appo_view').modal('show');
 
-    $.ajax({
-        url:"<?php echo $this->request->webroot; ?>trainees/getBookSlotsData",
-        type:"post",
-        data:{app_id : app_id},   
-        dataType : "json",                 
-        success: function(data){
-            $('#app_date_view').val(data.message[0]['app_date']);
-            $('#app_start_time_view').val(data.message[0]['app_start_time']);
-            $('#app_end_time_view').val(data.message[0]['app_end_time']);
-            $('#app_message_view').val(data.message[0]['app_message']);
-            $('button#delete-btn,button#edit-btn').attr('main',data.message[0]['app_id']);
-          }
-      });
-    });
-  });
-</script>
+/************************************* js for clockdiv timer start ***********************************************************/
 
-<!-- Book Appoinments View End -->
-
-<!-- Delete Appoinment Start -->
-
-<script type="text/javascript">
-    $(document).ready(function(){
-    $("body").on('click','#delete-btn',function(){
-    if (confirm("Are You Sure?")) {
-    var id = btoa($(this).attr('main'));
-      $.ajax({
-              url:"<?php echo $this->request->webroot; ?>trainees/deleteAppoinment",
-              type:"post",
-              data:{id:id},
-              dataType:"json",
-              success: function(data){
-                  if(data.message == 'success')
-                  {
-                    window.location.reload(1);
-                  }
-              }
-          });
-        }
-        else{
-          return false;
-        }
-      });
-    });
-</script>
-
-<!-- Delete Appoinment End -->
-
-<!-- View Appoinments View Start -->
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#view_app').on("click",".book_app",function(){
-    var app_id = btoa($(this).attr('main'));
-    $('#view_appo_view').modal('show');
-
-    $.ajax({
-        url:"<?php echo $this->request->webroot; ?>trainees/getViewAppoData",
-        type:"post",
-        data:{app_id : app_id},   
-        dataType : "json",                 
-        success: function(data){
-            var appo_date = data.message[0]['app_date'];
-            var res = appo_date.split("T"); 
-            $('#tainee_app_date_view').val(res[0]);
-            $('#tainee_app_reciever_id_view').val(data.message[0]['trainee_name']);
-            $('#tainee_app_message_view').val(data.message[0]['app_message']);
-            $('#tainee_app_start_time_view').val(data.message[0]['app_start_time']);
-            $('#tainee_app_end_time_view').val(data.message[0]['app_end_time']);
-          }
-      });
-    });
-  });
-</script>
-
-<!-- View Appoinments View End -->
-
-<!-- Appoinemnt Google Map Start -->
-
-<script>
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('appo_map'), {
-    center: {lat: 50.447978, lng: -104.6066559},
-    zoom: 13
-  });
-
-  var input = document.getElementById('pac-input');
-
-  var autocomplete = new google.maps.places.Autocomplete(input);
-  autocomplete.bindTo('bounds', map);
-
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-  var infowindow = new google.maps.InfoWindow();
-  var marker = new google.maps.Marker({
-    map: map,
-    icon : "<?php echo $this->request->webroot; ?>img/favicon.ico",
-    title: 'Virtual TrainR'
-  });
-  marker.addListener('click', function() {
-    infowindow.open(map, marker);
-  });
-
-  autocomplete.addListener('place_changed', function() {
-    var location = input.value;
-    infowindow.close();
-    var place = autocomplete.getPlace();
-    if (!place.geometry) {
-      return;
-    }
-
-    if (place.geometry.viewport) {
-      map.fitBounds(place.geometry.viewport);
-    } else {
-      map.setCenter(place.geometry.location);
-      map.setZoom(17);
-    }
-
-    marker.setPlace({
-      placeId: place.place_id,
-      location: place.geometry.location
-    });
-
-    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-        'Place ID: ' + place.place_id + '<br>' +
-        place.formatted_address);
-  });
+function counter(appid,hour,minutes,seconds){
+  var deadline = new Date(Date.parse(new Date()) + hour * minutes * seconds * 1000);
+  initializeClock('clockdiv_'+appid, deadline);
 }
+
+$(function(){
+  $('div[onload]').trigger('onload');
+});
+
+function getTimeRemaining(endtime) {
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  return {
+    'total': t,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+}
+
+function initializeClock(id, endtime) {
+  var clock = document.getElementById(id);
+  var hoursSpan = clock.querySelector('.hours');
+  var minutesSpan = clock.querySelector('.minutes');
+  var secondsSpan = clock.querySelector('.seconds');
+
+  function updateClock() {
+    var t = getTimeRemaining(endtime);
+    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+    }
+  }
+
+  updateClock();
+  var timeinterval = setInterval(updateClock, 1000);
+}
+
+/************************************* js for clockdiv timer end ***********************************************************/
+
 </script>
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWfYCyyRD7ROK-7d9W3WLr1rHQnWaf2Bw &libraries=places&signed_in=true&callback=initMap"
-        async defer></script>
-
-
-<!-- Appoinemnt Google Map End -->
-

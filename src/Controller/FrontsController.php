@@ -26,7 +26,8 @@ class FrontsController extends AppController
 	        $this->set('messages', $messages);
 	        $this->set('notifications', $this->total_notifications);
 	        $this->set('noti_data', $noti_data);
-        }else{
+	        $this->set('profile_details', $user_details);
+        }else if($user_type == 'trainer'){
         	$user_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
         	$this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
 	        $noti_data = $this->getTrainerNotifications();
@@ -34,8 +35,13 @@ class FrontsController extends AppController
 	        $this->set('messages', $messages);
 	        $this->set('notifications', $this->total_notifications);
 	        $this->set('noti_data', $noti_data);
+	        $this->set('profile_details', $user_details);
+        }else{
+        	$this->set('messages', array());
+	        $this->set('notifications', array());
+	        $this->set('noti_data', array());
+	        $this->set('profile_details', array());
         }
-        $this->set('profile_details', $user_details);
     }
 
     public function getTraineeChatMessages()
@@ -100,7 +106,7 @@ class FrontsController extends AppController
         $this->set('gallery_videos', $gallery_videos);
         $this->set("from_id",$this->data['id']);
         $this->set("to_id",$id);
-		$this->set('profile_details', $result);
+		$this->set('trainer_profile_details', $result);
 		$this->render('/Fronts/trainer_profile');
 	}
 

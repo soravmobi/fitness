@@ -21,7 +21,7 @@
     var successUrl = "";
 
     if (resultCode === 'Success') {
-        var successUrl = '<?php echo $this->request->webroot; ?>trainees/success';
+        var successUrl = '<?php echo $this->request->webroot; ?>trainees/successCustomAmazon';
         window.location.href = successUrl + urlParams;
     }
 

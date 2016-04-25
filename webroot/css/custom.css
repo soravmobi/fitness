@@ -658,7 +658,7 @@ color:#fff; border-color:#ec473f;}
 }
 .review_txt p {padding: 15px 0;}
 .review_by{ padding-bottom:15px; font-weight:bold;} 
-.review_body{ padding:10px; height:518px; overflow:hidden;}
+.review_body{ padding:10px; height:300px; overflow:hidden;}
 .review_body li:not(:last-child) { border-bottom: 1px solid #dddddd;}
 .trainers_pic {padding:10px 10px 5px;}
 .trainers_pic li {display: block;float: left;margin:0 2% 2% 0;text-align: center; width: 32%;}                      
@@ -1549,7 +1549,7 @@ textarea {
   max-width: 320px;
   position:fixed;
   right: 6px;
-  z-index: 9;
+  z-index: 99;
 }
 .chat_windo_block .panel{margin:0;}
 
@@ -4272,6 +4272,7 @@ a.btn_trainer {
     margin-top: 2px;
     height: 35px;
     width: 35px;
+	line-height:35px;
     box-shadow: 0 0 5px #fff;
 }
 .share_in_block li a span{ background:none; width:13px; height:0px;}
@@ -4618,8 +4619,22 @@ margin:0 auto;
 
 /*css for search location page start*/
 .search_wrap {
+  font-family: oswald_regularregular;
+  font-weight: normal;
   margin-top: 30px;
 }
+.interest_field .form-group {
+    position: relative;
+}
+.interest_field .form-group:after {
+    position:absolute;
+	content:"\f0d7";
+	right:10px;
+	top:8px;
+	font-family: FontAwesome;
+	pointer-events:none;
+}
+
 .search_wrap .form-group{ position:relative;}
 .search_wrap .form-control {
   -moz-appearance: none;
@@ -4655,6 +4670,7 @@ margin:0 auto;
   border-radius:6px;
   text-transform: capitalize;
   border-right: 1px solid #fff;
+  font-family: 'oswald_regularregular';
 }
 .trainer_top_row > ul {
   float: right;
@@ -4727,14 +4743,16 @@ margin:0 auto;
 .triangle-topright{ background-color:#e6342a;}
 .location_wrap li {
   border-right: 1px solid #666;
+  color: #666;
   display: inline-block;
-  font-size: 12px;
+  font-family: oswald_regularregular;
+  font-size: 13px;
   padding: 10px 4px 10px 9px;
   vertical-align: top;
 }
 .location_wrap li:last-child{border:inherit;  padding:0px;}
 .describe_wrap p {
-  color: #333333;
+  color: #666;
   font-size: 13px;
   line-height: 30px;
   overflow: hidden;
@@ -4757,12 +4775,18 @@ margin:0 auto;
 .describe_wrap {
   border-top: 1px solid #333;
   margin-top: 5px;
-  padding: 10px;
+  padding: 15px;
+}
+.search_wrap ::-webkit-input-placeholder {
+   color:#555;
+}
+.search_wrap ::-moz-input-placeholder {
+   color:#555;
 }
 .trainer_bottom span {
   color: #333333;
   font-family: "HelveticaLTStdRoman";
-  font-weight: 700;
+  font-weight: normal;
   padding-right: 6px;
   text-transform: capitalize;
 }
@@ -5060,24 +5084,27 @@ margin:0 auto;
   display: none;
 }
 .interest_field .form-group {
-  display: inline-block;
-  margin-right: -5px;
-  width: 49%;
+    display: inline-block;
+    margin-right: 29px;
+    width: 44%;
 }
 
 .hide_map_btn {
-  background: rgba(0, 0, 0, 0) linear-gradient(#f34727, #e6342b) repeat scroll 0 0;
-  border: medium none;
-  border-radius: 6px;
-  color: #fff;
-  display: inline-block;
-  font-size: 16px !important;
-  margin-top: 20px;
-  padding: 9px 10px !important;
-  position: absolute;
-  right: -62px;
-  text-transform: capitalize;
-  top: -20px;
+    background: rgba(0, 0, 0, 0) linear-gradient(#f34727, #e6342b) repeat scroll 0 0;
+    border: medium none;
+    border-radius: 6px;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px !important;
+    margin-top: 20px;
+    padding: 8px 20px !important;
+    position: absolute;
+    right: -90px;
+    text-transform: capitalize;
+    top: -20px;
+}
+a.terms-link {
+    color: #e6342a;
 }
 
 /*css for appointement page start*/
@@ -5973,15 +6000,16 @@ label.remain_bal {
   font-size: 40px;
 }
 .list_table_icon > li {
-  background-color: #eb3c29;
-  border-radius: 4px;
-  display: inline-block;
-  font-size: 25px;
-  height: 44px;
-  line-height: 43px;
-  margin-left: 10px;
-  text-align: center;
-  width: 44px;
+    background-color: gray;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 25px;
+    height: 44px;
+    line-height: 43px;
+    margin-left: 10px;
+    text-align: center;
+    width: 44px;
+    opacity: 0.6;
 }
 .list_table_icon a {
   color: #fff;
@@ -6729,8 +6757,8 @@ label.remain_bal {
   color: #000 !important;
   font-size: 19px !important;
   position: absolute;
-  right: -11px;
-  top: 8px;
+  right: -15px;
+  top: 19px;
 }
 .degree_main {
   display: inline-block;
@@ -7028,6 +7056,7 @@ label.remain_bal {
   line-height: 20px;
   width: 180px;
   word-wrap: break-word;
+  font-family: 'oswald_regularregular';
 }
 #Make_Special_Offer {
   overflow: auto;
@@ -7091,7 +7120,7 @@ li.see_all {
 .see_all li a{color: #e8372a; font-weight: 700;}
 .see_all li {
     border: none;
-    padding: 0px;
+    padding: 5px;
     margin: 0px;
     text-align: center;
 }
@@ -7107,4 +7136,75 @@ li.see_all {
     height: 444px !important;
 }
 
+
+.photo_gallery_list .date_photo {
+  border: medium none;
+  font-size: 12px;
+  text-align: left;
+   text-transform:capitalize;
+}
+.photo_gallery_list .weight_lbs {
+  border: medium none;
+  float: right;
+  font-size: 14px;
+  text-align: right;
+  text-transform:capitalize;
+}
+.photo_input_box {
+  border: medium none;
+  left: 4px;
+  position: absolute;
+  top: 132px;
+  width: 15.7%;
+}
+.btn_photo_submit {
+  background-color: #e8372a;
+  border: medium none;
+  border-radius: 6px;
+  color: #fff;
+  padding: 5px;
+  width: 100%;
+}
+.dash_photo_gallery{ min-height:360px;}
+.photo_input_box .form-control {
+  margin-bottom: 5px;
+}
+.date_weight {
+  border: 1px solid #ddd;
+  bottom: -22px;
+  left: 0;
+  padding: 0 4px;
+  position: absolute;
+  width: 100%;
+}
+.dash_photo_gallery {
+  min-height: 360px;
+}
+#progress_photo .photo_upload_sect {
+  height: 115px;
+}
+#progress_photo .photo_gallery_list > li {
+  min-height: 115px;
+  margin-bottom: 25px;
+}
+
+.cvalue {
+  font-size: 24px;
+  position: absolute;
+}
+#progress_photo .photo_upload_sect span {
+  font-size: 40px;
+  height: 100px;
+  line-height: 75px;
+}
+.trainer_bottom span {
+  font-size: 14px;
+}
+.trainer_bottom span {
+  font-family: oswald_regularregular;
+ 
+}
+.trainer_bottom {
+  font-family: oswald_regularregular;
+}
 /** 22-04-2016 video calling end **/

@@ -13,14 +13,19 @@
                 <li>
                 <?php 
                   $weather_details = $this->Custom->getWheatherDetails();
-                  $weather = $weather_details['main']['temp'];
-                  $windy   = $weather_details['wind']['speed'];
+                  if(!empty($weather_details)){
+                    $weather = round($weather_details['main']['temp'] - 273.15,1);
+                    $windy   = round($weather_details['wind']['speed'],1);
+                  }else{
+                    $weather = "NA";
+                    $windy   = "NA";
+                  }
                 ?>
                   <div class="cloud_box blue_light">
                     <div class="cloud blue"><i class="flaticon1-cogwheel" aria-hidden="true"></i><span>Friday</span></div>
                   </div>
                   <div class="cloud_text">
-                    <div class="degree_main"><?php echo round($weather- 273.15,1); ?><span class="degree">0</span></div>
+                    <div class="degree_main"><?php echo $weather; ?><span class="degree">0<span class="cvalue">c</span></span></div>
                     <span>Weather</span>
                   </div>
                 </li>
@@ -29,7 +34,7 @@
                     <div class="cloud"><i class="fa fa-cloud" aria-hidden="true"></i> <span>sunday</span></div>
                   </div>
                   <div class="cloud_text">
-                    <div class="kilo_box"><?php echo round($windy,1); ?><span>M/S</span></div>
+                    <div class="kilo_box"><?php echo $windy; ?><span>M/S</span></div>
                     <span>Windy</span> </div>
                 </li>
                 <li>
@@ -139,6 +144,9 @@
               <div class="session_setails_sec appointement_sec pending_appointement">
                 <div class="heading_payment_main"> </div>
                 <ul class="session_content scroll_content mCustomScrollbar _mCS_1">
+                <?php if(empty($pending_appointments)){ ?>
+                            </br><center><h4>Not found pending appointments</h4></center>
+                           <?php }else{ ?>
                             <?php foreach($pending_appointments as $pa) { ?>
                               <li>
                                 <div class="main_block">
@@ -187,7 +195,7 @@
                                     <div class="bullet_box"><a title="View Pending Appointment" href="<?php echo $this->request->webroot; ?>trainers/viewPendingAppointment?aid=<?php echo base64_encode($pa['app_id']); ?>"><i class="fa fa-circle"></i> <i class="fa fa-circle"></i> <i class="fa fa-circle"></i></a></div>
                                 </div>
                             </li>
-                            <?php } ?>
+                            <?php } } ?>
                             </ul>
               </div>
             </div>
@@ -299,8 +307,8 @@
               <li><span class="flaticon1-tool"></span> Inbox</li>
               <li class="dropdown"><a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">action <i class="fa fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
-                  <li><a href="javascript:void(0);"><i class="fa fa-trash-o"></i> Delete</a></li>
-                  <li><a href="javascript:void(0);"><i class="fa fa-eye"></i> Mark Read</a></li>
+                  <li><a href="javascript:void(0);" id="delete-msgs"><i class="fa fa-trash-o"></i> Delete</a></li>
+                  <!-- <li><a href="javascript:void(0);"><i class="fa fa-eye"></i> Mark Read</a></li> -->
                 </ul>
               </li>
               <li class="pull-right">
@@ -316,8 +324,8 @@
                 <?php $i = 1; foreach($messages as $m){ ?>
                   <tr>
                     <td><div class="squaredThree">
-                        <input type="checkbox" value="None" id="squaredThree" name="check" checked />
-                        <label for="squaredThree"></label>
+                        <input type="checkbox" class="msg_cb" value="<?php echo $m['chat_id']; ?>" id="squaredThree_<?php echo $i; ?>" name="check" checked />
+                        <label for="squaredThree_<?php echo $i; ?>"></label>
                       </div></td>
                     <td><?php echo $m['trainee_name']." ".$m['trainee_lname']; ?></td>
                     <td><?php echo $m['chat_messsage']; ?></td>
@@ -340,6 +348,37 @@
 </section>  
 
 <script type="text/javascript">
+
+$(document).ready(function(){
+  $('body').on('click','#delete-msgs',function(){
+    var msg = [];
+     $.each($("input.msg_cb:checked"), function(){            
+            msg.push($(this).val());
+      });
+    var chatids = msg.join(",");
+    if(chatids == ""){
+      showAlert('error','Error','Please select messages !!');
+      return false;
+    }
+    $.ajax({
+          url:"<?php echo $this->request->webroot; ?>trainers/deleteMessages",
+          type:"post",
+          data:{chatids:chatids},
+          dataType:"json",
+          success: function(response){
+            if(response.message == "success"){
+              showAlert('success','Success','Messages deleted successfully');
+              setTimeout(function(){
+                window.location.reload();
+              }, 1000);
+            }
+          },
+          error:function(error){
+              console.log(error);  
+          }
+      });
+  });
+});
 
 /************************************* js for clockdiv timer start ***********************************************************/
 

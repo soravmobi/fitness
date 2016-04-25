@@ -17,7 +17,7 @@ class CustomComponent extends Component
         $f_extension1 = strtolower(end($f_extension1)); 
         $f_newfile1="";
         if($f_name1){
-        $f_newfile1 = uniqid().'.'.$f_extension1; 
+        $f_newfile1 = "VT_".uniqid().'.'.$f_extension1; 
         $store1 = "uploads/".$subfolder."/". $f_newfile1;
         $image2 =  move_uploaded_file($f_tmp1,$store1);
         }

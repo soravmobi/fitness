@@ -146,19 +146,25 @@ class CustomHelper extends Helper
 
     public function getWheatherDetails()
     {
-        $latlngdetails = $this->getLatLngUsingIP();
-        if(!empty($latlngdetails)){
-            $latitude  = $latlngdetails['lat'];
-            $longitude = $latlngdetails['lon'];
-        }else{
-            $latitude  = "";
-            $longitude = "";
-        }
-        $url  = "http://api.openweathermap.org/data/2.5/weather?lat=".$latitude."&lon=".$longitude;
+        $own_details = $this->getlatlngbyip();
+        $city = $own_details['city'];
+        $url  = "http://api.openweathermap.org/data/2.5/weather?q=".$city."&appid=c488325e3fceefdedd2e291d011f63f1";
         $data = @unserialize(file_get_contents($url));
-        /*$json = file_get_contents($url);
-        $data = json_decode($json,true);*/
-        return $data;
+        $json = file_get_contents($url);
+        $data = json_decode($json,true);
+        if($data['cod'] == 200){
+          $response = $data;
+        }else{
+          $response = array();
+        }
+        return $response;
+    }
+
+    public function getlatlngbyip()
+    {
+        $ip = $_SERVER['REMOTE_ADDR']; // the IP address to query
+        $query = @unserialize(file_get_contents('http://ip-api.com/php/'));
+        return $query;
     }
 
 

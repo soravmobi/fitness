@@ -36,13 +36,12 @@ function unique_multidim_array($array, $key) {
 } 
                         
         $interests_hobbyArray = unique_multidim_array($trainers,'interests_hobby');                 
-        $locationArray = unique_multidim_array($trainers,'trainer_city');                 ?>
+        $locationArray = unique_multidim_array($trainers,'location');                 ?>
                         
                         
                          <select class="form-control"  id="byinterest" >
-                         <option value="">Select Interests</option>
+                         <option value="">Please Select</option>
                          	<?php foreach($interests_hobbyArray as $t) {
-							 if(!empty($t['interests_hobby']) && $t['interests_hobby'] !="" && $t['interests_hobby'] !=null) 
 							 echo "<option value='".$t['interests_hobby']."'>".$t['interests_hobby']."</option>"; 
 							}?>	
 						</select>
@@ -51,10 +50,9 @@ function unique_multidim_array($array, $key) {
                              <!-- <div class="select_icon"><i class="fa fa-caret-down"></i></div> -->
                          	<!--<input type="text" class="form-control" id="bylocation" placeholder="by location ?" value="<?php //echo (!empty($_GET["loc"]))? $_GET["loc"] : ""; ?>">	-->
                          	<select class="form-control" id="bylocation">
-                         	<option value="">Select City</option>
+                         	<option value="">Please Select</option>
                          	<?php foreach($locationArray as $t) { 
-								if(!empty($t)) 
-								echo "<option value='".$t['trainer_city']."'>".$this->Custom->getCityName($t['trainer_city'])."</option>";
+								echo "<option value='".$t['location']."'>".$t['location']."</option>";
 							}?>	
 						</select>	
                          </div>
@@ -63,7 +61,7 @@ function unique_multidim_array($array, $key) {
                        <div class="col-md-2 col-sm-2">
                          <div class="form-group">
                              <button type="button" id="search_trainer">search</button>
-                             <button type="button" class="hide_map_btn">Hide map</button>
+                             <button type="button" class="hide_map_btn">hide map</button>
                              
                          </div>
                        </div>
@@ -163,17 +161,10 @@ function unique_multidim_array($array, $key) {
     
 	$(document).ready(function(){
 		$('.hide_map_btn').click(function(){
-		
-if($(this).html()=='Show Map'){
-
-$('#map').show(); $(this).html('Hide Map');
-
-}else{ 
-
-$('#map').hide();
-$(this).html('Show Map');
-
-}				
+		//alert('Remove Map');
+		$('#map').remove();
+		$(this).remove();
+			
 		});
 	var startPos;
 	var lat;
@@ -526,13 +517,7 @@ url.push("lng="+lng);
 	    var map = new google.maps.Map(document.getElementById('map'), {
 	      zoom: 5,
 	      center: new google.maps.LatLng(trainers[0][1],trainers[0][2]),
-	      mapTypeId: google.maps.MapTypeId.ROADMAP,
-		  zoomControl: true,
-		  mapTypeControl: false,
-		  scaleControl: true,
-		  streetViewControl: true,
-		  rotateControl: false,
-		  fullscreenControl: false
+	      mapTypeId: google.maps.MapTypeId.ROADMAP
 	    });
 	   // var infowindow = new google.maps.InfoWindow();
 
@@ -550,8 +535,7 @@ url.push("lng="+lng);
 	      marker = new google.maps.Marker({
 	        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
 	        content:contentString,
-	        map: map,
- icon: 'https://virtualtrainr.com/img/favicon.ico'
+	        map: map
 	      });
 	      google.maps.event.addListener(marker, 'click', (function(marker, i) {
 		    return function() {
@@ -565,9 +549,3 @@ url.push("lng="+lng);
 	
 	}
 </script>
-<style>
-#map .trainer_wrap_box {
-   
-    margin-top: 0;
-   }
-</style>

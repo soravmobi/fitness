@@ -327,7 +327,8 @@ class TrainersController extends AppController
 
     public function traineeReport($id)
     {
-        $profile_details = $this->Trainees->find()->where(['user_id' => base64_decode($id)])->toArray();
+        $trainee_profile_details = $this->Trainees->find()->where(['user_id' => base64_decode($id)])->toArray();
+        $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
         $progress_img = $this->After_before_images->find()->where(['abi_trainee_id' => base64_decode($id)])->toArray();
         $meal_plans_arr = $this->Meal_plans->find()->where(['trainer_id' => $this->data['id'], 'trainee_id' => base64_decode($id)])->order(['row_id' => 'ASC'])->toArray();
         $shopping_arr = $this->Shopping->find()->where(['trainer_id' => $this->data['id'], 'trainee_id' => base64_decode($id)])->order(['row_id' => 'ASC'])->toArray();
@@ -337,6 +338,7 @@ class TrainersController extends AppController
         $this->set('shopping_arr', $shopping_arr);
         $this->set('progress_img', $progress_img);
         $this->set('profile_details', $profile_details);
+        $this->set('trainee_profile_details', $trainee_profile_details);
     }
 
     public function addMealPlans()
@@ -453,6 +455,10 @@ class TrainersController extends AppController
             }
             if($type == "informaiton"){
                 $key = 'edit1';
+                $address = $this->Custom->getCityName($data['trainer_city']).' '.$this->Custom->getStateName($data['trainer_state']).' '.$this->Custom->getCountryName($data['trainer_country']);
+                $loc = $this->Custom->getlatlng($address);
+                $data['lat'] = $loc["latitude"];
+                $data['lng'] = $loc["longitude"];
                 $this->users->query()->update()->set(array('display_name' => $data['trainer_displayName']))->where(['id' => $this->data['id']])->execute();
             }
             if($type == "social_links"){
@@ -589,14 +595,15 @@ class TrainersController extends AppController
         $user = $this->Trainer_ratemaster->newEntity();
         $user = $this->Trainer_ratemaster->patchEntity($user, $data);
         $result = $this->Trainer_ratemaster->save($user);
+        $rid = $result->rate_id;
         }
         else
         {
             $data = array('rate_hour' =>$rate);
             $this->Trainer_ratemaster->query()->update()->set($data)->where(['rate_id' => $rateid])->execute();
-            $rate_detail=$this->conn->execute('SELECT *  FROM `trainer_ratemaster` where  `rate_id`='.$rateid)->fetchAll('assoc');
+            $rid = $rateid;
         }
-
+         $rate_detail=$this->conn->execute('SELECT *  FROM `trainer_ratemaster` where  `rate_id`='.$rid)->fetchAll('assoc');
          $rate1=$rate*1-$rate_detail[0]['adgust1'];
          $rate2=$rate*3-$rate_detail[0]['adgust2'];
          $rate3=$rate*10-$rate_detail[0]['adgust3'];
@@ -1504,6 +1511,18 @@ class TrainersController extends AppController
               <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Status : ".$status."</p>
               </div>";
     $this->Custom->downloadpdf($html,$filename);
+  }
+
+  public function deleteMessages()
+  {
+    if($this->request->is('ajax'))
+      {
+         $chatids = $this->request->data['chatids'];
+         $this->conn->execute('DELETE FROM chating WHERE chat_id IN ('.$chatids.')');
+         $this->set('message', 'success');
+         $this->set('_serialize',array('message'));
+         $this->response->statusCode(200);
+      }
   }
 
 

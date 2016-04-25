@@ -309,7 +309,7 @@
             </div>
             <div class="modal-body">
                 <div class="head_custom" id="modify_heading">
-                    Session 3 | Notes
+                    Session 3 
                 </div>
                 <div class="save_changes">
                     <button type="button" id="modify-save-btn">save change</button>
@@ -550,7 +550,7 @@
       var location = $('#make_location_'+app_no).text();
       var preference = $('#make_preference_'+app_no).val();
       var latlng = $('#make_lat_lng_'+app_no).val();
-      $('#modify_heading').text('Session '+app_no+' | Notes');
+      $('#modify_heading').text('Session '+app_no);
       $('#app_location').text(location);
       $('#modify-save-btn').attr('main',app_no);
       $('#location-lat-lng').val(latlng);

@@ -30,12 +30,16 @@
                                        <div class="photo_gall_content">
                                           <ul class="photo_gallery_list">
                                              <li class="photo_upload_sect">
-                                                <form id="submit_form" method="post" enctype="multipart/form-data">
-                                                   <input style="cursor:pointer" id="uploadImage" name="progress_img" value="Photo Upload" type="file"/>
+                                                <form id="submit_form" action="<?php echo $this->request->webroot; ?>trainees/addProgressImage" method="post" enctype="multipart/form-data">
+                                                   <input style="cursor:pointer" id="uploadImage" name="progress_img" value="Photo Upload" type="file" required/>
                                                     <span class="fa fa-cloud-upload"></span>
-                                                </form>
                                                     <h5>Upload Your Photo</h5>
                                                 </li>
+                                                 <div class="photo_input_box">
+                                                        <input type="text" class="form-control" name="weight" placeholder="Weight in (lbs)" required>
+                                                      <button type="submit" class="btn_photo_submit">submit</button>
+                                                    </div>
+                                                </form>
                                                 <?php
                                                     foreach($progress_img as $pi)
                                                         { ?>
@@ -43,7 +47,10 @@
                                                         <span class="delte_img1" main2="<?php echo $pi['abi_image_name']; ?>" main="<?php echo base64_encode($pi['abi_id']); ?>"><i class="fa fa-close"></i></span>
                                                         <a class="example-image-link" href="<?php echo $this->request->webroot; ?>uploads/trainee_progress/<?php echo $pi['abi_image_name']; ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
                                                         <img style="height:170px;" class="example-image img-responsive" src="<?php echo $this->request->webroot; ?>uploads/trainee_progress/<?php echo $pi['abi_image_name']; ?>" alt=""/></a>
+                                                        <p class="date_weight"><span class="date_photo"><?php echo date('d-F-Y', strtotime($pi['abi_added_date'])); ?></span> 
+                                                        <span class="weight_lbs"><?php echo $pi['weight']; ?> lbs</span></p>
                                                     </li>
+                                                     
                                                 <?php } ?>
                                             </ul>
                                             <div class="clearfix"></div>
@@ -62,6 +69,7 @@
                                                     <span class="fa fa-cloud-upload"></span>
                                                 </form>
                                                     <h5>Upload your Photo</h5>
+                                                    
                                                 </li>
                                                 <?php
                                                     foreach($gallery_img as $gi)
@@ -113,13 +121,6 @@
         
     </div>
     <!--Main container sec end-->
-    <script>
-		$(".dropdown-menu li a").click(function(e){
-		  $(this).parents(".dropdown").find('button').html($(this).text() + ' <span class="wcaret"></span>');
-		  //$(this).parents(".dropdown").find('button').val($(this).data('value'));
-		  e.preventDefault();
-		});
-	</script>
 
     <!-- Gallery Image Uploading Start -->
 
@@ -201,31 +202,7 @@
             }
             if(jQuery.inArray(split_extension[1].toLowerCase(), ext ) != -1 && calculatedSize < 10)
             {
-                    $("div#progress_photo div#error_msg").hide();
-                    $('div#progress_photo img#loading-img').show();
-                    var data = new FormData($('#submit_form')[0]);
-                    $.ajax({
-                        type: "post",
-                        url: "<?php echo $this->request->webroot; ?>trainees/addProgressImage",
-                        data: data,
-                        dataType : "json",
-                        contentType: false,
-                        processData: false,
-                        success: function(response){
-                            $('div#progress_photo img#loading-img').hide();
-                           if(data.message != "")
-                               {
-                                $("div#progress_photo div#success_msg").html("<center><i class='fa fa-check'> Image Uploaded Successfully </i></center>").show();
-                                $("div#progress_photo div#error_msg").hide();
-                                setTimeout(function(){ window.location.href="<?php echo $this->request->webroot; ?>trainees/photoalbum/progress_photo"; }, 1000);
-                               }
-                            else
-                                {
-                                $("div#progress_photo div#error_msg").html("<center><i class='fa fa-times'> Something is Wrong Please Try Again ! </i></center>").show();
-                                $("div#progress_photo div#success_msg").hide();
-                                }
-                        }
-                    });
+                $("div#progress_photo div#error_msg").hide();
             }
         });
         });

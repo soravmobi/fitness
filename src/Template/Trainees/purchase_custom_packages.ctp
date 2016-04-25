@@ -7,7 +7,7 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12">
                   <div class="tbw_text">
-                  <i class="fa fa-cc-mastercard"></i> confirm details & payment 
+                  <i class="fa fa-usd"></i> confirm details & payment 
   
                   </div>
                   <div class="step_box">
@@ -134,13 +134,13 @@
                               <input type="hidden" name="package" value="<?php echo base64_encode($custom_plan_details[0]['package_id']); ?>">
                               <input type="hidden" name="coupon" id="coupon" value="<?php echo base64_encode('0'); ?>">
                           <div class="agree_message_wrap">
-                             <textarea class="form-control" name="trainer_message" placeholder="message your trainer"></textarea>
+                             <textarea class="form-control" name="trainer_message" placeholder="Please leave any special request/notes for your trainer here"></textarea>
                              <div class="heading_payment_main">
                                 </div>
                                 <div class="check_box  session_content">
                                  <div class="checkbox">
                                   <input type="checkbox" id="test1" class="terms_cb" />
-                                  <label for="test1">I agree with all terms and conditions. <a href="<?php echo $this->request->webroot; ?>terms" target="_blank">Terms & Conditions</a></label>    
+                                  <label for="test1">I agree with all terms and conditions. <a class="terms-link" href="<?php echo $this->request->webroot; ?>terms" target="_blank">Terms & Conditions</a></label>    
                                  </div>
                                 </div>
                           </div>

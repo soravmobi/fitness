@@ -96,11 +96,17 @@
                                        <button type="submit" name="pay_type" value="paypal">payment now</button>
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="amezon">
+                                    <?php 
+                                      $token = md5(uniqid(mt_rand(), true));
+                                      $this->request->session()->write('token',$token); 
+                                    ?>
+                                    <input type="hidden" name="csrf" id="csrf" value="<?php echo $this->request->session()->read('token'); ?>" >
                                       <div class="form-group">
-                                          <input type="text" class="form-control total_amount_gateway"  name="total_amount_gateway" readonly value="<?php echo $remaining_amount; ?>"></br>
+                                          <input type="text" id="amazon_amount" class="form-control total_amount_gateway"  name="total_amount_gateway" readonly value="<?php echo $remaining_amount; ?>"></br>
                                           <input type="text" class="form-control" readonly value="USD">
                                        </div>
-                                       <button type="submit" name="pay_type" value="amazon">payment now</button>
+                                       <!-- </br><button type="submit" name="pay_type" value="amazon">payment now</button> -->
+                                       <div id="AmazonPayButton"></div>
                                     </div>
                                     <div role="tabpanel" class="tab-pane" id="credit_card">Credit Cards</div>
                                   </div>
@@ -139,3 +145,26 @@
 </script>
 
 <!-- For Choose Wallet Option End -->
+
+<!-- Amazon Payment Script Start -->
+  
+<script type="text/javascript">
+    OffAmazonPayments.Button("AmazonPayButton", "AE2I6Q8BHJTXA", {
+        type: "hostedPayment",
+        hostedParametersProvider: function(done) {
+            $.getJSON("<?php echo $this->request->webroot; ?>trainees/customAmazonPayment", {
+                amount: parseInt($("#amazon_amount").val()),
+                currencyCode: 'USD',
+                sellerNote: "VirtualTrainr.com",
+                csrf:$("#csrf").val()
+            }, function(data) {
+                done(data);
+            })
+        },
+        onError: function(errorCode) {
+            console.log(errorCode.getErrorCode() + " " + errorCode.getErrorMessage());
+        }
+    });
+</script>
+
+<!-- Amazon Payment Script End -->
