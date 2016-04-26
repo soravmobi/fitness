@@ -242,7 +242,7 @@ $(document).ready(function(){
         var total_time = total_session > 10 ? total_session : "0" + total_session + ":00:00";
         var ago = total_session - 1;
         var used_time = ago > 10 ? ago : "0" + ago;
-        if(current_time ==  used_time + ":59:50")
+        if(current_time ==   "00:59:50")
         {
             $('#auto_termainate_call').show();
             counterMsg();
@@ -338,7 +338,7 @@ $(document).ready(function(){
    
     /* End call */
     $("body").on("click","#end_session", function(){
-        if(confirm("Are You sure"))
+        if(confirm("Are You sure ?"))
         {
             terminateCall();  
         }             

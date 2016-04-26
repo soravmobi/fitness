@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 21, 2016 at 05:47 PM
+-- Generation Time: Apr 26, 2016 at 09:33 PM
 -- Server version: 5.6.25
 -- PHP Version: 5.6.11
 
@@ -110,26 +110,20 @@ INSERT INTO `admin_transactions` (`id`, `admin_id`, `trainer_id`, `ammount`, `pa
 CREATE TABLE IF NOT EXISTS `after_before_images` (
   `abi_id` int(11) NOT NULL,
   `abi_image_name` varchar(20) NOT NULL,
-  `abi_date` date NOT NULL,
-  `abi_trainer_id` int(11) NOT NULL,
+  `weight` text NOT NULL COMMENT 'in lbs',
   `abi_trainee_id` int(11) NOT NULL,
   `abi_status` int(11) NOT NULL,
   `abi_added_date` datetime NOT NULL,
   `abi_modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `after_before_images`
 --
 
-INSERT INTO `after_before_images` (`abi_id`, `abi_image_name`, `abi_date`, `abi_trainer_id`, `abi_trainee_id`, `abi_status`, `abi_added_date`, `abi_modify_date`) VALUES
-(1, '55efe65582091.jpg', '0000-00-00', 0, 47, 0, '2015-09-09 07:57:09', '2015-09-09 07:57:09'),
-(7, '560409326df9a.png', '0000-00-00', 0, 51, 0, '2015-09-24 14:31:14', '2015-09-24 14:31:14'),
-(10, '5605056769ca1.png', '0000-00-00', 0, 51, 0, '2015-09-25 08:27:19', '2015-09-25 08:27:19'),
-(12, '5615157a0896b.jpg', '0000-00-00', 0, 51, 0, '2015-10-07 12:52:10', '2015-10-07 12:52:10'),
-(42, '565813e1a178f.png', '0000-00-00', 0, 51, 0, '2015-11-27 08:27:13', '2015-11-27 08:27:13'),
-(43, '569e245e74b4a.jpg', '0000-00-00', 0, 51, 0, '2016-01-19 11:56:14', '2016-01-19 11:56:14'),
-(44, '56af0df849f11.jpg', '0000-00-00', 0, 51, 0, '2016-02-01 07:49:12', '2016-02-01 07:49:12');
+INSERT INTO `after_before_images` (`abi_id`, `abi_image_name`, `weight`, `abi_trainee_id`, `abi_status`, `abi_added_date`, `abi_modify_date`) VALUES
+(2, '571b61c6f0e07.jpg', '2589', 94, 0, '2016-04-23 11:51:34', '2016-04-23 11:51:34'),
+(3, 'VT_571b636c54548.jpg', '1234', 94, 0, '2016-04-23 11:58:36', '2016-04-23 11:58:36');
 
 -- --------------------------------------------------------
 
@@ -156,18 +150,30 @@ CREATE TABLE IF NOT EXISTS `appointments` (
   `trainee_status` smallint(5) NOT NULL COMMENT '0 = pending, 1 = approve, 2 = decline',
   `ap_date` date NOT NULL,
   `created_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `appointments`
 --
 
 INSERT INTO `appointments` (`id`, `trainee_id`, `trainer_id`, `session_data`, `session_price`, `service_fee`, `total_price`, `trainer_message`, `coupon_id`, `final_price`, `wallet_amount`, `payment_gateway_amount`, `special_offer_price`, `special_offer_modify_date`, `trainer_status`, `trainee_status`, `ap_date`, `created_date`) VALUES
-(36, 51, 62, 'a:3:{i:1;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}i:2;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}i:3;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}}', 2900.01, 87, 2987.01, 'Share details about yourself, your preferences, and what you love about Rahul Goyal profile', 6, 2688.31, 2688.31, 0, 0, '', 0, 0, '2016-04-11', '2016-04-11 10:53:15'),
-(37, 51, 62, 'a:1:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 950, 28.5, 978.5, 'ffdffdfd', 0, 978.5, 978.5, 0, 0, '', 0, 0, '2016-04-13', '2016-04-13 20:50:25'),
-(38, 51, 62, 'a:3:{i:1;a:7:{s:10:"preference";s:0:"";s:14:"modified_dates";s:0:"";s:14:"modified_times";s:17:"01:00 PM-02:00 PM";s:9:"locations";s:21:"16.5061743,80.6480153";s:5:"notes";s:7:"ewewewe";s:6:"status";s:1:"0";s:16:"location_address";s:40:"Vijayawada, Andhra Pradesh 520001, India";}i:2;a:7:{s:10:"preference";s:1:"1";s:14:"modified_dates";s:10:"2016-05-20";s:14:"modified_times";s:17:"12:00 PM-01:00 PM";s:9:"locations";s:0:"";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:0:"";}i:3;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:11:"ewewewewewe";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}}', 2900.01, 87, 2987.01, 'dwwdeweeweewewewww', 0, 2987.01, 2987.01, 0, 0, '', 0, 0, '2016-04-13', '2016-04-13 13:30:25'),
-(39, 51, 62, 'a:3:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-14";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:2;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-14";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:3;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-14";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 2900.01, 87, 2987.01, '', 0, 0, 0, 0, 0, '', 0, 0, '2016-04-14', '2016-04-16 15:14:14'),
-(40, 51, 62, 'a:3:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-21";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:2;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-21";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:3;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-21";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 2900.01, 87, 2987.01, '', 0, 2987.01, 0, 0, 0, '', 0, 0, '2016-04-21', '2016-04-21 11:44:19');
+(36, 94, 62, 'a:3:{i:1;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}i:2;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}i:3;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}}', 2900.01, 87, 2987.01, 'Share details about yourself, your preferences, and what you love about Rahul Goyal profile', 6, 2688.31, 2688.31, 0, 0, '', 1, 1, '2016-04-11', '2016-04-26 10:53:15'),
+(37, 94, 62, 'a:1:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 950, 28.5, 978.5, 'ffdffdfd', 0, 978.5, 978.5, 0, 0, '', 1, 1, '2016-04-13', '2016-04-25 20:50:25'),
+(38, 94, 62, 'a:3:{i:1;a:7:{s:10:"preference";s:0:"";s:14:"modified_dates";s:0:"";s:14:"modified_times";s:17:"01:00 PM-02:00 PM";s:9:"locations";s:21:"16.5061743,80.6480153";s:5:"notes";s:7:"ewewewe";s:6:"status";s:1:"0";s:16:"location_address";s:40:"Vijayawada, Andhra Pradesh 520001, India";}i:2;a:7:{s:10:"preference";s:1:"1";s:14:"modified_dates";s:10:"2016-05-20";s:14:"modified_times";s:17:"12:00 PM-01:00 PM";s:9:"locations";s:0:"";s:5:"notes";s:0:"";s:6:"status";s:1:"0";s:16:"location_address";s:0:"";}i:3;a:7:{s:10:"preference";s:1:"0";s:14:"modified_dates";s:10:"2016-04-11";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";s:9:"locations";s:22:"50.447978,-104.6066559";s:5:"notes";s:11:"ewewewewewe";s:6:"status";s:1:"0";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";}}', 2900.01, 87, 2987.01, 'dwwdeweeweewewewww', 0, 2987.01, 2987.01, 0, 0, '', 1, 1, '2016-04-13', '2016-04-25 13:30:25'),
+(39, 94, 62, 'a:3:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-14";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:2;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-14";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:3;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-14";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 2900.01, 87, 2987.01, '', 0, 0, 0, 0, 0, '', 1, 1, '2016-04-14', '2016-04-25 15:14:14'),
+(40, 94, 62, 'a:3:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-21";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:2;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-21";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:3;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-21";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 2900.01, 87, 2987.01, '', 0, 2987.01, 0, 0, 0, '', 0, 0, '2016-04-21', '2016-04-25 11:44:19'),
+(41, 94, 62, 'a:3:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-21";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:2;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-21";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:3;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-21";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 2900.01, 87, 2987.01, '', 0, 0, 0, 0, 0, '', 0, 0, '2016-04-21', '2016-04-25 14:15:45'),
+(42, 94, 62, 'a:1:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-22";s:14:"modified_times";s:17:"06:00 AM-07:00 AM";}}', 450, 13.5, 463.5, '', 0, 0, 0, 0, 0, '', 0, 0, '2016-04-22', '2016-04-25 09:32:59'),
+(43, 94, 62, 'a:1:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-05-20";s:14:"modified_times";s:17:"05:00 PM-06:00 PM";}}', 450, 13.5, 463.5, '', 0, 0, 0, 0, 0, '', 0, 0, '2016-04-22', '2016-04-22 09:33:30'),
+(44, 94, 62, 'a:1:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-22";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 450, 13.5, 463.5, '', 0, 0, 0, 0, 0, '', 0, 0, '2016-04-22', '2016-04-25 09:56:09'),
+(45, 94, 62, 'a:3:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-22";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:2;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-22";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:3;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-22";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 500.01, 15, 515.01, '', 0, 0, 0, 0, 0, '', 0, 0, '2016-04-22', '2016-04-25 10:40:59'),
+(46, 94, 62, 'a:3:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-22";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:2;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-22";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:3;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-22";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 500.01, 15, 515.01, '', 0, 0, 0, 0, 0, '', 0, 0, '2016-04-22', '2016-04-22 12:53:51'),
+(47, 94, 62, 'a:3:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-22";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:2;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-22";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:3;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:22:"50.447978,-104.6066559";s:16:"location_address";s:27:"Indore-Madhya Pradesh,India";s:14:"modified_dates";s:10:"2016-04-22";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 500.01, 15, 515.01, '', 0, 0, 0, 0, 0, '', 0, 0, '2016-04-22', '2016-04-25 12:55:52'),
+(48, 94, 62, 'a:20:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:2;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:3;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:4;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:5;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:6;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:7;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:8;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:9;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:10;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:11;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:12;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:13;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:14;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:15;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:16;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:17;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:18;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:19;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:20;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-25";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 9500, 285, 9785, '', 0, 9785, 9785, 0, 0, '', 0, 0, '2016-04-25', '2016-04-25 14:45:12'),
+(49, 94, 62, 'a:3:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-26";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:2;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"1";s:6:"status";s:1:"0";s:9:"locations";s:0:"";s:16:"location_address";s:0:"";s:14:"modified_dates";s:10:"2016-04-26";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:3;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"1";s:6:"status";s:1:"0";s:9:"locations";s:0:"";s:16:"location_address";s:0:"";s:14:"modified_dates";s:10:"2016-04-26";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 500.01, 15, 515.01, '', 0, 515.01, 515.01, 0, 0, '', 0, 0, '2016-04-26', '2016-04-26 08:49:50'),
+(50, 94, 62, 'a:3:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"1";s:6:"status";s:1:"0";s:9:"locations";s:0:"";s:16:"location_address";s:0:"";s:14:"modified_dates";s:10:"2016-04-26";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:2;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-26";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:3;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"1";s:6:"status";s:1:"0";s:9:"locations";s:0:"";s:16:"location_address";s:0:"";s:14:"modified_dates";s:10:"2016-04-26";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 500.01, 15, 515.01, '', 0, 515.01, 515.01, 0, 0, '', 0, 0, '2016-04-26', '2016-04-26 08:53:14'),
+(51, 94, 62, 'a:10:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"1";s:6:"status";s:1:"0";s:9:"locations";s:0:"";s:16:"location_address";s:0:"";s:14:"modified_dates";s:10:"2016-04-26";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:2;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-26";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:3;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"1";s:6:"status";s:1:"0";s:9:"locations";s:0:"";s:16:"location_address";s:0:"";s:14:"modified_dates";s:10:"2016-04-26";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:4;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-26";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:5;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"1";s:6:"status";s:1:"0";s:9:"locations";s:0:"";s:16:"location_address";s:0:"";s:14:"modified_dates";s:10:"2016-04-26";s:14:"modified_times";s:17:"11:00 PM-00:00 AM";}i:6;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-26";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:7;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-26";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:8;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"1";s:6:"status";s:1:"0";s:9:"locations";s:0:"";s:16:"location_address";s:0:"";s:14:"modified_dates";s:10:"2016-04-26";s:14:"modified_times";s:17:"10:00 PM-11:00 PM";}i:9;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-26";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}i:10;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-26";s:14:"modified_times";s:17:"12:00:AM-01:00:AM";}}', 4700, 141, 4841, '', 0, 4841, 4841, 0, 0, '', 1, 1, '2016-04-26', '2016-04-26 14:24:21'),
+(52, 94, 62, 'a:3:{i:1;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"1";s:6:"status";s:1:"0";s:9:"locations";s:0:"";s:16:"location_address";s:0:"";s:14:"modified_dates";s:10:"2016-04-26";s:14:"modified_times";s:17:"12:00 AM-01:00 AM";}i:2;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"0";s:6:"status";s:1:"0";s:9:"locations";s:30:"22.71669960022,75.833297729492";s:16:"location_address";s:27:"Indore Madhya Pradesh India";s:14:"modified_dates";s:10:"2016-04-26";s:14:"modified_times";s:17:"12:00 AM-01:00 AM";}i:3;a:7:{s:5:"notes";s:0:"";s:10:"preference";s:1:"1";s:6:"status";s:1:"0";s:9:"locations";s:0:"";s:16:"location_address";s:0:"";s:14:"modified_dates";s:10:"2016-04-26";s:14:"modified_times";s:17:"12:00 AM-01:00 AM";}}', 500.01, 15, 515.01, '', 0, 515.01, 515.01, 0, 0, '', 1, 1, '2016-04-26', '2016-04-26 14:34:44');
 
 -- --------------------------------------------------------
 
@@ -226,124 +232,40 @@ CREATE TABLE IF NOT EXISTS `chating` (
   `chat_status` int(11) NOT NULL,
   `chat_added_date` datetime NOT NULL,
   `chat_modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `chating`
 --
 
 INSERT INTO `chating` (`chat_id`, `chat_messsage`, `chat_type`, `chat_total_time`, `chat_sender_type`, `chat_sender_id`, `chat_reciever_type`, `chat_reciever_id`, `chat_status`, `chat_added_date`, `chat_modify_date`) VALUES
-(1, '<a data-title="Click the right half of the image to move forward." data-lightbox="example-set" href="/fitness/uploads/chat_data/canberra_hero_image_1450250987_62.jpg" class="example-image-link"><img src="/fitness/uploads/chat_data/canberra_hero_image_1450250987_62.jpg" class="file_img"></a>', 0, '', '', 51, '', 62, 1, '2015-12-16 07:29:47', '2015-12-16 07:29:47'),
-(2, '<a data-title="Click the right half of the image to move forward." data-lightbox="example-set" href="/fitness/uploads/chat_data/Country-Night-Western-Flyer-Template-1_1450250989_62.jpg" class="example-image-link"><img src="/fitness/uploads/chat_data/Country-Night-Western-Flyer-Template-1_1450250989_62.jpg" class="file_img"></a>', 0, '', '', 51, '', 62, 1, '2015-12-16 07:29:49', '2015-12-16 07:29:49'),
-(3, '<a target="_blank" href="/fitness/uploads/chat_data/Leave calender 2015_1450250993_62.PDf" class="file_data">Leave calender 2015_1450250993_62.PDf</a>', 0, '', '', 51, '', 62, 1, '2015-12-16 07:29:53', '2015-12-16 07:29:53'),
-(4, '<a target="_blank" href="/fitness/uploads/chat_data/_1450251005_62.Account Details" class="file_data">_1450251005_62.Account Details</a>', 0, '', '', 51, '', 62, 1, '2015-12-16 07:30:05', '2015-12-16 07:30:05'),
-(5, '<a target="_blank" href="/fitness/uploads/chat_data/Create ZIP Files in JavaScript_1450251011_62.zip" class="file_data">Create ZIP Files in JavaScript_1450251011_62.zip</a>', 0, '', '', 51, '', 62, 1, '2015-12-16 07:30:12', '2015-12-16 07:30:12'),
-(6, '<a target="_blank" href="/fitness/uploads/chat_data/employeeinfo_print_1450251017_62.php" class="file_data">employeeinfo_print_1450251017_62.php</a>', 0, '', '', 51, '', 62, 1, '2015-12-16 07:30:17', '2015-12-16 07:30:17'),
-(7, '<a data-title="Click the right half of the image to move forward." data-lightbox="example-set" href="/fitness/uploads/chat_data/body_bg_1450251023_62.jpg" class="example-image-link"><img src="/fitness/uploads/chat_data/body_bg_1450251023_62.jpg" class="file_img"></a>', 0, '', '', 51, '', 62, 1, '2015-12-16 07:30:23', '2015-12-16 07:30:23'),
-(8, '<a data-title="Click the right half of the image to move forward." data-lightbox="example-set" href="/fitness/uploads/chat_data/blogs_1450251026_62.jpg" class="example-image-link"><img src="/fitness/uploads/chat_data/blogs_1450251026_62.jpg" class="file_img"></a>', 0, '', '', 51, '', 62, 1, '2015-12-16 07:30:26', '2015-12-16 07:30:26'),
-(9, 'hello RAHUL', 0, '', '', 51, '', 62, 1, '2015-12-16 11:43:57', '2015-12-16 11:43:57'),
-(10, 'hello RAHUL', 0, '', '', 51, '', 62, 1, '2015-12-16 11:45:39', '2015-12-16 11:45:39'),
-(11, 'Hello Sorav', 0, '', '', 62, '', 51, 1, '2015-12-16 11:45:48', '2015-12-16 11:45:48'),
-(12, 'Hello Rahul', 0, '', '', 51, '', 62, 1, '2015-12-16 11:48:19', '2015-12-16 11:48:19'),
-(13, '', 1, '00:00:50', '', 51, '', 62, 1, '2015-12-16 13:57:28', '2015-12-16 13:58:33'),
-(14, '', 1, '00:33:16', '', 51, '', 62, 1, '2015-12-16 14:08:06', '2015-12-16 14:47:35'),
-(15, '', 1, '00:06:32', '', 51, '', 62, 1, '2015-12-16 14:48:10', '2015-12-16 14:55:53'),
-(16, '', 1, '00:03:05', '', 51, '', 62, 1, '2015-12-17 12:23:30', '2015-12-17 12:28:11'),
-(17, '', 1, '00:01:17', '', 51, '', 62, 1, '2015-12-17 12:34:31', '2015-12-17 12:36:22'),
-(18, '', 1, '00:02:40', '', 51, '', 62, 1, '2015-12-17 12:43:34', '2015-12-17 12:47:21'),
-(19, '', 1, '00:01:48', '', 51, '', 62, 1, '2015-12-17 12:47:38', '2015-12-17 12:50:19'),
-(20, '', 1, '00:03:14', '', 51, '', 62, 1, '2015-12-17 12:50:37', '2015-12-17 12:55:15'),
-(21, '', 2, '00:00:23', '', 51, '', 62, 1, '2015-12-17 12:55:37', '2015-12-17 12:56:05'),
-(22, '', 1, '00:00:59', '', 51, '', 62, 1, '2015-12-17 12:56:23', '2015-12-17 12:57:50'),
-(23, '', 1, '00:04:34', '', 51, '', 62, 1, '2015-12-17 12:59:02', '2015-12-17 13:04:48'),
-(24, '', 1, '00:00:27', '', 51, '', 62, 1, '2015-12-17 13:05:10', '2015-12-17 13:05:54'),
-(25, '', 1, '00:05:00', '', 51, '', 62, 1, '2015-12-17 13:06:13', '2015-12-17 13:13:19'),
-(26, '', 1, '00:02:41', '', 51, '', 62, 1, '2015-12-17 13:13:53', '2015-12-17 13:17:30'),
-(27, '', 1, '00:00:07', '', 51, '', 62, 1, '2015-12-17 13:17:54', '2015-12-17 13:18:18'),
-(28, '', 1, '00:01:06', '', 51, '', 62, 1, '2015-12-17 13:18:39', '2015-12-17 13:20:23'),
-(29, '', 1, '00:03:21', '', 51, '', 62, 1, '2015-12-17 13:21:04', '2015-12-17 13:25:24'),
-(30, '', 1, '00:07:45', '', 51, '', 62, 1, '2015-12-17 13:25:42', '2015-12-17 13:34:44'),
-(31, '', 1, '00:01:15', '', 51, '', 62, 1, '2015-12-17 13:35:05', '2015-12-17 13:36:33'),
-(32, '', 1, '00:06:51', '', 51, '', 62, 1, '2015-12-17 13:36:43', '2015-12-17 13:44:46'),
-(33, '', 1, '00:02:14', '', 51, '', 62, 1, '2015-12-17 13:45:02', '2015-12-17 13:47:49'),
-(34, '', 1, '00:00:24', '', 51, '', 62, 1, '2015-12-17 13:48:07', '2015-12-17 13:48:54'),
-(35, '', 1, '00:00:56', '', 51, '', 62, 1, '2015-12-17 13:49:09', '2015-12-17 13:50:19'),
-(36, '<a data-title="Click the right half of the image to move forward." data-lightbox="example-set" href="/fitness/uploads/chat_data/customer-portal-requests_1450360205_62.png" class="example-image-link"><img src="/fitness/uploads/chat_data/customer-portal-requests_1450360205_62.png" class="file_img"></a>', 0, '', '', 51, '', 62, 1, '2015-12-17 13:50:05', '2015-12-17 13:50:05'),
-(37, '', 1, '00:00:25', '', 51, '', 62, 1, '2015-12-17 13:50:33', '2015-12-17 13:51:07'),
-(38, '', 1, '00:00:33', '', 51, '', 62, 1, '2015-12-18 07:53:33', '2015-12-18 07:54:23'),
-(39, 'jhjhj', 0, '', '', 62, '', 51, 1, '2015-12-23 07:21:46', '2015-12-23 07:21:46'),
-(40, 'gfgfg', 0, '', '', 51, '', 62, 1, '2015-12-23 07:21:57', '2015-12-23 07:21:57'),
-(41, 'dsds', 0, '', '', 62, '', 51, 1, '2015-12-23 07:21:59', '2015-12-23 07:21:59'),
-(42, 'ddd', 0, '', '', 51, '', 62, 1, '2015-12-23 07:22:13', '2015-12-23 07:22:13'),
-(43, 'qqqqqqqq', 0, '', '', 62, '', 51, 1, '2015-12-23 07:22:22', '2015-12-23 07:22:22'),
-(44, 'dddd', 0, '', '', 62, '', 51, 1, '2015-12-23 07:32:39', '2015-12-23 07:32:39'),
-(45, 'sssss', 0, '', '', 62, '', 51, 1, '2015-12-23 07:32:43', '2015-12-23 07:32:43'),
-(46, 'sww3323', 0, '', '', 51, '', 62, 1, '2015-12-23 07:32:47', '2015-12-23 07:32:47'),
-(47, 'hello', 0, '', '', 51, '', 62, 1, '2016-01-05 06:26:08', '2016-01-05 06:26:08'),
-(48, 'hello', 0, '', '', 51, '', 0, 1, '2016-01-05 06:26:21', '2016-01-05 06:26:21'),
-(49, '22', 0, '', '', 62, '', 51, 1, '2016-03-11 07:36:01', '2016-03-11 07:36:01'),
-(50, '215', 0, '', '', 62, '', 53, 1, '2016-03-11 07:36:03', '2016-03-11 07:36:03'),
-(51, '41', 0, '', '', 62, '', 53, 1, '2016-03-11 07:36:04', '2016-03-11 07:36:04'),
-(52, '453', 0, '', '', 62, '', 53, 1, '2016-03-11 07:36:06', '2016-03-11 07:36:06'),
-(53, 'hello', 0, '', '', 51, '', 62, 1, '2016-03-14 11:05:48', '2016-03-14 11:05:48'),
-(54, 'sasasa', 0, '', '', 51, '', 62, 1, '2016-03-14 11:06:38', '2016-03-14 11:06:38'),
-(55, 'sssss', 0, '', '', 62, '', 51, 1, '2016-03-14 11:07:25', '2016-03-14 11:07:25'),
-(56, 'ssssss', 0, '', '', 62, '', 51, 1, '2016-03-14 11:07:44', '2016-03-14 11:07:44'),
-(57, '<a data-title="Click the right half of the image to move forward." data-lightbox="example-set" href="/fitness/uploads/chat_data/blogs_1457953668_51.jpg" class="example-image-link"><img src="/fitness/uploads/chat_data/blogs_1457953668_51.jpg" class="file_img"></a>', 0, '', '', 62, '', 51, 1, '2016-03-14 11:07:48', '2016-03-14 11:07:48'),
-(58, 'hello', 0, '', '', 62, '', 51, 1, '2016-03-14 11:10:32', '2016-03-14 11:10:32'),
-(59, 'asasasas', 0, '', '', 51, '', 62, 1, '2016-03-14 11:10:37', '2016-03-14 11:10:37'),
-(60, 'hello', 0, '', '', 51, '', 62, 1, '2016-03-14 11:17:03', '2016-03-14 11:17:03'),
-(61, 'sssss', 0, '', '', 51, '', 62, 1, '2016-03-14 11:18:40', '2016-03-14 11:18:40'),
-(62, 'sss', 0, '', '', 62, '', 51, 1, '2016-03-14 11:20:06', '2016-03-14 11:20:06'),
-(63, '1234444444', 0, '', '', 51, '', 62, 1, '2016-03-14 11:20:12', '2016-03-14 11:20:12'),
-(64, '12345', 0, '', '', 51, '', 62, 1, '2016-03-14 11:21:16', '2016-03-14 11:21:16'),
-(65, '369', 0, '', '', 51, '', 62, 1, '2016-03-14 11:22:39', '2016-03-14 11:22:39'),
-(66, '147852', 0, '', '', 51, '', 62, 1, '2016-03-14 11:23:38', '2016-03-14 11:23:38'),
-(67, 'ssss', 0, '', '', 51, '', 62, 1, '2016-03-14 11:24:13', '2016-03-14 11:24:13'),
-(68, '1', 0, '', '', 51, '', 62, 1, '2016-03-14 11:26:56', '2016-03-14 11:26:56'),
-(69, '2', 0, '', '', 51, '', 62, 1, '2016-03-14 11:26:58', '2016-03-14 11:26:58'),
-(70, '2121212121121', 0, '', '', 51, '', 62, 1, '2016-03-14 11:28:11', '2016-03-14 11:28:11'),
-(71, '11111111111', 0, '', '', 51, '', 62, 1, '2016-03-14 11:29:17', '2016-03-14 11:29:17'),
-(72, 's', 0, '', '', 51, '', 62, 1, '2016-03-14 11:32:58', '2016-03-14 11:32:58'),
-(73, 's', 0, '', '', 51, '', 62, 1, '2016-03-14 12:09:46', '2016-03-14 12:09:46'),
-(74, 'Hello Sorav', 0, '', '', 62, '', 51, 1, '2016-03-14 12:09:54', '2016-03-14 12:09:54'),
-(75, 'Hello Rahul', 0, '', '', 51, '', 62, 1, '2016-03-14 12:10:01', '2016-03-14 12:10:01'),
-(76, 'How are you ?', 0, '', '', 51, '', 62, 1, '2016-03-14 12:10:21', '2016-03-14 12:10:21'),
-(77, 'i am fine, thanks', 0, '', '', 62, '', 51, 1, '2016-03-14 12:10:28', '2016-03-14 12:10:28'),
-(78, 'great', 0, '', '', 51, '', 62, 1, '2016-03-14 12:10:33', '2016-03-14 12:10:33'),
-(79, 'Hello 1651', 0, '', '', 62, '', 75, 1, '2016-03-14 12:15:00', '2016-03-14 12:15:00'),
-(80, 'Hello rahul', 0, '', '', 75, '', 62, 1, '2016-03-14 12:15:09', '2016-03-14 12:15:09'),
-(81, 'ssss', 0, '', '', 62, '', 75, 1, '2016-03-14 12:15:17', '2016-03-14 12:15:17'),
-(82, 'aaa', 0, '', '', 75, '', 62, 1, '2016-03-14 12:15:19', '2016-03-14 12:15:19'),
-(83, 'aAaA', 0, '', '', 62, '', 75, 1, '2016-03-14 12:15:23', '2016-03-14 12:15:23'),
-(84, 'ddsdss', 0, '', '', 75, '', 62, 1, '2016-03-14 12:15:25', '2016-03-14 12:15:25'),
-(85, '343443', 0, '', '', 62, '', 75, 1, '2016-03-14 12:15:27', '2016-03-14 12:15:27'),
-(86, 'dfdfd', 0, '', '', 75, '', 62, 1, '2016-03-14 12:15:28', '2016-03-14 12:15:28'),
-(87, '<a target="_blank" href="/fitness/uploads/chat_data/Virtual TrainR Booking System estimation 12-march-2016_1457957731_75.odt" class="file_data">Virtual TrainR Booking System estimation 12-march-2016_1457957731_75.odt</a>', 0, '', '', 62, '', 75, 1, '2016-03-14 12:15:31', '2016-03-14 12:15:31'),
-(88, '<a data-title="Click the right half of the image to move forward." data-lightbox="example-set" href="/fitness/uploads/chat_data/1411899129_happy_diwali_ganesha_hd_wallpaper_and_images_1457957742_62.jpg" class="example-image-link"><img src="/fitness/uploads/chat_data/1411899129_happy_diwali_ganesha_hd_wallpaper_and_images_1457957742_62.jpg" class="file_img"></a>', 0, '', '', 75, '', 62, 1, '2016-03-14 12:15:42', '2016-03-14 12:15:42'),
-(89, 'hello rahul', 0, '', '', 75, '', 62, 1, '2016-03-14 12:20:37', '2016-03-14 12:20:37'),
-(90, 'ss', 0, '', '', 75, '', 62, 1, '2016-03-14 12:20:55', '2016-03-14 12:20:55'),
-(91, 'ssssssssssss', 0, '', '', 75, '', 62, 1, '2016-03-14 12:21:30', '2016-03-14 12:21:30'),
-(92, 'asasasa', 0, '', '', 62, '', 75, 1, '2016-03-14 12:21:36', '2016-03-14 12:21:36'),
-(93, 'sasa', 0, '', '', 75, '', 62, 1, '2016-03-14 12:21:38', '2016-03-14 12:21:38'),
-(94, 'sasa', 0, '', '', 62, '', 75, 1, '2016-03-14 12:21:40', '2016-03-14 12:21:40'),
-(95, 'Hello Rahul', 0, '', '', 75, '', 62, 1, '2016-03-14 12:26:59', '2016-03-14 12:26:59'),
-(96, 'Hello 1651', 0, '', '', 62, '', 75, 1, '2016-03-14 12:27:06', '2016-03-14 12:27:06'),
-(97, 'Good Work', 0, '', '', 75, '', 62, 1, '2016-03-14 12:27:13', '2016-03-14 12:27:13'),
-(98, 'Thanks', 0, '', '', 62, '', 75, 1, '2016-03-14 12:27:16', '2016-03-14 12:27:16'),
-(99, 'Hello again', 0, '', '', 75, '', 62, 1, '2016-03-14 12:30:10', '2016-03-14 12:30:10'),
-(100, 'good', 0, '', '', 62, '', 75, 1, '2016-03-14 12:30:14', '2016-03-14 12:30:14'),
-(101, 'yup', 0, '', '', 75, '', 62, 1, '2016-03-14 12:30:18', '2016-03-14 12:30:18'),
-(102, 'hehehe', 0, '', '', 62, '', 75, 1, '2016-03-14 12:30:21', '2016-03-14 12:30:21'),
-(103, 'sss', 0, '', '', 75, '', 62, 1, '2016-03-14 12:30:26', '2016-03-14 12:30:26'),
-(104, 'sasas', 0, '', '', 62, '', 75, 1, '2016-03-14 12:30:30', '2016-03-14 12:30:30'),
-(105, 'Hello Rahul', 0, '', '', 51, '', 62, 1, '2016-03-15 15:29:49', '2016-03-15 15:29:49'),
-(106, 'Hello Rahul', 0, '', '', 51, '', 62, 1, '2016-03-15 15:35:50', '2016-03-15 15:35:50'),
-(107, 'Hello Sorav', 0, '', '', 62, '', 51, 1, '2016-03-15 15:35:55', '2016-03-15 15:35:55'),
-(108, 'How are you', 0, '', '', 51, '', 62, 1, '2016-03-15 15:36:00', '2016-03-15 15:36:00'),
-(109, 'i am good, thanks', 0, '', '', 62, '', 51, 1, '2016-03-15 15:36:11', '2016-03-15 15:36:11'),
-(110, 'what about you', 0, '', '', 62, '', 51, 1, '2016-03-15 15:36:16', '2016-03-15 15:36:16'),
-(111, 'hello', 0, '', '', 62, '', 51, 1, '2016-04-06 14:54:53', '2016-04-06 14:54:53');
+(3, 'hello', 0, '', '', 62, '', 94, 1, '2016-04-23 07:34:17', '2016-04-23 07:34:17'),
+(6, 'thanks', 0, '', '', 62, '', 94, 1, '2016-04-23 07:34:30', '2016-04-23 07:34:30'),
+(7, 'fdfdfd', 0, '', '', 94, '', 62, 1, '2016-04-25 09:42:37', '2016-04-25 09:42:37'),
+(8, 'dffdf', 0, '', '', 94, '', 62, 1, '2016-04-25 09:42:38', '2016-04-25 09:42:38'),
+(9, 'fddf', 0, '', '', 94, '', 99, 1, '2016-04-25 09:42:41', '2016-04-25 09:42:41'),
+(10, 'sa', 0, '', '', 94, '', 99, 1, '2016-04-25 09:45:11', '2016-04-25 09:45:11'),
+(11, 'dsds', 0, '', '', 94, '', 99, 1, '2016-04-25 09:45:12', '2016-04-25 09:45:12'),
+(12, 'd', 0, '', '', 94, '', 99, 1, '2016-04-25 09:45:12', '2016-04-25 09:45:12'),
+(13, 'd', 0, '', '', 94, '', 99, 1, '2016-04-25 09:45:13', '2016-04-25 09:45:13'),
+(14, 'd', 0, '', '', 94, '', 99, 1, '2016-04-25 09:45:13', '2016-04-25 09:45:13'),
+(15, 'd', 0, '', '', 94, '', 99, 1, '2016-04-25 09:45:14', '2016-04-25 09:45:14'),
+(16, 'd', 0, '', '', 94, '', 99, 1, '2016-04-25 09:45:14', '2016-04-25 09:45:14'),
+(17, 'd', 0, '', '', 94, '', 99, 1, '2016-04-25 09:45:14', '2016-04-25 09:45:14'),
+(18, 'dd', 0, '', '', 94, '', 99, 1, '2016-04-25 09:45:15', '2016-04-25 09:45:15'),
+(19, 'd', 0, '', '', 94, '', 99, 1, '2016-04-25 09:45:15', '2016-04-25 09:45:15'),
+(20, 'd', 0, '', '', 94, '', 99, 1, '2016-04-25 09:45:15', '2016-04-25 09:45:15'),
+(21, 'd', 0, '', '', 94, '', 99, 1, '2016-04-25 09:45:15', '2016-04-25 09:45:15'),
+(22, 'd', 0, '', '', 94, '', 99, 1, '2016-04-25 09:45:16', '2016-04-25 09:45:16'),
+(23, 'd', 0, '', '', 94, '', 99, 1, '2016-04-25 09:45:16', '2016-04-25 09:45:16'),
+(24, 'd', 0, '', '', 94, '', 99, 1, '2016-04-25 09:45:16', '2016-04-25 09:45:16'),
+(25, 'd', 0, '', '', 94, '', 99, 1, '2016-04-25 09:45:17', '2016-04-25 09:45:17'),
+(26, 'd', 0, '', '', 94, '', 99, 1, '2016-04-25 09:45:17', '2016-04-25 09:45:17'),
+(27, 'd', 0, '', '', 94, '', 99, 1, '2016-04-25 09:45:17', '2016-04-25 09:45:17'),
+(28, 'jhjhhjjh', 0, '', '', 94, '', 62, 1, '2016-04-25 09:47:01', '2016-04-25 09:47:01'),
+(29, 'sdds', 0, '', '', 94, '', 62, 1, '2016-04-25 09:54:31', '2016-04-25 09:54:31'),
+(30, 'fd', 0, '', '', 94, '', 62, 1, '2016-04-25 09:58:09', '2016-04-25 09:58:09'),
+(31, 'sasa', 0, '', '', 94, '', 62, 1, '2016-04-25 09:58:16', '2016-04-25 09:58:16');
 
 -- --------------------------------------------------------
 
@@ -359,20 +281,22 @@ CREATE TABLE IF NOT EXISTS `chat_session` (
   `status` int(11) NOT NULL,
   `added_date` datetime NOT NULL,
   `modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `chat_session`
 --
 
 INSERT INTO `chat_session` (`id`, `user_id`, `session_id`, `token_id`, `status`, `added_date`, `modify_date`) VALUES
-(5, 62, '1_MX40NTU2MDIxMn5-MTQ2MTIzOTA5ODA2M35HSkJEbHpmWHA5dU5xSTFvWndOWFNMaHZ-fg', 'T1==cGFydG5lcl9pZD00NTU2MDIxMiZzaWc9YzM4N2RjOWI0ZjkzNDAxMzhjMTUzMjI2MGRjMDczYmQ1NGE1ZDBiOTpzZXNzaW9uX2lkPTFfTVg0ME5UVTJNREl4TW41LU1UUTJNVEl6T1RBNU9EQTJNMzVIU2tKRWJIcG1XSEE1ZFU1eFNURnZXbmRPV0ZOTWFIWi1mZyZjcmVhdGVfdGltZT0xNDYxMjM5MDk4JnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NjEyMzkwOTguNDkzNTQwMjgwNzYzMg==', 0, '2016-04-21 11:44:58', '2016-04-21 11:44:58'),
-(6, 51, '1_MX40NTU2MDIxMn5-MTQ2MTIzNzkzNjQyNn5yYzJFa1JzRnNSZVBDQjQydWlpZW1DcVJ-fg', 'T1==cGFydG5lcl9pZD00NTU2MDIxMiZzaWc9NzY0MTgwNWJkMTAwMjMyNjRlMjM3YWI5ZmU4YTllODc2ZDkwZDI4ZTpzZXNzaW9uX2lkPTFfTVg0ME5UVTJNREl4TW41LU1UUTJNVEl6Tnprek5qUXlObjV5WXpKRmExSnpSbk5TWlZCRFFqUXlkV2xwWlcxRGNWSi1mZyZjcmVhdGVfdGltZT0xNDYxMjM3OTM3JnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NjEyMzc5MzcuNzc5NDE2OTQ1Nzg3NTQ=', 0, '2016-04-21 11:25:37', '2016-04-21 11:25:37'),
+(5, 62, '1_MX40NTU2MDIxMn5-MTQ2MTY4MDY4ODY4MX5wNlBSc1NxT2ZqR1MzSHJQcGk4K3RhaDV-fg', 'T1==cGFydG5lcl9pZD00NTU2MDIxMiZzaWc9NzU1NmFjZDY2OTQwMGNiOGNkMTNmYTk2NWZiNmQ4ZmZlYzYyMzVjYTpzZXNzaW9uX2lkPTFfTVg0ME5UVTJNREl4TW41LU1UUTJNVFk0TURZNE9EWTRNWDV3TmxCU2MxTnhUMlpxUjFNelNISlFjR2s0SzNSaGFEVi1mZyZjcmVhdGVfdGltZT0xNDYxNjgwNjg5JnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NjE2ODA2ODkuMzI0NTIwODg3MzY4Nzg=', 0, '2016-04-26 14:24:49', '2016-04-26 14:24:49'),
+(6, 51, '1_MX40NTU2MDIxMn5-MTQ2MTMxMjI1OTIzMn5YZHhLYlE1MHkvQ0RlTTg1WjVvWms5VXl-fg', 'T1==cGFydG5lcl9pZD00NTU2MDIxMiZzaWc9YmYwYjhhM2U1ZDIxMmU1MTRhMDM2ZTZhYTBlYWM3YTNhZTljMDdkMjpzZXNzaW9uX2lkPTFfTVg0ME5UVTJNREl4TW41LU1UUTJNVE14TWpJMU9USXpNbjVZWkhoTFlsRTFNSGt2UTBSbFRUZzFXalZ2V21zNVZYbC1mZyZjcmVhdGVfdGltZT0xNDYxMzEyMjU5JnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NjEzMTIyNTkuNDQ3MTMxNDUyNzA1OQ==', 0, '2016-04-22 08:04:19', '2016-04-22 08:04:19'),
 (7, 53, '1_MX40NTQ0MTkwMn5-MTQ1MDc4Mjg4NDQxNn42TFNibFlEUW5IMklmUzF6QUhQeTZHdzd-fg', 'T1==cGFydG5lcl9pZD00NTQ0MTkwMiZzaWc9ODY3ZjkyNzc3OTg4NTkxY2MwZTljN2Y5MjVmMWU0OTVlNGU2YmQwMDpzZXNzaW9uX2lkPTFfTVg0ME5UUTBNVGt3TW41LU1UUTFNRGM0TWpnNE5EUXhObjQyVEZOaWJGbEVVVzVJTWtsbVV6RjZRVWhRZVRaSGR6ZC1mZyZjcmVhdGVfdGltZT0xNDUwNzgyODg0JnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NTA3ODI4ODQuODM4MjExMDcwOTQyNzU=', 0, '2015-12-22 11:14:44', '2015-12-22 11:14:44'),
 (8, 63, '2_MX40NTQwOTgwMn5-MTQ0ODM1NjA1NDQyNH5ORXo4YjBvUUpobjM0c21namFtTmVsdll-fg', 'T1==cGFydG5lcl9pZD00NTQwOTgwMiZzaWc9ZTMzZDMwNDg0NDQ4OTliNGNmMWY0MzVjNGI0NGYzMzJmYmIxMjgwNzpzZXNzaW9uX2lkPTJfTVg0ME5UUXdPVGd3TW41LU1UUTBPRE0xTmpBMU5EUXlOSDVPUlhvNFlqQnZVVXBvYmpNMGMyMW5hbUZ0VG1Wc2RsbC1mZyZjcmVhdGVfdGltZT0xNDQ4MzU2MDU0JnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NDgzNTYwNTQuNjc3MzU0ODcxNTkw', 0, '2015-11-24 09:07:34', '2015-11-24 09:07:34'),
 (9, 64, '1_MX40NTQwOTgwMn5-MTQ0ODM1NjI3NjY0MH5nRTZYTGtWOFVpbUMyR1VMTDRlbUFlK2h-fg', 'T1==cGFydG5lcl9pZD00NTQwOTgwMiZzaWc9ODI3ZWM3NTkzNjU4MWVhNzdjMDk2MGM5ZDAzNTIyNjI0MWI0YmJjNTpzZXNzaW9uX2lkPTFfTVg0ME5UUXdPVGd3TW41LU1UUTBPRE0xTmpJM05qWTBNSDVuUlRaWVRHdFdPRlZwYlVNeVIxVk1URFJsYlVGbEsyaC1mZyZjcmVhdGVfdGltZT0xNDQ4MzU2Mjc2JnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NDgzNTYyNzYuODg1MzEwNzM5NTUy', 0, '2015-11-24 09:11:16', '2015-11-24 09:11:16'),
 (10, 73, '2_MX40NTQ2NjkxMn5-MTQ1MzE4NjA0MTMzMH5IMytjb2JlQXRscDAxN3JYcFNqcDg4aEl-fg', 'T1==cGFydG5lcl9pZD00NTQ2NjkxMiZzaWc9NjQ2OGFiYTJkMzdjZDdjMjExMjFhNWFkNGYzMmIxYjFmNzg3MmRmNjpzZXNzaW9uX2lkPTJfTVg0ME5UUTJOamt4TW41LU1UUTFNekU0TmpBME1UTXpNSDVJTXl0amIySmxRWFJzY0RBeE4zSlljRk5xY0RnNGFFbC1mZyZjcmVhdGVfdGltZT0xNDUzMTg2MDQxJnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NTMxODYwNDEuNTQzMTg1NzI0MzQ5OA==', 0, '2016-01-19 06:47:21', '2016-01-19 06:47:21'),
-(11, 75, '2_MX40NTUyNjA4Mn5-MTQ1Nzk1NzY3NjgzNX5qNUxob0xheDlvMXJmb0hLU1lLRmVNY29-fg', 'T1==cGFydG5lcl9pZD00NTUyNjA4MiZzaWc9MDg3MmI2MjQyYzA3MzVjMjFmMDI1NDIwNDZlZjBiMjVjZTgxMDU3NzpzZXNzaW9uX2lkPTJfTVg0ME5UVXlOakE0TW41LU1UUTFOemsxTnpZM05qZ3pOWDVxTlV4b2IweGhlRGx2TVhKbWIwaExVMWxMUm1WTlkyOS1mZyZjcmVhdGVfdGltZT0xNDU3OTU3Njc3JnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NTc5NTc2NzcuMjY4MzE3NDY4MTAzODY=', 0, '2016-03-14 12:14:37', '2016-03-14 12:14:37');
+(11, 75, '2_MX40NTUyNjA4Mn5-MTQ1Nzk1NzY3NjgzNX5qNUxob0xheDlvMXJmb0hLU1lLRmVNY29-fg', 'T1==cGFydG5lcl9pZD00NTUyNjA4MiZzaWc9MDg3MmI2MjQyYzA3MzVjMjFmMDI1NDIwNDZlZjBiMjVjZTgxMDU3NzpzZXNzaW9uX2lkPTJfTVg0ME5UVXlOakE0TW41LU1UUTFOemsxTnpZM05qZ3pOWDVxTlV4b2IweGhlRGx2TVhKbWIwaExVMWxMUm1WTlkyOS1mZyZjcmVhdGVfdGltZT0xNDU3OTU3Njc3JnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NTc5NTc2NzcuMjY4MzE3NDY4MTAzODY=', 0, '2016-03-14 12:14:37', '2016-03-14 12:14:37'),
+(12, 94, '1_MX40NTU2MDIxMn5-MTQ2MTY4MTIyOTYwMn5XQVU5anE5bys1MmEybTd4K3JTZWt5d1h-fg', 'T1==cGFydG5lcl9pZD00NTU2MDIxMiZzaWc9YTRjMjMyMjJmY2UzNTNkZDU5MjRkNGM1MDkwZjQwZWJiNDNiOWEwZDpzZXNzaW9uX2lkPTFfTVg0ME5UVTJNREl4TW41LU1UUTJNVFk0TVRJeU9UWXdNbjVYUVZVNWFuRTVieXMxTW1FeWJUZDRLM0pUWld0NWQxaC1mZyZjcmVhdGVfdGltZT0xNDYxNjgxMjMwJnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NjE2ODEyMzAuMjQxNzYzMDcyOTc0Nw==', 0, '2016-04-26 14:33:50', '2016-04-26 14:33:50'),
+(13, 99, '1_MX40NTU2MDIxMn5-MTQ2MTQwNzE4ODkwN35manlhKzBQSWRvenA0Vzk2bFNQTnBLRm1-fg', 'T1==cGFydG5lcl9pZD00NTU2MDIxMiZzaWc9M2U0YzFiZjI5YWVkNjgyYjViMjFlMDY5YjUzMzlhZjJlNjE1MWM2NjpzZXNzaW9uX2lkPTFfTVg0ME5UVTJNREl4TW41LU1UUTJNVFF3TnpFNE9Ea3dOMzVtYW5saEt6QlFTV1J2ZW5BMFZ6azJiRk5RVG5CTFJtMS1mZyZjcmVhdGVfdGltZT0xNDYxNDA3MTg5JnJvbGU9cHVibGlzaGVyJm5vbmNlPTE0NjE0MDcxODkuMjMyMTIwMzI3NzA0NjE=', 0, '2016-04-23 10:26:29', '2016-04-23 10:26:29');
 
 -- --------------------------------------------------------
 
@@ -48308,8 +48232,8 @@ CREATE TABLE IF NOT EXISTS `custom_packages_history` (
 --
 
 INSERT INTO `custom_packages_history` (`id`, `trainee_id`, `trainer_id`, `package_name`, `package_description`, `price`, `service_fee`, `total_price`, `coupon_id`, `final_price`, `trainer_message`, `wallet_amount`, `payment_gateway_amount`, `created_date`, `modify_date`) VALUES
-(14, 51, 62, 'Premium Package', 'Meal Plans, Nutrition Guide, T-shirt, Work-out Program', 400, 12, 412, 5, 370.8, 'Share details about yourself, your preferences, and what you love about Rahul Goyal profile', 370.8, 0, '0000-00-00 00:00:00', '2016-04-12 14:10:04'),
-(15, 51, 62, 'Premium Package', 'Meal Plans, Nutrition Guide, T-shirt, Work-out Program', 400, 12, 412, 7, 370.8, 'rerererere', 370.8, 0, '0000-00-00 00:00:00', '2016-04-11 11:45:54');
+(14, 94, 62, 'Premium Package', 'Meal Plans, Nutrition Guide, T-shirt, Work-out Program', 400, 12, 412, 5, 370.8, 'Share details about yourself, your preferences, and what you love about Rahul Goyal profile', 370.8, 0, '0000-00-00 00:00:00', '2016-04-25 12:37:54'),
+(15, 51, 62, 'Premium Package', 'Meal Plans, Nutrition Guide, T-shirt, Work-out Program', 400, 12, 412, 7, 370.8, 'rerererere', 370.8, 0, '0000-00-00 00:00:00', '2016-04-25 12:37:55');
 
 -- --------------------------------------------------------
 
@@ -48327,7 +48251,7 @@ CREATE TABLE IF NOT EXISTS `documents` (
   `status` int(11) NOT NULL,
   `added_date` datetime NOT NULL,
   `modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `documents`
@@ -48354,7 +48278,17 @@ INSERT INTO `documents` (`id`, `document_name`, `document_file`, `document_type`
 (29, '', '', 'resume', 81, 0, 0, '2016-04-21 12:17:27', '2016-04-21 12:17:27'),
 (30, 'ewewew', '', 'certifications', 81, 0, 0, '2016-04-21 12:17:27', '2016-04-21 12:17:27'),
 (31, '', '', 'resume', 82, 0, 0, '2016-04-21 12:17:34', '2016-04-21 12:17:34'),
-(32, 'ewewew', '', 'certifications', 82, 0, 0, '2016-04-21 12:17:34', '2016-04-21 12:17:34');
+(32, 'ewewew', '', 'certifications', 82, 0, 0, '2016-04-21 12:17:34', '2016-04-21 12:17:34'),
+(33, '', '', 'resume', 84, 0, 0, '2016-04-22 06:46:32', '2016-04-22 06:46:32'),
+(34, '2112211212121221211', '', 'certifications', 84, 0, 0, '2016-04-22 06:46:32', '2016-04-22 06:46:32'),
+(35, '', '', 'resume', 95, 0, 0, '2016-04-22 07:27:23', '2016-04-22 07:27:23'),
+(36, '232323232332', '', 'certifications', 95, 0, 0, '2016-04-22 07:27:24', '2016-04-22 07:27:24'),
+(37, '', '', 'resume', 97, 0, 0, '2016-04-22 07:30:58', '2016-04-22 07:30:58'),
+(38, '233232', '', 'certifications', 97, 0, 0, '2016-04-22 07:30:58', '2016-04-22 07:30:58'),
+(39, '', '', 'resume', 98, 0, 0, '2016-04-22 07:33:09', '2016-04-22 07:33:09'),
+(40, '2212121', '', 'certifications', 98, 0, 0, '2016-04-22 07:33:09', '2016-04-22 07:33:09'),
+(41, '', '', 'resume', 99, 0, 0, '2016-04-23 10:25:19', '2016-04-23 10:25:19'),
+(42, '111', '', 'certifications', 99, 0, 0, '2016-04-23 10:25:19', '2016-04-23 10:25:19');
 
 -- --------------------------------------------------------
 
@@ -48581,14 +48515,14 @@ CREATE TABLE IF NOT EXISTS `notifications` (
   `noti_status` int(11) NOT NULL COMMENT '0 = unread, 1 = read',
   `noti_added_date` datetime NOT NULL,
   `noti_modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `notifications`
 --
 
 INSERT INTO `notifications` (`id`, `noti_type`, `parent_id`, `noti_sender_type`, `noti_sender_id`, `noti_receiver_type`, `noti_receiver_id`, `noti_message`, `parent_id_status`, `noti_status`, `noti_added_date`, `noti_modify_date`) VALUES
-(8, 'Custom Packages', 14, 'trainee', 51, 'trainer', 62, 'You have new request of purchased custom packages', 1, 0, '2016-04-11 10:50:42', '2016-04-11 05:20:42'),
+(8, 'Custom Packages', 14, 'trainee', 51, 'trainer', 62, 'You have new request of purchased custom packages', 0, 0, '2016-04-11 10:50:42', '2016-04-22 10:00:05'),
 (9, 'Rate Plans', 36, 'trainee', 51, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-11 10:53:30', '2016-04-11 05:23:30'),
 (10, 'Rate Plans', 37, 'trainee', 51, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-11 10:55:08', '2016-04-11 05:25:08'),
 (11, 'Approve Appointment', 37, 'trainer', 62, 'trainee', 51, 'has approved your appoinment', 1, 0, '2016-04-11 10:56:31', '2016-04-11 05:26:31'),
@@ -48600,7 +48534,25 @@ INSERT INTO `notifications` (`id`, `noti_type`, `parent_id`, `noti_sender_type`,
 (17, 'Make Special Offer', 38, 'trainer', 62, 'trainee', 51, 'have make a request for special offer', 3, 0, '2016-04-11 11:52:49', '2016-04-11 06:22:49'),
 (18, 'Approve Special Offe', 38, 'trainee', 51, 'trainer', 62, 'has approved special offer request', 1, 0, '2016-04-11 11:53:34', '2016-04-11 06:23:34'),
 (19, 'Transfer Ammount Success', 3, 'admin', 48, 'trainer', 62, 'Congratulation your $1000amount successfully transfered in your account', 0, 0, '2016-04-12 13:43:37', '2016-04-12 08:13:37'),
-(20, 'Transfer Ammount Success', 4, 'admin', 48, 'trainer', 62, 'Congratulation your $500 amount successfully transfered in your account', 0, 0, '2016-04-12 13:48:49', '2016-04-12 08:18:49');
+(20, 'Transfer Ammount Success', 4, 'admin', 48, 'trainer', 62, 'Congratulation your $500 amount successfully transfered in your account', 0, 0, '2016-04-12 13:48:49', '2016-04-12 08:18:49'),
+(21, 'Rate Plans', 48, 'trainee', 94, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-25 14:45:24', '2016-04-25 14:45:24'),
+(22, 'Approve Appointment', 48, 'trainer', 62, 'trainee', 94, 'has approved your appoinment', 1, 0, '2016-04-25 14:51:27', '2016-04-25 14:51:27'),
+(23, 'Rate Plans', 49, 'trainee', 94, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-26 08:50:07', '2016-04-26 08:50:07'),
+(24, 'Approve Appointment', 49, 'trainer', 62, 'trainee', 94, 'has approved your appoinment', 1, 0, '2016-04-26 08:50:42', '2016-04-26 08:50:42'),
+(25, 'Rate Plans', 50, 'trainee', 94, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-26 08:53:29', '2016-04-26 08:53:29'),
+(26, 'Approve Appointment', 50, 'trainer', 62, 'trainee', 94, 'has approved your appoinment', 1, 0, '2016-04-26 08:53:50', '2016-04-26 08:53:50'),
+(27, 'Approve Appointment', 50, 'trainer', 62, 'trainee', 94, 'has approved your appoinment', 1, 0, '2016-04-26 08:55:10', '2016-04-26 08:55:10'),
+(28, 'Approve Appointment', 50, 'trainer', 62, 'trainee', 94, 'has approved your appoinment', 1, 0, '2016-04-26 08:56:38', '2016-04-26 08:56:38'),
+(29, 'Approve Appointment', 50, 'trainer', 62, 'trainee', 94, 'has approved your appoinment', 1, 0, '2016-04-26 09:22:44', '2016-04-26 09:22:44'),
+(30, 'Rate Plans', 51, 'trainee', 94, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-26 14:24:30', '2016-04-26 14:24:30'),
+(31, 'Approve Appointment', 51, 'trainer', 62, 'trainee', 94, 'has approved your appoinment', 1, 0, '2016-04-26 14:25:16', '2016-04-26 14:25:16'),
+(32, 'Approve Appointment', 51, 'trainer', 62, 'trainee', 94, 'has approved your appoinment', 1, 0, '2016-04-26 14:30:58', '2016-04-26 14:30:58'),
+(33, 'Approve Appointment', 51, 'trainer', 62, 'trainee', 94, 'has approved your appoinment', 1, 0, '2016-04-26 14:31:09', '2016-04-26 14:31:09'),
+(34, 'Approve Appointment', 51, 'trainer', 62, 'trainee', 94, 'has approved your appoinment', 1, 0, '2016-04-26 14:32:00', '2016-04-26 14:32:00'),
+(35, 'Approve Appointment', 51, 'trainer', 62, 'trainee', 94, 'has approved your appoinment', 1, 0, '2016-04-26 14:32:30', '2016-04-26 14:32:30'),
+(36, 'Approve Appointment', 51, 'trainer', 62, 'trainee', 94, 'has approved your appoinment', 1, 0, '2016-04-26 14:32:46', '2016-04-26 14:32:46'),
+(37, 'Rate Plans', 52, 'trainee', 94, 'trainer', 62, 'You have new request of purchased session', 0, 0, '2016-04-26 14:34:58', '2016-04-26 14:34:58'),
+(38, 'Approve Appointment', 52, 'trainer', 62, 'trainee', 94, 'has approved your appoinment', 1, 0, '2016-04-26 14:35:17', '2016-04-26 14:35:17');
 
 -- --------------------------------------------------------
 
@@ -48618,7 +48570,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `order_status` smallint(6) NOT NULL COMMENT '0 = completed, 1 = pending, 2 = failed',
   `created_date` datetime NOT NULL,
   `modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `orders`
@@ -48629,7 +48581,12 @@ INSERT INTO `orders` (`order_id`, `trainee_id`, `app_id`, `order_amount`, `order
 (9, 51, 36, 2688.31, 'SASK#1', 0, 0, '2016-04-11 10:53:29', '2016-04-11 10:53:29'),
 (10, 51, 37, 978.5, 'SASK#2', 0, 0, '2016-04-11 10:55:08', '2016-04-11 10:55:08'),
 (11, 51, 15, 370.8, 'SASK#3', 1, 0, '2016-04-11 11:45:54', '2016-04-11 11:45:54'),
-(12, 51, 38, 2987.01, 'SASK#4', 0, 0, '2016-04-11 11:51:02', '2016-04-11 11:51:02');
+(12, 51, 38, 2987.01, 'SASK#4', 0, 0, '2016-04-11 11:51:02', '2016-04-11 11:51:02'),
+(13, 94, 48, 9785, 'SASK#0', 0, 0, '2016-04-25 14:45:24', '2016-04-25 14:45:24'),
+(14, 94, 49, 515.01, 'SASK#1', 0, 0, '2016-04-26 08:50:07', '2016-04-26 08:50:07'),
+(15, 94, 50, 515.01, 'SASK#2', 0, 0, '2016-04-26 08:53:29', '2016-04-26 08:53:29'),
+(16, 94, 51, 4841, 'SASK#3', 0, 0, '2016-04-26 14:24:30', '2016-04-26 14:24:30'),
+(17, 94, 52, 515.01, 'SASK#4', 0, 0, '2016-04-26 14:34:58', '2016-04-26 14:34:58');
 
 -- --------------------------------------------------------
 
@@ -48702,7 +48659,7 @@ CREATE TABLE IF NOT EXISTS `profile_images_videos` (
   `piv_status` int(11) NOT NULL,
   `piv_added_date` datetime NOT NULL,
   `piv_modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `profile_images_videos`
@@ -52986,7 +52943,7 @@ CREATE TABLE IF NOT EXISTS `total_wallet_ammount` (
   `status` int(11) NOT NULL,
   `added_date` datetime NOT NULL,
   `modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `total_wallet_ammount`
@@ -52994,7 +52951,8 @@ CREATE TABLE IF NOT EXISTS `total_wallet_ammount` (
 
 INSERT INTO `total_wallet_ammount` (`id`, `user_id`, `user_type`, `total_ammount`, `status`, `added_date`, `modify_date`) VALUES
 (1, 51, 'trainee', 5758.4, 0, '2015-11-18 13:55:40', '2016-04-14 11:44:27'),
-(4, 62, 'trainer', 2693.28, 0, '2016-04-11 10:50:42', '2016-04-12 13:47:43');
+(4, 62, 'trainer', 36230.14, 0, '2016-04-11 10:50:42', '2016-04-26 14:35:17'),
+(5, 94, 'trainee', 83828.97, 0, '2016-04-22 12:58:53', '2016-04-26 14:34:58');
 
 -- --------------------------------------------------------
 
@@ -53034,20 +52992,17 @@ CREATE TABLE IF NOT EXISTS `trainees` (
   `lng` varchar(250) NOT NULL,
   `trainee_added_date` datetime NOT NULL,
   `trainee_modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `trainees`
 --
 
 INSERT INTO `trainees` (`id`, `user_id`, `trainee_name`, `trainee_lname`, `trainee_email`, `trainee_gender`, `trainee_age`, `trainee_displayName`, `trainee_country`, `trainee_state`, `trainee_city`, `trainee_zip`, `trainee_password`, `trainee_image`, `trainee_skills`, `trainee_aboutme`, `trainee_current_weight`, `trainee_goal`, `trainee_social_type`, `trainee_social_id`, `trainee_status`, `trainee_linkedin`, `trainee_belibitv`, `trainee_facebook`, `trainee_twitter`, `trainee_google`, `trainee_instagram`, `lat`, `lng`, `trainee_added_date`, `trainee_modify_date`) VALUES
-(3, 51, 'sorav garg', '', 'sorav@gmail.com', 'male', 19, 'soravgarg123456', 101, 21, 2229, '452001253', '123456', '5675379ea8911.jpg', 'Test1Test1Test1,Test2Test1Test1,Test3Test1Test1,Test4Test1Test1,Test1Test1Test1', 'After quite a serious accident during a mountain bike race where I broke my shoulder, I started lifting weights to build back my strength and quickly noticed my body change and add muscle. This spurned me on to enter my first bodybuilding show several years later, and still continue to compete to this day. After quite a serious accident during a mountain bike race where I broke my shoulder, I started lifting weights to build back my strength and quickly noticed my body change and add muscle. This spurned me on to enter my first bodybuilding show several years later, and still continue to compete to this day. After quite a serious accident during a mountain bike race where I broke my shoulder, I started lifting weights to build back my strength and quickly noticed my body change and add muscle. This spurned me on to enter my first bodybuilding show several years later, and still continue to compete to this day. After quite a serious accident during a mountain bike race where I broke my shoulder, I started lifting weights to build back my strength and quickly noticed my body change and add muscle. This spurned me on to enter my first bodybuilding show several years later, and still continue to compete to this day.', '187.86', '140', '', '', 1, 'https://in.linkedin.com/1', 'http://virtual.belibitv.com/', 'https://www.facebook.com/?_rdr=p', 'https://twitter.com/', 'https://www.google.co.in/1', 'https://instagram.com/', '', '', '2016-03-10 12:32:29', '2016-04-06 14:23:02'),
-(4, 53, 'vikas agrawal', '', 'vikas@gmail.com', 'male', 19, 'vikas897', 227, 3763, 41219, '695823', '258963', '5630e0b3d2ece.jpg', '', '', '', '', '', '', 1, '', '', '', '', '', '', '', '', '2016-03-17 13:31:22', '2016-04-06 14:23:09'),
-(6, 64, 'gauarv', '', 'gaurav@gmail.om', 'male', 24, 'gaurav123', 101, 21, 2229, '452001', '123456', 'default.png', '', '', '', '', '', '', 1, '', '', '', '', '', '', '', '', '2015-11-24 09:10:40', '2015-11-24 09:11:02'),
 (7, 66, 't', 's', 'test3@gmal.com', 'male', 16, 't', 1, 42, 5909, '0', '123456', 'default.png', '', '', '', '', '', '', 1, '', '', '', '', '', '', '', '', '2015-11-24 11:55:03', '2015-11-24 11:55:03'),
-(8, 72, 'Sorav Garg', '', 'soravapi@gmail.com', 'male', 24, 'sorav123', 120, 23, 12, '452001', '123456', 'default.png', '', '', '', '', '', '', 1, '', '', '', '', '', '', '', '', '2015-11-25 12:44:04', '2015-11-25 12:44:04'),
-(9, 73, 'rahul', 'goyal', 'rahul1@gmail.com', 'male', 21, 'rahul123', 101, 21, 2229, '452001', '123456', 'default.png', '', '', '', '', '', '', 1, '', '', '', '', '', '', '', '', '2015-12-15 10:15:07', '2015-12-15 10:15:07'),
-(10, 75, '43434', '4343', '5165@4141.fd', 'male', 16, '1651', 101, 21, 2229, '452kio', '1', 'default.png', '', '', '', '', '', '', 1, '', '', '', '', '', '', '', '', '2015-12-15 11:06:00', '2015-12-15 11:06:00');
+(10, 75, '43434', '4343', '5165@4141.fd', 'male', 16, '1651', 101, 21, 2229, '452kio', '1', 'default.png', '', '', '', '', '', '', 1, '', '', '', '', '', '', '', '', '2015-12-15 11:06:00', '2015-12-15 11:06:00'),
+(11, 83, 'sasa', 'sasa', 'sas@fdf.hghgghhh', 'male', 23, 'sasasasa', 18, 348, 7292, '3223', '12', 'default.png', '', '', '', '', '', '', 1, '', '', '', '', '', '', '23.9148319', '90.2174318', '2016-04-22 06:44:37', '2016-04-22 06:44:37'),
+(12, 94, 'gaurav', 'garg', 'gaurav@gmail.com', 'male', 25, 'gauravgarg', 231, 3924, 42804, '452001', '123456', 'default.png', 'Google', '', '43434', '43', '', '', 1, '', '', '', '', '', '', '37.88687', '-122.2977475', '2016-04-22 07:25:47', '2016-04-25 14:19:16');
 
 -- --------------------------------------------------------
 
@@ -53112,7 +53067,7 @@ CREATE TABLE IF NOT EXISTS `trainee_txns` (
   `status` varchar(20) NOT NULL,
   `added_date` datetime NOT NULL,
   `modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `trainee_txns`
@@ -53127,7 +53082,13 @@ INSERT INTO `trainee_txns` (`id`, `trainee_id`, `txn_name`, `payment_type`, `txn
 (13, 51, 'Purchase Custom Packages', 'Wallet', 'Debit', '51-570b8e72655f3', 370.8, 'Approved', '2016-04-11 11:45:54', '2016-04-11 11:45:54'),
 (14, 51, 'Purchase Session', 'Wallet', 'Debit', '51-570b8fa612fbd', 2987.01, 'Approved', '2016-04-11 11:51:02', '2016-04-11 11:51:02'),
 (15, 51, 'Special Offer Discount', 'Wallet', 'Credit', '51-570b903e663d8', 487.01, 'Approved', '2016-04-11 11:53:34', '2016-04-11 11:53:34'),
-(16, 51, 'Money Order', 'Money Order', 'Credit', '123456789', 1000, 'Completed', '2016-04-13 12:05:31', '2016-04-13 12:08:36');
+(16, 51, 'Money Order', 'Money Order', 'Credit', '123456789', 1000, 'Completed', '2016-04-13 12:05:31', '2016-04-13 12:08:36'),
+(17, 94, 'Money Order', 'Money Order', 'Credit', '455545', 100, 'Completed', '2016-04-22 12:58:11', '2016-04-22 12:58:53'),
+(18, 94, 'Purchase Session', 'Wallet', 'Debit', '94-571e2d84a4de2', 9785, 'Approved', '2016-04-25 14:45:24', '2016-04-25 14:45:24'),
+(19, 94, 'Purchase Session', 'Wallet', 'Debit', '94-571f2bbf6588b', 515.01, 'Approved', '2016-04-26 08:50:07', '2016-04-26 08:50:07'),
+(20, 94, 'Purchase Session', 'Wallet', 'Debit', '94-571f2c899db9f', 515.01, 'Approved', '2016-04-26 08:53:29', '2016-04-26 08:53:29'),
+(21, 94, 'Purchase Session', 'Wallet', 'Debit', '94-571f7a1e1d940', 4841, 'Approved', '2016-04-26 14:24:30', '2016-04-26 14:24:30'),
+(22, 94, 'Purchase Session', 'Wallet', 'Debit', '94-571f7c92b91fc', 515.01, 'Approved', '2016-04-26 14:34:58', '2016-04-26 14:34:58');
 
 -- --------------------------------------------------------
 
@@ -53177,17 +53138,19 @@ CREATE TABLE IF NOT EXISTS `trainers` (
   `lng` varchar(250) NOT NULL,
   `trainer_added_date` datetime NOT NULL,
   `trainer_modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `trainers`
 --
 
 INSERT INTO `trainers` (`id`, `user_id`, `trainer_name`, `trainer_lname`, `trainer_email`, `trainer_gender`, `trainer_age`, `trainer_phone`, `trainer_displayName`, `trainer_country`, `trainer_state`, `trainer_city`, `trainer_zip`, `trainer_password`, `trainer_image`, `trainer_skills`, `trainer_rating`, `biography`, `certification`, `awards`, `accomplishments`, `location`, `credentials`, `interests_hobby`, `hobby`, `paypal_url`, `paypal_email`, `amazon_url`, `amazon_email`, `money_order_address`, `trainer_status`, `trainer_linkedin`, `trainer_belibitv`, `trainer_facebook`, `trainer_twitter`, `trainer_google`, `trainer_instagram`, `lat`, `lng`, `trainer_added_date`, `trainer_modify_date`) VALUES
-(2, 62, 'rahul', 'goyal', 'rahul@gmail.com', 'male', 29, '', 'rahulgoyal', 90, 1531, 20749, '452001', '123456', '566e6ec9c0833.jpg', 'Test1,Test2,Test3,Test4,Test5', 3.8, '   Biography', 'Certification   ', '   Awards', '   Accomplishments', ' Location', ' Credentials', ' Interests', ' Hobby', 'https://www.sandbox.paypal.com/cgi-bin/webscr', 'sourav-buyer@mobiwebtech.com', 'https://www.sandbox.amazon.com/cgi-bin/webscr', 'rahul-facilitator@amazon.com', 'You Tag Media & Business Solutions, Inc\r\n1950 Broad Street, Unit 209 Regina, SK S461X6 Canada', 1, 'https://in.linkedin.com/', 'http://virtual.belibitv.com/', 'https://www.facebook.com', 'https://twitter.com/', 'https://www.google.co.in/', 'https://instagram.com/', '', '', '0000-00-00 00:00:00', '2016-04-12 12:30:03'),
+(2, 62, 'rahul', 'goyal', 'rahul@gmail.com', 'male', 29, '', 'rahulgoyal', 227, 3763, 41222, '452001', '123456', '566e6ec9c0833.jpg', 'Gyming,Basket Ball', 3.8, '   Biography', 'Certification   ', '   Awards', '   Accomplishments', ' Location', ' Credentials', ' Interests', ' Hobby', 'https://www.sandbox.paypal.com/cgi-bin/webscr', 'sourav-buyer@mobiwebtech.com', 'https://www.sandbox.amazon.com/cgi-bin/webscr', 'sourav-amazo@mobiwebtech.com', 'You Tag Media & Business Solutions, Inc\r\n1950 Broad Street, Unit 209 Regina, SK S461X6 Canada', 1, 'https://in.linkedin.com/', 'http://virtual.belibitv.com/', 'https://www.facebook.com', 'https://twitter.com/', 'https://www.google.co.in/', 'https://instagram.com/', '0.2532134', '33.5508661', '0000-00-00 00:00:00', '2016-04-25 14:15:55'),
 (10, 80, 'vikas', 'garg', 'vikas123@gmail.com', 'male', 26, '9632/87411', 'vikas123', 101, 21, 2229, '452001', '123456', 'default.png', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', '2016-04-11 13:55:22'),
-(11, 81, 'dsdsd', 'dssdsdssdsd', 'dsdsds@eweew.ewewewewe', 'male', 20, '2121121221', 'dsds', 13, 255, 6562, 'eweew', '12', 'default.png', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', '2016-04-21 12:17:27'),
-(12, 82, 'dsdsd', 'dssdsdssdsd', 'dsdsds@eweew.ewewewewe', 'male', 20, '2121121221', 'dsds', 13, 255, 6562, 'eweew', '12', 'default.png', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', '2016-04-21 12:17:34');
+(14, 95, 'ankit', 'goyal', 'ankit@gmail.com', 'male', 28, '12233333', 'ankitg', 18, 349, 7296, '123456', '12', 'default.png', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '25.6135019', '88.6536154', '0000-00-00 00:00:00', '2016-04-22 07:27:23'),
+(15, 97, 'erre', 'ewrrereer', '3232ddsd@g.fdfdfd', 'male', 24, '2323', '33232', 11, 239, 6544, '32', '2', 'default.png', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '39.8126818', '46.7488187', '0000-00-00 00:00:00', '2016-04-22 07:30:58'),
+(16, 98, 'chinku', 'dongre', 'dsdsds@eweew.ewewewewe111', 'female', 31, '9074939905', '11111', 52, 846, 13794, '45200', '12', 'default.png', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '9.9799635', '-84.1853179', '0000-00-00 00:00:00', '2016-04-22 07:33:08'),
+(17, 99, 'piyush', 'choure', 'piyush@gmail.com', 'male', 19, '452000', 'piyush', 101, 21, 2229, '452001', '123456', 'default.png', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', 1, '', '', '', '', '', '', '22.7195687', '75.8577258', '0000-00-00 00:00:00', '2016-04-23 10:25:53');
 
 -- --------------------------------------------------------
 
@@ -53228,7 +53191,7 @@ CREATE TABLE IF NOT EXISTS `trainer_availability` (
   `status` smallint(5) NOT NULL,
   `created_date` datetime NOT NULL,
   `modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `trainer_availability`
@@ -53243,8 +53206,9 @@ INSERT INTO `trainer_availability` (`id`, `trainer_id`, `date`, `times`, `status
 (15, 62, '2016-04-10', 'a:24:{i:0;s:1:"1";i:1;s:1:"0";i:2;s:1:"1";i:3;s:1:"0";i:4;s:1:"1";i:5;s:1:"0";i:6;s:1:"1";i:7;s:1:"1";i:8;s:1:"1";i:9;s:1:"0";i:10;s:1:"1";i:11;s:1:"0";i:12;s:1:"1";i:13;s:1:"1";i:14;s:1:"1";i:15;s:1:"0";i:16;s:1:"1";i:17;s:1:"0";i:18;s:1:"0";i:19;s:1:"0";i:20;s:1:"0";i:21;s:1:"0";i:22;s:1:"0";i:23;s:1:"0";}', 0, '2016-04-06 12:42:27', '2016-04-09 06:42:21'),
 (16, 62, '2016-04-17', 'a:24:{i:0;s:1:"0";i:1;s:1:"0";i:2;s:1:"0";i:3;s:1:"1";i:4;s:1:"0";i:5;s:1:"0";i:6;s:1:"0";i:7;s:1:"0";i:8;s:1:"1";i:9;s:1:"0";i:10;s:1:"0";i:11;s:1:"0";i:12;s:1:"1";i:13;s:1:"0";i:14;s:1:"1";i:15;s:1:"0";i:16;s:1:"1";i:17;s:1:"1";i:18;s:1:"0";i:19;s:1:"0";i:20;s:1:"0";i:21;s:1:"1";i:22;s:1:"0";i:23;s:1:"1";}', 0, '2016-04-08 06:08:58', '2016-04-08 06:29:13'),
 (17, 62, '2016-04-07', 'a:24:{i:0;s:1:"1";i:1;s:1:"1";i:2;s:1:"1";i:3;s:1:"1";i:4;s:1:"1";i:5;s:1:"1";i:6;s:1:"1";i:7;s:1:"1";i:8;s:1:"1";i:9;s:1:"1";i:10;s:1:"1";i:11;s:1:"1";i:12;s:1:"1";i:13;s:1:"1";i:14;s:1:"1";i:15;s:1:"1";i:16;s:1:"1";i:17;s:1:"1";i:18;s:1:"1";i:19;s:1:"1";i:20;s:1:"1";i:21;s:1:"1";i:22;s:1:"1";i:23;s:1:"1";}', 0, '2016-04-08 06:29:31', '2016-04-08 09:51:17'),
-(18, 62, '2016-04-24', 'a:24:{i:0;s:1:"0";i:1;s:1:"0";i:2;s:1:"0";i:3;s:1:"0";i:4;s:1:"0";i:5;s:1:"0";i:6;s:1:"0";i:7;s:1:"0";i:8;s:1:"0";i:9;s:1:"0";i:10;s:1:"0";i:11;s:1:"0";i:12;s:1:"0";i:13;s:1:"1";i:14;s:1:"0";i:15;s:1:"0";i:16;s:1:"0";i:17;s:1:"0";i:18;s:1:"0";i:19;s:1:"0";i:20;s:1:"0";i:21;s:1:"0";i:22;s:1:"0";i:23;s:1:"0";}', 0, '2016-04-08 06:29:55', '2016-04-08 06:29:55'),
-(19, 62, '2016-04-08', 'a:24:{i:0;s:1:"0";i:1;s:1:"0";i:2;s:1:"0";i:3;s:1:"0";i:4;s:1:"1";i:5;s:1:"0";i:6;s:1:"0";i:7;s:1:"0";i:8;s:1:"0";i:9;s:1:"0";i:10;s:1:"1";i:11;s:1:"0";i:12;s:1:"0";i:13;s:1:"0";i:14;s:1:"1";i:15;s:1:"1";i:16;s:1:"1";i:17;s:1:"0";i:18;s:1:"1";i:19;s:1:"0";i:20;s:1:"0";i:21;s:1:"0";i:22;s:1:"1";i:23;s:1:"0";}', 0, '2016-04-08 06:35:12', '2016-04-08 10:49:57');
+(18, 62, '2016-04-24', 'a:24:{i:0;s:1:"1";i:1;s:1:"0";i:2;s:1:"1";i:3;s:1:"0";i:4;s:1:"0";i:5;s:1:"0";i:6;s:1:"0";i:7;s:1:"1";i:8;s:1:"0";i:9;s:1:"0";i:10;s:1:"0";i:11;s:1:"0";i:12;s:1:"0";i:13;s:1:"1";i:14;s:1:"0";i:15;s:1:"1";i:16;s:1:"0";i:17;s:1:"1";i:18;s:1:"0";i:19;s:1:"0";i:20;s:1:"0";i:21;s:1:"0";i:22;s:1:"0";i:23;s:1:"0";}', 0, '2016-04-08 06:29:55', '2016-04-25 10:44:16'),
+(19, 62, '2016-04-08', 'a:24:{i:0;s:1:"0";i:1;s:1:"0";i:2;s:1:"0";i:3;s:1:"0";i:4;s:1:"1";i:5;s:1:"0";i:6;s:1:"0";i:7;s:1:"0";i:8;s:1:"0";i:9;s:1:"0";i:10;s:1:"1";i:11;s:1:"0";i:12;s:1:"0";i:13;s:1:"0";i:14;s:1:"1";i:15;s:1:"1";i:16;s:1:"1";i:17;s:1:"0";i:18;s:1:"1";i:19;s:1:"0";i:20;s:1:"0";i:21;s:1:"0";i:22;s:1:"1";i:23;s:1:"0";}', 0, '2016-04-08 06:35:12', '2016-04-08 10:49:57'),
+(20, 62, '2016-04-29', 'a:24:{i:0;s:1:"1";i:1;s:1:"1";i:2;s:1:"1";i:3;s:1:"1";i:4;s:1:"1";i:5;s:1:"1";i:6;s:1:"0";i:7;s:1:"0";i:8;s:1:"0";i:9;s:1:"0";i:10;s:1:"0";i:11;s:1:"0";i:12;s:1:"0";i:13;s:1:"0";i:14;s:1:"0";i:15;s:1:"0";i:16;s:1:"0";i:17;s:1:"0";i:18;s:1:"0";i:19;s:1:"0";i:20;s:1:"0";i:21;s:1:"0";i:22;s:1:"0";i:23;s:1:"0";}', 0, '2016-04-25 12:01:35', '2016-04-25 12:01:35');
 
 -- --------------------------------------------------------
 
@@ -53260,7 +53224,7 @@ CREATE TABLE IF NOT EXISTS `trainer_packagemaster` (
   `package_price` bigint(10) NOT NULL,
   `status` int(1) NOT NULL,
   `created_date` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `trainer_packagemaster`
@@ -53269,7 +53233,8 @@ CREATE TABLE IF NOT EXISTS `trainer_packagemaster` (
 INSERT INTO `trainer_packagemaster` (`package_id`, `trainer_id`, `package_name`, `package_discription`, `package_price`, `status`, `created_date`) VALUES
 (10, 62, 'Basic Package', 'Meal Plans, Nutrition Guide', 100, 1, '2016-04-05 08:15:10'),
 (12, 62, 'Premium Package', 'Meal Plans, Nutrition Guide, T-shirt, Work-out Program', 400, 1, '2016-04-05 08:16:40'),
-(28, 62, 'Silver Package', 'Meal Plans, Nutrition Guide, T-shirt', 200, 1, '0000-00-00 00:00:00');
+(28, 62, 'Silver Package', 'Meal Plans, Nutrition Guide, T-shirt', 200, 1, '0000-00-00 00:00:00'),
+(29, 62, 'My package', 'Meal Plans, Nutrition Guide, T-shirt, Work-out Program', 500, 1, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -53287,14 +53252,15 @@ CREATE TABLE IF NOT EXISTS `trainer_ratemaster` (
   `adgust4` bigint(10) NOT NULL,
   `status` int(1) NOT NULL,
   `update_time` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `trainer_ratemaster`
 --
 
 INSERT INTO `trainer_ratemaster` (`rate_id`, `trainer_id`, `rate_hour`, `adgust1`, `adgust2`, `adgust3`, `adgust4`, `status`, `update_time`) VALUES
-(2, 62, 1000, 50, 100, 300, 500, 1, '2016-01-14 05:58:03');
+(2, 62, 500, 50, 1000, 300, 500, 1, '2016-01-14 05:58:03'),
+(4, 99, 100, 0, 0, 0, 0, 1, '2016-04-23 10:30:00');
 
 -- --------------------------------------------------------
 
@@ -53339,7 +53305,7 @@ CREATE TABLE IF NOT EXISTS `trainer_txns` (
   `status` smallint(5) NOT NULL,
   `added_date` datetime NOT NULL,
   `modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `trainer_txns`
@@ -53350,7 +53316,20 @@ INSERT INTO `trainer_txns` (`id`, `trainer_id`, `txn_name`, `txn_id`, `txn_type`
 (2, 62, 'Custom Package Earning', '62570b8182e0973', 1, 14, 400, 12, 68, 0, 0, '2016-04-11 10:50:42', '2016-04-11 10:50:42'),
 (4, 62, 'Rate Plan Earning', '62570b84765da4c', 0, 36, 2000, 60, 340, 2000, 0, '2016-04-11 11:03:18', '2016-04-11 11:03:18'),
 (5, 62, 'Custom Package Earning', '62570b8e72d7976', 1, 15, 400, 12, 68, 0, 0, '2016-04-11 11:45:54', '2016-04-11 11:45:54'),
-(6, 62, 'Rate Plan Earning', '62570b903e945c0', 0, 38, 2500, 75, 425, 2500, 0, '2016-04-11 11:53:34', '2016-04-11 11:53:34');
+(6, 62, 'Rate Plan Earning', '62570b903e945c0', 0, 38, 2500, 75, 425, 2500, 0, '2016-04-11 11:53:34', '2016-04-11 11:53:34'),
+(7, 62, 'Rate Plan Earning', '62571e2eefb6614', 0, 48, 9785, 293.55, 1663.45, 0, 0, '2016-04-25 14:51:27', '2016-04-25 14:51:27'),
+(8, 62, 'Rate Plan Earning', '62571f2be30b927', 0, 49, 515.01, 15.4503, 87.5517, 0, 0, '2016-04-26 08:50:43', '2016-04-26 08:50:43'),
+(9, 62, 'Rate Plan Earning', '62571f2c9f0b1fd', 0, 50, 515.01, 15.4503, 87.5517, 0, 0, '2016-04-26 08:53:51', '2016-04-26 08:53:51'),
+(10, 62, 'Rate Plan Earning', '62571f2cee7386f', 0, 50, 515.01, 15.4503, 87.5517, 0, 0, '2016-04-26 08:55:10', '2016-04-26 08:55:10'),
+(11, 62, 'Rate Plan Earning', '62571f2d46b12e6', 0, 50, 515.01, 15.4503, 87.5517, 0, 0, '2016-04-26 08:56:38', '2016-04-26 08:56:38'),
+(12, 62, 'Rate Plan Earning', '62571f3364d0e13', 0, 50, 515.01, 15.4503, 87.5517, 0, 0, '2016-04-26 09:22:44', '2016-04-26 09:22:44'),
+(13, 62, 'Rate Plan Earning', '62571f7a4d0766d', 0, 51, 4841, 145.23, 822.97, 0, 0, '2016-04-26 14:25:17', '2016-04-26 14:25:17'),
+(14, 62, 'Rate Plan Earning', '62571f7ba2def6a', 0, 51, 4841, 145.23, 822.97, 0, 0, '2016-04-26 14:30:58', '2016-04-26 14:30:58'),
+(15, 62, 'Rate Plan Earning', '62571f7bae0cd30', 0, 51, 4841, 145.23, 822.97, 0, 0, '2016-04-26 14:31:10', '2016-04-26 14:31:10'),
+(16, 62, 'Rate Plan Earning', '62571f7be0ce8d1', 0, 51, 4841, 145.23, 822.97, 0, 0, '2016-04-26 14:32:00', '2016-04-26 14:32:00'),
+(17, 62, 'Rate Plan Earning', '62571f7bfe99e55', 0, 51, 4841, 145.23, 822.97, 0, 0, '2016-04-26 14:32:30', '2016-04-26 14:32:30'),
+(18, 62, 'Rate Plan Earning', '62571f7c0e88ca3', 0, 51, 4841, 145.23, 822.97, 0, 0, '2016-04-26 14:32:46', '2016-04-26 14:32:46'),
+(19, 62, 'Rate Plan Earning', '62571f7ca5e9992', 0, 52, 515.01, 15.4503, 87.5517, 0, 0, '2016-04-26 14:35:17', '2016-04-26 14:35:17');
 
 -- --------------------------------------------------------
 
@@ -53397,7 +53376,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `online` smallint(5) NOT NULL COMMENT 'offline=0,online=1',
   `created` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -53405,17 +53384,44 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `display_name`, `user_type`, `user_status`, `social_type`, `social_id`, `online`, `created`, `modified`) VALUES
 (48, 'admin', '$2y$10$81.B6wsQKiig9dFBPoat8OrWMEhwGX48Y5V8t/ygZG9mgNnGqW6Me', '', 'admin', 0, '', '', 0, '0000-00-00 00:00:00', '2015-09-22 06:42:16'),
-(51, 'sorav@gmail.com', '$2y$10$1HY/yPFoXqLxGmcA/2eHW.RMrb3Pzc/E.1qvd6BjZNS6Sl31w2gjW', 'soravgarg', 'trainee', 1, '', '', 0, '2015-09-12 10:40:30', '2016-04-21 11:44:45'),
 (53, 'vikas@gmail.com', '$2y$10$rsmFefvl8ne4UMVqb1Qp7uPi/UPgcFtALjz396msN20/QRRt8IrCe', 'vikas897', 'trainee', 1, '', '', 0, '2015-09-14 06:52:48', '2015-12-22 13:51:26'),
-(62, 'rahul@gmail.com', '$2y$10$0FZj1LiBS2yHQ9GqgHyEeuTyUCCLGFre.mvclHPQJvr2YfjSdLlBy', 'rahulgoyal', 'trainer', 1, '', '', 0, '2015-09-25 07:52:23', '2016-04-21 12:16:41'),
+(62, 'rahul@gmail.com', '$2y$10$0FZj1LiBS2yHQ9GqgHyEeuTyUCCLGFre.mvclHPQJvr2YfjSdLlBy', 'rahulgoyal', 'trainer', 1, '', '', 1, '2015-09-25 07:52:23', '2016-04-26 08:50:22'),
 (64, 'gaurav@gmail.om', '$2y$10$0itHdTu2Ys1l2RiHFulU/.fULdaPh3kGKhYCCZeIkbixYXjacs0Q6', 'gaurav123', 'trainee', 1, '', '', 1, '2015-11-24 09:10:40', '2015-11-24 09:11:15'),
 (66, 'test3@gmal.com', '$2y$10$SoJcAuPInrprkNKlteeareZ2HfpA.ubdKCBqQEceEeRB0YaMWihga', 't', 'trainee', 1, '', '', 0, '2015-11-24 11:55:03', '2015-11-24 11:55:03'),
 (72, 'soravapi@gmail.com', '$2y$10$gkuofdg81i.WDiyUbkqiCeJ7TX6eHsNPQR2dOTtxZuVKMNzMh45Xy', 'sorav123', 'trainee', 1, '', '', 0, '2015-11-25 12:44:04', '2015-11-25 12:44:04'),
 (73, 'rahul1@gmail.com', '$2y$10$rpF4ZNMU1RaG67vgrJaIR.NR45.nEO4vU3D7/Q6Uy2YSzPCH.N0qW', 'rahul123', 'trainee', 1, '', '', 0, '2015-12-15 10:15:07', '2016-01-19 06:47:32'),
-(75, '5165@4141.fd', '$2y$10$f9dGdFPv1g8nklzrSlt18eB1L674O4d0G5pwFPTwpxxNp4keXwiou', '1651', 'trainee', 1, '', '', 1, '2015-12-15 11:05:59', '2016-03-14 12:14:35'),
 (80, 'vikas123@gmail.com', '$2y$10$dfy1CACo72On4ZWDABacROhxR7raLzD2r4Dzu61zKckEHV861pEz2', 'vikas123', 'trainer', 0, '', '', 0, '2016-04-11 13:55:21', '2016-04-11 13:55:22'),
-(81, 'dsdsds@eweew.ewewewewe', '$2y$10$1iOsDsMJKpYsUn7573kCdum6J3j5/2HTldCv7PPYz2ZtaTPiKIbzq', 'dsds', 'trainer', 0, '', '', 0, '2016-04-21 12:17:26', '2016-04-21 12:17:27'),
-(82, 'dsdsds@eweew.ewewewewe', '$2y$10$xgQb5XVJlJunMnRn4izRnOMPlL9rcG4O3Sk85JXVjNswciEDUDhZK', 'dsds', 'trainer', 0, '', '', 0, '2016-04-21 12:17:34', '2016-04-21 12:17:34');
+(94, 'gaurav@gmail.com', '$2y$10$VlHhSbR7yfVSVENsAUrgJugVWjGRjIAQEKVg1jQVszmz/8/TI01kK', 'gauravgarg', 'trainee', 1, '', '', 1, '2016-04-22 07:25:46', '2016-04-26 14:33:47'),
+(95, 'ankit@gmail.com', '$2y$10$6J4YVyDHROJd0nC8aXwizunxbN2MlzJ80vAVSGEc3.ZV42.TFx0s2', 'ankitg', 'trainer', 0, '', '', 0, '2016-04-22 07:27:23', '2016-04-22 07:27:23'),
+(98, 'dsdsds@eweew.ewewewewe111', '$2y$10$XJVwKklJ9sQ2abl1UtXPVeKb1gg5kUVMF8wf0X.gCKysbC6MSkzoW', '11111', 'trainer', 0, '', '', 0, '2016-04-22 07:33:08', '2016-04-22 07:33:08'),
+(99, 'piyush@gmail.com', '$2y$10$4Nz82tuwS9.2MkrTOI6V4.2J/ypxeLvnp6EKM42nDONWLfBz3BWwO', 'piyush', 'trainer', 1, '', '', 0, '2016-04-23 10:25:18', '2016-04-23 10:42:46');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `video_calls`
+--
+
+CREATE TABLE IF NOT EXISTS `video_calls` (
+  `id` bigint(11) NOT NULL,
+  `trainer_id` int(11) NOT NULL,
+  `trainee_id` int(11) NOT NULL,
+  `app_id` int(11) NOT NULL,
+  `date` text NOT NULL,
+  `start_time` text NOT NULL,
+  `end_time` text NOT NULL,
+  `status` smallint(6) NOT NULL COMMENT '0 = scheduled,1 = used',
+  `created_date` datetime NOT NULL,
+  `modify_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `video_calls`
+--
+
+INSERT INTO `video_calls` (`id`, `trainer_id`, `trainee_id`, `app_id`, `date`, `start_time`, `end_time`, `status`, `created_date`, `modify_date`) VALUES
+(19, 62, 94, 52, '2016-04-26', '21:27', '01:00', 0, '2016-04-26 14:35:18', '2016-04-26 15:57:15'),
+(20, 62, 94, 52, '2016-04-26', '00:00', '01:00', 0, '2016-04-26 14:35:18', '2016-04-26 14:35:18');
 
 -- --------------------------------------------------------
 
@@ -53749,6 +53755,12 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `video_calls`
+--
+ALTER TABLE `video_calls`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `vouchers`
 --
 ALTER TABLE `vouchers`
@@ -53783,12 +53795,12 @@ ALTER TABLE `admin_transactions`
 -- AUTO_INCREMENT for table `after_before_images`
 --
 ALTER TABLE `after_before_images`
-  MODIFY `abi_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=45;
+  MODIFY `abi_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=41;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=53;
 --
 -- AUTO_INCREMENT for table `block_ips`
 --
@@ -53803,12 +53815,12 @@ ALTER TABLE `bmi`
 -- AUTO_INCREMENT for table `chating`
 --
 ALTER TABLE `chating`
-  MODIFY `chat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=112;
+  MODIFY `chat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `chat_session`
 --
 ALTER TABLE `chat_session`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `cities`
 --
@@ -53833,7 +53845,7 @@ ALTER TABLE `custom_packages_history`
 -- AUTO_INCREMENT for table `documents`
 --
 ALTER TABLE `documents`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=43;
 --
 -- AUTO_INCREMENT for table `favourites`
 --
@@ -53873,12 +53885,12 @@ ALTER TABLE `meal_plans`
 -- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` bigint(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `order_id` bigint(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `plans_categories`
 --
@@ -53893,7 +53905,7 @@ ALTER TABLE `plans_sessions`
 -- AUTO_INCREMENT for table `profile_images_videos`
 --
 ALTER TABLE `profile_images_videos`
-  MODIFY `piv_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=52;
+  MODIFY `piv_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=54;
 --
 -- AUTO_INCREMENT for table `ratings`
 --
@@ -53923,12 +53935,12 @@ ALTER TABLE `tokbox`
 -- AUTO_INCREMENT for table `total_wallet_ammount`
 --
 ALTER TABLE `total_wallet_ammount`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `trainees`
 --
 ALTER TABLE `trainees`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `trainee_plan`
 --
@@ -53943,12 +53955,12 @@ ALTER TABLE `trainee_sessions`
 -- AUTO_INCREMENT for table `trainee_txns`
 --
 ALTER TABLE `trainee_txns`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `trainers`
 --
 ALTER TABLE `trainers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `trainer_account`
 --
@@ -53958,17 +53970,17 @@ ALTER TABLE `trainer_account`
 -- AUTO_INCREMENT for table `trainer_availability`
 --
 ALTER TABLE `trainer_availability`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `trainer_packagemaster`
 --
 ALTER TABLE `trainer_packagemaster`
-  MODIFY `package_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
+  MODIFY `package_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT for table `trainer_ratemaster`
 --
 ALTER TABLE `trainer_ratemaster`
-  MODIFY `rate_id` bigint(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `rate_id` bigint(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `trainer_sessions`
 --
@@ -53978,7 +53990,7 @@ ALTER TABLE `trainer_sessions`
 -- AUTO_INCREMENT for table `trainer_txns`
 --
 ALTER TABLE `trainer_txns`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `trainer_withdraw`
 --
@@ -53988,7 +54000,12 @@ ALTER TABLE `trainer_withdraw`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=83;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=100;
+--
+-- AUTO_INCREMENT for table `video_calls`
+--
+ALTER TABLE `video_calls`
+  MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `vouchers`
 --

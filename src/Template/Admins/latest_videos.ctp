@@ -144,8 +144,8 @@
   $(document).ready(function(){
   $('#lt_attachement').change(function(){
         var file_name = $(this).val();
-        var split_extension = file_name.split(".");
-        if(split_extension[1].toLowerCase() == 'mp4' || split_extension[1].toLowerCase() == 'flv' || split_extension[1].toLowerCase() == 'avi' || split_extension[1].toLowerCase() == 'mkv')
+        var split_extension = file_name.split(".").pop();
+        if(split_extension.toLowerCase() == 'mp4' || split_extension.toLowerCase() == 'flv' || split_extension.toLowerCase() == 'avi' || split_extension.toLowerCase() == 'mkv')
             {
               $("div#error_msg").hide();
             }

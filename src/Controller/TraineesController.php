@@ -2659,6 +2659,25 @@ class TraineesController extends AppController
     $txns   = $this->Trainer_txns->newEntity();
     $txns   = $this->Trainer_txns->patchEntity($txns, $trainer_txn_arr);
     $result = $this->Trainer_txns->save($txns);
+
+    $sessionArr = unserialize($appoinment_details[0]['session_data']);
+      for ($i= 1; $i <= count($sessionArr); $i++) { 
+        if($sessionArr[$i]['preference'] == 1){
+          $timeArr = $this->Custom->parseTime($sessionArr[$i]['modified_times']);
+          $videoarr = array(
+            'trainer_id' => $appoinment_details[0]['trainer_id'],
+            'trainee_id' => $appoinment_details[0]['trainee_id'],
+            'app_id'     => $appoinment_details[0]['id'],
+            'date'       => $sessionArr[$i]['modified_dates'],
+            'start_time' => $timeArr['start_time'],
+            'end_time'   => $timeArr['end_time'],
+            'created_date'=> Time::now()
+            );
+          $video   = $this->Video_calls->newEntity();
+          $video   = $this->Video_calls->patchEntity($video, $videoarr);
+          $result = $this->Video_calls->save($video);
+        }
+      }
   }
 
   public function declineAppointment($appid)
@@ -2747,6 +2766,26 @@ class TraineesController extends AppController
          $this->set('message', 'success');
          $this->set('_serialize',array('message'));
          $this->response->statusCode(200);
+      }
+  }
+
+  public function getVideoCalls()
+  {
+    if($this->request->is('ajax'))
+      {
+        $date = $this->request->data['date'];
+        $time = $this->request->data['time'];
+        $trainee_id = $this->data['id'];
+        $video_calls = $this->conn->execute("SELECT * FROM `video_calls` AS `v` INNER JOIN `trainers` AS `tr` ON `tr`.`user_id` = `v`.`trainer_id` INNER JOIN `trainees` AS `te` ON `te`.`user_id` = `v`.`trainee_id`  WHERE `v`.`date` ='".$date."' AND `v`.`start_time` ='".$time."' AND `v`.`status` = 0 AND `v`.`trainee_id` =".$trainee_id)->fetchAll('assoc');
+        if(!empty($video_calls)){
+          $city = $this->Custom->getCityName($video_calls[0]['trainer_city']);
+        }else{
+          $city = "";
+        }
+        $this->set('city', $city);
+        $this->set('message', $video_calls);
+        $this->set('_serialize',array('message','city'));
+        $this->response->statusCode(200);
       }
   }
 

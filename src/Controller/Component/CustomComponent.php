@@ -161,6 +161,28 @@ class CustomComponent extends Component
         return $country;
     }
 
+    public function parseTime($time)
+    {
+        $timeArr = explode("-", $time);
+        if(!empty($timeArr)){
+            $startTime = $timeArr[0];
+            $endTime   = $timeArr[1];
+            $startTimeArr = explode(":", $startTime);
+            $endTimeArr   = explode(":", $endTime);
+            $startTimeArrNew = explode(" ", $startTimeArr[1]);
+            $endTimeArrNew   = explode(" ", $endTimeArr[1]);
+            $finalStartTime = $startTimeArr[0].":".$startTimeArrNew[0]." ".$startTimeArrNew[1];
+            $finalEndTime   = $endTimeArr[0].":".$endTimeArrNew[0]." ".$endTimeArrNew[1];
+            $response  = array(
+                'start_time' => date('H:i', strtotime($finalStartTime)),
+                'end_time'   => date('H:i', strtotime($finalEndTime))
+                );
+            return $response;
+        }else{
+            return array();
+        }
+    }
+
 
 
 }

@@ -57,6 +57,7 @@ class AppController extends Controller
         $this->loadmodel('Orders');
         $this->loadmodel('Trainer_txns');
         $this->loadmodel('Tokbox');
+        $this->loadmodel('Video_calls');
         $this->loadmodel('Custom_packages_history');
         
         $this->loadComponent('Flash');
@@ -98,6 +99,7 @@ class AppController extends Controller
         $this->orders = TableRegistry::get('Orders');  
         $this->trainer_txns = TableRegistry::get('Trainer_txns');
         $this->tokbox = TableRegistry::get('Tokbox');
+        $this->video_calls = TableRegistry::get('Video_calls');
         $this->custom_packages_history = TableRegistry::get('Custom_packages_history');
         $this->conn = ConnectionManager::get('default');  
         //aded on 11 april

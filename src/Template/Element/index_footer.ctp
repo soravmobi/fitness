@@ -568,9 +568,9 @@ $(document).ready(function(){
         var file_name = $(this).val();
         var fileObj = this.files[0]; // get file object
         var calculatedSize = fileObj.size/(1024*1024); // in MB
-        var split_extension = file_name.split(".");
+        var split_extension = file_name.split(".").pop();
         var ext = [ "jpg", "gif" ];
-        if(jQuery.inArray(split_extension[1].toLowerCase(), ext ) == -1)
+        if(jQuery.inArray(split_extension.toLowerCase(), ext ) == -1)
             {
               $('#certificate_file').val(fileObj.value = null);
               $("div#trainer_form_div div#error_msg").html("<center><i class='fa fa-times'> You Can Upload Only .jpg, gif Files ! </i></center>").show();
@@ -582,7 +582,7 @@ $(document).ready(function(){
                 $("div#trainer_form_div div#error_msg").html("<center><i class='fa fa-times'>  File size should be less than 3 MB ! </i></center>").show();
                 return false;
             }
-        if(jQuery.inArray(split_extension[1].toLowerCase(), ext ) != -1 && calculatedSize < 3)
+        if(jQuery.inArray(split_extension.toLowerCase(), ext ) != -1 && calculatedSize < 3)
             {
               $("div#trainer_form_div div#error_msg").hide();
             }   
@@ -601,9 +601,9 @@ $(document).ready(function(){
         var file_name = $(this).val();
         var fileObj = this.files[0]; // get file object
         var calculatedSize = fileObj.size/(1024*1024); // in MB
-        var split_extension = file_name.split(".");
+        var split_extension = file_name.split(".").pop();
         var ext = [ "doc", "docs", "docx" , "odt", "ppt", "pdf" ];
-        if(jQuery.inArray(split_extension[1].toLowerCase(), ext ) == -1)
+        if(jQuery.inArray(split_extension.toLowerCase(), ext ) == -1)
             {
               $('#resume_file').val(fileObj.value = null);
               $("div#trainer_form_div div#error_msg").html("<center><i class='fa fa-times'> You Can Upload Only .doc, docx, ppt, pdf, odt Files ! </i></center>").show();
@@ -615,7 +615,7 @@ $(document).ready(function(){
                 $("div#trainer_form_div div#error_msg").html("<center><i class='fa fa-times'>  File size should be less than 2 MB ! </i></center>").show();
                 return false;
             }
-        if(jQuery.inArray(split_extension[1].toLowerCase(), ext ) != -1 && calculatedSize < 2)
+        if(jQuery.inArray(split_extension.toLowerCase(), ext ) != -1 && calculatedSize < 2)
             {
               $("div#trainer_form_div div#error_msg").hide();
             }   

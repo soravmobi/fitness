@@ -60,6 +60,13 @@
             $style = "display:none";
         }
     ?>
+
+    <?php 
+        $this->request->session()->start();
+        $session = $this->request->session();
+        $user_data1 = $session->read('Auth.User');
+    ?>  
+
     <div class="chat_list_wrapper">
         <div id="chat_window_chat_sect">
             <div class="panel">
@@ -74,8 +81,46 @@
             </div>
         </div>
     </div>
-    <!-- online users list end -->
 
+    <?php if($user_data1['user_type'] == "trainee") { ?>
+
+    <!-- Appointment Modal Start -->
+
+    <div class="modal fade" id="appointment_modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">please begin your session</h4>
+          </div>
+          <div class="modal-body">
+             <div class="trainer_img">
+             <img id="trainer_img" style="height:260px;width:100%" src="" alt="img" class="img-responsive">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="trainer_info">
+            <a href="javascript:void(0);">
+                </a><p><a href="javascript:void(0);"><strong></strong></a><strong>
+                <a style="color:white;" href="javascript:void(0);"> Trainer : </a></strong><a style="color:white;" id="trainer_namee" href="javascript:void(0);"> </a> <span class="dte" id="appoint_date"></span></p>
+                <p><a href="javascript:void(0);"><strong></strong></a><strong>
+                <a style="color:white;" href="javascript:void(0);"> Location : </a></strong><a style="color:white;" id="location_namee" href="javascript:void(0);"> </a> <span class="dte" id="appoint_time"></span></p>
+                <div class="trai_rank">
+                  <a title="Car" class="btn btn-default treines_cal_btn" href="javascript:void(0);"><i class="fa fa-car" aria-hidden="true"></i></a>               
+                  <a id="text_chat_btn" title="Text Chat" c_type="chat" t_type="trainee" from_id="<?php echo $user_data1['id']; ?>" to_id="" class="btn btn-default user_call treines_cal_btn" href="javascript:void(0);"><i class="fa fa-weixin"></i></a>
+                  <a id="video_chat_btn" title="Video Call" c_type="video" t_type="trainee" from_id="<?php echo $user_data1['id']; ?>" to_id="" class="btn btn-default user_call treines_cal_btn" href="javascript:void(0);"><i class="fa fa-video-camera" aria-hidden="true"></i></a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Appointment Modal End -->
+
+    <?php } ?>
+
+    <!-- online users list end -->
 
     <div id="load_videochat" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
         <div class="body_blur"></div>
@@ -86,21 +131,74 @@
       </div>
     </div>
 
-
     <!-- jayndra end -->
 
-
 <script>
+
+    function addZero(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+
+    function getCureentTime()
+    {
+        var d = new Date(); 
+        var hours = addZero(d.getHours());
+        var day   = addZero(d.getDate());
+        var minutes= addZero(d.getMinutes());
+        var month = "<?php echo date('m'); ?>";
+        var year  = "<?php echo date('Y'); ?>";
+        var arr = [day,month,year,hours,minutes];
+        return arr;
+    }
+
     $(document).ready(function () {
         $('.alert-success').fadeOut(15000);
         $('.alert-danger').fadeOut(15000);
         $('.lb-details').html("");
+        
 
         $(".chat_list_sect").load("<?php echo $this->request->webroot; ?>users/onlineuser");
         
-        /*setInterval(function(){
+        setInterval(function(){
             $(".chat_list_sect").load("<?php echo $this->request->webroot; ?>users/onlineuser");    
-        }, 10000);*/
+        }, 10000);
+
+        var userType = "<?php echo $user_data1['user_type'] ?>";
+
+        if(userType == "trainee"){
+            setInterval(function(){
+            var current_date_time = getCureentTime();
+            var date = current_date_time[2]+"-"+current_date_time[1]+"-"+current_date_time[0];
+            var time = current_date_time[3]+":"+current_date_time[4];
+                $.ajax({
+                    url: '<?php echo $this->request->webroot; ?>trainees/getVideoCalls',
+                    type: 'post',
+                    data: {date:date,time:time},
+                    dataType: 'json',
+                    success:function(response){
+                        var result = response.message;
+                        if(result != ""){
+                           $('#trainer_img').attr('src','<?php echo $this->request->webroot; ?>uploads/trainer_profile/'+result[0]['trainer_image']);
+                           $('#trainer_namee').text(result[0]['trainer_name']+" "+result[0]['trainer_lname']);
+                           $('#appoint_date').text(result[0]['date']);
+                           $('#location_namee').text(response.city);
+                           $('#appoint_time').text(result[0]['start_time']);
+                           $('#text_chat_btn').attr('to_id',result[0]['trainer_id']);
+                           $('#video_chat_btn').attr('to_id',result[0]['trainer_id']);
+                           $('#appointment_modal1').modal({backdrop:'static',keyboard:false, show:true}); 
+                        }else{
+                            $('#appointment_modal1').modal('hide');
+                        }
+                    },
+                    error:function(error){
+                        console.log(error);
+                    }
+                });
+            }, 10000);
+        }
     });
 </script>
 
@@ -134,6 +232,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $("body").on("click","#test_call", function(){
+            $('#leftNavMenu').offcanvas('hide');
             $(".video_chat").load("<?php echo $this->request->webroot; ?>users/testcall", function(){
                 $("#load_videochat").modal({
                         backdrop: 'static',

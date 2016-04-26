@@ -1660,6 +1660,7 @@
 	.slide_text li:nth-child(3n) a {
   width: 157px;
 }
+#appointment_modal1 .modal-dialog{width:100%;}
 .calendor_switches_head .cs_head_left:first-child {
   width: 25%;
 }

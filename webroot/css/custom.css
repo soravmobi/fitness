@@ -398,7 +398,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e55b59', end
               
 
 /*css for inner page start*/
-.trainee_top{ background-image:url(../images/trainee_top_bg.jpg); background-size:cover; background-attachment:fixed; background-position:50% 50%;}
+.trainee_top{ background-size:100% auto; background-attachment:fixed; background-repeat:no-repeat;}
 .trainee_top_wrap{ padding:10rem 0 3rem;text-align:center; position:relative;}
 .top_nav li a img{ width:25px; height:25px; margin-right:5px; border-radius:4px;}
 .trainee_img, .trainee_detail{ display:inline-block; vertical-align:middle;}
@@ -409,7 +409,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e55b59', end
 .trainee_img { border: 4px solid; border-radius: 50%; overflow: hidden; position:relative;}
 .trainee_img img{ border-radius:50%; max-height:200px;}
 .trainee_streams{ padding-bottom:10px;}
-.tr_grad{ background-color:rgba(237,81,99,.3)}
+/*.tr_grad{ background-color:rgba(237,81,99,.3)}*/
 .trainee_detail {padding-left: 15px;text-align: left; margin-right: 20px;}
 .trainee_detail h1, .trainee_detail h3 {padding-bottom: 10px;text-transform: capitalize; font-family:oswald_regularregular;display: inline-block;}
 .trainee_rank span {
@@ -3518,7 +3518,6 @@ a.btn_trainer {
   .trainee_img img {
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid rgb(207, 205, 203);
 }
 .trainer_banner .trainee_img p {
     font-size: 21px;
@@ -6758,16 +6757,16 @@ label.remain_bal {
   width: 100%;
 }
 .degree {
-  color: #000 !important;
-  font-size: 19px !important;
-  position: absolute;
-  right: -15px;
-  top: -7px;
+    color: #000 !important;
+    font-size: 14px !important;
+    position: absolute;
+    right: -15px;
+    top: 15px;
 }
 .degree_main {
   display: inline-block;
   font-size: 40px;
-  padding-top: 0;
+  padding-top: 33px;
   position: relative;
 }
 .visitor_map_progress .progress_bar {
@@ -7201,8 +7200,9 @@ li.see_all {
 }
 
 .cvalue {
-  font-size: 24px;
-  position: absolute;
+    font-size: 24px;
+    position: absolute;
+    line-height: 51px;
 }
 #progress_photo .photo_upload_sect span {
   font-size: 40px;
@@ -7223,4 +7223,24 @@ li.see_all {
 .calendor_switches_wrap:nth-child(2) {
   margin-left: 10px;
 }
+
 /** 22-04-2016 video calling end **/
+#appointment_modal1 .modal-dialog {
+    width: 400px;
+	font-family: 'oswald_regularregular';
+}
+#appointment_modal1 .modal-title {
+    text-align: center;
+    text-transform: capitalize;
+}
+#appointment_modal1 .trainer_info {
+    text-align: left;
+}
+span.dte {
+    float: right;
+}
+#auto_termainate_call > div {
+    margin-top: 10px;
+    margin-bottom: 9px;
+    border-radius: 15px;
+}

@@ -6204,3 +6204,1989 @@ Stack Trace:
 #1 {main}
 
 
+2016-04-26 07:44:52 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 07:44:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 07:46:29 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 07:46:29 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 07:47:10 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 07:47:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 07:47:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 07:47:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 07:48:37 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 07:48:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 08:19:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 08:19:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 08:19:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 08:19:59 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 08:21:15 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 08:21:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 08:21:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 08:21:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 08:21:54 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 08:22:14 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 08:22:14 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 08:22:26 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 08:22:26 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 08:23:25 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 08:23:26 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 08:23:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 08:23:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 09:02:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 09:02:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 09:03:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 09:03:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 09:11:23 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 09:11:24 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 12:11:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 12:20:20 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 12:20:20 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:31:25 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:31:26 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:32:23 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:32:24 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:33:10 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:33:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:33:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:33:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:38:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:38:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:39:33 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:39:34 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:41:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:41:10 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:42:14 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:42:14 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:42:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:42:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:44:44 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:44:44 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:48:10 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:48:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:48:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:48:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:52:02 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:52:02 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:52:06 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 13:52:07 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:04:28 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/%3Cpre%20class=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:04:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainee_profile/%3Cpre%20class=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:08:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:08:14 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:08:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:08:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:09:12 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:09:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:11:37 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:11:37 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:11:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:11:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:11:56 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:11:56 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:12:44 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:12:44 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:13:08 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:13:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:13:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:13:28 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:13:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:13:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:19:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:19:58 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:20:00 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:22:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:22:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:23:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:23:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:33:29 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:33:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:34:14 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:34:21 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:34:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:34:45 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:34:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:35:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:37:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:37:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/css/percircle.css.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:37:29 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:38:27 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:42:53 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:43:01 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+Request URL: /fitness/trainees/getVideoCalls
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(288): Cake\Database\Log\LoggingStatement->execute()
+#4 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(245): Cake\Database\Connection->query('DELETE FROM cha...')
+#5 /opt/lampp/htdocs/fitness/src/Controller/TraineesController.php(2777): Cake\Database\Connection->execute('DELETE FROM cha...')
+#6 [internal function]: App\Controller\TraineesController->getVideoCalls()
+#7 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#9 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#10 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2016-04-26 14:45:10 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+Request URL: /fitness/trainees/getVideoCalls
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(288): Cake\Database\Log\LoggingStatement->execute()
+#4 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(245): Cake\Database\Connection->query('DELETE FROM cha...')
+#5 /opt/lampp/htdocs/fitness/src/Controller/TraineesController.php(2779): Cake\Database\Connection->execute('DELETE FROM cha...')
+#6 [internal function]: App\Controller\TraineesController->getVideoCalls()
+#7 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#9 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#10 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2016-04-26 14:45:11 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+Request URL: /fitness/trainees/getVideoCalls
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(288): Cake\Database\Log\LoggingStatement->execute()
+#4 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(245): Cake\Database\Connection->query('DELETE FROM cha...')
+#5 /opt/lampp/htdocs/fitness/src/Controller/TraineesController.php(2779): Cake\Database\Connection->execute('DELETE FROM cha...')
+#6 [internal function]: App\Controller\TraineesController->getVideoCalls()
+#7 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#9 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#10 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2016-04-26 14:45:15 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+Request URL: /fitness/trainees/getVideoCalls
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(288): Cake\Database\Log\LoggingStatement->execute()
+#4 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(245): Cake\Database\Connection->query('DELETE FROM cha...')
+#5 /opt/lampp/htdocs/fitness/src/Controller/TraineesController.php(2779): Cake\Database\Connection->execute('DELETE FROM cha...')
+#6 [internal function]: App\Controller\TraineesController->getVideoCalls()
+#7 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#9 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#10 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2016-04-26 14:45:16 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+Request URL: /fitness/trainees/getVideoCalls
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(288): Cake\Database\Log\LoggingStatement->execute()
+#4 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(245): Cake\Database\Connection->query('DELETE FROM cha...')
+#5 /opt/lampp/htdocs/fitness/src/Controller/TraineesController.php(2779): Cake\Database\Connection->execute('DELETE FROM cha...')
+#6 [internal function]: App\Controller\TraineesController->getVideoCalls()
+#7 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#9 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#10 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2016-04-26 14:45:23 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:45:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:48:11 Error: Fatal Error (4): syntax error, unexpected 'assoc' (T_STRING) in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2779]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2016-04-26 14:48:12 Error: [Cake\Error\FatalErrorException] syntax error, unexpected 'assoc' (T_STRING)
+Request URL: /fitness/trainees
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/opt/lampp/htdo...', 2779)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2016-04-26 14:48:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:53:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:57:51 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 14:58:04 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Request URL: /fitness/trainees/getVideoCalls
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(288): Cake\Database\Log\LoggingStatement->execute()
+#4 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(245): Cake\Database\Connection->query('SELECT * FROM `...')
+#5 /opt/lampp/htdocs/fitness/src/Controller/TraineesController.php(2779): Cake\Database\Connection->execute('SELECT * FROM `...')
+#6 [internal function]: App\Controller\TraineesController->getVideoCalls()
+#7 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#9 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#10 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2016-04-26 14:58:14 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Request URL: /fitness/trainees/getVideoCalls
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(288): Cake\Database\Log\LoggingStatement->execute()
+#4 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(245): Cake\Database\Connection->query('SELECT * FROM `...')
+#5 /opt/lampp/htdocs/fitness/src/Controller/TraineesController.php(2779): Cake\Database\Connection->execute('SELECT * FROM `...')
+#6 [internal function]: App\Controller\TraineesController->getVideoCalls()
+#7 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#9 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#10 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2016-04-26 14:58:24 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Request URL: /fitness/trainees/getVideoCalls
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(288): Cake\Database\Log\LoggingStatement->execute()
+#4 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(245): Cake\Database\Connection->query('SELECT * FROM `...')
+#5 /opt/lampp/htdocs/fitness/src/Controller/TraineesController.php(2779): Cake\Database\Connection->execute('SELECT * FROM `...')
+#6 [internal function]: App\Controller\TraineesController->getVideoCalls()
+#7 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#9 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#10 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2016-04-26 14:58:34 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Request URL: /fitness/trainees/getVideoCalls
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(288): Cake\Database\Log\LoggingStatement->execute()
+#4 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(245): Cake\Database\Connection->query('SELECT * FROM `...')
+#5 /opt/lampp/htdocs/fitness/src/Controller/TraineesController.php(2779): Cake\Database\Connection->execute('SELECT * FROM `...')
+#6 [internal function]: App\Controller\TraineesController->getVideoCalls()
+#7 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#9 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#10 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2016-04-26 14:58:44 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Request URL: /fitness/trainees/getVideoCalls
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(288): Cake\Database\Log\LoggingStatement->execute()
+#4 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(245): Cake\Database\Connection->query('SELECT * FROM `...')
+#5 /opt/lampp/htdocs/fitness/src/Controller/TraineesController.php(2779): Cake\Database\Connection->execute('SELECT * FROM `...')
+#6 [internal function]: App\Controller\TraineesController->getVideoCalls()
+#7 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#9 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#10 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2016-04-26 14:58:54 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Request URL: /fitness/trainees/getVideoCalls
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(288): Cake\Database\Log\LoggingStatement->execute()
+#4 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(245): Cake\Database\Connection->query('SELECT * FROM `...')
+#5 /opt/lampp/htdocs/fitness/src/Controller/TraineesController.php(2779): Cake\Database\Connection->execute('SELECT * FROM `...')
+#6 [internal function]: App\Controller\TraineesController->getVideoCalls()
+#7 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#9 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#10 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2016-04-26 14:59:04 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Request URL: /fitness/trainees/getVideoCalls
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(288): Cake\Database\Log\LoggingStatement->execute()
+#4 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(245): Cake\Database\Connection->query('SELECT * FROM `...')
+#5 /opt/lampp/htdocs/fitness/src/Controller/TraineesController.php(2779): Cake\Database\Connection->execute('SELECT * FROM `...')
+#6 [internal function]: App\Controller\TraineesController->getVideoCalls()
+#7 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#9 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#10 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2016-04-26 14:59:14 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Request URL: /fitness/trainees/getVideoCalls
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(288): Cake\Database\Log\LoggingStatement->execute()
+#4 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(245): Cake\Database\Connection->query('SELECT * FROM `...')
+#5 /opt/lampp/htdocs/fitness/src/Controller/TraineesController.php(2779): Cake\Database\Connection->execute('SELECT * FROM `...')
+#6 [internal function]: App\Controller\TraineesController->getVideoCalls()
+#7 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#9 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#10 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2016-04-26 14:59:24 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Request URL: /fitness/trainees/getVideoCalls
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(288): Cake\Database\Log\LoggingStatement->execute()
+#4 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(245): Cake\Database\Connection->query('SELECT * FROM `...')
+#5 /opt/lampp/htdocs/fitness/src/Controller/TraineesController.php(2779): Cake\Database\Connection->execute('SELECT * FROM `...')
+#6 [internal function]: App\Controller\TraineesController->getVideoCalls()
+#7 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#9 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#10 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2016-04-26 14:59:34 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Request URL: /fitness/trainees/getVideoCalls
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(288): Cake\Database\Log\LoggingStatement->execute()
+#4 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(245): Cake\Database\Connection->query('SELECT * FROM `...')
+#5 /opt/lampp/htdocs/fitness/src/Controller/TraineesController.php(2779): Cake\Database\Connection->execute('SELECT * FROM `...')
+#6 [internal function]: App\Controller\TraineesController->getVideoCalls()
+#7 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#9 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#10 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2016-04-26 14:59:44 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Request URL: /fitness/trainees/getVideoCalls
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(288): Cake\Database\Log\LoggingStatement->execute()
+#4 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(245): Cake\Database\Connection->query('SELECT * FROM `...')
+#5 /opt/lampp/htdocs/fitness/src/Controller/TraineesController.php(2779): Cake\Database\Connection->execute('SELECT * FROM `...')
+#6 [internal function]: App\Controller\TraineesController->getVideoCalls()
+#7 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#9 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#10 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2016-04-26 14:59:54 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 15:02:59 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `date` ='2016-04-26' AND `start_time` ='20:32' AND `trainee_id` =94' at line 1
+Request URL: /fitness/trainees/getVideoCalls
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(288): Cake\Database\Log\LoggingStatement->execute()
+#4 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(245): Cake\Database\Connection->query('SELECT * FROM `...')
+#5 /opt/lampp/htdocs/fitness/src/Controller/TraineesController.php(2779): Cake\Database\Connection->execute('SELECT * FROM `...')
+#6 [internal function]: App\Controller\TraineesController->getVideoCalls()
+#7 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#9 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#10 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2016-04-26 15:03:09 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `date` ='2016-04-26' AND `start_time` ='20:33' AND `trainee_id` =94' at line 1
+Request URL: /fitness/trainees/getVideoCalls
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Statement/StatementDecorator.php(169): Cake\Database\Statement\MysqlStatement->execute(NULL)
+#2 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Log/LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(288): Cake\Database\Log\LoggingStatement->execute()
+#4 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Database/Connection.php(245): Cake\Database\Connection->query('SELECT * FROM `...')
+#5 /opt/lampp/htdocs/fitness/src/Controller/TraineesController.php(2779): Cake\Database\Connection->execute('SELECT * FROM `...')
+#6 [internal function]: App\Controller\TraineesController->getVideoCalls()
+#7 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Controller/Controller.php(412): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#9 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#10 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#11 {main}
+
+
+2016-04-26 15:04:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 15:06:00 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 15:06:45 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 15:08:00 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 15:15:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 15:21:37 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 15:22:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 15:28:41 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 15:29:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 15:41:56 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 15:44:07 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 15:48:18 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 15:50:19 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 15:54:06 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 15:57:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-04-26 15:57:19 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+

@@ -154,7 +154,7 @@
                                   <div class="icon_block cancel-modify-btn" id="cancel_modify_btn_<?php echo $i; ?>" main="<?php echo $i; ?>" title="Cancel"><i class="fa fa-times"></i> </div>
                                   <div class="icon_block save-modify-btn" id="save_modify_btn_<?php echo $i; ?>" main="<?php echo $i; ?>" title="Save"><i class="fa fa-check"></i> </div>
                                 </div>
-                                <div class="text_block" id="date_time_block_<?php echo $i; ?>"><?php echo date('F', strtotime(date('Y-m-d'))); ?> <?php echo date('d', strtotime(date('Y-m-d'))); ?>th <?php echo date('Y', strtotime(date('Y-m-d'))); ?> </br> <b> <?php echo date('h:i:A', strtotime(date('Y-m-d'))); ?></b> - <span><?php echo date('h:i:A', $timestamp); ?></span></div>
+                                <div class="text_block" id="date_time_block_<?php echo $i; ?>"><?php echo date('F', strtotime(date('Y-m-d'))); ?> <?php echo date('d', strtotime(date('Y-m-d'))); ?>th <?php echo date('Y', strtotime(date('Y-m-d'))); ?> </br> <b> <?php echo date('h:i A', strtotime(date('Y-m-d'))); ?></b> - <span><?php echo date('h:i A', $timestamp); ?></span></div>
                               </li>
                               <?php 
                                 $own_location_details = $this->Custom->getlatlngbyip();
@@ -188,7 +188,7 @@
                               <input type="hidden" name="booking[<?php echo $i; ?>][locations]" id="location_val_<?php echo $i; ?>" value="<?php echo $lat; ?>,<?php echo $lon; ?>">
                               <input type="hidden" name="booking[<?php echo $i; ?>][location_address]" id="location_address_<?php echo $i; ?>" value="<?php echo $address; ?>">
                               <input type="hidden" name="booking[<?php echo $i; ?>][modified_dates]" id="date_val_<?php echo $i; ?>" value="<?php echo date('Y-m-d'); ?>">
-                              <input type="hidden" name="booking[<?php echo $i; ?>][modified_times]" id="time_val_<?php echo $i; ?>" value="<?php echo date('h:i:A', strtotime(date('Y-m-d'))); ?>-<?php echo date('h:i:A', $timestamp); ?>">
+                              <input type="hidden" name="booking[<?php echo $i; ?>][modified_times]" id="time_val_<?php echo $i; ?>" value="<?php echo date('h:i A', strtotime(date('Y-m-d'))); ?>-<?php echo date('h:i A', $timestamp); ?>">
                             </div>
                           </div>
                        </div>

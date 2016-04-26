@@ -130,12 +130,12 @@
             var file_name = $(this).val();
             var fileObj = this.files[0]; // get file object
             var calculatedSize = fileObj.size/(1024*1024); // in MB
-            var split_extension = file_name.split(".");
-            var ext = [ "jpg", "gif" ];
-            if(jQuery.inArray(split_extension[1].toLowerCase(), ext ) == -1)
+            var split_extension = file_name.split(".").pop();
+            var ext = [ "jpg", "gif","jpeg","tiff" ];
+            if(jQuery.inArray(split_extension.toLowerCase(), ext ) == -1)
             {
                 $('#uploadImage1').val(fileObj.value = null);
-                $("div#gallery_phots div#error_msg").html("<center><i class='fa fa-times'> You Can Upload Only .jpg, gif  Files ! </i></center>").show();
+                $("div#gallery_phots div#error_msg").html("<center><i class='fa fa-times'> You Can Upload Only .jpg, gif,jpeg,tiff  Files ! </i></center>").show();
                 return false;
             }
             if(calculatedSize > 10)
@@ -144,7 +144,7 @@
                 $("div#gallery_phots  div#error_msg").html("<center><i class='fa fa-times'>  File size should be less than 10 MB ! </i></center>").show();
                 return false;
             }
-            if(jQuery.inArray(split_extension[1].toLowerCase(), ext ) != -1 && calculatedSize < 10)
+            if(jQuery.inArray(split_extension.toLowerCase(), ext ) != -1 && calculatedSize < 10)
             {
                     $("div#gallery_phots div#error_msg").hide();
                     $('div#gallery_phots img#loading-img').show();
@@ -186,12 +186,12 @@
             var file_name = $(this).val();
             var fileObj = this.files[0]; // get file object
             var calculatedSize = fileObj.size/(1024*1024); // in MB
-            var split_extension = file_name.split(".");
-            var ext = [ "jpg", "gif" ];
-            if(jQuery.inArray(split_extension[1].toLowerCase(), ext ) == -1)
+            var split_extension = file_name.split(".").pop();
+            var ext = [ "jpg", "gif","jpeg","tiff" ];
+            if(jQuery.inArray(split_extension.toLowerCase(), ext ) == -1)
             {
                 $('#uploadImage').val(fileObj.value = null);
-                $("div#progress_photo div#error_msg").html("<center><i class='fa fa-times'> You Can Upload Only .jpg, gif  Files ! </i></center>").show();
+                $("div#progress_photo div#error_msg").html("<center><i class='fa fa-times'> You Can Upload Only .jpg, gif,jpeg,tiff  Files ! </i></center>").show();
                 return false;
             }
             if(calculatedSize > 10)
@@ -200,7 +200,7 @@
                 $("div#progress_photo  div#error_msg").html("<center><i class='fa fa-times'>  File size should be less than 10 MB ! </i></center>").show();
                 return false;
             }
-            if(jQuery.inArray(split_extension[1].toLowerCase(), ext ) != -1 && calculatedSize < 10)
+            if(jQuery.inArray(split_extension.toLowerCase(), ext ) != -1 && calculatedSize < 10)
             {
                 $("div#progress_photo div#error_msg").hide();
             }
@@ -216,9 +216,10 @@
         $(document).ready(function(){
         $('#uploadVideo').change(function(){
             var file_name = $(this).val();
-            var split_extension = file_name.split(".");
-            if(split_extension[1].toLowerCase() == 'mkv' || split_extension[1].toLowerCase() == 'flv' || split_extension[1].toLowerCase() == 'avi' || split_extension[1].toLowerCase() == 'mp4')
-              {
+            var split_extension = file_name.split(".").pop();
+            var ext = [ "mkv", "flv","avi","mp4","mp3","m4v","mpeg-4" ];
+            if(jQuery.inArray(split_extension.toLowerCase(), ext ) == -1)
+            {
                     $("div#videos div#error_msg").hide();
                     $('div#videos img#loading-img').show();
                     var data = new FormData($('#submit_form2')[0]);
@@ -249,7 +250,7 @@
               }
             else
                 {
-                    $("div#videos div#error_msg").html("<center><i class='fa fa-times'> You Can Upload Only .mkv, flv, avi, mp4 Files ! </i></center>");
+                    $("div#videos div#error_msg").html("<center><i class='fa fa-times'> You Can Upload Only .mkv, flv, avi, mp4,mp3,m4v,mpeg-4 Files ! </i></center>");
                     $("div#videos div#error_msg").show();
                     $("div#videos div#success_msg").hide();
                 }

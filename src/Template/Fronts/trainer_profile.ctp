@@ -70,8 +70,8 @@
                     <div class="trainee_top_wrap trainer_banner">
                     <div class="session_sec">
                         <ul class="shearing_list">
-                            <li><a href="javascript:void(0);" c_type="video" t_type="trainee" from_id="<?php echo $from_id; ?>" to_id="<?php echo $to_id; ?>" class="user_call" title="Video Call"><i class="fa fa-video-camera"></i></a></li>
-                            <li><a href="javascript:void(0);" c_type="call" t_type="trainee" from_id="<?php echo $from_id; ?>" to_id="<?php echo $to_id; ?>" class="user_call" title="Voice Call"><i class="fa fa-phone"></i></a></li>
+                           <!--  <li><a href="javascript:void(0);" c_type="video" t_type="trainee" from_id="<?php echo $from_id; ?>" to_id="<?php echo $to_id; ?>" class="user_call" title="Video Call"><i class="fa fa-video-camera"></i></a></li>
+                            <li><a href="javascript:void(0);" c_type="call" t_type="trainee" from_id="<?php echo $from_id; ?>" to_id="<?php echo $to_id; ?>" class="user_call" title="Voice Call"><i class="fa fa-phone"></i></a></li> -->
                             <li><a href="javascript:void(0);" c_type="chat" t_type="trainee" from_id="<?php echo $from_id; ?>" to_id="<?php echo $to_id; ?>" class="user_call" title="Text Chat"><i class="fa fa-commenting"></i></a></li>
                             <li><a href="javascript:void(0);" title="Social Sharing"><i class="fa fa-share-alt"></i></a>
                                 <nav class="trainee_social_link share_in_block">

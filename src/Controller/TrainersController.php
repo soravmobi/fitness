@@ -804,6 +804,25 @@ class TrainersController extends AppController
         $txns   = $this->Trainer_txns->newEntity();
         $txns   = $this->Trainer_txns->patchEntity($txns, $trainer_txn_arr);
         $result = $this->Trainer_txns->save($txns);
+
+      $sessionArr = unserialize($appoinment_details[0]['session_data']);
+      for ($i= 1; $i <= count($sessionArr); $i++) { 
+        if($sessionArr[$i]['preference'] == 1){
+          $timeArr = $this->Custom->parseTime($sessionArr[$i]['modified_times']);
+          $videoarr = array(
+            'trainer_id' => $appoinment_details[0]['trainer_id'],
+            'trainee_id' => $appoinment_details[0]['trainee_id'],
+            'app_id'     => $appoinment_details[0]['id'],
+            'date'       => $sessionArr[$i]['modified_dates'],
+            'start_time' => $timeArr['start_time'],
+            'end_time'   => $timeArr['end_time'],
+            'created_date'=> Time::now()
+            );
+          $video   = $this->Video_calls->newEntity();
+          $video   = $this->Video_calls->patchEntity($video, $videoarr);
+          $result = $this->Video_calls->save($video);
+        }
+      }
     }
 
     public function declineAppointment($appid){
@@ -857,6 +876,7 @@ class TrainersController extends AppController
             $wallet_current_balance = round($wallet_details[0]['total_ammount'] + $refund_amount,2);
             $this->total_wallet_ammount->query()->update()->set(['total_ammount'=> $wallet_current_balance])->where(['user_id' => $appoinment_details[0]['trainee_id']])->execute();
         } 
+
     }
 
     public function dropEvent()

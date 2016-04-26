@@ -88,7 +88,7 @@
                                         <input required name="trainee_zip" type="text" value="<?php echo $profile_details[0]['trainee_zip']; ?>" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label>Trainee Skills (Please hit enter for add skills)</label>
+                                        <label>Trainee Skills (Please hit enter to add skills)</label>
                                         <input required name="trainee_skills" id="trainee_skills" type="text" value="<?php echo $profile_details[0]['trainee_skills']; ?>" class="form-control">
                                     </div>
                                    
@@ -295,9 +295,9 @@
             var file_name = $(this).val();
             var fileObj = this.files[0]; // get file object
             var calculatedSize = fileObj.size/(1024*1024); // in MB
-            var split_extension = file_name.split(".");
+            var split_extension = file_name.split(".").pop();
             var ext = [ "jpg", "gif" ];
-            if(jQuery.inArray(split_extension[1].toLowerCase(), ext ) == -1)
+            if(jQuery.inArray(split_extension.toLowerCase(), ext ) == -1)
             {
                 $('#trainee_profile_img').val(fileObj.value = null);
                 $("div.img-profile div#error_msg").html("<center><i class='fa fa-times'> You Can Upload Only .jpg, gif files ! </i></center>").show();
@@ -310,7 +310,7 @@
                 $("div.img-profile div#error_msg").html("<center><i class='fa fa-times'>  File size should be less than 10 MB ! </i></center>").show();
                 return false;
             }
-            if(jQuery.inArray(split_extension[1].toLowerCase(), ext ) != -1 && calculatedSize < 10)
+            if(jQuery.inArray(split_extension.toLowerCase(), ext ) != -1 && calculatedSize < 10)
             {
                     $("div.img-profile div#error_msg").hide();
                     $('div.img-profile img#loading-img').show();

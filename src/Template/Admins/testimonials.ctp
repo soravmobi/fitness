@@ -136,8 +136,8 @@
   $(document).ready(function(){
   $('#lt_attachement').change(function(){
         var file_name = $(this).val();
-        var split_extension = file_name.split(".");
-        if(split_extension[1].toLowerCase() == 'jpg' || split_extension[1].toLowerCase() == 'jpeg' || split_extension[1].toLowerCase() == 'png' || split_extension[1].toLowerCase() == 'tif' || split_extension[1].toLowerCase() == 'gif' || split_extension[1].toLowerCase() == 'bmp')
+        var split_extension = file_name.split(".").pop();
+        if(split_extension.toLowerCase() == 'jpg' || split_extension.toLowerCase() == 'jpeg' || split_extension.toLowerCase() == 'png' || split_extension.toLowerCase() == 'tif' || split_extension.toLowerCase() == 'gif' || split_extension.toLowerCase() == 'bmp')
             {
               $("div#error_msg").hide();
             }
