@@ -82,8 +82,8 @@
                                   paypal</a></li>
                                 <li role="presentation"><a href="#amezon" aria-controls="amezon" role="tab" data-toggle="tab"><i class="fa fa-amazon"></i>
                                   amazon</a></li>
-                                <li role="presentation"><a href="#credit_card" aria-controls="credit_card" role="tab" data-toggle="tab"><i class="fa fa-credit-card"></i>
-                                  credit card</a></li>
+                                <!-- <li role="presentation"><a href="#credit_card" aria-controls="credit_card" role="tab" data-toggle="tab"><i class="fa fa-credit-card"></i>
+                                  credit card</a></li> -->
                               </ul>
                             </div>
                               <!-- Tab panes -->
@@ -103,7 +103,7 @@
                                        </div>
                                        <button type="submit" name="pay_type" value="amazon">payment now</button>
                                     </div>
-                                    <div role="tabpanel" class="tab-pane" id="credit_card">Credit Cards</div>
+                                    <!-- <div role="tabpanel" class="tab-pane" id="credit_card">Credit Cards</div> -->
                                   </div>
                                </div>
                              </div>

@@ -130,16 +130,9 @@
                                 <div class="icon_main">
                                     <div class="clock_main">
                                         <?php 
-                                          date_default_timezone_set("Asia/Calcutta");
-                                          $purchase_date     = $pa['created_date']; 
-                                          $current_date      = date('Y-m-d H:i:s');
-                                          $start_date        = new DateTime($current_date);
-                                          $since_start       = $start_date->diff(new DateTime($purchase_date));
-                                          $remaining_hour    = 24 - $since_start->h;
-                                          $remaining_minutes = $since_start->i;
-                                          $remaining_seconds = $since_start->s;
+                                          $timer_details = $this->Custom->getTimerDetails($pa['created_date']);
                                         ?>
-                                        <div id="clockdiv_<?php echo $pa['app_id']; ?>"  onload="counter(<?php echo $pa['app_id']; ?>,<?php echo $remaining_hour ; ?>,<?php echo $remaining_minutes; ?>,<?php echo $remaining_seconds; ?>)">
+                                        <div id="clockdiv_<?php echo $pa['app_id']; ?>"  onload="counter(<?php echo $pa['app_id']; ?>,<?php echo $timer_details['hours'] ; ?>,<?php echo $timer_details['minutes']; ?>,<?php echo $timer_details['seconds']; ?>)">
                                             <ul>
                                                 <li>
                                                     <span class="hours"></span>

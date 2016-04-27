@@ -21,51 +21,51 @@
                                     <img style="width:200px;height:190px;" src="<?php echo $this->request->webroot; ?>img/default.png" alt="img" class="img-responsive">
                             <?php } ?>
                             </div>
-                            <div class="trainee_detail">
-                                <h1 class="trainee_name"><?php echo $trainee_detail[0]['trainee_name']; ?></h1>
-                                <h3 class="trainee_rank">Current Weight : <span><?php echo $trainee_detail[0]['trainee_current_weight']; ?> lbs</span></h3>
-                                <h3 class="trainee_rank">My Goal : <span><?php echo $trainee_detail[0]['trainee_goal']; ?> lbs</span></h3>
-                                <nav class="trainee_streams">
-                                	<ul>
-                                    <?php $skills =  $trainee_detail[0]['trainee_skills']; 
-                                        $skillArr = explode(",", $skills);
-                                        if(!empty($skillArr)) {
-                                        foreach($skillArr as $s) { ?>
-                                        <li><a href="javascript:void(0);" class="red_grad" title="<?php echo $s; ?>"><?php echo $s; ?> </a></li>
-                                        <?php } } ?>
-                                    </ul>
-                                </nav>
-                                 <nav class="trainee_social_link">
-                                    <ul>
-                                    <?php
-                                        if(!empty($trainee_detail[0]['trainee_linkedin'])) { ?>
-                                    <li><a target="_blank" href="<?php echo $trainee_detail[0]['trainee_linkedin']; ?>" title="Linked In" class="linkedin_grad"><span class="fa fa-linkedin"></span></a></li>
-                                    <?php } ?>
-                                    <?php
-                                        if(!empty($trainee_detail[0]['trainee_facebook'])) { ?>
-                                    <li><a target="_blank" href="<?php echo $trainee_detail[0]['trainee_facebook']; ?>" title="Facebook" class="facebook_grad"><span class="fa fa-facebook"></span></a></li>
-                                    <?php } ?>
-                                    <?php
-                                        if(!empty($trainee_detail[0]['trainee_twitter'])) { ?>
-                                    <li><a target="_blank" href="<?php echo $trainee_detail[0]['trainee_twitter']; ?>" title="Twitter" class="twitter_grad"><span class="fa fa-twitter"></span></a></li>
-                                    <?php } ?>
-                                    <?php
-                                        if(!empty($trainee_detail[0]['trainee_belibitv'])) { ?>
-                                    <li><a target="_blank" href="<?php echo $trainee_detail[0]['trainee_belibitv']; ?>" title="BelibiTv" class="belibitv_grad"><span class="belivitv_icon"><img src="<?php echo $this->request->webroot; ?>img/favicon.png"></span></a></li>
-                                    <?php } ?>
-                                    <?php
-                                        if(!empty($trainee_detail[0]['trainee_google'])) { ?>
-                                    <li><a target="_blank" href="<?php echo $trainee_detail[0]['trainee_google']; ?>" title="Google" class="google_grad"><span class="fa fa-google-plus"></span></a></li>
-                                    <?php } ?>
-                                    <?php
-                                        if(!empty($trainee_detail[0]['trainee_instagram'])) { ?>
-                                    <li><a target="_blank" href="<?php echo $trainee_detail[0]['trainee_instagram']; ?>" title="Instagram" class="instagram_grad"><span class="fa fa-instagram"></span></a></li>
-                                    <?php } ?>
-                                    
-                                    
-                                    </ul>
-                                </nav>
-                            </div>
+                               <div class="trainee_detail">
+                                  <h1 class="trainee_name"><?php echo $trainee_detail[0]['trainee_name']; ?></h1>
+                                  <!-- <h3 class="trainee_rank">Current Weight : <span><?php echo $trainee_detail[0]['trainee_current_weight']; ?> lbs</span></h3>
+                                  <h3 class="trainee_rank">My Goal : <span><?php echo $trainee_detail[0]['trainee_goal']; ?> lbs</span></h3>
+                                  <nav class="trainee_streams">
+                                  	<ul>
+                                      <?php $skills =  $trainee_detail[0]['trainee_skills']; 
+                                          $skillArr = explode(",", $skills);
+                                          if(!empty($skillArr)) {
+                                          foreach($skillArr as $s) { ?>
+                                          <li><a href="javascript:void(0);" class="red_grad" title="<?php echo $s; ?>"><?php echo $s; ?> </a></li>
+                                          <?php } } ?>
+                                      </ul>
+                                  </nav>
+                                   <nav class="trainee_social_link">
+                                      <ul>
+                                      <?php
+                                          if(!empty($trainee_detail[0]['trainee_linkedin'])) { ?>
+                                      <li><a target="_blank" href="<?php echo $trainee_detail[0]['trainee_linkedin']; ?>" title="Linked In" class="linkedin_grad"><span class="fa fa-linkedin"></span></a></li>
+                                      <?php } ?>
+                                      <?php
+                                          if(!empty($trainee_detail[0]['trainee_facebook'])) { ?>
+                                      <li><a target="_blank" href="<?php echo $trainee_detail[0]['trainee_facebook']; ?>" title="Facebook" class="facebook_grad"><span class="fa fa-facebook"></span></a></li>
+                                      <?php } ?>
+                                      <?php
+                                          if(!empty($trainee_detail[0]['trainee_twitter'])) { ?>
+                                      <li><a target="_blank" href="<?php echo $trainee_detail[0]['trainee_twitter']; ?>" title="Twitter" class="twitter_grad"><span class="fa fa-twitter"></span></a></li>
+                                      <?php } ?>
+                                      <?php
+                                          if(!empty($trainee_detail[0]['trainee_belibitv'])) { ?>
+                                      <li><a target="_blank" href="<?php echo $trainee_detail[0]['trainee_belibitv']; ?>" title="BelibiTv" class="belibitv_grad"><span class="belivitv_icon"><img src="<?php echo $this->request->webroot; ?>img/favicon.png"></span></a></li>
+                                      <?php } ?>
+                                      <?php
+                                          if(!empty($trainee_detail[0]['trainee_google'])) { ?>
+                                      <li><a target="_blank" href="<?php echo $trainee_detail[0]['trainee_google']; ?>" title="Google" class="google_grad"><span class="fa fa-google-plus"></span></a></li>
+                                      <?php } ?>
+                                      <?php
+                                          if(!empty($trainee_detail[0]['trainee_instagram'])) { ?>
+                                      <li><a target="_blank" href="<?php echo $trainee_detail[0]['trainee_instagram']; ?>" title="Instagram" class="instagram_grad"><span class="fa fa-instagram"></span></a></li>
+                                      <?php } ?>
+                                      
+                                      
+                                      </ul>
+                                  </nav> -->
+                              </div>
                         </div>
                     </div>
                 </div>

@@ -13,15 +13,15 @@
     <li>
       <div class="img_trainer">
        <?php if($user_data['user_type'] == "trainer") { ?>
-            <img class="img-responsive profile-img" src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $profile_details[0]['trainer_image']; ?>">
+            <a href="<?php echo $this->request->webroot; ?>trainers/profile"><img class="img-responsive profile-img" src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $profile_details[0]['trainer_image']; ?>"></a>
         <?php } ?>
         <?php if($user_data['user_type'] == "trainee") { ?>
-            <img class="img-responsive profile-img" src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $profile_details[0]['trainee_image']; ?>">
+            <a href="<?php echo $this->request->webroot; ?>trainees/profile"><img class="img-responsive profile-img" src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $profile_details[0]['trainee_image']; ?>"></a>
         <?php } ?>
       </div>
     </li>
     <?php if($user_data['user_type'] == "trainer") { ?>
-        <li><a href="<?php echo $this->request->webroot; ?>trainers/profile"><i class="fa fa-user"></i>My Profile <i class="fa fa-chevron-left pull-right"></i></a></li>
+        <li><a href=""><i class="fa fa-user"></i>Overview <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainers/messages"><i class="fa fa-envelope"></i>Inbox <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainers/appointments"><i class="fa fa-pencil-square-o"></i>Appointments <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainers/mytrainees"><i class="fa fa-users"></i>My Clients <i class="fa fa-chevron-left pull-right"></i></a></li>
@@ -32,7 +32,7 @@
         <li><a title="Test Call" href="javascript:void(0);" id="test_call"><i class="fa fa-phone"></i> Test Call <i class="fa fa-chevron-left pull-right"></i></a></li>
     <?php } ?>
     <?php if($user_data['user_type'] == "trainee") { ?>
-        <li><a href="<?php echo $this->request->webroot; ?>trainees/profile"><i class="fa fa-user"></i>My Profile <i class="fa fa-chevron-left pull-right"></i></a></li>
+        <li><a href=""><i class="fa fa-user"></i>Overview <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainees/messages"><i class="fa fa-envelope"></i>Inbox <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainees/appointments"><i class="fa fa-pencil-square-o"></i>Appointments <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainees/mealplans"><i class="fa fa-pencil-square-o"></i>Meal Plans <i class="fa fa-chevron-left pull-right"></i></a></li>

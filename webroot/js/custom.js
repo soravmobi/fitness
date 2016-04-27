@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+
 	
 $('body').on('keypress','.pop-overbox',function(){
 	$(".pop-overbox").popover('destroy');
@@ -42,6 +44,18 @@ function setHeight() {
 	  $(window).resize(function() {
 		setHeight();
 	  });
+	  
+	
+//js for closing chat side menu on click of body
+$(document).click(function(event){
+	var isSideBarOpen = $("#leftNavMenu").hasClass("in");
+	if(isSideBarOpen == true && $(event.target).attr("data-toggle")!= "offcanvas"){
+  	$(".ht_left button").click();
+	}
+})   
+	  
+	  
+	  
 });
 
 (function( $ ) {
@@ -333,6 +347,26 @@ $(".mobile_search").click(function(){
  
 });
 
+$("#leftSideBarMenu").click(function(){
+    $(".slide_text li:nth-child(2)").toggleClass('was');
+});
 
+$(".slide_text li:nth-child(2)").click(function(){
+    $(".slide_text li:nth-child(2)").toggleClass('was');
+});
+
+
+var modalUniqueClass = ".modal";
+$('.modal').on('show.bs.modal', function(e) {
+  var $element = $(this);
+  var $uniques = $(modalUniqueClass + ':visible').not($(this));
+  if ($uniques.length) {
+    $uniques.modal('hide');
+    $uniques.one('hidden.bs.modal', function(e) {
+      $element.modal('show');
+    });
+    return false;
+  }
+});
 
 

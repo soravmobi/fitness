@@ -29,7 +29,7 @@
                                 <div class="retting_box">
                                     <h3 class="trainee_rank">Rank Level : </h3><input class="trainer-rank" value="<?php echo $profile_details[0]['trainer_rating']; ?>" type="number" /> <span class="gray_grad"><?php echo $profile_details[0]['trainer_rating']; ?></span>
                                 </div>       
-                                <nav class="trainee_streams">
+                                <!-- <nav class="trainee_streams">
                                     <ul>
                                     <?php $skills =  $profile_details[0]['trainer_skills']; 
                                         $skillArr = explode(",", $skills);
@@ -71,7 +71,7 @@
                                 </nav>
                                 <div class="profile_btn_main">
                                     <a href="<?php echo $this->request->webroot; ?>trainers/completeProfile" title="Edit Profile" class="hireme_btn gray_grad"><span class="fa fa-edit"></span> Edit Profile</a>
-                                </div>                              
+                                </div> -->                         
                             </div>
                         </div>
                     </div>

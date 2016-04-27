@@ -74,8 +74,8 @@
                                <li>
                                   $<?php echo $finalSessionPrice; ?> x <?php echo $session; ?> Sessions <span>$<?php echo $finalSessionPrice; ?></span></li>
                                <li>
-                                  Service Fee <div class="button_in"> <div class="pop_over_main"> <span class="icon_block question_icon"><i class="fa fa-question"></i></span>
-                                  <div class="pop_over">
+                                  Service Fee <div class="button_in"> <div class="pop_over_main"> <span class="icon_block question_icon service_fee_btn"><i class="fa fa-question"></i></span>
+                                  <div class="pop_over" id="service_fee_po">
                                      <h4>service fee</h4>
                                      <p>service fees let us provide 24 hours support that you love</p>
                                      <a href="javascript:void(0);" class="btn_okay">okay</a>
@@ -86,7 +86,13 @@
                               </li>
                               <li style="display:none;" id="promo_code_discount_label">Promo Code Discount <span id="promo_code_discount_price"></span></li>
                                 <li>
-                                  have a promo code <i class="fa fa-question icon_block question_icon"></i>
+                                  have a promo code <div class="pop_over_main"><i class="fa fa-question icon_block question_icon promo_code_btn"></i>
+                                  <div class="pop_over" id="promo_code_po">
+                                     <h4>Promo Code</h4>
+                                     <p>Use Virtual TrainR Promo Code for maximum discounts</p>
+                                     <a href="javascript:void(0);" class="btn_okay">okay</a>
+                                 </div>
+                                 </div>
                                   <span title="Click here to apply voucher" id="code-btn">click here</span>
                                   <span id="voucher-section" style="display:none;"><input type="text" class="form-control pop-overbox" id="voucher-code" placeholder="Voucher Code">
                                   <div class="modify_date_time1 save_cancel_section voucher_cancel">
@@ -130,14 +136,14 @@
                                   Amazon Payments <span><a href="javascript:void(0);"><img src="<?php echo $this->request->webroot ;?>images/amezon.png" class="img-responsive"></a></span></li>
                                
                                   </ul>
-                                  <div class="ad_credit_card">
+                                  <!-- <div class="ad_credit_card">
                                      <h5 style="display:none;">Add a New Credit Card </h5>
                                      <div class="content_ad_credit_card">
                                        <h4>Help <?php if(!empty($trainer_details)) echo ucwords($trainer_details[0]['trainer_name'] ." ".$trainer_details[0]['trainer_lname']); ?> Plan for your Sessions </h4>
                                        <p>Share details about yourself, your preferences, and what you love about <?php if(!empty($trainer_details)) echo ucwords($trainer_details[0]['trainer_name'] ." ".$trainer_details[0]['trainer_lname']); ?> profile</p>
 
                                      </div>
-                                  </div>
+                                  </div> -->
                               </div>
                     <div class="agree_message_wrap">
                        <textarea class="form-control" name="trainer_message" placeholder="Please leave any special request/notes for your trainer here"></textarea>
@@ -246,7 +252,19 @@
       $('#code-btn').show();
       $('#voucher').val(btoa('0'));
       $('#applied_voucher,#promo_code_discount_label').hide();
-    });       
+    });
+    $('body').on('click','.btn_okay',function(){
+      var data = $(this).parent().css('display','none');
+    }); 
+    $('body').on('click','.btn_okay',function(){
+      var data = $(this).parent().css('display','none');
+    });
+    $('body').on('mouseover','.service_fee_btn',function(){
+      $('#service_fee_po').css('display','block');
+    });
+    $('body').on('mouseover','.promo_code_btn',function(){
+      $('#promo_code_po').css('display','block');
+    });   
   });
   function termsCheck()
   {

@@ -77,11 +77,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Current Weight (in lbs)</label>
-                                        <input required name="trainee_current_weight" type="text" value="<?php echo $profile_details[0]['trainee_current_weight']; ?>" class="form-control">
+                                        <input name="trainee_current_weight" type="text" value="<?php echo $profile_details[0]['trainee_current_weight']; ?>" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label>Goal (in lbs)</label>
-                                        <input required name="trainee_goal" type="text" value="<?php echo $profile_details[0]['trainee_goal']; ?>" class="form-control">
+                                        <input name="trainee_goal" type="text" value="<?php echo $profile_details[0]['trainee_goal']; ?>" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label>Postal Code</label>
@@ -93,9 +93,9 @@
                                     </div>
                                    
                                 </div>
-                                <input type="hidden" id="trn_cont" name="trn_cont" value="<?php echo $cont_name[0]["name"]; ?>">
-                                <input type="hidden" id="trn_state" name="trn_state" value="<?php echo $state_name[0]["name"]; ?>">
-                                <input type="hidden" id="trn_city" name="trn_city" value="<?php echo $city_name[0]["name"]; ?>">
+                                <input type="hidden" id="trn_cont" name="trn_cont" value="<?php if(isset($cont_name[0]["name"])) echo $cont_name[0]["name"]; ?>">
+                                <input type="hidden" id="trn_state" name="trn_state" value="<?php if(isset($state_name[0]["name"])) echo $state_name[0]["name"]; ?>">
+                                <input type="hidden" id="trn_city" name="trn_city" value="<?php if(isset($city_name[0]["name"])) echo $city_name[0]["name"]; ?>">
                                 <input type="submit" class="btn submit_btn"  value="Update" />
                                 </form>
                             </div>

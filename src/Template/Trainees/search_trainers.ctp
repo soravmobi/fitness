@@ -520,12 +520,13 @@ url.push("lng="+lng);
     });
 	
 	/* Map function */
-	function gmap(trainers){
-		
+	function gmap(trainers){ 
+if(trainers.length >0){ 
+		var mapsData = new google.maps.LatLng(trainers[0][1],trainers[0][2]); 
 		var locations = trainers;
 	    var map = new google.maps.Map(document.getElementById('map'), {
 	      zoom: 10,
-	      center: new google.maps.LatLng(trainers[0][1],trainers[0][2]),
+	      center: mapsData,
 	      mapTypeId: google.maps.MapTypeId.ROADMAP,
 		  zoomControl: true,
 		  mapTypeControl: false,
@@ -534,11 +535,9 @@ url.push("lng="+lng);
 		  rotateControl: false,
 		  fullscreenControl: false
 	    });
-	   // var infowindow = new google.maps.InfoWindow();
-
-	    var marker, i;
+ var marker, i; 
 	    var markers = [];
-		console.log(locations);	
+		//console.log(locations);	
  
  
 	    for (i = 0; i < locations.length; i++) {  
@@ -563,6 +562,22 @@ url.push("lng="+lng);
 		}
 	    var mc = new MarkerClusterer(map, markers);
 	
+}else{ //alert('map loaded without marker');
+	    var map = new google.maps.Map(document.getElementById('map'), {
+	       center: {lat: 0, lng:0},
+   zoom: 0,
+	      mapTypeId: google.maps.MapTypeId.ROADMAP,
+		  zoomControl: true,
+		  mapTypeControl: false,
+		  scaleControl: true,
+		  streetViewControl: true,
+		  rotateControl: false,
+		  fullscreenControl: false
+	    });
+
+}
+		
+	   
 	}
 </script>
 <style>

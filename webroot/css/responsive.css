@@ -1,6 +1,13 @@
 @charset "utf-8";
 /* CSS Document */
 
+@media (min-width:1700px){
+	.appointement_dashboard .responsive-calendar .day a {
+    margin: 8px;
+    width: 48px;
+    height: 48px;
+}
+	}
 @media (min-width:1400px){
 .cloud_text {
   padding: 10px 10px 10px 45px;
@@ -21,6 +28,7 @@
 .appointement_dashboard .appointement_sec .scroll_content {
   height: 377px;
 }
+
 }
 @media (min-width:1200px){
 	.profile_field_title {width: 200px;}
@@ -1157,7 +1165,8 @@
   line-height: 10px;
 }
 .ht_middle {
-  width: 85%;
+  width: 5%;
+  display:inline-block;
 }
 .ht_right li:first-child {
   margin: 10px 0;
@@ -1165,7 +1174,7 @@
 }
 .ht_right {
   text-align: center;
-  width: 100%;
+  width: 78%;
 }
 .customer_report_main {
   padding: 50px 0px;
@@ -1627,6 +1636,16 @@
 .session_block  .text_wrap .text_block {
     width: 125px;
 	padding-left:20px;
+}
+#map-container {
+    height: 280px;
+}
+.signup_modal .modal-dialog {
+  height: 400px;
+  overflow: scroll;
+}
+.search_map_wrap {
+  height: 450px;
 }
 
 }	

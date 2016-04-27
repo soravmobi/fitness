@@ -89,7 +89,7 @@
                         	 <ul class="bank_metho_tabs" role="tablist">
                                 <li role="presentation" class="active"><a href="#paypal" aria-controls="paypal" role="tab" data-toggle="tab"><span class="fa fa-paypal"></span>Paypal</a></li>
                                 <li role="presentation"><a href="#amazon" aria-controls="amazon" role="tab" data-toggle="tab"><span class="fa fa-amazon"></span>Amazon</a></li>
-                                <li role="presentation"><a href="#credit" aria-controls="credit" role="tab" data-toggle="tab"><span class="fa fa-credit-card"></span>Credit Card</a></li>
+                                <!-- <li role="presentation"><a href="#credit" aria-controls="credit" role="tab" data-toggle="tab"><span class="fa fa-credit-card"></span>Credit Card</a></li> -->
                                 <li role="presentation"><a href="#money" aria-controls="money" role="tab" data-toggle="tab"><span class="fa fa-money"></span>Money Order</a></li>
                               </ul>
 

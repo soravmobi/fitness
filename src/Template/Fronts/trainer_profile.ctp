@@ -88,6 +88,13 @@
                             </li>
                         </ul>
                         <div class="clearfix"></div>
+                    <?php
+                        $session = $this->request->session();
+                        $user = $session->read('Auth.User');
+                    if(!empty($user) && $user['user_type'] == "trainer"){ ?>
+                        <a href="<?php echo $this->request->webroot; ?>trainers/completeProfile" title="Edit Profile" class="hireme_btn gray_grad">Edit Profile<span class="fa fa-edit"></span></a> 
+                    <?php } ?>
+                    }
                     </div>
                     <div class="clearfix"></div>
                     <div class="session_main">

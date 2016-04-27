@@ -1068,6 +1068,10 @@ class TrainersController extends AppController
     {
       $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
       $noti_data = $this->getNotifications();
+      foreach($noti_data as $n)
+      {
+        $this->notifications->query()->update()->set(['noti_status' => 1])->where(['id' => $n['noti_id']])->execute();
+      }
       $this->set('noti_data', $noti_data);
       $this->set('profile_details', $profile_details); 
     }

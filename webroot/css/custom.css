@@ -2470,7 +2470,7 @@ div.ourtrainer_wrap center > img {
 }
 
 /*24 nov*/
-#signup_Modal_trainee.modal,#signup_Modal_trainer.modal{
+#signup_Modal_trainee ,#signup_Modal_trainer{
     overflow: auto;
 }
 
@@ -4178,12 +4178,13 @@ a.btn_trainer {
   background-color: #fff;
   box-shadow: 0 0 3px #ccc;
   display: none;
-  left: 46px;
+  left: 44px;
   padding: 4px;
   position: absolute;
   text-align: center;
   top: -46px;
   width: 300px;
+  z-index:11;
 }
 .pop_over .btn_okay {
   background-color: #f2534d;
@@ -4676,7 +4677,7 @@ margin:0 auto;
   margin-right: 20px;
 }
 .search_map_wrap {
-  height: 600px;
+  height: 350px;
   overflow: hidden;
   position:relative;
 }
@@ -6780,7 +6781,7 @@ label.remain_bal {
  border-radius: 6px;
  min-width: 100px;
 }
-.ht_right li:first-child{ width:200px;}
+.ht_right li:first-child{ width:200px; display:none;}
 .navmenu-default .navmenu-nav > li > a:hover, .navbar-default .navbar-offcanvas .navmenu-nav > li > a:hover, .navmenu-default .navmenu-nav > li > a:focus, .navbar-default .navbar-offcanvas .navmenu-nav > li > a:focus {
   background-color: transparent;
   color: #f2534d;
@@ -7106,8 +7107,11 @@ label.remain_bal {
 .ht_right li:last-child .dropdown-menu::after{left:50%;}
 .ht_right li:nth-child(3) .dropdown-menu::after{left: 94%;}
 .list_drop {
-  height: 200px;
-  overflow: auto;
+  max-height: 200px;
+  overflow-y:scroll;
+}
+.see_all li {
+    display: block !important;
 }
 .niti_text p a {
   color: #666;
@@ -7243,4 +7247,46 @@ span.dte {
     margin-top: 10px;
     margin-bottom: 9px;
     border-radius: 15px;
+}
+.customer_dashboard .notification_wrap .degree_main {padding-top:0px;}
+.customer_dashboard .notification_wrap .degree {
+    right: -8px;
+    top: -7px;
+}
+
+.slide_text li:nth-child(2) {
+    display: none;
+}
+#leftSideBarMenu:focus .slide_text li:nth-child(2){display:block;}
+.was{ display:block !important;}
+.pop_over {
+	background: #fff;
+	border: 2px solid #ddd;
+}
+.pop_over:after, .pop_over:before {
+	right: 100%;
+	top: 42%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.pop_over:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-right-color: #fff;
+	border-width: 10px;
+	margin-top: -10px;
+}
+.pop_over:before {
+	border-color: rgba(221, 221, 221, 0);
+	border-right-color: #ddd;
+	border-width: 13px;
+	margin-top: -13px;
+}
+#leftNavMenu .img_trainer a {
+    display: inline-block;
+    padding: 0px;
 }

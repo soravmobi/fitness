@@ -183,8 +183,18 @@ class CustomComponent extends Component
         }
     }
 
-
-
+    public function getTimerDetails($dateTime)
+    {
+     $date = strtotime($dateTime); 
+     $date_now = time();
+     $final_date = 24 - ($date_now - $date);
+     $response = array(
+        'hour'    => date('H', $final_date),
+        'minutes' => date('i', $final_date),
+        'seconds' => date('s', $final_date)
+      );
+     return $response;
+    }
 }
 
 ?>

@@ -103,7 +103,7 @@
                                   <span>Mar 2016 by Amaya Syed </span>
                                   </div>
                                    <p>Jacson loves to learn, asks many questions and is really a wonderful person to train and be around </p>
-                                   <p><a href="javascript:void(0);" class="view_all">view all</a></p>
+                                   <p><a href="<?php echo $this->request->webroot; ?>traineeProfile/<?php echo base64_encode($session_details[0]['user_id']); ?>" class="view_all">view all</a></p>
                                 </div>
                               </div>
                          </li>

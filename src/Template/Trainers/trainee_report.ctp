@@ -24,9 +24,9 @@
                             <?php } ?>
                             </form>
                             </div>
-                            <div class="trainee_detail">
+                           <div class="trainee_detail">
                                 <h1 class="trainee_name"><?php echo $trainee_profile_details[0]['trainee_name']; ?></h1>
-                                <h3 class="trainee_rank">Current Weight : <span><?php echo $trainee_profile_details[0]['trainee_current_weight']; ?> lbs</span></h3>
+                               <!--   <h3 class="trainee_rank">Current Weight : <span><?php echo $trainee_profile_details[0]['trainee_current_weight']; ?> lbs</span></h3>
                                 <h3 class="trainee_rank">My Goal : <span><?php echo $trainee_profile_details[0]['trainee_goal']; ?> lbs</span></h3>
                                 <nav class="trainee_streams">
                                     <ul>
@@ -70,8 +70,8 @@
                                 </nav>
                                 <div class="profile_btn_main">
                                   <a href="<?php echo $this->request->webroot; ?>trainers/appointments" title="Book a Training Session" class="hireme_btn gray_grad"> Book a Training Session</a>
-                                </div>
-                            </div>
+                                </div>-->
+                            </div> 
                         </div>
                     </div>
                 </div>
