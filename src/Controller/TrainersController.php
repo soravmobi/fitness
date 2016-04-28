@@ -13,6 +13,7 @@ class TrainersController extends AppController
 {
 	public function beforeFilter(Event $event)
     {
+        $action = $this->request->params['action'];
     	  $this->blockIP();
         $this->checkSession();
         parent::beforeFilter($event);
@@ -20,6 +21,12 @@ class TrainersController extends AppController
         $this->Auth->allow(['addTrainer','downloadDocument']);
         $this->data = $this->Custom->getSessionData();
         if(!empty($this->data)){
+          if($action == "messages"){
+            $this->updateChatStatus();
+          }
+          if($action == "notifications"){
+            $this->updateNotifications();
+          }
         $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
         $noti_data = $this->getNotifications();
         $messages = $this->getChatMessages();
@@ -35,7 +42,7 @@ class TrainersController extends AppController
 
   public function getChatMessages()
   {
-    $messages = $this->conn->execute("SELECT * FROM `chating` AS `c` INNER JOIN `trainees` AS `t` ON `c`.`chat_sender_id` = `t`.`user_id` WHERE `c`.`chat_reciever_id` = ".$this->data['id']." ORDER BY `c`.`chat_id` DESC LIMIT 10")->fetchAll('assoc');
+    $messages = $this->conn->execute("SELECT * FROM `chating` AS `c` INNER JOIN `trainees` AS `t` ON `c`.`chat_sender_id` = `t`.`user_id` WHERE `c`.`chat_status` = 1 AND `c`.`chat_reciever_id` = ".$this->data['id']." ORDER BY `c`.`chat_id` DESC LIMIT 20")->fetchAll('assoc');
     return $messages;
   }
 
@@ -212,6 +219,18 @@ class TrainersController extends AppController
            $this->notifications->query()->update()->set(['noti_status' => 1])->where(['id' => $noti_id])->execute();
            $this->set('message', 'success');
            $this->set('_serialize',array('message','id'));
+           $this->response->statusCode(200);
+        }
+    }
+
+    public function deleteChatMessages()
+    {
+      if($this->request->is('ajax'))
+        {
+           $chatid = (int) $this->request->data['chatid'];
+           $this->chatting->query()->delete()->where(['chat_id' => $chatid])->execute();
+           $this->set('message', 'success');
+           $this->set('_serialize',array('message'));
            $this->response->statusCode(200);
         }
     }
@@ -935,6 +954,28 @@ class TrainersController extends AppController
         }
     }
 
+    public function updateChatStatus()
+    {
+      $trainer_id = $this->data['id'];
+      $chat_id_data = $this->conn->execute(" SELECT 
+                                            `chat_id`
+                                            FROM chating
+                                            WHERE 
+                                            (chat_sender_id = $trainer_id AND chat_type = 0 )
+                                            OR 
+                                            (chat_reciever_id = $trainer_id AND chat_type = 0 )
+                                         ")->fetchAll('assoc');
+
+       if(!empty($chat_id_data)){
+        foreach ($chat_id_data as $c1)
+         {
+          $ids[] = $c1['chat_id'];
+         }
+        $all_chat_ids = implode(",", $ids);
+        $trainers = $this->conn->execute("UPDATE chating SET chat_status = 2 WHERE chat_id IN(".$all_chat_ids.")");
+       }
+    }
+
     public function messages()
     {
        $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
@@ -952,6 +993,7 @@ class TrainersController extends AppController
                                             OR 
                                             (chating.chat_sender_id = $recent_trainee_id AND chating.chat_reciever_id = $trainer_id AND chating.chat_type = 0 )
                                          ")->fetchAll('assoc');
+       
         $chat_final_arr = array();
         foreach ($chat_data as $c)
          {
@@ -990,6 +1032,7 @@ class TrainersController extends AppController
             foreach ($chat_data as $c)
              {
               $chat_final_arr[] = $c['chat_id'];
+              $this->chatting->query()->update()->set(['chat_status' => 2])->where(['chat_id' => $c['chat_id']])->execute();
              }
             array_multisort($chat_final_arr, SORT_DESC, $chat_data);
             $chat_msgs = "";
@@ -1002,23 +1045,23 @@ class TrainersController extends AppController
                 foreach($chat_data as $cd) { 
                  if($cd['chat_reciever_id'] != $trainer_id) { 
 
-                    $chat_msgs .= '<div class="media msg">';
+                    $chat_msgs .= '<div class="media msg" id="msg_body_'.$cd['chat_id'].'">';
                     $chat_msgs .= '<a class="pull-left" href="'.$this->request->webroot.'trainers/profile">';
-                    $chat_msgs .= '<img class="media-object" style="width: 32px; height: 32px;" src="'.$this->request->webroot.'uploads/trainer_profile/'.$trainer_details[0]['trainer_image'].'"></a>';
+                    $chat_msgs .= '<img class="media-object" style="width: 32px; height: 32px;" src="'.$this->Custom->getImageSrc('uploads/trainer_profile/'.$trainer_details[0]['trainer_image']).'"></a>';
                     $chat_msgs .= '<div class="media-body">';
                     $chat_msgs .= '<small class="pull-right"><i class="fa fa-clock-o"></i>'. date('d F y,h:i A', strtotime($cd["chat_added_date"])).'</small>';
                     $chat_msgs .= '<h5 class="media-heading">'.ucwords($trainer_details[0]['trainer_name']).'</h5>';
-                    $chat_msgs .= '<small>'.$cd['chat_messsage'].'</small></div></div><hr>';
+                    $chat_msgs .= '<small>'.$cd['chat_messsage'].'</small></div></br><span class="delete_msgs" main="'.$cd['chat_id'].'" style="float:right;cursor:pointer;"><i class="fa fa-trash-o" title="Delete Message"></i></span></div><hr>';
                 }
                 else
                 {
-                    $chat_msgs .= '<div class="media msg">';
+                    $chat_msgs .= '<div class="media msg" id="msg_body_'.$cd['chat_id'].'">';
                     $chat_msgs .= '<a class="pull-left" href="'.$this->request->webroot.'trainers/traineeReport/'.base64_encode($trainee_details[0]['user_id']).'">';
-                    $chat_msgs .= '<img class="media-object" style="width: 32px; height: 32px;" src="'.$this->request->webroot.'uploads/trainee_profile/'.$trainee_details[0]['trainee_image'].'"></a>';
+                    $chat_msgs .= '<img class="media-object" style="width: 32px; height: 32px;" src="'.$this->Custom->getImageSrc('uploads/trainee_profile/'.$trainee_details[0]['trainee_image']).'"></a>';
                     $chat_msgs .= '<div class="media-body">';
                     $chat_msgs .= '<small class="pull-right"><i class="fa fa-clock-o"></i>'. date('d F y,h:i A', strtotime($cd["chat_added_date"])).'</small>';
                     $chat_msgs .= '<h5 class="media-heading">'.ucwords($trainee_details[0]['trainee_name']).'</h5>';
-                    $chat_msgs .= '<small>'.$cd['chat_messsage'].'</small></div></div><hr>';
+                    $chat_msgs .= '<small>'.$cd['chat_messsage'].'</small></div></br><span class="delete_msgs" main="'.$cd['chat_id'].'" style="float:right;cursor:pointer;"><i class="fa fa-trash-o" title="Delete Message"></i></span></div><hr>';
                 }
                 }
             }
@@ -1054,6 +1097,19 @@ class TrainersController extends AppController
     public function getNotifications()
     {
       $id = $this->data['id'];
+      $noti_data   = $this->conn->execute('SELECT *,`n`.`id` AS `noti_id` FROM `notifications` AS `n` INNER JOIN `trainees` AS `t` ON `t`.`user_id` = `n`.`noti_sender_id` WHERE `n`.`noti_status` = 0 AND `n`.`noti_receiver_id` = '.$this->data['id'].' ORDER BY `n`.`id` DESC ')->fetchAll('assoc');
+      $noti_final_arr = array();
+        foreach ($noti_data as $user)
+         {
+          $noti_final_arr[] = $user['noti_id'];
+         }
+      array_multisort($noti_final_arr, SORT_DESC, $noti_data);
+      return $noti_data;
+    }
+
+    public function getAllNotifications()
+    {
+      $id = $this->data['id'];
       $noti_data   = $this->conn->execute('SELECT *,`n`.`id` AS `noti_id` FROM `notifications` AS `n` INNER JOIN `trainees` AS `t` ON `t`.`user_id` = `n`.`noti_sender_id` WHERE `n`.`noti_receiver_id` = '.$this->data['id'].' ORDER BY `n`.`id` DESC ')->fetchAll('assoc');
       $noti_final_arr = array();
         foreach ($noti_data as $user)
@@ -1064,14 +1120,19 @@ class TrainersController extends AppController
       return $noti_data;
     }
 
+    public function updateNotifications()
+    {
+      $noti_data = $this->getNotifications();
+      foreach($noti_data as $n)
+        {
+          $this->notifications->query()->update()->set(['noti_status' => 1])->where(['id' => $n['noti_id']])->execute();
+        }
+    }
+
     public function notifications()
     {
       $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
-      $noti_data = $this->getNotifications();
-      foreach($noti_data as $n)
-      {
-        $this->notifications->query()->update()->set(['noti_status' => 1])->where(['id' => $n['noti_id']])->execute();
-      }
+      $noti_data = $this->getAllNotifications();
       $this->set('noti_data', $noti_data);
       $this->set('profile_details', $profile_details); 
     }

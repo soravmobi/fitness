@@ -44,7 +44,7 @@
                   <div class="trainer_box_top">
                    <div class="rate_box"> Houlry Rate -  $<?php echo $this->Custom->getHourlyRate($t['user_id']); ?></div>
                     <div class="trainer_box_img">
-                     <a href="<?php echo $this->request->webroot; ?>trainerProfile/<?php echo base64_encode($t['user_id']); ?>"> <img src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $t['trainer_image']; ?>" class="img-responsive"></a>
+                     <a href="<?php echo $this->request->webroot; ?>trainerProfile/<?php echo base64_encode($t['user_id']); ?>"> <img src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$t['trainer_image']) ?>" class="img-responsive"></a>
                     </div>
                   </div>
                   <div class="trainer_box_bottom">

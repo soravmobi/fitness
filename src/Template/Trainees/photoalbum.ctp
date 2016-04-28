@@ -45,8 +45,8 @@
                                                         { ?>
                                                     <li class="pimg_<?php echo $pi['abi_id']; ?>">
                                                         <span class="delte_img1" main2="<?php echo $pi['abi_image_name']; ?>" main="<?php echo base64_encode($pi['abi_id']); ?>"><i class="fa fa-close"></i></span>
-                                                        <a class="example-image-link" href="<?php echo $this->request->webroot; ?>uploads/trainee_progress/<?php echo $pi['abi_image_name']; ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-                                                        <img style="height:170px;" class="example-image img-responsive" src="<?php echo $this->request->webroot; ?>uploads/trainee_progress/<?php echo $pi['abi_image_name']; ?>" alt=""/></a>
+                                                        <a class="example-image-link" href="<?php echo $this->Custom->getImageSrc('uploads/trainee_progress/'.$pi['abi_image_name']) ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                                                        <img style="height:170px;" class="example-image img-responsive" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_progress/'.$pi['abi_image_name']) ?>" alt=""/></a>
                                                         <p class="date_weight"><span class="date_photo"><?php echo date('d-F-Y', strtotime($pi['abi_added_date'])); ?></span> 
                                                         <span class="weight_lbs"><?php echo $pi['weight']; ?> lbs</span></p>
                                                     </li>
@@ -76,10 +76,14 @@
                                                         { ?>
                                                     <li class="img_<?php echo $gi['piv_id']; ?>">
                                                         <span class="delte_img" main2="<?php echo $gi['piv_name']; ?>" main="<?php echo base64_encode($gi['piv_id']); ?>"><i class="fa fa-close"></i></span>
-                                                        <a class="example-image-link" href="<?php echo $this->request->webroot; ?>uploads/trainee_gallery/<?php echo $gi['piv_name']; ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-                                                        <img style="height:170px;" class="example-image img-responsive" src="<?php echo $this->request->webroot; ?>uploads/trainee_gallery/<?php echo $gi['piv_name']; ?>" alt=""/></a>
+                                                        <a class="example-image-link" href="<?php echo $this->Custom->getImageSrc('uploads/trainee_gallery/'.$gi['piv_name']) ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                                                        <img style="height:170px;" class="example-image img-responsive" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_gallery/'.$gi['piv_name']) ?>" alt=""/></a>
                                                     </li>
                                                 <?php } ?>
+                                                <li>
+                                                    <a class="example-image-link" href="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$profile_details[0]['trainee_image']) ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                                                    <img style="height:170px;" class="example-image img-responsive" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$profile_details[0]['trainee_image']) ?>" alt=""/></a>
+                                                </li>
                                             </ul>
                                             <div class="clearfix"></div>
                                         </div>
@@ -102,7 +106,7 @@
                                                         { ?>
                                                     <li>
                                                     <a href="javascript:void(0);">
-                                                    <video src="<?php echo $this->request->webroot; ?>uploads/trainee_videos/<?php echo $gv['piv_name']; ?>" height="175" id="jwp_video<?php echo $gv['piv_id']; ?>" width="260"></video></a></li>
+                                                    <video src="<?php echo $this->Custom->getImageSrc('uploads/trainee_videos/'.$gv['piv_name']) ?>" height="175" id="jwp_video<?php echo $gv['piv_id']; ?>" width="260"></video></a></li>
                                                 <?php } ?>
                                             </ul>
                                             <div class="clearfix"></div>

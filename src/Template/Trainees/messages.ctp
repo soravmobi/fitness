@@ -17,21 +17,22 @@
                 <div class="conversation-wrap col-lg-3">
                 <?php
                 if(empty($all_trainers)) { ?>
-                <div class="well"><center>Data Not Found </center></div>
+                <div class="well"><center>Not found any trainers </center></div>
                <?php }
                 else
                 {
+                        $i = 1;
                     foreach($all_trainers as $td) { ?>
-                    <div class="media conversation side_users" main="<?php echo base64_encode($td['user_id']); ?>">
+                    <div id="mesg_div_<?php echo $td['user_id']; ?>" class="media conversation side_users <?php if($i == 1) echo "active";?>" main="<?php echo base64_encode($td['user_id']); ?>">
                         <a class="pull-left" href="<?php echo $this->request->webroot; ?>mytrainerProfile/<?php echo base64_encode($td['user_id']); ?>">
-                            <img class="media-object" style="width: 50px; height: 50px;" src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $td['trainer_image']; ?>">
+                            <img class="media-object" style="width: 50px; height: 50px;" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$td['trainer_image']) ?>">
                         </a>
                         <div class="media-body">
                             <h5 class="media-heading"><?php echo substr(ucwords($td['trainer_name']),0,25); ?></h5>
                             <small><?php echo substr($td['trainer_displayName'],0,30); ?></small>
                         </div>
                     </div>
-                <?php } } ?>
+                <?php $i++; } } ?>
                 </div>
                 <div class="message-wrap col-lg-9">
                     <div class="msg-wrap" id="chat_msgs">
@@ -44,31 +45,31 @@
                 foreach($chat_data as $cd) { 
                     // trainee_messages
                 if($cd['chat_reciever_id'] != $trainee_id) { ?>
-                <div class="media msg">
+                <div class="media msg" id="msg_body_<?php echo $cd['chat_id'];?>">
                         <a class="pull-left" href="<?php echo $this->request->webroot; ?>trainees/profile">
-                            <img class="media-object" style="width: 32px; height: 32px;" src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $profile_details[0]['trainee_image']; ?>">
+                            <img class="media-object" style="width: 32px; height: 32px;" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$profile_details[0]['trainee_image']) ?>">
                         </a>
                         <div class="media-body">
                             <small class="pull-right"><i class="fa fa-clock-o"></i> <?php echo date('d F y,h:i A', strtotime($cd["chat_added_date"])); ?></small>
                             <h5 class="media-heading"><?php echo ucwords($profile_details[0]['trainee_name']); ?></h5>
-    
                             <small><?php echo $cd['chat_messsage']; ?></small>
                         </div>
+                        </br><span class="delete_msgs" main="<?php echo $cd['chat_id'];?>" style="float:right;cursor:pointer;"><i class="fa fa-trash-o" title="Delete Message"></i></span>
                     </div>
                     <hr>
                 <?php } 
                 // trainer_messages
                 else { ?>
-                <div class="media msg">
+                <div class="media msg" id="msg_body_<?php echo $cd['chat_id'];?>">
                         <a class="pull-left" href="<?php echo $this->request->webroot; ?>mytrainerProfile/<?php echo base64_encode($trainer_details[0]['user_id']); ?>">
-                            <img class="media-object" style="width: 32px; height: 32px;" src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $trainer_details[0]['trainer_image']; ?>">
+                            <img class="media-object" style="width: 32px; height: 32px;" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$trainer_details[0]['trainer_image']) ?>">
                         </a>
                         <div class="media-body">
                             <small class="pull-right"><i class="fa fa-clock-o"></i> <?php echo date('d F y,h:i A', strtotime($cd["chat_added_date"])); ?></small>
                             <h5 class="media-heading"><?php echo ucwords($trainer_details[0]['trainer_name']); ?></h5>
-    
                             <small><?php echo $cd['chat_messsage']; ?></small>
                         </div>
+                        </br><span class="delete_msgs" main="<?php echo $cd['chat_id'];?>" style="float:right;"><i class="fa fa-trash-o" title="Delete Message"></i></span>
                     </div>
                     <hr>
                 <?php } } } ?>
@@ -110,7 +111,21 @@
                 data:{trainer_id:trainer_id},
                 dataType:"json",
                 success: function(data){
+                    $('.side_users').removeClass('active');
+                    $('#mesg_div_'+atob(trainer_id)).addClass('active');
                     $('#chat_msgs').html(data.message);
+                }
+        });
+    });
+    $('body').on('click','.delete_msgs',function(){
+        var chatid = $(this).attr('main');
+        $.ajax({
+                url:"<?php echo $this->request->webroot; ?>trainers/deleteChatMessages",
+                type:"post",
+                data:{chatid:chatid},
+                dataType:"json",
+                success: function(data){
+                    $('#msg_body_'+chatid).remove();
                 }
             });
     });

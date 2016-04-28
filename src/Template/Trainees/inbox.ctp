@@ -12,8 +12,8 @@
                                 <?php
                                 if($profile_details[0]['trainee_image'] != "")
                                 { ?>
-                                    <a class="example-image-link" href="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $profile_details[0]['trainee_image']; ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-                                    <img style="width:200px;height:190px;" src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $profile_details[0]['trainee_image']; ?>" alt="img" class="img-responsive"></a>
+                                    <a class="example-image-link" href="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$profile_details[0]['trainee_image']) ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                                    <img style="width:200px;height:190px;" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$profile_details[0]['trainee_image']) ?>" alt="img" class="img-responsive"></a>
                             <?php }
                                 else
                                 { ?>
@@ -106,7 +106,7 @@
                                                     <span class="download_file" ><i class="fa fa-download"></i></span>
                                                 </a>
 
-                                                 <a class="example-image-link" href="<?php echo $this->request->webroot; ?>uploads/chat_data/<?php echo $f['src']; ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                                                 <a class="example-image-link" href="<?php echo $this->Custom->getImageSrc('uploads/chat_data/'.$f['src']) ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
                                                     <span class="download_file" ><i class="fa fa-eye"></i></span>
                                                 </a>
                                             </div>

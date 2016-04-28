@@ -1,4 +1,4 @@
-<?php include "trainee_dashboard.php"; ?>
+  <?php include "trainee_dashboard.php"; ?>
      <section class="trainee_dash_body">
         <div class="container">
             <div class="row">
@@ -19,7 +19,7 @@
                                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#notification<?php echo $nd['noti_id']; ?>" aria-expanded="true" aria-controls="collapseOne">
                                 <div class="pbb_left">
                                   <div class="pbbl_img">
-                                    <img src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $nd['trainer_image'];  ?>" alt="img" class="img-circle">
+                                    <img src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$nd['trainer_image']) ?>" alt="img" class="img-circle">
                                   </div>
                                   <div class="pbbl_txt">
                                     <h5><?php echo ucwords($nd['trainer_name']." ".$nd['trainer_lname']." ".$nd['noti_message']); ?> </strong></h5>
@@ -35,7 +35,7 @@
                               </div>
                               <div id="notification<?php echo $nd['noti_id']; ?>" class="panel-collapse collapse">
                                   <div class="panel-body">
-                                   <p> <?php echo ucwords($nd['trainer_name']." ".$nd['trainer_lname']." ".$nd['noti_message']); ?></p></br>
+                                   <!-- <p> <?php echo ucwords($nd['trainer_name']." ".$nd['trainer_lname']." ".$nd['noti_message']); ?></p></br> -->
                                    <a href="javascript:void(0);" class="btn btn-success app-view-btn" main="<?php echo $nd['parent_id']; ?>">View</a>
                                   </div>
                               </div>
@@ -47,7 +47,7 @@
                                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#notification<?php echo $nd['noti_id']; ?>" aria-expanded="true" aria-controls="collapseOne">
                                 <div class="pbb_left">
                                   <div class="pbbl_img">
-                                    <img src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $nd['trainer_image'];  ?>" alt="img" class="img-circle">
+                                    <img src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$nd['trainer_image']) ?>" alt="img" class="img-circle">
                                   </div>
                                   <div class="pbbl_txt">
                                     <h5><?php echo ucwords($nd['trainer_name']." ".$nd['trainer_lname']." ".$nd['noti_message']); ?> </strong></h5>
@@ -63,7 +63,7 @@
                               </div>
                               <div id="notification<?php echo $nd['noti_id']; ?>" class="panel-collapse collapse">
                                   <div class="panel-body">
-                                   <p> <?php echo ucwords($nd['trainer_name']." ".$nd['trainer_lname']." ".$nd['noti_message']); ?></p></br>
+                                   <!-- <p> <?php echo ucwords($nd['trainer_name']." ".$nd['trainer_lname']." ".$nd['noti_message']); ?></p></br> -->
                                    <a href="javascript:void(0);" class="btn btn-success app-special-offer-btn" main="<?php echo $nd['parent_id']; ?>">View</a>
                                   </div>
                               </div>

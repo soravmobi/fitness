@@ -10,8 +10,8 @@
                     <div class="col-sm-6 col-md-7">
                         <div class="trainee_top_wrap trainer_banner">
                             <div class="trainee_img">
-                                <a class="example-image-link" href="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $trainer_profile_details[0]['trainer_image']; ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-                                    <img style="width:200px;height:190px;" src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $trainer_profile_details[0]['trainer_image']; ?>" alt="img" class="img-responsive"></a>
+                                <a class="example-image-link" href="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$trainer_profile_details[0]['trainer_image']) ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                                    <img style="width:200px;height:190px;" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$trainer_profile_details[0]['trainer_image']) ?>" alt="img" class="img-responsive"></a>
                                 <p>$<?php if(!empty($rate_plans)) echo $rate_plans[0]['rate_hour']; else echo "0"; ?>/<span>HR</span></p>
                             </div>
                             <div class="trainee_detail">
@@ -94,7 +94,6 @@
                     if(!empty($user) && $user['user_type'] == "trainer"){ ?>
                         <a href="<?php echo $this->request->webroot; ?>trainers/completeProfile" title="Edit Profile" class="hireme_btn gray_grad">Edit Profile<span class="fa fa-edit"></span></a> 
                     <?php } ?>
-                    }
                     </div>
                     <div class="clearfix"></div>
                     <div class="session_main">
@@ -130,11 +129,11 @@
                 <?php $i = 1; if(!empty($gallery_img)) { ?>
                     <ul class="photo_list">
                     <?php foreach($gallery_img as $gi) { ?>
-                        <li <?php if($i != 1) echo "style='display:none;'" ?>><div class="photo_des"><a class="example-image-link" href="<?php echo $this->request->webroot; ?>uploads/trainer_gallery/<?php echo $gi['piv_name']; ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img style="height:190px;" src="<?php echo $this->request->webroot; ?>uploads/trainer_gallery/<?php echo $gi['piv_name']; ?>" alt="" class="img-responsive"></a><div class="photo_inner"><h2>Photos</h2></div></div></li>
+                        <li <?php if($i != 1) echo "style='display:none;'" ?>><div class="photo_des"><a class="example-image-link" href="<?php echo $this->Custom->getImageSrc('uploads/trainer_gallery/'.$gi['piv_name']) ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img style="height:190px;" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_gallery/'.$gi['piv_name']) ?>" alt="" class="img-responsive"></a><div class="photo_inner"><h2>Photos</h2></div></div></li>
                     <?php $i++; } ?>
                     <?php $j = 1;
                         foreach($gallery_videos as $gv) { ?>
-                            <li><video src="<?php echo $this->request->webroot; ?>uploads/trainer_videos/<?php echo $gv['piv_name']; ?>" height="190" id="jwp_video<?php echo $gv['piv_id']; ?>" width="370"></video></li>&nbsp;&nbsp;
+                            <li><video src="<?php echo $this->Custom->getImageSrc('uploads/trainer_videos/'.$gv['piv_name']) ?>" height="190" id="jwp_video<?php echo $gv['piv_id']; ?>" width="370"></video></li>&nbsp;&nbsp;
                         <?php $j++; if($j == 2) break; } ?>
                     </ul>
                 <?php } ?>
@@ -232,7 +231,7 @@
                                 <?php foreach($feedback as $f) { ?>
                                     <li class="clearfix">
                                         <div class="rtrainee_img">
-                                            <img src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $f['trainee_image']; ?>" alt="img">
+                                            <img src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$f['trainee_image']) ?>" alt="img">
                                         </div>
                                         <div class="review_txt">
                                             <h4><?php echo $f['trainee_displayName']; ?></h4>

@@ -13,8 +13,8 @@
                             	<?php
                                 if($trainer_detail[0]['trainer_image'] != "")
                                 { ?>
-                                    <a class="example-image-link" href="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $trainer_detail[0]['trainer_image']; ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-                                    <img style="width:200px;height:190px;" src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $trainer_detail[0]['trainer_image']; ?>" alt="img" class="img-responsive"></a>
+                                    <a class="example-image-link" href="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$trainer_detail[0]['trainer_image']) ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                                    <img style="width:200px;height:190px;" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$trainer_detail[0]['trainer_image']) ?>" alt="img" class="img-responsive"></a>
                             <?php }
                                 else
                                 { ?>
@@ -201,7 +201,7 @@
                                 <?php foreach($feedback as $f) { ?>
                                         <li class="clearfix">
                                         <div class="rtrainee_img">
-                                            <img src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $f['trainee_image']; ?>" alt="img">
+                                            <img src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$f['trainee_image']) ?>" alt="img">
                                         </div>
                                         <div class="review_txt">
                                             <h4><?php echo $f['trainee_displayName']; ?></h4>
@@ -250,7 +250,7 @@
                             <ul class="trainers_pic clearfix">
                             	<?php $i = 1;
                             foreach($gallery_img as $gi) { ?>
-                                <li><a href="javascript:void(0);"><img style="height:85px;" src="<?php echo $this->request->webroot; ?>uploads/trainer_gallery/<?php echo $gi['piv_name']; ?>" alt="img"></a></li>
+                                <li><a href="javascript:void(0);"><img style="height:85px;" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_gallery/'.$gi['piv_name']) ?>" alt="img"></a></li>
                             <?php $i++; if($i == 10) break; } ?>
                             </ul>
                         </div>
@@ -258,7 +258,7 @@
                         	<ul class="trainers_videos clearfix">
                             <?php $i = 1;
                             foreach($gallery_videos as $gv) { ?>
-                                <li><video src="<?php echo $this->request->webroot; ?>uploads/trainer_videos/<?php echo $gv['piv_name']; ?>" height="190" id="jwp_video<?php echo $gv['piv_id']; ?>" width="320"></video></li>&nbsp;&nbsp;
+                                <li><video src="<?php echo $this->Custom->getImageSrc('uploads/trainer_videos/'.$gv['piv_name']) ?>" height="190" id="jwp_video<?php echo $gv['piv_id']; ?>" width="320"></video></li>&nbsp;&nbsp;
                             <?php $i++; if($i == 3) break; } ?>
                             </ul>
                         </div>

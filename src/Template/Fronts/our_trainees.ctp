@@ -45,7 +45,7 @@
                                     <?php
                                         if($t['trainee_image'] != "")
                                         { ?>
-                                            <img style="height:260px;width:100%" src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $t['trainee_image']; ?>" alt="img" class="img-responsive">
+                                            <img style="height:260px;width:100%" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$t['trainee_image']) ?>" alt="img" class="img-responsive">
                                     <?php }
                                         else
                                         { ?>

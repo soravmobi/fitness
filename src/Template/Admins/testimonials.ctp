@@ -76,7 +76,7 @@
                                         <tr id="row_<?php echo $t['id']; ?>">
                                             <td><?php echo $i ;?></td>
                                             <td>
-                                              <img src="<?php echo $this->request->webroot; ?>uploads/testimonials/<?php echo $t['lt_attachement']; ?>" style="width:100px;height:100px;">
+                                              <img src="<?php echo $this->Custom->getImageSrc('uploads/testimonials/'.$t['lt_attachement']) ?>" style="width:100px;height:100px;">
                                             </td>
                                             <td><?php echo $t['lt_content']; ?></td>
                                             <td>

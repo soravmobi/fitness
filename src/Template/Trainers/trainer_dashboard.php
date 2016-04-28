@@ -12,8 +12,8 @@
                                 <?php
                                 if($profile_details[0]['trainer_image'] != "")
                                 { ?>
-                                    <a class="example-image-link" href="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $profile_details[0]['trainer_image']; ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-                                    <img style="width:200px;height:190px;" src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $profile_details[0]['trainer_image']; ?>" alt="img" class="img-responsive"></a>
+                                    <a class="example-image-link" href="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$profile_details[0]['trainer_image']) ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                                    <img style="width:200px;height:190px;" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$profile_details[0]['trainer_image']) ?>" alt="img" class="img-responsive"></a>
                             <?php }
                                 else
                                 { ?>

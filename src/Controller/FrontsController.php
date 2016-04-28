@@ -196,7 +196,7 @@ class FrontsController extends AppController
 		        	$response .= '<li class="col-sm-4 col-md-3">
 		                        	<div class="trainer_sec">
 		                            <div class="trainer_img">
-		                            <img src='.$this->request->webroot.'uploads/trainer_profile/'.$t['trainer_image'].' alt="trainer_img" class="img-responsive" style="height:260px;width:100%">
+		                            <img src='.$this->Custom->getImageSrc('uploads/trainer_profile/'.$t['trainer_image']).' alt="trainer_img" class="img-responsive" style="height:260px;width:100%">
 		                            <nav class="trainer_social_link">
 		                            <ul>';
 		            if($t["trainer_facebook"] != "")
@@ -257,7 +257,7 @@ class FrontsController extends AppController
 		        	$response .= '<li class="col-sm-4 col-md-3">
 		                        	<div class="trainer_sec">
 		                            <div class="trainer_img">
-		                            <img src='.$this->request->webroot.'uploads/trainee_profile/'.$t['trainee_image'].' alt="trainee_img" class="img-responsive" style="height:260px;width:100%">
+		                            <img src='.$this->Custom->getImageSrc('uploads/trainee_profile/'.$t['trainee_image']).' alt="trainee_img" class="img-responsive" style="height:260px;width:100%">
 		                            <nav class="trainer_social_link">
 		                            <ul>';
 		            if($t["trainee_facebook"] != "")

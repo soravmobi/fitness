@@ -12,8 +12,8 @@
                                 <?php
                                 if($profile_details[0]['trainer_image'] != "")
                                 { ?>
-                                    <a class="example-image-link" href="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $profile_details[0]['trainer_image']; ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-                                    <img style="width:200px;height:190px;" src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $profile_details[0]['trainer_image']; ?>" alt="img" class="img-responsive"></a>
+                                    <a class="example-image-link" href="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$profile_details[0]['trainer_image']) ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                                    <img style="width:200px;height:190px;" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$profile_details[0]['trainer_image']) ?>" alt="img" class="img-responsive"></a>
                             <?php }
                                 else
                                 { ?>
@@ -148,7 +148,7 @@
                     	<ul>
                         <?php 
                         foreach($trainers as $t) { ?>
-                        <li><a href="<?php echo $this->request->webroot; ?>mytrainerProfile/<?php echo base64_encode($t['user_id']); ?>"><span><img class="img-responsive" src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $t['trainer_image']; ?>"/></span><h3><?php echo $t['trainer_displayName']; ?></h3></a></li>
+                        <li><a href="<?php echo $this->request->webroot; ?>mytrainerProfile/<?php echo base64_encode($t['user_id']); ?>"><span><img class="img-responsive" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$t['trainer_image']) ?>"/></span><h3><?php echo $t['trainer_displayName']; ?></h3></a></li>
                         <?php } ?>
                         </ul>
                     </div>

@@ -16,9 +16,11 @@
                   if(!empty($weather_details)){
                     $weather = round($weather_details['main']['temp'] - 273.15,1);
                     $windy   = round($weather_details['wind']['speed'],1);
+                    $city    = $weather_details['name'];
                   }else{
                     $weather = "NA";
                     $windy   = "NA";
+                    $city   = "NA";
                   }
                 ?>
                   <div class="cloud_box blue_light">
@@ -26,17 +28,18 @@
                   </div>
                   <div class="cloud_text">
                     <div class="degree_main"><?php echo $weather; ?><span class="degree">0<span class="cvalue">c</span></span></div>
+                    <span><?php if(isset($city)) echo $city; ?></span>
                     <span>Weather</span>
                   </div>
                 </li>
-                <li>
+                <!-- <li>
                   <div class="cloud_box">
                     <div class="cloud"><i class="fa fa-cloud" aria-hidden="true"></i> <span>sunday</span></div>
                   </div>
                   <div class="cloud_text">
                     <div class="kilo_box"><?php echo $windy; ?><span>M/S</span></div>
                     <span>Windy</span> </div>
-                </li>
+                </li> -->
                 <li>
                   <div class="cloud_box">
                     <div class="cloud"><i class="flaticon1-money"></i><span> wallet</span></div>
@@ -114,7 +117,7 @@
                                  <div class="circle_box_main">
                                   <div class="small_circle"></div>
                                 <div class="icon_block big_icon gray_color">
-                                <img src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $upcomingArr['trainee_image'][$i]; ?>" class="img-responsive">
+                                <img src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$upcomingArr['trainee_image'][$i]) ?>" class="img-responsive">
                                  </div>
                                  </div>
                                   <div class="text_block"><div class="appointer_name"><?php echo $upcomingArr['trainee_name'][$i]; ?></br> <span><?php echo date('d F, Y', strtotime($upcomingArr['appo_date'][$i])); ?>  </span></div> <span><?php echo $upcomingArr['appo_time'][$i]; ?></span></div>
@@ -127,7 +130,11 @@
                                     <div class="icon_block"><i class="fa fa-map-marker"></i> </div>
                                     <div class="text_block"><?php echo $upcomingArr['location_name'][$i]; ?></div>                    
                                   </div>
-                                <?php } ?>
+                                <?php } else { ?>
+                                  <div class="icon_main">
+                                    <img style="width: 100%;" src="<?php echo $this->request->webroot; ?>img/favicon.ico" title="Virtual Training">
+                                  </div>
+                                  <?php } ?>
                                 <div class="chat_box">
                                     <div class="icon_block big_icon">
                                       <a href="javascript:void(0);" id="trainer-appointments" c_type="chat" t_type="trainer" from_id="<?php echo $from_id; ?>" to_id="<?php echo $upcomingArr['user_id'][$i]; ?>" class="user_call" title="Text Chat"><i class="fa fa-weixin"></i></a>
@@ -153,7 +160,7 @@
                                 <div class="circle_box_main">
                                    <div class="small_circle"></div>
                                       <div class="icon_block big_icon gray_color">
-                                        <img src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $pa['trainee_image']; ?>" class="img-responsive">
+                                        <img src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$pa['trainee_image']) ?>" class="img-responsive">
                                      </div>   
                                     </div>
                                     <?php $session_data = unserialize($pa['session_data']); ?>
@@ -201,73 +208,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="dashboard_mid_sec">
-          <div class="row">
-            <div class="col-md-4 col-sm-4">
-              <div class="request_sec customer_report_table_sec">
-                <div class="cr_table_content">
-                  <table class="table">
-                    <thead >
-                      <tr>
-                        <th>New Request</th>
-                        <th>Details</th>
-                        <th>Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Jerry 3 Sessions</td>
-                        <td>Details</td>
-                        <td><a href="#" class="chk_img"><img src="<?php echo $this->request->webroot; ?>images/chk_img.png"></a> <a href="#" class="cross_img"><img src="<?php echo $this->request->webroot; ?>images/cross_img.png"></a></td>
-                      </tr>
-                      <tr>
-                        <td>Jerry 3 Sessions</td>
-                        <td>Details</td>
-                        <td><a href="#" class="chk_img"><img src="<?php echo $this->request->webroot; ?>images/chk_img.png"></a> <a href="#" class="cross_img"><img src="<?php echo $this->request->webroot; ?>images/cross_img.png"></a></td>
-                      </tr>
-                      <tr>
-                        <td>Jerry 3 Sessions</td>
-                        <td>Details</td>
-                        <td><a href="#" class="chk_img"><img src="<?php echo $this->request->webroot; ?>images/chk_img.png"></a> <a href="#" class="cross_img"><img src="<?php echo $this->request->webroot; ?>images/cross_img.png"></a></td>
-                      </tr>
-                      <tr>
-                        <td>Jerry 3 Sessions</td>
-                        <td>Details</td>
-                        <td><a href="#" class="chk_img"><img src="<?php echo $this->request->webroot; ?>images/chk_img.png"></a> <a href="#" class="cross_img"><img src="<?php echo $this->request->webroot; ?>images/cross_img.png"></a></td>
-                      </tr>
-                      <tr>
-                        <td>Jerry 3 Sessions</td>
-                        <td>Details</td>
-                        <td><a href="#" class="chk_img"><img src="<?php echo $this->request->webroot; ?>images/chk_img.png"></a> <a href="#" class="cross_img"><img src="<?php echo $this->request->webroot; ?>images/cross_img.png"></a></td>
-                      </tr>
-                      <tr>
-                        <td>Jerry 3 Sessions</td>
-                        <td>Details</td>
-                        <td><a href="#" class="chk_img"><img src="<?php echo $this->request->webroot; ?>images/chk_img.png"></a> <a href="#" class="cross_img"><img src="<?php echo $this->request->webroot; ?>images/cross_img.png"></a></td>
-                      </tr>
-                      <tr>
-                        <td>Jerry 3 Sessions</td>
-                        <td>Details</td>
-                        <td><a href="#" class="chk_img"><img src="<?php echo $this->request->webroot; ?>images/chk_img.png"></a> <a href="#" class="cross_img"><img src="<?php echo $this->request->webroot; ?>images/cross_img.png"></a></td>
-                      </tr>
-                      <tr>
-                        <td>Jerry 3 Sessions</td>
-                        <td>Details</td>
-                        <td><a href="#" class="chk_img"><img src="<?php echo $this->request->webroot; ?>images/chk_img.png"></a> <a href="#" class="cross_img"><img src="<?php echo $this->request->webroot; ?>images/cross_img.png"></a></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-              <div class="sales_map"> <img src="<?php echo $this->request->webroot; ?>images/sales_chart.png" class="img-responsive"> </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-              <div class="diary_map"> <img src="<?php echo $this->request->webroot; ?>images/diary.png" class="img-responsive"> </div>
-            </div>
-          </div>
-        </div> -->
         <div class="visiter_map_sec">
           <div class="row">
             <div class="col-md-8 col-sm-8">
@@ -279,12 +219,37 @@
             <div class="col-md-4 col-sm-4">
               <div class="session_setails_sec agenda">
                 <div class="heading_payment_main">
-                  <h2 class="text-center">My Agenda</h2>
+                  <h2 class="text-center">Notes <span id="add_notes" title="Add Notes"><i class="fa fa-plus-circle"></i>
+                   <span class="ad_notes_main">
+                  <span class="pop_over">
+                    <textarea class="form-control" placeholder="Notes"></textarea>
+                    <a href="javascript:void(0);" class="btn_okay notes-cancel-btn">cancel</a><a href="javascript:void(0);" class="btn_okay notes-save-btn">save</a>
+                 </span>
+                </span>
+                  </span></h2>
                 </div>
                 <div class="session_content">
-                  <p> <span class="agenda_icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p>
-                  <p> <span class="agenda_icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p>
-                  <p> <span class="agenda_icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p>
+                  <p> <span class="agenda_icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
+                   <span class="icon_edit_delete">
+                     <i class="fa fa-pencil" aria-hidden="true"></i>
+                     <i class="fa fa-trash" aria-hidden="true"></i>
+
+                   </span>
+                  </p>
+                  <p> <span class="agenda_icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
+                   <span class="icon_edit_delete">
+                     <i class="fa fa-pencil" aria-hidden="true"></i>
+                     <i class="fa fa-trash" aria-hidden="true"></i>
+
+                   </span>
+                  </p>
+                  <p> <span class="agenda_icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+                    <span class="icon_edit_delete">
+                     <i class="fa fa-pencil" aria-hidden="true"></i>
+                     <i class="fa fa-trash" aria-hidden="true"></i>
+
+                   </span>
+                   </p>
                 </div>
               </div>
             </div>
@@ -293,13 +258,6 @@
         <div class="message_wrap">
           <div class="message_wrap_head">
             <h3>inbox </h3>
-            <!-- <ul class="pagination">
-              <li>Showing 1 - 10 of 96 Messages</li>
-              <li> <a href="#" aria-label="Previous"> <span aria-hidden="true"><i class="fa fa-chevron-left"></i></span> </a> </li>
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li> <a href="#" aria-label="Next"> <span aria-hidden="true"><i class="fa fa-chevron-right"></i></span> </a> </li>
-            </ul> -->
             <div class="clearfix"></div>
           </div>
           <div class="message_wrap_content_box">
@@ -308,13 +266,9 @@
               <li class="dropdown"><a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">action <i class="fa fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
                   <li><a href="javascript:void(0);" id="delete-msgs"><i class="fa fa-trash-o"></i> Delete</a></li>
-                  <!-- <li><a href="javascript:void(0);"><i class="fa fa-eye"></i> Mark Read</a></li> -->
                 </ul>
               </li>
               <li class="pull-right">
-                <!-- <div class="input-group">
-                  <input type="text" placeholder="Search Message" aria-label="Amount (to the nearest dollar)" class="form-control">
-                  <span class="input-group-addon"><i class="fa fa-search"></i></span> </div> -->
               </li>
             </ul>
             <div class="message_wrap_content">
@@ -378,6 +332,14 @@ $(document).ready(function(){
           }
       });
   });
+$('body').on('click','#add_notes .notes-cancel-btn',function(){
+    $('#add_notes .ad_notes_main  .pop_over').css("display","none");
+  });
+
+  $('body').on('click','#add_notes',function(){
+    $('#add_notes .ad_notes_main .pop_over').css("display","block");
+  });
+
 });
 
 /************************************* js for clockdiv timer start ***********************************************************/

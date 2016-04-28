@@ -23,7 +23,7 @@
                 <div class="col-md-12 col-sm-12">
                   <div class="head_row">
                     <div class="session_user">
-                      <div class="img_user"><img src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $trainer_details[0]['trainer_image']; ?>" class="img-responsive"></div>  <?php if(!empty($trainer_details)) echo ucwords($trainer_details[0]['trainer_name'] ." ".$trainer_details[0]['trainer_lname']); ?>
+                      <div class="img_user"><img src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$trainer_details[0]['trainer_image']) ?>" class="img-responsive"></div>  <?php if(!empty($trainer_details)) echo ucwords($trainer_details[0]['trainer_name'] ." ".$trainer_details[0]['trainer_lname']); ?>
                     </div>
                   </div>
               </div>
@@ -49,6 +49,10 @@
                                   <div class="icon_main">
                                      <div class="icon_block" data-toggle="modal" data-target="#location_model"><i class="fa fa-map-marker"></i> </div>
                                       <div class="text_block" title="<?php echo $session_details[$i]['location_address']; ?>"><?php echo $session_details[$i]['location_address']; ?></div>                    
+                                  </div>
+                                  <?php } else { ?>
+                                  <div class="icon_main">
+                                    <img style="width: 100%;" src="<?php echo $this->request->webroot; ?>img/favicon.ico" title="Virtual Training">
                                   </div>
                                   <?php } ?>
                               </li>

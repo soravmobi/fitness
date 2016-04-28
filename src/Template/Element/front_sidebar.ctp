@@ -13,15 +13,15 @@
     <li>
       <div class="img_trainer">
        <?php if($user_data['user_type'] == "trainer") { ?>
-            <a href="<?php echo $this->request->webroot; ?>trainers/profile"><img class="img-responsive profile-img" src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $profile_details[0]['trainer_image']; ?>"></a>
+            <a href="<?php echo $this->request->webroot; ?>trainers/profile"><img class="img-responsive profile-img" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$profile_details[0]['trainer_image']) ?>"></a>
         <?php } ?>
         <?php if($user_data['user_type'] == "trainee") { ?>
-            <a href="<?php echo $this->request->webroot; ?>trainees/profile"><img class="img-responsive profile-img" src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $profile_details[0]['trainee_image']; ?>"></a>
+            <a href="<?php echo $this->request->webroot; ?>trainees/profile"><img class="img-responsive profile-img" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$profile_details[0]['trainee_image']) ?>"></a>
         <?php } ?>
       </div>
     </li>
     <?php if($user_data['user_type'] == "trainer") { ?>
-        <li><a href=""><i class="fa fa-user"></i>Overview <i class="fa fa-chevron-left pull-right"></i></a></li>
+        <li><a href="<?php echo $this->request->webroot; ?>trainers"><i class="fa fa-user"></i>Overview <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainers/messages"><i class="fa fa-envelope"></i>Inbox <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainers/appointments"><i class="fa fa-pencil-square-o"></i>Appointments <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainers/mytrainees"><i class="fa fa-users"></i>My Clients <i class="fa fa-chevron-left pull-right"></i></a></li>
@@ -32,7 +32,7 @@
         <li><a title="Test Call" href="javascript:void(0);" id="test_call"><i class="fa fa-phone"></i> Test Call <i class="fa fa-chevron-left pull-right"></i></a></li>
     <?php } ?>
     <?php if($user_data['user_type'] == "trainee") { ?>
-        <li><a href=""><i class="fa fa-user"></i>Overview <i class="fa fa-chevron-left pull-right"></i></a></li>
+        <li><a href="<?php echo $this->request->webroot; ?>trainees"><i class="fa fa-user"></i>Overview <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainees/messages"><i class="fa fa-envelope"></i>Inbox <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainees/appointments"><i class="fa fa-pencil-square-o"></i>Appointments <i class="fa fa-chevron-left pull-right"></i></a></li>
         <li><a href="<?php echo $this->request->webroot; ?>trainees/mealplans"><i class="fa fa-pencil-square-o"></i>Meal Plans <i class="fa fa-chevron-left pull-right"></i></a></li>
@@ -80,16 +80,16 @@
             <?php 
             if(!empty($noti_data)){
             foreach($noti_data as $nd) { ?>
-              <li>
+              <li><a href="<?php echo $this->request->webroot; ?>trainers/notifications">
                 <div class="notifi_inner">
                   <div class="noti_img">
-                    <img class="profile-img" src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $nd['trainee_image'];  ?>">
+                    <img class="profile-img" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$nd['trainee_image']) ?>">
                   </div>
                   <div class="niti_text">
                     <p><?php echo ucwords($nd['trainee_name']." ".$nd['trainee_lname']." ".$nd['noti_message']); ?></p>
                   </div>
                   <div class="clearfix"></div>
-                </div>
+                </div></a>
               </li>
             <?php } } else { ?>
               </br><li><center><h4>There is no new notifications</h4></center></li>
@@ -111,16 +111,16 @@
             <?php 
             if(!empty($noti_data)){
             foreach($noti_data as $nd) { ?>
-              <li>
+              <li><a href="<?php echo $this->request->webroot; ?>trainees/notifications">
                 <div class="notifi_inner">
                   <div class="noti_img">
-                    <img class="profile-img" src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $nd['trainer_image'];  ?>">
+                    <img class="profile-img" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$nd['trainer_image']) ?>">
                   </div>
                   <div class="niti_text">
                     <p><?php echo ucwords($nd['trainer_name']." ".$nd['trainer_lname']." ".$nd['noti_message']); ?></p>
                   </div>
                   <div class="clearfix"></div>
-                </div>
+                </div></a>
               </li>
             <?php } } else { ?>
               </br><li><center><h4>There is no new notifications</h4></center></li>
@@ -134,7 +134,7 @@
             <div>
           <?php } ?>
          </li>
-        <li> <span class="icon_tip yellow">0</span> 
+        <li> <span class="icon_tip yellow"><?php echo (isset($messages) && !empty($messages)) ? count($messages) : "0"; ?></span> 
         <?php if($user_data['user_type'] == "trainer") { ?>
             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Notifications" href="javascript:void(0);"><i class="fa fa-envelope"></i></a> 
               <div class="dropdown-menu notification">
@@ -146,7 +146,7 @@
                 <li>
                   <div class="notifi_inner">
                     <div class="noti_img">
-                      <img class="profile-img" src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $m['trainee_image']; ?>">
+                      <img class="profile-img" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$m['trainee_image']) ?>">
                     </div>
                     <div class="niti_text">
                       <h4><?php echo ucwords($m['trainee_name']." ".$m['trainee_lname']); ?></h4>
@@ -177,7 +177,7 @@
                 <li>
                   <div class="notifi_inner">
                     <div class="noti_img">
-                      <img class="profile-img" src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $m['trainer_image']; ?>">
+                      <img class="profile-img" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$m['trainer_image']) ?>">
                     </div>
                     <div class="niti_text">
                       <h4><?php echo ucwords($m['trainer_name']." ".$m['trainer_lname']); ?></h4>
@@ -203,19 +203,30 @@
           <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <div class="circle_img">
             <?php if($user_data['user_type'] == "trainer") { ?>
-                <img class="profile-img" src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $profile_details[0]['trainer_image']; ?>">
+                <img class="profile-img" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$profile_details[0]['trainer_image']) ?>">
             <?php } ?>
             <?php if($user_data['user_type'] == "trainee") { ?>
-                <img class="profile-img" src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $profile_details[0]['trainee_image']; ?>">
+                <img class="profile-img" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$profile_details[0]['trainee_image']) ?>">
             <?php } ?>
             </div>
-            Hi, <?php echo $user_data['display_name']; ?> <i class="fa fa-chevron-down"></i> </a>
-            <ul class="dropdown-menu">
             <?php if($user_data['user_type'] == "trainer") { ?>
-                <li><a href="<?php echo $this->request->webroot; ?>trainerProfile/<?php echo base64_encode($user_data['id']); ?>"><i class="fa fa-user"></i> Profile</a></li>
+              Hi, <?php echo (isset($profile_details[0]['trainer_name']) && (!empty($profile_details[0]['trainer_name']))) ? $profile_details[0]['trainer_name'] : $user_data['display_name'] ?> <i class="fa fa-chevron-down"></i> </a>
             <?php } ?>
             <?php if($user_data['user_type'] == "trainee") { ?>
-                <li><a href="<?php echo $this->request->webroot; ?>traineeProfile/<?php echo base64_encode($user_data['id']); ?>"><i class="fa fa-user"></i> Profile</a></li>
+              Hi, <?php echo (isset($profile_details[0]['trainee_name']) && (!empty($profile_details[0]['trainee_name']))) ? $profile_details[0]['trainee_name'] : $user_data['display_name'] ?> <i class="fa fa-chevron-down"></i> </a>
+            <?php } ?>
+            <ul class="dropdown-menu">
+            <?php if($user_data['user_type'] == "trainer") { ?>
+                <li><a href="<?php echo $this->request->webroot; ?>trainerProfile/<?php echo base64_encode($user_data['id']); ?>"><i class="fa fa-user"></i> My Profile</a></li>
+            <?php } ?>
+            <?php if($user_data['user_type'] == "trainee") { ?>
+                <li><a href="<?php echo $this->request->webroot; ?>traineeProfile/<?php echo base64_encode($user_data['id']); ?>"><i class="fa fa-user"></i> My Profile</a></li>
+            <?php } ?>
+            <?php if($user_data['user_type'] == "trainer") { ?>
+                <li><a href="<?php echo $this->request->webroot; ?>trainerProfile/<?php echo base64_encode($user_data['id']); ?>"><i class="fa fa-user"></i> My Profile</a></li>
+            <?php } ?>
+            <?php if($user_data['user_type'] == "trainee") { ?>
+                <li><a href="<?php echo $this->request->webroot; ?>traineeProfile/<?php echo base64_encode($user_data['id']); ?>"><i class="fa fa-user"></i> My Profile</a></li>
             <?php } ?>
                 <li><a href="<?php echo $this->request->webroot; ?>users/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
             </ul>
@@ -229,29 +240,3 @@
 
 
 <!--Header sec end--> 
-
-<!--<script>
-  $(document).ready(function(){
-    $("body").click(function(event) {
-     if (event.target.id != "leftmenubutton") {
-      $("#leftSideBarMenu").offcanvas('hide');
-      console.log("menu closed");
-     }
-    });
-  });
-</script>-->
-
-<script>
-    $(document).click(function(e){
-    // Check if click was triggered on or within #menu_content
-    if( $(e.target).closest("#leftSideBarMenu").length > 0 ) {
-     return false;
-    }
-    // Otherwise
-    // trigger your click function
-    $("body").removeAttr("style").removeClass(".canvas-slid");
-    $("#leftNavMenu").removeClass("in canvas-slid").removeAttr("style");
-    console.log("done");
-   });
-    
- </script>

@@ -73,7 +73,7 @@
                                  <div class="circle_box_main">
                                   <div class="small_circle"></div>
                                 <div class="icon_block big_icon gray_color">
-                                <img src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $upcomingArr['trainee_image'][$i]; ?>" class="img-responsive">
+                                <img src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$upcomingArr['trainee_image'][$i]) ?>" class="img-responsive">
                                  </div>
                                  </div>
                                   <div class="text_block"><div class="appointer_name"><?php echo $upcomingArr['trainee_name'][$i]; ?></br> <span><?php echo date('d F, Y', strtotime($upcomingArr['appo_date'][$i])); ?>  </span></div> <span><?php echo $upcomingArr['appo_time'][$i]; ?></span></div>
@@ -86,7 +86,11 @@
                                     <div class="icon_block"><i class="fa fa-map-marker"></i> </div>
                                     <div class="text_block"><?php echo $upcomingArr['location_name'][$i]; ?></div>                    
                                   </div>
-                                <?php } ?>
+                                <?php } else { ?>
+                                  <div class="icon_main">
+                                    <img style="width: 100%;" src="<?php echo $this->request->webroot; ?>img/favicon.ico" title="Virtual Training">
+                                  </div>
+                                  <?php } ?>
                                 <div class="chat_box">
                                     <div class="icon_block big_icon">
                                       <a href="javascript:void(0);" id="trainer-appointments" c_type="chat" t_type="trainer" from_id="<?php echo $from_id; ?>" to_id="<?php echo $upcomingArr['user_id'][$i]; ?>" class="user_call" title="Text Chat"><i class="fa fa-weixin"></i></a>
@@ -119,7 +123,7 @@
                                 <div class="circle_box_main">
                                    <div class="small_circle"></div>
                                       <div class="icon_block big_icon gray_color">
-                                        <img src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $pa['trainee_image']; ?>" class="img-responsive">
+                                        <img src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$pa['trainee_image']) ?>" class="img-responsive">
                                      </div>   
                                     </div>
                                     <?php $session_data = unserialize($pa['session_data']); ?>
@@ -151,7 +155,7 @@
                                     <div class="icon_block big_icon">
                                         <a href="javascript:void(0);" id="trainer-appointments" c_type="chat" t_type="trainer" from_id="<?php echo $from_id; ?>" to_id="<?php echo $pa['trainee_id']; ?>" class="user_call" title="Text Chat"><i class="fa fa-weixin"></i></a>
                                     </div>
-                                    <div class="bullet_box"><a title="View Pending Appointment" href="<?php echo $this->request->webroot; ?>trainers/viewPendingAppointment?aid=<?php echo base64_encode($pa['app_id']); ?>"><i class="fa fa-circle"></i> <i class="fa fa-circle"></i> <i class="fa fa-circle"></i></a></div>
+                                    <div class="bullet_box"><a title="View Details" href="<?php echo $this->request->webroot; ?>trainers/viewPendingAppointment?aid=<?php echo base64_encode($pa['app_id']); ?>"><i class="fa fa-circle"></i> <i class="fa fa-circle"></i> <i class="fa fa-circle"></i></a></div>
                                 </div>
                             </li>
                             <?php } } ?>

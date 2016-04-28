@@ -661,10 +661,10 @@ class UsersController extends AppController
 					$img_ext = array("jpeg","jpg","tif","gif","png");
 					if(in_array($ext, $img_ext))
 					{
-						$file = '<a data-title="Click the right half of the image to move forward." data-lightbox="example-set" href="'.$this->request->webroot.'uploads/chat_data/'.$newname.'" class="example-image-link"><img src="'.$this->request->webroot.'uploads/chat_data/'.$newname.'" class="file_img"></a>';
+						$file = '<a data-title="Click the right half of the image to move forward." data-lightbox="example-set" href="'.$this->Custom->getImageSrc('uploads/chat_data/'.$newname).'" class="example-image-link"><img src="'.$this->Custom->getImageSrc('uploads/chat_data/'.$newname).'" class="file_img"></a>';
 					}else
 					{
-						$file = '<a target="_blank" href="'.$this->request->webroot.'uploads/chat_data/'.$newname.'" class="file_data">'.$newname.'</a>';
+						$file = '<a target="_blank" href="'.$this->Custom->getImageSrc('uploads/chat_data/'.$newname).'" class="file_data">'.$newname.'</a>';
 					}
 
 					$uchat = array();

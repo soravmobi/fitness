@@ -14,7 +14,7 @@
                                 <?php
                                 if($profile_details[0]['trainer_image'] != "")
                                 { ?>
-                                    <img style="width:200px;height:190px;" src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $profile_details[0]['trainer_image']; ?>" alt="img" class="img-responsive">
+                                    <img style="width:200px;height:190px;" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$profile_details[0]['trainer_image']) ?>" alt="img" class="img-responsive">
                             <?php }
                                 else
                                 { ?>
@@ -51,7 +51,7 @@
                                 <?php
                                 if($profile_details[0]['trainee_image'] != "")
                                 { ?>
-                                    <img style="width:200px;height:190px;" src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $profile_details[0]['trainee_image']; ?>" alt="img" class="img-responsive">
+                                    <img style="width:200px;height:190px;" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$session_details[0]['trainee_image']) ?>" alt="img" class="img-responsive">
                             <?php }
                                 else
                                 { ?>

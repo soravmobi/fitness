@@ -1999,7 +1999,7 @@ div.ourtrainer_wrap center > img {
     }
     .msg-wrap
     {
-        padding:10px;
+        padding:23px;
         max-height: 400px;
         overflow: auto;
 
@@ -5245,7 +5245,7 @@ a.terms-link {
   padding: 5px;
 }
 .calendor_content {
-  margin-top: 20px; /*12px;*/
+  margin-top: 24px; /*12px;*/
 }
 .appointement_dashboard .appointement_sec .scroll_content {
   height: 350px;
@@ -6623,10 +6623,10 @@ label.remain_bal {
 /*css for trainer dashboard page start */
 .trainer_dashboard .notification_wrap li {
   margin: 10px 26px 10px 0;
-  min-height: 156px;
+  min-height: 164px;
   padding: 10px;
   vertical-align: top;
-  width: 23%;
+  width: 31.6%;
 }
 .trainer_dashboard .notification_wrap li:last-child{ margin-right:inherit;}
 .trainer_dashboard .cloud_text > span {
@@ -7287,6 +7287,95 @@ span.dte {
 	margin-top: -13px;
 }
 #leftNavMenu .img_trainer a {
-    display: inline-block;
+    /*display: inline-block;*/
     padding: 0px;
+}
+.list_drop li {
+  display: block !important;
+}
+.chat_list_wrapper {
+    left: auto !important;
+    right: 0px !important;
+    bottom: 0px !important;
+}
+
+
+.conversation-wrap .side_users.active {
+	position: relative;
+	background: #fff;
+	border: 2px solid #ddd;
+}
+.conversation-wrap .side_users.active:after, .conversation-wrap .side_users.active:before {
+	left: 90%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.conversation-wrap .side_users.active:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-left-color: #fff;
+	border-width: 15px;
+	margin-top: -15px;
+}
+.conversation-wrap .side_users.active:before {
+	border-color: rgba(221, 221, 221, 0);
+	border-left-color: #ddd;
+	border-width: 18px;
+	margin-top: -18px;
+}
+
+ .list_drop li {
+  display: block !important;
+}
+ #add_notes{
+  float: right;
+}
+ #add_notes{
+  float: right;
+  cursor: pointer;
+  position: relative;
+}
+#add_notes .pop_over::after, #add_notes .pop_over::before{display: none;}
+#add_notes .pop_over .btn_okay {
+  margin-right: 4px;
+  margin-top: 5px;
+}
+#add_notes .pop_over {
+  border-radius: 10px;
+  border-top: 6px solid #e6342a;
+  left: inherit;
+  right: 44px;
+}
+.icon_edit_delete {
+  font-size: 18px;
+  position: absolute;
+  right: 0;
+  top: 3px;
+  cursor: pointer;
+  display: none;
+}
+.icon_edit_delete .fa.fa-pencil {
+  margin-right: 10px;
+}
+.icon_edit_delete i:hover{ color: #e6342a;}
+.agenda p:hover .icon_edit_delete{display: block;}
+ .agenda p {
+  border-bottom: 1px solid #ddd;
+  color: #242424;
+  font-size: 13px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-top: 30px;
+  position: relative;
+}
+ .agenda .session_content {
+  min-height: 322px;
+}
+.customer_dashboard .notification_wrap li {
+    min-height: 156px;
 }

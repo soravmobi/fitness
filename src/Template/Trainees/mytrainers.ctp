@@ -30,7 +30,7 @@
                                     <?php
                                         if($t['trainer_image'] != "")
                                         { ?>
-                                            <img src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $t['trainer_image']; ?>" alt="img" class="img-responsive">
+                                            <img src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$t['trainer_image']) ?>" alt="img" class="img-responsive">
                                     <?php }
                                         else
                                         { ?>

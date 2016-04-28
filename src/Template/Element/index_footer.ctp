@@ -559,39 +559,6 @@ $(document).ready(function(){
 
 <!-- Trainer Registration Script end -->
 
-<!-- Certificate Validation Start -->
-
-<script type="text/javascript">
-  $(document).ready(function(){
-  $('#certificate_file').change(function(){
-        var type = $(this).attr('main');
-        var file_name = $(this).val();
-        var fileObj = this.files[0]; // get file object
-        var calculatedSize = fileObj.size/(1024*1024); // in MB
-        var split_extension = file_name.split(".").pop();
-        var ext = [ "jpg", "gif" ];
-        if(jQuery.inArray(split_extension.toLowerCase(), ext ) == -1)
-            {
-              $('#certificate_file').val(fileObj.value = null);
-              $("div#trainer_form_div div#error_msg").html("<center><i class='fa fa-times'> You Can Upload Only .jpg, gif Files ! </i></center>").show();
-              return false;
-            }
-        if(calculatedSize > 3)
-            {
-                $('#certificate_file').val(fileObj.value = null);
-                $("div#trainer_form_div div#error_msg").html("<center><i class='fa fa-times'>  File size should be less than 3 MB ! </i></center>").show();
-                return false;
-            }
-        if(jQuery.inArray(split_extension.toLowerCase(), ext ) != -1 && calculatedSize < 3)
-            {
-              $("div#trainer_form_div div#error_msg").hide();
-            }   
-      });
-  });
-</script>
-
-<!-- Certificate Validation End --> 
-
 <!-- Resume Validation Start -->
 
 <script type="text/javascript">

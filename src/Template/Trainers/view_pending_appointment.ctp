@@ -20,7 +20,7 @@
                     <div class="session_user">
                      <div class="img_user_main">
                       <div class="small_circle"></div>
-                      <div class="img_user"><img class="img-responsive" src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $session_details[0]['trainee_image']; ?>"></div></div>
+                      <div class="img_user"><img class="img-responsive" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$session_details[0]['trainee_image']) ?>"></div></div>
                       <div class="img_text_main">
                         <?php echo ucwords($session_details[0]['trainee_name']." ".$session_details[0]['trainee_lname']); ?>
                         <?php if(isset($session_details[0]['city_name'])) { ?>
@@ -134,7 +134,11 @@
                                       <div class="icon_block"><i class="fa fa-map-marker"></i> </div>
                                       <div class="text_block"><?php echo $session_data[$i]['location_address']; ?></div>                    
                                     </div>
-                                    <?php } ?>
+                                    <?php } else { ?>
+                                  <div class="icon_main">
+                                    <img style="width: 100%;" src="<?php echo $this->request->webroot; ?>img/favicon.ico" title="Virtual Training">
+                                  </div>
+                                  <?php } ?>
                               	</li>
                            	<?php } ?>
                             </ul>
@@ -163,7 +167,7 @@
                 <div class="session_user">
                     <div class="img_user_main">
                         <div class="small_circle"></div>
-                        <div class="img_user"><img src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $session_details[0]['trainee_image']; ?>" class="img-responsive">
+                        <div class="img_user"><img src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$session_details[0]['trainee_image']) ?>" class="img-responsive">
                         </div>
                     </div>
                     <div class="img_text_main">
@@ -190,6 +194,10 @@
                             <div class="icon_block"><i class="fa fa-map-marker"></i> </div>
                             <div class="text_block"><?php echo $session_data[$i]['location_address']; ?></div>
                         </div>
+                        <?php } else { ?>
+                          <div class="icon_main">
+                            <img style="width: 100%;" src="<?php echo $this->request->webroot; ?>img/favicon.ico" title="Virtual Training">
+                          </div>
                         <?php } ?>
                     </li>
                 <?php } ?>
@@ -228,7 +236,7 @@
                 <div class="session_user">
                     <div class="img_user_main">
                         <div class="small_circle"></div>
-                        <div class="img_user"><img src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $session_details[0]['trainee_image']; ?>" class="img-responsive">
+                        <div class="img_user"><img src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$session_details[0]['trainee_image']) ?>" class="img-responsive">
                         </div>
                     </div>
                     <div class="img_text_main">

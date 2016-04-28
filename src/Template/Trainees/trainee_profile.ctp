@@ -12,8 +12,8 @@
                             	<?php
                                 if($profile_details[0]['trainee_image'] != "")
                                 { ?>
-                                    <a class="example-image-link" href="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $profile_details[0]['trainee_image']; ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-                                    <img style="width:200px;height:190px;" src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $profile_details[0]['trainee_image']; ?>" alt="img" class="img-responsive"></a>
+                                    <a class="example-image-link" href="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$profile_details[0]['trainee_image']) ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                                    <img style="width:200px;height:190px;" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$profile_details[0]['trainee_image']) ?>" alt="img" class="img-responsive"></a>
                             <?php }
                                 else
                                 { ?>
@@ -166,8 +166,8 @@
                                                 foreach($progress_img as $pi)
                                                     { ?>
                                                 <li>
-                                                    <a class="example-image-link" href="<?php echo $this->request->webroot; ?>uploads/trainee_progress/<?php echo $pi['abi_image_name']; ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-                                                    <img style="height:170px;" class="example-image img-responsive" src="<?php echo $this->request->webroot; ?>uploads/trainee_progress/<?php echo $pi['abi_image_name']; ?>" alt=""/></a>
+                                                    <a class="example-image-link" href="<?php echo $this->Custom->getImageSrc('uploads/trainee_progress/'.$pi['abi_image_name']) ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                                                    <img style="height:170px;" class="example-image img-responsive" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_progress/'.$pi['abi_image_name']) ?>" alt=""/></a>
                                                 </li>
                                             <?php $i++; } ?>
                                             </ul>
@@ -180,8 +180,8 @@
                                                 foreach($gallery_img as $gi)
                                                     { ?>
                                                 <li class="img_<?php echo $gi['piv_id']; ?>">
-                                                    <a class="example-image-link11" href="<?php echo $this->request->webroot; ?>uploads/trainee_gallery/<?php echo $gi['piv_name']; ?>" data-lightbox="example-set1" data-title="Click the right half of the image to move forward.">
-                                                    <img style="height:170px;" class="example-image1 img-responsive" src="<?php echo $this->request->webroot; ?>uploads/trainee_gallery/<?php echo $gi['piv_name']; ?>" alt=""/></a>
+                                                    <a class="example-image-link11" href="<?php echo $this->Custom->getImageSrc('uploads/trainee_gallery/'.$gi['piv_name']) ?>" data-lightbox="example-set1" data-title="Click the right half of the image to move forward.">
+                                                    <img style="height:170px;" class="example-image1 img-responsive" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_gallery/'.$gi['piv_name']) ?>" alt=""/></a>
                                                 </li>
                                             <?php $i++; } ?>
                                             </ul>

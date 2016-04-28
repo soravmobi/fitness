@@ -15,9 +15,11 @@
               if(!empty($weather_details)){
                 $weather = round($weather_details['main']['temp'] - 273.15,1);
                 $windy   = round($weather_details['wind']['speed'],1);
+                $city    = $weather_details['name'];
               }else{
                 $weather = "NA";
                 $windy   = "NA";
+                $city   = "NA";
               }
             ?>
             <div class="notification_wrap">
@@ -34,6 +36,7 @@
                   </div>
                   <div class="cloud_text">
                     <div class="degree_main"><?php echo $weather; ?><span class="degree">0<span class="cvalue">c</span></span></div>
+                    <span><?php if(isset($city)) echo $city; ?></span>
                     <span>Weather</span>
                   </div>
                 </li>
@@ -155,7 +158,7 @@
                                  <div class="circle_box_main">
                                   <div class="small_circle"></div>
                                 <div class="icon_block big_icon gray_color">
-                                <img src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $upcomingArr['trainer_image'][$i]; ?>" class="img-responsive">
+                                <img src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$upcomingArr['trainer_image'][$i]) ?>" class="img-responsive">
                                  </div>
                                  </div>
                                   <div class="text_block"><div class="appointer_name"><?php echo $upcomingArr['trainer_name'][$i]; ?></br> <span><?php echo date('d F, Y', strtotime($upcomingArr['appo_date'][$i])); ?>  </span></div> <span><?php echo $upcomingArr['appo_time'][$i]; ?></span></div>
@@ -168,7 +171,11 @@
                                     <div class="icon_block"><i class="fa fa-map-marker"></i> </div>
                                     <div class="text_block"><?php echo $upcomingArr['location_name'][$i]; ?></div>                    
                                   </div>
-                                <?php } ?>
+                                <?php } else { ?>
+                                  <div class="icon_main">
+                                    <img style="width: 100%;" src="<?php echo $this->request->webroot; ?>img/favicon.ico" title="Virtual Training">
+                                  </div>
+                                  <?php } ?>
                                 <div class="chat_box">
                                     <div class="icon_block big_icon">
                                       <a href="javascript:void(0);" id="trainer-appointments" c_type="chat" t_type="trainer" from_id="<?php echo $from_id; ?>" to_id="<?php echo $upcomingArr['user_id'][$i]; ?>" class="user_call" title="Text Chat"><i class="fa fa-weixin"></i></a>
@@ -194,7 +201,7 @@
                                 <div class="circle_box_main">
                                    <div class="small_circle"></div>
                                       <div class="icon_block big_icon gray_color">
-                                        <img src="<?php echo $this->request->webroot; ?>uploads/trainer_profile/<?php echo $pa['trainer_image']; ?>" class="img-responsive">
+                                        <img src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$pa['trainer_image']) ?>" class="img-responsive">
                                      </div>   
                                     </div>
                                     <?php $session_data = unserialize($pa['session_data']); ?>

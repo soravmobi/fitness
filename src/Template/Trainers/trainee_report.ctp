@@ -15,8 +15,8 @@
                             <?php
                                 if($trainee_profile_details[0]['trainee_image'] != "")
                                 { ?>
-                                  <a class="example-image-link" href="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $trainee_profile_details[0]['trainee_image']; ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-                                    <img id="profile-img" style="width:200px;height:190px;" src="<?php echo $this->request->webroot; ?>uploads/trainee_profile/<?php echo $trainee_profile_details[0]['trainee_image']; ?>" alt="img" class="img-responsive"></a>
+                                  <a class="example-image-link" href="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$trainee_profile_details[0]['trainee_image']) ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                                    <img id="profile-img" style="width:200px;height:190px;" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$trainee_profile_details[0]['trainee_image']) ?>" alt="img" class="img-responsive"></a>
                             <?php }
                                 else
                                 { ?>
@@ -331,7 +331,7 @@
                                         { 
                                     $dateArr = explode(" ", $pi['abi_added_date']);
                                     ?>
-                                    <li><a href="javascript:void(0);"><span><?php echo date('F d,Y', strtotime($dateArr[0])); ?></span><img style="height:180px;" class="img-responsive" src="<?php echo $this->request->webroot; ?>uploads/trainee_progress/<?php echo $pi['abi_image_name']; ?>"/> </a></li>
+                                    <li><a href="javascript:void(0);"><span><?php echo date('F d,Y', strtotime($dateArr[0])); ?></span><img style="height:180px;" class="img-responsive" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_progress/'.$pi['abi_image_name']) ?>"/> </a></li>
                                 <?php $i++; } ?>
                                 </ul>
                             </div>

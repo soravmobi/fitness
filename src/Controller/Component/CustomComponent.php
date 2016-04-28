@@ -195,6 +195,22 @@ class CustomComponent extends Component
       );
      return $response;
     }
+
+    public function getImageSrc($img="")
+    {
+      if(!empty($img)){
+          if(file_exists($img)){
+            $src = $this->request->webroot.$img;
+          }else{
+            $src = $this->request->webroot."img/default.png";
+          }
+      }else{
+        $src = $this->request->webroot."img/default.png";
+      }
+      return $src;    
+    }
+
+    
 }
 
 ?>

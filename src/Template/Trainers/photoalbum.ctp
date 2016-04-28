@@ -41,10 +41,14 @@
                                                         { ?>
                                                     <li class="img_<?php echo $gi['piv_id']; ?>">
                                                         <span class="delte_img" main2="<?php echo $gi['piv_name']; ?>" main="<?php echo base64_encode($gi['piv_id']); ?>"><i class="fa fa-close"></i></span>
-                                                        <a class="example-image-link" href="<?php echo $this->request->webroot; ?>uploads/trainer_gallery/<?php echo $gi['piv_name']; ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-                                                        <img style="height:170px;" class="example-image img-responsive" src="<?php echo $this->request->webroot; ?>uploads/trainer_gallery/<?php echo $gi['piv_name']; ?>" alt=""/></a>
+                                                        <a class="example-image-link" href="<?php echo $this->Custom->getImageSrc('uploads/trainer_gallery/'.$gi['piv_name']) ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                                                        <img style="height:170px;" class="example-image img-responsive" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_gallery/'.$gi['piv_name']) ?>" alt=""/></a>
                                                     </li>
                                                 <?php } ?>
+                                                <li>
+                                                    <a class="example-image-link" href="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$profile_details[0]['trainer_image']) ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                                                    <img style="height:170px;" class="example-image img-responsive" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$profile_details[0]['trainer_image']) ?>" alt=""/></a>
+                                                </li>
                                             </ul>
                                             <div class="clearfix"></div>
                                         </div>

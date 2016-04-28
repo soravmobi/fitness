@@ -86,7 +86,7 @@
                                             <td><?php echo $i ;?></td>
                                             <td><?php echo $t['lt_title']; ?></td>
                                             <td>
-                                              <img src="<?php echo $this->request->webroot; ?>uploads/latest_news/<?php echo $t['lt_attachement']; ?>" style="width:100px;height:100px;">
+                                              <img src="<?php echo $this->Custom->getImageSrc('uploads/latest_news/'.$t['lt_attachement']) ?>" style="width:100px;height:100px;">
                                             </td>
                                             <td><?php echo $t['lt_content']; ?></td>
                                             <td>

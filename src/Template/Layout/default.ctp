@@ -18,6 +18,10 @@
 <html>
 <head>
 	<?php echo $this->Html->charset() ?>
+	<?php 
+		$session = $this->request->session();
+	    $user = $session->read('Auth.User');
+	?>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -31,15 +35,20 @@
 	<?php echo  $this->Html->css('font-awesome.min.css') ?>
 	<?php echo  $this->Html->css('custom.css') ?>
 	<?php echo  $this->Html->css('responsive.css') ?>
+	<?php if(!empty($user)) { ?>
 	<?php echo  $this->Html->css('lightbox.css') ?>
+	<?php } ?>
 	<link href="<?php echo $this->request->webroot; ?>css/styleless.less" rel="stylesheet/less">
 	<?php echo  $this->Html->css('flaticon.css') ?>
+	<?php if(!empty($user)) { ?>
 	<?php echo  $this->Html->script('socket.io-1.2.0.js'); ?>
+	<?php } ?>
 	<?php echo  $this->Html->script('less.min.js'); ?>
 	<?php echo  $this->Html->script('modernizr.custom.28101.js'); ?>
 	<?php echo  $this->Html->script('jquery.min.js'); ?>
 	<?php echo  $this->Html->script('parallax.min.js'); ?>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+	<?php if(!empty($user)) { ?>
 	<script src="<?php echo $this->request->webroot; ?>player/jwplayer.js"></script>
 	<?php echo  $this->Html->script('static_opentok.js'); ?>
 	<?php echo  $this->Html->css('bootstrap-datepicker.css'); ?>
@@ -63,12 +72,9 @@
 	<?php echo  $this->Html->script('jasny-bootstrap.min.js') ?>
     <script type='text/javascript' src="https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+    <?php } ?>
 	<!-- jayendra start -->
-	<?php 
-		$session = $this->request->session();
-	    $user = $session->read('Auth.User');
-	?>
-
+	<?php if(!empty($user)) { ?>
 	<script>
 		var socket;
 		var user_id = <?php echo (!empty($user))? $user['id'] : "''"; ?>;
@@ -498,6 +504,7 @@
 			
 		});
 	</script>
+	<?php } ?>
 	<!-- jayendra end -->
 	<?php echo $this->fetch('meta') ?>
 	<?php echo $this->fetch('css') ?>
@@ -535,13 +542,16 @@
 
 		<?php echo  $this->Html->script('bootstrap.min.js') ?>
 		<?php echo  $this->Html->script('plugin.min.js') ?>
+		<?php if(!empty($user)) { ?>
 		<?php echo  $this->Html->script('worldLow.min.js') ?>
+		<?php } ?>
 		<?php echo  $this->Html->script('custom.js') ?>
 
 	</div>
 
-	<!-- jayendra start -->
+<?php if(!empty($user)) { ?>
 
+<!-- jayendra start -->
 <!-- modal for end call Start -->
 <div class="modal fade bs-example-modal-sm" id="end_call">
   <div class="modal-dialog modal-sm">
@@ -586,12 +596,8 @@
       					<button type="button" class="btn accept_btn" id="call_accept">Accept Call</button>
 	        			<button type="button" class="btn reject_btn" id="reject_call">Reject Call</button>
       				</div>
-      				
       			</div>
-      			
       		</div>
-      		
-        	
         </div>
       </div>
     </div><!-- /.modal-content -->
@@ -600,7 +606,7 @@
 <!-- modal for Accept and End call End -->
 
 <!-- jayendra end -->
-
+<?php } ?>
 
 </body>
 </html>
