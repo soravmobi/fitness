@@ -80,10 +80,10 @@
                                                         <img style="height:170px;" class="example-image img-responsive" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_gallery/'.$gi['piv_name']) ?>" alt=""/></a>
                                                     </li>
                                                 <?php } ?>
-                                                <li>
+                                                <!-- <li>
                                                     <a class="example-image-link" href="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$profile_details[0]['trainee_image']) ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
                                                     <img style="height:170px;" class="example-image img-responsive" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$profile_details[0]['trainee_image']) ?>" alt=""/></a>
-                                                </li>
+                                                </li> -->
                                             </ul>
                                             <div class="clearfix"></div>
                                         </div>

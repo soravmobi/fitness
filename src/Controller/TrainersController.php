@@ -49,6 +49,7 @@ class TrainersController extends AppController
   public function index()
 	{
 		$profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
+    $notes = $this->Notes->find()->where(['trainer_id' => $this->data['id']])->toArray();
     $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
     $messages = $this->getChatMessages();
     $pending_appointments  = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 0 AND `a`.`trainee_status` = 0 AND `a`.`created_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY `a`.`id` DESC')->fetchAll('assoc');
@@ -56,7 +57,13 @@ class TrainersController extends AppController
      if(!empty($upcoming_appointments)){
         foreach($upcoming_appointments as $ua){
           $sessionArr = unserialize($ua['session_data']);
-          for ($i=1; $i <= count($sessionArr); $i++) { 
+            $app_final_arr = array();
+            foreach ($sessionArr as $u)
+             {
+              $app_final_arr[] = $u['modified_dates'];
+             }
+            array_multisort($app_final_arr, SORT_ASC, $sessionArr); 
+          for ($i=0; $i < count($sessionArr); $i++) { 
               $upcomingArr['trainee_name'][] = $ua['trainee_name']." ".$ua['trainee_lname'];
               $upcomingArr['user_id'][]      = $ua['user_id'];
               $upcomingArr['trainee_image'][]= $ua['trainee_image'];
@@ -70,6 +77,7 @@ class TrainersController extends AppController
           $upcomingArr = array();
      }    
     $this->set("from_id",$this->data['id']);
+    $this->set('notes', $notes);
     $this->set('messages', $messages);
     $this->set('upcomingArr', $upcomingArr);
     $this->set('pending_appointments', $pending_appointments);
@@ -223,6 +231,17 @@ class TrainersController extends AppController
         }
     }
 
+    public function deleteProfile()
+    {
+        if($this->request->is('ajax'))
+        {
+            $this->trainers->query()->update()->set(['trainer_image' => "default.png"])->where(['user_id' => $this->data['id']])->execute();
+            $this->set('message', 'success');
+            $this->set('_serialize',array('message'));
+            $this->response->statusCode(200);
+        }
+    }
+
     public function deleteChatMessages()
     {
       if($this->request->is('ajax'))
@@ -234,6 +253,31 @@ class TrainersController extends AppController
            $this->response->statusCode(200);
         }
     }
+
+    public function deleteNotes()
+    {
+      if($this->request->is('ajax'))
+        {
+           $notesid = (int) $this->request->data['notesid'];
+            $this->conn->execute('DELETE FROM notes WHERE id ='.$notesid);
+           $this->set('message', 'success');
+           $this->set('_serialize',array('message'));
+           $this->response->statusCode(200);
+        }
+    }
+
+    public function getNotesData()
+    {
+      if($this->request->is('ajax'))
+        {
+           $notesid = (int) $this->request->data['notesid'];
+           $notes = $this->Notes->find()->where(['id' => $notesid])->toArray();
+           $this->set('message', $notes);
+           $this->set('_serialize',array('message'));
+           $this->response->statusCode(200);
+        }
+    }
+
 
     public function inbox()
     {
@@ -564,12 +608,39 @@ class TrainersController extends AppController
 	{
 		if($this->request->is('ajax'))
      	{
-     		$fileName = $this->Custom->fileUploading('trainer_profile_img','trainer_profile'); 
+        $f_name1 = $_FILES['trainer_profile_img']['name'];
+        $f_tmp1 = $_FILES['trainer_profile_img']['tmp_name'];
+        $f_size1 = $_FILES['trainer_profile_img']['size'];
+        $f_extension1 = explode('.',$f_name1); 
+        $f_extension1 = strtolower(end($f_extension1)); 
+        $f_newfile1="";
+        if($f_name1){
+        $f_newfile1 = "VT_".uniqid().'.'.$f_extension1; 
+        $store1 = "uploads/trainer_profile/". $f_newfile1;
+        $image2 =  move_uploaded_file($f_tmp1,$store1);
+        }
+        if($_SERVER['SERVER_NAME'] == "localhost"){
+          $newfile = $_SERVER['DOCUMENT_ROOT'] . '/fitness/webroot/uploads/trainer_gallery/'.$f_newfile1;
+        }else{
+          $newfile = $_SERVER['DOCUMENT_ROOT'] . '/webroot/uploads/trainer_gallery/'.$f_newfile1;
+        }
+        copy($store1, $newfile);
+        $data = array(
+              'piv_attachement_type' => 'image',
+              'piv_name' => $f_newfile1,
+              'piv_user_type' => 'trainer',
+              'piv_user_id' => $this->data['id'],
+              'piv_status' => 0,
+              'piv_added_date' => Time::now(),
+              );
+        $user = $this->Profile_images_videos->newEntity();
+        $user = $this->Profile_images_videos->patchEntity($user, $data);
+        $result = $this->Profile_images_videos->save($user);
      		$sess_data = $this->Custom->getSessionData();
-     		$this->trainers->query()->update()->set(['trainer_image' => $fileName])->where(['user_id' => $sess_data['id']])->execute();
-     		$this->set('message', $fileName);
-			$this->set('_serialize',array('message'));
-			$this->response->statusCode(200);
+     		$this->trainers->query()->update()->set(['trainer_image' => $f_newfile1])->where(['user_id' => $sess_data['id']])->execute();
+     		$this->set('message', $f_newfile1);
+			  $this->set('_serialize',array('message'));
+			  $this->response->statusCode(200);
      	}
 	}
 
@@ -595,7 +666,7 @@ class TrainersController extends AppController
             $id = (int) base64_decode($this->request->data['p_id']);
             $fileName = $this->request->data['file'];
             $this->gallery->query()->delete()->where(['piv_id' => $id])->execute();
-            $this->Custom->deleteFile($fileName,'trainer_gallery');
+            /*$this->Custom->deleteFile($fileName,'trainer_gallery');*/
             $this->set('message', 'success');
             $this->set('_serialize',array('message'));
             $this->response->statusCode(200);
@@ -706,7 +777,13 @@ class TrainersController extends AppController
        if(!empty($upcoming_appointments)){
           foreach($upcoming_appointments as $ua){
             $sessionArr = unserialize($ua['session_data']);
-            for ($i=1; $i <= count($sessionArr); $i++) { 
+            $app_final_arr = array();
+            foreach ($sessionArr as $u)
+             {
+              $app_final_arr[] = $u['modified_dates'];
+             }
+            array_multisort($app_final_arr, SORT_ASC, $sessionArr); 
+            for ($i=0; $i < count($sessionArr); $i++) { 
                 $upcomingArr['trainee_name'][] = $ua['trainee_name']." ".$ua['trainee_lname'];
                 $upcomingArr['user_id'][]      = $ua['user_id'];
                 $upcomingArr['trainee_image'][]= $ua['trainee_image'];
@@ -714,7 +791,7 @@ class TrainersController extends AppController
                 $upcomingArr['appo_date'][]    = $sessionArr[$i]['modified_dates'];
                 $upcomingArr['appo_time'][]    = $sessionArr[$i]['modified_times'];
             }
-          }        
+          }  
        }
        else{
             $upcomingArr = array();
@@ -1501,10 +1578,12 @@ class TrainersController extends AppController
   public function reports()
     {
       $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
-      $withdraw_details = $this->Trainer_withdraw->find()->where(['trainer_id' => $this->data['id']])->toArray();
+      $txn_details = $this->Trainer_txns->find()->where(['trainer_id' => $this->data['id']])->order(['id' => 'DESC'])->limit(10)->toArray();
       $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
-      $custom_packages = $this->conn->execute('SELECT *,`cp`.`id` AS `cp_id` FROM `custom_packages_history` AS `cp` INNER JOIN `trainees` AS `t` ON `cp`.`trainee_id` = `t`.`user_id` WHERE `cp`.`trainer_id` ='.$this->data['id'].' ORDER BY `cp`.`id` DESC')->fetchAll('assoc');
-      $this->set('withdraw_details', $withdraw_details);
+      $custom_packages = $this->conn->execute('SELECT *,`cp`.`id` AS `cp_id` FROM `custom_packages_history` AS `cp` INNER JOIN `trainees` AS `t` ON `cp`.`trainee_id` = `t`.`user_id` WHERE `cp`.`trainer_id` ='.$this->data['id'].' ORDER BY `cp`.`id` DESC LIMIT 10')->fetchAll('assoc');
+      $appointments = $this->conn->execute('SELECT *,`a`.`id` AS `appo_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` ='.$this->data['id'].' ORDER BY `a`.`id` DESC LIMIT 10')->fetchAll('assoc');
+      $this->set('appointments', $appointments);
+      $this->set('txn_details', $txn_details);
       $this->set('custom_packages', $custom_packages);
       $this->set('total_wallet_ammount', $total_wallet_ammount);
       $this->set('profile_details', $profile_details);
@@ -1569,6 +1648,27 @@ class TrainersController extends AppController
     $this->Custom->downloadpdf($html,$filename);
   }
 
+  public function sessionpdf()
+  {
+    $pid = $this->request->query['id'];
+    $custom_packages = $this->conn->execute('SELECT *,`a`.`id` AS `appo_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`id` ='.$pid)->fetchAll('assoc');
+    $totalSessions = count(unserialize($custom_packages[0]['session_data']));
+    $filename = 'Rate Plans '.date('Y-m-d').'.pdf';
+    $html  = "";
+    $html .= "<div style='width:100%; float:left;'><div style='float:left; width:50%;'><img style='width:300px;' src='".$this->request->webroot."img/belibit_tv_logo_old1.png'></div><div style='float:right; width:200px;'><h1 style='color:#666;'>INVOICE</h1></div></div> ";
+    $html .= "<div style='width:100%; float:left;'> <div style='float:left; width:50%;'><p style='font-size:14px; color:#666; margin:0px;'>You Tag Media & Business Solutions, Inc 1950 Broad Street, Unit 209 Regina, SK S4P 1X6 Canada</p><p style='font-size:14px; color:#666;  margin:0px;'>help@virtualtrainr.com</p><p style='font-size:14px; color:#666; margin:0px;'>+403-800-4843</p><br><br><h3 style='font-size:22px; color:#666; margin:0px 0px 5px 0px;'>Invoice to: </h3><p style='font-size:14px; padding:5px 0px; color:#666; margin:0px;'>Name : ".ucwords($custom_packages[0]['trainee_name']." ".$custom_packages[0]['trainee_lname'])."</div></div>";
+    $html .= "<div style='width:100%; float:left;'><br><br><h3 style='font-size:22px; color:#666; margin:0px 0px 5px 0px;'>Details: </h3>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Purchase Date : ".date('d F Y, h:i A', strtotime($custom_packages[0]['created_date']))."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Session Name : ".$totalSessions." Sessions</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Session Price   : $".$custom_packages[0]['session_price']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Service Price : $".$custom_packages[0]['service_fee']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Total Fee : $".$custom_packages[0]['total_price']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Discount : $".round($custom_packages[0]['total_price'] - $custom_packages[0]['final_price'],2)."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Final Price : $".$custom_packages[0]['final_price']."</p>
+              </div>";
+    $this->Custom->downloadpdf($html,$filename);
+  }
+
   public function withdrawpdf()
   {
     $tid = $this->request->query['id'];
@@ -1614,6 +1714,26 @@ class TrainersController extends AppController
     $this->Custom->downloadpdf($html,$filename);
   }
 
+  public function txnpdf()
+  {
+    $tid = $this->request->query['id'];
+    $txn_details = $this->conn->execute("SELECT * FROM `trainer_txns` AS `tx` INNER JOIN `trainers` AS `t` ON `tx`.`trainer_id` = `t`.`user_id` WHERE `tx`.`id` = ".$tid)->fetchAll('assoc');
+    $filename = 'Transaction '.$txn_details[0]['txn_id'].' '.date('Y-m-d').'.pdf';
+    $status = 'Completed';
+    $html  = "";
+    $html .= "<div style='width:100%; float:left;'><div style='float:left; width:50%;'><img style='width:300px;' src='".$this->request->webroot."img/belibit_tv_logo_old1.png'></div><div style='float:right; width:200px;'><h1 style='color:#666;'>INVOICE</h1></div></div> ";
+    $html .= "<div style='width:100%; float:left;'> <div style='float:left; width:50%;'><p style='font-size:14px; color:#666; margin:0px;'>You Tag Media & Business Solutions, Inc 1950 Broad Street, Unit 209 Regina, SK S4P 1X6 Canada</p><p style='font-size:14px; color:#666;  margin:0px;'>help@virtualtrainr.com</p><p style='font-size:14px; color:#666; margin:0px;'>+403-800-4843</p><br><br><h3 style='font-size:22px; color:#666; margin:0px 0px 5px 0px;'>Invoice to: </h3><p style='font-size:14px; padding:5px 0px; color:#666; margin:0px;'>Name : ".ucwords($txn_details[0]['trainer_name']." ".$txn_details[0]['trainer_lname'])."</div></div>";
+    $html .= "<div style='width:100%; float:left;'><br><br><h3 style='font-size:22px; color:#666; margin:0px 0px 5px 0px;'>Details: </h3>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Transaction Date : ".date('d F Y, h:i A', strtotime($txn_details[0]['added_date']))."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Transaction Amount : $".$txn_details[0]['total_amount']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Transaction Name : $".$txn_details[0]['txn_name']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Administration Fee : $".$txn_details[0]['administration_fee']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Transaction Id : ".$txn_details[0]['txn_id']."</p>
+              <p style='font-size:16px; color:#666; margin:0px; padding:5px 0px;'>Status : ".$status."</p>
+              </div>";
+    $this->Custom->downloadpdf($html,$filename);
+  }
+
   public function deleteMessages()
   {
     if($this->request->is('ajax'))
@@ -1623,6 +1743,27 @@ class TrainersController extends AppController
          $this->set('message', 'success');
          $this->set('_serialize',array('message'));
          $this->response->statusCode(200);
+      }
+  }
+
+  public function notesmgmt()
+  {
+    if($this->request->is('post'))
+      {
+         $data = $this->request->data;
+         $noteid = $data['notes_id'];
+         $notes = $data['notes'];
+         unset($data['notes_id']);
+         if(!empty($noteid)){
+          $this->conn->execute('UPDATE `notes` SET `notes` = "'.$notes.'" WHERE `id` ='.$noteid);
+         }else{
+          $data['trainer_id'] = $this->data['id'];
+          $data['created_date'] = Time::now();
+          $user1 = $this->Notes->newEntity();
+          $user1 = $this->Notes->patchEntity($user1, $data);
+          $result1 = $this->Notes->save($user1);
+         }
+        return $this->redirect('/trainers');
       }
   }
 

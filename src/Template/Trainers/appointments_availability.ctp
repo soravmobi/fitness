@@ -39,13 +39,13 @@
                           </div>
                           <div class="session_content">
                         <div class="day-headers">
+                          <div class="day header">Sun</div>
                           <div class="day header">Mon</div>
                           <div class="day header">Tue</div>
                           <div class="day header">Wed</div>
                           <div class="day header">Thu</div>
                           <div class="day header">Fri</div>
                           <div class="day header">Sat</div>
-                          <div class="day header">Sun</div>
                         </div>
                         <div class="days" data-group="days">
                           </div>

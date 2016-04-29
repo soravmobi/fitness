@@ -9,10 +9,6 @@
                     	  <h3>Complete Profile</h3>
                     	  <!-- Nav tabs -->
                           <ul class="nav_tabs">
-                            
-                            
-                            
-                            
                             <li class="active informaiton"><a href="#informaiton" aria-controls="informaiton" role="tab" data-toggle="tab">Personal Informaiton </a></li>
                             <li class="social_links"><a href="#social_links" aria-controls="social_links" role="tab" data-toggle="tab">Social Links </a></li>
                             <li class="bank_details"><a href="#bank_details" aria-controls="bank_details" role="tab" data-toggle="tab">Bank Details </a></li>
@@ -585,13 +581,13 @@ $('.addgym').on('click',function(){
                           </div>
                           <div class="session_content">
                         <div class="day-headers">
+                          <div class="day header">Sun</div>
                           <div class="day header">Mon</div>
                           <div class="day header">Tue</div>
                           <div class="day header">Wed</div>
                           <div class="day header">Thu</div>
                           <div class="day header">Fri</div>
                           <div class="day header">Sat</div>
-                          <div class="day header">Sun</div>
                         </div>
                         <div class="days" data-group="days">
                           </div>
@@ -1535,6 +1531,32 @@ $(document).ready(function(){
 
     });
 </script> 
+
+<!-- Delete Profile Start --> 
+
+  <script type="text/javascript">
+ $(document).ready(function(){     
+     $("body").on('click','#delete_profile_img',function(){
+      if (confirm("Are You Sure?")) {
+        $.ajax({
+                url:"<?php echo $this->request->webroot; ?>trainers/deleteProfile",
+                type:"post",
+                data:{id:""},
+                dataType:"json",
+                success: function(data){
+                    window.location.reload();
+                }
+            });
+         }
+          else{
+            return false;
+          }
+        });
+    });
+</script>
+
+<!-- Delete Profile End --> 
+
 
     <script type="text/javascript">
       $(document).ready(function () {

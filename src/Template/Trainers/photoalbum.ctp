@@ -45,10 +45,10 @@
                                                         <img style="height:170px;" class="example-image img-responsive" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_gallery/'.$gi['piv_name']) ?>" alt=""/></a>
                                                     </li>
                                                 <?php } ?>
-                                                <li>
+                                                <!-- <li>
                                                     <a class="example-image-link" href="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$profile_details[0]['trainer_image']) ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
                                                     <img style="height:170px;" class="example-image img-responsive" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$profile_details[0]['trainer_image']) ?>" alt=""/></a>
-                                                </li>
+                                                </li> -->
                                             </ul>
                                             <div class="clearfix"></div>
                                         </div>

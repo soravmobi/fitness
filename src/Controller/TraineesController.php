@@ -81,7 +81,13 @@ class TraineesController extends AppController
      if(!empty($upcoming_appointments)){
         foreach($upcoming_appointments as $ua){
           $sessionArr = unserialize($ua['session_data']);
-          for ($i=1; $i <= count($sessionArr); $i++) { 
+            $app_final_arr = array();
+            foreach ($sessionArr as $u)
+             {
+              $app_final_arr[] = $u['modified_dates'];
+             }
+            array_multisort($app_final_arr, SORT_ASC, $sessionArr); 
+          for ($i=0; $i < count($sessionArr); $i++) { 
               $upcomingArr['trainer_name'][] = $ua['trainer_name']." ".$ua['trainer_lname'];
               $upcomingArr['user_id'][]      = $ua['user_id'];
               $upcomingArr['trainer_image'][]= $ua['trainer_image'];
@@ -147,7 +153,13 @@ class TraineesController extends AppController
        if(!empty($upcoming_appointments)){
           foreach($upcoming_appointments as $ua){
             $sessionArr = unserialize($ua['session_data']);
-            for ($i=1; $i <= count($sessionArr); $i++) { 
+            $app_final_arr = array();
+            foreach ($sessionArr as $u)
+             {
+              $app_final_arr[] = $u['modified_dates'];
+             }
+            array_multisort($app_final_arr, SORT_ASC, $sessionArr); 
+          for ($i=0; $i < count($sessionArr); $i++) { 
                 $upcomingArr['trainer_name'][] = $ua['trainer_name']." ".$ua['trainer_lname'];
                 $upcomingArr['user_id'][]      = $ua['user_id'];
                 $upcomingArr['trainer_image'][]= $ua['trainer_image'];
@@ -173,6 +185,17 @@ class TraineesController extends AppController
             $id = (int) base64_decode($this->request->data['app_id']);
             $result_data = $this->conn->execute('SELECT * FROM `appointments` where `app_id` ='.$id)->fetchAll('assoc');
             $this->set('message', $result_data);
+            $this->set('_serialize',array('message'));
+            $this->response->statusCode(200);
+        }
+    }
+
+    public function deleteProfile()
+    {
+        if($this->request->is('ajax'))
+        {
+            $this->trainees->query()->update()->set(['trainee_image' => "default.png"])->where(['user_id' => $this->data['id']])->execute();
+            $this->set('message', 'success');
             $this->set('_serialize',array('message'));
             $this->response->statusCode(200);
         }
@@ -805,12 +828,36 @@ class TraineesController extends AppController
   {
     if($this->request->is('ajax'))
       {
-        $old_img = $this->request->data['old_img'];
-        $fileName = $this->Custom->fileUploading('trainee_profile_img','trainee_profile'); 
-        $sess_data = $this->Custom->getSessionData();
-        $this->trainees->query()->update()->set(['trainee_image' => $fileName])->where(['user_id' => $sess_data['id']])->execute();
-        $this->Custom->deleteFile($old_img,'trainee_profile');
-        $this->set('message', $fileName);
+        $f_name1 = $_FILES['trainee_profile_img']['name'];
+        $f_tmp1 = $_FILES['trainee_profile_img']['tmp_name'];
+        $f_size1 = $_FILES['trainee_profile_img']['size'];
+        $f_extension1 = explode('.',$f_name1); 
+        $f_extension1 = strtolower(end($f_extension1)); 
+        $f_newfile1="";
+        if($f_name1){
+        $f_newfile1 = "VT_".uniqid().'.'.$f_extension1; 
+        $store1 = "uploads/trainee_profile/". $f_newfile1;
+        $image2 =  move_uploaded_file($f_tmp1,$store1);
+        }
+        if($_SERVER['SERVER_NAME'] == "localhost"){
+          $newfile = $_SERVER['DOCUMENT_ROOT'] . '/fitness/webroot/uploads/trainee_gallery/'.$f_newfile1;
+        }else{
+          $newfile = $_SERVER['DOCUMENT_ROOT'] . '/webroot/uploads/trainee_gallery/'.$f_newfile1;
+        }
+        copy($store1, $newfile);
+        $data = array(
+              'piv_attachement_type' => 'image',
+              'piv_name' => $f_newfile1,
+              'piv_user_type' => 'trainee',
+              'piv_user_id' => $this->data['id'],
+              'piv_status' => 0,
+              'piv_added_date' => Time::now(),
+              );
+        $user = $this->Profile_images_videos->newEntity();
+        $user = $this->Profile_images_videos->patchEntity($user, $data);
+        $result = $this->Profile_images_videos->save($user);
+        $this->trainees->query()->update()->set(['trainee_image' => $f_newfile1])->where(['user_id' => $this->data['id']])->execute();
+        $this->set('message', $f_newfile1);
         $this->set('_serialize',array('message'));
         $this->response->statusCode(200);
       }
@@ -1060,7 +1107,7 @@ class TraineesController extends AppController
              $id = (int) base64_decode($this->request->data['p_id']);
              $fileName = $this->request->data['file'];
              $this->gallery->query()->delete()->where(['piv_id' => $id])->execute();
-             $this->Custom->deleteFile($fileName,'trainee_gallery');
+             /*$this->Custom->deleteFile($fileName,'trainee_gallery');*/
              $this->set('message', 'success');
              $this->set('_serialize',array('message'));
              $this->response->statusCode(200);
@@ -1074,7 +1121,7 @@ class TraineesController extends AppController
              $id = (int) base64_decode($this->request->data['p_id']);
              $fileName = $this->request->data['file'];
              $this->progress->query()->delete()->where(['abi_id' => $id])->execute();
-             $this->Custom->deleteFile($fileName,'trainee_progress');
+             // $this->Custom->deleteFile($fileName,'trainee_progress');
              $this->set('message', 'success');
              $this->set('_serialize',array('message'));
              $this->response->statusCode(200);
@@ -2591,7 +2638,7 @@ class TraineesController extends AppController
       if($this->request->is('ajax'))
       {
         $appid = $this->request->data['id'];
-        $app_details = $this->conn->execute('SELECT *,`a`.`trainee_status` AS `trainee_app_status` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`id` ='.$appid)->fetchAll('assoc');
+        $app_details = $this->conn->execute('SELECT *,`a`.`trainee_status` AS `trainee_app_status`,`a`.`trainer_status` AS `trainer_app_status` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`id` ='.$appid)->fetchAll('assoc');
         $app_details['total_session'] = count(unserialize($app_details[0]['session_data']));
         $app_details['session_data'] = unserialize($app_details[0]['session_data']);
         $this->set('message', $app_details);

@@ -522,7 +522,17 @@ url.push("lng="+lng);
 	/* Map function */
 	function gmap(trainers){ 
 if(trainers.length >0){ 
-		var mapsData = new google.maps.LatLng(trainers[0][1],trainers[0][2]); 
+
+		var startPos;
+	var lat;
+	var lng;
+  var geoSuccess = function(position) {
+  	console.log(position);
+    startPos = position;
+	lat = startPos.coords.latitude;
+	lng = startPos.coords.longitude; 
+	//var mapsData = new google.maps.LatLng(trainers[0][1],trainers[0][2]); 
+		var mapsData = new google.maps.LatLng(lat,lng); 
 		var locations = trainers;
 	    var map = new google.maps.Map(document.getElementById('map'), {
 	      zoom: 10,
@@ -561,6 +571,53 @@ if(trainers.length >0){
 	      markers.push(marker);
 		}
 	    var mc = new MarkerClusterer(map, markers);
+   }//succesws end
+ var geoError = function(error) {
+  console.log('Error occurred. Error code: ' + error.code);
+ var mapsData = new google.maps.LatLng(trainers[0][1],trainers[0][2]); 
+		//var mapsData = new google.maps.LatLng(lat,lng); 
+		var locations = trainers;
+	    var map = new google.maps.Map(document.getElementById('map'), {
+	      zoom: 1,
+	      center: mapsData,
+	      mapTypeId: google.maps.MapTypeId.ROADMAP,
+		  zoomControl: true,
+		  mapTypeControl: false,
+		  scaleControl: true,
+		  streetViewControl: true,
+		  rotateControl: false,
+		  fullscreenControl: false
+	    });
+        var marker, i; 
+	    var markers = [];
+		//console.log(locations);	
+ 
+ 
+	    for (i = 0; i < locations.length; i++) {  
+			var contentString = '<div class="trainer_wrap_box"><div class="heading_payment_main"></div><div class="trainer_top_main"><div class="trainer_top clearfix"><h2>$ '+locations[i][3]+'</h2></div>                     <div class="img_trainer"><a href="<?php echo $this->request->webroot; ?>trainerProfile/'+btoa(locations[i][4])+'"><img src=<?php echo $this->request->webroot; ?>uploads/trainer_profile/'+locations[i][5]+' " class="img-responsive"></a></div></div><div class="trainer_bottom"><div class="name_wrap"><a href="<?php echo $this->request->webroot; ?>/fitness/trainerProfile/'+btoa(locations[i][4])+'">'+locations[i][0]+' '+locations[i][6]+'</a></div><div class="location_wrap"><ul><li><span>Location :</span> '+locations[i][7]+'</li><li><span>score :</span><div id="greencircle" data-percent="'+(10 * locations[i][8])+'" class="small green percircle animate"><span>'+locations[i][8]+'%</span><div class="slice"><div class="bar" style="transform: rotate(136.8deg);"></div><div class="fill"></div></div></div></li></ul></div><div class="describe_wrap"><ul><p><span>Skills:</span>'+locations[i][9]+'</p><p><span>Interests :</span>  '+locations[i][10]+'<span class="show_div">  Interests</span></p><p><span>Certifications :</span> '+locations[i][11]+'<span class="show_div"> Certification   </span></p></ul></div></div></div>';
+
+		  var infowindow = new google.maps.InfoWindow({
+			content: contentString
+		  }); 
+	      marker = new google.maps.Marker({
+	        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+	        content:contentString,
+	        map: map,
+ 			icon: '<?php echo $this->request->webroot; ?>img/favicon.ico'
+	      });
+	      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+		    return function() {
+	          infowindow.setContent(marker.content);
+	          infowindow.open(map, marker);
+	        }
+	      })(marker, i));
+	      markers.push(marker);
+		}
+	    var mc = new MarkerClusterer(map, markers);
+  };
+ navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+
+		
 	
 }else{ //alert('map loaded without marker');
 	    var map = new google.maps.Map(document.getElementById('map'), {

@@ -66,6 +66,7 @@
 	<?php echo  $this->Html->script('percircle.min.js') ?>
 	<?php echo  $this->Html->css('sweetalert2.css') ?>
 	<?php echo  $this->Html->script('gmaps.js') ?>
+	<?php echo  $this->Html->script('jquery.countdownTimer.min.js') ?>
 	<?php echo  $this->Html->script('jquery.gmap.js') ?>
 	<?php echo  $this->Html->script('sweetalert2.min.js') ?>
 	<?php echo  $this->Html->css('jasny-bootstrap.min.css') ?>

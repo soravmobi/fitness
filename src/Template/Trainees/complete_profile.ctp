@@ -84,6 +84,14 @@
                                         <input name="trainee_goal" type="text" value="<?php echo $profile_details[0]['trainee_goal']; ?>" class="form-control">
                                     </div>
                                     <div class="form-group">
+                                        <label>School</label>
+                                        <input name="school" type="text" value="<?php echo $profile_details[0]['school']; ?>" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Work</label>
+                                        <input name="work" type="text" value="<?php echo $profile_details[0]['work']; ?>" class="form-control">
+                                    </div>
+                                    <div class="form-group">
                                         <label>Postal Code</label>
                                         <input required name="trainee_zip" type="text" value="<?php echo $profile_details[0]['trainee_zip']; ?>" class="form-control">
                                     </div>
@@ -223,6 +231,30 @@
     </div>
     <!--Main container sec end-->
   </main>
+<!-- Delete Profile Start --> 
+
+  <script type="text/javascript">
+ $(document).ready(function(){     
+     $("body").on('click','#delete_profile_img',function(){
+      if (confirm("Are You Sure?")) {
+        $.ajax({
+                url:"<?php echo $this->request->webroot; ?>trainees/deleteProfile",
+                type:"post",
+                data:{id:""},
+                dataType:"json",
+                success: function(data){
+                    window.location.reload();
+                }
+            });
+         }
+          else{
+            return false;
+          }
+        });
+    });
+</script>
+
+<!-- Delete Profile End --> 
 
   <!-- Change Password Start -->
   

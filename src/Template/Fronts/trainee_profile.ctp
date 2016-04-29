@@ -102,10 +102,10 @@
                                     
                                     	<div class="infoSummary">
                                             <ul>
-                                                <li><span>REAL NAME</span><?php echo $trainee_detail[0]['trainee_name']; ?></li>
+                                                <li><span>Real Name</span><?php echo ucwords($trainee_detail[0]['trainee_name']." ".$trainee_detail[0]['trainee_lname']); ?></li>
                                                 <li><span>Email Id</span><div><?php echo $trainee_detail[0]['trainee_email']; ?></div></li>
-                                                <li><span>AGE</span><div><?php echo $trainee_detail[0]['trainee_age']; ?></div></li>
-                                                <li><span>GENDER</span><div><?php echo $trainee_detail[0]['trainee_gender']; ?></div></li>
+                                                <li><span>Age</span><div><?php echo $trainee_detail[0]['trainee_age']; ?></div></li>
+                                                <li><span>Gender</span><div><?php echo ucwords($trainee_detail[0]['trainee_gender']); ?></div></li>
                                                 <li><span>Country</span><?php echo $trainee_detail[0]['country_name']; ?></li>
                                                 <li><span>State</span><?php echo $trainee_detail[0]['state_name']; ?></li>
                                                 <li><span>City</span><?php echo $trainee_detail[0]['city_name']; ?></li>

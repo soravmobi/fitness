@@ -126,13 +126,13 @@
                   <div class="heading_payment_main"> </div>
                   <div class="session_content">
                     <div class="day-headers">
+                      <div class="day header">Sun</div>
                       <div class="day header">Mon</div>
                       <div class="day header">Tue</div>
                       <div class="day header">Wed</div>
                       <div class="day header">Thu</div>
                       <div class="day header">Fri</div>
                       <div class="day header">Sat</div>
-                      <div class="day header">Sun</div>
                     </div>
                     <div class="days" data-group="days"> </div>
                   </div>
@@ -210,29 +210,12 @@
                                     </div>
                                 </div>
                                 <div class="icon_main">
-                                    <div class="clock_main">
+                                    <div class="clock_main pending_appo">
                                         <?php 
-                                          date_default_timezone_set("Asia/Calcutta");
-                                          $purchase_date     = $pa['created_date']; 
-                                          $current_date      = date('Y-m-d H:i:s');
-                                          $start_date        = new DateTime($current_date);
-                                          $since_start       = $start_date->diff(new DateTime($purchase_date));
-                                          $remaining_hour    = 24 - $since_start->h;
-                                          $remaining_minutes = $since_start->i;
-                                          $remaining_seconds = $since_start->s;
+                                          $timer_details = $this->Custom->getTimerDetails($pa['created_date']);
                                         ?>
-                                        <div id="clockdiv_<?php echo $pa['app_id']; ?>"  onload="counter(<?php echo $pa['app_id']; ?>,<?php echo $remaining_hour ; ?>,<?php echo $remaining_minutes; ?>,<?php echo $remaining_seconds; ?>)">
-                                            <ul>
-                                                <li>
-                                                    <span class="hours"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="minutes"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="seconds"></span>
-                                                </li>
-                                            </ul>
+                                        <div id="clockdiv_<?php echo $pa['app_id']; ?>"  onload="counter(<?php echo $pa['app_id']; ?>,<?php echo $timer_details['hours'] ; ?>,<?php echo $timer_details['minutes']; ?>,<?php echo $timer_details['seconds']; ?>)">
+                                            <span id="<?php echo $pa['app_id']; ?>"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -591,54 +574,4 @@ $(document).ready(function(){
       });
   });
 });
-
-/************************************* js for clockdiv timer start ***********************************************************/
-
-function counter(appid,hour,minutes,seconds){
-  var deadline = new Date(Date.parse(new Date()) + hour * minutes * seconds * 1000);
-  initializeClock('clockdiv_'+appid, deadline);
-}
-
-$(function(){
-  $('div[onload]').trigger('onload');
-});
-
-function getTimeRemaining(endtime) {
-  var t = Date.parse(endtime) - Date.parse(new Date());
-  var seconds = Math.floor((t / 1000) % 60);
-  var minutes = Math.floor((t / 1000 / 60) % 60);
-  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-  return {
-    'total': t,
-    'hours': hours,
-    'minutes': minutes,
-    'seconds': seconds
-  };
-}
-
-function initializeClock(id, endtime) {
-  var clock = document.getElementById(id);
-  var hoursSpan = clock.querySelector('.hours');
-  var minutesSpan = clock.querySelector('.minutes');
-  var secondsSpan = clock.querySelector('.seconds');
-
-  function updateClock() {
-    var t = getTimeRemaining(endtime);
-    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
-    if (t.total <= 0) {
-      clearInterval(timeinterval);
-    }
-  }
-
-  updateClock();
-  var timeinterval = setInterval(updateClock, 1000);
-}
-
-/************************************* js for clockdiv timer end ***********************************************************/
-
-</script>
-
 

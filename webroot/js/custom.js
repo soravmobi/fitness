@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
-
+$(function(){
+  $('div[onload]').trigger('onload');
+});
 	
 $('body').on('keypress','.pop-overbox',function(){
 	$(".pop-overbox").popover('destroy');
@@ -138,6 +140,15 @@ function hidePopover(){
 
 function showAlert(type,title,message){
 	swal(title,message,type);
+}
+
+function counter(appid,hour,minutes,seconds){
+  $('#'+appid).countdowntimer({
+    hours : hour,
+    minutes :minutes,
+    seconds : seconds,
+    size : "lg",
+  });
 }
 
 /*$('.ht_right ul li').hover(function() {

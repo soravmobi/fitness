@@ -16,7 +16,6 @@
                             if($nd['noti_type'] == "Decline Appointment" || $nd['noti_type'] == "Approve Appointment") { ?>
                               <li class="panel" id="appo_<?php echo $nd['noti_id']; ?>">
                                 <div class="panel-heading">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#notification<?php echo $nd['noti_id']; ?>" aria-expanded="true" aria-controls="collapseOne">
                                 <div class="pbb_left">
                                   <div class="pbbl_img">
                                     <img src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$nd['trainer_image']) ?>" alt="img" class="img-circle">
@@ -25,18 +24,19 @@
                                     <h5><?php echo ucwords($nd['trainer_name']." ".$nd['trainer_lname']." ".$nd['noti_message']); ?> </strong></h5>
                                   </div>
                                 </div>
+                                <div class="view_btn_main">
+                                  <a href="javascript:void(0);" class="btn btn-success app-view-btn" main="<?php echo $nd['parent_id']; ?>">View</a>
+                                </div>
                                 <div class="pbb_right">
                                   <div class="mesg_time">
                                     <?php echo time_elapsed_string($nd['noti_added_date']); ?>
                                   </div>
                                 </div>
-                              </a>
                               <div class="clearfix"></div>
                               </div>
                               <div id="notification<?php echo $nd['noti_id']; ?>" class="panel-collapse collapse">
                                   <div class="panel-body">
-                                   <!-- <p> <?php echo ucwords($nd['trainer_name']." ".$nd['trainer_lname']." ".$nd['noti_message']); ?></p></br> -->
-                                   <a href="javascript:void(0);" class="btn btn-success app-view-btn" main="<?php echo $nd['parent_id']; ?>">View</a>
+                                   
                                   </div>
                               </div>
                               </li>
@@ -44,7 +44,6 @@
                             if($nd['noti_type'] == "Make Special Offer") { ?>
                               <li class="panel" id="appo_<?php echo $nd['noti_id']; ?>">
                                 <div class="panel-heading">
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#notification<?php echo $nd['noti_id']; ?>" aria-expanded="true" aria-controls="collapseOne">
                                 <div class="pbb_left">
                                   <div class="pbbl_img">
                                     <img src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$nd['trainer_image']) ?>" alt="img" class="img-circle">
@@ -53,18 +52,19 @@
                                     <h5><?php echo ucwords($nd['trainer_name']." ".$nd['trainer_lname']." ".$nd['noti_message']); ?> </strong></h5>
                                   </div>
                                 </div>
+                                <div class="view_btn_main">
+                                  <a href="javascript:void(0);" class="btn btn-success app-special-offer-btn" main="<?php echo $nd['parent_id']; ?>">View</a>
+                                </div>
                                 <div class="pbb_right">
                                   <div class="mesg_time">
                                     <?php echo time_elapsed_string($nd['noti_added_date']); ?>
                                   </div>
                                 </div>
-                              </a>
                               <div class="clearfix"></div>
                               </div>
                               <div id="notification<?php echo $nd['noti_id']; ?>" class="panel-collapse collapse">
                                   <div class="panel-body">
-                                   <!-- <p> <?php echo ucwords($nd['trainer_name']." ".$nd['trainer_lname']." ".$nd['noti_message']); ?></p></br> -->
-                                   <a href="javascript:void(0);" class="btn btn-success app-special-offer-btn" main="<?php echo $nd['parent_id']; ?>">View</a>
+                                   
                                   </div>
                               </div>
                               </li>
@@ -164,6 +164,7 @@
                     <p>Total price <span class="pull-right final-app-price"></span>
                     </p>
                     <button type="button" class="btn decline app-view-status"></button>
+                    <button type="button" class="btn decline" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -233,13 +234,14 @@
             dataType:"json",
             success: function(data){
               var result = data.message;
+              console.log(result);
               var sessions = result.session_data;
               $('#app-view-user-img').attr('src','<?php echo $this->request->webroot; ?>uploads/trainee_profile/'+result[0]['trainee_image']);
               var profile_html = "";
               var sessionHTML  = "";
               var status  = "";
               profile_html +=  result[0]['trainee_name'] + " " + result[0]['trainee_lname'];
-              profile_html +=  "<span>" + result.total_session +" Sessions - $"+result[0]['final_price']+"</span>";
+              profile_html +=  "<span>" + result.total_session +" Sessions - $"+result[0]['final_price']+"<span class='app_sttaus'></span></span></span>";
               $('#appo-view-profile-view').html(profile_html);
               for (var i = 1; i <= result.total_session; i++) {
                 sessionHTML += '<li><div class="main_block"><div class="icon_block big_icon"><i class="fa fa-calendar"></i>';
@@ -250,12 +252,13 @@
                 }
               };
               $('#all-sessions-list').html(sessionHTML);
-              if(result[0]['trainer_status'] == '2' && result[0]['trainee_app_status'] == '2'){
+              if(result[0]['trainer_app_status'] == '2' && result[0]['trainee_app_status'] == '2'){
                 status = "Declined";
               }
-              if(result[0]['trainer_status'] == '1' && result[0]['trainee_app_status'] == '1'){
+              if(result[0]['trainer_app_status'] == '1' && result[0]['trainee_app_status'] == '1'){
                 status = "Approved";
               }
+              $('.app_sttaus').text(status);
               $('.app-view-status').text(status);
               $('.final-app-price').text("$"+result[0]['final_price']);
               $('#respond_now').modal('show');

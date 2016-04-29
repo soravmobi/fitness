@@ -22,7 +22,11 @@
                                 { ?>
                                     <img id="profile-img" style="width:200px;height:190px;" src="<?php echo $this->request->webroot; ?>img/default.png" alt="img" class="img-responsive">
                             <?php } ?>
-                                <a class="upload_profile_img" href="javascript:void(0);"><input name="trainee_profile_img" id="trainee_profile_img" type="file"/><span class="fa fa-camera"></span> <span>Upload Photo</span></a>
+                                <a class="upload_profile_img" href="javascript:void(0);"><input name="trainee_profile_img" id="trainee_profile_img" type="file"/><span class="fa fa-camera"></span> 
+                                <?php if($profile_details[0]['trainee_image'] != "default.png") { ?>
+                                 <span class="trash" id="delete_profile_img" ><i class="fa fa-trash" aria-hidden="true"></i></span>
+                                <?php } ?>
+                                </a>
                             </form>
                             </div>
                             <div class="trainee_detail">
@@ -70,7 +74,7 @@
                                     </ul>
                                 </nav>
                                 <div class="profile_btn_main">
-                                    <a class="select_trainr gray_grad" title="Select a Trainer" href="<?php echo $this->request->webroot; ?>ourTrainers"><span class="fa fa-user"></span> Select a Trainer</a>
+                                    <a class="select_trainr gray_grad" title="Select a Trainer" href="<?php echo $this->request->webroot; ?>trainees/searchTrainers"><span class="fa fa-user"></span> Select a Trainer</a>
                                     <a href="<?php echo $this->request->webroot; ?>trainees/completeProfile" title="Edit Profile" class="hireme_btn gray_grad"><span class="fa fa-edit"></span> Edit Profile</a>
                                     <a href="<?php echo $this->request->webroot; ?>trainees/wallet" title="My Wallet" class="hireme_btn gray_grad"><span class="fa fa-google-wallet"></span> My Wallet</a>
                                 </div>

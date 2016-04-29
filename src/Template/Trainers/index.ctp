@@ -62,8 +62,8 @@
                     <div class="cloud"><i class="flaticon1-money-1"></i><span>earing</span></div>
                   </div>
                   <div class="cloud_text"> <span>My Total Earnings</span>
-                    <div class="rate_box">$7,448</div>
-                    <span class="last_month">Last Month</span> <span class="last_month">$83,541</span> </div>
+                    <div class="rate_box">$0</div>
+                    <span class="last_month">Last Month</span> <span class="last_month">$0</span> </div>
                 </li>
               </ul>
             </div>
@@ -85,13 +85,13 @@
                   <div class="heading_payment_main"> </div>
                   <div class="session_content">
                     <div class="day-headers">
+                      <div class="day header">Sun</div>
                       <div class="day header">Mon</div>
                       <div class="day header">Tue</div>
                       <div class="day header">Wed</div>
                       <div class="day header">Thu</div>
                       <div class="day header">Fri</div>
                       <div class="day header">Sat</div>
-                      <div class="day header">Sun</div>
                     </div>
                     <div class="days" data-group="days"> </div>
                   </div>
@@ -169,29 +169,12 @@
                                     </div>
                                 </div>
                                 <div class="icon_main">
-                                    <div class="clock_main">
+                                    <div class="clock_main pending_appo">
                                         <?php 
-                                          date_default_timezone_set("Asia/Calcutta");
-                                          $purchase_date     = $pa['created_date']; 
-                                          $current_date      = date('Y-m-d H:i:s');
-                                          $start_date        = new DateTime($current_date);
-                                          $since_start       = $start_date->diff(new DateTime($purchase_date));
-                                          $remaining_hour    = 24 - $since_start->h;
-                                          $remaining_minutes = $since_start->i;
-                                          $remaining_seconds = $since_start->s;
+                                          $timer_details = $this->Custom->getTimerDetails($pa['created_date']);
                                         ?>
-                                        <div id="clockdiv_<?php echo $pa['app_id']; ?>"  onload="counter(<?php echo $pa['app_id']; ?>,<?php echo $remaining_hour ; ?>,<?php echo $remaining_minutes; ?>,<?php echo $remaining_seconds; ?>)">
-                                            <ul>
-                                                <li>
-                                                    <span class="hours"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="minutes"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="seconds"></span>
-                                                </li>
-                                            </ul>
+                                        <div id="clockdiv_<?php echo $pa['app_id']; ?>"  onload="counter(<?php echo $pa['app_id']; ?>,<?php echo $timer_details['hours'] ; ?>,<?php echo $timer_details['minutes']; ?>,<?php echo $timer_details['seconds']; ?>)">
+                                            <span id="<?php echo $pa['app_id']; ?>"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -199,7 +182,13 @@
                                     <div class="icon_block big_icon">
                                         <a href="javascript:void(0);" id="trainer-appointments" c_type="chat" t_type="trainer" from_id="<?php echo $from_id; ?>" to_id="<?php echo $pa['trainee_id']; ?>" class="user_call" title="Text Chat"><i class="fa fa-weixin"></i></a>
                                     </div>
-                                    <div class="bullet_box"><a title="View Pending Appointment" href="<?php echo $this->request->webroot; ?>trainers/viewPendingAppointment?aid=<?php echo base64_encode($pa['app_id']); ?>"><i class="fa fa-circle"></i> <i class="fa fa-circle"></i> <i class="fa fa-circle"></i></a></div>
+                                    <div class="bullet_box"><a title="View Pending Appointment" href="<?php echo $this->request->webroot; ?>trainers/viewPendingAppointment?aid=<?php echo base64_encode($pa['app_id']); ?>"><i class="fa fa-circle"></i> <i class="fa fa-circle"></i> <i class="fa fa-circle"></i></a>
+                                      <div class="pop_over">
+                                         <h4>View Appointments</h4>
+                                         <p>View, modify appointments</p>
+                                          <a href="javascript:void(0);" class="btn_okay">okay</a>
+                                      </div>
+                                    </div>
                                 </div>
                             </li>
                             <?php } } ?>
@@ -218,38 +207,34 @@
             </div>
             <div class="col-md-4 col-sm-4">
               <div class="session_setails_sec agenda">
+              <form method="post" action="<?php echo $this->request->webroot; ?>trainers/notesmgmt">
                 <div class="heading_payment_main">
                   <h2 class="text-center">Notes <span id="add_notes" title="Add Notes"><i class="fa fa-plus-circle"></i>
                    <span class="ad_notes_main">
                   <span class="pop_over">
-                    <textarea class="form-control" placeholder="Notes"></textarea>
-                    <a href="javascript:void(0);" class="btn_okay notes-cancel-btn">cancel</a><a href="javascript:void(0);" class="btn_okay notes-save-btn">save</a>
+                    <input type="hidden" value="" id="notes_id" name="notes_id">
+                    <textarea requiredd class="form-control" id="notes_data" name="notes" placeholder="Notes"></textarea>
+                    <a href="javascript:void(0);" class="btn_okay notes-cancel-btn">cancel</a>
+                    <button class="btn_okay notes-save-btn">Save</button>
                  </span>
                 </span>
                   </span></h2>
                 </div>
-                <div class="session_content">
-                  <p> <span class="agenda_icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
-                   <span class="icon_edit_delete">
-                     <i class="fa fa-pencil" aria-hidden="true"></i>
-                     <i class="fa fa-trash" aria-hidden="true"></i>
-
-                   </span>
-                  </p>
-                  <p> <span class="agenda_icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
-                   <span class="icon_edit_delete">
-                     <i class="fa fa-pencil" aria-hidden="true"></i>
-                     <i class="fa fa-trash" aria-hidden="true"></i>
-
-                   </span>
-                  </p>
-                  <p> <span class="agenda_icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></span> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-                    <span class="icon_edit_delete">
-                     <i class="fa fa-pencil" aria-hidden="true"></i>
-                     <i class="fa fa-trash" aria-hidden="true"></i>
-
-                   </span>
-                   </p>
+              </form>
+                <div class="session_content scroll_content">
+                <?php if(!empty($notes)) { 
+                  foreach($notes as $n) { ?>
+                    <p id="notes_row_<?php echo $n['id']; ?>"><span class="agenda_icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>  <?php echo $n['notes']; ?>
+                     <span class="icon_edit_delete">
+                       <a title="Edit Notes" class="edit_notes" href="javascript:void(0);" main="<?php echo $n['id']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                       <a title="Delete Notes" class="delete_notes" href="javascript:void(0);" main="<?php echo $n['id']; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                     </span>
+                    </p>
+                <?php }
+                  }else{ ?>
+                  <center><h4>Not created any notes</h4></center>
+                 <?php } ?>
+                  
                 </div>
               </div>
             </div>
@@ -333,63 +318,46 @@ $(document).ready(function(){
       });
   });
 $('body').on('click','#add_notes .notes-cancel-btn',function(){
-    $('#add_notes .ad_notes_main  .pop_over').css("display","none");
-  });
+  setTimeout(function(){
+    $('.ad_notes_main  > .pop_over').css("display","none");
+  },100);
+});
 
   $('body').on('click','#add_notes',function(){
     $('#add_notes .ad_notes_main .pop_over').css("display","block");
   });
 
+$('body').on('click','.delete_notes',function(){
+  var notesid = $(this).attr('main');
+  $.ajax({
+          url:"<?php echo $this->request->webroot; ?>trainers/deleteNotes",
+          type:"post",
+          data:{notesid:notesid},
+          dataType:"json",
+          success: function(data){
+              $('#notes_row_'+notesid).remove();
+          }
+      });
 });
 
-/************************************* js for clockdiv timer start ***********************************************************/
-
-function counter(appid,hour,minutes,seconds){
-  var deadline = new Date(Date.parse(new Date()) + hour * minutes * seconds * 1000);
-  initializeClock('clockdiv_'+appid, deadline);
-}
-
-$(function(){
-  $('div[onload]').trigger('onload');
+$('body').on('click','.edit_notes',function(){
+  var notesid = $(this).attr('main');
+  $.ajax({
+          url:"<?php echo $this->request->webroot; ?>trainers/getNotesData",
+          type:"post",
+          data:{notesid:notesid},
+          dataType:"json",
+          success: function(data){
+            var result = data.message;
+            $('#notes_data').val(result[0]['notes']);
+            $('#notes_id').val(result[0]['id']);
+            $('#add_notes .ad_notes_main .pop_over').css("display","block");
+          }
+      });
 });
 
-function getTimeRemaining(endtime) {
-  var t = Date.parse(endtime) - Date.parse(new Date());
-  var seconds = Math.floor((t / 1000) % 60);
-  var minutes = Math.floor((t / 1000 / 60) % 60);
-  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-  return {
-    'total': t,
-    'hours': hours,
-    'minutes': minutes,
-    'seconds': seconds
-  };
-}
+});
 
-function initializeClock(id, endtime) {
-  var clock = document.getElementById(id);
-  var hoursSpan = clock.querySelector('.hours');
-  var minutesSpan = clock.querySelector('.minutes');
-  var secondsSpan = clock.querySelector('.seconds');
-
-  function updateClock() {
-    var t = getTimeRemaining(endtime);
-    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
-    if (t.total <= 0) {
-      clearInterval(timeinterval);
-    }
-  }
-
-  updateClock();
-  var timeinterval = setInterval(updateClock, 1000);
-}
-
-/************************************* js for clockdiv timer end ***********************************************************/
-
-</script> 
 
 
 

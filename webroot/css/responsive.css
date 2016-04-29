@@ -803,6 +803,7 @@
 .cs_head_left:nth-child(2) {
     text-align: center;
 }
+.view_btn_main{text-align: left;}
 
 
 
@@ -836,10 +837,15 @@
      width: 39px;
      padding-top: 10px;
 }
+.pbbl_txt {
+    padding-left: 10px;
+    width: 75%;
+}
 .interest_field .form-group {
   margin-right: 8px;
 
 }
+.view_btn_main{text-align: left;}
 .cs_head_left:nth-child(2) {
     text-align: center;
 }

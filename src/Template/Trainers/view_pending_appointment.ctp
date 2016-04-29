@@ -54,7 +54,7 @@
                             </div>
                             <div class="text_event">
                                 <h4>School</h4>
-                                <p>A -Z Day Care</p>
+                                <p><?php echo $session_details[0]['school']; ?></p>
                               </div>
                          </li>
                           <li>
@@ -64,10 +64,10 @@
                             </div>
                             <div class="text_event">
                                 <h4>work</h4>
-                                <p>Big - Bos at Avalon Residence</p>
+                                <p><?php echo $session_details[0]['work']; ?></p>
                               </div>
                          </li>
-                          <li>
+                          <!-- <li>
                            <div class="icon_block big_icon ">
                              <i class="fa fa-check"></i>
 
@@ -106,7 +106,7 @@
                                    <p><a href="<?php echo $this->request->webroot; ?>traineeProfile/<?php echo base64_encode($session_details[0]['user_id']); ?>" class="view_all">view all</a></p>
                                 </div>
                               </div>
-                         </li>
+                         </li> -->
                        </ul>
                     </div>
                   </div>
@@ -362,13 +362,13 @@
                     </div>
                     <div class="calendor_content session_content">
                         <div class="day-headers">
+                            <div class="day header">Sun</div>
                             <div class="day header">Mon</div>
                             <div class="day header">Tue</div>
                             <div class="day header">Wed</div>
                             <div class="day header">Thu</div>
                             <div class="day header">Fri</div>
                             <div class="day header">Sat</div>
-                            <div class="day header">Sun</div>
                         </div>
                         <div class="days" data-group="days">
                         </div>
