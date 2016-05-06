@@ -20,7 +20,7 @@
                                             }
                                             else
                                             {
-                                                $wallet_amt = $total_wallet_ammount[0]['total_ammount'];
+                                                $wallet_amt = round($total_wallet_ammount[0]['total_ammount'],2);
                                             }
                                             echo $wallet_amt;
                                         ?>
@@ -80,9 +80,8 @@
                             	 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>S.No.</th>
-                                            <th>Transaction Name</th>
                                             <th>Transaction ID</th>
+                                            <th>Transaction Name</th>
                                             <th>Amount</th>
                                             <th>Status</th>
                                             <th>Date</th>
@@ -92,9 +91,8 @@
                                        <?php $i = 1;
                                         foreach($wallet_txn as $wt) { ?>
                                         <tr>
-                                            <td><?php echo $i; ?></td>
-                                            <td><?php echo $wt['txn_name']; ?></td>
                                             <td><?php echo $wt['txn_id']; ?></td>
+                                            <td><?php echo $wt['txn_name']; ?></td>
                                             <td>$<?php echo $wt['total_amount'] - ($wt['administration_fee'] + $wt['service_fee']); ?></td>
                                             <td><?php echo ($wt['status'] == 0) ? "Success" : "Failed"; ?></td>
                                             <td><?php echo date('d F, Y', strtotime($wt["added_date"])); ?></td>
@@ -127,7 +125,7 @@
 
       if(!number.test(ammount.trim()) || ammount == "" || ammount == 0)
        {
-          $("div#error_msg").html("<center><i class='fa fa-times'> Please Enter Valid Numbers ! </i></center>").show();
+          $("div#error_msg").html("<center><i class='fa fa-times'> Please enter numeric value to continue. </i></center>").show();
           return false;
        }
       else

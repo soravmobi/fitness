@@ -150,7 +150,7 @@
                               $upcomingArrCount = count($upcomingArr['trainer_name']);
                             }else{
                               $upcomingArrCount = 0; ?>
-                              </br><center><h4>Not found upcoming appointments</h4></center>
+                              </br><center><h4>You have no upcoming appointments</h4></center>
                           <?php } 
                             for ($i=0; $i < $upcomingArrCount; $i++) { ?>
                                 <li>
@@ -193,7 +193,7 @@
                 <div class="heading_payment_main"> </div>
                 <ul class="session_content scroll_content mCustomScrollbar _mCS_1">
                 <?php if(empty($pending_appointments)){ ?>
-                            </br><center><h4>Not found pending appointments</h4></center>
+                            </br><center><h4>You have no pending appointments</h4></center>
                            <?php }else{ ?>
                             <?php foreach($pending_appointments as $pa) { ?>
                               <li>
@@ -476,6 +476,7 @@
           <div class="message_wrap_content_box">
             <ul>
               <li><span class="flaticon1-tool"></span> Inbox</li>
+              <li><input type="checkbox" checked="" class="select-all-btn"> Select All</li>
               <li class="dropdown"><a href="#"  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">action <i class="fa fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
                   <li><a href="javascript:void(0);" id="delete-msgs"><i class="fa fa-trash-o"></i> Delete</a></li>
@@ -502,7 +503,7 @@
                 </tbody>
               </table>
             <?php } else { ?>
-              <center><h4>You have recieved no messages</h4></center>
+              <center><h4>You have no new messages</h4></center>
             <?php } ?>
             </div>
           </div>
@@ -573,5 +574,10 @@ $(document).ready(function(){
           }
       });
   });
+
+$(".select-all-btn").change(function () {
+    $("input.msg_cb").prop('checked', $(this).prop("checked"));
 });
 
+});
+</script>

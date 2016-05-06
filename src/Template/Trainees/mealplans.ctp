@@ -17,6 +17,7 @@
                                 </div>
                             </div>
                             <div class="session_content">
+                            <?php if(!empty($trainer_meal_plans)) { ?>
                               <ul class="nav_tabs">
                               <?php $i = 1; foreach($trainer_meal_plans as $m) { ?>
                                 <li <?php if($i == 1){echo "class='active'";}?>><a data-toggle="tab" role="tab" aria-controls="profile" title="<?php echo $m['trainer_name']." ".$m['trainer_lname']; ?>" href="#profile_<?php echo $i; ?>"><?php echo substr($m['trainer_name']." ".$m['trainer_lname'],0,11); ?></a></li>
@@ -66,6 +67,9 @@
                                 </div>
                               <?php $j++; } ?>
                               </div>
+                            <?php } else{ ?>
+                              </br><div><center><h4>You have no current meal plans</h4></center></div>
+                            <?php } ?>
                             </div>
                         </div>
                       </div>

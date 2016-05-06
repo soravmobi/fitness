@@ -21,10 +21,17 @@
 	<?php 
 		$session = $this->request->session();
 	    $user = $session->read('Auth.User');
+	    $controller = $this->request->params['controller'];
+	    $action = $this->request->params['action'];
 	?>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<?php if($controller == "Users" && $action == "index") { ?>
+		<meta name="keywords" content="personal trainer app,fitness app,online workouts,mens health workout,online workout programs,american fitness">
+	<?php } else if($controller == "Fronts" && $action == "becometrainer") {?>
+		<meta name="keywords" content="how to become a certified personal trainer,become a fitness trainer,personal training certification online,mens health workout, online fitness coach,personal trainer app, fitness coach,fitness instructor certification,workout trainer,online fitness coach,workout trainer,fitness coach">
+	<?php } ?>
 	<title>
 		Virtual TrainR
 	</title>
@@ -52,7 +59,7 @@
 	<script src="<?php echo $this->request->webroot; ?>player/jwplayer.js"></script>
 	<?php echo  $this->Html->script('static_opentok.js'); ?>
 	<?php echo  $this->Html->css('bootstrap-datepicker.css'); ?>
-	<?php echo  $this->Html->script('bootstrap-datepicker.min.js') ?>
+	
 	<?php echo  $this->Html->css('star-rating.css') ?>
 	<?php echo  $this->Html->script('star-rating.min.js') ?>
 	<?php echo  $this->Html->script('lightbox.min.js') ?>
@@ -345,10 +352,13 @@
 		$(document).ready(function() {
 			var hostname = "<?php echo $_SERVER['SERVER_NAME']; ?>";
 			if(hostname == "localhost"){
-				socket = io('http://localhost:3000');
+				socket = io('http://localhost:3600');
 			}
 			if(hostname == "virtualtrainr.com"){
 				socket = io('https://virtualtrainr.com:3600');
+			}
+			if(hostname == "52.201.154.19") {
+				socket = io('http://52.201.154.19:3700');
 			}
 			
 			/* While Accept call */
@@ -392,6 +402,7 @@
 				data = to_id+",endcall";
 				send( data );
 				$("#end_call").modal("hide");
+				$('input[name="check_one_to_one"]').val('inactive');
 			});
 
 			/* Call to user */
@@ -462,6 +473,7 @@
 				            backdrop: 'static',
 				            keyboard: false
 				        });
+				        $('#appointment_modal1').modal('hide');
 					}	
 				}
 			});
@@ -542,6 +554,7 @@
 		?>
 
 		<?php echo  $this->Html->script('bootstrap.min.js') ?>
+		<?php echo  $this->Html->script('bootstrap-datepicker.min.js') ?>
 		<?php echo  $this->Html->script('plugin.min.js') ?>
 		<?php if(!empty($user)) { ?>
 		<?php echo  $this->Html->script('worldLow.min.js') ?>

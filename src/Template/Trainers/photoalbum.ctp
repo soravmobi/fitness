@@ -8,7 +8,6 @@
                       <!-- Tab panes -->
                       <div class="tab-content">
                         
-                        <!-- <div role="tabpanel" class="tab-pane" id="photo_album"> -->
                          <div class="panel_block_heading">
                             <h4>Photo Album</h4>
                         </div>
@@ -16,7 +15,6 @@
                             	
                                   <!-- Nav tabs -->
                                   <ul class="photos_tabs" role="tablist">
-                                    <!-- <li role="presentation" class="active"><a href="#progress_photo" aria-controls="progress_photo" role="tab" data-toggle="tab">Progress Photos</a></li> -->
                                     <li class="active gallery_phots" role="presentation"><a href="#gallery_phots" aria-controls="gallery_phots" role="tab" data-toggle="tab">Gallery Photos</a></li>
                                     <li class="videos" role="presentation"><a href="#videos" aria-controls="videos" role="tab" data-toggle="tab">Videos</a></li>
                                   </ul>
@@ -33,6 +31,7 @@
                                                 <form id="submit_form1" method="post" enctype="multipart/form-data">
                                                     <input style="cursor:pointer" id="uploadImage1" name="gallery_img" value="Photo Upload" type="file"/>
                                                     <span class="fa fa-cloud-upload"></span>
+                                                    <div id="dvPreview"></div>
                                                 </form>
                                                     <h5>Upload your Photo</h5>
                                                 </li>
@@ -45,10 +44,6 @@
                                                         <img style="height:170px;" class="example-image img-responsive" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_gallery/'.$gi['piv_name']) ?>" alt=""/></a>
                                                     </li>
                                                 <?php } ?>
-                                                <!-- <li>
-                                                    <a class="example-image-link" href="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$profile_details[0]['trainer_image']) ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
-                                                    <img style="height:170px;" class="example-image img-responsive" src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$profile_details[0]['trainer_image']) ?>" alt=""/></a>
-                                                </li> -->
                                             </ul>
                                             <div class="clearfix"></div>
                                         </div>
@@ -95,8 +90,21 @@
     <!-- Gallery Image Uploading Start -->
 
     <script type="text/javascript">
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $("#dvPreview").html("<img class='append_img'/>").show();
+                    $('#dvPreview img').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }  
+
         $(document).ready(function(){
         $('#uploadImage1').change(function(){
+            $("#dvPreview").html("").hide();
             var file_name = $(this).val();
             var fileObj = this.files[0]; // get file object
             var calculatedSize = fileObj.size/(1024*1024); // in MB
@@ -116,6 +124,7 @@
             }
             if(jQuery.inArray(split_extension.toLowerCase(), ext ) != -1 && calculatedSize < 10)
             {
+                    readURL(this);
                     $("div#gallery_phots div#error_msg").hide();
                     $('div#gallery_phots img#loading-img').show();
                     var data = new FormData($('#submit_form1')[0]);

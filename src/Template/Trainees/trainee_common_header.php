@@ -22,9 +22,11 @@
                                 { ?>
                                     <img id="profile-img" style="width:200px;height:190px;" src="<?php echo $this->request->webroot; ?>img/default.png" alt="img" class="img-responsive">
                             <?php } ?>
-                                <a class="upload_profile_img" href="javascript:void(0);"><input name="trainee_profile_img" id="trainee_profile_img" type="file"/><span class="fa fa-camera"></span> 
                                 <?php if($profile_details[0]['trainee_image'] != "default.png") { ?>
-                                 <span class="trash" id="delete_profile_img" ><i class="fa fa-trash" aria-hidden="true"></i></span>
+                                    <a class="upload_profile_img" href="javascript:void(0);"><input name="trainee_profile_img" id="trainee_profile_img" type="file"/><span class="fa fa-camera"></span> 
+                                    <span class="trash" id="delete_profile_img" ><i class="fa fa-trash" aria-hidden="true"></i></span>
+                                <?php } else{ ?>
+                                    <a class="upload_profile_img" href="javascript:void(0);"><input name="trainee_profile_img" id="trainee_profile_img" type="file"/><span class="fa fa-camera single_camera"></span> 
                                 <?php } ?>
                                 </a>
                             </form>

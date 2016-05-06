@@ -186,7 +186,7 @@
 
         if(!number.test(ammount.trim()) || ammount == "" || ammount == 0)
          {
-            $("div#error_msg").html("<center><i class='fa fa-times'> Please Enter Valid Numbers ! </i></center>").show();
+            $("div#error_msg").html("<center><i class='fa fa-times'> Please enter numeric value to continue. </i></center>").show();
             return false;
          }
         else

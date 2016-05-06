@@ -58,17 +58,9 @@
 .calendor_caption_box .session_content {
   padding: 20px 15px 20px 20px;
 }
-.hide_map_btn {
-  font-size: 18px !important;
-  padding: 5px 15px !important;
-}
 
 .hide_map_btn {
-  font-size: 18px !important;
-  padding: 5px 15px !important;
-  right: 32px;
-  top: 42px;
-  z-index: 111;
+  right: -20px;
 }
 .interest_field .form-group {
   margin-right: 18px;
@@ -781,11 +773,7 @@
 .right_session_content {
   height: 495px;
 }
-.hide_map_btn {
-  right: 3px;
-  top: 43px;
-  z-index: 1111;
-}
+
 .calendor_caption_box {
     margin-top: 107px;
 }
@@ -796,9 +784,9 @@
   margin-right: 15px;
 }
 .hide_map_btn {
-  padding: 5px 10px !important;
-  right: 8px;
-  top: 21px;
+    padding: 6px 10px !important;
+    right: -10px;
+   
 }
 .cs_head_left:nth-child(2) {
     text-align: center;
@@ -825,9 +813,8 @@
 	
 	}
 	
-	
-	
 @media (max-width:767px){
+  .text_area .form-control{width: 65%;}
 	.trainer_profile_wrap{ padding:10px;}
 	.review_txt h4{ padding:5px 0;}
 	.trainer_search{width:95%;} 
@@ -836,6 +823,13 @@
 	.ht_left {
      width: 39px;
      padding-top: 10px;
+}
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+  min-width: 172px;
+
+}
+.trainee_detail {
+  margin-top: 15px;
 }
 .pbbl_txt {
     padding-left: 10px;

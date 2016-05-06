@@ -65,7 +65,7 @@
                               $upcomingArrCount = count($upcomingArr['trainer_name']);
                             }else{
                               $upcomingArrCount = 0; ?>
-                              </br><center><h4>Not found upcoming appointments</h4></center>
+                              </br><center><h4>You have no upcoming appointments</h4></center>
                           <?php } 
                             for ($i=0; $i < $upcomingArrCount; $i++) { ?>
                                 <li>
@@ -112,7 +112,7 @@
                            
                            <ul class="session_content scroll_content mCustomScrollbar _mCS_1">
                            <?php if(empty($pending_appointments)){ ?>
-                            </br><center><h4>Not found pending appointments</h4></center>
+                            </br><center><h4>You have no pending appointments</h4></center>
                            <?php }else{ ?>
                             <?php foreach($pending_appointments as $pa) { ?>
                               <li>

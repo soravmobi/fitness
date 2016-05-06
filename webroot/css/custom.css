@@ -5121,7 +5121,7 @@ margin:0 auto;
     margin-top: 20px;
     padding: 8px 20px !important;
     position: absolute;
-    right: -90px;
+    right: 0px;
     text-transform: capitalize;
     top: -20px;
 }
@@ -7480,4 +7480,30 @@ a.btn.btn-success.app-view-btn {
 }
 span.app_sttaus {
     float: right;
+}
+.text_area .form-control {
+    display: inline-block;
+    width: 85%;
+    resize: none;
+    vertical-align: top;
+    min-height: 100px;
+    color: #999;
+}
+.text_area .file_attched_field {
+    height: 35px;
+    line-height: 40px;
+    width: 80px;
+}
+.text_area  .soravgarg {
+    float: right;
+    width: 100px;
+}
+.upload_profile_img .single_camera{
+  left: 0px;
+}
+.append_img{
+  height: 170px !important; 
+}
+.progree_append_img{
+  height: 109px !important; 
 }

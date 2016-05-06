@@ -37,7 +37,7 @@
                     <div class="msg-wrap" id="chat_msgs">
                     <?php
                 if(empty($chat_data)) { ?>
-                <div><center>You have recieved no messages</center></div>
+                <div><center>You have no new messages</center></div>
                <?php }
                 else
                 {
@@ -72,28 +72,22 @@
                     </div>
                     <hr>
                 <?php } } } ?>
-                    </div>
-
-                    <!-- <div class="send-wrap ">
-                        <textarea class="form-control send-message" rows="3" placeholder="Write a reply..."></textarea>
-                    </div>
-                    
-                    <div class="btn-panel">
-                        <a href="" class="text-right bt  send-message-btn pull-right" role="button">Send Message</a>
+                    <!-- <div class="text_area">
+                        <textarea placeholder="Write your message here" class="form-control" ></textarea>
+                        <form class="soravgarg" id="send_file1">
+                            <div class="file_attched_field">
+                                <span class="fa fa-paperclip"></span>
+                                <input type="file" name="chat_file" class="chat_file_ZDxq8Gz1ALIaJb2" unique="ZDxq8Gz1ALIaJb2" to_id="94" uid="62">
+                            </div>
+                        </form>
                     </div> -->
-                    
-                </div>
-                
-                
-            </div>
-        
-        </div>
-                    
+                                </div>
+                              </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-           
         </div>
      </section>   
         

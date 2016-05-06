@@ -64,8 +64,17 @@
                                     
                                     </ul>
                                 </nav>
+                                <?php
+                                    $session = $this->request->session();
+                                    $user = $session->read('Auth.User');
+                                if(!empty($user) && $user['user_type'] == "trainee"){ ?>
+                                <div class="profile_btn_main">
+                                    <a class="select_trainr gray_grad" title="Select a Trainer" href="<?php echo $this->request->webroot; ?>trainees/searchTrainers"><span class="fa fa-user"></span> Select a Trainer</a>
+                                    <a href="<?php echo $this->request->webroot; ?>trainees/completeProfile" title="Edit Profile" class="hireme_btn gray_grad"><span class="fa fa-edit"></span> Edit Profile</a>
+                                    <a href="<?php echo $this->request->webroot; ?>trainees/wallet" title="My Wallet" class="hireme_btn gray_grad"><span class="fa fa-google-wallet"></span> My Wallet</a>
+                                </div>
+                                <?php } ?>
                             </div>
-                           
                         </div>
                     </div>
                 </div>

@@ -16,7 +16,7 @@
                            <ul class="session_content">
                               <div class="transaction_date_wrap">
                                <div class="form-group">
-                                <input type="radio" id="f-option" name="selector">
+                                <input type="radio" id="f-option" checked name="selector">
                                   <label for="f-option">Transaction Date From</label>
                                   <div class="check"><div class="inside"></div></div>
                                
@@ -96,7 +96,7 @@
                      <div class="cr_table_head">
                         <div class="row">
                            <div class="col-md-6 col-sm-6">
-                             <h2>transactions list - <?php echo $profile_details[0]['trainee_name']." ".$profile_details[0]['trainee_lname']; ?></h2>
+                             <h2>transactions history - <?php echo $profile_details[0]['trainee_name']." ".$profile_details[0]['trainee_lname']; ?></h2>
                            </div>
                            <div class="col-md-6 col-sm-6 text-right">
                               <ul class="list_table_icon">
@@ -110,12 +110,12 @@
                         <table class="table">
                             <thead >
                                 <tr>
-                                    <th>TRANS</th>
+                                    <th>TRANS #</th>
                                     <th>transaction name</th>
                                     <th>transaction id</th>
                                     <th>transaction type</th>
                                     <th>amount</th>
-                                    <th>Transaction date</th>
+                                    <th>date</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -132,7 +132,7 @@
                                   </tr>
                                 <?php $i++; } ?>
                             <?php } else{ ?>
-                              <tr><td colspan="6">Not found any transactions</td></tr>
+                              <tr><td colspan="6">You have no transactions</td></tr>
                             <?php } ?>
                             </tbody>
                         </table>

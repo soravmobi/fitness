@@ -7,7 +7,7 @@
                    <form id="searchForm">
                  
                     <div class="row">
-                       <div class="col-md-4 col-sm-4">
+                       <div class="col-md-3 col-sm-3">
                          <div class="form-group">
                             <!-- <div class="select_icon"><i class="fa fa-caret-down"></i></div> -->
                          	<input type="text" class="form-control" id="byname" placeholder="let's find a trainer" value="<?php echo (!empty($_GET["name"]))? $_GET["name"] : ""; ?>">		
@@ -60,7 +60,7 @@ function unique_multidim_array($array, $key) {
                          </div>
                        </div>
                        </div>
-                       <div class="col-md-2 col-sm-2">
+                       <div class="col-md-3 col-sm-3">
                          <div class="form-group">
                              <button type="button" id="search_trainer">search</button>
                              <button type="button" class="hide_map_btn">Hide map</button>

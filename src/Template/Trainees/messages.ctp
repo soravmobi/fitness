@@ -38,7 +38,7 @@
                     <div class="msg-wrap" id="chat_msgs">
                     <?php
                 if(empty($chat_data)) { ?>
-                <div><center>You have recieved no messages </center></div>
+                <div><center>You have no new messages </center></div>
                <?php }
                 else
                 {

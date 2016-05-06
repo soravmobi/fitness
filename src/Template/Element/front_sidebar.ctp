@@ -92,7 +92,7 @@
                 </div></a>
               </li>
             <?php } } else { ?>
-              </br><li><center><h4>There is no new notifications</h4></center></li>
+              </br><li><center><h4>You have no new notifications</h4></center></li>
             <?php } ?>
            
             </ul>
@@ -123,7 +123,7 @@
                 </div></a>
               </li>
             <?php } } else { ?>
-              </br><li><center><h4>There is no new notifications</h4></center></li>
+              </br><li><center><h4>You have no new notifications</h4></center></li>
             <?php } ?>
             
             </ul>
@@ -156,7 +156,7 @@
                   </div>
                 </li>
               <?php } } else { ?>
-                </br><li><center><h4>There is no new messages</h4></center></li>
+                </br><li><center><h4>You have no new messages</h4></center></li>
               <?php } ?>
               
               </ul>
@@ -187,7 +187,7 @@
                   </div>
                 </li>
               <?php } } else { ?>
-                </br><li><center><h4>There is no new messages</h4></center></li>
+                </br><li><center><h4>You have no new messages</h4></center></li>
               <?php } ?>
               
               </ul>

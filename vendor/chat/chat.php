@@ -14,9 +14,9 @@ if($_SERVER['SERVER_NAME'] == "localhost"){
 	$dbname     = "fitness";
 }else{
 	$servername = "localhost";
-	$username   = "virtuds6_fitness";
-	$password   = "H+sLTUp%5rzD";
-	$dbname     = "virtuds6_fitness";
+	$username   = "root";
+	$password   = "Abcd@1234";
+	$dbname     = "virtualtrainr";
 }
 
 

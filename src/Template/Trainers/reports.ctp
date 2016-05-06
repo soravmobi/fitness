@@ -14,7 +14,7 @@
           <div class="session_content">
             <div class="transaction_date_wrap">
               <div class="form-group">
-                <input type="radio" id="f-option" name="selector" class="seacrh_type" main="date">
+                <input type="radio" id="f-option" checked name="selector" class="seacrh_type" main="date">
                 <label for="f-option"> From</label>
                 <div class="check">
                   <div class="inside"></div>
@@ -161,8 +161,8 @@
             <table class="table">
               <thead >
                 <tr>
-                  <th>TRANS</th>
-                  <th>Trainee</th>
+                  <th>TRANS #</th>
+                  <th>Customer</th>
                   <th>package name</th>
                   <th>price</th>
                   <th>date</th>
@@ -181,7 +181,7 @@
                   </tr>
                 <?php $i++; } ?>
               <?php } else{ ?>
-                <tr><td colspan="5">Not found any custom sold packages</td></tr>
+                <tr><td colspan="5">No custom packages found</td></tr>
               <?php } ?>
             </tbody>
             </table>
@@ -209,8 +209,8 @@
             <table class="table">
               <thead >
                 <tr>
-                  <th>TRANS</th>
-                  <th>Trainee</th>
+                  <th>TRANS #</th>
+                  <th>Customer</th>
                   <th>session name</th>
                   <th>price</th>
                   <th>date</th>
@@ -259,11 +259,11 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>TRANS</th>
+                  <th>TRANS #</th>
                   <th>Transaction Name</th>
                   <th>Transaction Id</th>
                   <th>Amount</th>
-                  <th>Transaction date</th>
+                  <th>Date</th>
                   <th>status</th>
                 </tr>
               </thead>
@@ -281,7 +281,7 @@
                   </tr>
                 <?php $i++; } ?>
               <?php } else{ ?>
-                <tr><td colspan="7">Not found any withdrawals</td></tr>
+                <tr><td colspan="7">You have no transactions</td></tr>
               <?php } ?>
             </tbody>
             </table>

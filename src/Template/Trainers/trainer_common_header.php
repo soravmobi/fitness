@@ -21,9 +21,11 @@
                                 { ?>
                                     <img id="profile-img" style="width:200px;height:190px;" src="<?php echo $this->request->webroot; ?>img/default.png" alt="img" class="img-responsive">
                             <?php } ?>
-                                <a class="upload_profile_img" href="javascript:void(0);"><input name="trainer_profile_img" id="trainer_profile_img" type="file"/><span class="fa fa-camera"></span>
                                 <?php if($profile_details[0]['trainer_image'] != "default.png") { ?>
-                                 <span class="trash" id="delete_profile_img" ><i class="fa fa-trash" aria-hidden="true"></i></span>
+                                    <a class="upload_profile_img" href="javascript:void(0);"><input name="trainer_profile_img" id="trainer_profile_img" type="file"/><span class="fa fa-camera"></span>
+                                    <span class="trash" id="delete_profile_img" ><i class="fa fa-trash" aria-hidden="true"></i></span>
+                                <?php } else{ ?>
+                                    <a class="upload_profile_img" href="javascript:void(0);"><input name="trainer_profile_img" id="trainer_profile_img" type="file"/><span class="fa fa-camera single_camera"></span>
                                 <?php } ?>
                                 </a>
                             </form>
@@ -33,49 +35,6 @@
                                 <div class="retting_box">
                                     <h3 class="trainee_rank">Rank Level : </h3><input class="trainer-rank" value="<?php echo $profile_details[0]['trainer_rating']; ?>" type="number" /> <span class="gray_grad"><?php echo $profile_details[0]['trainer_rating']; ?></span>
                                 </div>       
-                                <!-- <nav class="trainee_streams">
-                                    <ul>
-                                    <?php $skills =  $profile_details[0]['trainer_skills']; 
-                                        $skillArr = explode(",", $skills);
-                                        if(!empty($skillArr)) {
-                                        foreach($skillArr as $s) { ?>
-                                        <li><a href="javascript:void(0);" class="red_grad" title="<?php echo $s; ?>"><?php echo $s; ?> </a></li>
-                                        <?php } } ?>
-                                    </ul>
-                                </nav>
-                                <nav class="trainee_social_link">
-                                    <ul>
-                                    <?php
-                                        if(!empty($profile_details[0]['trainer_linkedin'])) { ?>
-                                    <li><a target="_blank" href="<?php echo $profile_details[0]['trainer_linkedin']; ?>" title="Linked In" class="linkedin_grad"><span class="fa fa-linkedin"></span></a></li>
-                                    <?php } ?>
-                                    <?php
-                                        if(!empty($profile_details[0]['trainer_facebook'])) { ?>
-                                    <li><a target="_blank" href="<?php echo $profile_details[0]['trainer_facebook']; ?>" title="Facebook" class="facebook_grad"><span class="fa fa-facebook"></span></a></li>
-                                    <?php } ?>
-                                    <?php
-                                        if(!empty($profile_details[0]['trainer_twitter'])) { ?>
-                                    <li><a target="_blank" href="<?php echo $profile_details[0]['trainer_twitter']; ?>" title="Twitter" class="twitter_grad"><span class="fa fa-twitter"></span></a></li>
-                                    <?php } ?>
-                                    <?php
-                                        if(!empty($profile_details[0]['trainer_belibitv'])) { ?>
-                                    <li><a target="_blank" href="<?php echo $profile_details[0]['trainer_belibitv']; ?>" title="BelibiTv" class="belibitv_grad"><span class="belivitv_icon"><img src="<?php echo $this->request->webroot; ?>img/favicon.png"></span></a></li>
-                                    <?php } ?>
-                                    <?php
-                                        if(!empty($profile_details[0]['trainer_google'])) { ?>
-                                    <li><a target="_blank" href="<?php echo $profile_details[0]['trainer_google']; ?>" title="Google" class="google_grad"><span class="fa fa-google-plus"></span></a></li>
-                                    <?php } ?>
-                                    <?php
-                                        if(!empty($profile_details[0]['trainer_instagram'])) { ?>
-                                    <li><a target="_blank" href="<?php echo $profile_details[0]['trainer_instagram']; ?>" title="Instagram" class="instagram_grad"><span class="fa fa-instagram"></span></a></li>
-                                    <?php } ?>
-                                    
-                                    
-                                    </ul>
-                                </nav>
-                                <div class="profile_btn_main">
-                                    <a href="<?php echo $this->request->webroot; ?>trainers/completeProfile" title="Edit Profile" class="hireme_btn gray_grad"><span class="fa fa-edit"></span> Edit Profile</a>
-                                </div> -->                         
                             </div>
                         </div>
                     </div>

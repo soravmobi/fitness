@@ -33,6 +33,7 @@
                                                 <form id="submit_form" action="<?php echo $this->request->webroot; ?>trainees/addProgressImage" method="post" enctype="multipart/form-data">
                                                    <input style="cursor:pointer" id="uploadImage" name="progress_img" value="Photo Upload" type="file" required/>
                                                     <span class="fa fa-cloud-upload"></span>
+                                                    <div id="pregress_preview"></div>
                                                     <h5>Upload Your Photo</h5>
                                                 </li>
                                                  <div class="photo_input_box">
@@ -67,6 +68,7 @@
                                                 <form id="submit_form1" method="post" enctype="multipart/form-data">
                                                     <input style="cursor:pointer" id="uploadImage1" name="gallery_img" value="Photo Upload" type="file"/>
                                                     <span class="fa fa-cloud-upload"></span>
+                                                    <div id="gallery_preview"></div>
                                                 </form>
                                                     <h5>Upload your Photo</h5>
                                                     
@@ -130,7 +132,20 @@
 
         <script type="text/javascript">
         $(document).ready(function(){
+
+        function galleryReadURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $("#gallery_preview").html("<img class='append_img'/>").show();
+                    $('#gallery_preview img').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }  
+
         $('#uploadImage1').change(function(){
+            $("#gallery_preview").html("").hide();
             var file_name = $(this).val();
             var fileObj = this.files[0]; // get file object
             var calculatedSize = fileObj.size/(1024*1024); // in MB
@@ -150,6 +165,7 @@
             }
             if(jQuery.inArray(split_extension.toLowerCase(), ext ) != -1 && calculatedSize < 10)
             {
+                    galleryReadURL(this);
                     $("div#gallery_phots div#error_msg").hide();
                     $('div#gallery_phots img#loading-img').show();
                     var data = new FormData($('#submit_form1')[0]);
@@ -186,7 +202,20 @@
 
         <script type="text/javascript">
         $(document).ready(function(){
+
+        function progressReadURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $("#pregress_preview").html("<img class='progree_append_img'/>").show();
+                    $('#pregress_preview img').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
         $('#uploadImage').change(function(){
+            $("#pregress_preview").html("").hide();
             var file_name = $(this).val();
             var fileObj = this.files[0]; // get file object
             var calculatedSize = fileObj.size/(1024*1024); // in MB
@@ -206,6 +235,7 @@
             }
             if(jQuery.inArray(split_extension.toLowerCase(), ext ) != -1 && calculatedSize < 10)
             {
+                progressReadURL(this);
                 $("div#progress_photo div#error_msg").hide();
             }
         });

@@ -260,24 +260,25 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <input required type="text" name="trainee_zip" class="form-control" placeholder="Postal Code">
+                    </div>
+                    
+               </div>
+               <div class="suf_row">
+                    <div class="form-group">
                         <select required id="trainee_state"  name="trainee_state" class="form-control ">
                             <option value="">Province</option>
                         </select>
                     </div>
-               </div>
-               <div class="suf_row">
-                     <div class="form-group">
-                        <select required id="trainee_city" name="trainee_city" class="form-control ">
-                            <option value="">City</option>
-                        </select>
-                    </div>
-                     <div class="form-group">
-                        <input required type="text" name="trainee_zip" class="form-control" placeholder="Postal Code">
+                    <div class="form-group">
+                        <input required type="password" id="trainee_password" name="trainee_password" class="form-control" placeholder="Password*">
                     </div>
                </div>
                <div class="suf_row">
                     <div class="form-group">
-                        <input required type="password" id="trainee_password" name="trainee_password" class="form-control" placeholder="Password*">
+                        <select required id="trainee_city" name="trainee_city" class="form-control ">
+                            <option value="">City</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <input required type="password" id="trainee_cnfm_password" name="trainee_cnfm_password" class="form-control" placeholder="Confirm Password*">
@@ -372,9 +373,17 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <input required name="trainer_zip" type="text" class="form-control" placeholder="Postal Code">
+                    </div>
+               </div>
+               <div class="suf_row clearfix">
+                    <div class="form-group">
                         <select required id="trainer_state" name="trainer_state" class="form-control ">
                             <option value="">Province</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <input required name="trainer_password"  type="password" id="trainer_password" class="form-control" placeholder="Password*">
                     </div>
                </div>
                <div class="suf_row clearfix">
@@ -383,18 +392,10 @@
                             <option value="">City</option>
                         </select>
                     </div>
-                     <div class="form-group">
-                        <input required name="trainer_zip" type="text" class="form-control" placeholder="Postal Code">
-                    </div>
-               </div>
-               <div class="suf_row clearfix">
-                    <div class="form-group">
-                        <input required name="trainer_password"  type="password" id="trainer_password" class="form-control" placeholder="Password*">
-                    </div>
                     <div class="form-group">
                         <input required name="trainer_cnfmpassword" id="trainer_confirm_password" type="password" class="form-control" placeholder="Confirm Password*">
                         <span id="line6" class="text-left"></span>
-                    </div>
+                    </div> 
                </div>
                <div class="suf_row clearfix">
                     <div class="form-group">
@@ -436,6 +437,19 @@
 <!-- Trainer Registration Script Start -->
 <script type="text/javascript">
 $(document).ready(function(){
+
+  $('body').on('change','input[name="trainer_name"],input[name="trainer_lname"]',function(){
+    var trainer_first_name = $('input[name="trainer_name"]').val();
+    var trainer_last_name  = $('input[name="trainer_lname"]').val();
+    $('input[name="trainer_displayName"]').val(trainer_first_name+trainer_last_name);
+  });
+
+  $('body').on('change','input[name="trainee_name"],input[name="trainee_lname"]',function(){
+    var trainee_first_name = $('input[name="trainee_name"]').val();
+    var trainee_last_name  = $('input[name="trainee_lname"]').val();
+    $('input[name="trainee_displayName"]').val(trainee_first_name+trainee_last_name);
+  });
+
   setTimeout(function(){
     
   /************* Age Values Script Start *******************/

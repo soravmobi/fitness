@@ -75,7 +75,7 @@ Router::scope('/', function ($routes) {
 
     $routes->connect('/learnmore', ['controller' => 'Fronts', 'action' => 'learnmore']);
 
-    $routes->connect('/verifyuser/*', ['controller' => 'App', 'action' => 'verifyuser']);
+
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',
      * its action called 'display', and we pass a param to select the view file

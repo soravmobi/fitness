@@ -15,13 +15,13 @@
                         <p><?php echo nl2br($chat["chat_messsage"]); ?></p>
                     </div>
                     <div class="chat_avatar">
-                        <img src="<?php echo $this->request->webroot ?>uploads/<?php echo $type."_profile/".$s_profile[0][$type."_image"] ?>" class="img-responsive img-circle">
+                        <img src="<?php echo $this->Custom->getImageSrc('uploads/'.$type.'_profile/'.$s_profile[0][$type."_image"]) ?>" class="img-responsive img-circle">
                     </div>
                 </div>
             <?php }else{ ?>
                 <div class="msg_container base_receive">
                     <div class="chat_avatar">
-                        <img src="<?php echo $this->request->webroot ?>uploads/<?php echo $rtype."_profile/".$profile[0][$rtype."_image"] ?>" class="img-responsive img-circle">
+                        <img src="<?php echo $this->Custom->getImageSrc('uploads/'.$rtype.'_profile/'.$profile[0][$rtype."_image"]) ?>" class="img-responsive img-circle">
                     </div>
                     <div class="messages msg_receive">
                         <p><?php echo nl2br($chat["chat_messsage"]); ?></p>
@@ -97,13 +97,13 @@ $(document).ready(function(){
             chat += '        <p>'+user_msg+'</p>';
             chat += '    </div>'
             chat += '    <div class="chat_avatar">'
-            chat += '        <img src="<?php echo $this->request->webroot ?>uploads/<?php echo $type."_profile/".$s_profile[0][$type."_image"] ?>" class="img-responsive img-circle">';
+            chat += '        <img src="<?php echo $this->Custom->getImageSrc("uploads/".$type."_profile/".$s_profile[0][$type."_image"]) ?>" class="img-responsive img-circle">';
             chat += '    </div>';
             chat += '</div>';
           
             rchat += '<div class="msg_container base_receive">';
             rchat += '    <div class="chat_avatar">';
-            rchat += '        <img src="<?php echo $this->request->webroot ?>uploads/<?php echo $type."_profile/".$s_profile[0][$type."_image"] ?>" class="img-responsive img-circle">';
+            rchat += '        <img src="<?php echo $this->Custom->getImageSrc("uploads/".$type."_profile/".$s_profile[0][$type."_image"]) ?>" class="img-responsive img-circle">';
             rchat += '    </div>';
             rchat += '    <div class="messages msg_receive">';
             rchat += '        <p>'+user_msg+'</p>';

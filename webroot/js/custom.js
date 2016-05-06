@@ -54,9 +54,8 @@ $(document).click(function(event){
 	if(isSideBarOpen == true && $(event.target).attr("data-toggle")!= "offcanvas"){
   	$(".ht_left button").click();
 	}
-})   
-	  
-	  
+}) 
+
 	  
 });
 

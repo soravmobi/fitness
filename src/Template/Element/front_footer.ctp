@@ -115,7 +115,7 @@
     </div>
 
     <!-- Appointment Modal End -->
-
+    <input type="hidden" name="check_one_to_one" value="inactive"/>
     <?php } ?>
 
     <!-- online users list end -->
@@ -153,6 +153,7 @@
     }
 
     $(document).ready(function () {
+        var hostname = "<?php echo $_SERVER['SERVER_NAME']; ?>";
         $('.alert-success').fadeOut(15000);
         $('.alert-danger').fadeOut(15000);
         $('.lb-details').html("");
@@ -160,17 +161,21 @@
 
         $(".chat_list_sect").load("<?php echo $this->request->webroot; ?>users/onlineuser");
         
-        setInterval(function(){
-            $(".chat_list_sect").load("<?php echo $this->request->webroot; ?>users/onlineuser");    
-        }, 10000);
+        if(hostname != "localhost"){
+            setInterval(function(){
+                $(".chat_list_sect").load("<?php echo $this->request->webroot; ?>users/onlineuser");    
+            }, 1000);
+        }
+        
 
         var userType = "<?php echo $user_data1['user_type'] ?>";
 
-        if(userType == "trainee"){
+        if(userType == "trainee" && hostname != "localhost"){
             setInterval(function(){
             var current_date_time = getCureentTime();
             var date = current_date_time[2]+"-"+current_date_time[1]+"-"+current_date_time[0];
             var time = current_date_time[3]+":"+current_date_time[4];
+            var oneTone = $('input[name="check_one_to_one"]').val();
                 $.ajax({
                     url: '<?php echo $this->request->webroot; ?>trainees/getVideoCalls',
                     type: 'post',
@@ -178,7 +183,8 @@
                     dataType: 'json',
                     success:function(response){
                         var result = response.message;
-                        if(result != ""){
+                        if(result != "" && oneTone == 'inactive'){
+                           $('input[name="check_one_to_one"]').val('active');
                            $('#trainer_img').attr('src','<?php echo $this->request->webroot; ?>uploads/trainer_profile/'+result[0]['trainer_image']);
                            $('#trainer_namee').text(result[0]['trainer_name']+" "+result[0]['trainer_lname']);
                            $('#appoint_date').text(result[0]['date']);
@@ -197,6 +203,10 @@
                 });
             }, 10000);
         }
+    });
+
+    $('#end_call').on('hidden.bs.modal', function () {
+        $('input[name="check_one_to_one"]').val('inactive');
     });
 </script>
 

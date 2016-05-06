@@ -10,7 +10,7 @@
                        <div id="append_div">
                        <?php
                        if(empty($trainee_data)) { ?>
-                       <div class="well"><center><h4>You Don`t Have Any Trainee</h4></center></div>
+                       <div class="well"><center><h4>You do not have any clients on the platform to manage. Please begin importing your contacts or invite your friend to begin!</h4></center></div>
                     <?php  }
                        else
                        { ?>
