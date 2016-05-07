@@ -151,7 +151,7 @@
               </div>
               <div class="col-md-6 col-sm-6 text-right">
                 <ul class="list_table_icon">
-                  <li><a href="javascript:void(0);"><i class="fa fa-file-pdf-o"></i> </a></li>
+                  <li><a href="<?php echo $this->request->webroot; ?>trainers/getneratePDFReport/custom"><i class="fa fa-file-pdf-o"></i> </a></li>
                   <li><a href="javascript:void(0);"> <i class="fa fa-file-excel-o"></i> </a></li>
                 </ul>
               </div>
@@ -199,7 +199,7 @@
               </div>
               <div class="col-md-6 col-sm-6 text-right">
                 <ul class="list_table_icon">
-                  <li><a href="javascript:void(0);"><i class="fa fa-file-pdf-o"></i> </a></li>
+                  <li><a href="<?php echo $this->request->webroot; ?>trainers/getneratePDFReport/sessions"><i class="fa fa-file-pdf-o"></i> </a></li>
                   <li><a href="javascript:void(0);"> <i class="fa fa-file-excel-o"></i> </a></li>
                 </ul>
               </div>
@@ -249,7 +249,7 @@
               </div>
               <div class="col-md-6 col-sm-6 text-right">
                 <ul class="list_table_icon">
-                  <li><a href="javascript:void(0);"><i class="fa fa-file-pdf-o"></i> </a></li>
+                  <li><a href="<?php echo $this->request->webroot; ?>trainers/getneratePDFReport/txn"><i class="fa fa-file-pdf-o"></i> </a></li>
                   <li><a href="javascript:void(0);"> <i class="fa fa-file-excel-o"></i> </a></li>
                 </ul>
               </div>

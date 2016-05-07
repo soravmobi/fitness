@@ -1064,7 +1064,24 @@ class TrainersController extends AppController
     public function messages()
     {
        $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
-       $all_trainees = $this->conn->execute('SELECT *,t.id as trainee_id,c.name as country_name,s.name as state_name,ct.name as city_name  FROM trainees as t inner join countries as c on c.id = t.trainee_country inner join states as s on s.id = t.trainee_state inner join cities as ct on ct.id = t.trainee_city where `t`.`trainee_status` = 1 ORDER BY t.id DESC ')->fetchAll('assoc');
+       $all_chat_trainees = $this->conn->execute('SELECT * FROM `chating` WHERE `chat_sender_id` = '.$this->data['id'].' OR `chat_reciever_id` = '.$this->data['id'])->fetchAll('assoc');
+
+       if(!empty($all_chat_trainees))
+       {
+        foreach($all_chat_trainees as $a)
+         {
+            if($a['chat_sender_id'] == $this->data['id']){
+              $trainee_ids[] = $a['chat_reciever_id'];
+            }else{
+              $trainee_ids[] = $a['chat_sender_id'];
+            }
+         }
+        $te_ids = implode(",", array_values(array_unique($trainee_ids)));
+        $all_trainees = $this->conn->execute('SELECT *,t.id as trainee_id,c.name as country_name,s.name as state_name,ct.name as city_name  FROM trainees as t inner join countries as c on c.id = t.trainee_country inner join states as s on s.id = t.trainee_state inner join cities as ct on ct.id = t.trainee_city where `t`.`trainee_status` = 1 AND `t`.`user_id` IN ('.$te_ids.') ORDER BY t.id DESC ')->fetchAll('assoc');
+       }
+       else{
+          $all_trainees = array();
+       }
        if(!empty($all_trainees))
        {
        $recent_trainee_id = $all_trainees[0]['user_id'];
@@ -1084,7 +1101,7 @@ class TrainersController extends AppController
          {
           $chat_final_arr[] = $c['chat_id'];
          }
-        array_multisort($chat_final_arr, SORT_DESC, $chat_data);
+        array_multisort($chat_final_arr, SORT_ASC, $chat_data);
         $this->set('trainer_id', $trainer_id); 
         $this->set('trainee_details', $trainee_details); 
         }
@@ -1773,6 +1790,158 @@ class TrainersController extends AppController
          }
         return $this->redirect('/trainers');
       }
+  }
+
+  public function getneratePDFReport($type)
+  {
+    $html  = "";
+    $html .= "<div style='width:100%; float:left;'><div style='float:left; width:50%;'><img style='width:300px;' src='".$this->request->webroot."img/belibit_tv_logo_old1.png'></div><div style='float:right; width:200px;'><h1 style='color:#666;'>Report</h1></div></div> ";
+    $html .= "<div style='width:100%; float:left;'> <div style='float:left; width:50%;'><p style='font-size:14px; color:#666; margin:0px;'>You Tag Media & Business Solutions, Inc 1950 Broad Street, Unit 209 Regina, SK S4P 1X6 Canada</p><p style='font-size:14px; color:#666;  margin:0px;'>help@virtualtrainr.com</p><p style='font-size:14px; color:#666; margin:0px;'>+403-800-4843</p><br><br></div></div>";
+    if($type == "custom"){
+      $filename = "Custom Packages Sold Report ".date('Y-m-d').".pdf";
+      $custom_packages = $this->conn->execute('SELECT *,`cp`.`id` AS `cp_id` FROM `custom_packages_history` AS `cp` INNER JOIN `trainees` AS `t` ON `cp`.`trainee_id` = `t`.`user_id` WHERE `cp`.`trainer_id` ='.$this->data['id'].' ORDER BY `cp`.`id` DESC LIMIT 10')->fetchAll('assoc');
+      $html .= " 
+            <div style='font-size:20px; width:2250px; margin:0; font-family: 'HelveticaLTStdLight';'>
+             <h4 style='color:#575757;'>Custom Packages Sold Report</h4>
+             <div style=' width:2250px; margin:0;'>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; width:120px; font-size:14px; margin:0;'>
+                 TRANS #
+               </div>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>  
+               CUSTOMER     
+               </div>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                PACKAGE
+               </div>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                PRICE
+               </div>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                SERVICE FEE
+               </div>";
+        $i = 1;
+        foreach($custom_packages as $t){ 
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    SK".$i."
+                   </div>";
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    ".$t['trainee_name']." ".$t['trainee_lname']."
+                   </div>";
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    ".$t['package_name']."
+                   </div>";
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    $".$t['price']."
+                   </div>";
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    $".$t['service_fee']."
+                   </div>";
+        $i++; } 
+        $html .= " </div></div>";
+    }
+    else if($type == "sessions"){
+      $appointments = $this->conn->execute('SELECT *,`a`.`id` AS `appo_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` ='.$this->data['id'].' ORDER BY `a`.`id` DESC LIMIT 10')->fetchAll('assoc');
+      $html .= " 
+            <div style='font-size:20px; width:2250px; margin:0; font-family: 'HelveticaLTStdLight';'>
+             <h4 style='color:#575757;'>Rate Plans Packages Sold Report</h4>
+             <div style=' width:2250px; margin:0;'>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; width:120px; font-size:14px; margin:0;'>
+                 TRANS #
+               </div>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>  
+               CUSTOMER     
+               </div>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                SESSION
+               </div>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                PRICE
+               </div>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                SERVICE FEE
+               </div>";
+        $j = 1;
+        foreach($appointments as $t){ 
+          $totalSessions = count(unserialize($t['session_data']));
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    SK".$j."
+                   </div>";
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    ".$t['trainee_name']." ".$t['trainee_lname']."
+                   </div>";
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    ".$totalSessions." Sessions
+                   </div>";
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    $".$t['final_price']."
+                   </div>";
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    $".$t['service_fee']."
+                   </div>";
+        $j++; } 
+        $html .= " </div></div>";
+     $filename = "Rate Plans Packages Sold Report ".date('Y-m-d').".pdf"; 
+    }
+    else if($type == "txn"){
+      $txn_details = $this->Trainer_txns->find()->where(['trainer_id' => $this->data['id']])->order(['id' => 'DESC'])->limit(10)->toArray();
+      $html .= " 
+            <div style='font-size:20px; width:2250px; margin:0; font-family: 'HelveticaLTStdLight';'>
+             <h4 style='color:#575757;'>Transactions History</h4>
+             <div style=' width:2250px; margin:0;'>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; width:120px; font-size:14px; margin:0;'>
+                 TRANS #
+               </div>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>  
+               TRANSACTION     
+               </div>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                TXN-ID
+               </div>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                AMOUNT
+               </div>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                STATUS
+               </div>";
+        $k = 1;
+        foreach($txn_details as $t){ 
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    SK".$k."
+                   </div>";
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    ".$t['txn_name']."
+                   </div>";
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    ".$t['txn_id']."
+                   </div>";
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    $".$t['total_amount']."
+                   </div>";
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    Completed
+                   </div>";
+        $k++; } 
+        $html .= " </div></div>";
+     $filename = "Transactions History Report ".date('Y-m-d').".pdf";  
+    }
+    $this->Custom->downloadpdf($html,$filename);
+  }
+
+  public function getnerateExcelReport($type)
+  {
+    if($type == "custom"){
+      $assocDataArray = $this->conn->execute('SELECT *,`cp`.`id` AS `cp_id` FROM `custom_packages_history` AS `cp` INNER JOIN `trainees` AS `t` ON `cp`.`trainee_id` = `t`.`user_id` WHERE `cp`.`trainer_id` ='.$this->data['id'].' ORDER BY `cp`.`id` DESC LIMIT 10')->fetchAll('assoc');
+      $filename = "Custom Packages Sold Report ".date('Y-m-d').".csv";
+    }
+    else if($type == "sessions"){
+     $filename = "Rate Plans Packages Sold Report ".date('Y-m-d').".csv"; 
+    }
+    else if($type == "txn"){
+     $filename = "Transactions History Report ".date('Y-m-d').".csv";  
+    }
+    echo "<pre>";
+    print_r($assocDataArray);die;
+    $this->Custom->exportCSV($filename, $assocDataArray);
   }
 
 

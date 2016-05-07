@@ -24,27 +24,27 @@ class UsersController extends AppController
     }
 
     public function index()
-    	{
-    		$session = $this->request->session();
-            $user_data = $session->read('Auth.User');
-            if(!empty($user_data))
-	            {
-	            	if($user_data['user_type'] == "admin")
-	                    {
-	                      return $this->redirect('/admins/home');
-	                    }
-	                if($user_data['user_type'] == "trainer")
-	                    {
-	                      return $this->redirect('/trainers');
-	                    }
-	                if($user_data['user_type'] == "trainee")
-	                    {
-	                      return $this->redirect('/trainees');
-	                    }
-	            }
-        	$all_sessions = $this->Plans_sessions->find()->where(['category_id' => 1])->order(['id' => 'ASC'])->toArray();
-        	$this->set('all_sessions',$all_sessions);
-    	}
+	{
+		$session = $this->request->session();
+        $user_data = $session->read('Auth.User');
+        if(!empty($user_data))
+            {
+            	if($user_data['user_type'] == "admin")
+                    {
+                      return $this->redirect('/admins/home');
+                    }
+                if($user_data['user_type'] == "trainer")
+                    {
+                      return $this->redirect('/trainers');
+                    }
+                if($user_data['user_type'] == "trainee")
+                    {
+                      return $this->redirect('/trainees');
+                    }
+            }
+    	$all_sessions = $this->Plans_sessions->find()->where(['category_id' => 1])->order(['id' => 'ASC'])->toArray();
+    	$this->set('all_sessions',$all_sessions);
+	}
 
 
     public function blank()
@@ -561,9 +561,25 @@ class UsersController extends AppController
 	{
 		$user_id = (int)$this->data["id"];
 		$type    = $this->data["user_type"];
+		$all_contacts = $this->conn->execute('SELECT * FROM `chating` WHERE `chat_sender_id` = '.$this->data['id'].' OR `chat_reciever_id` = '.$this->data['id'])->fetchAll('assoc');
+        if(!empty($all_contacts))
+        {
+        foreach($all_contacts as $a)
+         {
+            if($a['chat_sender_id'] == $this->data['id']){
+              $t_ids_arr[] = $a['chat_reciever_id'];
+            }else{
+              $t_ids_arr[] = $a['chat_sender_id'];
+            }
+         }
+          $t_ids = implode(",", array_values(array_unique($t_ids_arr)));
+        }
+        else{
+          $t_ids = 0;
+        }
 
 		if(trim($type) == "trainee")
-		{
+		{	
 			$onlineuser = $this->conn->execute( " SELECT
 												  users.online,
 												  users.user_type,
@@ -576,7 +592,7 @@ class UsersController extends AppController
 												  FROM trainers
 												  INNER JOIN users ON users.id = trainers.user_id
 												  INNER JOIN cities ON cities.id = trainers.trainer_city
-												  WHERE trainers.trainer_status = 1
+												  WHERE trainers.trainer_status = 1 AND trainers.user_id IN (".$t_ids.")
 											  ")->fetchAll('assoc');
 		}else
 		{
@@ -592,7 +608,7 @@ class UsersController extends AppController
 												  FROM trainees
 												  INNER JOIN users ON users.id = trainees.user_id
 												  INNER JOIN cities ON cities.id = trainees.trainee_city
-												  WHERE trainees.trainee_status = 1
+												  WHERE trainees.trainee_status = 1 AND trainees.user_id IN (".$t_ids.")
 											  ")->fetchAll('assoc');
 		}
 

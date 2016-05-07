@@ -246,7 +246,24 @@ class TraineesController extends AppController
     public function messages()
     {
        $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
-       $all_trainers = $this->conn->execute('SELECT *,t.id as trainer_id,c.name as country_name,s.name as state_name,ct.name as city_name  FROM trainers as t inner join countries as c on c.id = t.trainer_country inner join states as s on s.id = t.trainer_state inner join cities as ct on ct.id = t.trainer_city where `t`.`trainer_status` = 1 ORDER BY t.id DESC ' )->fetchAll('assoc');
+       $all_chat_trainers = $this->conn->execute('SELECT * FROM `chating` WHERE `chat_sender_id` = '.$this->data['id'].' OR `chat_reciever_id` = '.$this->data['id'])->fetchAll('assoc');
+
+       if(!empty($all_chat_trainers))
+       {
+        foreach($all_chat_trainers as $a)
+         {
+            if($a['chat_sender_id'] == $this->data['id']){
+              $trainer_ids[] = $a['chat_reciever_id'];
+            }else{
+              $trainer_ids[] = $a['chat_sender_id'];
+            }
+         }
+        $tr_ids = implode(",", array_values(array_unique($trainer_ids)));
+        $all_trainers = $this->conn->execute('SELECT *,t.id as trainer_id,c.name as country_name,s.name as state_name,ct.name as city_name  FROM trainers as t inner join countries as c on c.id = t.trainer_country inner join states as s on s.id = t.trainer_state inner join cities as ct on ct.id = t.trainer_city where `t`.`trainer_status` = 1 AND `t`.`user_id` IN ('.$tr_ids.') ORDER BY t.id DESC ' )->fetchAll('assoc');
+       }
+       else{
+          $all_trainers = array();
+       }
        if(!empty($all_trainers))
        {
        $recent_trainer_id = $all_trainers[0]['user_id'];
@@ -265,7 +282,7 @@ class TraineesController extends AppController
          {
           $chat_final_arr[] = $c['chat_id'];
          }
-        array_multisort($chat_final_arr, SORT_DESC, $chat_data);
+        array_multisort($chat_final_arr, SORT_ASC, $chat_data);
         $this->set('trainee_id', $trainee_id); 
         $this->set('trainer_details', $trainer_details);
         }
@@ -2909,6 +2926,73 @@ class TraineesController extends AppController
         $this->response->statusCode(200);
       }
   }
+
+  public function getneratePDFReport($type)
+  {
+    $html  = "";
+    $html .= "<div style='width:100%; float:left;'><div style='float:left; width:50%;'><img style='width:300px;' src='".$this->request->webroot."img/belibit_tv_logo_old1.png'></div><div style='float:right; width:200px;'><h1 style='color:#666;'>Report</h1></div></div> ";
+    $html .= "<div style='width:100%; float:left;'> <div style='float:left; width:50%;'><p style='font-size:14px; color:#666; margin:0px;'>You Tag Media & Business Solutions, Inc 1950 Broad Street, Unit 209 Regina, SK S4P 1X6 Canada</p><p style='font-size:14px; color:#666;  margin:0px;'>help@virtualtrainr.com</p><p style='font-size:14px; color:#666; margin:0px;'>+403-800-4843</p><br><br></div></div>";
+     if($type == "txn"){
+      $txns_details = $this->Trainee_txns->find()->where(['trainee_id' => $this->data['id']])->order(['id' => 'DESC'])->toArray();
+      $html .= " 
+            <div style='font-size:20px; width:2250px; margin:0; font-family: 'HelveticaLTStdLight';'>
+             <h4 style='color:#575757;'>Transactions History</h4>
+             <div style=' width:2250px; margin:0;'>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; width:120px; font-size:14px; margin:0;'>
+                 TRANS #
+               </div>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>  
+               TRANSACTION     
+               </div>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                TYPE
+               </div>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:140px; margin:0;'>
+                TXN-ID
+               </div>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                AMOUNT
+               </div>";
+        $i = 1;
+        foreach($txns_details as $t){ 
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    SK".$i."
+                   </div>";
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    ".$t['txn_name']."
+                   </div>";
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    ".$t['txn_type']."
+                   </div>";
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:140px; margin:0;'>
+                    ".$t['txn_id']."
+                   </div>";
+          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    $".$t['ammount']."
+                   </div>";
+        $i++; } 
+        $html .= " </div></div>";
+     $filename = "Transactions History Report ".date('Y-m-d').".pdf";  
+    }
+    $this->Custom->downloadpdf($html,$filename);
+  }
+
+  public function getnerateExcelReport($type)
+  {
+    //  if($type == "txn"){
+    //   $txns_details = $this->Trainee_txns->find()->where(['trainee_id' => $this->data['id']])->order(['id' => 'DESC'])->toArray();
+    //   $main_arr = (array) json_decode(json_encode(compact('txns_details')));
+    //   $final_arr = $main_arr['txns_details'];
+    //   foreach($final_arr as $f){
+        
+    //   }
+    //   echo "<pre>";
+    //   print_r();die;
+    //   $filename = "Transactions History Report ".date('Y-m-d').".csv";  
+    // }
+    // $this->Custom->exportCSV($filename,$assocDataArray);
+  }
+
 
 
 }

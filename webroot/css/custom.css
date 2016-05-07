@@ -6026,7 +6026,7 @@ label.remain_bal {
   font-size: 40px;
 }
 .list_table_icon > li {
-    background-color: gray;
+    background-color: #f14527;
     border-radius: 4px;
     display: inline-block;
     font-size: 25px;
@@ -6035,7 +6035,7 @@ label.remain_bal {
     margin-left: 10px;
     text-align: center;
     width: 44px;
-    opacity: 0.6;
+    opacity: 1.6;
 }
 .list_table_icon a {
   color: #fff;
