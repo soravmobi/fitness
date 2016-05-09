@@ -60,7 +60,7 @@
                           
                           </div>
                            
-                           <ul class="session_content scroll_content mCustomScrollbar _mCS_1">
+                           <ul class="session_content scroll_content mCustomScrollbar _mCS_1" id="upcoming_section">
                             <?php       
                             if(!empty($upcomingArr)){
                               $upcomingArrCount = count($upcomingArr['trainee_name']);
@@ -161,6 +161,43 @@
                   </div>
                </div>
             </div>
-        </section>
+</section>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+  $('.responsive-calendar').responsiveCalendar({
+  onInit:function(){
+    $(".al_heading h4").text( $(this).data('year'));
+    },
+    allRows:false,
+    startFromSunday:true,
+    events: <?php echo json_encode($app_counts); ?>
+  });
+
+  $('body').on('click','div.day > a',function(){
+        var year  = $(this).attr('data-year');
+        var month = ($(this).attr('data-month') >= 10) ? $(this).attr('data-month') : "0" + $(this).attr('data-month');
+        var day = ($(this).attr('data-day') >= 10) ? $(this).attr('data-day') : "0" + $(this).attr('data-day');
+        var date =  year + "-" + month + "-" + day;
+        $('.day').removeClass('today');
+        $(this).parent().addClass('today');
+        $.ajax({
+          url:"<?php echo $this->request->webroot; ?>trainers/getUpcomingAppointmentsByDate",
+          type:"post",
+          data:{date:date},
+          dataType:"json",
+          success: function(response){
+            var appendHTML = response.message;
+            $('#upcoming_section').html(appendHTML);
+          },
+          error:function(error){
+              console.log(error);  
+          }
+      });
+    });
+
+  });
+</script>
 
 

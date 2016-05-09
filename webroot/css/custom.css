@@ -602,10 +602,10 @@ color:#fff; border-color:#ec473f;}
 .suf_row .suf_col:nth-child(2){ float:right;}
 .suf_col1{ float:right; width:47%;}
 .suf_col1 .form-group{ width:100%;}
-.signup_modal .form-control{ border-radius:0; height:45px;}
+.signup_modal .form-control{ border-radius:0; height:38px;}
 .signup_modal .modal-dialog{ max-width:900px; width:100%; padding:6rem 0;}
 .signup_modal .form-group .btn{ border-radius:0; height:45px;}
-.signup_modal .form-group{ margin-bottom:30px;}
+.signup_modal .form-group{ margin-bottom:20px;}
 .signup_modal .modal-body{ padding:30px 15px;}
 .signup_modal button .caret {border-left: 6px solid rgba(0, 0, 0, 0);border-right: 6px solid rgba(0, 0, 0, 0);border-top: 6px solid ;}
 .user_type {border: 1px solid #dddddd;height: 45px;padding: 13px;-webkit-box-shadow:0 1px 1px rgba(0, 0, 0, 0.075) inset;
@@ -623,7 +623,17 @@ color:#fff; border-color:#ec473f;}
 .suf_col2{ width:100%;}
 .suf_col2 .lsmb_btn{ max-width:47%; margin:0 auto; width:100%;}
 .responsive-calendar .day a{ font-size:15px; border-radius:50%;}
-.responsive-calendar .day .badge {font-size: 8px;position: absolute;right: 2px;top: -2px;z-index: 1;}   
+.responsive-calendar .day .badge {
+    font-size: 12px;
+    position: absolute;
+    right: 2px;
+    top: -2px;
+    z-index: 1;
+    height: 20px;
+    line-height: 17px;
+    border-radius: 50%;
+    width: 20px;
+} 
 .responsive-calendar .controls h4 {display: inline-block;padding-top: 6px; font-weight: bold;}
 .al_heading{ text-align:center; padding:18px 0;}
 .panel_block_body2 div[class^="col-sm"]{ padding:0;}
@@ -5271,6 +5281,7 @@ a.terms-link {
 }
 .appointement_dashboard .appointement_sec .scroll_content {
   height: 350px;
+  overflow: auto;
 }
 .responsive-calendar .day a {
   width: 35px;
@@ -5515,7 +5526,7 @@ margin-right:5px;
   border-radius: 50%;
   color: #fff;
   height: 25px;
-  line-height: 0;
+  line-height: 0.4;
   margin-right: 10px;
   margin-top: -2px;
   opacity: 1;
@@ -7506,4 +7517,10 @@ span.app_sttaus {
 }
 .progree_append_img{
   height: 109px !important; 
+}
+.appointement_sec .scroll_content{
+  overflow: auto;
+}
+.noti-view-session{
+  overflow: auto;
 }

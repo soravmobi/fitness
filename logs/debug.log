@@ -216,3 +216,381 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
+2016-05-09 09:05:38 Notice: Notice (8): Undefined variable: upcomingArr in [/opt/lampp/htdocs/fitness/src/Controller/TrainersController.php, line 796]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TrainersController::getUpcomingAppointments() - APP/Controller/TrainersController.php, line 796
+App\Controller\TrainersController::appointments() - APP/Controller/TrainersController.php, line 762
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 09:08:02 Notice: Notice (8): Undefined variable: upcomingArr in [/opt/lampp/htdocs/fitness/src/Controller/TrainersController.php, line 796]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TrainersController::getUpcomingAppointments() - APP/Controller/TrainersController.php, line 796
+App\Controller\TrainersController::appointments() - APP/Controller/TrainersController.php, line 762
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 09:48:19 Notice: Notice (8): Undefined index: trainee_name in [/opt/lampp/htdocs/fitness/src/Controller/TrainersController.php, line 811]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TrainersController::getUpcomingAppointmentsByDate() - APP/Controller/TrainersController.php, line 811
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 09:48:30 Notice: Notice (8): Undefined index: trainee_name in [/opt/lampp/htdocs/fitness/src/Controller/TrainersController.php, line 811]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TrainersController::getUpcomingAppointmentsByDate() - APP/Controller/TrainersController.php, line 811
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 09:48:34 Notice: Notice (8): Undefined index: trainee_name in [/opt/lampp/htdocs/fitness/src/Controller/TrainersController.php, line 811]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TrainersController::getUpcomingAppointmentsByDate() - APP/Controller/TrainersController.php, line 811
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 09:48:38 Notice: Notice (8): Undefined index: trainee_name in [/opt/lampp/htdocs/fitness/src/Controller/TrainersController.php, line 811]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TrainersController::getUpcomingAppointmentsByDate() - APP/Controller/TrainersController.php, line 811
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 09:50:06 Notice: Notice (8): Undefined index: count in [/opt/lampp/htdocs/fitness/src/Controller/UsersController.php, line 485]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\UsersController::userchat() - APP/Controller/UsersController.php, line 485
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 09:50:06 Notice: Notice (8): Undefined index: call in [/opt/lampp/htdocs/fitness/src/Controller/UsersController.php, line 486]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\UsersController::userchat() - APP/Controller/UsersController.php, line 486
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 09:50:06 Notice: Notice (8): Undefined offset: 3 in [/opt/lampp/htdocs/fitness/src/Controller/UsersController.php, line 489]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\UsersController::userchat() - APP/Controller/UsersController.php, line 489
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 09:50:06 Notice: Notice (8): Undefined offset: 4 in [/opt/lampp/htdocs/fitness/src/Controller/UsersController.php, line 490]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\UsersController::userchat() - APP/Controller/UsersController.php, line 490
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 09:50:06 Notice: Notice (8): Undefined variable: main_id in [/opt/lampp/htdocs/fitness/src/Controller/UsersController.php, line 539]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\UsersController::userchat() - APP/Controller/UsersController.php, line 539
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 09:50:06 Notice: Notice (8): Undefined variable: main_id in [/opt/lampp/htdocs/fitness/src/Controller/UsersController.php, line 539]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\UsersController::userchat() - APP/Controller/UsersController.php, line 539
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 10:39:32 Notice: Notice (8): Undefined variable: finalArr in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 204]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::getUpcomingAppointmentsCountByDate() - APP/Controller/TraineesController.php, line 204
+App\Controller\TraineesController::appointments() - APP/Controller/TraineesController.php, line 139
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 10:42:28 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Template/Users/userchat.ctp, line 4]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Users/userchat.ctp, line 4
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 10:42:28 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Template/Users/userchat.ctp, line 100]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Users/userchat.ctp, line 100
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 10:42:28 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Template/Users/userchat.ctp, line 106]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Users/userchat.ctp, line 106
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 10:42:28 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Template/Users/userchat.ctp, line 175]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Users/userchat.ctp, line 175
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 10:42:28 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Template/Users/userchat.ctp, line 181]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Users/userchat.ctp, line 181
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 10:42:41 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Template/Users/userchat.ctp, line 4]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Users/userchat.ctp, line 4
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 10:42:41 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Template/Users/userchat.ctp, line 100]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Users/userchat.ctp, line 100
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 10:42:41 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Template/Users/userchat.ctp, line 106]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Users/userchat.ctp, line 106
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 10:42:41 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Template/Users/userchat.ctp, line 175]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Users/userchat.ctp, line 175
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 10:42:41 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Template/Users/userchat.ctp, line 181]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Users/userchat.ctp, line 181
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 10:43:41 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Template/Users/userchat.ctp, line 4]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Users/userchat.ctp, line 4
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 10:43:41 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Template/Users/userchat.ctp, line 100]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Users/userchat.ctp, line 100
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 10:43:41 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Template/Users/userchat.ctp, line 106]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Users/userchat.ctp, line 106
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 10:43:41 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Template/Users/userchat.ctp, line 175]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Users/userchat.ctp, line 175
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 10:43:41 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Template/Users/userchat.ctp, line 181]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+include - APP/Template/Users/userchat.ctp, line 181
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 10:45:37 Notice: Notice (8): Undefined variable: messages in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 92]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::index() - APP/Controller/TraineesController.php, line 92
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-09 15:09:42 Notice: Notice (8): Undefined variable: data in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 3037]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::getnerateExcelReport() - APP/Controller/TraineesController.php, line 3037
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+

@@ -1,3 +1,4 @@
+<?php error_reporting(0); ?>
 <div class="chating_wind_wrapper">
    <div class="panel panel-default">
         <div class="panel-heading top-bar">

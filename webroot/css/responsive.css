@@ -1647,6 +1647,18 @@
 .search_map_wrap {
   height: 450px;
 }
+#leftNavMenu li a {
+    padding: 7px 15px;
+    font-size: 13px;
+}
+.img_trainer {
+    height: 80px;
+    width: 80px;
+}
+.search_map_wrap {
+    height: 350px;
+}
+
 
 }	
 

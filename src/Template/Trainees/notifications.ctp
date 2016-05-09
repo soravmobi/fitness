@@ -111,7 +111,7 @@
                         <i class="fa fa-calendar"></i>
                     </div> Sessions Details
                 </div>
-                <ul class="session_content scroll_content mCustomScrollbar _mCS_1" id="so-sessions">
+                <ul class="session_content scroll_content mCustomScrollbar _mCS_1 noti-view-session" id="so-sessions">
                    
                 </ul>
             </div>
@@ -155,7 +155,7 @@
                         <i class="fa fa-calendar"></i>
                     </div> Sessions Details
                 </div>
-                <ul class="session_content scroll_content mCustomScrollbar _mCS_1" id="all-sessions-list">
+                <ul class="session_content scroll_content mCustomScrollbar _mCS_1 noti-view-session" id="all-sessions-list">
                 
                 </ul>
             </div>

@@ -185,8 +185,8 @@
 
       $('body').on('click','div.day > a',function(){
           var year  = $(this).attr('data-year');
-          var month = ($(this).attr('data-month') > 10) ? $(this).attr('data-month') : "0" + $(this).attr('data-month');
-          var day = ($(this).attr('data-day') > 10) ? $(this).attr('data-day') : "0" + $(this).attr('data-day');
+          var month = ($(this).attr('data-month') >= 10) ? $(this).attr('data-month') : "0" + $(this).attr('data-month');
+          var day = ($(this).attr('data-day') >= 10) ? $(this).attr('data-day') : "0" + $(this).attr('data-day');
           var date =  year + "-" + month + "-" + day;
           $('#selected_date').val(date);
           $('.day').removeClass('today');

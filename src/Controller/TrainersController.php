@@ -61,29 +61,9 @@ class TrainersController extends AppController
     $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
     $messages = $this->getChatMessages();
     $pending_appointments  = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 0 AND `a`.`trainee_status` = 0 AND `a`.`created_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY `a`.`id` DESC')->fetchAll('assoc');
-    $upcoming_appointments = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 1 AND `a`.`trainee_status` = 1 AND `a`.`created_date` >= CURDATE() ORDER BY `a`.`id` DESC')->fetchAll('assoc');
-     if(!empty($upcoming_appointments)){
-        foreach($upcoming_appointments as $ua){
-          $sessionArr = unserialize($ua['session_data']);
-            $app_final_arr = array();
-            foreach ($sessionArr as $u)
-             {
-              $app_final_arr[] = $u['modified_dates'];
-             }
-            array_multisort($app_final_arr, SORT_ASC, $sessionArr); 
-          for ($i=0; $i < count($sessionArr); $i++) { 
-              $upcomingArr['trainee_name'][] = $ua['trainee_name']." ".$ua['trainee_lname'];
-              $upcomingArr['user_id'][]      = $ua['user_id'];
-              $upcomingArr['trainee_image'][]= $ua['trainee_image'];
-              $upcomingArr['location_name'][]= $sessionArr[$i]['location_address'];
-              $upcomingArr['appo_date'][]    = $sessionArr[$i]['modified_dates'];
-              $upcomingArr['appo_time'][]    = $sessionArr[$i]['modified_times'];
-          }
-        }        
-     }
-     else{
-          $upcomingArr = array();
-     }    
+    $upcomingArr = $this->getUpcomingAppointments(date('Y-m-d')); 
+    $app_counts  = $this->getUpcomingAppointmentsCountByDate(); 
+    $this->set('app_counts', $app_counts);
     $this->set("from_id",$this->data['id']);
     $this->set('notes', $notes);
     $this->set('messages', $messages);
@@ -98,20 +78,20 @@ class TrainersController extends AppController
 		$data = $this->Custom->getSessionData();
 		$gallery_img = $this->Profile_images_videos->find()->where(['piv_user_id' => $data['id'], 'piv_attachement_type' => 'image'])->order(['piv_id' => 'DESC'])->toArray();
 		$profile_details = $this->Trainers->find()->where(['user_id' => $data['id']])->toArray();
-        $rate_plans = $this->Trainer_ratemaster->find()->where(['trainer_id' => $data['id']])->toArray();
-        $custom_packages = $this->Trainer_packagemaster->find()->where(['trainer_id' => $data['id']])->toArray();
+    $rate_plans = $this->Trainer_ratemaster->find()->where(['trainer_id' => $data['id']])->toArray();
+    $custom_packages = $this->Trainer_packagemaster->find()->where(['trainer_id' => $data['id']])->toArray();
 		$quotes = $this->Latest_things->find()->where(['lt_type' => 'Quotes', 'lt_user_id' => $data['id']])->order(['id' => 'DESC'])->toArray();
 		$gallery_videos = $this->Profile_images_videos->find()->where(['piv_user_id' => $data['id'], 'piv_attachement_type' => 'video'])->order(['piv_id' => 'DESC'])->toArray();
-        $certificates = $this->Documents->find()->where(['trainer_id' => $this->data['id'],'document_type' => 'Certification'])->order(['id' => 'DESC'])->toArray();
-        $resume = $this->Documents->find()->where(['trainer_id' => $this->data['id'],'document_type' => 'Resume'])->order(['id' => 'DESC'])->toArray();
-        $feedback = $this->conn->execute('SELECT * FROM `ratings` As r inner join trainees as t ON t.user_id = r.rating_trainee_id WHERE r.rating_trainer_id = '. $this->data['id'] .' ORDER BY r.id DESC')->fetchAll('assoc');
-        $this->set('feedback',$feedback);
-        $this->set('resume',$resume);
-        $this->set('certificates',$certificates);
-        $this->set('quotes',$quotes);
+    $certificates = $this->Documents->find()->where(['trainer_id' => $this->data['id'],'document_type' => 'Certification'])->order(['id' => 'DESC'])->toArray();
+    $resume = $this->Documents->find()->where(['trainer_id' => $this->data['id'],'document_type' => 'Resume'])->order(['id' => 'DESC'])->toArray();
+    $feedback = $this->conn->execute('SELECT * FROM `ratings` As r inner join trainees as t ON t.user_id = r.rating_trainee_id WHERE r.rating_trainer_id = '. $this->data['id'] .' ORDER BY r.id DESC')->fetchAll('assoc');
+    $this->set('feedback',$feedback);
+    $this->set('resume',$resume);
+    $this->set('certificates',$certificates);
+    $this->set('quotes',$quotes);
 		$this->set('rate_plans', $rate_plans);
-        $this->set('custom_packages', $custom_packages);
-        $this->set('profile_details', $profile_details);
+    $this->set('custom_packages', $custom_packages);
+    $this->set('profile_details', $profile_details);
 		$this->set('gallery_img', $gallery_img);
 		$this->set('gallery_videos', $gallery_videos);
 		$this->render('/Trainers/trainer_profile');
@@ -781,7 +761,18 @@ class TrainersController extends AppController
     {
        $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
        $pending_appointments  = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 0 AND `a`.`trainee_status` = 0 AND `a`.`created_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY `a`.`id` DESC')->fetchAll('assoc');
-       $upcoming_appointments = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 1 AND `a`.`trainee_status` = 1 AND `a`.`created_date` >= CURDATE() ORDER BY `a`.`id` DESC')->fetchAll('assoc');
+       $upcomingArr = $this->getUpcomingAppointments(date('Y-m-d'));
+       $app_counts  = $this->getUpcomingAppointmentsCountByDate(); 
+       $this->set('app_counts', $app_counts);
+       $this->set('upcomingArr', $upcomingArr);
+       $this->set('pending_appointments', $pending_appointments);
+       $this->set('profile_details', $profile_details);
+       $this->set("from_id",$this->data['id']);
+    }
+
+    public function getUpcomingAppointments($date)
+    {
+      $upcoming_appointments = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 1 AND `a`.`trainee_status` = 1 AND `a`.`created_date` >= CURDATE() ORDER BY `a`.`id` DESC')->fetchAll('assoc');
        if(!empty($upcoming_appointments)){
           foreach($upcoming_appointments as $ua){
             $sessionArr = unserialize($ua['session_data']);
@@ -792,22 +783,83 @@ class TrainersController extends AppController
              }
             array_multisort($app_final_arr, SORT_ASC, $sessionArr); 
             for ($i=0; $i < count($sessionArr); $i++) { 
+              if($sessionArr[$i]['modified_dates'] == $date){
                 $upcomingArr['trainee_name'][] = $ua['trainee_name']." ".$ua['trainee_lname'];
                 $upcomingArr['user_id'][]      = $ua['user_id'];
                 $upcomingArr['trainee_image'][]= $ua['trainee_image'];
                 $upcomingArr['location_name'][]= $sessionArr[$i]['location_address'];
                 $upcomingArr['appo_date'][]    = $sessionArr[$i]['modified_dates'];
                 $upcomingArr['appo_time'][]    = $sessionArr[$i]['modified_times'];
+              }
             }
           }  
+        if(!isset($upcomingArr)){
+          $upcomingArr = array();
+        }
        }
        else{
             $upcomingArr = array();
-       }    
-       $this->set('upcomingArr', $upcomingArr);
-       $this->set('pending_appointments', $pending_appointments);
-       $this->set('profile_details', $profile_details);
-       $this->set("from_id",$this->data['id']);
+       }
+       return $upcomingArr;
+    }
+
+    public function getUpcomingAppointmentsCountByDate()
+    {
+      $upcoming_appointments = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 1 AND `a`.`trainee_status` = 1 AND `a`.`created_date` >= CURDATE() ORDER BY `a`.`id` DESC')->fetchAll('assoc');
+       if(!empty($upcoming_appointments)){
+          foreach($upcoming_appointments as $ua){
+            $sessionArr = unserialize($ua['session_data']);
+            $app_final_arr = array();
+            foreach ($sessionArr as $u)
+             {
+              $app_final_arr[] = $u['modified_dates'];
+             }
+            array_multisort($app_final_arr, SORT_ASC, $sessionArr); 
+            for ($i=0; $i < count($sessionArr); $i++) { 
+                $upcomingArr[]    = $sessionArr[$i]['modified_dates'];
+            }
+          }  
+          $vals = array_count_values($upcomingArr);
+          foreach ($vals as $key => $v) {
+            $finalArr[$key] = array("number" => $v);
+          }
+       }
+       else{
+          $finalArr = array();
+       }
+       return $finalArr;
+    }
+
+    public function getUpcomingAppointmentsByDate()
+    {
+        if($this->request->is('ajax'))
+        {
+            $from_id = $this->data['id'];
+            $date = $this->request->data['date'];
+            $upcomingArr = $this->getUpcomingAppointments($date);
+            $appendHTML = "";
+            if(!empty($upcomingArr)){
+              $upcomingArrCount = count($upcomingArr['trainee_name']);
+              for ($i=0; $i < $upcomingArrCount; $i++) {
+                $appendHTML .= '<li><div class="main_block"><div class="circle_box_main"><div class="small_circle"></div>';
+                $appendHTML .= '<div class="icon_block big_icon gray_color"><img src="'.$this->Custom->getImageSrc('uploads/trainee_profile/'.$upcomingArr['trainee_image'][$i]).'" class="img-responsive">';
+                $appendHTML .= '</div></div><div class="text_block"><div class="appointer_name">'.$upcomingArr['trainee_name'][$i].'</br> <span>'.date('d F, Y', strtotime($upcomingArr['appo_date'][$i]));
+                $appendHTML .= ' </span></div><span>'.$upcomingArr['appo_time'][$i].'</span></div><div class="timer"><div id="defaultCountdown"></div></div></div>';
+                if(!empty($upcomingArr['location_name'][$i])){
+                  $appendHTML .= '<div class="icon_main"><div class="icon_block"><i class="fa fa-map-marker"></i></div> <div class="text_block">'.$upcomingArr['location_name'][$i].'</div></div>';
+                }else{
+                  $appendHTML .= '<div class="icon_main"><img style="width: 100%;" src="<?php echo $this->request->webroot; ?>img/favicon.ico" title="Virtual Training"></div>';
+                }
+                $appendHTML .= '<div class="chat_box"><div class="icon_block big_icon"><a href="javascript:void(0);" id="trainer-appointments" c_type="chat" t_type="trainer" from_id="'.$from_id.'" to_id="'.$upcomingArr['user_id'][$i].'" class="user_call" title="Text Chat"><i class="fa fa-weixin"></i></a>';
+                $appendHTML .= '</div><div class="bullet_box"><i class="fa fa-circle"></i><i class="fa fa-circle"></i> <i class="fa fa-circle"></i></div></div></li>';
+              }
+            }else{
+              $appendHTML .= '</br><center><h4>You have no upcoming appointments</h4></center>';
+            }
+            $this->set('message', $appendHTML);
+            $this->set('_serialize',array('message'));
+            $this->response->statusCode(200);
+        }
     }
 
     public function appointmentsAvailability()
