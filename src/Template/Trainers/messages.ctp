@@ -72,7 +72,7 @@
                     </div>
                     <hr>
                 <?php } } } ?>
-                    <!-- <div class="text_area">
+                     <div class="text_area">
                         <textarea placeholder="Write your message here" class="form-control" ></textarea>
                         <form class="soravgarg" id="send_file1">
                             <div class="file_attched_field">
@@ -80,7 +80,7 @@
                                 <input type="file" name="chat_file" class="chat_file_ZDxq8Gz1ALIaJb2" unique="ZDxq8Gz1ALIaJb2" to_id="94" uid="62">
                             </div>
                         </form>
-                    </div> -->
+                    </div> </br>
                                 </div>
                               </div>
                             </div>

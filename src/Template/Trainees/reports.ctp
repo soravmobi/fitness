@@ -12,18 +12,18 @@
                           <div class="heading_payment_main">
                             <h2> transaction history</h2>
                           </div>
-                           
+                          <form onsubmit="return checkValidation()" method="post" id="report_form" action="<?php echo $this->request->webroot; ?>trainees/reports">
                            <ul class="session_content">
                               <div class="transaction_date_wrap">
                                <div class="form-group">
-                                <input type="radio" id="f-option" checked name="selector">
+                                <input type="radio" id="f-option" checked name="selector" value="date">
                                   <label for="f-option">Transaction Date From</label>
                                   <div class="check"><div class="inside"></div></div>
                                
                                   </div>
                                    <div class="form-group">
                                         <div class='input-group date' id='datetimepicker2'>
-                                        <input type='text' class="form-control datepicker" />
+                                        <input type='text' readonly value="<?php echo $this->Flash->render('start_date') ?>" class="form-control datepicker" name="from_date" />
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
@@ -32,7 +32,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class='input-group date' id='datetimepicker2'>
-                                        <input type='text' class="form-control datepicker" />
+                                        <input type='text' readonly value="<?php echo $this->Flash->render('end_date') ?>" class="form-control datepicker" name="to_date" />
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
@@ -41,18 +41,18 @@
                                 </div>
                               <div class="transaction_date_wrap">
                                <div class="form-group">
-                               <input type="radio" id="f-option1" name="selector">
+                               <input type="radio" id="f-option1" name="selector" value="month">
                                   <label for="f-option1">Transaction By Month</label>
                                   <div class="check"><div class="inside"></div></div>
                                 
                                   </div>
                                    <div class="form-group">
                                       <div class="input-group date">
-                                        <select class="form-control">
-                                         <option value="1">Last 1 Month</option>
-                                         <option value="3">Last 3 Month</option>
-                                         <option value="6">Last 6 Month</option>
-                                         <option value="9">Last 9 Month</option>
+                                        <select class="form-control" name="by_moth">
+                                         <option value="1" <?php if($this->Flash->render('last_month') == "1") echo "selected"; ?>>Last 1 Month</option>
+                                         <option value="3" <?php if($this->Flash->render('last_month') == "3") echo "selected"; ?>>Last 3 Month</option>
+                                         <option value="6" <?php if($this->Flash->render('last_month') == "6") echo "selected"; ?>>Last 6 Month</option>
+                                         <option value="9" <?php if($this->Flash->render('last_month') == "9") echo "selected"; ?>>Last 9 Month</option>
                                         </select>
                                         <div class="icon_arrow"><i class="fa fa-caret-down"></i></div>
                                        </div>
@@ -60,10 +60,11 @@
                                     
                                 </div>
                                 <div class="statement_button">
-                                  <button type="submit" class="clear">clear</button>
-                                  <button type="submit">Get Statement</button>
+                                  <button type="reset" id="clear-btn" class="clear">clear</button>
+                                  <button type="submit" name="filter_report">Get Statement</button>
                                 </div>
                             </ul>
+                          </form>
                         </div>
                      </div>
                      <?php
@@ -146,3 +147,24 @@
     <!--Main container sec end-->
 
 </section>
+
+<script type="text/javascript">
+  function checkValidation()
+  {
+    var from_date = $('input[name="from_date"]').val();
+    var to_date   = $('input[name="to_date"]').val();
+    var by_moth   = $('select[name="by_moth"]').val();
+    var selector  = $('input[name="selector"]:checked').val();
+    if(selector == "date"){
+      if(from_date == "" || to_date == ""){
+        showAlert('error','Error','Please select dates');
+        return false;
+      }
+    }else{
+      if(by_moth == ""){
+        showAlert('error','Error','Please select months');
+        return false;
+      }
+    }
+  }
+</script>

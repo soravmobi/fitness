@@ -35,6 +35,7 @@ $('.responsive-calendar').responsiveCalendar({
 	  },
 	  allRows:false,
 	  startFromSunday:true,
+      activateNonCurrentMonths:false
   });
 //js for calling responsive calendar end
 

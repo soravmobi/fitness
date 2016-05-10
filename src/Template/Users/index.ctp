@@ -147,7 +147,7 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
                             <div class="hiw_left_body sec_body">
                             	<p>Get paid what you deserve. Train clients in our growing fitness community. </br> Sign up with Virtual TrainR today and begin your independent personal training career.  </p>
                                 
-                                <a href="<?php echo $this->request->webroot; ?>becometrainer" title="Become a Trainer" class="trainer1">Become a Trainer</a>
+                                <a href="<?php echo $this->request->webroot; ?>become-personal-trainer" title="Become a Trainer" class="trainer1">Become a Trainer</a>
                             </div>
                         </div>
                     </div>
@@ -437,10 +437,10 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
     <script type="text/javascript">
         $(document).ready(function(){
             $('body').on('click','#learn_more',function(){
-                window.location.href="<?php echo $this->request->webroot; ?>learnmore";
+                window.location.href="<?php echo $this->request->webroot; ?>learn-more";
             });
              $('body').on('click','#become_trainr',function(){
-                window.location.href="<?php echo $this->request->webroot; ?>becometrainer";
+                window.location.href="<?php echo $this->request->webroot; ?>become-personal-trainer";
             });
         });
     </script>

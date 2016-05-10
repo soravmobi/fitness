@@ -44,8 +44,8 @@
             <div class="collapse navbar-collapse mainmenu_nav navbar-right" id="top_nav">
                 <ul>                                                   
                     <li><a href="<?php echo $this->request->webroot; ?>" title="Home">Home</a></li>
-                    <li><a href="<?php echo $this->request->webroot; ?>learnmore" title="Learn More">Learn More </a></li>
-                    <li><a href="<?php echo $this->request->webroot; ?>contactus" title="Contact Us">Contact Us</a></li>
+                    <li><a href="<?php echo $this->request->webroot; ?>learn-more" title="Learn More">Learn More </a></li>
+                    <li><a href="<?php echo $this->request->webroot; ?>contact-us" title="Contact Us">Contact Us</a></li>
                 </ul>
             </div>
             </div>

@@ -158,8 +158,8 @@
                           <div class="check_box  session_content">
                            <div class="checkbox">
                             <input type="checkbox" id="test1" class="terms_cb"/>
-                            <label for="test1">I agree to the Moderate Cancellation Policy. Terms of Services, and the Trainer  Refund Policy.  I also agree to pay the total amount shown, which Includes 
-                              Service Fees. <a class="terms-link" href="<?php echo $this->request->webroot; ?>terms" target="_blank">Terms & Conditions</a></label>    
+                            <label for="test1">I agree to pay the total amount shown, which includes service fees. I authorize VirtualTrainR Inc to process the payment as displayed on this page.  By continuting I agree to all terms & policies listed on the company website.
+ <a class="terms-link" href="<?php echo $this->request->webroot; ?>terms" target="_blank">Terms & Conditions</a></label>    
                            </div>
                           </div>
                     </div>

@@ -96,8 +96,8 @@ class CustomComponent extends Component
           $loc["longitude"] = $geo['results'][0]['geometry']['location']['lng'];
         }
         else if($geo['status'] == 'ZERO_RESULTS'){
-            $ip = $_SERVER['REMOTE_ADDR']; 
-            $query = @unserialize(file_get_contents('http://ip-api.com/php/'));
+            $data  = file_get_contents(CURRENT_INFO_API.$_SERVER['REMOTE_ADDR']);
+            $query = json_decode($data,TRUE);
             $loc["latitude"]  = $query['lat'];
             $loc["longitude"] = $query['lon'];
         }
@@ -110,8 +110,8 @@ class CustomComponent extends Component
 
     public function getlatlngbyip()
     {
-        $ip = $_SERVER['REMOTE_ADDR']; // the IP address to query
-        $query = @unserialize(file_get_contents('http://ip-api.com/php/'));
+        $data  = file_get_contents(CURRENT_INFO_API.$_SERVER['REMOTE_ADDR']);
+        $query = json_decode($data,TRUE);
         return $query;
     }
 

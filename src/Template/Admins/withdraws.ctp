@@ -20,7 +20,7 @@
                           </div>
                           <div class="modal-body">
                             <?php echo $this->Custom->errorMsg(); ?>
-                            <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                            <form action="<?php echo PAYPAL_FORM_LIVE_URL; ?>" method="post">
                             <div class="col-md-12">                        
                               <div class="col-md-4">
                                   Trainer Name

@@ -187,7 +187,7 @@
                                 Attn: Terms of Service </br>
                                 You Tag Media & Business Solutions, Inc. </br>
                                 1950 Broad Street, Unit 209 Regina, SK S461X6 Canada </br>
-                                <a title="Contact us" class="btn submit_btn" href="<?php echo $this->request->webroot; ?>contactus">Contact Us</a>
+                                <a title="Contact us" class="btn submit_btn" href="<?php echo $this->request->webroot; ?>contact-us">Contact Us</a>
                             </p>
                         </div>
                         

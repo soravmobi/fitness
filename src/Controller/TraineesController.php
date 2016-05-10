@@ -1594,8 +1594,24 @@ class TraineesController extends AppController
 
     public function reports()
     {
+      if(isset($_POST['filter_report'])){
+        $form_data  = $this->request->data;
+          if($form_data['selector'] == "date"){ // by date
+            $start_date = $form_data['from_date'];
+            $end_date   = $form_data['to_date'];
+            $this->Flash->default($start_date, ['key' => 'start_date']); 
+            $this->Flash->default($end_date,   ['key' => 'end_date']); 
+          }else{ // by month
+            $last_month = $form_data['by_moth'];
+            $start_date =  date("Y-m-d",strtotime("-".$last_month." Months"));
+            $end_date   =  date("Y-m-d");
+            $this->Flash->default($last_month, ['key' => 'last_month']); 
+          }
+        $txns_details = $this->conn->execute('SELECT * FROM trainee_txns WHERE DATE(added_date) BETWEEN  "'.$start_date.'" AND "'.$end_date.'" AND trainee_id = '.$this->data['id'].' ORDER BY id DESC ')->fetchAll('assoc');
+      }else{
+        $txns_details = $this->Trainee_txns->find()->where(['trainee_id' => $this->data['id']])->order(['id' => 'DESC'])->toArray();
+      }
       $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
-      $txns_details = $this->Trainee_txns->find()->where(['trainee_id' => $this->data['id']])->order(['id' => 'DESC'])->toArray();
       $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
       $this->set('total_wallet_ammount', $total_wallet_ammount);
       $this->set('profile_details', $profile_details);

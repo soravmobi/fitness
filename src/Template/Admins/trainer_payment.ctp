@@ -53,7 +53,7 @@
                               <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="paypal">
                                       
-                                    <form id="paypalForm" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                                    <form id="paypalForm" action="<?php echo PAYPAL_FORM_LIVE_URL; ?>" method="post">
                                         <div class="form-group">
                                           <input type="text" id="final_paypal_ammount" value="<?php echo number_format((float)$trainer_acc_details[0]['remaining_ammount'], 2, '.', ''); ?>" required  class="form-control" placeholder="Ammount">
                                         </div>

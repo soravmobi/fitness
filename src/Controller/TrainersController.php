@@ -1654,11 +1654,36 @@ class TrainersController extends AppController
 
   public function reports()
     {
+      if(isset($_POST['filter_report'])){
+        $form_data  = $this->request->data;
+        if($form_data['selector'] == "date"){ 
+          $start_date = $form_data['from_date'];
+          $end_date   = $form_data['to_date'];
+          $this->Flash->default($start_date, ['key' => 'start_date']); 
+          $this->Flash->default($end_date,   ['key' => 'end_date']); 
+          $txn_details = $this->conn->execute('SELECT * FROM trainer_txns WHERE DATE(added_date) BETWEEN  "'.$start_date.'" AND "'.$end_date.'" AND trainer_id = '.$this->data['id'].' ORDER BY id DESC ')->fetchAll('assoc');
+        }
+        else if($form_data['selector'] == "week"){ 
+          $week = $form_data['week'];
+          $txn_details = $this->conn->execute('SELECT * FROM trainer_txns WHERE YEAR(added_date) = '.date('Y').' AND MONTH(added_date) = '.date('m') .' AND trainer_id = '.$this->data['id'].' ORDER BY id DESC ')->fetchAll('assoc');
+        }
+        else if($form_data['selector'] == "month"){ 
+          $month = $form_data['month'];
+          $txn_details = $this->conn->execute('SELECT * FROM trainer_txns WHERE YEAR(added_date) = '.date('Y').' AND MONTH(added_date) = '.$month .' AND trainer_id = '.$this->data['id'].' ORDER BY id DESC ')->fetchAll('assoc');
+        }
+        else if($form_data['selector'] == "annual"){ 
+          $annual   = $form_data['annual'];
+          $txn_details = $this->conn->execute('SELECT * FROM trainer_txns WHERE year(added_date) = '.$annual .' AND trainer_id = '.$this->data['id'].' ORDER BY id DESC ')->fetchAll('assoc');
+        }
+        $custom_packages = $this->conn->execute('SELECT *,`cp`.`id` AS `cp_id` FROM `custom_packages_history` AS `cp` INNER JOIN `trainees` AS `t` ON `cp`.`trainee_id` = `t`.`user_id` WHERE `cp`.`trainer_id` ='.$this->data['id'].' ORDER BY `cp`.`id` DESC LIMIT 10')->fetchAll('assoc');
+        $appointments = $this->conn->execute('SELECT *,`a`.`id` AS `appo_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` ='.$this->data['id'].' ORDER BY `a`.`id` DESC LIMIT 10')->fetchAll('assoc');
+      }else{
+        $txn_details = $this->Trainer_txns->find()->where(['trainer_id' => $this->data['id']])->order(['id' => 'DESC'])->limit(10)->toArray();
+        $custom_packages = $this->conn->execute('SELECT *,`cp`.`id` AS `cp_id` FROM `custom_packages_history` AS `cp` INNER JOIN `trainees` AS `t` ON `cp`.`trainee_id` = `t`.`user_id` WHERE `cp`.`trainer_id` ='.$this->data['id'].' ORDER BY `cp`.`id` DESC LIMIT 10')->fetchAll('assoc');
+        $appointments = $this->conn->execute('SELECT *,`a`.`id` AS `appo_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` ='.$this->data['id'].' ORDER BY `a`.`id` DESC LIMIT 10')->fetchAll('assoc');
+      }
       $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
-      $txn_details = $this->Trainer_txns->find()->where(['trainer_id' => $this->data['id']])->order(['id' => 'DESC'])->limit(10)->toArray();
       $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
-      $custom_packages = $this->conn->execute('SELECT *,`cp`.`id` AS `cp_id` FROM `custom_packages_history` AS `cp` INNER JOIN `trainees` AS `t` ON `cp`.`trainee_id` = `t`.`user_id` WHERE `cp`.`trainer_id` ='.$this->data['id'].' ORDER BY `cp`.`id` DESC LIMIT 10')->fetchAll('assoc');
-      $appointments = $this->conn->execute('SELECT *,`a`.`id` AS `appo_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` ='.$this->data['id'].' ORDER BY `a`.`id` DESC LIMIT 10')->fetchAll('assoc');
       $this->set('appointments', $appointments);
       $this->set('txn_details', $txn_details);
       $this->set('custom_packages', $custom_packages);

@@ -28,9 +28,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<?php if($controller == "Users" && $action == "index") { ?>
-		<meta name="keywords" content="personal trainer app,fitness app,online workouts,mens health workout,online workout programs,american fitness">
+		<meta name="keywords" content="personal trainer app,fitness app,online workouts,mens health workout,online workout programs,american fitness, totalgym, garage gym,totalgymdirect,weider home gym,home gyms,total gym fit,total gym,gyms">
 	<?php } else if($controller == "Fronts" && $action == "becometrainer") {?>
 		<meta name="keywords" content="how to become a certified personal trainer,become a fitness trainer,personal training certification online,mens health workout, online fitness coach,personal trainer app, fitness coach,fitness instructor certification,workout trainer,online fitness coach,workout trainer,fitness coach">
+	<?php } else if($controller == "Fronts" && $action == "learnmore") {?>
+		<meta name="keywords" content="home exercise equipment,home fitness equipment,gym machines,fitness gym,walmart exercise equipment,gym equipment,home gym equipment,work out equipment,workout equipment,exercise machines,home workout equipment,exercise machine,sears exercise equipment">
 	<?php } ?>
 	<title>
 		Virtual TrainR

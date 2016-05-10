@@ -135,8 +135,8 @@ class CustomHelper extends Helper
 
     public function getLatLngUsingIP()
     {
-        $ip = $_SERVER['REMOTE_ADDR'];
-        $query = @unserialize(file_get_contents('http://ip-api.com/php/'));
+        $data  = file_get_contents(CURRENT_INFO_API.$_SERVER['REMOTE_ADDR']);
+        $query = json_decode($data,TRUE);
         if($query && $query['status'] == 'success') {
           return $query;
         } else {
@@ -162,8 +162,8 @@ class CustomHelper extends Helper
 
     public function getlatlngbyip()
     {
-        $ip = $_SERVER['REMOTE_ADDR']; // the IP address to query
-        $query = @unserialize(file_get_contents('http://ip-api.com/php/'));
+        $data  = file_get_contents(CURRENT_INFO_API.$_SERVER['REMOTE_ADDR']);
+        $query = json_decode($data,TRUE);
         return $query;
     }
 

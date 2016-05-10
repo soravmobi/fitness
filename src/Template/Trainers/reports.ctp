@@ -11,10 +11,11 @@
           <div class="heading_payment_main">
             <h2> Search</h2>
           </div>
+          <form onsubmit="return checkValidation()" method="post" id="report_form" action="<?php echo $this->request->webroot; ?>trainers/reports">
           <div class="session_content">
             <div class="transaction_date_wrap">
               <div class="form-group">
-                <input type="radio" id="f-option" checked name="selector" class="seacrh_type" main="date">
+                <input type="radio" id="f-option" checked name="selector" class="seacrh_type" main="date" value="date">
                 <label for="f-option"> From</label>
                 <div class="check">
                   <div class="inside"></div>
@@ -22,18 +23,18 @@
               </div>
               <div class="form-group">
                 <div class='input-group date' id='datetimepicker2'>
-                  <input type='text' class="form-control datepicker" id="start_date" />
+                  <input type='text' readonly value="<?php echo $this->Flash->render('start_date') ?>" class="form-control datepicker" id="start_date" name="from_date" />
                   <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> <span class="divider">to</span> </div>
               </div>
               <div class="form-group">
                 <div class='input-group date' id='datetimepicker2'>
-                  <input type='text' id="end_date" class="form-control datepicker" />
+                  <input type='text' readonly id="end_date" value="<?php echo $this->Flash->render('end_date') ?>" class="form-control datepicker" name="to_date" />
                   <span class="input-group-addon"> <span class="glyphicon glyphicon-calendar"></span> </span> </div>
               </div>
             </div>
             <div class="transaction_date_wrap year_wrap">
               <div class="form-group">
-                <input type="radio" id="f-option1" name="selector" class="seacrh_type" main="week">
+                <input type="radio" id="f-option1" name="selector" class="seacrh_type" main="week" value="week">
                 <label for="f-option1">Weekly</label>
                 <div class="check">
                   <div class="inside"></div>
@@ -41,7 +42,7 @@
               </div>
               <div class="form-group">
                 <div class="input-group date">
-                  <select class="form-control" id="week">
+                  <select class="form-control" id="week" name="week">
                     <option value="1">1 Week</option>
                     <option value="2">2 Week</option>
                     <option value="3">3 Week</option>
@@ -51,7 +52,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <input type="radio" id="f-option3" name="selector" class="seacrh_type" main="month">
+                <input type="radio" id="f-option3" name="selector" class="seacrh_type" main="month" value="month">
                 <label for="f-option3">Monthly</label>
                 <div class="check">
                   <div class="inside"></div>
@@ -59,7 +60,7 @@
               </div>
               <div class="form-group">
                 <div class="input-group date">
-                  <select class="form-control" id="month">
+                  <select class="form-control" id="month" name="month">
                     <option value="01">January</option>
                     <option value="02">Feburary</option>
                     <option value="03">March</option>
@@ -77,7 +78,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <input type="radio" id="f-option4" name="selector" class="seacrh_type" main="annual">
+                <input type="radio" id="f-option4" name="selector" class="seacrh_type" main="annual" value="annual">
                 <label for="f-option4">Annual</label>
                 <div class="check">
                   <div class="inside"></div>
@@ -85,7 +86,7 @@
               </div>
               <div class="form-group">
                 <div class="input-group date">
-                  <select class="form-control" id="annual">
+                  <select class="form-control" id="annual" name="annual">
                     <?php for ($i= 2010; $i < 2101; $i++) { ?>
                          <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                     <?php } ?>
@@ -95,10 +96,11 @@
               </div>
             </div>
             <div class="statement_button">
-              <button type="submit" class="clear">clear</button>
-              <button type="submit">Get Statement</button>
+              <button type="reset" class="clear">clear</button>
+              <button type="submit" name="filter_report">Get Statement</button>
             </div>
           </div>
+         </form>
         </div>
       </div>
     </div>
@@ -293,4 +295,17 @@
 </div>
 </section>
 <!--Main container sec end--> 
-
+<script type="text/javascript">
+  function checkValidation()
+  {
+    var from_date = $('input[name="from_date"]').val();
+    var to_date   = $('input[name="to_date"]').val();
+    var selector  = $('input[name="selector"]:checked').val();
+    if(selector == "date"){
+      if(from_date == "" || to_date == ""){
+        showAlert('error','Error','Please select dates');
+        return false;
+      }
+    }
+  }
+</script>

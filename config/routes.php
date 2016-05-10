@@ -55,13 +55,13 @@ Router::scope('/', function ($routes) {
 
     $routes->connect('/ourTrainers', ['controller' => 'Fronts', 'action' => 'ourTrainers']);
 
-    $routes->connect('/becometrainer', ['controller' => 'Fronts', 'action' => 'becometrainer']);
+    $routes->connect('/become-personal-trainer', ['controller' => 'Fronts', 'action' => 'becometrainer']);
 
     $routes->connect('/ourTrainees', ['controller' => 'Fronts', 'action' => 'ourTrainees']);
 
     $routes->connect('/admins', ['controller' => 'Admins', 'action' => 'login']);
 
-    $routes->connect('/contactus', ['controller' => 'Fronts', 'action' => 'contactus']);
+    $routes->connect('/contact-us', ['controller' => 'Fronts', 'action' => 'contactus']);
 
     $routes->connect('/plans', ['controller' => 'Fronts', 'action' => 'plans']);
 
@@ -73,7 +73,7 @@ Router::scope('/', function ($routes) {
 
     $routes->connect('/opportunity', ['controller' => 'Fronts', 'action' => 'opportunity']);
 
-    $routes->connect('/learnmore', ['controller' => 'Fronts', 'action' => 'learnmore']);
+    $routes->connect('/learn-more', ['controller' => 'Fronts', 'action' => 'learnmore']);
 
 
     /**

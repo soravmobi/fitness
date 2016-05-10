@@ -30,6 +30,16 @@ if (!defined('DS')) {
  */
 define('ROOT', dirname(__DIR__));
 
+define('PAYPAL_LIVE_BUSINESS_ID', 'sales@virtualtrainr.com');
+
+define('PAYPAL_SANDBOX_BUSINESS_ID', 'sourav-facilitator@mobiwebtech.com');
+
+define('PAYPAL_FORM_LIVE_URL', 'https://www.paypal.com/cgi-bin/webscr');
+
+define('PAYPAL_FORM_SANDBOX_URL', 'https://www.sandbox.paypal.com/cgi-bin/webscr');
+
+define('CURRENT_INFO_API', 'http://ip-api.com/json/');
+
 
 /**
  * The actual directory name for the application directory. Normally

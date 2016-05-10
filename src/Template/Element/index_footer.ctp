@@ -13,8 +13,9 @@
                         <ul>
                             <li><a href="<?php echo $this->request->webroot; ?>" title="Home">Home</a></li>
                             <li><a href="<?php echo $this->request->webroot; ?>terms" title="Terms &amp; Conditions">Terms &amp; conditions </a></li>
-                            <li><a href="<?php echo $this->request->webroot; ?>learnmore" title="Learn More ">Learn More </a></li>
-                            <li><a href="<?php echo $this->request->webroot; ?>contactus" title="Contact Us">Contact us</a></li>
+                            <li><a href="<?php echo $this->request->webroot; ?>become-personal-trainer" title="Become Trainer">Become Trainer </a></li>
+                            <li><a href="<?php echo $this->request->webroot; ?>learn-more" title="Learn More ">Learn More </a></li>
+                            <li><a href="<?php echo $this->request->webroot; ?>contact-us" title="Contact Us">Contact us</a></li>
                         </ul>
                     </nav>
                 </div>

@@ -115,10 +115,10 @@
                                           $bussiness_id = "sourav-facilitator@mobiwebtech.com";
                                       }
                                     ?>
-                                    <form action="<?php echo $action; ?>" method="post">
+                                    <form action="<?php echo PAYPAL_FORM_LIVE_URL; ?>" method="post">
                                       <input type="hidden" name="cmd" value="_xclick" />
                                       <input type="hidden" name="charset" value="utf-8" />
-                                      <input type="hidden" name="business" value="<?php echo $bussiness_id; ?>" />
+                                      <input type="hidden" name="business" value="<?php echo PAYPAL_LIVE_BUSINESS_ID; ?>" />
                                       <input type="hidden" name="item_name" value="virtualtrainr.com" />
                                       <input type="hidden" name="item_number" value="1000<?php echo $order_count + 1; ?>" />
                                       <input type="hidden" id="paypal_ammount" name="amount" value="<?php echo base64_decode($ammount); ?>" />
