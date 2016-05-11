@@ -1,8 +1,7 @@
 <?php include "trainee_dashboard.php"; ?>
 
 <form method="post" id="booking_session_form" action="<?php echo $this->request->webroot; ?>trainees/confirmPay">
-
-<div class="top_bar_wrap">
+<div class="top_bar_wrap sec_pad">
             <div class="container">
               <div class="row">
                 <div class="col-md-12 col-sm-12">
@@ -17,51 +16,131 @@
              </div>
            </div>
          </div>
-         <?php echo $this->Flash->render('edit') ?>
-<section class="calendor_wrap session_wrap">
-            <div class="head_row">
-            </div>
+    
+    <section class="calendor_wrap">
+           
+           
             <div class="container">
-               <div class="row">
-                  <div class="col-md-6 col-sm-6">
-                    <div class="session_user">
-                      <div class="img_user"><img src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$trainer_details[0]['trainer_image']) ?>" class="img-responsive"></div> <?php if(!empty($trainer_details)) echo ucwords($trainer_details[0]['trainer_name'] ." ".$trainer_details[0]['trainer_lname']); ?>
+            <div class="session_user">
+              <div class="img_user"><img src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$trainer_details[0]['trainer_image']) ?>" class="img-responsive"></div> <?php if(!empty($trainer_details)) echo ucwords($trainer_details[0]['trainer_name'] ." ".$trainer_details[0]['trainer_lname']); ?>
+            </div>
+            <div class="top_row">
+              <div class="row">
+              <div class="col-md-3 col-sm-3 col-xs-4">
+                <div class="drop_box dropdown">
+                       <h2 aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" id="change_session" class="dropdown-toggle"><?php echo $session; ?> Sessions  <i class="fa fa-caret-down"></i></h2>
+                       <ul class="dropdown-menu">
+                         <li><a main="1" class="select_session" href="javascript:void(0);">1 session</a></li>
+                         <li><a main="3" class="select_session" href="javascript:void(0);">3 session</a></li>
+                         <li><a main="10" class="select_session" href="javascript:void(0);">10 session</a></li>
+                         <li><a main="20" class="select_session" href="javascript:void(0);">20 session</a></li>
+                       </ul>
+                       </div>
+              </div>
+               <div class="col-md-4 col-sm-3 col-xs-4">
+                 <h2><i class="fa fa-calendar"></i> select date</h2>
+              </div>
+              <div class="col-md-5 col-sm-3 col-xs-4">
+               <h2><i class="fa fa-clock-o"></i> select time</h2>
+              </div>
+            </div>
+            </div>
+             <div class="appointe_box">
+                <div class="heading_payment_main">
+                       </div>
+                   <div class="session_content">
+                    <div class="head_row"></br>
+                      <h3 class="session_heading">session #01</h3>
+                      <p>please fill in the following information and select the date and time</p>
                     </div>
-                    
+                    <div class="row">
+               <div class="col-md-3 col-sm-6">
+                 <div class="preference_wrap">
+                   <div class="pref_box pref_color1">
+                      <h2 class="session_number"> 01 <span>session</span></h2>
+                   </div>
+                   <div class="pref_box pref_color2">
+                   <div class="pop_over_main"> <span class="icon_block question_icon"><i class="fa fa-question"></i></span>
+                                  <div class="pop_over">
+                                     <h3>local</h3>
+                                     <p>meet your trainre in person at a gym or a specific location</p>
+                                     <h3>virtual</h3>
+                                     <p>train virtually through our platform using our built in 1-1 video chat.Restriction apply as not supported on all devices . we recommend desktop and gogle chrome browser. </p>
+                                      <a class="btn_okay" href="javascript:void(0);">okay</a>
+                                 </div>
+                               </div>
+                     <h4>Select Training Preference</h4>
+                     <ul>
+                      <li>
+                        <input type="radio" id="f-option" checked name="selector" value="0" class="local-option">
+                        <label for="f-option">Local</label>
+                        <div class="check"></div>
+                      </li>
+                      <li>
+                        <input type="radio" id="s-option" name="selector" value="1">
+                        <label for="s-option">Virtual</label>
+                        <div class="check"><div class="inside"></div></div>
+                      </li>
+                      </ul>
+                   </div>
+                   <?php 
+                      $own_location_details = $this->Custom->getlatlngbyip();
+                      if(!empty($own_location_details) && $own_location_details['status'] != "fail"){
+                        $lat = $own_location_details['lat'];
+                        $lon = $own_location_details['lon'];
+                        $address = $own_location_details['city']." ".$own_location_details['regionName']." ".$own_location_details['country'];
+                      }else{
+                        $lat = $profile_details[0]['lat'];
+                        $lon = $profile_details[0]['lng'];
+                        $address = $profile_details[0]['city_name']."-".$profile_details[0]['state_name'].",".$profile_details[0]['country_name'];
+                      }
+                    ?>
+                   <div class="pref_box pref3">
+                    <div class="location_section">
+                      <p>please enter the address of your local meetup</p>
+                      <div title="Select Location" main="2" class="icon_block select_location" title="Select Location"><i class="fa fa-map-marker"></i> </div>
+                      <p class="location_address" title="<?php echo $address; ?>"><?php echo $address; ?></p>
+                    </div>
+                    <div class="virtual_section" style="display:none;">
+                      <center>
+                        <p>virtual training</p>
+                        <img style="width: 15%;" src="<?php echo $this->request->webroot; ?>img/favicon.ico" title="Virtual Training">
+                      </center>
+                   </div> 
+                   </div>
+                 </div>
+               </div>
+                  <div class="col-md-4 col-sm-6">
                     <!-- Responsive calendar - START -->
                         <div class="responsive-calendar">
                         <div class="controls clearfix">
-                        <h4><span data-head-year></span> <span data-head-month></span></h4>
-                          <a class="pull-left" data-go="prev"><div class="btn prev_btn "><i class="fa fa-angle-double-left"></i>
-                          </div></a>
-                          <a class="pull-right" data-go="next"><div class="btn next_btn"><i class="fa fa-angle-double-right"></i>
-                          </div></a>
+                        <h4 ><span data-head-year></span> <span data-head-month></span></h4>
+                            <a class="pull-left" data-go="prev"><div class="btn prev_btn "><i class="fa fa-angle-double-left"></i>
+</div></a>
+                            
+                            <a class="pull-right" data-go="next"><div class="btn next_btn"><i class="fa fa-angle-double-right"></i>
+                            
+</div></a>
                         </div>
-                         <div class="calendor_content">
-                        <div class="heading_payment_main">
-                          </div>
-                          <div class="session_content">
                         <div class="day-headers">
-                          <div class="day header">Sun</div>
+                         <div class="day header">Sun</div>
                           <div class="day header">Mon</div>
                           <div class="day header">Tue</div>
                           <div class="day header">Wed</div>
                           <div class="day header">Thu</div>
                           <div class="day header">Fri</div>
                           <div class="day header">Sat</div>
+                         
                         </div>
                         <div class="days" data-group="days">
-                         </div> 
-                         </div>
+                          
                         </div>
                       </div>
       <!-- Responsive calendar - END -->
-
+                  </div>
+                  <div class="col-md-5 col-sm-12">
                     <div class="calendor_caption">
-                    <div class="heading_payment_main">
-                    </div>
-                    <div class="session_content scroll_content">
-                    <!-- <div class="session_content scroll_content mCustomScrollbar _mCS_1"> -->
+
                     <?php 
                       if(!empty($time_slots)){
                         $times = unserialize($time_slots[0]['times']);
@@ -71,134 +150,84 @@
                       for ($i=0; $i < 24; $i++) {
                     ?>
                      
-                      <div class="checkbox">
-                       <div title="<?php echo ($times[$i] == 1) ? 'Blocked' : 'Available' ?>" class="roundedOne <?php echo ($times[$i] == 1) ? 'bookedlabel' : 'unbookedlabel' ?>">
+                      <div class="checkbox <?php echo ($times[$i] == 1) ? 'blocked_section' : '' ?>">
+                       <div class="not_avail"><?php echo ($times[$i] == 1) ? 'Not Available' : 'Available' ?> </div>
+                       <div class="roundedOne <?php echo ($times[$i] == 1) ? 'bookedlabel' : 'unbookedlabel' ?>">
                           <input <?php if($times[$i] == 1) echo "checked"; ?> <?php if($times[$i] == 1) echo "disabled"; ?> type="checkbox" class="time <?php echo ($times[$i] == 1) ? 'booked' : 'unbooked' ?>" value="0" time1="<?php echo $this->Custom->getTimeSlots($i); ?>" time2="<?php echo $this->Custom->getTimeSlots($i+1); ?>" main="<?php echo $i; ?>" id="roundedOne_<?php echo $i; ?>" />
                           <label for="roundedOne_<?php echo $i; ?>"></label>
                           <input type="hidden" name="times[]" class="hidden_time" id="time_<?php echo $i; ?>" value="<?php echo $times[$i]; ?>"/>
                         </div>
-                        <div class="chekbox_txt"> <span><?php echo $this->Custom->getTimeSlots($i); ?></span><?php echo $this->Custom->getTimeSlots($i+1); ?></div>
+                        <div class="chekbox_txt"> 
+                        <?php if($times[$i] == 1) { ?>
+                          <span class="blocked_time"><?php echo $this->Custom->getTimeSlots($i); ?></span><?php echo $this->Custom->getTimeSlots($i+1); ?>
+                        <?php } else{ ?>
+                          <span><?php echo $this->Custom->getTimeSlots($i); ?></span><?php echo $this->Custom->getTimeSlots($i+1); ?>
+                        <?php } ?>
+                        </div>
                     </div>
                     <?php } ?>
+                      
+                      
                     </div>
-                    
-
-                    </div>
-
-                       <div class="price_box">
-                       <div class="heading_payment_main">
-                         
-                          <h5>price</h5>
-                       </div>
-                          <div class="price_box_content session_content">
-                          <?php
-                            $finalSessionPrice1 = $this->Custom->getSessionRate($session,$rates_plan);
-                            $finalSessionPrice = round($finalSessionPrice1 * $session,2);
-                            if(!empty($service_fee_details)){
-                              $service_fee = $service_fee_details[0]['txn_fee'];
-                            }else{
-                              $service_fee = '0';
-                            }
-                            $finalServiceFee = round(($finalSessionPrice * $service_fee) / 100,2);
-                          ?>
-                             <ul>
-                              <input type="hidden" name="sessions_price" value="<?php echo $finalSessionPrice; ?>">
-                              <input type="hidden" name="service_fee" value="<?php echo $finalServiceFee; ?>">
-                              <input type="hidden" name="total_price" value="<?php echo $finalSessionPrice + $finalServiceFee; ?>">
-                               <li>
-                                  $<?php echo $finalSessionPrice; ?> x <?php echo $session; ?>  Sessions <span>$<?php echo $finalSessionPrice; ?></span></li>
-                               <li>
-                                  Service Fee <div class="button_in"> <div class="pop_over_main"> <span class="icon_block question_icon"><i class="fa fa-question"></i></span>
-                                  <div class="pop_over">
-                                     <h4>service fee</h4>
-                                     <p>service fees let us provide 24 hours support that you love</p>
-                                      <a href="javascript:void(0);" class="btn_okay">okay</a>
-                                 </div>
-                               </div>
-                              </div>
-                              <span>$<?php echo $finalServiceFee; ?></span></li>
-                               <li>total<span class="red_color">$<?php echo $finalSessionPrice + $finalServiceFee; ?></span></li>
-                               </ul>
-                          </div>
-                       </div>
-                  </div>
-                  <div class="col-md-6 col-sm-6">
-                    <div class="right_session_bar">
-                     <div class="drop_box dropdown">
-                       <h2 class="dropdown-toggle" id="change_session" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $session; ?> Sessions <i class="fa fa-caret-down"></i></h2>
-                       <ul class="dropdown-menu">
-                         <li><a href="javascript:void(0);" class="select_session" main="1">1 session</a></li>
-                         <li><a href="javascript:void(0);" class="select_session" main="3">3 session</a></li>
-                         <li><a href="javascript:void(0);" class="select_session" main="10">10 session</a></li>
-                         <li><a href="javascript:void(0);" class="select_session" main="20">20 session</a></li>
-                       </ul>
-                       </div>
-                    <div class="right_session_content mCustomScrollbar _mCS_1" id="session_section">
-                    <?php for ($i=1; $i <= $session; $i++) { ?>
-                       <div class="session_block ">
-                          <div class="session_block_head heading_payment_main">
-                           Session <?php echo $i; ?>  <!-- <span class="notes-label" main="<?php echo $i; ?>" title="Click here to save notes"> Notes </span> -->
-                            <div class="pop_over_main" id="notes_window_<?php echo $i; ?>" style="display:none;">
-                                  <div class="pop_over">
-                                    <textarea class="form-control" placeholder="message" name="booking[<?php echo $i; ?>][notes]"></textarea>
-                                    <a href="javascript:void(0);" class="btn_okay notes-cancel-btn">cancel</a><a href="javascript:void(0);" class="btn_okay notes-save-btn">save</a>
-                                 </div>
-                            </div>
-                          </div>
-                          <div class="session_block_content session_content">
-                            <ul>
-                              <?php $timestamp = strtotime(date('Y-m-d')) + 60*60; ?>
-                              <li id="modify_date_time_<?php echo $i; ?>">
-                                <div class="icon_block modify_date_time" id="modify_btn_<?php echo $i; ?>" main="<?php echo $i; ?>" title="Modify Date & Time"><i class="fa fa-pencil"></i> </div>
-                                <div class="modify_date_time1 save_cancel_section_<?php echo $i; ?>" style="display:none;">
-                                  <div class="icon_block cancel-modify-btn" id="cancel_modify_btn_<?php echo $i; ?>" main="<?php echo $i; ?>" title="Cancel"><i class="fa fa-times"></i> </div>
-                                  <div class="icon_block save-modify-btn" id="save_modify_btn_<?php echo $i; ?>" main="<?php echo $i; ?>" title="Save"><i class="fa fa-check"></i> </div>
-                                </div>
-                                <div class="text_block" id="date_time_block_<?php echo $i; ?>"><?php echo date('F', strtotime(date('Y-m-d'))); ?> <?php echo date('d', strtotime(date('Y-m-d'))); ?>th <?php echo date('Y', strtotime(date('Y-m-d'))); ?> </br> <b> <?php echo date('h:i A', strtotime(date('Y-m-d'))); ?></b> - <span><?php echo date('h:i A', $timestamp); ?></span></div>
-                              </li>
-                              <?php 
-                                $own_location_details = $this->Custom->getlatlngbyip();
-                                if(!empty($own_location_details)){
-                                  $lat = $own_location_details['lat'];
-                                  $lon = $own_location_details['lon'];
-                                  $address = $own_location_details['city']." ".$own_location_details['regionName']." ".$own_location_details['country'];
-                                }else{
-                                  $lat = $profile_details[0]['lat'];
-                                  $lon = $profile_details[0]['lng'];
-                                  $address = $profile_details[0]['city_name']."-".$profile_details[0]['state_name'].",".$profile_details[0]['country_name'];
-                                }
-                              ?>
-                              <li id="map_icon_<?php echo $i; ?>">
-                                <div class="icon_block select_location" main="<?php echo $i; ?>" title="Select Location"><i class="fa fa-map-marker"></i> </div>
-                                <div class="text_wrap">
-                                <div class="text_block" id="location_text_<?php echo $i; ?>" title="<?php echo $address; ?>"><?php echo $address; ?></div>
-                              </div>
-                              </li>
-                            </ul>
-                            <div class="button_box clearfix">
-                              <div class="button_in">Select Training Preference <div class="pop_over_main"> <span class="icon_block question_icon"><i class="fa fa-question"></i></span>
-                               </div>
-                             </div>
-                              <ul>
-                                <li class="active"  id="local_btn_<?php echo $i; ?>"><a href="javascript:void(0);" class="preference-btn" main="<?php echo $i; ?>" type="0">local</a></li>
-                                <li  id="virtual_btn_<?php echo $i; ?>"><a href="javascript:void(0);" class="preference-btn" main="<?php echo $i; ?>" type="1">virtual</a></li>
-                              </ul>
-                              <input type="hidden" name="booking[<?php echo $i; ?>][preference]" id="prefernce_val_<?php echo $i; ?>" value="0">
-                              <input type="hidden" name="booking[<?php echo $i; ?>][status]" id="status_val_<?php echo $i; ?>" value="0">
-                              <input type="hidden" name="booking[<?php echo $i; ?>][locations]" id="location_val_<?php echo $i; ?>" value="<?php echo $lat; ?>,<?php echo $lon; ?>">
-                              <input type="hidden" name="booking[<?php echo $i; ?>][location_address]" id="location_address_<?php echo $i; ?>" value="<?php echo $address; ?>">
-                              <input type="hidden" name="booking[<?php echo $i; ?>][modified_dates]" id="date_val_<?php echo $i; ?>" value="<?php echo date('Y-m-d'); ?>">
-                              <input type="hidden" name="booking[<?php echo $i; ?>][modified_times]" id="time_val_<?php echo $i; ?>" value="<?php echo date('h:i A', strtotime(date('Y-m-d'))); ?>-<?php echo date('h:i A', $timestamp); ?>">
-                            </div>
-                          </div>
-                       </div>
-                    <?php } ?>
-                    </div>
-
-                    </div>
-                    
                   </div>
                   <div class="col-md-12 col-sm-12">
+                   <div class="request_btn save_nxt">
+                      <button type="button" id="back-btn" main="1" style="display:none;">back</button>
+                      <button type="button" id="save-next-btn" main="1">Save & Next</button>
+                    </div>
+                  </div>
+               </div>
+                  </div>
+              </div>
+               <div class="row">
+                 <div class="col-md-12 col-sm-12">
+                   <div class="price_box">
+                     <div class="heading_payment_main">
+                          <h5>price</h5>
+                       </div>
+                       <?php
+                          $finalSessionPrice1 = $this->Custom->getSessionRate($session,$rates_plan);
+                          $finalSessionPrice = round($finalSessionPrice1 * $session,2);
+                          if(!empty($service_fee_details)){
+                            $service_fee = $service_fee_details[0]['txn_fee'];
+                          }else{
+                            $service_fee = '0';
+                          }
+                          $finalServiceFee = round(($finalSessionPrice * $service_fee) / 100,2);
+                        ?>
+                        <input type="hidden" name="sessions_price" value="<?php echo $finalSessionPrice; ?>">
+                        <input type="hidden" name="service_fee" value="<?php echo $finalServiceFee; ?>">
+                        <input type="hidden" name="total_price" value="<?php echo $finalSessionPrice + $finalServiceFee; ?>">
+
+                        <?php for ($i=1; $i <= $session; $i++) { ?>
+                          <input type="hidden" name="booking[<?php echo $i; ?>][preference]" id="prefernce_val_<?php echo $i; ?>" value="0">
+                          <input type="hidden" name="booking[<?php echo $i; ?>][status]" id="status_val_<?php echo $i; ?>" value="0">
+                          <input type="hidden" name="booking[<?php echo $i; ?>][locations]" id="location_val_<?php echo $i; ?>" value="">
+                          <input type="hidden" name="booking[<?php echo $i; ?>][location_address]" id="location_address_<?php echo $i; ?>" value="">
+                          <input type="hidden" name="booking[<?php echo $i; ?>][modified_dates]" id="date_val_<?php echo $i; ?>" value="">
+                          <input type="hidden" name="booking[<?php echo $i; ?>][modified_times]" id="time_val_<?php echo $i; ?>" value="">
+                        <?php } ?>
+                        <div class="price_box_content session_content mCustomScrollbar_mCS_4">
+                          <ul>
+                            <li>
+                              $<?php echo $finalSessionPrice1; ?> x <?php echo $session; ?>  Sessions <span>$<?php echo $finalSessionPrice; ?></span></li>
+                            <li>
+                            Service Fee <div class="button_in"> <div class="pop_over_main"> <span class="icon_block question_icon"><i class="fa fa-question"></i></span>
+                            <div class="pop_over">
+                                 <h4>service fee</h4>
+                                 <p>service fees let us provide 24 hours support that you love</p>
+                                  <a href="javascript:void(0);" class="btn_okay">okay</a>
+                            </div>
+                            </div>
+                            </div>
+                            <span>$<?php echo $finalServiceFee; ?></span></li>
+                            <li>total<span class="red_color">$<?php echo $finalSessionPrice + $finalServiceFee; ?></span></li>
+                          </ul>
+                       </div>
+                   </div>
+                    
+                 </div>
+                 <div class="col-md-12 col-sm-12">
                     <div class="request_btn">
                       <button>Request To Book</button>
                     </div>
@@ -210,7 +239,7 @@
         <input type="hidden" id="tid" name="tid" value="<?php echo $trainer_id; ?>">
         <input type="hidden" id="totalsession" name="totalsession" value="<?php echo $session; ?>">
         <input type="hidden" id="trainer_id" name="trainer_id" value="<?php echo $trainer_details[0]['user_id']; ?>">
-        </form>
+      </form>
 
   <!-- Choose Location Modal Start -->
 
@@ -237,7 +266,7 @@
 
   <!-- Choose Location Modal End -->
 
-  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
   <script>
   function map_init(var_lati,var_long,var_markerTitle,var_contentString){
     
@@ -312,9 +341,16 @@
   }
  
   $(document).on("click", ".select_location", function () {
-    location_no = $(this).attr('main');
-    lat_long_val = $('#location_val_'+location_no).val();
-    address_text = $('#location_text_'+location_no).attr('title');
+    var no  = $('#save-next-btn').attr('main');
+    var latlng = $('#location_val_'+no).val();
+    var loc_addr = $('#location_address_'+no).val();
+    if(latlng != "" && loc_addr != ""){
+      lat_long_val = latlng;
+      address_text = loc_addr;
+    }else{
+      lat_long_val = '<?php echo $lat; ?>'+","+'<?php echo $lon; ?>';
+      address_text = '<?php echo $address; ?>';
+    }
     var lat_long_arr = lat_long_val.split(",");
     map_init(lat_long_arr[0],lat_long_arr[1],address_text,
             '<div id="mapInfo">'+
@@ -327,39 +363,42 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
-    $('body').on('click','.preference-btn',function(){
-      $(this).parent().addClass('active');
-      var type = $(this).attr('type');
-      var main = $(this).attr('main');
-      if(type == 1){
-        $('#map_icon_'+main).hide();
-        $('#local_btn_'+main).removeClass('active');
-        $('#prefernce_val_'+main).val('1');  
-        $('#location_address_'+main).val('');
-        $('#location_val_'+main).val('');
-      }else{
-        $('#map_icon_'+main).show();
-        $('#virtual_btn_'+main).removeClass('active');
-        $('#prefernce_val_'+main).val('0');
-      }
-    });
-  });
-</script>
 
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('body').on('click','#save-location-btn',function(){
-      $('#location_val_'+location_no).val(place.geometry.location.lat() + "," + place.geometry.location.lng());
-      $('#location_text_'+location_no).text(marker_title);
-      $('#location_text_'+location_no).attr('title',marker_title);
-      $('#location_model').modal('hide');
-      $('#location_address_'+location_no).val(marker_title);
+    $('body').on('click','.select_session',function(){
+      var session = $(this).attr('main');
+      var rid     = $('#rid').val();
+      var tid     = $('#tid').val();
+      window.location.href= "<?php echo $this->request->webroot; ?>trainees/bookingSession?session="+session+"&rid="+rid+"&tid="+tid;
     });
-  });
-</script>
 
-<script type="text/javascript">
-  $(document).ready(function(){
+    $('body').on('click','div.day > a',function(){
+        var year  = $(this).attr('data-year');
+        var month = ($(this).attr('data-month') >= 10) ? $(this).attr('data-month') : "0" + $(this).attr('data-month');
+        var day = ($(this).attr('data-day') >= 10) ? $(this).attr('data-day') : "0" + $(this).attr('data-day');
+        var date =  year + "-" + month + "-" + day;
+        $('#selected_date').val(date);   
+        var trainer_id = $('#trainer_id').val();
+        $('.day').removeClass('today');
+        $(this).parent().addClass('today');
+        $.ajax({
+          url:"<?php echo $this->request->webroot; ?>trainees/getTimeSlotsDateWise",
+          type:"post",
+          data:{date:date,trainer_id:trainer_id},
+          dataType:"json",
+          beforeSend: function() {
+              $('.loading').show();
+              $('.loading_icon').show();
+          },     
+          success: function(response){
+              $('.calendor_caption').html(response.message);
+              $('.loading').hide();
+              $('.loading_icon').hide();
+          },
+          error:function(error){
+              console.log(error);  
+          }
+        });
+    });
 
     $('body').on('change','.time',function(){
         var i = $(this).attr('main');
@@ -376,96 +415,81 @@
         }
     });
 
-    $('body').on('click','div.day > a',function(){
-          var year  = $(this).attr('data-year');
-          var month = ($(this).attr('data-month') >= 10) ? $(this).attr('data-month') : "0" + $(this).attr('data-month');
-          var day = ($(this).attr('data-day') >= 10) ? $(this).attr('data-day') : "0" + $(this).attr('data-day');
-          var date =  year + "-" + month + "-" + day;
-          $('#selected_date').val(date);   
-          var trainer_id = $('#trainer_id').val();
-          $('.day').removeClass('today');
-          $(this).parent().addClass('today');
-          $.ajax({
-            url:"<?php echo $this->request->webroot; ?>trainees/getTimeSlotsDateWise",
-            type:"post",
-            data:{date:date,trainer_id:trainer_id},
-            dataType:"json",
-            success: function(response){
-                $('.calendor_caption').html(response.message);
-            },
-            error:function(error){
-                console.log(error);  
-            }
-          });
+    $('body').on('change','input[name="selector"]',function(){
+      var no  = $('#save-next-btn').attr('main');
+      var preference_val = $('input[name="selector"]:checked').val();
+      $('#prefernce_val_'+no).val(preference_val);
+      if(preference_val == 0){
+        $('.virtual_section').hide();
+        $('.location_section').show();
+      }else{
+        $('.virtual_section').show();
+        $('.location_section').hide();
+      }
     });
 
-    $('body').on('click','.modify_date_time',function(){
-        var no = $(this).attr('main');
-        $(this).hide();
-        $('.save_cancel_section_'+no).show();
+    $('body').on('click','#save-location-btn',function(){
+      var no  = $('#save-next-btn').attr('main');
+      $('#location_val_'+no).val(place.geometry.location.lat() + "," + place.geometry.location.lng());
+      $('#location_address_'+no).val(marker_title);
+      $('.location_address').text(marker_title);
+      $('.location_address').attr('title',marker_title);
+      $('#location_model').modal('hide');
     });
 
-    $('body').on('click','.cancel-modify-btn',function(){
-        var no1 = $(this).attr('main');
-        $('.save_cancel_section_'+no1).hide();
-        $('#modify_btn_'+no1).show();
-    });
-
-    $('body').on('click','.save-modify-btn',function(){
-        var no2      = $(this).attr('main');
-        var year     = $('div.today > a').attr('data-year');
-        var month    = ($('div.today > a').attr('data-month') >= 10) ? $('div.today > a').attr('data-month') : "0" + $('div.today > a').attr('data-month');
-        var day      = ($('div.today > a').attr('data-day') >= 10) ? $('div.today > a').attr('data-day') : "0" + $('div.today > a').attr('data-day');
-        var date     =  year + "-" + month + "-" + day;
-        var time_val = $('.unbooked:checked').attr('main');
-        var time1    = $('.unbooked:checked').attr('time1');
-        var time2    = $('.unbooked:checked').attr('time2');
-        if(time_val == undefined){
-          alert('Please select time');
-          return false;
+    $('body').on('click','#save-next-btn',function(){
+      var no    = parseInt($(this).attr('main'));
+      var year  = $('div.today > a').attr('data-year');
+      var month = ($('div.today > a').attr('data-month') >= 10) ? $('div.today > a').attr('data-month') : "0" + $('div.today > a').attr('data-month');
+      var day   = ($('div.today > a').attr('data-day') >= 10) ? $('div.today > a').attr('data-day') : "0" + $('div.today > a').attr('data-day');
+      var date  =  year + "-" + month + "-" + day;
+      $('#date_val_'+no).val(date);
+      var time  = $('.unbooked:checked').attr('time1')+"-"+$('.unbooked:checked').attr('time2');
+      $('#time_val_'+no).val(time);
+      var datetime = date + time;
+      var preference_val = $('#prefernce_val_'+no).val();
+      var errorMsgs = "";
+      if($('#prefernce_val_'+no).val() == ""){
+          errorMsgs += 'Please select training preference ..';
+      }
+      if(preference_val == 0){
+        if($('#location_val_'+no).val() == ""){
+            errorMsgs += 'Please select location .. ';
         }
-        var converted_date = convertDate(date);
-        appendHTML = "";
-        appendHTML += converted_date + "</br>" + time1 + "- <span>" + time2 + "</span>";
-        $('#date_time_block_'+no2).html(appendHTML);
-        $('.unbooked').prop('checked',false).val('0');
-        $('#time_'+no2).val('0');
-        $('#date_val_'+no2).val(date);
-        $('#time_val_'+no2).val(time1 + "-" + time2);
-        $('.save_cancel_section_'+no2).hide();
-        $('#modify_btn_'+no2).show();
+      }
+      if($('#date_val_'+no).val() == ""){
+          errorMsgs += 'Please select training date ..';
+      }
+      if($('#time_val_'+no).val() == "undefined-undefined"){
+          errorMsgs += 'Please select training time ..';
+      }
+      if(errorMsgs != ""){
+        showAlert('error','Error - Session '+no,errorMsgs);
+        return false;
+      }else{
+        no = parseInt(no + 1);
+        $('#save-next-btn').attr('main',no);
+        var nth_session = (no >= 10) ? no : "0" + no;
+        $('.loading').show();
+        $('.loading_icon').show();
+        $('#back-btn').show(); 
+        $('.local-option').prop('checked',true);
+        $('.unbooked').prop('checked',false);
+        $('.virtual_section').hide();
+        $('.location_section').show();
+        $('.location_address').text('<?php echo $address; ?>');
+        $('.location_address').attr('title','<?php echo $address; ?>');
+        $('.session_number').html(nth_session + "<span>Session</span>");
+        $('.session_heading').text('session #'+nth_session);
+        $('.loading').hide();
+        $('.loading_icon').hide();
+      }
+      
     });
 
-    $('body').on('click','.notes-label',function(){
-      var count = $(this).attr('main');
-      $('.pop_over_main').css('display','none');
-      $('#notes_window_'+count).css('display','block');
-    });
-
-    $('body').on('click','.notes-cancel-btn, .notes-save-btn',function(){
-      $('.pop_over_main').css('display','none');
-    });
-
-    $('body').on('click','.select_session',function(){
-      var session = $(this).attr('main');
-      var rid     = $('#rid').val();
-      var tid     = $('#tid').val();
-      window.location.href= "<?php echo $this->request->webroot; ?>trainees/bookingSession?session="+session+"&rid="+rid+"&tid="+tid;
+    $('body').on('click','#back-btn',function(){
+      var back_index = (parseInt($('#save-next-btn').attr('main')) - 1);
     });
 
   });
-
-  function convertDate(val) 
-    {
-      var t = val.split(/[- :]/);
-      var month = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-      var mo = parseInt(t[1]);
-      var newmonth  = month[mo-1];
-      var s = newmonth+' '+t[2]+'th '+t[0];
-      return s;
-    }
-
 </script>
-
-
-

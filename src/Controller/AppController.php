@@ -100,8 +100,8 @@ class AppController extends Controller
         $this->orders = TableRegistry::get('Orders');  
         $this->trainer_txns = TableRegistry::get('Trainer_txns');
         $this->tokbox = TableRegistry::get('Tokbox');
-        $this->tokbox = TableRegistry::get('Notes');
-        $this->notes = TableRegistry::get('Video_calls');
+        $this->video_calls = TableRegistry::get('Video_calls');
+        $this->notes = TableRegistry::get('Notes');
         $this->custom_packages_history = TableRegistry::get('Custom_packages_history');
         $this->conn = ConnectionManager::get('default');  
         //aded on 11 april

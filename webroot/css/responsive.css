@@ -55,6 +55,27 @@
 	.notification_wrap li {
      width: 46%;
 }
+.appointe_box .calendor_caption {
+  padding-left: 5px;
+}
+.pref_box.pref_color2 > h4 {
+  font-size: 16px;
+}
+.pref_box {
+  padding: 27px 0;
+}
+.pref_color2 {
+  padding-bottom: 60px;
+}
+.preference_wrap ul li label {
+  font-size: 15px;
+}
+.appointe_box .responsive-calendar .day {
+  width: 14.286%;
+}
+.appointe_box .responsive-calendar .day a {
+  margin: 20.5px 5px;
+}
 .calendor_caption_box .session_content {
   padding: 20px 15px 20px 20px;
 }
@@ -276,6 +297,15 @@
     .calendor_switches_head a {
   font-size: 12px;
   padding: 8px;
+}
+.pref_box.pref_color2 > ul {
+  padding-left: 50px;
+}
+.appointe_box .responsive-calendar .day {
+  width: 14.286%;
+}
+.pref_color2 {
+  padding-bottom: 59px;
 }
 .calendor_switches_wrap:nth-child(2) {
   margin-left: 0px;
@@ -823,6 +853,9 @@
 	.ht_left {
      width: 39px;
      padding-top: 10px;
+}
+.pref_color2 {
+  padding-bottom: 52px;
 }
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
   min-width: 172px;
@@ -1658,8 +1691,46 @@
 .search_map_wrap {
     height: 350px;
 }
+.appointe_box .responsive-calendar .day a {
+  margin: 6px 5px;
+}
+.pref_box .pop_over {
+  left: -115px;
+  margin: 0 auto;
+  right: 26px;
+  top: 31px;
+  width: 275px;
 
-
+}
+.pref_box.pref_color2 > ul {
+  margin: 0 auto;
+  width: 250px;
+}
+.top_row h2 {
+  font-size: 13px;
+}
+.drop_box .dropdown-menu {
+  left: 0;
+}
+.head_row > h3 {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+.head_row > p {
+  font-size: 13px;
+}
+.pop_over::after, .pop_over::before {
+  border: medium solid transparent;
+  content: " ";
+  height: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 50%;
+  top: -12px;
+  transform: rotate(90deg);
+  width: 0;
+}
 }	
 
 @media (min-width:480px) and (max-width:767px){
@@ -1685,11 +1756,15 @@
   width: 48%;
 }
 
+
 	
 }
 @media (max-width:480px){
 	.slide_text li:nth-child(3n) a {
   width: 157px;
+}
+.appointe_box .calendor_caption .checkbox {
+  width: 49%;
 }
 #appointment_modal1 .modal-dialog{width:100%;}
 .calendor_switches_head .cs_head_left:first-child {

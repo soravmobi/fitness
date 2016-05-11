@@ -161,7 +161,7 @@ class TrainersController extends AppController
             $email_message .= "<html>";
             $email_message .= "<body>";
             $email_message .= "<center>";
-            $email_message .= "<img style='width:200px' src='https://" . env('SERVER_NAME')."/img/belibit_tv_logo.png' class='img-responsive'></br></br></center>";
+            $email_message .= "<img style='width:200px' src='https://" . env('SERVER_NAME')."/img/belibit_tv_logo_old1.png' class='img-responsive'></br></br></center>";
             $email_message .= "<strong>Hello ".$_POST['trainer_name']." ".$_POST['trainer_lname'].",</strong></br></br>";
             $email_message .= "<p>Welcome to Virtual TrainR! We thank you for your interest in becoming a part of our community. Your application has been received and will be reviewed shortly. Our recruitment team will contact you within 48 hours to get you started. </p>" ;
             $email_message .= "<p>For questions and support please email <a href='mailto:support@virtualtrainr.com'>support@virtualtrainr.com</a> and a member of our support team will be in touch with you right away.We appreciate your patience.  </p>" ;
@@ -181,7 +181,7 @@ class TrainersController extends AppController
             $admin_email_message .= "<html>";
             $admin_email_message .= "<body>";
             $admin_email_message .= "<center>";
-            $admin_email_message .= "<img style='width:200px' src='https://" . env('SERVER_NAME')."/img/belibit_tv_logo.png' class='img-responsive'></br></br></center>";
+            $admin_email_message .= "<img style='width:200px' src='https://" . env('SERVER_NAME')."/img/belibit_tv_logo_old1.png' class='img-responsive'></br></br></center>";
             $admin_email_message .= "<strong>Hello,</strong></br></br>";
             $admin_email_message .= "<p> New Trainer has registered on Virtual TrainR</p>" ;
             $admin_email_message .= "<p>Link: <a href='https://" . env('SERVER_NAME')."/trainerProfile/".base64_encode($user_id)."' target='_blank'> Click here  </a> </p>";

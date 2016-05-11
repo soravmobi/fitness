@@ -742,11 +742,17 @@ class TraineesController extends AppController
     $email_message .= "<html>";
     $email_message .= "<body>";
     $email_message .= "<center>";
-    $email_message .= "<img style='width:200px' src='https://" . env('SERVER_NAME')."/img/belibit_tv_logo.png' class='img-responsive'></br></br></center>";
+    $email_message .= "<img style='width:200px' src='https://" . env('SERVER_NAME')."/img/belibit_tv_logo_old1.png' class='img-responsive'></br></br></center>";
     $email_message .= "<strong>Hello ".$_POST['trainee_name']." ".$_POST['trainee_lname'].",</strong></br></br>";
-    $email_message .= "<p>Welcome to Virtual TrainR! Once you are ready to begin your journey, please check out <a href='https://" . env('SERVER_NAME')."/ourTrainers' target='_blank'> Certified Trainers  </a> section to find a fitness specialist who suits your interests. </p>" ;
-    $email_message .= "<p>For questions and support please email <a href='mailto:support@virtualtrainr.com'>support@virtualtrainr.com</a>. A member of our support team will respond to your inquiries within 48 hours. Thank you for becoming a part of our fitness community!  </p>" ;
-    $email_message .= "<p>Welcome to the Future of Fitness. </p>";
+    $email_message .= "<p>Welcome to VirtualTrainR! Thank you for registering; it is now being processed. We are currently in beta feedback mode. This means that we are engineering your space with intuitive functionality as we speak. You'll be on your way very soon and we admire your patience. We will be updating you, as the platform gets closer to launch.</p>" ;
+    $email_message .= "<p>Here is some info about our platform:</p>";
+    $email_message .= "<p>Our platform will be beautifully designed to naturally give you the tools to discover and hire unique local trainers, view your metrics, track your growth, and communicate with your trainers and the community. Booking and reservations, ratings and commenting will be simple and profound. Your feedback matters therefor your insights will help further our innovation. </p>";
+    $email_message .= "<p>Our vision:</p>";
+    $email_message .= "<p>We imagine an increasingly beautiful planet earth where people are in their optimal physique in relation to all things. Coaching and mentoring is the most efficient and effective way to share knowledge and learn. Therefor we are continuing to innovate the tools to create this future.</p>";
+    $email_message .= "<p>Application Process: To get yourself started as a Personal Trainr on the Virtual TrainR platform, please send a copy of all training certifications with corresponding identification as verification that you are who you say you are!  If you have any further questions please do not hesitate to contact our office.</p>";
+    $email_message .= "<p>Enjoy the moment,</p>";
+    $email_message .= "<p>Ashique,</p>";
+    $email_message .= "<p>Designed with &#9825; from the Virtual TrainR team &#9786;</p>";
     $email_message .= "</body>";
     $email_message .= "</html>";
 
@@ -2051,50 +2057,45 @@ class TraineesController extends AppController
   {
     if($this->request->is('ajax'))
       {
-         $date = $this->request->data['date'];
-         $trainer_id = $this->request->data['trainer_id'];
-         $results = $this->Trainer_availability->find()->where(['trainer_id' => $trainer_id,'date' => $date])->toArray();
-         $response = "";
-         if(empty($results)){
-              $response .= "<div class='heading_payment_main'></div><div class='session_content scroll_content mCustomScrollbar _mCS_1'>";
-              for ($i=0; $i < 24; $i++) { 
-                 $response .= "<div class='checkbox'><div title='Available' class='roundedOne unbookedlabel'>";
-                 $response .= "<input type='checkbox' class='time unbooked'  time1='".$this->Custom->getTimeSlots($i)."' time2='".$this->Custom->getTimeSlots($i+1)."' value='0' main='".$i."' id='roundedOne_".$i."' />";
-                 $response .= "<label for='roundedOne_".$i."'></label>";
-                 $response .= "<input type='hidden' name='times[]' class='hidden_time' id='time_".$i."' value='0'/> </div>";
-                 $response .= "<div class='chekbox_txt'> <span>" .$this->Custom->getTimeSlots($i). "</span>";
-                 $response .= $this->Custom->getTimeSlots($i+1)."</div></div>";
-             }
-             $response .= "</div>";
-         }else{
-             $times = unserialize($results[0]['times']);
-             $response .= "<div class='heading_payment_main'></div><div class='session_content scroll_content mCustomScrollbar _mCS_1'>";
-             for ($i=0; $i < count($times); $i++) { 
-                  if($times[$i] > 0){
-                      $check = "checked";
-                      $disabled = "disabled";
-                      $class = "booked";
-                      $classlabel = "bookedlabel";
-                      $title = "Blocked";
-                  }else{
-                      $check = "";
-                      $disabled = "";
-                      $class = "unbooked";
-                      $classlabel = "unbookedlabel";
-                      $title = "Available";
-                  }
-                 $response .= "<div class='checkbox'><div title='".$title."' class='roundedOne ".$classlabel."'>";
-                 $response .= "<input type='checkbox' ".$check." " .$disabled. " class='time ".$class."' value='0' time1='".$this->Custom->getTimeSlots($i)."' time2='".$this->Custom->getTimeSlots($i+1)."' main='".$i."' id='roundedOne_".$i."' />";
-                 $response .= "<label for='roundedOne_".$i."'></label>";
-                 $response .= "<input type='hidden' name='times[]' class='hidden_time' id='time_".$i."' value='".$times[$i]."'/> </div>";
-                 $response .= "<div class='chekbox_txt'> <span>" .$this->Custom->getTimeSlots($i). "</span>";
-                 $response .= $this->Custom->getTimeSlots($i+1)."</div></div>";
-             }
-            $response .= "</div>";
-         }
-         $this->set('message', $response);
-         $this->set('_serialize',array('message'));
-         $this->response->statusCode(200);
+          $date = $this->request->data['date'];
+          $trainer_id = $this->request->data['trainer_id'];
+          $time_slots = $this->Trainer_availability->find()->where(['trainer_id' => $trainer_id,'date' => $date])->toArray();
+          $response = "";
+          if(!empty($time_slots)){
+            $times = unserialize($time_slots[0]['times']);
+          }else{
+            $times = array('0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0');
+          }
+          for ($i=0; $i < 24; $i++) {
+              if($times[$i] > 0){
+                  $check = "checked";
+                  $disabled = "disabled";
+                  $class = "booked";
+                  $classlabel = "bookedlabel";
+                  $title = "Not Available";
+                  $checkbox_class = "blocked_section";
+                  $span_class = "blocked_time";
+              }else{
+                  $check = "";
+                  $disabled = "";
+                  $class = "unbooked";
+                  $classlabel = "unbookedlabel";
+                  $title = "Available";
+                  $checkbox_class = "";
+                  $span_class = "";
+              }
+              $response .= '<div class="checkbox '.$checkbox_class.'">';
+              $response .= '<div class="not_avail">'.$title.'</div>';
+              $response .= '<div class="roundedOne ' .$classlabel.'">';
+              $response .= '<input '.$check.' type="checkbox" '.$disabled.' class="time '.$class.'" value="0" time1="'.$this->Custom->getTimeSlots($i).'" time2="'.$this->Custom->getTimeSlots($i+1).'" main="'.$i.'" id="roundedOne_'.$i.'" />';
+              $response .= '<label for="roundedOne_'.$i.'"></label>';
+              $response .= '<input type="hidden" name="times[]" class="hidden_time" id="time_'.$i.'" value="'.$times[$i].'"/></div>';
+              $response .= '<div class="chekbox_txt"><span '.$span_class.'>'.$this->Custom->getTimeSlots($i).'</span>'.$this->Custom->getTimeSlots($i+1);
+              $response .= '</div></div>';
+          }
+          $this->set('message', $response);
+          $this->set('_serialize',array('message'));
+          $this->response->statusCode(200);
       }
   }
 
