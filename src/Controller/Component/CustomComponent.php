@@ -123,17 +123,16 @@ class CustomComponent extends Component
         exit;
     }
 
-    public function exportCSV($fileName, $assocDataArray)
+    public function exportCSV($fileName,$assocDataArray,$headingArr)
     {
-      $delimiter=";";
-      $f = fopen('php://memory', 'w'); 
-      foreach ($assocDataArray as $line) { 
-          fputcsv($f, $line, $delimiter); 
+      header('Content-Type: text/csv; charset=utf-8');
+      header('Content-Disposition: attachment; filename='.$fileName);
+      $output = fopen('php://output', 'w');
+      fputcsv($output, $headingArr);
+      foreach ($assocDataArray as $key => $value) {
+          fputcsv($output, $value);
       }
-      fseek($f, 0);
-      header('Content-Type: application/csv');
-      header('Content-Disposition: attachment; filename="'.$fileName.'";');
-      fpassthru($f);
+      exit;
     }
 
     public function getCityName($cid)

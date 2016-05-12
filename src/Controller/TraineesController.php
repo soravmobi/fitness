@@ -1615,7 +1615,7 @@ class TraineesController extends AppController
           }
         $txns_details = $this->conn->execute('SELECT * FROM trainee_txns WHERE DATE(added_date) BETWEEN  "'.$start_date.'" AND "'.$end_date.'" AND trainee_id = '.$this->data['id'].' ORDER BY id DESC ')->fetchAll('assoc');
       }else{
-        $txns_details = $this->Trainee_txns->find()->where(['trainee_id' => $this->data['id']])->order(['id' => 'DESC'])->toArray();
+        $txns_details = $this->Trainee_txns->find()->where(['trainee_id' => $this->data['id']])->order(['id' => 'DESC'])->LIMIT(10)->toArray();
       }
       $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
       $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
@@ -3048,10 +3048,24 @@ class TraineesController extends AppController
   public function getnerateExcelReport($type)
   {
      if($type == "txn"){
+      $headingArr = array('TRANS #','TRANSACTION NAME','TRANSACTION ID','TRANSACTION ID','AMOUNT','DATE');
       $txns_details = $this->conn->execute("SELECT * FROM `trainee_txns` AS `t` WHERE `t`.`trainee_id` ='".$this->data['id']."' ORDER BY `t`.`id` DESC ")->fetchAll('assoc');
+      $final_array = array();
+      $i = 1;
+      foreach ($txns_details as $key => $v) {
+        $index = ($i >= 10) ? $i : "0".$i;
+        $row['txn']      = 'SK'.$index;
+        $row['txn_name'] = $v['txn_name'];
+        $row['txn_id']   = $v['txn_id'];
+        $row['txn_type'] = $v['txn_type'];
+        $row['ammount']  = "$".$v['ammount'];
+        $row['added_date'] = $v['added_date'];
+        $i++;
+        array_push($final_array, array_values($row));
+      }
       $filename = "Transactions History Report ".date('Y-m-d').".csv";  
     }
-    $this->Custom->exportCSV($filename,$txns_details);
+    $this->Custom->exportCSV($filename,$final_array,$headingArr);
   }
 
 

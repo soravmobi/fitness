@@ -2007,18 +2007,58 @@ class TrainersController extends AppController
   public function getnerateExcelReport($type)
   {
     if($type == "custom"){
-      $assocDataArray = $this->conn->execute('SELECT *,`cp`.`id` AS `cp_id` FROM `custom_packages_history` AS `cp` INNER JOIN `trainees` AS `t` ON `cp`.`trainee_id` = `t`.`user_id` WHERE `cp`.`trainer_id` ='.$this->data['id'].' ORDER BY `cp`.`id` DESC LIMIT 10')->fetchAll('assoc');
+      $headingArr = array('TRANS #','CUSTOMER','PACKAGE NAME','PRICE','DATE');
+      $custom_packages = $this->conn->execute('SELECT *,`cp`.`id` AS `cp_id` FROM `custom_packages_history` AS `cp` INNER JOIN `trainees` AS `t` ON `cp`.`trainee_id` = `t`.`user_id` WHERE `cp`.`trainer_id` ='.$this->data['id'].' ORDER BY `cp`.`id` DESC ')->fetchAll('assoc');
+      $final_array = array();
+      $i = 1;
+      foreach ($custom_packages as $key => $v) {
+        $index = ($i >= 10) ? $i : "0".$i;
+        $row['id']      = 'SK'.$index;
+        $row['name']    = $v['trainee_name']." ".$v['trainee_lname'];
+        $row['package'] = $v['package_name'];
+        $row['price']   = "$".$v['price'];
+        $row['created_date'] = $v['created_date'];
+        $i++;
+        array_push($final_array, array_values($row));
+      }
       $filename = "Custom Packages Sold Report ".date('Y-m-d').".csv";
     }
     else if($type == "sessions"){
+      $headingArr = array('TRANS #','CUSTOMER','SESSION NAME','PRICE','DATE');
+      $appointments = $this->conn->execute('SELECT *,`a`.`id` AS `appo_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` ='.$this->data['id'].' ORDER BY `a`.`id` DESC')->fetchAll('assoc');
+      $final_array = array();
+      $i = 1;
+      foreach ($appointments as $key => $v) {
+        $index = ($i >= 10) ? $i : "0".$i;
+        $totalSessions = count(unserialize($v['session_data']));
+        $row['id']      = 'SK'.$index;
+        $row['name']    = $v['trainee_name']." ".$v['trainee_lname'];
+        $row['session'] = $totalSessions." Sessions";
+        $row['price']   = "$".$v['final_price'];
+        $row['created_date'] = $v['created_date'];
+        $i++;
+        array_push($final_array, array_values($row));
+      }
      $filename = "Rate Plans Packages Sold Report ".date('Y-m-d').".csv"; 
     }
     else if($type == "txn"){
+      $headingArr = array('TRANS #','TRANSACTION NAME','TRANSACTION ID','AMOUNT','DATE','STATUS');
+      $txn_details = $this->Trainer_txns->find()->where(['trainer_id' => $this->data['id']])->order(['id' => 'DESC'])->toArray();
+      $final_array = array();
+      $i = 1;
+      foreach ($txn_details as $key => $v) {
+        $index = ($i >= 10) ? $i : "0".$i;
+        $row['id']          = 'SK'.$index;
+        $row['txn_name']    = $v['txn_name'];
+        $row['txn_id']      = $v['txn_id'];
+        $row['total_amount']= "$".$v['total_amount'];
+        $row['added_date']= $v['added_date'];
+        $i++;
+        array_push($final_array, array_values($row));
+      }
      $filename = "Transactions History Report ".date('Y-m-d').".csv";  
     }
-    echo "<pre>";
-    print_r($assocDataArray);die;
-    $this->Custom->exportCSV($filename, $assocDataArray);
+    $this->Custom->exportCSV($filename,$final_array,$headingArr);
   }
 
 

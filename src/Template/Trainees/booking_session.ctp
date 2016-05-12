@@ -77,7 +77,7 @@
                         <div class="check"></div>
                       </li>
                       <li>
-                        <input type="radio" id="s-option" name="selector" value="1">
+                        <input type="radio" id="s-option" name="selector" value="1" class="virtual-option">
                         <label for="s-option">Virtual</label>
                         <div class="check"><div class="inside"></div></div>
                       </li>
@@ -172,8 +172,13 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                    <div class="request_btn save_nxt">
+                    <?php if($session == 1) { ?>
+                      <button type="button" id="save-preview-btn">Save & Preview</button>
+                    <?php } else { ?>
                       <button type="button" id="back-btn" main="1" style="display:none;">back</button>
                       <button type="button" id="save-next-btn" main="1">Save & Next</button>
+                      <button type="button" id="preview-btn" style="display:none;">preview</button>
+                    <?php } ?>
                     </div>
                   </div>
                </div>
@@ -206,6 +211,7 @@
                           <input type="hidden" name="booking[<?php echo $i; ?>][location_address]" id="location_address_<?php echo $i; ?>" value="">
                           <input type="hidden" name="booking[<?php echo $i; ?>][modified_dates]" id="date_val_<?php echo $i; ?>" value="">
                           <input type="hidden" name="booking[<?php echo $i; ?>][modified_times]" id="time_val_<?php echo $i; ?>" value="">
+                          <input type="hidden" id="time_main_val_<?php echo $i; ?>" value="">
                         <?php } ?>
                         <div class="price_box_content session_content mCustomScrollbar_mCS_4">
                           <ul>
@@ -229,7 +235,7 @@
                  </div>
                  <div class="col-md-12 col-sm-12">
                     <div class="request_btn">
-                      <button>Request To Book</button>
+                      <!-- <button>Request To Book</button> -->
                     </div>
                   </div>
                </div>
@@ -241,7 +247,53 @@
         <input type="hidden" id="trainer_id" name="trainer_id" value="<?php echo $trainer_details[0]['user_id']; ?>">
       </form>
 
-  <!-- Choose Location Modal Start -->
+<!-- Modal For Bookign Preview Start-->
+
+<div class="modal fade custom_model" id="respond_now" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="heading_payment_main">
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Booking Session Preview</h4>
+            </div>
+            <div class="modal-body">
+                <div class="session_user">
+                    <div class="img_user_main">
+                        <div class="small_circle"></div>
+                        <div class="img_user">
+                          <img src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$trainer_details[0]['trainer_image']) ?>" id="app-view-user-img"class="img-responsive">
+                        </div>
+                    </div>
+                    <div class="img_text_main" id="appo-view-profile-view">
+                          <?php if(!empty($trainer_details)) echo ucwords($trainer_details[0]['trainer_name'] ." ".$trainer_details[0]['trainer_lname']); ?>
+                          <span><?php echo $session; ?> <?php echo ($session > 1) ? "Sessions" : "Session"; ?></span>
+                    </div>
+                </div>
+                <div class="head_custom">
+                    <div class="icon_block big_icon ">
+                        <i class="fa fa-calendar"></i>
+                    </div> Booking Sessions Details
+                </div>
+                <ul class="session_content scroll_content mCustomScrollbar _mCS_1 noti-view-session" id="so-sessions">
+                    
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <div class="custom_model_bottom">
+                    <button type="button" class="btn decline" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn decline request-btn">Book</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>        
+
+<!-- Modal For Bookign Preview End-->
+
+<!-- Choose Location Modal Start -->
 
   <div class="modal fade" id="location_model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -264,7 +316,7 @@
     </div>
   </div>
 
-  <!-- Choose Location Modal End -->
+<!-- Choose Location Modal End -->
 
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
   <script>
@@ -341,7 +393,12 @@
   }
  
   $(document).on("click", ".select_location", function () {
-    var no  = $('#save-next-btn').attr('main');
+    var total_no_sessions = parseInt('<?php echo $session; ?>');
+    if(total_no_sessions == 1){
+      var no  = 1;
+    }else{
+      var no  = $('#save-next-btn').attr('main');
+    }
     var latlng = $('#location_val_'+no).val();
     var loc_addr = $('#location_address_'+no).val();
     if(latlng != "" && loc_addr != ""){
@@ -358,11 +415,13 @@
             '</div>');
     $('#keyword').val(address_text);
     $('#location_model').modal('show');
-});
+  });
 </script>
 
 <script type="text/javascript">
   $(document).ready(function(){
+    total_sessions = parseInt('<?php echo $session; ?>');
+    dateTimeArr = [];
 
     $('body').on('click','.select_session',function(){
       var session = $(this).attr('main');
@@ -416,20 +475,30 @@
     });
 
     $('body').on('change','input[name="selector"]',function(){
-      var no  = $('#save-next-btn').attr('main');
+      if(total_sessions == 1){
+        var no  = 1;
+      }else{
+        var no  = $('#save-next-btn').attr('main');
+      }
       var preference_val = $('input[name="selector"]:checked').val();
       $('#prefernce_val_'+no).val(preference_val);
       if(preference_val == 0){
         $('.virtual_section').hide();
         $('.location_section').show();
       }else{
+        $('#location_val_'+no).val("");
+        $('#location_address_'+no).val("");
         $('.virtual_section').show();
         $('.location_section').hide();
       }
     });
 
     $('body').on('click','#save-location-btn',function(){
-      var no  = $('#save-next-btn').attr('main');
+      if(total_sessions == 1){
+        var no  = 1;
+      }else{
+        var no  = $('#save-next-btn').attr('main');
+      }
       $('#location_val_'+no).val(place.geometry.location.lat() + "," + place.geometry.location.lng());
       $('#location_address_'+no).val(marker_title);
       $('.location_address').text(marker_title);
@@ -446,7 +515,8 @@
       $('#date_val_'+no).val(date);
       var time  = $('.unbooked:checked').attr('time1')+"-"+$('.unbooked:checked').attr('time2');
       $('#time_val_'+no).val(time);
-      var datetime = date + time;
+      $('#time_main_val_'+no).val($('.unbooked:checked').attr('main'));
+      var datetime = date +" "+ time;
       var preference_val = $('#prefernce_val_'+no).val();
       var errorMsgs = "";
       if($('#prefernce_val_'+no).val() == ""){
@@ -464,32 +534,247 @@
           errorMsgs += 'Please select training time ..';
       }
       if(errorMsgs != ""){
-        showAlert('error','Error - Session '+no,errorMsgs);
+        var nth_session1 = (no >= 10) ? no : "0" + no;
+        showAlert('error','Error - Session '+nth_session1,errorMsgs);
         return false;
       }else{
-        no = parseInt(no + 1);
-        $('#save-next-btn').attr('main',no);
-        var nth_session = (no >= 10) ? no : "0" + no;
-        $('.loading').show();
-        $('.loading_icon').show();
-        $('#back-btn').show(); 
-        $('.local-option').prop('checked',true);
-        $('.unbooked').prop('checked',false);
-        $('.virtual_section').hide();
-        $('.location_section').show();
-        $('.location_address').text('<?php echo $address; ?>');
-        $('.location_address').attr('title','<?php echo $address; ?>');
-        $('.session_number').html(nth_session + "<span>Session</span>");
-        $('.session_heading').text('session #'+nth_session);
-        $('.loading').hide();
-        $('.loading_icon').hide();
+        if(jQuery.inArray(datetime, dateTimeArr ) != -1 && dateTimeArr != "")
+        {
+          var nth_session1 = (no >= 10) ? no : "0" + no;
+          showAlert('error','Error - Session '+nth_session1,'This Date & Time Alreay Selected !!');
+          return false;
+        }else{
+          $('.unbooked').each(function() { 
+            this.checked = false;  
+          });
+          no = parseInt(no + 1);
+          $('#save-next-btn').attr('main',no);
+          var nth_session = (no >= 10) ? no : "0" + no;
+          if(total_sessions == nth_session)
+          {
+            $('#save-next-btn').hide(); 
+            $('#preview-btn').show(); 
+          }
+          dateTimeArr.push(datetime);
+          $('.loading').show();
+          $('.loading_icon').show();
+          $('#back-btn').show(); 
+          $('.session_number').html(nth_session + "<span>Session</span>");
+          $('.session_heading').text('session #'+nth_session);
+          if($('#prefernce_val_'+no).val() != ""){
+            if($('#prefernce_val_'+no).val() == 0){
+              $('.location_address').text($('#location_address_'+no).val());
+              $('.location_address').attr('title',$('#location_address_'+no).val());
+              $('.virtual_section').hide();
+              $('.location_section').show();
+              $('.local-option').prop('checked',true);
+            }else{
+              $('.virtual_section').show();
+              $('.location_section').hide();
+              $('.virtual-option').prop('checked',true);
+            }
+          }else{
+            $('.location_address').text('<?php echo $address; ?>');
+            $('.location_address').attr('title','<?php echo $address; ?>');
+            $('.virtual_section').hide();
+            $('.location_section').show();
+            $('.local-option').prop('checked',true);
+          }
+          if($('#time_main_val_'+no).val() == ""){
+            $('.unbooked').prop('checked',false);
+          }else{
+            $('#roundedOne_'+$('#time_main_val_'+no).val()).prop('checked',true);
+          }
+          $('.loading').hide();
+          $('.loading_icon').hide();
+        }
       }
-      
     });
 
     $('body').on('click','#back-btn',function(){
+      $('.loading').show();
+      $('.loading_icon').show();
+      $('.unbooked').each(function() { 
+        this.checked = false;  
+      });
       var back_index = (parseInt($('#save-next-btn').attr('main')) - 1);
+      if(back_index == "1")
+      {
+        $('#back-btn').hide(); 
+      }
+      if(total_sessions == $('#save-next-btn').attr('main'))
+      {
+        $('#preview-btn').hide(); 
+        $('#save-next-btn').show(); 
+      }
+      $('#save-next-btn').attr('main',back_index);
+      var nth_prev_session = (back_index >= 10) ? back_index : "0" + back_index;
+      $('.session_number').html(nth_prev_session + "<span>Session</span>");
+      $('.session_heading').text('session #'+nth_prev_session);
+      var preference_type  = $('#prefernce_val_'+back_index).val();
+      var location_val    = $('#location_val_'+back_index).val();
+      var location_address1 = $('#location_address_'+back_index).val();
+      var modified_dates = $('#date_val_'+back_index).val();
+      var modified_times = $('#time_val_'+back_index).val();
+      var modified_times_main = $('#time_main_val_'+back_index).val();
+      if(preference_type == 0){
+        $('.location_address').text(location_address1);
+        $('.location_address').attr('title',location_address1);
+        $('.virtual_section').hide();
+        $('.location_section').show();
+        $('.local-option').prop('checked',true);
+      }else{
+        $('.virtual_section').show();
+        $('.location_section').hide();
+        $('.virtual-option').prop('checked',true);
+      }
+      $('#roundedOne_'+modified_times_main).prop('checked',true);
+      var spliceVal = modified_dates + " " + modified_times;
+      var index = dateTimeArr.indexOf(spliceVal);
+      if (index > -1) {
+          dateTimeArr.splice(index, 1);
+      }
+      $('.loading').hide();
+      $('.loading_icon').hide();
+    });
+
+    $('body').on('click','#preview-btn',function(){
+      var spliceVal = $('#date_val_'+total_sessions).val() + " " + $('#time_val_'+total_sessions).val();
+      var index = dateTimeArr.indexOf(spliceVal);
+      if (index > -1) {
+          dateTimeArr.splice(index, 1);
+      }
+      var year  = $('div.today > a').attr('data-year');
+      var month = ($('div.today > a').attr('data-month') >= 10) ? $('div.today > a').attr('data-month') : "0" + $('div.today > a').attr('data-month');
+      var day   = ($('div.today > a').attr('data-day') >= 10) ? $('div.today > a').attr('data-day') : "0" + $('div.today > a').attr('data-day');
+      var date  =  year + "-" + month + "-" + day;
+      $('#date_val_'+total_sessions).val(date);
+      var time  = $('.unbooked:checked').attr('time1')+"-"+$('.unbooked:checked').attr('time2');
+      $('#time_val_'+total_sessions).val(time);
+      $('#time_main_val_'+total_sessions).val($('.unbooked:checked').attr('main'));
+      var datetime = date +" "+ time;
+      var preference_val = $('#prefernce_val_'+total_sessions).val();
+      var errorMsgs = "";
+      if($('#prefernce_val_'+total_sessions).val() == ""){
+          errorMsgs += 'Please select training preference ..';
+      }
+      if(preference_val == 0){
+        if($('#location_val_'+total_sessions).val() == ""){
+            errorMsgs += 'Please select location .. ';
+        }
+      }
+      if($('#date_val_'+total_sessions).val() == ""){
+          errorMsgs += 'Please select training date ..';
+      }
+      if($('#time_val_'+total_sessions).val() == "undefined-undefined"){
+          errorMsgs += 'Please select training time ..';
+      }
+      if(errorMsgs != ""){
+        var nth_session1 = (total_sessions >= 10) ? total_sessions : "0" + total_sessions;
+        showAlert('error','Error - Session '+nth_session1,errorMsgs);
+        return false;
+      }  
+      if(jQuery.inArray(datetime, dateTimeArr ) != -1 && dateTimeArr != "")
+        {
+          var nth_session1 = (total_sessions >= 10) ? total_sessions : "0" + total_sessions;
+          showAlert('error','Error - Session '+nth_session1,'This Date & Time Alreay Selected !!');
+          return false;
+        }
+      $('.loading').show();
+      $('.loading_icon').show();
+      dateTimeArr.push(datetime);
+      var sessionHTML = "";
+      for (var i = 1; i <= total_sessions; i++) {
+      sessionHTML += '<li><div class="main_block"><div class="icon_block big_icon"><i class="fa fa-calendar"></i>';
+      sessionHTML += '</div><div class="text_block">' + convertDate($('#date_val_'+i).val()) + '</br> <span>' + $('#time_val_'+i).val() + '</span>';
+      sessionHTML += '</div></div>'; 
+      if($('#location_address_'+i).val() != ""){
+        sessionHTML += '<div class="icon_main"><div class="icon_block"><i class="fa fa-map-marker"></i> </div><div class="text_block">' + $('#location_address_'+i).val() + '</div></div>';  
+      }else{
+        sessionHTML += '<div class="icon_main"><img style="width: 100%;" src="<?php echo $this->request->webroot; ?>img/favicon.ico" title="Virtual Training"></div>';  
+      }
+      };
+      $('#so-sessions').html(sessionHTML);
+      $('#respond_now').modal('show');
+      $('.loading').hide();
+      $('.loading_icon').hide();
+    });
+
+    $('body').on('click','.request-btn',function(){
+      $('#booking_session_form').submit();
+    });
+
+    $('body').on('click','#save-preview-btn',function(){
+       var spliceVal = $('#date_val_'+total_sessions).val() + " " + $('#time_val_'+total_sessions).val();
+      var index = dateTimeArr.indexOf(spliceVal);
+      if (index > -1) {
+          dateTimeArr.splice(index, 1);
+      }
+      var year  = $('div.today > a').attr('data-year');
+      var month = ($('div.today > a').attr('data-month') >= 10) ? $('div.today > a').attr('data-month') : "0" + $('div.today > a').attr('data-month');
+      var day   = ($('div.today > a').attr('data-day') >= 10) ? $('div.today > a').attr('data-day') : "0" + $('div.today > a').attr('data-day');
+      var date  =  year + "-" + month + "-" + day;
+      $('#date_val_'+total_sessions).val(date);
+      var time  = $('.unbooked:checked').attr('time1')+"-"+$('.unbooked:checked').attr('time2');
+      $('#time_val_'+total_sessions).val(time);
+      $('#time_main_val_'+total_sessions).val($('.unbooked:checked').attr('main'));
+      var datetime = date +" "+ time;
+      var preference_val = $('#prefernce_val_'+total_sessions).val();
+      var errorMsgs = "";
+      if($('#prefernce_val_'+total_sessions).val() == ""){
+          errorMsgs += 'Please select training preference ..';
+      }
+      if(preference_val == 0){
+        if($('#location_val_'+total_sessions).val() == ""){
+            errorMsgs += 'Please select location .. ';
+        }
+      }
+      if($('#date_val_'+total_sessions).val() == ""){
+          errorMsgs += 'Please select training date ..';
+      }
+      if($('#time_val_'+total_sessions).val() == "undefined-undefined"){
+          errorMsgs += 'Please select training time ..';
+      }
+      if(errorMsgs != ""){
+        var nth_session1 = (total_sessions >= 10) ? total_sessions : "0" + total_sessions;
+        showAlert('error','Error - Session '+nth_session1,errorMsgs);
+        return false;
+      }  
+      if(jQuery.inArray(datetime, dateTimeArr ) != -1 && dateTimeArr != "")
+        {
+          var nth_session1 = (total_sessions >= 10) ? total_sessions : "0" + total_sessions;
+          showAlert('error','Error - Session '+nth_session1,'This Date & Time Alreay Selected !!');
+          return false;
+        }
+      $('.loading').show();
+      $('.loading_icon').show();
+      dateTimeArr.push(datetime);
+      var sessionHTML = "";
+      for (var i = 1; i <= total_sessions; i++) {
+      sessionHTML += '<li><div class="main_block"><div class="icon_block big_icon"><i class="fa fa-calendar"></i>';
+      sessionHTML += '</div><div class="text_block">' + convertDate($('#date_val_'+i).val()) + '</br> <span>' + $('#time_val_'+i).val() + '</span>';
+      sessionHTML += '</div></div>'; 
+      if($('#location_address_'+i).val() != ""){
+        sessionHTML += '<div class="icon_main"><div class="icon_block"><i class="fa fa-map-marker"></i> </div><div class="text_block">' + $('#location_address_'+i).val() + '</div></div>';  
+      }else{
+        sessionHTML += '<div class="icon_main"><img style="width: 100%;" src="<?php echo $this->request->webroot; ?>img/favicon.ico" title="Virtual Training"></div>';  
+      }
+      };
+      $('#so-sessions').html(sessionHTML);
+      $('#respond_now').modal('show');
+      $('.loading').hide();
+      $('.loading_icon').hide();
     });
 
   });
+
+  function convertDate(val) 
+    {
+      var t = val.split(/[- :]/);
+      var month = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      var mo = parseInt(t[1]);
+      var newmonth  = month[mo-1];
+      var s = newmonth+' '+t[2]+'th '+t[0];
+      return s;
+    }
 </script>
