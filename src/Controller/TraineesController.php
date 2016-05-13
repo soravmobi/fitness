@@ -342,6 +342,7 @@ class TraineesController extends AppController
             $chat_data = array();
         }
        $this->set('chat_data', $chat_data); 
+       $this->set('from_id', $this->data['id']); 
        $this->set('all_trainers', $all_trainers);
        $this->set('profile_details', $profile_details); 
          
@@ -399,6 +400,7 @@ class TraineesController extends AppController
                     $chat_msgs .= '<small>'.$cd['chat_messsage'].'</small></div></br><span class="delete_msgs" main="'.$cd['chat_id'].'" style="float:right;cursor:pointer;"><i class="fa fa-trash-o" title="Delete Message"></i></span></div><hr>';
                 }
                 }
+                    $chat_msgs .=  '<div class="text_area"><textarea user="'.$this->data['id'].'" to_id="'.$trainer_details[0]['user_id'].'" main_id="'.$trainer_details[0]['user_id'].'" placeholder="Write your message here" class="form-control" ></textarea></div> </br>';
             }
             $this->set('message', $chat_msgs);
             $this->set('_serialize',array('message'));

@@ -169,8 +169,6 @@ $(document).ready(function(){
                         msg += '<div class="msg_container base_sent">';
                         msg += '    <div class="messages msg_sent">';
                         msg += '        <p>'+file+'</p>';
-                        //msg += '        <time datetime="2009-11-13T20:00">Timothy • 51 min</time>';
-                        //msg += '        <span>'+dtime+'</span>';
                         msg += '    </div>'
                         msg += '    <div class="chat_avatar">'
                         msg += '        <img src="<?php echo $this->request->webroot ?>uploads/<?php echo $type."_profile/".$s_profile[0][$type."_image"] ?>" class="img-responsive img-circle">';
@@ -183,8 +181,6 @@ $(document).ready(function(){
                         rmsg += '    </div>';
                         rmsg += '    <div class="messages msg_receive">';
                         rmsg += '        <p>'+file+'</p>';
-                        // rmsg += '        <time datetime="2009-11-13T20:00">Timothy • 51 min</time>';
-                        //rmsg += '        <span>'+dtime+'</span>';
                         rmsg += '    </div>';
                         rmsg += '</div>';
                         /* store chat data in variable End */
@@ -207,32 +203,6 @@ $(document).ready(function(){
       return someText.replace ( /\n/gm, '<br />' );
    }
 
-/*function changedatetime(dat)
-{
-    var diff;
-    var olddate = dat;
-    olddate = new Date(olddate).getTime();
-    olddate = olddate.toString().substr(0, olddate.toString().length - 3);
-    var today = new Date().getTime();
-    today = parseInt(today.toString().substr(0, today.toString().length - 3));
-    diff = today - olddate;
-    if(diff/60 < 1)
-    {
-        return parseInt(diff) + " seccond";
-    }else if(diff/(60*60) < 1)
-    {
-        return parseInt(diff/60) + " minut";
-    }else if(diff/(60*60*24) < 1)
-    {
-        return parseInt(diff/(60*60)) + " hour";
-    }else if(diff/(60*60*24) > 1)
-    {
-        return parseInt(diff/(60*60*24)) + " day";
-    }else{
-        var d = new Date(dat);
-        return d.toLocaleString();
-    }
-}*/
 })
 
 </script>

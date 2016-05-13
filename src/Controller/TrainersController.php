@@ -61,10 +61,25 @@ class TrainersController extends AppController
     $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
     $messages = $this->getChatMessages();
     $pending_appointments  = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 0 AND `a`.`trainee_status` = 0 AND `a`.`created_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY `a`.`id` DESC')->fetchAll('assoc');
+    $visitors_count  = $this->conn->execute('SELECT *,COUNT(*) AS `total_visitors` FROM `visitors` WHERE `profile_id` = '.$this->data['id'].' GROUP BY `latitude`,`lonigtude`')->fetchAll('assoc');
+    $final_visitors_count = array();
+    if(!empty($visitors_count)){
+        foreach ($visitors_count as $key => $v) {
+          $row['zoomLevel'] = 5;
+          $row['scale']     = 0.5;
+          $row['title']     = $v['address']." (".$v['total_visitors'].")";
+          $row['latitude']  = $v['latitude'];
+          $row['longitude'] = $v['lonigtude'];
+          array_push($final_visitors_count, $row);
+        }
+    }else{
+        $final_visitors_count = array();
+    }
     $upcomingArr = $this->getUpcomingAppointments(date('Y-m-d')); 
     $app_counts  = $this->getUpcomingAppointmentsCountByDate(); 
     $this->set('app_counts', $app_counts);
     $this->set("from_id",$this->data['id']);
+    $this->set('final_visitors_count', $final_visitors_count);
     $this->set('notes', $notes);
     $this->set('messages', $messages);
     $this->set('upcomingArr', $upcomingArr);
@@ -1162,6 +1177,7 @@ class TrainersController extends AppController
             $chat_data = array();
         }
        $this->set('chat_data', $chat_data); 
+       $this->set('from_id', $this->data['id']); 
        $this->set('all_trainees', $all_trainees);
        $this->set('profile_details', $profile_details); 
     }
@@ -1218,6 +1234,7 @@ class TrainersController extends AppController
                     $chat_msgs .= '<small>'.$cd['chat_messsage'].'</small></div></br><span class="delete_msgs" main="'.$cd['chat_id'].'" style="float:right;cursor:pointer;"><i class="fa fa-trash-o" title="Delete Message"></i></span></div><hr>';
                 }
                 }
+                    $chat_msgs .=  '<div class="text_area"><textarea user="'.$this->data['id'].'" to_id="'.$trainee_details[0]['user_id'].'" main_id="'.$trainee_details[0]['user_id'].'" placeholder="Write your message here" class="form-control" ></textarea></div> </br>';
             }
             $this->set('message', $chat_msgs);
             $this->set('_serialize',array('message'));

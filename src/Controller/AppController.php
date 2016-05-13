@@ -59,6 +59,7 @@ class AppController extends Controller
         $this->loadmodel('Tokbox');
         $this->loadmodel('Video_calls');
         $this->loadmodel('Notes');
+        $this->loadmodel('Visitors');
         $this->loadmodel('Custom_packages_history');
         
         $this->loadComponent('Flash');
@@ -102,10 +103,10 @@ class AppController extends Controller
         $this->tokbox = TableRegistry::get('Tokbox');
         $this->video_calls = TableRegistry::get('Video_calls');
         $this->notes = TableRegistry::get('Notes');
+        $this->visitors = TableRegistry::get('Visitors');
         $this->custom_packages_history = TableRegistry::get('Custom_packages_history');
         $this->conn = ConnectionManager::get('default');  
-        //aded on 11 april
-         $this->gym = TableRegistry::get('Gym');
+        $this->gym = TableRegistry::get('Gym');
     }
 
     public function blockIP()

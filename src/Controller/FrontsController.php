@@ -13,7 +13,7 @@ class FrontsController extends AppController
     	$this->blockIP();
         parent::beforeFilter($event);
         $this->loadComponent('Auth');
-        $this->Auth->allow(['trainerProfile','ourTrainers','searchTrainer','contactus','plans','docontact','terms','learnmore','career','opportunity','becometrainer','getCountryList','checkvalidip']);
+        $this->Auth->allow(['ourTrainers','searchTrainer','contactus','plans','docontact','terms','learnmore','career','opportunity','becometrainer','getCountryList','checkvalidip']);
         $this->data = $this->Custom->getSessionData();
         $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
         $this->set('notifications', $this->total_notifications);
@@ -94,7 +94,28 @@ class FrontsController extends AppController
 
 	public function trainerProfile($t_id)
 	{
+		$own_details = $this->Custom->getlatlngbyip();
 		$id = base64_decode($t_id);
+		if($own_details['status'] == "success"){
+			$check_visitor = $this->Visitors->find()->where(['profile_id' => $id, 'viewer_id' => $this->data['id']])->toArray();
+			if(empty($check_visitor) && $id != $this->data['id']){
+				$visitor_arr = array(
+					'profile_id'  => $id,
+					'viewer_id'   => $this->data['id'],
+					'ip_address'  => $own_details['query'],
+					'country'     => $own_details['country'],
+					'state'       => $own_details['regionName'],
+					'city'        => $own_details['city'],
+					'address'     => $own_details['city'].",".$own_details['regionName'].",".$own_details['country'],
+					'latitude'    => $own_details['lat'],
+					'lonigtude'   => $own_details['lon'],
+					'created_date'=> Time::now()
+				);
+				$visitors = $this->Visitors->newEntity();
+		        $visitors = $this->Visitors->patchEntity($visitors, $visitor_arr);
+		        $result   = $this->Visitors->save($visitors);
+			}
+		}
 		$gallery_img = $this->Profile_images_videos->find()->where(['piv_user_id' => $id, 'piv_attachement_type' => 'image'])->order(['piv_id' => 'DESC'])->toArray();
 		$result = $this->Trainers->find()->where(['user_id' => $id])->toArray();
 		$rate_plans = $this->Trainer_ratemaster->find()->where(['trainer_id' => $id])->toArray();

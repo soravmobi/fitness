@@ -709,7 +709,7 @@
   width: 34%;
 }
 #chartdiv {
-  width: 65%;
+  width: 100%;
 }
 .agenda .session_content {
   padding: 20px 5px;
@@ -853,6 +853,12 @@
 	.ht_left {
      width: 39px;
      padding-top: 10px;
+}
+.visitor_map {
+  background-color: #eee;
+  border-radius: 6px;
+  min-height: 223px;
+  padding-top: 20px;
 }
 .pref_color2 {
   padding-bottom: 52px;

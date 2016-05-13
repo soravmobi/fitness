@@ -115,6 +115,13 @@ class CustomComponent extends Component
         return $query;
     }
 
+    public function getserverlatlngbyip()
+    {
+         $ip = $_SERVER['REMOTE_ADDR']; 
+        $query = @unserialize(file_get_contents('http://ip-api.com/php/'));
+        return $query;
+    }
+
     public function downloadpdf($html,$filename)
     {
         $mpdf = new mPDF();

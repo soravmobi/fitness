@@ -6828,8 +6828,8 @@ label.remain_bal {
 
 #chartdiv {
   display: inline-block;
-  height: 330px;
-  width: 69%;
+  height: 430px;
+  width: 100%;
 }
 
 .map-marker {
@@ -7748,4 +7748,9 @@ span.blocked_time {
 }
 .virtual_section {
     line-height: 50px;
+}
+.visitor_map {
+  background-color: #eee;
+  border-radius: 6px;
+  min-height: 433px;
 }

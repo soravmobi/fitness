@@ -22,7 +22,7 @@
                 {
                     $i=1;
                     foreach($all_trainees as $td) { ?>
-                    <div id="mesg_div_<?php echo $td['user_id']; ?>" class="media conversation side_users <?php if($i == 1) echo "active";?>" main="<?php echo base64_encode($td['user_id']); ?>">
+                    <div  c_type="chat" from_id="<?php echo $from_id; ?>" to_id="<?php echo $td['user_id']; ?>" t_type="trainer" id="mesg_div_<?php echo $td['user_id']; ?>" class="media conversation side_users <?php if($i == 1) echo "active";?>" main="<?php echo base64_encode($td['user_id']); ?>">
                         <a class="pull-left" href="<?php echo $this->request->webroot; ?>trainers/traineeReport/<?php echo base64_encode($td['user_id']); ?>">
                             <img class="media-object" style="width: 50px; height: 50px;" src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$td['trainee_image']) ?>">
                         </a>
@@ -73,13 +73,13 @@
                     <hr>
                 <?php } } } ?>
                      <div class="text_area">
-                        <textarea placeholder="Write your message here" class="form-control" ></textarea>
-                        <form class="soravgarg" id="send_file1">
+                        <textarea user="<?php echo $from_id; ?>" to_id="<?php echo $trainee_details[0]['user_id']; ?>" main_id="<?php echo $trainee_details[0]['user_id']; ?>" placeholder="Write your message here" class="form-control" ></textarea>
+                        <!-- <form class="soravgarg" id="send_file1">
                             <div class="file_attched_field">
                                 <span class="fa fa-paperclip"></span>
                                 <input type="file" name="chat_file" class="chat_file_ZDxq8Gz1ALIaJb2" unique="ZDxq8Gz1ALIaJb2" to_id="94" uid="62">
                             </div>
-                        </form>
+                        </form> -->
                     </div> </br>
                                 </div>
                               </div>
@@ -98,6 +98,7 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
+    $('#chat_msgs').animate({scrollTop: $('#chat_msgs')[0].scrollHeight}, 1);
     $('body').on('click','.side_users',function(){
     var trainee_id = $(this).attr('main');
         $.ajax({
@@ -105,10 +106,16 @@
                 type:"post",
                 data:{trainee_id:trainee_id},
                 dataType:"json",
+                beforeSend: function() {
+                  $('.loading').show();
+                  $('.loading_icon').show();
+                },  
                 success: function(data){
                     $('.side_users').removeClass('active');
                     $('#mesg_div_'+atob(trainee_id)).addClass('active');
                     $('#chat_msgs').html(data.message);
+                    $('.loading').hide();
+                    $('.loading_icon').hide();
                 }
             });
     });
