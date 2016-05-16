@@ -67,9 +67,10 @@ class TrainersController extends AppController
         foreach ($visitors_count as $key => $v) {
           $row['zoomLevel'] = 5;
           $row['scale']     = 0.5;
-          $row['title']     = $v['address']." (".$v['total_visitors'].")";
+          $row['title']     = str_replace(" ", "-", $v['address'])." (".$v['total_visitors'].")";
           $row['latitude']  = $v['latitude'];
           $row['longitude'] = $v['lonigtude'];
+          $row['main'] = '1234';
           array_push($final_visitors_count, $row);
         }
     }else{
@@ -87,6 +88,23 @@ class TrainersController extends AppController
     $this->set('total_wallet_ammount', $total_wallet_ammount);
     $this->set('profile_details', $profile_details);
 	}
+
+  public function getVisitorsData()
+  {
+    $title = $this->request->data['title'];
+    $html = '';
+    $visitors = $this->conn->execute('SELECT * FROM `visitors` As v inner join trainees as t ON t.user_id = v.viewer_id WHERE v.address = "'.$title.'" AND v.profile_id = '. $this->data['id'] .' ORDER BY v.visitor_id DESC')->fetchAll('assoc');
+    if(!empty($visitors)){
+      foreach($visitors as $v){
+        $html .= '<div class="session_user"><a target="_blank" href="'.$this->request->webroot.'traineeProfile/'.base64_encode($v['user_id']).'">';
+        $html .= '<div class="img_user_main"><div class="small_circle"></div><div class="img_user"><img class="img-responsive" id="app-view-user-img" src="'.$this->Custom->getImageSrc('uploads/trainee_profile/'.$v['trainee_image']).'"></div>';
+        $html .= '</div><div id="appo-view-profile-view" class="img_text_main">'.ucwords($v['trainee_name']." ".$v['trainee_lname']).'</div></a></div>';
+      }
+    }
+    $this->set('message', $html);
+    $this->set('_serialize',array('message'));
+    $this->response->statusCode(200);
+  }
 
 	public function profile()
 	{

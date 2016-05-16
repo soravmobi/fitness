@@ -278,6 +278,27 @@
   </div>
   <!--Main container sec end--> 
 
+<div aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade custom_model">
+    <div role="document" class="modal-dialog  visitor_model">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="heading_payment_main">
+                </div>
+                <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span>
+                </button>
+                <h4 id="myModalLabel" class="modal-title">indore ,mp,india <span class="badges">10</span></h4>
+            </div>
+            <div class="modal-body" id="visitors">
+                
+            </div>
+        <div class="modal-footer">
+            <div class="custom_model_bottom">
+              <button data-dismiss="modal" class="btn decline" type="button">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </section>  
 
 <script type="text/javascript">
@@ -391,14 +412,12 @@ $(".select-all-btn").change(function () {
       });
     });
 
-  
-/*visitor map start*/
-
 window.map = AmCharts.makeChart("chartdiv", {
     type: "map",
     "theme": "none",
     "projection":"miller",
     path: "http://www.amcharts.com/lib/3/",
+
     imagesSettings: {
         rollOverColor: "#089282",
         rollOverScale: 3,
@@ -419,6 +438,8 @@ window.map = AmCharts.makeChart("chartdiv", {
 
 // add events to recalculate map position when the map is moved or zoomed
 map.addListener("positionChanged", updateCustomMarkers);
+
+});
 
 // this function will take current images on the map and create HTML elements for them
 function updateCustomMarkers (event) {
@@ -473,7 +494,36 @@ function createCustomMarker(image) {
     return holder;
 }
 
-/*visitor map start*/
+/*window.onload = function(){
+setTimeout(function(){
+  $('.map-marker').each(function (index, value) { 
+    console.log($(this).attr('title')); 
+    $(this).tooltip({
+       html:true
+      })
+    });
+},1000);
+}*/
 
+$('body').on('click','.pulse',function(){
+  var modal_heading = $(this).parent().attr('title');
+  $('#myModalLabel').text(modal_heading);
+  var titleArr = modal_heading.split(" ");
+  $('.loading').show();
+  $('.loading_icon').show();
+  $.ajax({
+      url:"<?php echo $this->request->webroot; ?>trainers/getVisitorsData",
+      type:"post",
+      data:{title:titleArr[0]},
+      dataType:"json",
+      success: function(data){
+        var result = data.message;
+        $('#visitors').html(result);
+        $('#myModal').modal('show');
+        $('.loading').hide();
+        $('.loading_icon').hide();
+      }
   });
+});
 </script>
+

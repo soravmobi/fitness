@@ -94,6 +94,7 @@ class FrontsController extends AppController
 
 	public function trainerProfile($t_id)
 	{
+		if($this->data['user_type'] == "trainee"){
 		$own_details = $this->Custom->getlatlngbyip();
 		$id = base64_decode($t_id);
 		if($own_details['status'] == "success"){
@@ -106,7 +107,7 @@ class FrontsController extends AppController
 					'country'     => $own_details['country'],
 					'state'       => $own_details['regionName'],
 					'city'        => $own_details['city'],
-					'address'     => $own_details['city'].",".$own_details['regionName'].",".$own_details['country'],
+					'address'     => str_replace(" ", "-", $own_details['city'].",".$own_details['regionName'].",".$own_details['country']),
 					'latitude'    => $own_details['lat'],
 					'lonigtude'   => $own_details['lon'],
 					'created_date'=> Time::now()
@@ -115,6 +116,7 @@ class FrontsController extends AppController
 		        $visitors = $this->Visitors->patchEntity($visitors, $visitor_arr);
 		        $result   = $this->Visitors->save($visitors);
 			}
+		}
 		}
 		$gallery_img = $this->Profile_images_videos->find()->where(['piv_user_id' => $id, 'piv_attachement_type' => 'image'])->order(['piv_id' => 'DESC'])->toArray();
 		$result = $this->Trainers->find()->where(['user_id' => $id])->toArray();

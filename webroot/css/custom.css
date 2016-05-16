@@ -7754,3 +7754,13 @@ span.blocked_time {
   border-radius: 6px;
   min-height: 433px;
 }
+.visitor_model{ overflow: auto; width: 400px;}
+.visitor_model .modal-footer{ border:none;}
+.visitor_model .session_user a {
+    display: block;
+}
+.visitor_model .img_user_main{vertical-align: middle;}
+.visitor_model h4{ text-align: left; font-size: 20px; padding-left: 20px;}
+.visitor_model .img_text_main{vertical-align:middle;}
+.visitor_model .modal-body {max-height: 408px;overflow: auto;}
+.visitor_model .modal-header h4{font-size: 18px;}
