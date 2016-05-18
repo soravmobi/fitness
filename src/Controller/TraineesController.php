@@ -95,6 +95,7 @@ class TraineesController extends AppController
     $this->set('trainer_meal_plans', $trainer_meal_plans);
     $this->set('total_wallet_ammount', $total_wallet_ammount);
     $this->set('profile_details', $profile_details);
+    $this->set('upcomingArr', $upcomingArr);
     $this->set("from_id",$this->data['id']);
   }
 
@@ -216,17 +217,19 @@ class TraineesController extends AppController
             if(!empty($upcomingArr)){
               $upcomingArrCount = count($upcomingArr['trainer_name']);
               for ($i=0; $i < $upcomingArrCount; $i++) {
-                $appendHTML .= '<li><div class="main_block"><div class="circle_box_main"><div class="small_circle"></div>';
-                $appendHTML .= '<div class="icon_block big_icon gray_color"><img src="'.$this->Custom->getImageSrc('uploads/trainer_profile/'.$upcomingArr['trainer_image'][$i]).'" class="img-responsive">';
-                $appendHTML .= '</div></div><div class="text_block"><div class="appointer_name">'.$upcomingArr['trainer_name'][$i].'</br> <span>'.date('d F, Y', strtotime($upcomingArr['appo_date'][$i]));
-                $appendHTML .= ' </span></div><span>'.$upcomingArr['appo_time'][$i].'</span></div><div class="timer"><div id="defaultCountdown"></div></div></div>';
+                $appendHTML .= '<li><div class="main_block"> <div class="icon_block big_icon gray_color">';
+                $appendHTML .= '<img src="'.$this->Custom->getImageSrc('uploads/trainer_profile/'.$upcomingArr['trainer_image'][$i]).'">';
+                $appendHTML .= '</div><span class="client_name">'.$upcomingArr['trainer_name'][$i].'</span>';
+                $appendHTML .= '<div class="text_block"><div class="appointer_name">'.date('d F, Y', strtotime($upcomingArr['appo_date'][$i])).'</br>'.$upcomingArr['appo_time'][$i].'</div> ';
                 if(!empty($upcomingArr['location_name'][$i])){
-                  $appendHTML .= '<div class="icon_main"><div class="icon_block"><i class="fa fa-map-marker"></i></div> <div class="text_block">'.$upcomingArr['location_name'][$i].'</div></div>';
+                  $appendHTML .= '<span class="txt_block">'.$upcomingArr['location_name'][$i].'</span>';
+                  $appendHTML .= '<div class="icon_main block_icon"><div class="icon_block"><i class="fa fa-map-marker"></i></i></div></div>';
                 }else{
-                  $appendHTML .= '<div class="icon_main"><img style="width: 100%;" src="<?php echo $this->request->webroot; ?>img/favicon.ico" title="Virtual Training"></div>';
+                  $appendHTML .= '<div class="icon_main"><img style="width: 100%;" src="'.$this->request->webroot.'img/favicon.ico" title="Virtual Training"></div>';
                 }
-                $appendHTML .= '<div class="chat_box"><div class="icon_block big_icon"><a href="javascript:void(0);" id="trainer-appointments" c_type="chat" t_type="trainer" from_id="'.$from_id.'" to_id="'.$upcomingArr['user_id'][$i].'" class="user_call" title="Text Chat"><i class="fa fa-weixin"></i></a>';
-                $appendHTML .= '</div><div class="bullet_box"><i class="fa fa-circle"></i><i class="fa fa-circle"></i> <i class="fa fa-circle"></i></div></div></li>';
+                $appendHTML .=  '<div class="timer"><div id="defaultCountdown"></div></div></div><div class="chat_box"><div class=" big_icon msg">';
+                $appendHTML .=  '<a href="javascript:void(0);"c_type="chat" t_type="trainer" from_id="'.$from_id.'" to_id="'.$upcomingArr['user_id'][$i].'" class="user_call envelop-chat" title="Text Chat"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>';
+                $appendHTML .=  '</div></div></div></li>';
               }
             }else{
               $appendHTML .= '</br><center><h4>You have no upcoming appointments</h4></center>';

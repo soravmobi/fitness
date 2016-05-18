@@ -30,7 +30,7 @@
                         	<p>Virtual TrainR is a ground-breaking platform that revolutionizes how you can interact and get trained by personal trainers. Clients can now receive training and fitness coaching either in person at a local gym or online using our personalized trainer-to-client video chat. Virtual TrainR gives you the freedom to select a certified fitness specialist that will guide you to achieve your fitness goals. </p>
                          </div>
                          <div class="inner_head">
-                            <h1>How does it work? </h1>
+                            <div class="main_heading">How does it work? </div>
                         </div>
                         <div class="inner_pera">
                             <p>Our platform does everything for you; Virtual TrainR will match you with a compatible trainer based on your fitness priorities. All you need to do is sign up, build a personalized profile and select a trainer! 
@@ -40,7 +40,7 @@
                             All of our trainers’ profiles contain information about their fitness background and professional status so you can choose the fitness specialist best suited for you. Trainers post their hours of availability and clients can book sessions and communicate with their trainers online. </p>
                          </div>
                          <div class="inner_head">
-                            <h1>Customer Service Guarantee! </h1>
+                            <div class="main_heading">Customer Service Guarantee! </div>
                         </div>
                         <div class="inner_pera">
                             <p>Weight loss? Strength training? Just trying to get in shape? We’re here to help. 
@@ -51,7 +51,7 @@
                                 Sit back and browse a wide selection of certified trainers ready to help you achieve your fitness goals. What are you waiting for? Begin your journey today.  </p>
                          </div>
                          <div class="inner_head">
-                            <h1>Pricing and bundles information </h1>
+                            <div class="main_heading">Pricing and bundles information </div>
                         </div>
                         <div class="inner_pera">
                             <p>Virtual TrainR is the easiest and cheapest way to train. We offer the most affordable prices, certified trainers and a great experience. Schedule your own sessions through our advanced trainer calendar system. 

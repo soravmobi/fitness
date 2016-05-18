@@ -16,6 +16,7 @@
                             <li><a href="<?php echo $this->request->webroot; ?>become-personal-trainer" title="Become Trainer">Become Trainer </a></li>
                             <li><a href="<?php echo $this->request->webroot; ?>learn-more" title="Learn More ">Learn More </a></li>
                             <li><a href="<?php echo $this->request->webroot; ?>contact-us" title="Contact Us">Contact us</a></li>
+                            <li><a href="<?php echo $this->request->webroot; ?>sitemap" title="Sitemap">Sitemap</a></li>
                         </ul>
                     </nav>
                 </div>

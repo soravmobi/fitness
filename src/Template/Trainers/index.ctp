@@ -92,101 +92,101 @@
               <!-- Responsive calendar - END --> 
             </div>
             <div class="col-md-4 col-sm-4">
-              <div class="appointement_head"> Upcoming Appointments </div>
-              <div class="session_setails_sec appointement_sec">
-                <div class="heading_payment_main"> </div>
-                <ul class="session_content scroll_content mCustomScrollbar _mCS_1" id="upcoming_section">
-                <?php       
-                            if(!empty($upcomingArr)){
-                              $upcomingArrCount = count($upcomingArr['trainee_name']);
-                            }else{
-                              $upcomingArrCount = 0; ?>
-                              </br><center><h4>You have no upcoming appointments</h4></center>
-                          <?php } 
-                            for ($i=0; $i < $upcomingArrCount; $i++) { ?>
-                                <li>
-                                <div class="main_block">
-                                 <div class="circle_box_main">
-                                  <div class="small_circle"></div>
-                                <div class="icon_block big_icon gray_color">
-                                <img src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$upcomingArr['trainee_image'][$i]) ?>" class="img-responsive">
-                                 </div>
-                                 </div>
-                                  <div class="text_block"><div class="appointer_name"><?php echo $upcomingArr['trainee_name'][$i]; ?></br> <span><?php echo date('d F, Y', strtotime($upcomingArr['appo_date'][$i])); ?>  </span></div> <span><?php echo $upcomingArr['appo_time'][$i]; ?></span></div>
-                                  <div class="timer">
-                                    <div id="defaultCountdown"></div>
-                                  </div>
-                               </div>
-                                <?php if(!empty($upcomingArr['location_name'][$i])){ ?>
-                                 <div class="icon_main">
-                                    <div class="icon_block"><i class="fa fa-map-marker"></i> </div>
-                                    <div class="text_block"><?php echo $upcomingArr['location_name'][$i]; ?></div>                    
-                                  </div>
-                                <?php } else { ?>
-                                  <div class="icon_main">
-                                    <img style="width: 100%;" src="<?php echo $this->request->webroot; ?>img/favicon.ico" title="Virtual Training">
-                                  </div>
-                                  <?php } ?>
-                                <div class="chat_box">
-                                    <div class="icon_block big_icon">
-                                      <a href="javascript:void(0);" id="trainer-appointments" c_type="chat" t_type="trainer" from_id="<?php echo $from_id; ?>" to_id="<?php echo $upcomingArr['user_id'][$i]; ?>" class="user_call" title="Text Chat"><i class="fa fa-weixin"></i></a>
-                                    </div>
-                                    <div class="bullet_box"><i class="fa fa-circle"></i>  <i class="fa fa-circle"></i> <i class="fa fa-circle"></i> </div>
+                            <div class="appointement_head">
+                                Upcoming Appointments
+                            </div>
+                            <div class="session_setails_sec appointement_sec mob_icon">
+                                <div class="heading_payment_main">
                                 </div>
-                              </li>
-                            <?php } ?>
-                            </ul>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-              <div class="appointement_head"> Pending Appointments </div>
-              <div class="session_setails_sec appointement_sec pending_appointement">
-                <div class="heading_payment_main"> </div>
-                <ul class="session_content scroll_content mCustomScrollbar _mCS_1">
-                <?php if(empty($pending_appointments)){ ?>
-                            </br><center><h4>You have no pending appointments</h4></center>
-                           <?php }else{ ?>
-                            <?php foreach($pending_appointments as $pa) { ?>
-                              <li>
-                                <div class="main_block">
-                                <div class="circle_box_main">
-                                   <div class="small_circle"></div>
-                                      <div class="icon_block big_icon gray_color">
-                                        <img src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$pa['trainee_image']) ?>" class="img-responsive">
-                                     </div>   
-                                    </div>
-                                    <?php $session_data = unserialize($pa['session_data']); ?>
-                                    <div class="text_block">
-                                        <div class="appointer_name"><?php echo ucwords($pa['trainee_name']." ".$pa['trainee_lname']); ?> </div> <span><?php echo count($session_data); ?> <?php echo (count($session_data) > 1) ? "Sessions" : "Session"; ?> - $<?php echo round($pa['final_price'],2); ?></span>
-                                    </div>
-                                </div>
-                                <div class="icon_main">
-                                    <div class="clock_main pending_appo">
-                                        <?php 
-                                          $timer_details = $this->Custom->getTimerDetails($pa['created_date']);
-                                        ?>
-                                        <div id="clockdiv_<?php echo $pa['app_id']; ?>"  onload="counter(<?php echo $pa['app_id']; ?>,<?php echo $timer_details['hours'] ; ?>,<?php echo $timer_details['minutes']; ?>,<?php echo $timer_details['seconds']; ?>)">
-                                            <span id="<?php echo $pa['app_id']; ?>"></span>
+
+                                <ul class="session_content scroll_content mCustomScrollbar _mCS_1" id="upcoming_section">
+                                  <?php       
+                                      if(!empty($upcomingArr)){
+                                        $upcomingArrCount = count($upcomingArr['trainee_name']);
+                                      }else{
+                                        $upcomingArrCount = 0; ?>
+                                        </br><center><h4>You have no upcoming appointments</h4></center>
+                                    <?php }
+                                    for ($i=0; $i < $upcomingArrCount; $i++) { ?>
+                                    <li>
+
+                                        <div class="main_block">
+                                            <div class="icon_block big_icon gray_color">
+                                                <img src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$upcomingArr['trainee_image'][$i]) ?>">
+                                            </div>
+                                            <span class="client_name"><?php echo $upcomingArr['trainee_name'][$i]; ?></span>
+                                            <div class="text_block">
+                                                <div class="appointer_name"><?php echo date('d F, Y', strtotime($upcomingArr['appo_date'][$i])); ?> </br><?php echo $upcomingArr['appo_time'][$i]; ?> </div> 
+                                              <?php if(!empty($upcomingArr['location_name'][$i])){ ?>
+                                                <span class="txt_block"><?php echo $upcomingArr['location_name'][$i]; ?></span>
+                                                <div class="icon_main block_icon">
+                                                    <div class="icon_block"><i class="fa fa-map-marker"></i></i>
+                                                    </div>
+                                                </div>
+                                              <?php } else { ?>
+                                                <div class="icon_main">
+                                                  <img style="width: 100%;" src="<?php echo $this->request->webroot; ?>img/favicon.ico" title="Virtual Training">
+                                                </div>
+                                              <?php } ?>
+                                                <div class="timer">
+                                                    <div id="defaultCountdown"></div>
+                                                </div>
+                                            </div>
+                                            <div class="chat_box">
+                                                <div class=" big_icon msg">
+                                                <a href="javascript:void(0);" c_type="chat" t_type="trainer" from_id="<?php echo $from_id; ?>" to_id="<?php echo $upcomingArr['user_id'][$i]; ?>" class="user_call envelop-chat" title="Text Chat"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- <div class="vew_details"><a href="#">(view details)</a> </div> -->
+                                            </div>
                                         </div>
-                                    </div>
+                                    </li>
+                                  <?php } ?>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4">
+                            <div class="appointement_head">
+                                pending Appointments
+                            </div>
+                            <div class="session_setails_sec appointement_sec pending_appointement">
+                                <div class="heading_payment_main">
+
                                 </div>
-                                <div class="chat_box">
-                                    <div class="icon_block big_icon">
-                                        <a href="javascript:void(0);" id="trainer-appointments" c_type="chat" t_type="trainer" from_id="<?php echo $from_id; ?>" to_id="<?php echo $pa['trainee_id']; ?>" class="user_call" title="Text Chat"><i class="fa fa-weixin"></i></a>
-                                    </div>
-                                    <div class="bullet_box"><a title="View Pending Appointment" href="<?php echo $this->request->webroot; ?>trainers/viewPendingAppointment?aid=<?php echo base64_encode($pa['app_id']); ?>"><i class="fa fa-circle"></i> <i class="fa fa-circle"></i> <i class="fa fa-circle"></i></a>
-                                      <div class="pop_over">
-                                         <h4>View Appointments</h4>
-                                         <p>View, modify appointments</p>
-                                          <a href="javascript:void(0);" class="btn_okay">okay</a>
-                                      </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <?php } } ?>
-                            </ul>
-              </div>
-            </div>
+
+                                <ul class="session_content scroll_content mCustomScrollbar _mCS_1">
+                                  <?php if(empty($pending_appointments)){ ?>
+                                  </br><center><h4>You have no pending appointments</h4></center>
+                                  <?php }else{ ?>
+                                  <?php foreach($pending_appointments as $pa) { ?>
+                                    <li>
+                                        <div class="main_block">
+                                            <div class="icon_block big_icon gray_color">
+                                               <img src="<?php echo $this->Custom->getImageSrc('uploads/trainee_profile/'.$pa['trainee_image']) ?>">
+                                            </div>
+                                            <?php $session_data = unserialize($pa['session_data']); ?>
+                                            <span class="client_name pending_confirm">pending confirmation</span>
+                                            <div class="text_block text_block1">
+                                                <div class="appointer_name gray_txt">
+                                                    <p><?php echo count($session_data); ?> <?php echo (count($session_data) > 1) ? "Sessions" : "Session"; ?>  ($<?php echo round($pa['final_price'],2); ?>)
+                                                    </p> </div> <span class="txt_block gray_txt"> </span>
+                                                <div class="timer">
+                                                    <div id="defaultCountdown"></div>
+                                                </div>
+                                            </div>
+                                            <div class="chat_box">
+                                                <span><b><?php echo ucwords($pa['trainee_name']); ?></b> has 24 hours to respond</span>
+                                                <div class=" big_icon msg">
+                                                    <a href="javascript:void(0);" c_type="chat" t_type="trainer" from_id="<?php echo $from_id; ?>" to_id="<?php echo $pa['trainee_id']; ?>" class="user_call envelop-chat" title="Text Chat"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                                                </div>
+                                                <div class="vew_details"><a title="View Details" href="<?php echo $this->request->webroot; ?>trainers/viewPendingAppointment?aid=<?php echo base64_encode($pa['app_id']); ?>">(view details)</a> </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                  <?php } } ?>
+                                </ul>
+                            </div>
+                        </div>
           </div>
         </div>
         <div class="visiter_map_sec">
@@ -402,12 +402,20 @@ $(".select-all-btn").change(function () {
           type:"post",
           data:{date:date},
           dataType:"json",
+          beforeSend: function() {
+            $('.loading').show();
+            $('.loading_icon').show();
+          }, 
           success: function(response){
             var appendHTML = response.message;
             $('#upcoming_section').html(appendHTML);
+            $('.loading').hide();
+            $('.loading_icon').hide();
           },
           error:function(error){
-              console.log(error);  
+            console.log(error);  
+            $('.loading').hide();
+            $('.loading_icon').hide();
           }
       });
     });

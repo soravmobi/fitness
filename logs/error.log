@@ -5064,3 +5064,1418 @@ Stack Trace:
 #1 {main}
 
 
+2016-05-18 11:05:55 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::<() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => '<',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/%3C?php_echo_%24this-%3Erequest-%3Ewebroot%3B_%3F%3Eimg%2Ffavicon_ico=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:07:38 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:07:39 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:08:14 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:08:15 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:08:59 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:09:00 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:10:36 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:10:37 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:10:51 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:10:52 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:12:49 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:12:50 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:13:01 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:13:02 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:13:24 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:13:25 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:13:38 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:13:40 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:13:44 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:13:58 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:14:00 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:14:19 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:14:21 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:15:22 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:15:23 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:17:16 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:17:18 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:17:46 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:17:48 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:18:17 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:18:20 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:18:43 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:18:45 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:18:54 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:18:55 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:19:49 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:19:52 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:20:08 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 11:20:44 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:20:45 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 11:20:46 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:22:12 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:22:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 11:22:14 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:25:11 Error: Fatal Error (4): syntax error, unexpected end of file in [/opt/lampp/htdocs/fitness/src/Template/Trainers/appointments.ctp, line 282]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2016-05-18 11:25:11 Error: [Cake\Error\FatalErrorException] syntax error, unexpected end of file
+Request URL: /fitness/trainers/appointments
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/opt/lampp/htdo...', 282)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2016-05-18 11:25:41 Error: Fatal Error (4): syntax error, unexpected '}' in [/opt/lampp/htdocs/fitness/src/Template/Trainers/appointments.ctp, line 103]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2016-05-18 11:25:41 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '}'
+Request URL: /fitness/trainers/appointments
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/opt/lampp/htdo...', 103)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2016-05-18 11:25:43 Error: Fatal Error (4): syntax error, unexpected '}' in [/opt/lampp/htdocs/fitness/src/Template/Trainers/appointments.ctp, line 103]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2016-05-18 11:25:43 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '}'
+Request URL: /fitness/trainers/appointments
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/opt/lampp/htdo...', 103)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2016-05-18 11:26:44 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:26:51 Error: [Cake\Controller\Exception\MissingActionException] Action TrainersController::images() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TrainersController',
+  'action' => 'images',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainers/images/avatar2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TrainersController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 11:58:04 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 11:58:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 11:58:45 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 11:58:49 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Uploads could not be found.
+Exception Attributes: array (
+  'class' => 'Uploads',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/uploads/trainer_profile/default.png
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 11:59:02 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 11:59:14 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 12:00:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 12:00:52 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 12:01:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 12:02:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 12:02:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 12:04:15 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 12:04:46 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 12:08:25 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 12:10:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 12:13:47 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 12:15:01 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 12:16:30 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 12:18:43 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 12:19:10 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 12:20:14 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 13:21:32 Error: [Cake\Routing\Exception\MissingControllerException] Controller class \ could not be found.
+Exception Attributes: array (
+  'class' => '\\',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/%5C
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 14:38:17 Error: Fatal Error (4): syntax error, unexpected '}' in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 231]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2016-05-18 14:38:17 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '}'
+Request URL: /fitness/trainees/appointments
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/opt/lampp/htdo...', 231)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2016-05-18 14:38:17 Error: Fatal Error (4): syntax error, unexpected '}' in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 231]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2016-05-18 14:38:17 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '}'
+Request URL: /fitness/trainees/appointments
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/opt/lampp/htdo...', 231)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2016-05-18 14:39:02 Error: Fatal Error (4): syntax error, unexpected '}' in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 231]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2016-05-18 14:39:02 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '}'
+Request URL: /fitness/trainees/appointments
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/opt/lampp/htdo...', 231)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2016-05-18 14:40:00 Error: Fatal Error (4): syntax error, unexpected '}' in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 231]
+Trace:
+Cake\Error\BaseErrorHandler::handleFatalError() - CORE/src/Error/BaseErrorHandler.php, line 192
+Cake\Error\BaseErrorHandler::Cake\Error\{closure}() - CORE/src/Error/BaseErrorHandler.php, line 91
+[main] - [internal], line ??
+
+
+
+2016-05-18 14:40:02 Error: [Cake\Error\FatalErrorException] syntax error, unexpected '}'
+Request URL: /fitness/trainees/appointments
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Error/BaseErrorHandler.php(91): Cake\Error\BaseErrorHandler->handleFatalError(4, 'syntax error, u...', '/opt/lampp/htdo...', 231)
+#1 [internal function]: Cake\Error\BaseErrorHandler->Cake\Error\{closure}()
+#2 {main}
+
+
+2016-05-18 14:41:58 Error: [Cake\Controller\Exception\MissingActionException] Action TraineesController::<() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TraineesController',
+  'action' => '<',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainees/%3C?php_echo_%24this-%3Erequest-%3Ewebroot%3B_%3F%3Eimg%2Ffavicon_ico=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 14:41:58 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/img/default.png%3E%3C/div%3E%3Cspan%20class=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 14:42:04 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 14:42:09 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/img/default.png%3E%3C/div%3E%3Cspan%20class=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 14:42:10 Error: [Cake\Controller\Exception\MissingActionException] Action TraineesController::<() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TraineesController',
+  'action' => '<',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainees/%3C?php_echo_%24this-%3Erequest-%3Ewebroot%3B_%3F%3Eimg%2Ffavicon_ico=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 14:43:34 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/img/default.png%3E%3C/div%3E%3Cspan%20class=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 14:43:34 Error: [Cake\Controller\Exception\MissingActionException] Action TraineesController::<() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TraineesController',
+  'action' => '<',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainees/%3C?php_echo_%24this-%3Erequest-%3Ewebroot%3B_%3F%3Eimg%2Ffavicon_ico=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 14:43:36 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/img/default.png%3E%3C/div%3E%3Cspan%20class=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 14:43:37 Error: [Cake\Controller\Exception\MissingActionException] Action TraineesController::<() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TraineesController',
+  'action' => '<',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainees/%3C?php_echo_%24this-%3Erequest-%3Ewebroot%3B_%3F%3Eimg%2Ffavicon_ico=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 14:43:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/img/default.png%3E%3C/div%3E%3Cspan%20class=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 14:43:39 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/img/default.png%3E%3C/div%3E%3Cspan%20class=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 14:43:39 Error: [Cake\Controller\Exception\MissingActionException] Action TraineesController::<() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TraineesController',
+  'action' => '<',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainees/%3C?php_echo_%24this-%3Erequest-%3Ewebroot%3B_%3F%3Eimg%2Ffavicon_ico=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 14:43:47 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 14:44:45 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 14:51:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/img/default.png%3E%3C/div%3E%3Cspan%20class=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 14:51:32 Error: [Cake\Controller\Exception\MissingActionException] Action TraineesController::<() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TraineesController',
+  'action' => '<',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainees/%3C?php_echo_%24this-%3Erequest-%3Ewebroot%3B_%3F%3Eimg%2Ffavicon_ico=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 14:51:33 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Img could not be found.
+Exception Attributes: array (
+  'class' => 'Img',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/img/default.png%3E%3C/div%3E%3Cspan%20class=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 14:51:33 Error: [Cake\Controller\Exception\MissingActionException] Action TraineesController::<() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TraineesController',
+  'action' => '<',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainees/%3C?php_echo_%24this-%3Erequest-%3Ewebroot%3B_%3F%3Eimg%2Ffavicon_ico=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 14:51:35 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 14:51:47 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 14:54:38 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Request URL: /fitness/js/TB.js.map
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#1 {main}
+
+
+2016-05-18 14:54:42 Error: [Cake\Controller\Exception\MissingActionException] Action TraineesController::<() could not be found, or is not accessible.
+Exception Attributes: array (
+  'controller' => 'TraineesController',
+  'action' => '<',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Request URL: /fitness/trainees/%3C?php_echo_%24this-%3Erequest-%3Ewebroot%3B_%3F%3Eimg%2Ffavicon_ico=
+Stack Trace:
+#0 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#1 /opt/lampp/htdocs/fitness/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\TraineesController))
+#2 /opt/lampp/htdocs/fitness/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 {main}
+
+
+2016-05-18 15:00:18 Warning: Warning (2): file_get_contents(http://api.openweathermap.org/data/2.5/weather?q=&amp;appid=c488325e3fceefdedd2e291d011f63f1) [<a href='http://php.net/function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: HTTP request failed!  in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 153]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+file_get_contents - [internal], line ??
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 153
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+

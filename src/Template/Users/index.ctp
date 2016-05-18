@@ -17,12 +17,12 @@
 			<div class="item active banner_bg1" data-type="background" data-speed="8">
 				<div class="container">
 					<div class="carousel-caption">
-					<h1 data-animation="animated fadeInDown">
+					<span data-animation="animated fadeInDown">
 						<img src="<?php echo $this->request->webroot; ?>images/logo1.png" class="img-responsive">
-					</h1>
-					<h2 data-animation="animated fadeInDown">
+					</span>
+					<div class="second_head" data-animation="animated fadeInDown">
 						Welcome to the Future of Fitness
-					</h2>
+					</div>
                     <p data-animation="animated fadeInDown">
                     Virtual TrainR now allows people to connect and train with certified 
 fitness specialists. </br>Anywhere, anytime.
@@ -37,12 +37,12 @@ fitness specialists. </br>Anywhere, anytime.
 			<div class="item banner_bg2" data-type="background" data-speed="8">
             	<div class="container">
 					<div class="carousel-caption">
-					<h1 data-animation="animated fadeInDown">
+					<span data-animation="animated fadeInDown">
 						<img src="<?php echo $this->request->webroot; ?>images/logo1.png" class="img-responsive">
-					</h1>
-					<h2 data-animation="animated fadeInDown">
+					</span>
+					<div class="second_head" data-animation="animated fadeInDown">
 						No excuses! Get ready to achieve your goals. 
-					</h2>
+					</div>
                     <p data-animation="animated fadeInDown">
                     Sign up and train with a local expert today.
                     </p>
@@ -55,12 +55,12 @@ fitness specialists. </br>Anywhere, anytime.
 			<div class="item banner_bg3" data-type="background" data-speed="8">
             	<div class="container">
 					<div class="carousel-caption">
-					<h1 data-animation="animated fadeInDown">
+					<span data-animation="animated fadeInDown">
 						<img src="<?php echo $this->request->webroot; ?>images/logo1.png" class="img-responsive">
-					</h1>
-					<h2 data-animation="animated fadeInDown">
+					</span>
+					<div class="second_head" data-animation="animated fadeInDown">
 						Got what it takes? Get paid to train.
-					</h2>
+					</div>
                     <p data-animation="animated fadeInDown">
                     Become a partner in our growing fitness community and train people today. 
                     </p>
@@ -80,7 +80,7 @@ fitness specialists. </br>Anywhere, anytime.
             	<div class="row">
                 	<div class="col-sm-12">
                     	<div class="sec_heading ln_heading">
-                        	<h1>How <span>it</span> works</h1>
+                        	<div class="main_heading">How <span>it</span> works</div>
                             <p></p>
                         </div>
                     </div>
@@ -142,7 +142,7 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
                 	<div class="col-sm-7">
                     	<div class="hiw_left">
                         	<div class="hiw_left_heading sec_heading">
-                            	<h1>Become your Own Boss</h1>
+                            	<div class="main_heading">Become your Own Boss</div>
                             </div>
                             <div class="hiw_left_body sec_body">
                             	<p>Get paid what you deserve. Train clients in our growing fitness community. </br> Sign up with Virtual TrainR today and begin your independent personal training career.  </p>
@@ -167,7 +167,7 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
             	<div class="row">
                 	<div class="col-sm-12">
                     	<div class="searvices_heading sec_heading">
-                        	<h1>Variety of <span>Activities</span> to choose from</h1>
+                        	<div class="main_heading">Variety of <span>Activities</span> to choose from</div>
                             
                             <p>
                            Spice up your fitness. We offer various types of fitness activities for your satisfaction. Sign up with Virtual TrainR today and discover our growing fitness community. Fitness revolutionized through Virtual TrainR.
@@ -182,7 +182,7 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
                                 <div class="ser_img"><img src="<?php echo $this->request->webroot; ?>images/services_img1.jpg" alt="img" class="img-circle image_hover">
                                 </div>
                                 <div class="ser_txt">
-                                	<h3>Cardio</h3>
+                                	<div class="third_heading">Cardio</div>
                                     <p>Enjoy a variety of classes that provide an effective workout to build cardiovascular endurance.</p>
                                 </div>
                                 </li>
@@ -191,7 +191,7 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
                                 <div class="ser_img"><img src="<?php echo $this->request->webroot; ?>images/services_img2.jpg" alt="img" class="img-circle image_hover">
                                 </div>
                                 <div class="ser_txt">
-                                	<h3>Boot Camp </h3>
+                                	<div class="third_heading">Boot Camp </div>
                                     <p>Enjoy a variety of classes that provide an effective workout to build cardiovascular endurance.</p>
                                 </div>
                                 </li>
@@ -200,25 +200,15 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
                                 <div class="ser_img"><img src="<?php echo $this->request->webroot; ?>images/services_img3.jpg" alt="img" class="img-circle image_hover">
                                 </div>
                                 <div class="ser_txt">
-                                	<h3>Kick Boxing </h3>
+                                	<div class="third_heading">Kick Boxing </div>
                                     <p>Enjoy a variety of classes that provide an effective workout to build cardiovascular endurance.</p>
                                 </div>
                                 </li>
-                                
-                                <!--<li>
-                                <div class="ser_img"><img src="images/services_img4.jpg" alt="img" class="img-circle image_hover">
-                                </div>
-                                <div class="ser_txt">
-                                	<h3>Cycling Classes</h3>
-                                    <p>Enjoy a variety of classes that provide an effective workout to build cardiovascular endurance.</p>
-                                </div>
-                                </li>-->
-                                
                                 <li>
                                 <div class="ser_img"><img src="<?php echo $this->request->webroot; ?>images/services_img5.jpg" alt="img" class="img-circle image_hover">
                                 </div>
                                 <div class="ser_txt">
-                                	<h3>Mind &amp; Body </h3>
+                                	<div class="third_heading">Mind &amp; Body </div>
                                     <p>Enjoy a variety of classes that provide an effective workout to build cardiovascular endurance.</p>
                                 </div>
                                 </li>
@@ -227,19 +217,10 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
                                 <div class="ser_img"><img src="<?php echo $this->request->webroot; ?>images/services_img6.jpg" alt="img" class=" img-circle image_hover">
                                 </div>
                                 <div class="ser_txt">
-                                	<h3>Active Aging </h3>
+                                	<div class="third_heading">Active Aging </div>
                                     <p>Enjoy a variety of classes that provide an effective workout to build cardiovascular endurance.</p>
                                 </div>
                                 </li>
-                                
-                                <!--<li>
-                                <div class="ser_img"><img src="images/services_img7.jpg" alt="img" class="img-circle image_hover">
-                                </div>
-                                <div class="ser_txt">
-                                	<h3>Strength Classes</h3>
-                                    <p>Enjoy a variety of classes that provide an effective workout to build cardiovascular endurance.</p>
-                                </div>
-                                </li>-->
                             </ul>
                         </div>
                     </div>
@@ -260,11 +241,11 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
                 	<div class="col-sm-6">
                     	<div class="ms_center">
                             <div class="ms_heading sec_heading">
-                                <h2><span>Virtual</span> Train<span>R</span> App</h2>
+                                <h1><span>Virtual</span> Train<span>R</span> App</h1>
                             </div>
                             <div class="ms_body sec_body">
                                 <p>All Trainers On Your Mobile</p>
-                                <h3>COMING SOON</h3>
+                                <div class="third_heading">COMING SOON</div>
                             
                             </div>
                         </div>
@@ -339,52 +320,6 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
         </section>
   
      <!--Testimonial sec end-->   
-    <!--Price sec start-->
-        <!-- <section class="price_sec">
-        	<div class="container">
-              <div class="get">
-               <div class="row">
-            		<div class="col-sm-12">
-                        <div class="ps_heading sec_heading get_head">
-                        	<h1>Let’s <span>Get</span> Started</h1>
-                            <h5>Training Packages - All Plans</h5>
-                            <p>Choose a personal training package today. We recommend that you purchase a single session for a trial-run with a trainer of your choice. Once you’ve found a trainer that suits your needs you can purchase larger packages at a premium rate.  Every package includes workouts, nutrition information, supplement advice and much more. Whatever your goal, we’ve got you covered..</p>
-                        </div>
-                	</div>
-                </div>
-               </div>
-            	<div class="row">
-            		<div class="col-sm-12">
-                        <div class="ps_heading sec_heading">
-                        	<h1>Bronze plan</h1>
-                            <p>The bronze plan has everything to get you started with a fitness expert today. Whether your goals include weight loss, strength training or staying in shape,  we can find you a certified trainer to help you along the journey.</p>
-                        </div>
-                	</div>
-                </div>
-                
-                <div class="row ps_body">
-                <?php 
-                foreach($all_sessions as $as) { ?>
-                    <div class="col-sm-3">
-                        <div class="price_block">
-                            <div class="pb_heading gray_grad">
-                                <h2><?php echo $as['ps_name']; ?> <?php echo ($as['ps_name'] == 1)? " Session" : " Sessions"; ?></h2>
-                            </div>
-                            <div class="pb_body">
-                                <div class="session_price">
-                                    <span>$<?php echo $as['ps_price']; ?></span>
-                                </div>
-                                <div class="session_order">
-                                    <a href="<?php echo $this->request->webroot; ?>plans"  title="Click Here To Order">Order Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php } ?>
-                </div>
-            </div>
-        </section> -->
-    <!--Price sec end-->
     
     <!--Contact Sec start-->    
         <section class="contact_sec">
@@ -395,7 +330,7 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
                     <div class="col-sm-12">
                         <div class="contact_block">
                             <div class="cb_heading">
-                                <h1>Contact Us Now</h1>
+                                <div class="main_heading">Contact Us Now</div>
                             </div>
                             <div class="cb_body">
                                 <form id="contactForm" method="post" action="<?php echo $this->request->webroot; ?>docontact">

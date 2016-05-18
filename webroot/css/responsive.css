@@ -1737,6 +1737,12 @@
   transform: rotate(90deg);
   width: 0;
 }
+.icon_main.block_icon {
+  left: auto;
+  position: absolute;
+  right: -6px;
+  text-align: right;
+}
 }	
 
 @media (min-width:480px) and (max-width:767px){
@@ -1771,6 +1777,32 @@
 }
 .appointe_box .calendor_caption .checkbox {
   width: 49%;
+}
+.big_icon.msg {
+  font-size: 24px;
+  margin-bottom: 0;
+  padding-right: 10px;
+  text-align: right;
+  line-height: 80px;
+}
+.client_name {
+  left: 0;
+}
+.appointement_sec .icon_block {
+  position: relative;
+  vertical-align: top;
+  z-index: 11;
+}
+.big_icon {
+  height: 40px;
+  width: 40px;
+}
+.chat_box {
+  text-align: right;
+}
+.vew_details {
+  margin-right: 8px;
+  margin-top: 35px;
 }
 #appointment_modal1 .modal-dialog{width:100%;}
 .calendor_switches_head .cs_head_left:first-child {

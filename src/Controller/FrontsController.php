@@ -13,7 +13,7 @@ class FrontsController extends AppController
     	$this->blockIP();
         parent::beforeFilter($event);
         $this->loadComponent('Auth');
-        $this->Auth->allow(['ourTrainers','searchTrainer','contactus','plans','docontact','terms','learnmore','career','opportunity','becometrainer','getCountryList','checkvalidip']);
+        $this->Auth->allow(['ourTrainers','searchTrainer','contactus','plans','docontact','terms','learnmore','career','opportunity','becometrainer','getCountryList','checkvalidip','sitemap']);
         $this->data = $this->Custom->getSessionData();
         $this->total_notifications = $this->Notifications->find()->where(['noti_receiver_id' => $this->data['id'],'noti_status' => 0])->count();
         $this->set('notifications', $this->total_notifications);
@@ -157,6 +157,11 @@ class FrontsController extends AppController
 	}
 
 	public function opportunity()
+	{
+		
+	}
+
+	public function sitemap()
 	{
 		
 	}

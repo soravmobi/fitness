@@ -31,7 +31,7 @@
                          </div>
                         
                         <div class="inner_head">
-                        	<h1>The Ground Rules</h1>
+                        	<div class="main_heading">The Ground Rules</div>
                         </div>
                         <div class="inner_pera">
                         <p>The membership of Virtual Trainr succeeds because of the quality of its members and some basic rules that everyone adheres to. We reserve the right to deny service to any member or prospective member at any time.</p>
@@ -40,14 +40,14 @@
                         </div>
                         
                         <div class="inner_head">
-                        	<h1>Securities Solicitation Policy</h1>
+                        	<div class="main_heading">Securities Solicitation Policy</div>
                         </div>
                         <div class="inner_pera">
                         	<p>By posting on this site Member represents and agrees that nothing contained herein constitutes an offer to sell or solicitation of an offer to buy any security, and that if any offer or sale of securities is deemed to have occurred by reason of a posting or listing on this Site such offer and sale is made solely to institutional or accredited investors as those terms are applicable under state and federal securities laws.</p>
                         </div>
                         
                         <div class="inner_head">
-                        	<h1>Trademark Infringement</h1>
+                        	<div class="main_heading">Trademark Infringement</div>
                         </div>
                         <div class="inner_pera">
                         	<p>All names and logos associated with You Tag Media & Business Solutions, Inc and Virtual Trainr are trademarks of You Tag Media & Business Solutions, Inc. You may not use any You Tag Media & Business Solutions, Inc trademark in any manner without You Tag Media & Business Solutions, Inc's written consent. Furthermore, users may not infringe on any patents, trademarks, or other copyrights of Virtual Trainr users or any other parties whatsoever.</p>
@@ -55,7 +55,7 @@
                         </div>
                         
                         <div class="inner_head">
-                        	<h1>Virtual Trainr</h1>
+                        	<div class="main_heading">Virtual Trainr</div>
                         </div>
                         <div class="inner_pera">
                         	<p>Virtual Trainr is an online service that allows personal Trainers to connect with individuals who are interested in taking control of their health and fitness. Only users who are manually approved will be able to host training sessions. All Trainers are thoroughly vetted prior to launching their profile and they are coached on creating proper expectations. </p>
@@ -63,7 +63,7 @@
                         </div>
 
                         <div class="inner_head">
-                            <h1>Conditions for Membership</h1>
+                            <div class="main_heading">Conditions for Membership</div>
                         </div>
                         <div class="inner_pera">
                             <p>For obvious legal reasons, Virtual Trainr or any affiliated services may not be used by persons under the age of 18. This same restriction applies to any users suspended or removed from Virtual Trainr or any affiliated services. Users are prohibited from transferring or profiting from the transfer of their Virtual Trainr account to another party. If you do not meet these requirements, you are not eligible to use Virtual Trainr.</p>
@@ -71,7 +71,7 @@
                         </div>
 
                         <div class="inner_head">
-                            <h1>Terms of Information Use</h1>
+                            <div class="main_heading">Terms of Information Use</div>
                         </div>
                         <div class="inner_pera">
                             <p>You Tag Media & Business Solutions, Inc is authorized to use any information that is provided by Virtual Trainr users or affiliates. This information is used at no charge from the users and may be used for any purpose associated with You Tag Media & Business Solutions, Inc, or any affiliates. All information that a user posts on Virtual Trainr is completely the USER's responsibility. You Tag Media & Business Solutions, Inc is not responsible for any misrepresentation of facts or other errors in this content. You Tag Media & Business Solutions, Inc strives to ensure the integrity of the information on Virtual Trainr, but cannot guarantee the truthfulness of the information that each user provides through Virtual Trainr. You Tag Media & Business Solutions, Inc reserves the right to release any user information or other information if required to do so by law. </p>
@@ -79,7 +79,7 @@
                         </div>
 
                         <div class="inner_head">
-                            <h1>Virtual Trainr Contact System</h1>
+                            <div class="main_heading">Virtual Trainr Contact System</div>
                         </div>
                         <div class="inner_pera">
                             <p>You Tag Media & Business Solutions, Inc has created a proprietary messaging system for users to communicate with one another and for You Tag Media & Business Solutions, Inc to contact these users. Additionally, You Tag Media & Business Solutions, Inc may communicate with its users via email or other forms of contact in the normal course of Trainrs. All users must agree not to abuse Virtual Trainr contact system in manner. Failure to comply with this requirement may result in account suspension or termination. </p>
@@ -87,7 +87,7 @@
                         </div>
 
                         <div class="inner_head">
-                            <h1>Confidential Information Exchange</h1>
+                            <div class="main_heading">Confidential Information Exchange</div>
                         </div>
                         <div class="inner_pera">
                             <p>All information submitted to Virtual Trainr, including messages, will become property of You Tag Media & Business Solutions, Inc. Any Trainr or user on our site requesting to contact any other Trainr or user on our site, does so at their own risk and is solely responsible for conducting any health and safety review with their personal doctors. Please do not send any confidential information through Virtual Trainr. You're best off using the system to make contact with other Members and then continue any confidential information exchange through your own methods. </p>
@@ -95,7 +95,7 @@
                         </div>
 
                         <div class="inner_head">
-                            <h1>Use of Virtual Trainr </h1>
+                            <div class="main_heading">Use of Virtual Trainr </div>
                         </div>
                         <div class="inner_pera">
                             <p> Your use of Virtual Trainr Service must follow the guidelines set forth in this agreement. Virtual Trainr may refuse or revoke service or other offerings without prior notice to any user or potential user for any reason. Users must obey all applicable local, national, and international laws associated with the use of Virtual Trainr and any affiliated services.
@@ -103,14 +103,14 @@
                         </div>
 
                         <div class="inner_head">
-                            <h1>Types of Trainrs Not Supported</h1>
+                            <div class="main_heading">Types of Trainrs Not Supported</div>
                         </div>
                         <div class="inner_pera">
                             <p>Based on past experience, there are a few types of Trainrs that we just can't seem to support without throwing the rest of our community up in arms. These include Multi Level Marketers, Home Based Trainrs Services, and just about anything that has to do with pornography or adult entertainment. We reserve the right to cancel or suspend accounts that appear to be related to these types of Trainrs. If you're running one of these types of types of Trainrs, you will probably have more luck on Craigslist, as they are a more generalized listing service. </p>
                         </div>
 
                         <div class="inner_head">
-                            <h1>User Agreement</h1>
+                            <div class="main_heading">User Agreement</div>
                         </div>
                         <div class="inner_pera">
                             <p>Users agree with You Tag Media & Business Solutions, Inc NOT to use Virtual Trainr or any services provided by You Tag Media & Business Solutions, Inc or its affiliates to:</p>
@@ -128,7 +128,7 @@
                         </div>
 
                         <div class="inner_head">
-                            <h1>Intellectual Property Rights — Project Creators</h1>
+                            <div class="main_heading">Intellectual Property Rights — Project Creators</div>
                         </div>
                         <div class="inner_pera">
                             <p>The Service provides you with the ability upload your content to the Site. Virtual Trainr will not have any ownership rights in your content, however, Virtual Trainr needs the following license to perform the Service. You hereby grant to Virtual Trainr the worldwide, non-exclusive, royalty-free, right to (and to allow others acting on its behalf to) (i) use, host, display, and otherwise perform the Service on your behalf (e.g., use, host, stream, transmit, playback, transcode, copy, display, feature, market, sell, distribute and otherwise exploit ("Host") the content, along with all associated copyrightable works or metadata, including without limitation photographs, graphics, and descriptive text ("Artworks") in connection with the Service); (ii) (and to allow other users to) stream, transmit, playback, download, display, feature, distribute, collect, and otherwise use the content and Artworks; and (iii) use and publish, and to permit others to use and publish, the name(s), trademarks, likenesses, and personal and biographical materials of you and the members of your group, in connection with the provision of the Service.
@@ -137,7 +137,7 @@
                         </div>
 
                         <div class="inner_head">
-                            <h1>Intellectual Property Rights — Users</h1>
+                            <div class="main_heading">Intellectual Property Rights — Users</div>
                         </div>
                         <div class="inner_pera">
                             <p>
@@ -153,7 +153,7 @@
                         </div>
 
                         <div class="inner_head">
-                            <h1>Disciplinary Guidelines </h1>
+                            <div class="main_heading">Disciplinary Guidelines </div>
                         </div>
                         <div class="inner_pera">
                             <p>You Tag Media & Business Solutions, Inc has set in place a listing of disciplinary guidelines for regarding the use of Virtual Trainr or any affiliated services. You Tag Media & Business Solutions, Inc may, but is not obligated to, enforce penalties for breaching these guidelines. Foremost, you agree that Virtual Trainr may immediately suspend or terminate your Virtual Trainr account and all access to Virtual Trainr and other services without prior notice. The following will lead to the suspension or termination by Virtual Trainr of a user's account 1) violation of this Terms of Service or the User Agreement within this document 2) Violation of any applicable laws 3) A user's request to have their own profile removed 4) Account inactivity.
@@ -161,7 +161,7 @@
                         </div>
 
                         <div class="inner_head">
-                            <h1>Refund Policy</h1>
+                            <div class="main_heading">Refund Policy</div>
                         </div>
                         <div class="inner_pera">
                             <p>
@@ -177,7 +177,7 @@
                         </div>
 
                         <div class="inner_head">
-                            <h1>Extent of Liability</h1>
+                            <div class="main_heading">Extent of Liability</div>
                         </div>
                         <div class="inner_pera">
                             <p>

@@ -71,6 +71,8 @@ Router::scope('/', function ($routes) {
 
     $routes->connect('/career', ['controller' => 'Fronts', 'action' => 'career']);
 
+    $routes->connect('/sitemap', ['controller' => 'Fronts', 'action' => 'sitemap']);
+
     $routes->connect('/opportunity', ['controller' => 'Fronts', 'action' => 'opportunity']);
 
     $routes->connect('/learn-more', ['controller' => 'Fronts', 'action' => 'learnmore']);
