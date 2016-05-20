@@ -1,7 +1,7 @@
     <!--Main container sec start-->
     <div class="main_container">
     <!--Trainee top sec start-->
-    	<section class="trainee_top parallax-window" data-parallax="scroll" data-image-src="<?php echo $this->request->webroot; ?>images/trainee_top_bg.jpg">
+    	<section class="trainee_top parallax-window" data-parallax="scroll" data-image-src="<?php echo $this->request->webroot; ?>images/trainee_top_bg.jpg" alt="home exercise equipment">
         	<div class="trainee_top_inner tr_grad">
         		<div class="container">
             	<div class="row">

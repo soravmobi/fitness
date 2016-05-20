@@ -89,7 +89,7 @@
                         	 <ul class="bank_metho_tabs" role="tablist">
                                 <li role="presentation" class="active"><a href="#paypal" aria-controls="paypal" role="tab" data-toggle="tab"><span class="fa fa-paypal"></span>Paypal</a></li>
                                 <li role="presentation"><a href="#amazon" aria-controls="amazon" role="tab" data-toggle="tab"><span class="fa fa-amazon"></span>Amazon</a></li>
-                                <!-- <li role="presentation"><a href="#credit" aria-controls="credit" role="tab" data-toggle="tab"><span class="fa fa-credit-card"></span>Credit Card</a></li> -->
+                                <li role="presentation"><a href="#credit" aria-controls="credit" role="tab" data-toggle="tab"><span class="fa fa-credit-card"></span>Credit Card</a></li>
                                 <li role="presentation"><a href="#money" aria-controls="money" role="tab" data-toggle="tab"><span class="fa fa-money"></span>Money Order</a></li>
                               </ul>
 
@@ -148,29 +148,31 @@
                                  <div id="AmazonPayButton"></div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="credit">
-                                  <form name="form1" method="post" action="https://safe.sandbox-gtpaysecure.net/securepayments/a1/cc_collection.php">
-                                      <input type="hidden" name="CRESecureID"value="gt597835597256SB" />
-                                      <input type="hidden" name="return_url" value="https://virtualtrainr.com/return.php" />
-                                      <input type="hidden" name="content_template_url" value="https://virtualtrainr.com/content_template_url.php" />
-                                      <input type="hidden" name="sess_id" value="<?php echo time(); ?>" />
-                                      <input type="hidden" name="sess_name" value="session" />
-                                      <input type="hidden" name="allowed_types" value="Visa|MasterCard|American Express" />
-                                      <input type="hidden" name="trainee_id" value="<?php echo $profile_details[0]['user_id']; ?>" />
-                                      
+                                  <form name="form1" method="post" action="<?php echo $this->request->webroot; ?>trainees/walletCreditCard">
+                                  <!-- <form name="form1" method="post" action="<?php echo $this->request->webroot; ?>cc.php"> -->
                                       <div class="form-group">
-                                        <input type="text" id="total_amt" name="total_amt" value="<?php echo base64_decode($ammount); ?>" readonly class="form-control" placeholder="Ammount">
+                                        <input type="number" required name="card_no" class="form-control" placeholder="Card No.">
+                                      </div>
+                                      <div class="form-group">
+                                        <input type="number" required name="expiry_date" class="form-control" placeholder="Expiry Date (MMYY)">
+                                      </div>
+                                      <div class="form-group">
+                                        <input type="number" required name="card_cvv" class="form-control" placeholder="CVV">
+                                      </div>
+                                      <div class="form-group">
+                                        <input type="text" required id="total_amt" name="total_amt" value="<?php echo base64_decode($ammount); ?>" readonly class="form-control" placeholder="Ammount">
                                       </div>
                                       <div class="form-group">
                                         <input type="text" class="form-control" value="USD" readonly placeholder="Currency">
                                       </div>
                                       <div class="form-group text-right">
-                                        <button class="btn submit_btn" name="submit" type="submit">Pay</button>
+                                        <button class="btn submit_btn" type="submit">Pay</button>
                                       </div>
                                   </form>
-                                 
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="money">
                                 <form method="post" action="<?php echo $this->request->webroot; ?>trainees/moneyOrder">
+                                <!-- <form method="post" action="#"> -->
                                   <div class="form-group">
                                   <textarea class="form-control" rows="4">You Tag Media & Business Solutions, Inc &#013;&#010;1950 Broad Street, Unit 209 Regina, SK S461X6 Canada</textarea>
                                   </div>

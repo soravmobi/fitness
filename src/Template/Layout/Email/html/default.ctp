@@ -56,7 +56,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="<?php echo $this->request->webroot; ?>" target="_blank" ><img src="<?php echo $this->request->webroot; ?>img/belibit_tv_logo.png" alt="logo"></a>
+		      <a class="navbar-brand" href="<?php echo $this->request->webroot; ?>" target="_blank" ><img src="<?php echo $this->request->webroot; ?>img/belibit_tv_logo.png" alt="work out equipment"></a>
 		    </div>
     		<div class=" mainmenu_nav navbar-right" id="top_nav">
             	<div class="heder_name">

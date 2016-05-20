@@ -7955,4 +7955,101 @@ span.blocked_time {
     background-size: 100% 100%;
 }
 
+.radio_box label {
+    /* text-transform: capitalize; */
+    font-size: 13px;
+}
+#review .modal-dialog {
+  margin: 140px auto;
+}
+.radio_box {
+  padding-left: 4rem;
+}
+.radio_box  .radio{display: inline-block; margin-right: 3px;}
+.mob_icon .text_block {
+  width: 220px !important;
+}
+.radio_box .radio_in {
+  color: #e6342a;
+  display: inline-block;
+  float: left;
+  position: relative;
+ width: 50%;
+}
+
+.radio_box .radio_in input[type=radio]{
+  position: absolute;
+  visibility: hidden;
+}
+
+.radio_box  .radio_in {
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  font-weight: 300;
+  height: 30px;
+  margin: 10px auto;
+  padding: 0 25px 0 48px;
+  position: relative;
+  z-index: 9;
+}
+
+.radio_box .radio_in:hover label{
+  color: #e6342a;
+}
+
+.radio_box .radio_in .check {
+  border: 2px solid #d6d6d6;
+  border-radius: 100%;
+  display: block;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: 11px;
+  transition: border 0.25s linear 0s;
+  width: 20px;
+  z-index: 5;
+}
+
+
+
+.radio_box .radio_in .check::before {
+  border-radius: 100%;
+  content: "";
+  display: block;
+  height: 10px;
+  left: 3px;
+  margin: auto;
+  position: absolute;
+  top: 3px;
+  transition: background 0.25s linear 0s;
+  width: 10px;
+}
+
+.radio_box input[type=radio]:checked ~ .check {
+  border: 2px solid #d6d6d6;
+}
+
+.radio_box input[type="radio"]:checked ~ .check::before {
+  background: #e6342a none repeat scroll 0 0;
+}
+
+.radio_box input[type="radio"]:checked ~ label {
+  color: #e6342a;
+}
+#review   .modal-title {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+#review .modal-header {
+  background-color: #e6342a;
+}
+#review .panel{border: none;}
+#review .heading_payment_main {
+  font-size: 16px;
+  padding: 6px 20px 5px;
+}
 /*css new end*/
+

@@ -24,8 +24,8 @@
                     <div class="bowser_point">
                       <a class="best_viewed" href="javascript:void(0);" title="Best Viewed in">Best Viewed in</a>
                       <ul>
-                        <li><a target="_blank" style="color:white;" href="https://www.mozilla.org/en-US/firefox/new"><img title="Mozilla Firefox" src="<?php echo $this->request->webroot; ?>img/firefox.png"><span>mozilla</span>Firefox</a></li>
-                          <li><a target="_blank" style="color:white;" href="https://www.google.co.in/chrome/browser/desktop"><img  title="Google Chrome" src="<?php echo $this->request->webroot; ?>img/chrome.png">Chrome</a></li>
+                        <li><a target="_blank" style="color:white;" href="https://www.mozilla.org/en-US/firefox/new"><img title="Mozilla Firefox" src="<?php echo $this->request->webroot; ?>img/firefox.png" alt="Firefox"><span>mozilla</span>Firefox</a></li>
+                          <li><a target="_blank" style="color:white;" href="https://www.google.co.in/chrome/browser/desktop"><img  title="Google Chrome" src="<?php echo $this->request->webroot; ?>img/chrome.png" alt="Chrome">Chrome</a></li>
                           <div class="clearfix"></div>
                       </ul>
                     </div>

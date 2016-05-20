@@ -37,7 +37,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="<?php echo $this->request->webroot; ?>">
-      <img src="<?php echo $this->request->webroot; ?>img/belibit_tv_logo.png" alt="logo">
+      <img src="<?php echo $this->request->webroot; ?>img/belibit_tv_logo.png" alt="work out equipment">
       </a>
       <div class="beta_logo">BETA</div>
     </div>

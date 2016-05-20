@@ -845,11 +845,13 @@ class TrainersController extends AppController
             $app_final_arr = array();
             foreach ($sessionArr as $u)
              {
-              $app_final_arr[] = $u['modified_dates'];
+                $app_final_arr[] = $u['modified_dates'];
              }
             array_multisort($app_final_arr, SORT_ASC, $sessionArr); 
             for ($i=0; $i < count($sessionArr); $i++) { 
+              if(strtotime($sessionArr[$i]['modified_dates']) >= strtotime(date('Y-m-d'))){
                 $upcomingArr[]    = $sessionArr[$i]['modified_dates'];
+              }
             }
           }  
           $vals = array_count_values($upcomingArr);

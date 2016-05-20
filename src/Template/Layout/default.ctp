@@ -29,14 +29,34 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<?php if($controller == "Users" && $action == "index") { ?>
 		<meta name="keywords" content="personal trainer app,fitness app,online workouts,mens health workout,online workout programs,american fitness, totalgym, garage gym,totalgymdirect,weider home gym,home gyms,total gym fit,total gym,gyms">
-	<?php } else if($controller == "Fronts" && $action == "becometrainer") {?>
+		<meta name="description" content="Connect with a certified fitness expert through our personal training app and get trained at a local gym, at home or anywhere and anytime.Sign up today.">
+	<?php } else if($controller == "Fronts" && $action == "becometrainer") { ?>
 		<meta name="keywords" content="how to become a certified personal trainer,become a fitness trainer,personal training certification online,mens health workout, online fitness coach,personal trainer app, fitness coach,fitness instructor certification,workout trainer,online fitness coach,workout trainer,fitness coach">
-	<?php } else if($controller == "Fronts" && $action == "learnmore") {?>
+		<meta name="description" content="Become a certified fitness specialist at Virtual TrainR and work independently at your own hours, design your own schedule and control your own income.">
+	<?php } else if($controller == "Fronts" && $action == "learnmore") { ?>
 		<meta name="keywords" content="home exercise equipment,home fitness equipment,gym machines,fitness gym,walmart exercise equipment,gym equipment,home gym equipment,work out equipment,workout equipment,exercise machines,home workout equipment,exercise machine,sears exercise equipment">
+		<meta name="description" content="Virtual TrainR helps clients to achieve their fitness goals by getting trained by personal trainers of their own choice in person,online or at a local gym.">
+	<?php } else if($controller == "Fronts" && $action == "terms") { ?>
+		<meta name="description" content="Please read the terms of service agreement for You Tag Media & Business Solutions, Inc and Virtual Trainr.">
+	<?php } else if($controller == "Fronts" && $action == "contactus") { ?>
+		<meta name="description" content="Contact us today for any questions, comments or concerns. We will be glad to help you">
 	<?php } ?>
-	<title>
-		Virtual TrainR
-	</title>
+
+	<?php if($controller == "Users" && $action == "index") { ?>
+			<title>Virtual TrainR- Personal Training and Fitness App</title>
+	<?php } else if($controller == "Fronts" && $action == "becometrainer") { ?>
+			<title>Become a Certified Personal Fitness Trainer-Virtual TrainR</title>
+	<?php } else if($controller == "Fronts" && $action == "learnmore") { ?>
+			<title>Learn More About Us- Virtual TrainR</title>
+	<?php } else if($controller == "Fronts" && $action == "terms") { ?>
+			<title>Terms and Conditions - Virtual TrainR</title>
+	<?php } else if($controller == "Fronts" && $action == "contactus") { ?>
+			<title>Contact Us- Virtual TrainR</title>
+	<?php } else { ?>
+			<title>Virtual TrainR</title>
+	<?php } ?>
+
+
 	<link href="<?php echo $this->request->webroot; ?>img/favicon.ico" rel="shortcut icon">
 	<?php echo  $this->Html->css('bootstrap.min.css') ?>
 	<?php echo  $this->Html->css('animsition.min.css') ?>

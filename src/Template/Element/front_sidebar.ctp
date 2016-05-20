@@ -8,7 +8,7 @@
     $user_data = $session->read('Auth.User');
 ?>
 
-<nav id="leftNavMenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation"> <a class="navmenu-brand" href="<?php echo $this->request->webroot; ?>"><img src="<?php echo $this->request->webroot; ?>img/belibit_tv_logo.png" alt="logo" class="img-responsive"></a>
+<nav id="leftNavMenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation"> <a class="navmenu-brand" href="<?php echo $this->request->webroot; ?>"><img src="<?php echo $this->request->webroot; ?>img/belibit_tv_logo.png" alt="work out equipment" class="img-responsive"></a>
   <ul class="nav navmenu-nav">
     <li>
       <div class="img_trainer">

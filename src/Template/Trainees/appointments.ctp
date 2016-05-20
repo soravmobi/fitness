@@ -146,12 +146,60 @@
                             </div>
                         </div>
                         <div class="row">
+
+                        <!-- <div class="col-md-4 col-sm-4">
+                              <div class="session_setails_sec missed_appointement">
+                                 <div class="heading_payment_main">
+                                      Past Appointements
+                                </div>   
+                                 <div class="session_content">
+                                     <ul class="session_content scroll_content mCustomScrollbar _mCS_1">
+                                    <li>
+
+                                        <div class="main_block">
+                                            <div class="icon_block big_icon gray_color">
+                                                <img src="images/avatar2.png">
+                                            </div>
+                                            <span class="client_name">andre</span>
+                                            <div class="text_block">
+                                                <div class="appointer_name">May 10 2016 @2pm </div> <span class="txt_block">2039 alberta ottawa add ontario K4A DK9 </span>
+                                                <div class="icon_main block_icon">
+                                                    <div class="icon_block" data-toggle="modal" data-target="#location_model"><i class="fa fa-map-marker"></i></i>
+                                                    </div>
+                                                </div>
+                                                <div class="timer">
+                                                    <div id="defaultCountdown"></div>
+                                                </div>
+
+                                            </div>         
+                                        </div>
+                                         <div class=" radio_box ">
+                                            
+                                            <div class="radio_in">
+                                                <input  data-toggle="modal" data-target="#review" type="radio" name="selector" id="f-option">
+                                                <label for="f-option">Mark as completed</label>
+                                                <div class="check"></div>
+                                            </div>
+                                             <div class="radio_in">
+                                                <input type="radio" name="selector" id="s-option">
+                                                <label for="s-option">Mark as missed</label>
+                                                <div class="check"><div class="inside"></div></div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                                
+                                            </div>
+                                    </li>
+                                </ul>
+                                 </div> 
+                               </div>
+                         </div> -->
+
                          <div class="col-md-12 col-sm-12">
                               <div class="session_setails_sec missed_appointement">
                                  <div class="heading_payment_main">
                                       Missed Appointement
                                 </div>   
-                                 <div class="session_content">
+                                 <div class="session_content scroll_content">
                                  </br><center><h4>You have no missed appointments</h4></center></br>
                                      <!-- <div class="missed_wrap">
                                          
@@ -168,6 +216,8 @@
                                  
                                </div>
                          </div>
+
+                         
                      </div>
                </div>
             </div>

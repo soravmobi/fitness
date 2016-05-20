@@ -18,7 +18,7 @@
 				<div class="container">
 					<div class="carousel-caption">
 					<span data-animation="animated fadeInDown">
-						<img src="<?php echo $this->request->webroot; ?>images/logo1.png" class="img-responsive">
+						<img src="<?php echo $this->request->webroot; ?>images/logo1.png" alt=" personal trainer app- Virtual Trainer" class="img-responsive">
 					</span>
 					<div class="second_head" data-animation="animated fadeInDown">
 						Welcome to the Future of Fitness
@@ -38,7 +38,7 @@ fitness specialists. </br>Anywhere, anytime.
             	<div class="container">
 					<div class="carousel-caption">
 					<span data-animation="animated fadeInDown">
-						<img src="<?php echo $this->request->webroot; ?>images/logo1.png" class="img-responsive">
+						<img src="<?php echo $this->request->webroot; ?>images/logo1.png" alt=" personal trainer app- Virtual Trainer" class="img-responsive">
 					</span>
 					<div class="second_head" data-animation="animated fadeInDown">
 						No excuses! Get ready to achieve your goals. 
@@ -56,7 +56,7 @@ fitness specialists. </br>Anywhere, anytime.
             	<div class="container">
 					<div class="carousel-caption">
 					<span data-animation="animated fadeInDown">
-						<img src="<?php echo $this->request->webroot; ?>images/logo1.png" class="img-responsive">
+						<img src="<?php echo $this->request->webroot; ?>images/logo1.png" alt=" personal trainer app- Virtual Trainer" class="img-responsive">
 					</span>
 					<div class="second_head" data-animation="animated fadeInDown">
 						Got what it takes? Get paid to train.
@@ -89,7 +89,7 @@ fitness specialists. </br>Anywhere, anytime.
                     <div class="col-sm-4">
                     	<div class="lnews_block">
                         	<div class="lnb_top">
-                            	<img src="<?php echo $this->request->webroot; ?>images/news_img1.jpg" alt="img" class="img-responsive">
+                            	<img src="<?php echo $this->request->webroot; ?>images/news_img1.jpg" alt="Discover" class="img-responsive">
                                 <a href="javascript:void(0);" class="man"><i class="flaticon1-man316"></i></a>
                             </div>
                             <div class="lnb_bot">
@@ -104,7 +104,7 @@ achieve your fitness goals. </p>
                     <div class="col-sm-4">
                     	<div class="lnews_block">
                         	<div class="lnb_top">
-                            	<img src="<?php echo $this->request->webroot; ?>images/news_img2.jpg" alt="img" class="img-responsive">
+                            	<img src="<?php echo $this->request->webroot; ?>images/news_img2.jpg" alt="Connect" class="img-responsive">
                                 <a href="javascript:void(0);" class="cloud"><i class="flaticon1-cloud229"></i> </a>
                             </div>
                             <div class="lnb_bot">
@@ -119,7 +119,7 @@ and prepare to discover your potential.  </p>
                     <div class="col-sm-4">
                     	<div class="lnews_block">
                         	<div class="lnb_top">
-                            	<img src="<?php echo $this->request->webroot; ?>images/news_img3.jpg" alt="img" class="img-responsive">
+                            	<img src="<?php echo $this->request->webroot; ?>images/news_img3.jpg" alt="achieve" class="img-responsive">
                                 <a href="javascript:void(0);" class="goa"><i class="flaticon1-goal5"></i> </a>
                             </div>
                             <div class="lnb_bot">
@@ -153,7 +153,7 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
                     </div>
                     <div class="col-sm-5">
                     	<div class="hiw_right">
-                        	<img src="<?php echo $this->request->webroot; ?>images/how_it_works.png" alt="img" class="img-responsive">
+                        	<img src="<?php echo $this->request->webroot; ?>images/how_it_works.png" alt="how this online workout program works" class="img-responsive">
                         </div>
                     </div>
                 </div>
@@ -179,7 +179,7 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
                     	<div class="services_body">
                         	<ul class="clearfix">
                             	<li>
-                                <div class="ser_img"><img src="<?php echo $this->request->webroot; ?>images/services_img1.jpg" alt="img" class="img-circle image_hover">
+                                <div class="ser_img"><img src="<?php echo $this->request->webroot; ?>images/services_img1.jpg" alt="Cardio" class="img-circle image_hover">
                                 </div>
                                 <div class="ser_txt">
                                 	<div class="third_heading">Cardio</div>
@@ -188,7 +188,7 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
                                 </li>
                                 
                                 <li>
-                                <div class="ser_img"><img src="<?php echo $this->request->webroot; ?>images/services_img2.jpg" alt="img" class="img-circle image_hover">
+                                <div class="ser_img"><img src="<?php echo $this->request->webroot; ?>images/services_img2.jpg" alt="Boot Camp" class="img-circle image_hover">
                                 </div>
                                 <div class="ser_txt">
                                 	<div class="third_heading">Boot Camp </div>
@@ -197,7 +197,7 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
                                 </li>
                                 
                                 <li>
-                                <div class="ser_img"><img src="<?php echo $this->request->webroot; ?>images/services_img3.jpg" alt="img" class="img-circle image_hover">
+                                <div class="ser_img"><img src="<?php echo $this->request->webroot; ?>images/services_img3.jpg" alt="Kick Boxing" class="img-circle image_hover">
                                 </div>
                                 <div class="ser_txt">
                                 	<div class="third_heading">Kick Boxing </div>
@@ -205,7 +205,7 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
                                 </div>
                                 </li>
                                 <li>
-                                <div class="ser_img"><img src="<?php echo $this->request->webroot; ?>images/services_img5.jpg" alt="img" class="img-circle image_hover">
+                                <div class="ser_img"><img src="<?php echo $this->request->webroot; ?>images/services_img5.jpg" alt="Mind & Body" class="img-circle image_hover">
                                 </div>
                                 <div class="ser_txt">
                                 	<div class="third_heading">Mind &amp; Body </div>
@@ -214,7 +214,7 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
                                 </li>
                                 
                                 <li>
-                                <div class="ser_img"><img src="<?php echo $this->request->webroot; ?>images/services_img6.jpg" alt="img" class=" img-circle image_hover">
+                                <div class="ser_img"><img src="<?php echo $this->request->webroot; ?>images/services_img6.jpg" alt="Active Aging" class=" img-circle image_hover">
                                 </div>
                                 <div class="ser_txt">
                                 	<div class="third_heading">Active Aging </div>
@@ -235,7 +235,7 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
             	<div class="row">
                   <div class="col-sm-3">
                     <div class="ms_left">
-                        	<img src="<?php echo $this->request->webroot; ?>images/app_img1.png" alt="img" class="img-responsive">
+                        	<img src="<?php echo $this->request->webroot; ?>images/app_img1.png" alt="Virtual TrainR personal training app" class="img-responsive">
                         </div>
                   </div>
                 	<div class="col-sm-6">
@@ -252,7 +252,7 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
                     </div>
                     <div class="col-sm-3">
                     	<div class="ms_right">
-                        	<img src="<?php echo $this->request->webroot; ?>images/app_img.png" alt="img" class="img-responsive">
+                        	<img src="<?php echo $this->request->webroot; ?>images/app_img.png" alt="Our fitness app" class="img-responsive">
                         </div>
                     </div>
                 </div>
@@ -271,7 +271,7 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
                             <div class="item active">
                               	<div class="testimonial_block clearfix">
                                 	<div class="testi_img">
-                                    	<img src="<?php echo $this->request->webroot; ?>images/services_img1.jpg" alt="img" class="img-responsive">
+                                    	<img src="<?php echo $this->request->webroot; ?>images/services_img1.jpg" alt="home gym" class="img-responsive">
                                     </div>
                                     <div class="testi_txt">
                                     	<p>Because of Virtual TrainR I was able to stay connected with my personal trainer through out the program. The 1-1 video chat allowed me to stay in touch even when I was out of town.</p>
@@ -282,7 +282,7 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
                             <div class="item">
                               	<div class="testimonial_block clearfix">
                                 	<div class="testi_img">
-                                    	<img src="<?php echo $this->request->webroot; ?>images/services_img2.jpg" alt="img" class="img-responsive">
+                                    	<img src="<?php echo $this->request->webroot; ?>images/services_img2.jpg" alt="online workout programs" class="img-responsive">
                                     </div>
                                     <div class="testi_txt">
                                     	<p>Because of Virtual TrainR I was able to stay connected with my personal trainer through out the program. The 1-1 video chat allowed me to stay in touch even when I was out of town.</p>
@@ -293,7 +293,7 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
                             <div class="item">
                               	<div class="testimonial_block clearfix">
                                 	<div class="testi_img">
-                                    	<img src="<?php echo $this->request->webroot; ?>images/services_img3.jpg" alt="img" class="img-responsive">
+                                    	<img src="<?php echo $this->request->webroot; ?>images/services_img3.jpg" alt="total gym fit" class="img-responsive">
                                     </div>
                                     <div class="testi_txt">
                                     	<p>Because of Virtual TrainR I was able to stay connected with my personal trainer through out the program. The 1-1 video chat allowed me to stay in touch even when I was out of town.</p>
@@ -304,7 +304,7 @@ video chat.</p>              <div class="step_btn_box"><a href="javascript:void(
                             <div class="item">
                               	<div class="testimonial_block clearfix">
                                 	<div class="testi_img">
-                                    	<img src="<?php echo $this->request->webroot; ?>images/services_img1.jpg" alt="img" class="img-responsive">
+                                    	<img src="<?php echo $this->request->webroot; ?>images/services_img1.jpg" alt="american fitness" class="img-responsive">
                                     </div>
                                     <div class="testi_txt">
                                     	<p>Because of Virtual TrainR I was able to stay connected with my personal trainer through out the program. The 1-1 video chat allowed me to stay in touch even when I was out of town.</p>
