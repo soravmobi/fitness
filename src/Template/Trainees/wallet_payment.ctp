@@ -148,8 +148,7 @@
                                  <div id="AmazonPayButton"></div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="credit">
-                                  <form name="form1" method="post" action="<?php echo $this->request->webroot; ?>trainees/walletCreditCard">
-                                  <!-- <form name="form1" method="post" action="<?php echo $this->request->webroot; ?>cc.php"> -->
+                                  <form name="form1" method="post" action="<?php echo $this->request->webroot; ?>creditcard.php">
                                       <div class="form-group">
                                         <input type="number" required name="card_no" class="form-control" placeholder="Card No.">
                                       </div>

@@ -46,6 +46,34 @@
 
 
 @media (min-width:992px) and (max-width:1199px){
+  .pending_appointement .chat_box {
+  position: absolute;
+  right: -7px;
+  text-align: center;
+  top: 0;
+  width: 66px;
+}
+.chat_box > span {
+  font-size: 11px;
+}
+.big_icon.msg {
+  font-size: 30px;
+}
+.appointer_name {
+  font-size: 13px;
+  width: 135px;
+}
+.big_icon {
+  height: 40px;
+  width: 40px;
+}
+.mob_icon .text_block {
+  width: 185px !important;
+}
+.radio_box .radio_in {
+  padding: 0 3px 0 44px;
+}
+.pending_appointement .txt_block{ font-size: 11px;}
 	.mp_days { width: 86%;}
 	.profile_field_title {width: 180px;}
 	.profile_field_des { width: 78%;}
@@ -55,6 +83,7 @@
 	.notification_wrap li {
      width: 46%;
 }
+
 .appointe_box .calendor_caption {
   padding-left: 5px;
 }
@@ -822,6 +851,45 @@
     text-align: center;
 }
 .view_btn_main{text-align: left;}
+.text_block1 {
+  width: 100px !important;
+}
+.pending_appointement .chat_box {
+  position: absolute;
+  right: -8px;
+  text-align: center;
+  top: 0;
+  width: 63px;
+}
+.big_icon.msg {
+  font-size: 31px;
+}
+.appointer_name{width: 110px; padding-top: 0px;}
+.mob_icon .text_block {
+  width: 114px !important;
+}
+.mob_icon .client_name {
+  bottom: auto;
+  left: -1px;
+  position: absolute;
+  top: 34px;
+}
+.mob_icon .appointer_name {
+  width: 140px;
+}
+.txt_block {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.radio_box {
+  padding-left: 0;
+}
+.radio_box .radio_in {
+  padding: 5px 3px 0 45px;
+ }
+ .radio_box label {
+  font-size: 11px;
+}
 
 
 
@@ -844,6 +912,12 @@
 	}
 	
 @media (max-width:767px){
+  .mob_icon .text_block {
+  width: 190px !important;
+}
+.mob_icon .main_block {
+  width: 100%;
+}
   .text_area .form-control{width: 65%;}
 	.trainer_profile_wrap{ padding:10px;}
 	.review_txt h4{ padding:5px 0;}
@@ -1549,7 +1623,7 @@
 }
 .appointements_page .responsive-calendar .day a {
   line-height: 21px;
-  margin: 8px;
+  margin: 8px 0px;
   padding: 15% 0;
 }	
 .photo_list div {
@@ -1743,6 +1817,14 @@
   right: -6px;
   text-align: right;
 }
+.mob_icon .big_icon{vertical-align: top;}
+.missed_appointement .client_name {
+    left: 9px;
+    top: 75px;
+}
+.radio_box .radio_in {
+    padding: 0 20px 0 48px;
+  }
 }	
 
 @media (min-width:480px) and (max-width:767px){
@@ -1775,15 +1857,21 @@
 	.slide_text li:nth-child(3n) a {
   width: 157px;
 }
+.pending_appointement .chat_box {
+  right: 0;
+  width: 88px;
+}
+.appointer_name {
+padding-top: 0px;
+  width: 122px;
+}
 .appointe_box .calendor_caption .checkbox {
   width: 49%;
 }
 .big_icon.msg {
   font-size: 24px;
   margin-bottom: 0;
-  padding-right: 10px;
-  text-align: right;
-  line-height: 80px;
+  text-align: center;
 }
 .client_name {
   left: 0;
@@ -1802,7 +1890,7 @@
 }
 .vew_details {
   margin-right: 8px;
-  margin-top: 35px;
+ 
 }
 #appointment_modal1 .modal-dialog{width:100%;}
 .calendor_switches_head .cs_head_left:first-child {

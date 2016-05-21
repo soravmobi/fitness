@@ -1091,7 +1091,7 @@ color:#fff; border-color:#ec473f;}
   z-index: 999;
 }
 .submit_btn {
-  background: none repeat scroll 0 0 #333333;
+  background: none repeat scroll 0 0 #e6342a;
   color: #FFFFFF;
 }
 .submit_btn:hover, .submit_btn:focus{background:#000; color:#fff;}
@@ -1749,7 +1749,7 @@ textarea {
   text-align: center;
   width: 20px; line-height: 25px;
 }
-.question_star_rat{position:relative; text-align:left;}
+.question_star_rat{position:relative; text-align:center;}
 .question_star_rat a{font-size:25px; color:#ccc; display:inline-block; vertical-align:middle; margin:0 2px;}
 .question_star_rat a:hover{color:#e3b000;}
 
@@ -7902,8 +7902,9 @@ span.blocked_time {
   padding: 5px 20px;
   margin-top: 5px;
 }
-.missed_appointement .session_content{
-    padding: 0px 0px;
+.missed_appointement .session_content {
+    padding: 10px 10px;
+    height: 302px;
 }
 .missed_wrap {
   border-bottom: 1px solid #ddd;
@@ -7956,14 +7957,27 @@ span.blocked_time {
 }
 
 .radio_box label {
-    /* text-transform: capitalize; */
-    font-size: 13px;
+  font-size: 13px;
+  left: 0;
+  padding-left: 52px;
+  position: absolute;
+  top: 0;
+  z-index: 11111;
 }
+
 #review .modal-dialog {
   margin: 140px auto;
 }
 .radio_box {
-  padding-left: 4rem;
+  padding-left: 3rem;
+}
+.missed_appointement .client_name {
+    bottom: auto;
+    color: #999;
+    left: 2px;
+    position: absolute;
+    text-transform: capitalize;
+    top: 78px;
 }
 .radio_box  .radio{display: inline-block; margin-right: 3px;}
 .mob_icon .text_block {
@@ -7977,9 +7991,13 @@ span.blocked_time {
  width: 50%;
 }
 
-.radio_box .radio_in input[type=radio]{
-  position: absolute;
-  visibility: hidden;
+.radio_box .radio_in input[type=radio] {
+    position: absolute;
+     visibility: hidden; 
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    z-index: 6;
 }
 
 .radio_box  .radio_in {

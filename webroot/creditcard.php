@@ -1,5 +1,6 @@
 <?php
-$data = $_POST;
+    error_reporting(0);
+    $data = $_POST;
     $cardsplit = str_split($data['card_no']);
     $ssl_customer_code = $cardsplit[12].$cardsplit[13].$cardsplit[14].$cardsplit[15];
     $ssl_invoice_number = time();
@@ -17,8 +18,8 @@ $data = $_POST;
         "ssl_result_format" => "ASCII",
         "ssl_test_mode" => "false",
         "ssl_receipt_apprvl_method" => "redg", 
-        "ssl_receipt_link_url" => "http://localhost/fitness/trainees/creditCardResponse",
-        "ssl_error_url" => "http://localhost/fitness/trainees/error.php",
+        "ssl_receipt_link_url" => "https://virtualtrainr.com/trainees/creditCardResponse",
+        "ssl_error_url" => "https://virtualtrainr.com/trainees/creditCardError",
         "ssl_invoice_number" => urlencode($ssl_invoice_number),
         "ssl_customer_code" => urlencode($ssl_customer_code),
         "ssl_country" => urlencode($country),

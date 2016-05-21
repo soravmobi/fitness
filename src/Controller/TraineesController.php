@@ -139,6 +139,8 @@ class TraineesController extends AppController
        $pending_appointments  = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainers` AS `t` ON `a`.`trainer_id` = `t`.`user_id` WHERE `a`.`trainee_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 0 AND `a`.`trainee_status` = 0 AND `a`.`created_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY `a`.`id` DESC')->fetchAll('assoc');
        $upcomingArr = $this->getUpcomingAppointments(date('Y-m-d'));
        $app_counts  = $this->getUpcomingAppointmentsCountByDate(); 
+      /* $past_appo   = $this->getPastAppointments(); 
+       $this->set('past_appo', $past_appo);*/
        $this->set('app_counts', $app_counts);
        $this->set('upcomingArr', $upcomingArr);
        $this->set('pending_appointments', $pending_appointments);
@@ -178,6 +180,41 @@ class TraineesController extends AppController
       }
       return $upcomingArr;  
     }
+
+    /*public function getPastAppointments()
+    {
+      $past_appointments = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainers` AS `t` ON `a`.`trainer_id` = `t`.`user_id` WHERE `a`.`trainee_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 1 AND `a`.`trainee_status` = 1 AND  CURDATE() > `a`.`created_date` ORDER BY `a`.`id` DESC')->fetchAll('assoc');
+      echo "<pre>";
+      print_r($past_appointments);die;
+       if(!empty($upcoming_appointments)){
+          foreach($upcoming_appointments as $ua){
+            $sessionArr = unserialize($ua['session_data']);
+            $app_final_arr = array();
+            foreach ($sessionArr as $u)
+             {
+              $app_final_arr[] = $u['modified_dates'];
+             }
+          array_multisort($app_final_arr, SORT_ASC, $sessionArr); 
+          for ($i=0; $i < count($sessionArr); $i++) { 
+            if($sessionArr[$i]['modified_dates'] == $date){
+                $upcomingArr['trainer_name'][] = $ua['trainer_name']." ".$ua['trainer_lname'];
+                $upcomingArr['user_id'][]      = $ua['user_id'];
+                $upcomingArr['trainer_image'][]= $ua['trainer_image'];
+                $upcomingArr['location_name'][]= $sessionArr[$i]['location_address'];
+                $upcomingArr['appo_date'][]    = $sessionArr[$i]['modified_dates'];
+                $upcomingArr['appo_time'][]    = $sessionArr[$i]['modified_times'];
+            }
+           }
+         }  
+        if(!isset($upcomingArr)){
+          $upcomingArr = array();
+        }      
+       }
+       else{
+            $upcomingArr = array();
+      }
+      return $upcomingArr;  
+    }*/
 
     public function getUpcomingAppointmentsCountByDate()
     {
@@ -3075,68 +3112,56 @@ class TraineesController extends AppController
     $this->Custom->exportCSV($filename,$final_array,$headingArr);
   }
 
-  public function walletCreditCard()
-  {
-    $data = $this->request->data;
-    $cardsplit = str_split($data['card_no']);
-    $ssl_customer_code = $cardsplit[12].$cardsplit[13].$cardsplit[14].$cardsplit[15];
-    $ssl_invoice_number = $this->data['id'].time();
-    $ssl_transaction_type = "ccsale";
-    $ssl_cvv2cvc2_indicator = 1;
-    $country = "USA";
-    $fields = array(
-        "ssl_merchant_id" => "741388",
-        "ssl_user_id" => "websales",
-        "ssl_pin" => "663660",
-        "ssl_transaction_type" => urlencode($ssl_transaction_type),
-        "ssl_show_form" => "false",
-        "ssl_cvv2cvc2_indicator" => urlencode($ssl_cvv2cvc2_indicator), //0=Bypassed; 1=present; 2=Illegible; 9=Not Present.
-        "ssl_salestax" => "0", 
-        "ssl_result_format" => "html",
-        "ssl_test_mode" => "false",
-        "ssl_receipt_apprvl_method" => "redg", 
-        "ssl_receipt_link_url" => "http://localhost/fitness/trainees/creditCardResponse",
-        "ssl_error_url" => "http://localhost/fitness/trainees/creditCardError",
-        "ssl_invoice_number" => urlencode($ssl_invoice_number),
-        "ssl_customer_code" => urlencode($ssl_customer_code),
-        "ssl_country" => urlencode($country),
-        "ssl_card_number" => urlencode($data['card_no']),
-        "ssl_exp_date" => urlencode($data['expiry_date']),
-        "ssl_cvv2cvc2" => urlencode($data['card_cvv']),
-        "ssl_amount" => urlencode($data['total_amt'])
-    );
-    $url = "https://www.myvirtualmerchant.com/VirtualMerchant/process.do";
-    $fields_string = '';
-    foreach($fields as $key=>$value) { $fields_string .=$key.'='.$value.'&'; }
-    rtrim($fields_string, "&");
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
-    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-    $result = curl_exec($ch);
-    curl_close($ch);
-    print_r($result);
-    exit();
-    //echo "<pre>";
-    //die;
-    
-  }
-
   public function creditCardResponse()
   {
-    echo "<pre>";
-    print_r($_GET);die;
+    $response = $_GET;
+    if($response['ssl_result'] == 0){
+      $trainee_wallet_arr = array(
+        'trainee_id' => $this->data['id'],
+        'payment_type' => 'Credit Card',
+        'txn_id' => $response['ssl_txn_id'],
+        'ammount' => $response['ssl_amount'],
+        'txn_type' => 'Credit',
+        'status' =>  $response['ssl_result_message'],
+        'added_date' => Time::now()
+      );
+      $user = $this->Trainee_txns->newEntity();
+      $user = $this->Trainee_txns->patchEntity($user, $trainee_wallet_arr);
+      $result = $this->Trainee_txns->save($user);
+
+      $total_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id'],'user_type' => 'trainee'])->toArray();
+      if(empty($total_ammount))
+      {
+        $total_wallet_ammount_arr = array(
+          'user_id' => $this->data['id'],
+          'user_type' => 'trainee',
+          'total_ammount' => $response['ssl_amount'],
+          'status' =>  0,
+          'added_date' => Time::now()
+        );
+      $user = $this->Total_wallet_ammount->newEntity();
+      $user = $this->Total_wallet_ammount->patchEntity($user, $total_wallet_ammount_arr);
+      $result = $this->Total_wallet_ammount->save($user);
+      }
+      else
+        {
+          $total_wallet_ammount_arr = array(
+            'total_ammount' => $total_ammount[0]['total_ammount'] + $response['ssl_amount'],
+            );
+          $this->total_wallet_ammount->query()->update()->set($total_wallet_ammount_arr)->where(['user_id' => $this->data['id'],'user_type' => 'trainee'])->execute();
+        }
+      $this->request->session()->write('sucess_alert','Your Transaction successfully approved');
+    }else{
+      $this->request->session()->write('error_alert','Your Transaction was declined !!');
+    }
+    return $this->redirect('/trainees/wallet/');
   }
 
   public function creditCardError()
   {
-    echo "<pre>";
-    print_r($_GET);die;
+    $this->request->session()->write('error_alert',$_GET['errorName']);
+    return $this->redirect('/trainees/wallet/');
   }
-
-
 
 }
 

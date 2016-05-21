@@ -147,8 +147,8 @@
                         </div>
                         <div class="row">
 
-                        <!-- <div class="col-md-4 col-sm-4">
-                              <div class="session_setails_sec missed_appointement">
+                        <div class="col-md-4 col-sm-4">
+                              <div class="session_setails_sec missed_appointement mob_icon">
                                  <div class="heading_payment_main">
                                       Past Appointements
                                 </div>   
@@ -158,7 +158,7 @@
 
                                         <div class="main_block">
                                             <div class="icon_block big_icon gray_color">
-                                                <img src="images/avatar2.png">
+                                                <img src="<?php echo $this->request->webroot; ?>images/avatar2.png">
                                             </div>
                                             <span class="client_name">andre</span>
                                             <div class="text_block">
@@ -192,10 +192,11 @@
                                 </ul>
                                  </div> 
                                </div>
-                         </div> -->
+                         </div> 
 
-                         <div class="col-md-12 col-sm-12">
-                              <div class="session_setails_sec missed_appointement">
+                         <div class="col-md-8 col-sm-8">
+                              <div class="session_setails_sec missed_appointement ">
+
                                  <div class="heading_payment_main">
                                       Missed Appointement
                                 </div>   
@@ -222,6 +223,73 @@
                </div>
             </div>
         </section>
+
+<!--review Modal start -->
+<div class="modal fade" id="review" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">
+<i class="fa fa-star-o" aria-hidden="true"></i> Give Your Feedback</h4>
+      </div>
+      <div class="modal-body">
+      <form method="post" id="rating_form">
+        <div class="panel review_question_sect">
+          <div class="heading_payment_main"><span>1</span> Overall experiance with your trainer? </div>
+          <div class="session_content">
+            <div class="question_star_rat">
+                <input class="rating-input" id="question1" required name="question1" type="number" />
+            </div>
+          </div>
+        </div>
+        <div class="panel review_question_sect">
+            <div class="heading_payment_main"><span>2</span> Was your trainer knowledgeable? </div>
+            <div class="session_content">
+              <div class="question_star_rat">
+                <input class="rating-input" id="question2" name="question2" type="number" />
+              </div>
+            </div>
+        </div>
+        <div class="panel review_question_sect">
+          <div class="heading_payment_main"><span>3</span> Was all your questions answered? </div>
+          <div class="session_content">
+            <div class="question_star_rat">
+              <input class="rating-input" id="question3" name="question3" type="number" />
+            </div>
+          </div>
+        </div>
+        <div class="panel review_question_sect">
+          <div class="heading_payment_main"><span>4</span> Professionalism? </div>
+          <div class="session_content">
+            <div class="question_star_rat">
+              <input class="rating-input" id="question4" name="question4" type="number" />
+            </div>
+          </div>
+        </div>
+        <div class="panel review_question_sect">
+          <div class="heading_payment_main"><span>5</span> Would you recommend to others? </div>
+          <div class="session_content">
+            <div class="question_star_rat">
+              <input class="rating-input" id="question5" name="question5" type="number" />
+            </div>
+          </div>
+        </div>
+        <div class="review_feedback_wrap">
+          <div class="form-group">
+          <textarea class="form-control" id="message" name="rating_message" rows="3" placeholder="Feedback"></textarea>
+            </div>
+            <div class="form-group">
+            <button class="btn submit_btn" type="button">Submit</button>
+            <button class="btn submit_btn" type="button">Skip</button>
+            </div>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--review Modal end -->
 
 <script type="text/javascript">
   $(document).ready(function(){
@@ -267,4 +335,79 @@
 
   });
 </script>
+
+<!-- Rating Start -->
+
+<script>
+    jQuery(document).ready(function () {
+     $('.rating-input').rating({
+              min: 0,
+              max: 5,
+              step: 1,
+              size: 'xs',
+              showClear: false
+        });
+    });
+</script>
+
+<!-- Rating End -->
+
+<!-- Insert Feedback Form Start -->
+
+<script type="text/javascript">
+    $(document).ready(function(){
+    $('#rating-btn').click(function(){
+    $('html, body').animate({ scrollTop: $(".trainee_top_wrap").offset().top }, 1000);
+        if($('#question1').val() == 0 || $('#question2').val() == 0 || $('#question3').val() == 0 || $('#question4').val() == 0 || $('#question5').val() == 0)
+        {
+            $("div#error_msg").html("<center><i class='fa fa-times'> Please Fill All Answers ! </i></center>").show();
+            return false;
+        }
+        if($('#message').val() == ""){
+            $("div#error_msg").html("<center><i class='fa fa-times'> Please Enter Message ! </i></center>").show();
+            return false;
+        }
+    var data = $('#rating_form').serialize();
+    var trainer_id = "<?php echo base64_encode($profile_details[0]['user_id']); ?>";
+    $('img#loading-img').show();
+    $.ajax({
+            url:"<?php echo $this->request->webroot; ?>trainees/insertRating?trainer_id=" + trainer_id,
+            type:"post",
+            data:data,   
+            dataType : "json",                 
+            success: function(data){
+            $('#rating_form')[0].reset();
+            $('img#loading-img').hide();
+            if(data.message == 0) 
+                {
+                    $("div#error_msg").html("<center><i class='fa fa-times'> You Have Alreday Submitted Rating For This Trainer ! </i></center>").show();
+                    $("div#success_msg").hide();
+                }
+            if(data.message != 0) 
+                {
+                    $("div#success_msg").html("<center><i class='fa fa-check'> Thank You For Your Valuable Feedback </i></center>").show();
+                    $("div#error_msg").hide();
+                }
+        }
+        });
+    });
+    });
+</script>
+
+<!-- Insert Feedback Form End -->
+
+<!-- Rating Start -->
+
+<script>
+    jQuery(document).ready(function () {
+     $('.trainer-rank').rating({
+              step: 1,
+              size: 'xs',
+              showClear: false,
+              disabled: true
+        });
+    });
+</script>
+
+<!-- Rating End -->
 
