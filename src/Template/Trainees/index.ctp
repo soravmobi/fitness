@@ -150,24 +150,21 @@
 
                                 <ul class="session_content scroll_content mCustomScrollbar _mCS_1" id="upcoming_section">
                                   <?php       
-                                      if(!empty($upcomingArr)){
-                                        $upcomingArrCount = count($upcomingArr['trainer_name']);
-                                      }else{
-                                        $upcomingArrCount = 0; ?>
+                                      if(empty($upcomingArr)){ ?>
                                         </br><center><h4>You have no upcoming appointments</h4></center>
-                                    <?php }
-                                    for ($i=0; $i < $upcomingArrCount; $i++) { ?>
+                                    <?php }else{
+                                    foreach ($upcomingArr as $u) { ?>
                                     <li>
 
                                         <div class="main_block">
                                             <div class="icon_block big_icon gray_color">
-                                                <img src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$upcomingArr['trainer_image'][$i]) ?>">
+                                                <img src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$u['trainer_image']) ?>">
                                             </div>
-                                            <span class="client_name"><?php echo $upcomingArr['trainer_name'][$i]; ?></span>
+                                            <span class="client_name"><?php echo $u['trainer_name']; ?></span>
                                             <div class="text_block">
-                                                <div class="appointer_name"><?php echo date('d F, Y', strtotime($upcomingArr['appo_date'][$i])); ?> </br><?php echo $upcomingArr['appo_time'][$i]; ?> </div> 
-                                              <?php if(!empty($upcomingArr['location_name'][$i])){ ?>
-                                                <span class="txt_block"><?php echo $upcomingArr['location_name'][$i]; ?></span>
+                                                <div class="appointer_name"><?php echo date('d F, Y', strtotime($u['training_date'])); ?> </br><?php echo $u['training_time']; ?> </div> 
+                                              <?php if(!empty($u['latt_longg'])){ ?>
+                                                <span class="txt_block"><?php echo $u['training_adrees']; ?></span>
                                                 <div class="icon_main block_icon">
                                                     <div class="icon_block"><i class="fa fa-map-marker"></i></i>
                                                     </div>
@@ -183,13 +180,13 @@
                                             </div>
                                             <div class="chat_box">
                                                 <div class=" big_icon msg">
-                                                <a href="javascript:void(0);"c_type="chat" t_type="trainer" from_id="<?php echo $from_id; ?>" to_id="<?php echo $upcomingArr['user_id'][$i]; ?>" class="user_call envelop-chat" title="Text Chat"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                                                <a href="javascript:void(0);"c_type="chat" t_type="trainer" from_id="<?php echo $from_id; ?>" to_id="<?php echo $u['user_id']; ?>" class="user_call envelop-chat" title="Text Chat"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
                                                 </div>
                                                 <!-- <div class="vew_details"><a href="#">(view details)</a> </div> -->
                                             </div>
                                         </div>
                                     </li>
-                                  <?php } ?>
+                                  <?php } } ?>
                                 </ul>
                             </div>
                         </div>

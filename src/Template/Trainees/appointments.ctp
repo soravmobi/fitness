@@ -60,24 +60,21 @@
 
                                 <ul class="session_content scroll_content mCustomScrollbar _mCS_1" id="upcoming_section">
                                   <?php       
-                                      if(!empty($upcomingArr)){
-                                        $upcomingArrCount = count($upcomingArr['trainer_name']);
-                                      }else{
-                                        $upcomingArrCount = 0; ?>
+                                      if(empty($upcomingArr)){ ?>
                                         </br><center><h4>You have no upcoming appointments</h4></center>
-                                    <?php }
-                                    for ($i=0; $i < $upcomingArrCount; $i++) { ?>
+                                    <?php }else{
+                                    foreach ($upcomingArr as $u) { ?>
                                     <li>
 
                                         <div class="main_block">
                                             <div class="icon_block big_icon gray_color">
-                                                <img src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$upcomingArr['trainer_image'][$i]) ?>">
+                                                <img src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$u['trainer_image']) ?>">
                                             </div>
-                                            <span class="client_name"><?php echo $upcomingArr['trainer_name'][$i]; ?></span>
+                                            <span class="client_name"><?php echo $u['trainer_name']; ?></span>
                                             <div class="text_block">
-                                                <div class="appointer_name"><?php echo date('d F, Y', strtotime($upcomingArr['appo_date'][$i])); ?> </br><?php echo $upcomingArr['appo_time'][$i]; ?> </div> 
-                                              <?php if(!empty($upcomingArr['location_name'][$i])){ ?>
-                                                <span class="txt_block"><?php echo $upcomingArr['location_name'][$i]; ?></span>
+                                                <div class="appointer_name"><?php echo date('d F, Y', strtotime($u['training_date'])); ?> </br><?php echo $u['training_time']; ?> </div> 
+                                              <?php if(!empty($u['latt_longg'])){ ?>
+                                                <span class="txt_block"><?php echo $u['training_adrees']; ?></span>
                                                 <div class="icon_main block_icon">
                                                     <div class="icon_block"><i class="fa fa-map-marker"></i></i>
                                                     </div>
@@ -93,13 +90,13 @@
                                             </div>
                                             <div class="chat_box">
                                                 <div class=" big_icon msg">
-                                                <a href="javascript:void(0);"c_type="chat" t_type="trainer" from_id="<?php echo $from_id; ?>" to_id="<?php echo $upcomingArr['user_id'][$i]; ?>" class="user_call envelop-chat" title="Text Chat"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                                                <a href="javascript:void(0);"c_type="chat" t_type="trainer" from_id="<?php echo $from_id; ?>" to_id="<?php echo $u['user_id']; ?>" class="user_call envelop-chat" title="Text Chat"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
                                                 </div>
                                                 <!-- <div class="vew_details"><a href="#">(view details)</a> </div> -->
                                             </div>
                                         </div>
                                     </li>
-                                  <?php } ?>
+                                  <?php } } ?>
                                 </ul>
                             </div>
                         </div>
@@ -153,43 +150,59 @@
                                       Past Appointements
                                 </div>   
                                  <div class="session_content">
-                                     <ul class="session_content scroll_content mCustomScrollbar _mCS_1">
-                                    <li>
-
+                                  <ul class="session_content scroll_content mCustomScrollbar _mCS_1">
+                                    <?php if(empty($past_appo)){ ?>
+                                    </br><center><h4>You have no past appointments</h4></center>
+                                    <?php }else{ ?>
+                                    <?php foreach($past_appo as $pa) { ?>
+                                      <li>
                                         <div class="main_block">
                                             <div class="icon_block big_icon gray_color">
-                                                <img src="<?php echo $this->request->webroot; ?>images/avatar2.png">
+                                                <img src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$pa['trainer_image']) ?>">
                                             </div>
-                                            <span class="client_name">andre</span>
+                                            <span class="client_name"><?php echo ucwords($pa['trainer_name']); ?></span>
                                             <div class="text_block">
-                                                <div class="appointer_name">May 10 2016 @2pm </div> <span class="txt_block">2039 alberta ottawa add ontario K4A DK9 </span>
+                                                <div class="appointer_name"><?php echo date('d F, Y', strtotime($pa['training_date'])); ?> </br><?php echo $pa['training_time']; ?> </div>
+                                                <?php if(!empty($pa['latt_longg'])){ ?>
+                                                <span class="txt_block"><?php echo $pa['training_adrees']; ?></span>
                                                 <div class="icon_main block_icon">
                                                     <div class="icon_block" data-toggle="modal" data-target="#location_model"><i class="fa fa-map-marker"></i></i>
                                                     </div>
                                                 </div>
+                                                <?php } else { ?>
+                                                  <div class="icon_main">
+                                                    <img style="width: 100%;" src="<?php echo $this->request->webroot; ?>img/favicon.ico" title="Virtual Training">
+                                                  </div>
+                                                <?php } ?>
                                                 <div class="timer">
                                                     <div id="defaultCountdown"></div>
                                                 </div>
-
                                             </div>         
                                         </div>
+                                        <?php if($pa['training_status'] == 0) { ?>
                                          <div class=" radio_box ">
-                                            
                                             <div class="radio_in">
-                                                <input  data-toggle="modal" data-target="#review" type="radio" name="selector" id="f-option">
+                                                <input main="<?php echo $pa['app_session_id']; ?>" type="radio" value="completed" name="selector" id="f-option" class="app_status">
                                                 <label for="f-option">Mark as completed</label>
                                                 <div class="check"></div>
                                             </div>
                                              <div class="radio_in">
-                                                <input type="radio" name="selector" id="s-option">
+                                                <input main="<?php echo $pa['app_session_id']; ?>" type="radio" value="missed" name="selector" id="s-option" class="app_status">
                                                 <label for="s-option">Mark as missed</label>
                                                 <div class="check"><div class="inside"></div></div>
                                             </div>
                                             <div class="clearfix"></div>
-                                                
-                                            </div>
+                                        </div>
+                                        <?php }
+                                        else if($pa['training_status'] == 1) { ?>
+                                          <div class="completed-section"><input class="trainer-rank" value="<?php echo $pa['app_rating']; ?>" type="number" /></div>
+                                        <?php }
+                                        else { ?>
+                                          <span class="missed-section">Re-scheduled</span>
+                                        <?php } ?>
                                     </li>
-                                </ul>
+                                    <?php } } ?>
+                                  </ul>
                                  </div> 
                                </div>
                          </div> 
@@ -198,21 +211,19 @@
                               <div class="session_setails_sec missed_appointement ">
 
                                  <div class="heading_payment_main">
-                                      Missed Appointement
+                                      Missed Appointements
                                 </div>   
                                  <div class="session_content scroll_content">
-                                 </br><center><h4>You have no missed appointments</h4></center></br>
-                                     <!-- <div class="missed_wrap">
-                                         
-                                          <div class="missed_wrap_left pull-left">
-                                              You have missed appointement <b>Sabbir</b>
-                                              <span><b>Local:</b> 10:00 AM</span>
-                                          </div>
-                                           <div class="missed_wrap_right pull-right">
-                                               <button>Reschedule</button>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                      </div> -->
+                                 <?php if(empty($missed_appo)) { ?>
+                                  </br><center><h4>You have no missed appointments</h4></center></br>
+                                 <?php } else { foreach($missed_appo as $m) {?>
+                                   <div class="missed_wrap">
+                                        <div class="missed_wrap_left pull-left">
+                                            You have missed appointement <b><?php echo ucwords($m['trainer_name']." ".$m['trainer_lname']); ?></b>
+                                            <span><b><?php echo ($m['training_type'] == 0) ? "Local" : "Virtual" ?>:</b> <?php echo date('d F, Y', strtotime($m['training_date'])); ?> @ <?php echo $m['training_time']; ?></span>
+                                        </div>
+                                    </div>
+                                <?php } } ?>
                                  </div> 
                                  
                                </div>
@@ -243,6 +254,7 @@
             </div>
           </div>
         </div>
+        <input type="hidden" name="app_session_id" id="app_session_id">
         <div class="panel review_question_sect">
             <div class="heading_payment_main"><span>2</span> Was your trainer knowledgeable? </div>
             <div class="session_content">
@@ -280,8 +292,7 @@
           <textarea class="form-control" id="message" name="rating_message" rows="3" placeholder="Feedback"></textarea>
             </div>
             <div class="form-group">
-            <button class="btn submit_btn" type="button">Submit</button>
-            <button class="btn submit_btn" type="button">Skip</button>
+            <button class="btn submit_btn" type="button" id="rating-btn">Submit</button>
             </div>
         </div>
       </form>
@@ -357,39 +368,29 @@
 <script type="text/javascript">
     $(document).ready(function(){
     $('#rating-btn').click(function(){
-    $('html, body').animate({ scrollTop: $(".trainee_top_wrap").offset().top }, 1000);
-        if($('#question1').val() == 0 || $('#question2').val() == 0 || $('#question3').val() == 0 || $('#question4').val() == 0 || $('#question5').val() == 0)
-        {
-            $("div#error_msg").html("<center><i class='fa fa-times'> Please Fill All Answers ! </i></center>").show();
-            return false;
-        }
-        if($('#message').val() == ""){
-            $("div#error_msg").html("<center><i class='fa fa-times'> Please Enter Message ! </i></center>").show();
-            return false;
-        }
+    if($('#message').val() == ""){
+        showAlert('error','Error','Please enter feedback message !!');
+        return false;
+    }
     var data = $('#rating_form').serialize();
-    var trainer_id = "<?php echo base64_encode($profile_details[0]['user_id']); ?>";
-    $('img#loading-img').show();
     $.ajax({
-            url:"<?php echo $this->request->webroot; ?>trainees/insertRating?trainer_id=" + trainer_id,
+            url:"<?php echo $this->request->webroot; ?>trainees/insertRating",
             type:"post",
             data:data,   
             dataType : "json",                 
             success: function(data){
-            $('#rating_form')[0].reset();
-            $('img#loading-img').hide();
-            if(data.message == 0) 
-                {
-                    $("div#error_msg").html("<center><i class='fa fa-times'> You Have Alreday Submitted Rating For This Trainer ! </i></center>").show();
-                    $("div#success_msg").hide();
-                }
-            if(data.message != 0) 
-                {
-                    $("div#success_msg").html("<center><i class='fa fa-check'> Thank You For Your Valuable Feedback </i></center>").show();
-                    $("div#error_msg").hide();
-                }
-        }
-        });
+              var result = data.message;
+              if(result > 0){
+                showAlert('success','success','Appointment completed marked successfully');
+                setTimeout(function(){
+                  window.location.reload();
+                },1000);
+              }else{
+                showAlert('error','Error','Failed please try again !!');
+                return false;
+              }
+            }
+      });
     });
     });
 </script>
@@ -410,4 +411,29 @@
 </script>
 
 <!-- Rating End -->
+
+<!-- Rating-Review & Missed Appoitnent Start -->
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('body').on('change','.app_status',function(){
+      var type = $('.app_status:checked').val();
+      var appId  = $(this).attr('main');
+      if(type == "completed"){
+        $('#app_session_id').val(appId);
+        $('#review').modal('show');
+      }else{
+        if (confirm("Are You Sure?")) {
+          window.location.href = "<?php echo $this->request->webroot; ?>trainees/markMissedAppointment?appid="+btoa(appId);
+        }
+        else{
+          $('input[value="missed"]').prop('checked',false);
+          return false;
+        }
+      }
+    });
+  });
+</script>
+
+<!-- Rating-Review & Missed Appoitnent End -->
 

@@ -8070,4 +8070,14 @@ span.blocked_time {
   padding: 6px 20px 5px;
 }
 /*css new end*/
+.completed-section .rating-container{
+  font-size: 20px !important;
+  margin-left: 30% !important;
+}
+span.missed-section {
+    margin-left: 35%;
+    color: #e6342a;
+    font-size: 15px;
+    font-weight: bold;
+}
 

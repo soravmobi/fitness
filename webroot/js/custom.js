@@ -165,7 +165,7 @@ $(".slide_text li:nth-child(2)").click(function(){
 });
 
 
-var modalUniqueClass = ".modal";
+/*var modalUniqueClass = ".modal";
 $('.modal').on('show.bs.modal', function(e) {
   var $element = $(this);
   var $uniques = $(modalUniqueClass + ':visible').not($(this));
@@ -176,7 +176,7 @@ $('.modal').on('show.bs.modal', function(e) {
     });
     return false;
   }
-});
+});*/
 
   
 

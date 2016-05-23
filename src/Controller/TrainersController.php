@@ -805,35 +805,8 @@ class TrainersController extends AppController
 
     public function getUpcomingAppointments($date)
     {
-      $upcoming_appointments = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 1 AND `a`.`trainee_status` = 1 AND `a`.`created_date` >= CURDATE() ORDER BY `a`.`id` DESC')->fetchAll('assoc');
-       if(!empty($upcoming_appointments)){
-          foreach($upcoming_appointments as $ua){
-            $sessionArr = unserialize($ua['session_data']);
-            $app_final_arr = array();
-            foreach ($sessionArr as $u)
-             {
-              $app_final_arr[] = $u['modified_dates'];
-             }
-            array_multisort($app_final_arr, SORT_ASC, $sessionArr); 
-            for ($i=0; $i < count($sessionArr); $i++) { 
-              if($sessionArr[$i]['modified_dates'] == $date){
-                $upcomingArr['trainee_name'][] = $ua['trainee_name']." ".$ua['trainee_lname'];
-                $upcomingArr['user_id'][]      = $ua['user_id'];
-                $upcomingArr['trainee_image'][]= $ua['trainee_image'];
-                $upcomingArr['location_name'][]= $sessionArr[$i]['location_address'];
-                $upcomingArr['appo_date'][]    = $sessionArr[$i]['modified_dates'];
-                $upcomingArr['appo_time'][]    = $sessionArr[$i]['modified_times'];
-              }
-            }
-          }  
-        if(!isset($upcomingArr)){
-          $upcomingArr = array();
-        }
-       }
-       else{
-            $upcomingArr = array();
-       }
-       return $upcomingArr;
+      $upcomingArr = $this->conn->execute('SELECT *,`a`.`appId` AS `app_id` FROM `appointment_sessions` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`traineeId` = `t`.`user_id` WHERE `a`.`trainerId` = '.$this->data['id'].' AND `a`.`user_status` = 1 AND `a`.`training_date` = "'.$date.'" ORDER BY `a`.`id` DESC')->fetchAll('assoc');
+      return $upcomingArr;  
     }
 
     public function getUpcomingAppointmentsCountByDate()
@@ -874,20 +847,19 @@ class TrainersController extends AppController
             $upcomingArr = $this->getUpcomingAppointments($date);
             $appendHTML = "";
             if(!empty($upcomingArr)){
-              $upcomingArrCount = count($upcomingArr['trainee_name']);
-              for ($i=0; $i < $upcomingArrCount; $i++) {
+              foreach($upcomingArr as $upcomingArr) {
                 $appendHTML .= '<li><div class="main_block"> <div class="icon_block big_icon gray_color">';
-                $appendHTML .= '<img src="'.$this->Custom->getImageSrc('uploads/trainee_profile/'.$upcomingArr['trainee_image'][$i]).'">';
-                $appendHTML .= '</div><span class="client_name">'.$upcomingArr['trainee_name'][$i].'</span>';
-                $appendHTML .= '<div class="text_block"><div class="appointer_name">'.date('d F, Y', strtotime($upcomingArr['appo_date'][$i])).'</br>'.$upcomingArr['appo_time'][$i].'</div> ';
-                if(!empty($upcomingArr['location_name'][$i])){
-                  $appendHTML .= '<span class="txt_block">'.$upcomingArr['location_name'][$i].'</span>';
+                $appendHTML .= '<img src="'.$this->Custom->getImageSrc('uploads/trainee_profile/'.$upcomingArr['trainee_image']).'">';
+                $appendHTML .= '</div><span class="client_name">'.$upcomingArr['trainee_name'].'</span>';
+                $appendHTML .= '<div class="text_block"><div class="appointer_name">'.date('d F, Y', strtotime($upcomingArr['training_date'])).'</br>'.$upcomingArr['training_time'].'</div> ';
+                if(!empty($upcomingArr['latt_longg'])){
+                  $appendHTML .= '<span class="txt_block">'.$upcomingArr['training_adrees'].'</span>';
                   $appendHTML .= '<div class="icon_main block_icon"><div class="icon_block"><i class="fa fa-map-marker"></i></i></div></div>';
                 }else{
                   $appendHTML .= '<div class="icon_main"><img style="width: 100%;" src="'.$this->request->webroot.'img/favicon.ico" title="Virtual Training"></div>';
                 }
                 $appendHTML .=  '<div class="timer"><div id="defaultCountdown"></div></div></div><div class="chat_box"><div class=" big_icon msg">';
-                $appendHTML .=  '<a href="javascript:void(0);"c_type="chat" t_type="trainer" from_id="'.$from_id.'" to_id="'.$upcomingArr['user_id'][$i].'" class="user_call envelop-chat" title="Text Chat"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>';
+                $appendHTML .=  '<a href="javascript:void(0);"c_type="chat" t_type="trainer" from_id="'.$from_id.'" to_id="'.$upcomingArr['user_id'].'" class="user_call envelop-chat" title="Text Chat"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>';
                 $appendHTML .=  '</div></div></div></li>';
               }
             }else{
@@ -948,6 +920,8 @@ class TrainersController extends AppController
                 'trainee_status' => 1
             );
         $this->appointments->query()->update()->set($appArr)->where(['id' => $appid])->execute();
+        $appSessionArr = array('user_status' => 1);
+        $this->appointment_sessions->query()->update()->set($appSessionArr)->where(['appId' => $appid])->execute();
         $notificationArr = array(
                 'noti_type'          => 'Approve Appointment',
                 'parent_id'          => $appid,
@@ -997,25 +971,6 @@ class TrainersController extends AppController
         $txns   = $this->Trainer_txns->newEntity();
         $txns   = $this->Trainer_txns->patchEntity($txns, $trainer_txn_arr);
         $result = $this->Trainer_txns->save($txns);
-
-      $sessionArr = unserialize($appoinment_details[0]['session_data']);
-      for ($i= 1; $i <= count($sessionArr); $i++) { 
-        if($sessionArr[$i]['preference'] == 1){
-          $timeArr = $this->Custom->parseTime($sessionArr[$i]['modified_times']);
-          $videoarr = array(
-            'trainer_id' => $appoinment_details[0]['trainer_id'],
-            'trainee_id' => $appoinment_details[0]['trainee_id'],
-            'app_id'     => $appoinment_details[0]['id'],
-            'date'       => $sessionArr[$i]['modified_dates'],
-            'start_time' => $timeArr['start_time'],
-            'end_time'   => $timeArr['end_time'],
-            'created_date'=> Time::now()
-            );
-          $video   = $this->Video_calls->newEntity();
-          $video   = $this->Video_calls->patchEntity($video, $videoarr);
-          $result = $this->Video_calls->save($video);
-        }
-      }
     }
 
     public function declineAppointment($appid){
@@ -1025,6 +980,8 @@ class TrainersController extends AppController
                 'trainee_status' => 2
             );
         $this->appointments->query()->update()->set($appArr)->where(['id' => $appid])->execute();
+        $appSessionArr = array('user_status' => 2);
+        $this->appointment_sessions->query()->update()->set($appSessionArr)->where(['appId' => $appid])->execute();
         $notificationArr = array(
                 'noti_type'          => 'Decline Appointment',
                 'parent_id'          => $appid,
@@ -1660,6 +1617,26 @@ class TrainersController extends AppController
             'session_data' => serialize($dataArr['booking'])
           );
         $this->appointments->query()->update()->set($updateArr)->where(['id' => $appid])->execute();
+        $this->appointment_sessions->query()->delete()->where(['appId' => $appid])->execute();
+        $appoinment_details = $this->Appointments->find()->where(['id' => $appid])->toArray();
+        $all_sessions = unserialize($appoinment_details[0]['session_data']);
+        $added_date = Time::now();
+        for ($i=1; $i <= count($all_sessions); $i++) { 
+            $appSessionsArr = array(
+              'trainerId' => $appoinment_details[0]['trainer_id'],
+              'traineeId' => $appoinment_details[0]['trainee_id'],
+              'appId'     => $appoinment_details[0]['id'],
+              'training_type' => $all_sessions[$i]['preference'],
+              'training_date' => $all_sessions[$i]['modified_dates'],
+              'training_time' => $all_sessions[$i]['modified_times'],
+              'latt_longg'    => $all_sessions[$i]['locations'],
+              'training_adrees' => $all_sessions[$i]['location_address'],
+              'added_date'    => $added_date
+            );
+          $appSession = $this->Appointment_sessions->newEntity();
+          $appSession = $this->Appointment_sessions->patchEntity($appSession, $appSessionsArr);
+          $result  = $this->Appointment_sessions->save($appSession);
+        }
         $notificationArr = array(
             'noti_type'          => 'Make Special Offer',
             'parent_id'          => $appid,

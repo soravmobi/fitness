@@ -61,6 +61,7 @@ class AppController extends Controller
         $this->loadmodel('Notes');
         $this->loadmodel('Visitors');
         $this->loadmodel('Custom_packages_history');
+        $this->loadmodel('Appointment_sessions');
         
         $this->loadComponent('Flash');
         $this->loadComponent('Custom');
@@ -104,6 +105,7 @@ class AppController extends Controller
         $this->video_calls = TableRegistry::get('Video_calls');
         $this->notes = TableRegistry::get('Notes');
         $this->visitors = TableRegistry::get('Visitors');
+        $this->appointment_sessions = TableRegistry::get('Appointment_sessions');
         $this->custom_packages_history = TableRegistry::get('Custom_packages_history');
         $this->conn = ConnectionManager::get('default');  
         $this->gym = TableRegistry::get('Gym');

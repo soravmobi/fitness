@@ -67,46 +67,6 @@
                                 <p><?php echo $session_details[0]['work']; ?></p>
                               </div>
                          </li>
-                          <!-- <li>
-                           <div class="icon_block big_icon ">
-                             <i class="fa fa-check"></i>
-
-                            </div>
-                            <div class="text_event">
-                                <h4>Verification</h4>
-                              </div>
-                              <div class="social_icon">
-                                 <ul>
-                                   <li><a href="javascript:void(0);"><img title="Social" src="<?php echo $this->request->webroot; ?>images/img_social.png"></a></li>
-                                   <li><a href="javascript:void(0);"><img title="Facebook" src="<?php echo $this->request->webroot; ?>images/facebook_icon.png"></a></li>
-                                   <li><a href="javascript:void(0);"><img title="Message" src="<?php echo $this->request->webroot; ?>images/message_icon.png"></a></li>
-                                   <li><a href="javascript:void(0);"><img title="Phone" src="<?php echo $this->request->webroot; ?>images/phone_icon.png"></a></li>
-                                    <li><a href="javascript:void(0);"><img title="Linkdin" src="<?php echo $this->request->webroot; ?>images/in_icon.png"></a></li>
-                                    <li><a href="javascript:void(0);"><img title="Twitter" src="<?php echo $this->request->webroot; ?>images/twitter_icon.png"></a></li>
-                                    <li><a href="javascript:void(0);"><img title="Instagram" src="<?php echo $this->request->webroot; ?>images/instagram_icon.png"></a></li>
-                                    <li><a href="javascript:void(0);"><img title="Google Plus" src="<?php echo $this->request->webroot; ?>images/gplus_icon.png"></a></li>
-                                 </ul>
-                              </div>
-                         </li>
-                          <li>
-                           <div class="icon_block big_icon ">
-                             <i class="fa fa-star"></i>
-
-                            </div>
-                            <div class="text_event">
-                                <h4>8 Reviews</h4>
-                               <div class="session_user">
-                                 <div class="img_user_main">
-                                  <div class="img_user"><img src="<?php echo $this->request->webroot; ?>images/avatar2.png" class="img-responsive"></div></div>
-                                  <div class="img_text_main">
-                                    A wonderfull Experience
-                                  <span>Mar 2016 by Amaya Syed </span>
-                                  </div>
-                                   <p>Jacson loves to learn, asks many questions and is really a wonderful person to train and be around </p>
-                                   <p><a href="<?php echo $this->request->webroot; ?>traineeProfile/<?php echo base64_encode($session_details[0]['user_id']); ?>" class="view_all">view all</a></p>
-                                </div>
-                              </div>
-                         </li> -->
                        </ul>
                     </div>
                   </div>
@@ -263,7 +223,7 @@
                         <input type="hidden" name="booking[<?php echo $i; ?>][modified_dates]" value="<?php echo $session_data[$i]['modified_dates']; ?>" class="make_date_hidden" id="make_date_hidden_<?php echo $i; ?>" main="<?php echo $i; ?>">
                         <input type="hidden" name="booking[<?php echo $i; ?>][modified_times]" value="<?php echo $session_data[$i]['modified_times']; ?>" class="make_time_hidden" id="make_time_hidden_<?php echo $i; ?>" main="<?php echo $i; ?>">
                         <input type="hidden" name="booking[<?php echo $i; ?>][locations]" value="<?php echo $session_data[$i]['locations']; ?>" class="make_lat_lng" id="make_lat_lng_<?php echo $i; ?>" main="<?php echo $i; ?>">
-                        <input type="hidden" name="booking[<?php echo $i; ?>][notes]" value="<?php echo $session_data[$i]['notes']; ?>" class="make_notes" id="make_notes_<?php echo $i; ?>" main="<?php echo $i; ?>">
+                        <!-- <input type="hidden" name="booking[<?php echo $i; ?>][notes]" value="<?php echo $session_data[$i]['notes']; ?>" class="make_notes" id="make_notes_<?php echo $i; ?>" main="<?php echo $i; ?>"> -->
                         <input type="hidden" name="booking[<?php echo $i; ?>][status]" id="status_val_<?php echo $i; ?>" value="0">
                         <div class="icon_main" id="location_modify_section_<?php echo $i; ?>" <?php if(empty($session_data[$i]['location_address'])){ echo "style='display:none;'"; }?>>
                             <div class="icon_block"><i class="fa fa-map-marker"></i> </div>
