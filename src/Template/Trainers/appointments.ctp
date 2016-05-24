@@ -149,21 +149,22 @@
                                  <div class="heading_payment_main">
                                       Missed Appointement
                                 </div>   
-                                 <div class="session_content">
-                                 </br><center><h4>You have no missed appointments</h4></center></br>
-                                     <!-- <div class="missed_wrap">
-                                         
+                                 <div class="session_content scroll_content">
+                                 <?php if(empty($missed_appo)) { ?>
+                                  </br><center><h4>You have no missed appointments</h4></center></br>
+                                 <?php } else { foreach($missed_appo as $m) {?>
+                                  <div class="missed_wrap">
                                           <div class="missed_wrap_left pull-left">
-                                              You have missed appointement <b>Sabbir</b>
-                                              <span><b>Local:</b> 10:00 AM</span>
+                                              You have missed appointement <b><?php echo ucwords($m['trainee_name']." ".$m['trainee_lname']); ?></b>
+                                              <span><b><?php echo ($m['training_type'] == 0) ? "Local" : "Virtual" ?>:</b> <?php echo date('d F, Y', strtotime($m['training_date'])); ?> @ <?php echo $m['training_time']; ?></span>
                                           </div>
                                            <div class="missed_wrap_right pull-right">
-                                               <button>Reschedule</button>
+                                           <a href="<?php echo $this->request->webroot; ?>trainers/bookReschduleAppointment?asid=<?php echo base64_encode($m['app_session_id']); ?>" title="Click here to re-schedule appointment">Reschedule</a>
                                             </div>
                                             <div class="clearfix"></div>
-                                      </div> -->
+                                    </div>
+                                  <?php } } ?>
                                  </div> 
-                                 
                                </div>
                          </div>
                      </div>

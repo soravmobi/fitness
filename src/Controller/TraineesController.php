@@ -171,8 +171,23 @@ class TraineesController extends AppController
     public function markMissedAppointment()
     {
       $appid = base64_decode($_GET['appid']);
+      $appoinment_details = $this->Appointment_sessions->find()->where(['id' => $appid])->toArray();
       $arr   = array('training_status' => 2);
       $this->appointment_sessions->query()->update()->set($arr)->where(['id' => $appid])->execute();
+      $notificationArr = array(
+                'noti_type'          => 'Appointment Re-schedule Request',
+                'parent_id'          => $appid,
+                'noti_sender_type'   => 'trainee',
+                'noti_sender_id'     => $appoinment_details[0]['traineeId'],
+                'noti_receiver_type' => 'trainer',
+                'parent_id_status'   => 1,
+                'noti_receiver_id'   => $appoinment_details[0]['trainerId'],
+                'noti_message'       => 'has created appoinment re-schedule request',
+                'noti_added_date'    => Time::now()
+            );
+        $notifications = $this->Notifications->newEntity();
+        $notifications = $this->Notifications->patchEntity($notifications, $notificationArr);
+        $result = $this->Notifications->save($notifications);
       $this->request->session()->write('sucess_alert','Appoitnment Re-schedule request has been successfully created !!');
       return $this->redirect('/trainees/appointments');
     }

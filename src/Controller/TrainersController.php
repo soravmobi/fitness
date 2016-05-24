@@ -796,11 +796,111 @@ class TrainersController extends AppController
        $pending_appointments  = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 0 AND `a`.`trainee_status` = 0 AND `a`.`created_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY `a`.`id` DESC')->fetchAll('assoc');
        $upcomingArr = $this->getUpcomingAppointments(date('Y-m-d'));
        $app_counts  = $this->getUpcomingAppointmentsCountByDate(); 
+       $missed_appo = $this->getMissedAppointments(); 
+       $this->set('missed_appo', $missed_appo);
        $this->set('app_counts', $app_counts);
        $this->set('upcomingArr', $upcomingArr);
        $this->set('pending_appointments', $pending_appointments);
        $this->set('profile_details', $profile_details);
        $this->set("from_id",$this->data['id']);
+    }
+
+    public function bookReschduleAppointment()
+    {
+      $appid = (int) base64_decode($_GET['asid']);
+      $app_details = $this->Appointment_sessions->find()->where(['id' => $appid])->toArray();
+      $trainee_id = $app_details[0]['traineeId'];
+      $trainee_details = $this->Trainees->find()->where(['user_id' => $trainee_id])->toArray();
+      $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
+      $this->set('appid', $appid);
+      $this->set('trainee_details', $trainee_details);
+      $this->set('profile_details', $profile_details);
+    }
+
+    public function doBooking($appid)
+    {
+      $data = $this->request->data;
+      $appoinment_details = $this->Appointment_sessions->find()->where(['id' => $appid])->toArray();
+      $dataArr = array(
+        'training_type' => $data['booking'][1]['preference'],
+        'training_date' => $data['booking'][1]['modified_dates'],
+        'training_time' => $data['booking'][1]['modified_times'],
+        'latt_longg'    => $data['booking'][1]['locations'],
+        'training_adrees' => $data['booking'][1]['location_address'],
+        'user_status'   => 1,
+        'training_status'=>0,
+        'added_date'    => Time::now()
+      );
+      $this->appointment_sessions->query()->update()->set($dataArr)->where(['id' => $appid])->execute();
+      $notificationArr = array(
+            'noti_type'          => 'Appointment Successfully Re-scheduled',
+            'parent_id'          => $appid,
+            'noti_sender_type'   => 'trainer',
+            'noti_sender_id'     => $appoinment_details[0]['trainerId'],
+            'noti_receiver_type' => 'trainee',
+            'parent_id_status'   => 1,
+            'noti_receiver_id'   => $appoinment_details[0]['traineeId'],
+            'noti_message'       => 'your appointment successfully re-scheduled',
+            'noti_added_date'    => Time::now()
+        );
+      $notifications = $this->Notifications->newEntity();
+      $notifications = $this->Notifications->patchEntity($notifications, $notificationArr);
+      $result = $this->Notifications->save($notifications);
+      $this->request->session()->write('sucess_alert','Appoitnment successfully re-scheduled');
+      return $this->redirect('/trainers/appointments');
+    }
+
+
+  public function getTrainerTimeSlotsDateWise()
+  {
+    if($this->request->is('ajax'))
+      {
+          $date = $this->request->data['date'];
+          $trainer_id = $this->request->data['trainer_id'];
+          $time_slots = $this->Trainer_availability->find()->where(['trainer_id' => $trainer_id,'date' => $date])->toArray();
+          $response = "";
+          if(!empty($time_slots)){
+            $times = unserialize($time_slots[0]['times']);
+          }else{
+            $times = array('0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0');
+          }
+          for ($i=0; $i < 24; $i++) {
+              if($times[$i] > 0){
+                  $check = "checked";
+                  $disabled = "disabled";
+                  $class = "booked";
+                  $classlabel = "bookedlabel";
+                  $title = "Not Available";
+                  $checkbox_class = "blocked_section";
+                  $span_class = "blocked_time";
+              }else{
+                  $check = "";
+                  $disabled = "";
+                  $class = "unbooked";
+                  $classlabel = "unbookedlabel";
+                  $title = "Available";
+                  $checkbox_class = "";
+                  $span_class = "";
+              }
+              $response .= '<div class="checkbox '.$checkbox_class.'">';
+              $response .= '<div class="not_avail">'.$title.'</div>';
+              $response .= '<div class="roundedOne ' .$classlabel.'">';
+              $response .= '<input '.$check.' type="checkbox" '.$disabled.' class="time '.$class.'" value="0" time1="'.$this->Custom->getTimeSlots($i).'" time2="'.$this->Custom->getTimeSlots($i+1).'" main="'.$i.'" id="roundedOne_'.$i.'" />';
+              $response .= '<label for="roundedOne_'.$i.'"></label>';
+              $response .= '<input type="hidden" name="times[]" class="hidden_time" id="time_'.$i.'" value="'.$times[$i].'"/></div>';
+              $response .= '<div class="chekbox_txt"><span '.$span_class.'>'.$this->Custom->getTimeSlots($i).'</span>'.$this->Custom->getTimeSlots($i+1);
+              $response .= '</div></div>';
+          }
+          $this->set('message', $response);
+          $this->set('_serialize',array('message'));
+          $this->response->statusCode(200);
+      }
+  }
+
+    public function getMissedAppointments()
+    {
+      $pasAppoArr = $this->conn->execute('SELECT *,`a`.`id` AS `app_session_id` FROM `appointment_sessions` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`traineeId` = `t`.`user_id` WHERE `a`.`trainerId` = '.$this->data['id'].' AND `a`.`user_status` = 1 AND `a`.`training_status` = 2 ORDER BY `a`.`id` DESC')->fetchAll('assoc');
+      return $pasAppoArr; 
     }
 
     public function getUpcomingAppointments($date)
