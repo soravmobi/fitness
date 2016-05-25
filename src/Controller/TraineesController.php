@@ -194,31 +194,15 @@ class TraineesController extends AppController
 
     public function getUpcomingAppointmentsCountByDate()
     {
-      $upcoming_appointments = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainers` AS `t` ON `a`.`trainer_id` = `t`.`user_id` WHERE `a`.`trainee_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 1 AND `a`.`trainee_status` = 1 AND `a`.`created_date` >= CURDATE() ORDER BY `a`.`id` DESC')->fetchAll('assoc');
-       if(!empty($upcoming_appointments)){
-          foreach($upcoming_appointments as $ua){
-            $sessionArr = unserialize($ua['session_data']);
-            $app_final_arr = array();
-            foreach ($sessionArr as $u)
-             {
-              $app_final_arr[] = $u['modified_dates'];
-             }
-          array_multisort($app_final_arr, SORT_ASC, $sessionArr); 
-          for ($i=0; $i < count($sessionArr); $i++) { 
-              if(strtotime($sessionArr[$i]['modified_dates']) >= strtotime(date('Y-m-d'))){
-                $upcomingArr[]    = $sessionArr[$i]['modified_dates'];
-              }
-           }
-         }   
-        $vals = array_count_values($upcomingArr);
-        foreach ($vals as $key => $v) {
-          $finalArr[$key] = array("number" => $v);
-        }     
-       }
-       else{
-          $finalArr = array();
+      $appointments = $this->conn->execute('SELECT COUNT(*) AS `number`,`training_date` FROM `appointment_sessions` WHERE `traineeId` = '.$this->data['id'].' AND `user_status` = 1 AND `training_status`= 0 AND `training_date`>= CURDATE() GROUP BY `training_date` ')->fetchAll('assoc');
+      if(!empty($appointments)){
+        foreach($appointments as $a){
+          $final_arr[$a['training_date']] = array("number" => $a['number']);
+        }
+      }else{
+        $final_arr = array();
       }
-      return $finalArr;
+      return $final_arr;
     }
 
     public function getUpcomingAppointmentsByDate()
@@ -2395,6 +2379,11 @@ class TraineesController extends AppController
         else if($dataArr['pay_type'] == "amazon"){
           $this->request->session()->write('session_amount',$dataArr);
         }
+        else if($dataArr['pay_type'] == "credit"){
+          $this->request->session()->write('session_amount',$dataArr);
+          $querystring = "?card_no=".$_POST['card_no']."&expiry_date=".$_POST['expiry_date']."&card_cvv=".$_POST['cvv']."&total_amt=".$_POST['total_amount_gateway'];
+          return $this->redirect('/rate_plans_credit_card.php'.$querystring);
+        }
         $this->request->session()->write('sucess_alert','Congratulation your rate plans order successfully placed !!');
         return $this->redirect('/trainees');
       }else{
@@ -2606,6 +2595,11 @@ class TraineesController extends AppController
         }
         else if($dataArr['pay_type'] == "amazon"){
           $this->request->session()->write('custom_packages_details',$dataArr);
+        }
+        else if($dataArr['pay_type'] == "credit"){
+          $this->request->session()->write('custom_packages_details',$dataArr);
+          $querystring = "?card_no=".$_POST['card_no']."&expiry_date=".$_POST['expiry_date']."&card_cvv=".$_POST['cvv']."&total_amt=".$_POST['total_amount_gateway'];
+          return $this->redirect('/custom_pcakage_credit_card.php'.$querystring);
         }
         $this->request->session()->write('sucess_alert','Congratulation your custom package order successfully placed !!');
         return $this->redirect('/trainees');
@@ -3143,6 +3137,40 @@ class TraineesController extends AppController
   {
     $this->request->session()->write('error_alert',$_GET['errorName']);
     return $this->redirect('/trainees/wallet/');
+  }
+
+  public function customCreditCardError()
+  {
+    $this->request->session()->write('error_alert',$_GET['errorName']);
+    return $this->redirect('/trainees/customPackageOrder/');
+  }
+
+  public function customCreditCardResponse()
+  {
+    if($_GET['ssl_result'] == 0){
+      $this->insertPackagePaymentDetails($_GET['ssl_result_message'],$_GET['ssl_txn_id']);
+      $this->request->session()->write('sucess_alert','Congratulation your custom package order successfully placed !!');
+    }else{
+      $this->request->session()->write('error_alert','Your Transaction has been declined !!');
+    }
+    return $this->redirect('/trainees');
+  }
+
+   public function ratePlansCreditCardError()
+  {
+    $this->request->session()->write('error_alert',$_GET['errorName']);
+    return $this->redirect('/trainees');
+  }
+
+  public function ratePlansCreditCardResponse()
+  {
+    if($_GET['ssl_result'] == 0){
+      $this->insertSessionPaymentDetails($_GET['ssl_result_message'],$_GET['ssl_txn_id']);
+      $this->request->session()->write('sucess_alert','Congratulation your rate plans order successfully placed !!');
+    }else{
+      $this->request->session()->write('error_alert','Your Transaction has been declined !!');
+    }
+    return $this->redirect('/trainees');
   }
 
 }

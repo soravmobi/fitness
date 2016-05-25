@@ -7822,6 +7822,7 @@ span.blocked_time {
   height: 60px;
   line-height: 40px;
   width: 60px;
+  vertical-align: top;
 }
 .big_icon {
     font-size: 20px;
@@ -7968,7 +7969,7 @@ span.blocked_time {
 .radio_box label {
   font-size: 13px;
   left: 0;
-  padding-left: 52px;
+  padding-left: 59px;
   position: absolute;
   top: 0;
   z-index: 11111;
@@ -7983,10 +7984,10 @@ span.blocked_time {
 .missed_appointement .client_name {
     bottom: auto;
     color: #999;
-    left: 2px;
+    left: 13px;
     position: absolute;
     text-transform: capitalize;
-    top: 78px;
+    top: 70px;
 }
 .radio_box  .radio{display: inline-block; margin-right: 3px;}
 .mob_icon .text_block {
@@ -8030,9 +8031,9 @@ span.blocked_time {
   border-radius: 100%;
   display: block;
   height: 20px;
-  left: 20px;
+  left: 30px;
   position: absolute;
-  top: 11px;
+  top: 0px;
   transition: border 0.25s linear 0s;
   width: 20px;
   z-index: 5;

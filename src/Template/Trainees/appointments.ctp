@@ -142,6 +142,7 @@
                                 </ul>
                             </div>
                         </div>
+                        </div>
                         <div class="row">
 
                         <div class="col-md-4 col-sm-4">
@@ -149,8 +150,8 @@
                                  <div class="heading_payment_main">
                                       Past Appointements
                                 </div>   
-                                 <div class="session_content">
-                                  <ul class="session_content scroll_content mCustomScrollbar _mCS_1">
+                                 <div>
+                                  <ul class="session_content scroll_content ">
                                     <?php if(empty($past_appo)){ ?>
                                     </br><center><h4>You have no past appointments</h4></center>
                                     <?php }else{ ?>

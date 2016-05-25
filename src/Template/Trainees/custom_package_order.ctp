@@ -29,7 +29,7 @@
                </div>
 
                <div class="payment_wallet_wrap">
-                   <form method="post" class="wallet_pay" action="<?php echo $this->request->webroot; ?>trainees/doPackagePayment">
+                   <form method="post" class="wallet_pay" action="<?php echo $this->request->webroot; ?>trainees/doPackagePayment" novalidate>
                    <div class="heading_payment_main">
                           </div>
                      <div class="payment_field">
@@ -81,8 +81,8 @@
                                   paypal</a></li>
                                 <li role="presentation"><a href="#amezon" aria-controls="amezon" role="tab" data-toggle="tab"><i class="fa fa-amazon"></i>
                                   amazon</a></li>
-                                <!-- <li role="presentation"><a href="#credit_card" aria-controls="credit_card" role="tab" data-toggle="tab"><i class="fa fa-credit-card"></i>
-                                  credit card</a></li> -->
+                                <li role="presentation"><a href="#credit_card" aria-controls="credit_card" role="tab" data-toggle="tab"><i class="fa fa-credit-card"></i>
+                                  credit card</a></li>
                               </ul>
                             </div>
                               <!-- Tab panes -->
@@ -105,10 +105,18 @@
                                           <input type="text" id="amazon_amount" class="form-control total_amount_gateway"  name="total_amount_gateway" readonly value="<?php echo $remaining_amount; ?>"></br>
                                           <input type="text" class="form-control" readonly value="USD">
                                        </div>
-                                       <!-- </br><button type="submit" name="pay_type" value="amazon">payment now</button> -->
                                        <div id="AmazonPayButton"></div>
                                     </div>
-                                    <!-- <div role="tabpanel" class="tab-pane" id="credit_card">Credit Cards</div> -->
+                                    <div role="tabpanel" class="tab-pane" id="credit_card">
+                                        <div class="form-group">
+                                          <input type="text" name="card_no" class="form-control" placeholder="Card No" required></br>
+                                          <input type="text" name="expiry_date" class="form-control" placeholder="Expiry Date" required></br>
+                                          <input type="text" name="cvv" class="form-control" placeholder="CVV" required></br>
+                                          <input type="text" id="amazon_amount" class="form-control total_amount_gateway"  name="total_amount_gateway" readonly value="<?php echo $remaining_amount; ?>"></br>
+                                          <input type="text" class="form-control" readonly value="USD">
+                                          <button type="submit" name="pay_type" value="credit">payment now</button>
+                                       </div>
+                                    </div>
                                   </div>
                                </div>
                              </div>

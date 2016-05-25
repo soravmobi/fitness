@@ -911,31 +911,15 @@ class TrainersController extends AppController
 
     public function getUpcomingAppointmentsCountByDate()
     {
-      $upcoming_appointments = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 1 AND `a`.`trainee_status` = 1 AND `a`.`created_date` >= CURDATE() ORDER BY `a`.`id` DESC')->fetchAll('assoc');
-       if(!empty($upcoming_appointments)){
-          foreach($upcoming_appointments as $ua){
-            $sessionArr = unserialize($ua['session_data']);
-            $app_final_arr = array();
-            foreach ($sessionArr as $u)
-             {
-                $app_final_arr[] = $u['modified_dates'];
-             }
-            array_multisort($app_final_arr, SORT_ASC, $sessionArr); 
-            for ($i=0; $i < count($sessionArr); $i++) { 
-              if(strtotime($sessionArr[$i]['modified_dates']) >= strtotime(date('Y-m-d'))){
-                $upcomingArr[]    = $sessionArr[$i]['modified_dates'];
-              }
-            }
-          }  
-          $vals = array_count_values($upcomingArr);
-          foreach ($vals as $key => $v) {
-            $finalArr[$key] = array("number" => $v);
-          }
-       }
-       else{
-          $finalArr = array();
-       }
-       return $finalArr;
+      $appointments = $this->conn->execute('SELECT COUNT(*) AS `number`,`training_date` FROM `appointment_sessions` WHERE `trainerId` = '.$this->data['id'].' AND `user_status` = 1 AND `training_status`= 0 AND `training_date`>= CURDATE() GROUP BY `training_date` ')->fetchAll('assoc');
+      if(!empty($appointments)){
+        foreach($appointments as $a){
+          $final_arr[$a['training_date']] = array("number" => $a['number']);
+        }
+      }else{
+        $final_arr = array();
+      }
+      return $final_arr;
     }
 
     public function getUpcomingAppointmentsByDate()

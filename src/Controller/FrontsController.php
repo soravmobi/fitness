@@ -94,9 +94,9 @@ class FrontsController extends AppController
 
 	public function trainerProfile($t_id)
 	{
+		$id = base64_decode($t_id);
 		if($this->data['user_type'] == "trainee"){
 		$own_details = $this->Custom->getlatlngbyip();
-		$id = base64_decode($t_id);
 		if($own_details['status'] == "success"){
 			$check_visitor = $this->Visitors->find()->where(['profile_id' => $id, 'viewer_id' => $this->data['id']])->toArray();
 			if(empty($check_visitor) && $id != $this->data['id']){

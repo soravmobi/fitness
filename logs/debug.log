@@ -16034,3 +16034,1342 @@ Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
 
 
 
+2016-05-25 06:56:58 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 06:57:19 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 07:12:08 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 07:14:26 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainers/index.ctp, line 15
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 07:27:19 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainers/index.ctp, line 15
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 08:44:43 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 09:40:42 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 10:32:48 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 10:33:33 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainers/index.ctp, line 15
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 10:33:57 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainers/index.ctp, line 15
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 10:34:02 Notice: Notice (8): Undefined variable: id in [/opt/lampp/htdocs/fitness/src/Controller/FrontsController.php, line 121]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\FrontsController::trainerProfile() - APP/Controller/FrontsController.php, line 121
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 10:34:02 Notice: Notice (8): Undefined variable: id in [/opt/lampp/htdocs/fitness/src/Controller/FrontsController.php, line 122]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\FrontsController::trainerProfile() - APP/Controller/FrontsController.php, line 122
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 10:34:02 Notice: Notice (8): Undefined variable: id in [/opt/lampp/htdocs/fitness/src/Controller/FrontsController.php, line 123]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\FrontsController::trainerProfile() - APP/Controller/FrontsController.php, line 123
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 10:34:02 Notice: Notice (8): Undefined variable: id in [/opt/lampp/htdocs/fitness/src/Controller/FrontsController.php, line 124]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\FrontsController::trainerProfile() - APP/Controller/FrontsController.php, line 124
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 10:34:02 Notice: Notice (8): Undefined variable: id in [/opt/lampp/htdocs/fitness/src/Controller/FrontsController.php, line 125]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\FrontsController::trainerProfile() - APP/Controller/FrontsController.php, line 125
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 10:34:02 Notice: Notice (8): Undefined variable: id in [/opt/lampp/htdocs/fitness/src/Controller/FrontsController.php, line 126]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\FrontsController::trainerProfile() - APP/Controller/FrontsController.php, line 126
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 10:34:02 Notice: Notice (8): Undefined variable: id in [/opt/lampp/htdocs/fitness/src/Controller/FrontsController.php, line 127]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\FrontsController::trainerProfile() - APP/Controller/FrontsController.php, line 127
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 10:34:02 Notice: Notice (8): Undefined variable: id in [/opt/lampp/htdocs/fitness/src/Controller/FrontsController.php, line 128]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\FrontsController::trainerProfile() - APP/Controller/FrontsController.php, line 128
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 10:34:02 Notice: Notice (8): Undefined variable: id in [/opt/lampp/htdocs/fitness/src/Controller/FrontsController.php, line 129]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\FrontsController::trainerProfile() - APP/Controller/FrontsController.php, line 129
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 10:36:58 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:07:17 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:33:57 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:46:50 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:54:19 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2619]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2619
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3146
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:54:19 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2621]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2621
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3146
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:54:19 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2623]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2623
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3146
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:54:19 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2624]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2624
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3146
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:54:19 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2625]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2625
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3146
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:54:19 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2626]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2626
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3146
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:54:19 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2639]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2639
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3146
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:54:19 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2645]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2645
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3146
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:54:19 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2649]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2649
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3146
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:54:19 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2650]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2650
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3146
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:54:19 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2651]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2651
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3146
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:54:19 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2713]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2713
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3146
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:54:19 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2723]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2723
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3146
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:54:19 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2730]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2730
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3146
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:54:19 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2743]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2743
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3146
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:54:19 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2746]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2746
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3146
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:55:05 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 12:56:43 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 14:59:19 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:08:59 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:09:49 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2624]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2624
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:09:49 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2626]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2626
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:09:49 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2628]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2628
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:09:49 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2629]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2629
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:09:49 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2630]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2630
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:09:49 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2631]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2631
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:09:49 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2644]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2644
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:09:49 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2650]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2650
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:09:49 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2654]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2654
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:09:49 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2655]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2655
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:09:49 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2656]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2656
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:09:49 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2718]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2718
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:09:49 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2728]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2728
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:09:49 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2735]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2735
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:09:49 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2748]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2748
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:09:49 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2751]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2751
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:10:59 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:12:56 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2624]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2624
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:12:56 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2626]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2626
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:12:56 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2628]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2628
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:12:56 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2629]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2629
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:12:56 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2630]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2630
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:12:56 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2631]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2631
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:12:56 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2644]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2644
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:12:56 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2650]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2650
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:12:56 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2654]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2654
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:12:56 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2655]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2655
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:12:56 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2656]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2656
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:12:57 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2718]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2718
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:12:57 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2728]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2728
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:12:57 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2735]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2735
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:12:57 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2748]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2748
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:12:57 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2751]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2751
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:17:14 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:20:05 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:21:17 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2624]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2624
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:21:17 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2626]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2626
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:21:17 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2628]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2628
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:21:17 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2629]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2629
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:21:17 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2630]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2630
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:21:17 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2631]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2631
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:21:17 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2644]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2644
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:21:17 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2650]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2650
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:21:17 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2654]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2654
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:21:17 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2655]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2655
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:21:17 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2656]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2656
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:21:17 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2718]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2718
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:21:17 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2728]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2728
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:21:17 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2735]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2735
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:21:17 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2748]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2748
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:21:17 Notice: Notice (8): Undefined offset: 0 in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 2751]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::insertPackagePaymentDetails() - APP/Controller/TraineesController.php, line 2751
+App\Controller\TraineesController::customCreditCardResponse() - APP/Controller/TraineesController.php, line 3151
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:22:23 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:24:33 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:25:38 Notice: Notice (8): Undefined index: errorName in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 3161]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::ratePlansCreditCardError() - APP/Controller/TraineesController.php, line 3161
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:25:39 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:27:56 Notice: Notice (8): Undefined index: errorName in [/opt/lampp/htdocs/fitness/src/Controller/TraineesController.php, line 3161]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\Controller\TraineesController::ratePlansCreditCardError() - APP/Controller/TraineesController.php, line 3161
+Cake\Controller\Controller::invokeAction() - CORE/src/Controller/Controller.php, line 412
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 114
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:27:57 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:30:22 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:31:03 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:31:08 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:34:02 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2016-05-25 15:37:03 Notice: Notice (8): Undefined index: city in [/opt/lampp/htdocs/fitness/src/View/Helper/CustomHelper.php, line 150]
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 139
+App\View\Helper\CustomHelper::getWheatherDetails() - APP/View/Helper/CustomHelper.php, line 150
+include - APP/Template/Trainees/index.ctp, line 14
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 828
+Cake\View\View::_render() - CORE/src/View/View.php, line 788
+Cake\View\View::render() - CORE/src/View/View.php, line 465
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 583
+Cake\Routing\Dispatcher::_invoke() - CORE/src/Routing/Dispatcher.php, line 120
+Cake\Routing\Dispatcher::dispatch() - CORE/src/Routing/Dispatcher.php, line 87
+[main] - ROOT/webroot/index.php, line 37
+
+
+
