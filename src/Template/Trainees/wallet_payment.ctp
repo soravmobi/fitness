@@ -65,7 +65,7 @@
                                     </ul>
                                 </nav>
                                 <div class="profile_btn_main">
-                                    <a class="select_trainr gray_grad" title="Select a Trainer" href="<?php echo $this->request->webroot; ?>ourTrainers"><span class="fa fa-user"></span> Select a Trainer</a>
+                                    <a class="select_trainr gray_grad" title="Select a Trainer" href="<?php echo $this->request->webroot; ?>trainees/searchTrainers"><span class="fa fa-user"></span> Select a Trainer</a>
                                     <a href="<?php echo $this->request->webroot; ?>trainees/completeProfile" title="Edit Profile" class="hireme_btn gray_grad"><span class="fa fa-edit"></span> Edit Profile</a>
                                     <a href="<?php echo $this->request->webroot; ?>trainees/wallet" title="My Wallet" class="hireme_btn gray_grad"><span class="fa fa-google-wallet"></span> My Wallet</a>
                                 </div>
@@ -109,8 +109,6 @@
                                           $action = "https://www.sandbox.paypal.com/cgi-bin/webscr";
                                           $bussiness_id = "sourav-facilitator@mobiwebtech.com";
                                       }else{
-                                          /*$action = "https://www.paypal.com/cgi-bin/webscr";
-                                          $bussiness_id = "billing@theyoutag.com";*/
                                           $action = "https://www.sandbox.paypal.com/cgi-bin/webscr";
                                           $bussiness_id = "sourav-facilitator@mobiwebtech.com";
                                       }
@@ -171,7 +169,6 @@
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="money">
                                 <form method="post" action="<?php echo $this->request->webroot; ?>trainees/moneyOrder">
-                                <!-- <form method="post" action="#"> -->
                                   <div class="form-group">
                                   <textarea class="form-control" rows="4">You Tag Media & Business Solutions, Inc &#013;&#010;1950 Broad Street, Unit 209 Regina, SK S461X6 Canada</textarea>
                                   </div>

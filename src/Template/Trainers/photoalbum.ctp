@@ -166,7 +166,7 @@
             var file_name = $(this).val();
             var split_extension = file_name.split(".").pop();
             var ext = [ "mkv", "flv","avi","mp4","mp3","m4v","mpeg-4" ];
-            if(jQuery.inArray(split_extension.toLowerCase(), ext ) == -1)
+            if(jQuery.inArray(split_extension.toLowerCase(), ext ) != -1)
             {
                     $("div#videos div#error_msg").hide();
                     $('div#videos img#loading-img').show();

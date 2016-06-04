@@ -31,7 +31,6 @@ class CustomHelper extends Helper
     {
         $successmsg = "";
         $successmsg .=  '<div class="alert alert-success alert-dismissable" style="display:none;" id="success_msg">';
-        $successmsg .= '<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>';
         $successmsg .= '<b></b> <center> <i class="fa fa-times"></i></center></div>';
         return $successmsg;
     }
@@ -40,7 +39,6 @@ class CustomHelper extends Helper
     {
         $errormsg = "";
         $errormsg .= '<div class="alert alert-danger alert-dismissable" style="display:none;" id="error_msg">';
-        $errormsg .= '<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>';
         $errormsg .= '<b></b> <center> <i class="fa fa-times"></i></center></div>';
         return $errormsg;
     }

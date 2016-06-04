@@ -164,6 +164,10 @@ $(".slide_text li:nth-child(2)").click(function(){
     $(".slide_text li:nth-child(2)").toggleClass('was');
 });
 
+$('body').on('click','.back-btn',function(){
+  window.history.back();
+});
+
 
 /*var modalUniqueClass = ".modal";
 $('.modal').on('show.bs.modal', function(e) {

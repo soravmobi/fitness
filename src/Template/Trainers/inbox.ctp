@@ -88,7 +88,7 @@
                               <!-- Tab panes -->
                               <div class="tab-content photos_tab_content">
 
-                                <div role="tabpanel" class="tab-pane active" id="progress_photo">
+                                <div role="tabpanel" class="tab-pane active vdrive" id="progress_photo">
                                    <div class="photo_gall_content">
                                    <?php
                                         if(!empty($files)) { ?>
@@ -118,7 +118,7 @@
                                                 </a>
                                                 
                                             </div>
-                                            <a class="img_verticle_text" href="javascript:void(0);" title="<?php echo $f['src']; ?>"><span><?php echo $f['src']; ?></span></a>
+                                            <a class="img_verticle_text" href="javascript:void(0);" title="<?php echo $f['src']; ?>"><span>Download File</span></a>
                                         </li>
                                         <?php } } ?>
                                         </ul>

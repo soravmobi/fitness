@@ -157,7 +157,6 @@ function unique_multidim_array($array, $key) {
 
 <!-- <script src="http://maps.google.com/maps/api/js" type="text/javascript"></script>
  -->
-<script type="text/javascript" src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
 <script type="text/javascript">
 	
     

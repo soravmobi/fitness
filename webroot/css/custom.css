@@ -631,7 +631,7 @@ color:#fff; border-color:#ec473f;}
 .suf_col1 .form-group{ width:100%;}
 .signup_modal .form-control{ border-radius:0; height:38px;}
 .signup_modal .modal-dialog{ max-width:900px; width:100%; padding:6rem 0;}
-.signup_modal .form-group .btn{ border-radius:0; height:45px;}
+.signup_modal .form-group .btn{ border-radius:0; /*height:45px;*/}
 .signup_modal .form-group{ margin-bottom:20px;}
 .signup_modal .modal-body{ padding:30px 15px;}
 .signup_modal button .caret {border-left: 6px solid rgba(0, 0, 0, 0);border-right: 6px solid rgba(0, 0, 0, 0);border-top: 6px solid ;}
@@ -2975,7 +2975,7 @@ a.btn_trainer {
   }
 .photo_gallery_list li:hover .download_inbox{display: block;} 
 .download_inbox a{display: inline-block; position: relative; height: 30px; width: 30px; line-height: 30px; border-radius: 3px;}
-.photo_gallery_list li{ background-color: #ccc;}
+.photo_gallery_list li{ background-color: #e8e8e8;}
 .photo_gallery_list li.photo_upload_sect{background: none;}
 .img_verticle_text span{color: #333;
     display: block;
@@ -4709,7 +4709,7 @@ margin:0 auto;
   -moz-appearance: none;
   border-radius: 0;
   text-transform:capitalize;
-  height:40px;
+  height:43px;
     -webkit-appearance: none;
 }
 .select_icon {
@@ -5009,8 +5009,12 @@ margin:0 auto;
 }
 .wallet_pay .form-group {
     display: inline-block;
-    width: 30%;
+    width: 52%;
     vertical-align: top;
+}
+.wallet_pay .form-group label {
+    color: #575757;
+    text-transform: capitalize;
 }
 .wallet_pay .payment_method {
   background-color: #f4f4f4;
@@ -5045,11 +5049,12 @@ margin:0 auto;
   color: #2c2c2c;
   text-transform: capitalize;
 }
-.payment_card ul li:last-child a{border-bottom:inherit;}
+/*.payment_card ul li:last-child a{border-bottom:inherit;}*/
 .payment_card .nav.nav-tabs {
   border-bottom: inherit;
 }
-.payment_card .nav-tabs > li > a{margin:0px; border: 1px solid #ddd; color: #666; border-radius: 6px;}
+.wallet_section .form-group{width: 33% !important;}
+.payment_card .nav-tabs > li > a{margin:0px 0px 0px 10px; border: 1px solid #ddd; color: #666; border-radius: 6px;}
 .payment_card ul li a:hover {
  
   
@@ -5058,15 +5063,16 @@ margin:0 auto;
   color: #fff;
   background: rgba(0, 0, 0, 0) linear-gradient(#f34727, #e6342b) repeat scroll 0 0;
 }
-.payment_card ul li.active a, .payment_card ul li.active a:hover,.payment_card ul li.active a:focus{ margin:0px; color: #fff; background: rgba(0, 0, 0, 0) linear-gradient(#f34727, #e6342b) repeat scroll 0 0; border-left:1px solid transparent; border-radius:6px; margin:0px; border-right:1px solid transparent;border-top:1px solid transparent;}
+.payment_card ul li.active a, .payment_card ul li.active a:hover,.payment_card ul li.active a:focus{  color: #fff; background: rgba(0, 0, 0, 0) linear-gradient(#f34727, #e6342b) repeat scroll 0 0; border-left:1px solid transparent; border-radius:6px; border-right:1px solid transparent;border-top:1px solid transparent;}
 .payment_card .nav.nav-tabs {
   background-color: #fff;
   box-shadow: 0 0 3px #ccc;
+  padding: 6px;
 
 }
 #paypal .form-group {
   display: inline-block;
-  width: 100%;
+  /*width: 100%;*/
 }
 #paypal button{
   background: rgba(0, 0, 0, 0) linear-gradient(#f34727, #e6342b) repeat scroll 0 0;
@@ -7071,8 +7077,8 @@ label.remain_bal {
 }
 .file_img{
   height: 105px;
-  width: 150px;
 }
+
 .txns{
   color: #616161;
 }
@@ -7503,7 +7509,7 @@ span.dte {
 .ht_right li:hover .list_drop li a {
     color: #575757;
 }
-a.btn.btn-success.app-view-btn {
+a.btn.btn-success.noti-view-btn {
     display: inline-block;
     width: 100px;
     line-height: 30px;
@@ -8089,5 +8095,50 @@ span.missed-section {
     color: #e6342a;
     font-size: 15px;
     font-weight: bold;
+}
+.vdrive li{
+  height: 177px;
+}
+.vdrive .img_verticle_text span {
+    color: #575757;
+    font-size: 22px;
+  padding-top: 5rem;
+    font-weight: bold;
+}
+.back-btn {
+    background: rgba(0, 0, 0, 0) linear-gradient(#f34727, #e6342b) repeat scroll 0 0;
+    border: medium none;
+    border-radius: 6px;
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    padding: 5px 75px 5px;
+    margin-top: 7px;
+    text-transform: capitalize;
+}
+.back-btn:hover{ color: #fff;}
+small a img{
+  border-radius:0% !important;
+}
+a.resume-btn {
+    padding-top: 12px;
+}
+a.remove-resume {
+    display: none;
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+.fp a, .dha a{
+  display: inline-block;
+}
+.login-link{
+  margin-top: 10px;
+}
+.login-link a{
+  color: #333333;
+}
+.trainer-login-link a{
+  color: #333333;
+  margin-top: -30px;
 }
 

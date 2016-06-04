@@ -85,7 +85,7 @@ class TraineesController extends AppController
       $meal_plans_details   = array();
     }
     $messages = $this->getChatMessages();
-    $pending_appointments  = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainers` AS `t` ON `a`.`trainer_id` = `t`.`user_id` WHERE `a`.`trainee_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 0 AND `a`.`trainee_status` = 0 AND `a`.`created_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY `a`.`id` DESC')->fetchAll('assoc');
+    $pending_appointments  = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainers` AS `t` ON `a`.`trainer_id` = `t`.`user_id` WHERE `a`.`trainee_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 0 AND `a`.`pay_status` = 1 AND `a`.`trainee_status` = 0 AND `a`.`created_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY `a`.`id` DESC')->fetchAll('assoc');
     $upcomingArr = $this->getUpcomingAppointments(date('Y-m-d')); 
     $app_counts  = $this->getUpcomingAppointmentsCountByDate(); 
     $this->set('app_counts', $app_counts);
@@ -136,7 +136,7 @@ class TraineesController extends AppController
     public function appointments()
     {
        $profile_details = $this->Trainees->find()->where(['user_id' => $this->data['id']])->toArray();
-       $pending_appointments  = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainers` AS `t` ON `a`.`trainer_id` = `t`.`user_id` WHERE `a`.`trainee_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 0 AND `a`.`trainee_status` = 0 AND `a`.`created_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY `a`.`id` DESC')->fetchAll('assoc');
+       $pending_appointments  = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainers` AS `t` ON `a`.`trainer_id` = `t`.`user_id` WHERE `a`.`trainee_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 0 AND `a`.`pay_status` = 1 AND `a`.`trainee_status` = 0 AND `a`.`created_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY `a`.`id` DESC')->fetchAll('assoc');
        $upcomingArr = $this->getUpcomingAppointments(date('Y-m-d'));
        $app_counts  = $this->getUpcomingAppointmentsCountByDate(); 
        $past_appo   = $this->getPastAppointments(); 
@@ -864,7 +864,7 @@ class TraineesController extends AppController
           {
             $skills = $data['trainee_skills'];
             $skillsArr = explode(",", $skills);
-            if(in_array("", $skillsArr) || in_array(" ", $skillsArr))
+              if(in_array("", $skillsArr) || in_array(" ", $skillsArr))
             {
               $this->Flash->error('Skills can not be blank !', ['key' => 'edit1']); 
               return $this->redirect('/trainees/completeProfile');
@@ -872,6 +872,7 @@ class TraineesController extends AppController
             if(count($skillsArr) > 5)
             {
                 $this->Flash->error('You Can Add Only Five Skills !', ['key' => 'edit1']); 
+                return $this->redirect('/trainees/completeProfile/'.$type);
             }
           }
           if($type == "social_links"){
@@ -1052,7 +1053,8 @@ class TraineesController extends AppController
 
             $trainee_arr = array(
               'user_id' => $lid,
-              'trainee_name' => $arr1['name']->givenName." ".$arr1['name']->familyName,
+              'trainee_name' => $arr1['name']->givenName,
+              'trainee_lname' => $arr1['name']->familyName,
               'trainee_email' => $arr1['emails'][0]->value,
               'trainee_gender' => $arr1['result']->gender,
               'trainee_displayName' => $arr1['name']->givenName."".$arr1['name']->familyName,
@@ -2436,6 +2438,7 @@ class TraineesController extends AppController
     
     $appArr = array(
         'coupon_id'             => $voucher_history_id,
+        'pay_status'            => 1,
         'wallet_amount'         => $session_amount['wallet_amount'],
         'payment_gateway_amount'=> $session_amount['total_amount_gateway']
         );
@@ -3032,31 +3035,31 @@ class TraineesController extends AppController
                <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>  
                TRANSACTION     
                </div>
-               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
-                TYPE
-               </div>
                <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:140px; margin:0;'>
                 TXN-ID
                </div>
                <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
                 AMOUNT
+               </div>
+               <div style='height:25px; color:#575757; font-weight:bold; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                Date
                </div>";
         $i = 1;
         foreach($txns_details as $t){ 
-          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+          $html .= "<div style='height:85px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
                     SK".$i."
                    </div>";
-          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+          $html .= "<div style='height:85px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
                     ".$t['txn_name']."
                    </div>";
-          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
-                    ".$t['txn_type']."
-                   </div>";
-          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:140px; margin:0;'>
+          $html .= "<div style='height:85px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:140px; margin:0;'>
                     ".$t['txn_id']."
                    </div>";
-          $html .= "<div style='height:25px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+          $html .= "<div style='height:85px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
                     $".$t['ammount']."
+                   </div>";
+          $html .= "<div style='height:85px; padding-top:5px; text-align:center; border:1px solid #999; float:left; font-size:14px; width:120px; margin:0;'>
+                    ".$t['added_date']."
                    </div>";
         $i++; } 
         $html .= " </div></div>";
@@ -3068,7 +3071,7 @@ class TraineesController extends AppController
   public function getnerateExcelReport($type)
   {
      if($type == "txn"){
-      $headingArr = array('TRANS #','TRANSACTION NAME','TRANSACTION ID','TRANSACTION ID','AMOUNT','DATE');
+      $headingArr = array('TRANS #','TRANSACTION NAME','TRANSACTION ID','TRANSACTION TYPE','AMOUNT','DATE');
       $txns_details = $this->conn->execute("SELECT * FROM `trainee_txns` AS `t` WHERE `t`.`trainee_id` ='".$this->data['id']."' ORDER BY `t`.`id` DESC ")->fetchAll('assoc');
       $final_array = array();
       $i = 1;

@@ -79,15 +79,12 @@
       <center><img style="display:none;" id="loading-img" src="<?php echo $this->request->webroot; ?>img/loading-spinner-grey.gif" /></center></br>
             <form role="form" method="post">
                 <div id="invalid_msg" style="display:none;" class="alert alert-danger alert-dismissable">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                    <center><i class="fa fa-times"></i> Invalid Email id Or Password</center>
                 </div>
                 <div id="inactive_msg" style="display:none;" class="alert alert-danger alert-dismissable">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                    <center><i class="fa fa-times"></i> Currently your profile is inactive !</center>
                 </div>
                 <div id="error_msg_login" style="display:none" class="alert alert-danger alert-dismissable">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                    <b></b> <center> <i class="fa fa-times"></i> Something Wrong Please Try Again !</center>
                 </div>
                 <div class="form-group">
@@ -310,6 +307,9 @@
                     </div>
                </div>
             </form>
+            <div class="login-link">
+                <a href="javascript:void(0);" class="pull-right" data-dismiss="modal" data-toggle="modal" data-target="#LoginModal">Login Here</a>
+            </div>
       </div>
     </div>
   </div>
@@ -401,13 +401,20 @@
                </div>
                <div class="suf_row clearfix">
                     <div class="form-group">
-                        <input required name="trainer_phone"  type="text" id="trainer_phone" class="form-control" placeholder="Phone">
+                        <input required name="trainer_phone" onkeypress='validatePhone(event)' type="text" id="trainer_phone" class="form-control" placeholder="Phone">
                     </div>
                     <div class="form-group">
-                      <div class="file_input">
-                        <input required name="resume_file" id="resume_file" type="file" class="form-control" >
-                         <div class="file_input1">Resume</div>
-                    </div>
+                       <div class="file_btn">
+                        <div style="position:relative;">
+                            <a class='btn btn-primary resume-btn' href='javascript:;'>
+                             Attach Resume
+                           <input type="file" id="resume_file" name="resume_file" style='position:absolute;z-index:2;top:0;left:0;height:34px;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40">
+                           </a>
+                           <!-- <a class="btn btn-danger remove-resume">Remove</a> -->
+                            &nbsp;
+                            </div>
+                       </div>
+                       <span class='label label-info' id="upload-file-info"></span>
                     </div>
                </div>
                <!-- <div class="suf_row clearfix">
@@ -430,6 +437,9 @@
                     </div>
                </div>
             </form>
+            <div class="trainer-login-link">
+                <a href="javascript:void(0);" class="pull-right" data-dismiss="modal" data-toggle="modal" data-target="#LoginModal">Login Here</a>
+            </div>
       </div>
     </div>
   </div>
@@ -494,7 +504,7 @@ $(document).ready(function(){
   },2000);
 
    $("#trainer").click(function() {
-    $('#error_msg').hide();
+    $('.alert-success, .alert-danger').hide();
     $('#trainer_form input[type=text], #trainer_form select, #trainer_form input[type=email], #trainer_form input[type=password]').each(function() {
         var val = $(this).val();
         if(val == "")
@@ -515,7 +525,7 @@ $(document).ready(function(){
                 $('#line2').css('color', 'red');
                 return false;
             }
-        if(filter.test(email))
+        else(filter.test(email))
             {
                 $('#line2').html("");
             }
@@ -552,7 +562,7 @@ $(document).ready(function(){
                             $('img#loading-img').hide();
                             $('#trainer_form')[0].reset();
                             $('#error_msg').hide();
-                            $('div#success_msg11').show();
+                            $('div#success_msg11').show().fadeOut(3000);
                             setTimeout(function(){ 
                               $('#signup_Modal_trainer').modal('hide');
                               $('#LoginModal').modal('show');
@@ -563,7 +573,7 @@ $(document).ready(function(){
                 error:function(response)
                     {
                         $('img#loading-img').hide();
-                        $('#error_msg').show();
+                        $('#error_msg').show().fadeOut(3000);
                         $('div#success_msg11').hide();
                     }
 
@@ -589,19 +599,26 @@ $(document).ready(function(){
         if(jQuery.inArray(split_extension.toLowerCase(), ext ) == -1)
             {
               $('#resume_file').val(fileObj.value = null);
-              $("div#trainer_form_div div#error_msg").html("<center><i class='fa fa-times'> You Can Upload Only .doc, docx, ppt, pdf, odt Files ! </i></center>").show();
+              $("div#trainer_form_div div#error_msg").html("<center><i class='fa fa-times'> You Can Upload Only .doc, docx, ppt, pdf, odt Files ! </i></center>").show().fadeOut(3000);
               return false;
             }
         if(calculatedSize > 2)
             {
                 $('#resume_file').val(fileObj.value = null);
-                $("div#trainer_form_div div#error_msg").html("<center><i class='fa fa-times'>  File size should be less than 2 MB ! </i></center>").show();
+                $("div#trainer_form_div div#error_msg").html("<center><i class='fa fa-times'>  File size should be less than 2 MB ! </i></center>").show().fadeOut(3000);
                 return false;
             }
         if(jQuery.inArray(split_extension.toLowerCase(), ext ) != -1 && calculatedSize < 2)
             {
               $("div#trainer_form_div div#error_msg").hide();
+              $("#upload-file-info").html(file_name).show();
+              $('.remove-resume').show();
             }   
+      });
+
+      $('body').on('click','.remove-resume',function(){
+        $("#upload-file-info").html('').hide();
+        $('.remove-resume').hide();
       });
   });
 </script>
@@ -613,7 +630,8 @@ $(document).ready(function(){
 $(document).ready(function(){
    $('#loading-img').hide();
    $("#trainee").click(function() {
-   $('#success_msg1').hide();
+   $('.alert-success, .alert-danger').hide();
+   $('#loading-img').hide();
    $('#trainee_form input[type=text], #trainee_form select, #trainee_form input[type=email], #trainee_form input[type=password]').each(function() {
         var val = $(this).val();
         if(val == "")
@@ -670,7 +688,7 @@ $(document).ready(function(){
                         $('img#loading-img').hide();
                         $('#trainee_form')[0].reset();
                         $('#error_msg1').hide();
-                        $('#success_msg1').show();
+                        $('#success_msg1').show().fadeOut(3000);
                         setTimeout(function(){ 
                               $('#signup_Modal_trainee').modal('hide');
                               $('#LoginModal').modal('show');
@@ -680,7 +698,7 @@ $(document).ready(function(){
             error:function(response)
                 {
                     $('img#loading-img').hide();
-                    $('#error_msg1').show();
+                    $('#error_msg1').show().fadeOut(3000);
                 }
           });
     }
@@ -694,6 +712,7 @@ $(document).ready(function(){
 <script type="text/javascript">
   $(document).ready(function(){
     $("body").on('click','#login-btn',function(){
+       $('.alert-success, .alert-danger').hide();
         var email = $('#email').val();
         var password = $('#password').val();
         $('img#loading-img').show();
@@ -709,14 +728,14 @@ $(document).ready(function(){
                 if(data.message == 'failed')
                     {
                         $('#error_msg_login').hide();
-                        $('#invalid_msg').show();
+                        $('#invalid_msg').show().fadeOut(3000);
                         $('#inactive_msg').hide();
                     }
                 if(data.message == 'inactive')
                     {
                         $('#error_msg_login').hide();
                         $('#invalid_msg').hide();
-                        $('#inactive_msg').show();
+                        $('#inactive_msg').show().fadeOut(3000);
                     }
                 if(data.message == 'trainee' && data.message1 == 'success')
                     {
@@ -738,7 +757,7 @@ $(document).ready(function(){
             error:function(response)
                 {
                     $('img#loading-img').hide();
-                    $('#error_msg_login').show();
+                    $('#error_msg_login').show().fadeOut(3000);
                     $('#inactive_msg').hide();
                 }
           });
@@ -754,6 +773,7 @@ $(document).ready(function(){
     $("#password, #email").on('keyup',function(e){ 
         if(e.which == 13)
         {
+         $('.alert-success, .alert-danger').hide();
         var email = $('#email').val();
         var password = $('#password').val();
         $('img#loading-img').show();
@@ -769,14 +789,14 @@ $(document).ready(function(){
                 if(data.message == 'failed')
                     {
                         $('#error_msg_login').hide();
-                        $('#invalid_msg').show();
+                        $('#invalid_msg').show().fadeOut(3000);
                         $('#inactive_msg').hide();
                     }
                 if(data.message == 'inactive')
                     {
                         $('#error_msg_login').hide();
                         $('#invalid_msg').hide();
-                        $('#inactive_msg').show();
+                        $('#inactive_msg').show().fadeOut(3000);
                     }
                 if(data.message == 'trainee' && data.message1 == 'success')
                     {
@@ -798,7 +818,7 @@ $(document).ready(function(){
             error:function(response)
                 {
                     $('img#loading-img').hide();
-                    $('#error_msg_login').show();
+                    $('#error_msg_login').show().fadeOut(3000);
                     $('#inactive_msg').hide();
                 }
           });
@@ -823,7 +843,7 @@ $(document).ready(function(){
 <!-- Trainer Email Already Exists Start -->
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#trainer_email').keyup(function(){
+        $('#trainer_email').keyup(function(e){
         var email = $('#trainer_email').val();
         var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         if(email == "" ||  !filter.test(email))
@@ -834,23 +854,23 @@ $(document).ready(function(){
             }
 
         $.ajax({
-                url:"<?php echo $this->request->webroot; ?>users/checkEmail",
-                type:"post",
-                data:{email : email},   
-                dataType : "json",                 
-                success: function(data){
-                    if(data.message == "")
-                        {
-                            $('#line2').html(" Email Available ");
-                            $('#line2').css('color', 'green');
-                            $('#trainer').attr('disabled', false);
-                        }
-                    else
-                        {
-                            $('#line2').html("Email Already Exists !");
-                            $('#line2').css('color', 'red');
-                            $('#trainer').attr('disabled', true);
-                        }
+            url:"<?php echo $this->request->webroot; ?>users/checkEmail",
+            type:"post",
+            data:{email : email},   
+            dataType : "json",                 
+            success: function(data){
+              if(data.message == "")
+                  {
+                      $('#line2').html(" Email Available ");
+                      $('#line2').css('color', 'green');
+                      $('#trainer').attr('disabled', false);
+                  }
+              else
+                  {
+                      $('#line2').html("Email Already Exists !");
+                      $('#line2').css('color', 'red');
+                      $('#trainer').attr('disabled', true);
+              }
             }
             });
         });
@@ -1028,7 +1048,7 @@ $(document).ready(function(){
         var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         if(email == "" || !filter.test(email))
         {
-            $("div#error_msg").html("<center><i class='fa fa-times'> Please Enter Valid Email Address ! </i></center>").show();
+            $("div#error_msg").html("<center><i class='fa fa-times'> Please Enter Valid Email Address ! </i></center>").show().fadeOut(3000);
             $("div#success_msg").hide();
             return false;
         }
@@ -1044,8 +1064,7 @@ $(document).ready(function(){
                     if(data.message == "success")
                     {
                         $('#forgot-email').val("");
-                        $("div#success_msg").html("<center><i class='fa fa-check'> Success, Please Check Your Email  </i></center>");
-                        $("div#success_msg").show();
+                        $("div#success_msg").html("<center><i class='fa fa-check'> Success, Please Check Your Email  </i></center>").show().fadeOut(3000);;
                         $("div#error_msg").hide();
                         setTimeout(function(){ 
                               $('#ForgotPasswordModal').modal('hide');
@@ -1053,8 +1072,7 @@ $(document).ready(function(){
                     }
                     if(data.message == "failed")
                     {
-                        $("div#error_msg").html("<center><i class='fa fa-times'>  Email Address Doesn`t Exists !</i></center>");
-                        $("div#error_msg").show();
+                        $("div#error_msg").html("<center><i class='fa fa-times'>  Email Address Doesn`t Exists !</i></center>").show().fadeOut(3000);;
                         $("div#success_msg").hide();
                     }
             }
@@ -1105,13 +1123,13 @@ function fbLoginDetails(){
     FB.api('/me', function(response) {                  
         console.log(response);  
         var resultt = JSON.stringify(response); 
-        alert(resultt);                 
     });
 }
 
 
 function fbSignup(type)
     {
+      $('img#loading-img').show();
       if(navigator.userAgent.match('CriOS')){
           window.open('https://www.facebook.com/dialog/oauth?client_id=717505658366417&redirect_uri='+ document.location.href +'&scope=email,public_profile', '', null);
           setTimeout(function(){
@@ -1121,12 +1139,13 @@ function fbSignup(type)
         FB.login(function(response) {
            if (response.authResponse) 
            {
-                $("div#error_msg").hide();
+                $("div#error_msg").hide().fadeOut(3000);
                 getUserInfo(type);
             } else 
             {
-                $("div#error_msg").html("<center><i class='fa fa-times'> User Cancelled Login Or Did Not Fully Authorize ! </i></center>").show();
+                $("div#error_msg").html("<center><i class='fa fa-times'> User Cancelled Login Or Did Not Fully Authorize ! </i></center>").show().fadeOut(3000);
                 $("div#success_msg").hide();
+                $('img#loading-img').hide();
             }
          },{scope: 'email,user_photos,user_videos'});
       }
@@ -1145,7 +1164,6 @@ function getUserInfo(type) {
             }
 
         FB.api('/me', function(response) {
-        $('img#loading-img').show();
         $.ajax({
             url:myURL,
             type:"post",
@@ -1155,19 +1173,19 @@ function getUserInfo(type) {
                 $('img#loading-img').hide();
                 switch (data.message) {
                     case "Profile inactive":
-                        $("div#error_msg").html("<center><i class='fa fa-times'> Currently Your Profile is inactive ! </i></center>").show();
+                        $("div#error_msg").html("<center><i class='fa fa-times'> Currently Your Profile is inactive ! </i></center>").show().fadeOut(3000);
                         $("div#success_msg").hide();
                         break;
                     case "Already Registered" :
-                        $("div#error_msg").html("<center><i class='fa fa-times'> User Already Registered ! </i></center>").show();
+                        $("div#error_msg").html("<center><i class='fa fa-times'> User Already Registered ! </i></center>").show().fadeOut(3000);
                         $("div#success_msg").hide();
                         break;
                     case "Email Already Exists" :
-                        $("div#error_msg").html("<center><i class='fa fa-times'> Email Id Already Exists ! </i></center>").show();
+                        $("div#error_msg").html("<center><i class='fa fa-times'> Email Id Already Exists ! </i></center>").show().fadeOut(3000);
                         $("div#success_msg").hide();
                         break;
                     case "Success" :
-                        $("div#success_msg").html("<center><i class='fa fa-check'> Trainee Created Successfully  </i></center>").show();
+                        $("div#success_msg").html("<center><i class='fa fa-check'> Trainee Created Successfully  </i></center>").show().fadeOut(3000);
                         $("div#error_msg").hide();
                         setTimeout(function(){ 
                               $('#signup_Modal_trainee').modal('hide');
@@ -1175,7 +1193,7 @@ function getUserInfo(type) {
                              }, 1000);
                         break;
                     case "User Not Exists" :
-                        $("div#error_msg").html("<center><i class='fa fa-times'> User Not Exists ! </i></center>").show();
+                        $("div#error_msg").html("<center><i class='fa fa-times'> User Not Exists ! </i></center>").show().fadeOut(3000);
                         $("div#success_msg").hide();
                         break;
                     case "Login Successfully" :
@@ -1184,7 +1202,7 @@ function getUserInfo(type) {
                         window.location.href = "<?php echo $this->request->webroot; ?>trainees";
                         break;
                     default :
-                        $("div#error_msg").html("<center><i class='fa fa-times'> Something is Wrong Please Try Again ! </i></center>").show();
+                        $("div#error_msg").html("<center><i class='fa fa-times'> Something is Wrong Please Try Again ! </i></center>").show().fadeOut(3000);
                         $("div#success_msg").hide();
                 }
                 FB.logout(function(){ console.log('logout'); });
@@ -1241,7 +1259,6 @@ var helper = (function() {
       var request = gapi.client.plus.people.get( {'userId' : 'me'} );
       request.execute(function(profile) {
         console.log(profile);
-        $('img#loading-img').show();
         $.ajax({
             url:myNewUrl,
             type:"post",
@@ -1251,19 +1268,19 @@ var helper = (function() {
                 $('img#loading-img').hide();
                 switch (data.message) {
                     case "Profile inactive":
-                        $("div#error_msg").html("<center><i class='fa fa-times'> Currently Your Profile is inactive ! </i></center>").show();
+                        $("div#error_msg").html("<center><i class='fa fa-times'> Currently Your Profile is inactive ! </i></center>").show().fadeOut(3000);
                         $("div#success_msg").hide();
                         break;
                     case "Already Registered" :
-                        $("div#error_msg").html("<center><i class='fa fa-times'> User Already Registered ! </i></center>").show();
+                        $("div#error_msg").html("<center><i class='fa fa-times'> User Already Registered ! </i></center>").show().fadeOut(3000);
                         $("div#success_msg").hide();
                         break;
                     case "Email Already Exists" :
-                        $("div#error_msg").html("<center><i class='fa fa-times'> Email Id Already Exists ! </i></center>").show();
+                        $("div#error_msg").html("<center><i class='fa fa-times'> Email Id Already Exists ! </i></center>").show().fadeOut(3000);
                         $("div#success_msg").hide();
                         break;
                     case "Success" :
-                        $("div#success_msg").html("<center><i class='fa fa-check'> Trainee Created Successfully  </i></center>").show();
+                        $("div#success_msg").html("<center><i class='fa fa-check'> Trainee Created Successfully  </i></center>").show().fadeOut(3000);
                         $("div#error_msg").hide();
                         setTimeout(function(){ 
                               $('#signup_Modal_trainee').modal('hide');
@@ -1271,7 +1288,7 @@ var helper = (function() {
                              }, 1000);
                         break;
                     case "User Not Exists" :
-                        $("div#error_msg").html("<center><i class='fa fa-times'> User Not Exists ! </i></center>").show();
+                        $("div#error_msg").html("<center><i class='fa fa-times'> User Not Exists ! </i></center>").show().fadeOut(3000);
                         $("div#success_msg").hide();
                         break;
                     case "Login Successfully" :
@@ -1280,7 +1297,7 @@ var helper = (function() {
                         window.location.href = "<?php echo $this->request->webroot; ?>trainees";
                         break;
                     default :
-                        $("div#error_msg").html("<center><i class='fa fa-times'> Something is Wrong Please Try Again ! </i></center>").show();
+                        $("div#error_msg").html("<center><i class='fa fa-times'> Something is Wrong Please Try Again ! </i></center>").show().fadeOut(3000);
                         $("div#success_msg").hide();
                 }
             }
@@ -1361,6 +1378,7 @@ function startApp() {
 }
 
 function googleSignup(type) {
+ $('img#loading-img').show();
  sessionStorage.setItem("social_type", type);
   var signIn = function(result) {
       auth2.signIn().then(
@@ -1384,8 +1402,35 @@ function googleSignup(type) {
 function onSignInCallback(authResult) {
   helper.onSignInCallback(authResult);
 }
+
+var modalUniqueClass = ".modal";
+$('.modal').on('show.bs.modal', function(e) {
+  var $element = $(this);
+  var $uniques = $(modalUniqueClass + ':visible').not($(this));
+  if ($uniques.length) {
+    $uniques.modal('hide');
+    $uniques.one('hidden.bs.modal', function(e) {
+      $element.modal('show');
+    });
+    return false;
+  }
+});
+
 </script>
 <!-- Google Signup End -->
+
+<script type="text/javascript">
+function validatePhone(evt) {
+  var theEvent = evt || window.event;
+  var key = theEvent.keyCode || theEvent.which;
+  key = String.fromCharCode( key );
+  var regex = /[0-9]|\./;
+  if( !regex.test(key) ) {
+    theEvent.returnValue = false;
+    if(theEvent.preventDefault) theEvent.preventDefault();
+  }
+}
+</script>
 
 
 

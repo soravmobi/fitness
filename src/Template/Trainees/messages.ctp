@@ -121,7 +121,7 @@
     $('body').on('click','.delete_msgs',function(){
         var chatid = $(this).attr('main');
         $.ajax({
-                url:"<?php echo $this->request->webroot; ?>trainers/deleteChatMessages",
+                url:"<?php echo $this->request->webroot; ?>trainees/deleteChatMessages",
                 type:"post",
                 data:{chatid:chatid},
                 dataType:"json",

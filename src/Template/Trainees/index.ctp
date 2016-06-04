@@ -193,7 +193,7 @@
 
                         <div class="col-md-4 col-sm-4">
                             <div class="appointement_head">
-                                pending Appointments
+                                Pending Appointments
                             </div>
                             <div class="session_setails_sec appointement_sec pending_appointement">
                                 <div class="heading_payment_main">

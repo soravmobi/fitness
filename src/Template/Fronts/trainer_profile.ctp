@@ -76,7 +76,7 @@
                             <li><a href="javascript:void(0);" title="Social Sharing"><i class="fa fa-share-alt"></i></a>
                                 <nav class="trainee_social_link share_in_block">
                                 <?php
-                                    $trainer_profile_url = $this->request->webroot."trainerProfile/".base64_encode($to_id);
+                                    $trainer_profile_url = 'https://'.$_SERVER['SERVER_NAME']."/trainerProfile/".base64_encode($to_id);
                                 ?>
                                     <ul>
                                         <li><a target="_blank" href="https://www.linkedin.com/cws/share?url=<?php echo $trainer_profile_url; ?>" title="Share Profile On Linked In" class="linkedin_grad"><span class="fa fa-linkedin"></span></a></li>

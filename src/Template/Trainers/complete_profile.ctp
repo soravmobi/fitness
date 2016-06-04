@@ -90,7 +90,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Trainer Skills (Please hit enter to add skills)</label>
-                                        <input required id="trainer_skills" name="trainer_skills" type="text" value="<?php echo $profile_details[0]['trainer_skills']; ?>" class="form-control">
+                                        <input id="trainer_skills" name="trainer_skills" type="text" value="<?php echo $profile_details[0]['trainer_skills']; ?>" class="form-control">
                                     </div>
                                 </div>
                                 <input type="submit" class="btn submit_btn"  value="Update" />
@@ -134,13 +134,13 @@
                                 <h3 class="trai_title_sect">Setup Bank Details </h3>
                                 <?=  $this->Flash->render('edit3') ?>
                                 <ul class="tai_sub_tab" role="tablist">
-                                        <li role="presentation" class="active"><a href="#paypal" aria-controls="photos" role="tab" data-toggle="tab">Paypal</a></li>
+                                        <li role="presentation" class="active"><a href="#paypal11" aria-controls="photos" role="tab" data-toggle="tab">Paypal</a></li>
                                         <li role="presentation"><a href="#amazon" aria-controls="gallery" role="tab" data-toggle="tab">Amazon</a></li>
-                                        <!-- <li role="presentation"><a href="#money_order" aria-controls="gallery" role="tab" data-toggle="tab">Money Order</a></li> -->
+                                        <!-- <li role="presentation"><a href="#credit_card1" aria-controls="gallery" role="tab" data-toggle="tab">Credit Card</a></li> -->
                                 </ul>
                                 </br></br>
                                 <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane active" id="paypal">
+                                    <div role="tabpanel" class="tab-pane active" id="paypal11">
                                         <form method="post" action="<?php echo $this->request->webroot; ?>trainers/updateBankDetails/bank_details">
                                             <div class="form-group">
                                                 <label>Paypal Bussiness Id</label>
@@ -158,6 +158,15 @@
                                             <input type="submit" class="btn submit_btn" value="Update" /> 
                                         </form>
                                     </div>
+                                    <!-- <div role="tabpanel" class="tab-pane" id="credit_card1">
+                                        <form method="post" action="<?php echo $this->request->webroot; ?>trainers/updateBankDetails/bank_details">
+                                            <div class="form-group">
+                                                <label>Credit Card Details</label>
+                                                <input type="email" name="amazon_email" required value="<?php if(isset($profile_details[0]['amazon_email'])) echo $profile_details[0]['amazon_email']; ?>" placeholder="Amazon Bussiness Id" class="form-control">
+                                            </div> 
+                                            <input type="submit" class="btn submit_btn" value="Update" /> 
+                                        </form>
+                                    </div> -->
                                 </div>
                             </div>
 
@@ -305,7 +314,7 @@
 
 
                                       <div class="plan_session">
-                                       <h5>Rate Plan</h5>
+                                       <h4>Rate Plans</h4>
                                        <div class="plan_session_content">
                                          <ul>
                                            <li>
@@ -374,7 +383,7 @@
                                      <a class="btn addpack submit_btn" href="javascript:">create</a>
                                 </div>
                                 <div class="plan_session">
-                                    <h5>Custom Packages</h5>
+                                    <h4>Custom Packages</h4>
                                    <div class="session_slider">
                                      <div class="owl-demo6">
                                       <?php
@@ -477,15 +486,16 @@
                             </div>
                             <div role="tabpanel" class="tab-pane access_gym" id="addgym"  style="opacity: 0;">
                             <h3 class="trai_title_sect">Favorite Gym</h3>
+                                <?=  $this->Flash->render('edit9') ?>
                                 <div class="access_gym_form">
                                 <form name="gym" method="post">
                                   <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="name" name="name">
+                                    <input required type="text" class="form-control" placeholder="name" name="name">
                                   </div>
                                  
                                   <div class="form-group" >
 	
-                                    <input type="text" class="form-control" placeholder="address" name="address" id="address111">
+                                    <input required type="text" class="form-control" placeholder="address" name="address" id="address111">
                                     <input type="hidden" class="form-control" value="0" name="lat" id="lat">
                                     <input type="hidden" class="form-control" value="0" name="long" id="long">
 
@@ -819,25 +829,25 @@ $('.addgym').on('click',function(){
         var old_pswd = $('#old_pswd').val();
         if(current_pswd == "" || new_pswd =="" || cnfm_pswd == "")
         {
-            $("div#password div#error_msg").html("<center><i class='fa fa-times'> Please Fill All Fields First ! </i></center>").show();
+            $("div#password div#error_msg").html("<center><i class='fa fa-times'> Please Fill All Fields First ! </i></center>").show().fadeOut(3000);
             $("div#password div#success_msg").hide();
             return false;
         }
         if(current_pswd != old_pswd)
         {
-            $("div#password div#error_msg").html("<center><i class='fa fa-times'> Wrong Current Password ! </i></center>").show();
+            $("div#password div#error_msg").html("<center><i class='fa fa-times'> Wrong Current Password ! </i></center>").show().fadeOut(3000);
             $("div#password div#success_msg").hide();
             return false;
         }
         if(new_pswd != cnfm_pswd)
         {
-            $("div#password div#error_msg").html("<center><i class='fa fa-times'> Password Not Matched ! </i></center>").show();
+            $("div#password div#error_msg").html("<center><i class='fa fa-times'> Password Not Matched ! </i></center>").show().fadeOut(3000);
             $("div#password div#success_msg").hide();
             return false;
         }
         if(old_pswd == new_pswd)
         {
-            $("div#password div#error_msg").html("<center><i class='fa fa-times'>  You Didn`t Have Any Changes !</i></center>").show();
+            $("div#password div#error_msg").html("<center><i class='fa fa-times'>  You Didn`t Have Any Changes !</i></center>").show().fadeOut(3000);
             $("div#password div#success_msg").hide();
             return false;
         }
@@ -853,12 +863,12 @@ $('.addgym').on('click',function(){
                     {
                         $('#old_pswd').val(new_pswd);
                         $('input[type="password"]').val("");
-                        $("div#password div#success_msg").html("<center><i class='fa fa-check'> Password Successfully Changed </i></center>").show();
+                        $("div#password div#success_msg").html("<center><i class='fa fa-check'> Password Successfully Changed </i></center>").show().fadeOut(3000);
                         $("div#password div#error_msg").hide();
                     }
                     else
                     {
-                        $("div#password div#error_msg").html("<center><i class='fa fa-times'>  Something is Wrong Please Try Again !</i></center>").show();
+                        $("div#password div#error_msg").html("<center><i class='fa fa-times'>  Something is Wrong Please Try Again !</i></center>").show().fadeOut(3000);
                         $("div#password div#success_msg").hide();
                     }
                     
@@ -884,14 +894,14 @@ $('.addgym').on('click',function(){
             if(jQuery.inArray(split_extension.toLowerCase(), ext ) == -1)
             {
                 $('#trainer_profile_img').val(fileObj.value = null);
-                $("div.img-profile div#error_msg").html("<center><i class='fa fa-times'> You Can Upload Only .jpg, gif files ! </i></center>").show();
+                $("div.img-profile div#error_msg").html("<center><i class='fa fa-times'> You Can Upload Only .jpg, gif files ! </i></center>").show().fadeOut(3000);
                 $("div.img-profile div#success_msg").hide();
                 return false;
             }
             if(calculatedSize > 10)
             {
                 $('#trainer_profile_img').val(fileObj.value = null);
-                $("div.img-profile div#error_msg").html("<center><i class='fa fa-times'>  File size should be less than 10 MB ! </i></center>").show();
+                $("div.img-profile div#error_msg").html("<center><i class='fa fa-times'>  File size should be less than 10 MB ! </i></center>").show().fadeOut(3000);
                 return false;
             }
             if(jQuery.inArray(split_extension.toLowerCase(), ext ) != -1 && calculatedSize < 10)
@@ -910,12 +920,12 @@ $('.addgym').on('click',function(){
                            if(data.message != "")
                                {
                                 $('img#profile-img').attr('src','<?php echo $this->request->webroot; ?>uploads/trainer_profile/' + data.message);
-                                $("div.img-profile div#success_msg").html("<center><i class='fa fa-check'> Image Uploaded Successfully </i></center>").show();
+                                $("div.img-profile div#success_msg").html("<center><i class='fa fa-check'> Image Uploaded Successfully </i></center>").show().fadeOut(3000);
                                 $("div.img-profile div#error_msg").hide();
                                }
                             else
                                 {
-                                $("div.img-profile div#error_msg").html("<center><i class='fa fa-times'> Something is Wrong Please Try Again ! </i></center>").show();
+                                $("div.img-profile div#error_msg").html("<center><i class='fa fa-times'> Something is Wrong Please Try Again ! </i></center>").show().fadeOut(3000);
                                 $("div.img-profile div#success_msg").hide();
                                 }
                              $('img#loading-img').hide();
@@ -1163,10 +1173,40 @@ $(document).ready(function(){
 
 <script type="text/javascript">
     $(document).ready(function(){ 
-		
         var pageURL = $(location).attr("href");
         var splitURL = pageURL.split("/"); 
         var result = splitURL[splitURL.length - 1];  
+        if(result == "addgym"){
+          $('.access_gym').addClass('active');
+          $('#addgym').css('opacity','1');
+          $('#gmap-dropdown1').css('width','100%');
+          $('#gmap-dropdown1').css('height','400px');
+           var markers =  [
+                           <?php foreach($gyms as $gym){?>
+                                    {
+                                        latitude: "<?php echo $gym->latitude; ?>",
+                                        longitude: "<?php echo $gym->longitude; ?>",
+                                        html: "<?php echo $gym->address; ?>"
+                                    },
+                            <?php }?>
+                        ];
+              $('#gmap-dropdown1').gMap({
+                    address:  "<?php if(isset($gym->address)){ echo $gym->address; }; ?>",
+                    zoom: 14,
+                    markers:markers,
+                    
+                     controls: {
+                        panControl: true,
+                        zoomControl: true,
+                        mapTypeControl: true,
+                        scaleControl: true,
+                        streetViewControl: true,
+                        overviewMapControl: true
+                    },
+                    controls: false,
+                scrollwheel: true,
+                });
+        }
 
         if(result == "completeProfile")
             {

@@ -25,7 +25,7 @@
                                   </div>
                                 </div>
                                 <div class="view_btn_main">
-                                  <a href="javascript:void(0);" class="btn btn-success app-view-btn" main="<?php echo $nd['parent_id']; ?>">View</a>
+                                  <a href="javascript:void(0);" class="btn btn-success app-view-btn noti-view-btn" main="<?php echo $nd['parent_id']; ?>">View</a>
                                 </div>
                                 <div class="pbb_right">
                                   <div class="mesg_time">
@@ -53,7 +53,7 @@
                                   </div>
                                 </div>
                                 <div class="view_btn_main">
-                                  <a href="javascript:void(0);" class="btn btn-success app-special-offer-btn" main="<?php echo $nd['parent_id']; ?>">View</a>
+                                  <a href="javascript:void(0);" class="btn btn-success app-special-offer-btn noti-view-btn" main="<?php echo $nd['parent_id']; ?>">View</a>
                                 </div>
                                 <div class="pbb_right">
                                   <div class="mesg_time">

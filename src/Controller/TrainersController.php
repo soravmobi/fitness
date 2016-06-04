@@ -60,7 +60,7 @@ class TrainersController extends AppController
     $notes = $this->Notes->find()->where(['trainer_id' => $this->data['id']])->toArray();
     $total_wallet_ammount = $this->Total_wallet_ammount->find()->where(['user_id' => $this->data['id']])->toArray();
     $messages = $this->getChatMessages();
-    $pending_appointments  = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 0 AND `a`.`trainee_status` = 0 AND `a`.`created_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY `a`.`id` DESC')->fetchAll('assoc');
+    $pending_appointments  = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 0 AND `a`.`pay_status` = 1 AND `a`.`trainee_status` = 0 AND `a`.`created_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY `a`.`id` DESC')->fetchAll('assoc');
     $visitors_count  = $this->conn->execute('SELECT *,COUNT(*) AS `total_visitors` FROM `visitors` WHERE `profile_id` = '.$this->data['id'].' GROUP BY `latitude`,`lonigtude`')->fetchAll('assoc');
     $final_visitors_count = array();
     if(!empty($visitors_count)){
@@ -360,7 +360,6 @@ class TrainersController extends AppController
 	{
 		
 		 if(isset($_REQUEST['addgym'])){
-					//print_r($_REQUEST);die;
 					$data=array(
 					'name'=>$_REQUEST['name'],
 					'address'=>$_REQUEST['address'],
@@ -369,6 +368,8 @@ class TrainersController extends AppController
 					'trainer_id'=>$this->data['id']
 					);
 					 $this->conn->insert('gym',$data);
+           $this->Flash->success('Gym Successfully Added', ['key' => 'edit9']);
+           return $this->redirect('/trainers/completeProfile/addgym');
 									  
 		}
 		$data = $this->Custom->getSessionData();
@@ -538,6 +539,7 @@ class TrainersController extends AppController
                 if(count($skillsArr) > 5)
                 {
                     $this->Flash->error('You Can Add Only Five Skills !', ['key' => 'edit1']); 
+                    return $this->redirect('/trainers/completeProfile');
                 }
             }
             if($type == "informaiton"){
@@ -793,7 +795,7 @@ class TrainersController extends AppController
     public function appointments()
     {
        $profile_details = $this->Trainers->find()->where(['user_id' => $this->data['id']])->toArray();
-       $pending_appointments  = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 0 AND `a`.`trainee_status` = 0 AND `a`.`created_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY `a`.`id` DESC')->fetchAll('assoc');
+       $pending_appointments  = $this->conn->execute('SELECT *,`a`.`id` AS `app_id` FROM `appointments` AS `a` INNER JOIN `trainees` AS `t` ON `a`.`trainee_id` = `t`.`user_id` WHERE `a`.`trainer_id` = '.$this->data['id'].' AND `a`.`trainer_status` = 0 AND `a`.`trainee_status` = 0 AND `a`.`pay_status` = 1 AND `a`.`created_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY) ORDER BY `a`.`id` DESC')->fetchAll('assoc');
        $upcomingArr = $this->getUpcomingAppointments(date('Y-m-d'));
        $app_counts  = $this->getUpcomingAppointmentsCountByDate(); 
        $missed_appo = $this->getMissedAppointments(); 

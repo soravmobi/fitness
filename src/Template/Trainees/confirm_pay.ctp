@@ -24,6 +24,7 @@
                   <div class="head_row">
                     <div class="session_user">
                       <div class="img_user"><img src="<?php echo $this->Custom->getImageSrc('uploads/trainer_profile/'.$trainer_details[0]['trainer_image']) ?>" class="img-responsive"></div>  <?php if(!empty($trainer_details)) echo ucwords($trainer_details[0]['trainer_name'] ." ".$trainer_details[0]['trainer_lname']); ?>
+                      <a href="javascript:void(0);" class="back-btn pull-right">Back</a>
                     </div>
                   </div>
               </div>
@@ -33,6 +34,7 @@
                         <div class="session_setails_sec">
                           <div class="heading_payment_main">
                             <h2> Sessions Details</h2>
+
                           </div>
                            
                            <ul class="session_content scroll_content mCustomScrollbar _mCS_1">

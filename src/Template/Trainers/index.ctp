@@ -142,7 +142,7 @@
 
                         <div class="col-md-4 col-sm-4">
                             <div class="appointement_head">
-                                pending Appointments
+                                Pending Appointments
                             </div>
                             <div class="session_setails_sec appointement_sec pending_appointement">
                                 <div class="heading_payment_main">
@@ -194,7 +194,7 @@
             </div>
             <div class="col-md-4 col-sm-4">
               <div class="session_setails_sec agenda">
-              <form method="post" action="<?php echo $this->request->webroot; ?>trainers/notesmgmt">
+              <form method="post" onsubmit="return checkValidation()" action="<?php echo $this->request->webroot; ?>trainers/notesmgmt">
                 <div class="heading_payment_main">
                   <h2 class="text-center">Notes <span id="add_notes" title="Add Notes"><i class="fa fa-plus-circle"></i>
                    <span class="ad_notes_main">
@@ -528,5 +528,15 @@ $('body').on('click','.pulse',function(){
       }
   });
 });
+
+function checkValidation()
+{
+  var notes = $('#notes_data').val();
+  if(notes == "")
+  {
+    showAlert('error','Error','Please enter notes !!');
+    return false;
+  }
+}
 </script>
 

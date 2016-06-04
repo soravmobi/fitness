@@ -97,7 +97,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Trainee Skills (Please hit enter to add skills)</label>
-                                        <input required name="trainee_skills" id="trainee_skills" type="text" value="<?php echo $profile_details[0]['trainee_skills']; ?>" class="form-control">
+                                        <input name="trainee_skills" id="trainee_skills" type="text" value="<?php echo $profile_details[0]['trainee_skills']; ?>" class="form-control">
                                     </div>
                                    
                                 </div>
@@ -267,25 +267,25 @@
         var old_pswd = $('#old_pswd').val();
         if(current_pswd == "" || new_pswd =="" || cnfm_pswd == "")
         {
-            $("div#password div#error_msg").html("<center><i class='fa fa-times'> Please Fill All Fields First ! </i></center>").show();
+            $("div#password div#error_msg").html("<center><i class='fa fa-times'> Please Fill All Fields First ! </i></center>").show().fadeOut(3000);
             $("div#password div#success_msg").hide();
             return false;
         }
         if(current_pswd != old_pswd)
         {
-            $("div#password div#error_msg").html("<center><i class='fa fa-times'> Wrong Current Password ! </i></center>").show();
+            $("div#password div#error_msg").html("<center><i class='fa fa-times'> Wrong Current Password ! </i></center>").show().fadeOut(3000);
             $("div#password div#success_msg").hide();
             return false;
         }
         if(new_pswd != cnfm_pswd)
         {
-            $("div#password div#error_msg").html("<center><i class='fa fa-times'> Password Not Matched ! </i></center>").show();
+            $("div#password div#error_msg").html("<center><i class='fa fa-times'> Password Not Matched ! </i></center>").show().fadeOut(3000);
             $("div#password div#success_msg").hide();
             return false;
         }
         if(old_pswd == new_pswd)
         {
-            $("div#password div#error_msg").html("<center><i class='fa fa-times'>  You Didn`t Have Any Changes !</i></center>").show();
+            $("div#password div#error_msg").html("<center><i class='fa fa-times'>  You Didn`t Have Any Changes !</i></center>").show().fadeOut(3000);
             $("div#password div#success_msg").hide();
             return false;
         }
@@ -301,12 +301,12 @@
                     {
                         $('#old_pswd').val(new_pswd);
                         $('input[type="password"]').val("");
-                        $("div#password div#success_msg").html("<center><i class='fa fa-check'> Password Successfully Changed </i></center>").show();
+                        $("div#password div#success_msg").html("<center><i class='fa fa-check'> Password Successfully Changed </i></center>").show().fadeOut(3000);
                         $("div#password div#error_msg").hide();
                     }
                     else
                     {
-                        $("div#password div#error_msg").html("<center><i class='fa fa-times'>  Something is Wrong Please Try Again !</i></center>").show();
+                        $("div#password div#error_msg").html("<center><i class='fa fa-times'>  Something is Wrong Please Try Again !</i></center>").show().fadeOut(3000);
                         $("div#password div#success_msg").hide();
                     }
                     
@@ -332,14 +332,14 @@
             if(jQuery.inArray(split_extension.toLowerCase(), ext ) == -1)
             {
                 $('#trainee_profile_img').val(fileObj.value = null);
-                $("div.img-profile div#error_msg").html("<center><i class='fa fa-times'> You Can Upload Only .jpg, gif files ! </i></center>").show();
+                $("div.img-profile div#error_msg").html("<center><i class='fa fa-times'> You Can Upload Only .jpg, gif files ! </i></center>").show().fadeOut(3000);
                 $("div.img-profile div#success_msg").hide();
                 return false;
             }
             if(calculatedSize > 10)
             {
                 $('#trainee_profile_img').val(fileObj.value = null);
-                $("div.img-profile div#error_msg").html("<center><i class='fa fa-times'>  File size should be less than 10 MB ! </i></center>").show();
+                $("div.img-profile div#error_msg").html("<center><i class='fa fa-times'>  File size should be less than 10 MB ! </i></center>").show().fadeOut(3000);
                 return false;
             }
             if(jQuery.inArray(split_extension.toLowerCase(), ext ) != -1 && calculatedSize < 10)
@@ -358,12 +358,12 @@
                            if(data.message != "")
                                {
                                 $('img#profile-img').attr('src','<?php echo $this->request->webroot; ?>uploads/trainee_profile/' + data.message);
-                                $("div.img-profile div#success_msg").html("<center><i class='fa fa-check'> Image Uploaded Successfully </i></center>").show();
+                                $("div.img-profile div#success_msg").html("<center><i class='fa fa-check'> Image Uploaded Successfully </i></center>").show().fadeOut(3000);
                                 $("div.img-profile div#error_msg").hide();
                                }
                             else
                                 {
-                                $("div.img-profile div#error_msg").html("<center><i class='fa fa-times'> Something is Wrong Please Try Again ! </i></center>").show();
+                                $("div.img-profile div#error_msg").html("<center><i class='fa fa-times'> Something is Wrong Please Try Again ! </i></center>").show().fadeOut(3000);
                                 $("div.img-profile div#success_msg").hide();
                                 }
                              $('img#loading-img').hide();

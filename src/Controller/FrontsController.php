@@ -364,7 +364,7 @@ class FrontsController extends AppController
 			$message .= "<body>";
 			$message .= "<center>";
 			$message .= "<img style='width:200px' src='https://" . env('SERVER_NAME')."/img/belibit_tv_logo_old1.png' class='img-responsive'></br></br></center>";
-			$message .= "<p>Thank you for contacting our support team! Your concern is our top priority. A member of our team is looking into your inquiry and will contact you within 48 hours. For general information please visit our  <a href='https://" . env('SERVER_NAME')."/learnmore' target='_blank'> Learn More  </a> section. We appreciate your patience. </p>" ;
+			$message .= "<p>Thank you for contacting our support team! Your concern is our top priority. A member of our team is looking into your inquiry and will contact you within 48 hours. For general information please visit our  <a href='https://" . env('SERVER_NAME')."/learn-more' target='_blank'> Learn More  </a> section. We appreciate your patience. </p>" ;
 			$message .= "<p>Welcome to the Future of Fitness </p>";
 			$message .= "</body>";
 			$message .= "</html>";
@@ -376,7 +376,7 @@ class FrontsController extends AppController
 			      ->send($message);
 
 			$this->Flash->success('Thank you for your inquiry, our representatives will contact you immediately with follow-up.', ['key' => 'edit']);
-        	return $this->redirect('/contactus');
+        	return $this->redirect('/contact-us');
 		}
 	}
 
