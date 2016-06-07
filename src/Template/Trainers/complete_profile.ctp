@@ -1424,6 +1424,7 @@ $(document).ready(function(){
     });
 
     $('body').on('click','.edit-package-btn',function(){
+        $("html, body").animate({scrollTop: 0}, 1000);
         var pack_id = $(this).attr('main');
         $.ajax({
             url:"<?php echo $this->request->webroot; ?>trainers/getPackageData",

@@ -77,6 +77,8 @@ Router::scope('/', function ($routes) {
 
     $routes->connect('/learn-more', ['controller' => 'Fronts', 'action' => 'learnmore']);
 
+    $routes->connect('/subscribe', ['controller' => 'Fronts', 'action' => 'subscribe']);
+
 
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',

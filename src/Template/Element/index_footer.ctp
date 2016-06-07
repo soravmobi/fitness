@@ -17,6 +17,7 @@
                             <li><a href="<?php echo $this->request->webroot; ?>learn-more" title="Learn More ">Learn More </a></li>
                             <li><a href="<?php echo $this->request->webroot; ?>contact-us" title="Contact Us">Contact us</a></li>
                             <li><a href="<?php echo $this->request->webroot; ?>sitemap" title="Sitemap">Sitemap</a></li>
+                            <li><a href="<?php echo $this->request->webroot; ?>subscribe" title="Subscribe">Subscribe</a></li>
                         </ul>
                     </nav>
                 </div>
